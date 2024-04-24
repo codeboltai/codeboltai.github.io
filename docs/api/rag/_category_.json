@@ -1,0 +1,12 @@
+{
+  "label": "rag",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "rag",
+    "description": "Provides Functionality for rag"
+  }
+}

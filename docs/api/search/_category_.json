@@ -1,0 +1,12 @@
+{
+  "label": "search",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "search",
+    "description": "Provides Functionality for search"
+  }
+}

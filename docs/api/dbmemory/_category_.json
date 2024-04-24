@@ -1,0 +1,12 @@
+{
+  "label": "dbmemory",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "dbmemory",
+    "description": "Provides Functionality for dbmemory"
+  }
+}

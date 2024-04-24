@@ -1,0 +1,12 @@
+{
+  "label": "codeparsers",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "codeparsers",
+    "description": "Provides Functionality for codeparsers"
+  }
+}

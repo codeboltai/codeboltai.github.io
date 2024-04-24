@@ -1,0 +1,12 @@
+{
+  "label": "outputparsers",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "outputparsers",
+    "description": "Provides Functionality for outputparsers"
+  }
+}
