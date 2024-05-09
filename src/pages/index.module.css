@@ -14,7 +14,7 @@
 }
 
 [data-theme="dark"] .bg {
-  background-image: radial-gradient(circle, #824614 , #4c0a56 );
+  background: linear-gradient(to top left, rgba(232, 31, 111, 0.6), rgba(255, 165, 0, 0.3));
   height: 800px;
   width: 800px;
   position: absolute;
