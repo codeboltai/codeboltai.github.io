@@ -59,7 +59,7 @@ const config: Config = {
       title: 'CodeBolt',
       logo: {
         alt: 'CodeBolt Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.jpg',
       },
       items: [
         {
