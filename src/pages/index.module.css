@@ -4,15 +4,49 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  background-color: transparent;
+  margin: -4rem 0;
+  padding: 10rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  height: 100vh;
 }
+
+[data-theme="dark"] .bg {
+  background: linear-gradient(to top left, rgba(232, 31, 111, 0.6), rgba(255, 165, 0, 0.3));
+  height: 800px;
+  width: 800px;
+  position: absolute;
+  border-radius: 500px;
+  top: 1%;
+  left: 20%;
+  z-index: 1;
+  filter: blur(200px);
+}
+  .bg {
+  background-image: radial-gradient(circle, #d7cbc1 , #aea6af );
+  height: 800px;
+  width: 800px;
+  position: absolute;
+  border-radius: 500px;
+  top: 1%;
+  left: 20%;
+  z-index: 1;
+  filter: blur(200px);
+}
+[data-theme="dark"] .containerText{
+z-index: 1;
+color: white;
+}
+.containerText{
+  z-index: 1;
+  color: black;
+  }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 6rem 2rem;
   }
 }
 
