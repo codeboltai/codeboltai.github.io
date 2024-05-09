@@ -1,18 +1,18 @@
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('./out.json');
+let rawdata = fs.readFileSync('../temp/out.json');
 let outJson = JSON.parse(rawdata);
 console.log("Json Parsed");
 
 const codeboltChild = outJson.children[0].children.find(child => child.name === "Codebolt");
 
-fs.writeFileSync('./newfile.json', JSON.stringify(codeboltChild, null, 2));
+fs.writeFileSync('../temp/newfile.json', JSON.stringify(codeboltChild, null, 2));
 
 
 if (codeboltChild && codeboltChild.children) {
   codeboltChild.children.forEach(CbProperties => {
-    const dir = `../codeboltLib/docs/api/${CbProperties.name}`;
+    const dir = `../docs/api/${CbProperties.name}`;
     if (!fs.existsSync(dir)){
       fs.mkdirSync(dir, { recursive: true });
     }
