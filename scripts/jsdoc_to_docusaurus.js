@@ -1,5 +1,6 @@
 
 const fs = require('fs');
+const yaml = require('js-yaml');
 
 let rawdata = fs.readFileSync('../temp/out.json');
 let outJson = JSON.parse(rawdata);
@@ -16,18 +17,21 @@ if (codeboltChild && codeboltChild.children) {
     if (!fs.existsSync(dir)){
       fs.mkdirSync(dir, { recursive: true });
     }
-    fs.writeFileSync(`${dir}/_category_.json`, JSON.stringify({
-      "label": CbProperties.name,
-      "position": 2.5,
-      "collapsible": true,
-      "collapsed": true,
-      "className": "red",
-        "link": {
-        "type": "generated-index",
-        "title": CbProperties.name,
-        "description": "Provides Functionality for "+CbProperties.name
-      }
-    }, null, 2));
+    const categoryFilePath = `${dir}/_category_.json`;
+    if (!fs.existsSync(categoryFilePath)) {
+      fs.writeFileSync(categoryFilePath, JSON.stringify({
+        "label": CbProperties.name,
+        "position": 2.5,
+        "collapsible": true,
+        "collapsed": true,
+        "className": "red",
+          "link": {
+          "type": "generated-index",
+          "title": CbProperties.name,
+          "description": "Provides Functionality for "+CbProperties.name
+        }
+      }, null, 2));
+    }
     if (CbProperties.type && CbProperties.type.declaration && CbProperties.type.declaration.children) {
         CbProperties.type.declaration.children.forEach(CbFunctions => {
             let content = `${CbProperties.name} - ${CbFunctions.name}\n`;
@@ -46,7 +50,26 @@ if (codeboltChild && codeboltChild.children) {
                 });
             }
             
-            fs.writeFileSync(`${dir}/${CbFunctions.name}.md`, content + '\n' + description + '\n' + parameterNames.join('\n') + "\n"+ returndata);
+            const filePath = `${dir}/${CbFunctions.name}.md`;
+            let fileContent = '';
+            if (fs.existsSync(filePath)) {
+                fileContent = fs.readFileSync(filePath, 'utf8');
+                const frontMatterMatch = fileContent.match(/^---\n([\s\S]*?)\n---/);
+                if (frontMatterMatch) {
+                    const frontMatterContent = frontMatterMatch[1];
+                    
+                    let frontMatter = yaml.load(frontMatterContent);
+                    frontMatter.description = description;
+                    const newYamlContent = yaml.dump(frontMatter);
+                    fileContent = fileContent.replace(frontMatterMatch[0], `---\n${newYamlContent}---`);
+                } else {
+                    fileContent = `---\ntitle: ${CbFunctions.name}\ndescription: ${description}\n---\n${content}\n${parameterNames.join('\n')}\n${returndata}`;
+                }
+                fs.writeFileSync(filePath, fileContent);
+            } else {
+                fileContent = `---\ntitle: ${CbFunctions.name}\ndescription: ${description}\n---\n${content}\n${parameterNames.join('\n')}\n${returndata}`;
+                fs.writeFileSync(filePath, fileContent);
+            }
         });
     }
   });
