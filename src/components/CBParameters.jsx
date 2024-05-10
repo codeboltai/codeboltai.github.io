@@ -10,7 +10,7 @@ const CBParameters = () => {
   return (
   <div>
     {Object.entries(frontMatter).map(([key, value]) => {
-      if (key === 'cblibrary') {
+      if (key === 'cbparamters') {
         console.log(`Key: ${key}, Value: ${value}`);
         
         if (value.parameters) {

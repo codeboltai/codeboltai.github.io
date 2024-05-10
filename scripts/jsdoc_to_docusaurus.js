@@ -18,8 +18,8 @@ function updateFrontmatter(existingFrontmatter, additionalFrontmatter) {
 }
 
 function createFrontMatter(frontMatter) {
-  let frontMatterString = `---\ntitle: ${frontMatter.name}\ndescription: ${frontMatter.description}\n---\n`
-  return frontMatterString;
+  let frontMatterString = yaml.dump(frontMatter);
+  return `---\n${frontMatterString}---\n`;
 }
 
 function createCategoryFile(categoryPath, categoryName) {
@@ -39,6 +39,30 @@ function createCategoryFile(categoryPath, categoryName) {
   }
 }
 
+
+function writeToFile(filePath, frontMatterVars){
+  let originalfileContent = '';
+  let newFileContent = '';
+
+  if (fs.existsSync(filePath)) {
+    originalfileContent = fs.readFileSync(filePath, 'utf8');
+    const frontMatterMatch = originalfileContent.match(/^---\n([\s\S]*?)\n---/);
+    if (frontMatterMatch) {
+      const frontMatterContent = frontMatterMatch[1];
+      let newYamlContent = updateFrontmatter(frontMatterContent, { "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters });
+      newFileContent = originalfileContent.replace(frontMatterMatch[0], `---\n${newYamlContent}---`);
+    } else {
+      const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cblibrary": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+      newFileContent = frontMatter + originalfileContent;
+    }
+    fs.writeFileSync(filePath, newFileContent);
+  } else {
+    const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cblibrary": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+    newFileContent = frontMatter + "<CBBaseInfo/>";
+    fs.writeFileSync(filePath, newFileContent);
+  }
+}
+
 if (codeboltChild && codeboltChild.children) {
   codeboltChild.children.forEach(CbProperties => {
     const dir = `../docs/api/${CbProperties.name}`;
@@ -52,46 +76,45 @@ if (codeboltChild && codeboltChild.children) {
     const categoryFilePath = `${dir}/_category_.json`;
     createCategoryFile(categoryFilePath, CbProperties.name);
 
+    let frontMatterVars = {
+      "data": {
+        "name": " ",
+        "category": " ",
+      },
+      "cbbaseinfo": {
+        "description": " ",
+      },
+      "cbparameters": {
+        "parameters": [],
+        "returndata": " ",
+      }
+    }
+
 
     if (CbProperties.type && CbProperties.type.declaration && CbProperties.type.declaration.children) {
       CbProperties.type.declaration.children.forEach(CbFunctions => {
-        let content = `${CbProperties.name} - ${CbFunctions.name}\n`;
-        let description = CbFunctions.comment && CbFunctions.comment.summary && CbFunctions.comment.summary.length > 0 ? CbFunctions.comment.summary[0].text : '';
-        let returndata = "";
-        let parameterNames = [];
+
+        frontMatterVars.data.category = CbProperties.name;
+        frontMatterVars.data.name = CbFunctions.name;
+        frontMatterVars.cbbaseinfo.description = CbFunctions.comment && CbFunctions.comment.summary && CbFunctions.comment.summary.length > 0 ? CbFunctions.comment.summary[0].text : ' ';
+        
+
         if (CbFunctions.type && CbFunctions.type.declaration && CbFunctions.type.declaration.signatures) {
           CbFunctions.type.declaration.signatures.forEach(signature => {
             if (signature.parameters) {
               signature.parameters.forEach(param => {
-                parameterNames.push(`${param.name}: ${param.type.name}`);
+                frontMatterVars.cbparameters.parameters.push(`${param.name}: ${param.type.name}`);
                 console.log(`${param.name}: ${param.type.name}`);
               });
             }
-            returndata = `Returns: ${signature.type.name}\n`;
+            frontMatterVars.cbparameters.returndata = signature.type.name;
           });
         }
 
-        const filePath = `${dir}/${CbFunctions.name}.md`;
-        let originalfileContent = '';
-        let newFileContent = '';
 
-        if (fs.existsSync(filePath)) {
-          originalfileContent = fs.readFileSync(filePath, 'utf8');
-          const frontMatterMatch = originalfileContent.match(/^---\n([\s\S]*?)\n---/);
-          if (frontMatterMatch) {
-            const frontMatterContent = frontMatterMatch[1];
-            let newYamlContent = updateFrontmatter(frontMatterContent, { "cblibrary": { "description": description } })
-            newFileContent = originalfileContent.replace(frontMatterMatch[0], `---\n${newYamlContent}---`);
-          } else {
-            const frontMatter = createFrontMatter({ name: CbFunctions.name, description: description });
-            newFileContent = frontMatter + originalfileContent;
-          }
-          fs.writeFileSync(filePath, newFileContent);
-        } else {
-          const frontMatter = createFrontMatter({ name: CbFunctions.name, description: description });
-          newFileContent = frontMatter + `${content}\n${parameterNames.join('\n')}\n${returndata} <CBBaseInfo/>`;
-          fs.writeFileSync(filePath, newFileContent);
-        }
+        const filePath = `${dir}/${frontMatterVars.data.name}.md`;
+        writeToFile(filePath, frontMatterVars)
+
       });
     }
   });
