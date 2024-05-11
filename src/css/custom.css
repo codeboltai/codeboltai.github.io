@@ -32,12 +32,31 @@
 [data-theme="dark"] .navbar {
   background-color: rgba(34, 31, 29, 0.9);
 }
+
 .navbar {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-[data-theme='dark'] .footer {
-  background-color: rgba(34, 31, 29, 0.9);
-  
+.table {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
+.description{
+  margin-bottom: 20px;
+  background-color: rgb(236, 234, 234);
+  border: 2px solid #d8d4d4;
+  color: black;
+  width: fit-content;
+  padding: 20px;
+  border-radius: 5px;
+}
+[data-theme='dark'] .description{
+  color: white;
+  background-color: rgb(57, 56, 56);
+  border: 2px solid #545050;
+}
+[data-theme='dark'] .footer {
+  background-color: rgba(34, 31, 29, 0.9);
+
+}
