@@ -66,7 +66,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'jsapiSidebar',
           position: 'left',
-          label: 'JS Library',
+          label: 'AI Agents',
         },
         {
           to: '/blog', 

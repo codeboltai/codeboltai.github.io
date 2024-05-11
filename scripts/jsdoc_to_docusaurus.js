@@ -31,9 +31,8 @@ function createCategoryFile(categoryPath, categoryName) {
       "collapsed": true,
       "className": "red",
       "link": {
-        "type": "generated-index",
-        "title": categoryName,
-        "description": "Provides Functionality for " + categoryName
+        "type": "doc",
+        "id": "cb_index"
       }
     }, null, 2));
   }
@@ -63,9 +62,22 @@ function writeToFile(filePath, frontMatterVars){
   }
 }
 
+function writeClassIndex(categoryName, indexFilePath, classAllFrontMatters) {
+  let classIndexContent = '';
+  classIndexContent += `# ${categoryName}\n`;
+  classAllFrontMatters.forEach(frontMatter => {
+    classIndexContent += `- [${frontMatter.data.name}](${frontMatter.data.link}) - ${frontMatter.cbbaseinfo.description}\n`;
+  });
+  fs.writeFileSync(indexFilePath, classIndexContent);
+}
+
+
+
 if (codeboltChild && codeboltChild.children) {
   codeboltChild.children.forEach(CbProperties => {
     const dir = `../docs/api/${CbProperties.name}`;
+
+    let classAllFrontMatters = [];
 
     //Check Folder
     if (!fs.existsSync(dir)) {
@@ -85,6 +97,7 @@ if (codeboltChild && codeboltChild.children) {
           "data": {
             "name": " ",
             "category": " ",
+            "link": " "
           },
           "cbbaseinfo": {
             "description": " ",
@@ -133,12 +146,17 @@ if (codeboltChild && codeboltChild.children) {
           });
         }
 
+        frontMatterVars.data.link = `${frontMatterVars.data.name}`;
+        const fileurl = `${dir}/${frontMatterVars.data.name}.md`;
+        writeToFile(fileurl, frontMatterVars)
 
-        const filePath = `${dir}/${frontMatterVars.data.name}.md`;
-        writeToFile(filePath, frontMatterVars)
-
+        classAllFrontMatters.push(frontMatterVars);
       });
     }
+
+    const classIndexFilePath = `${dir}/cb_index.md`;
+    writeClassIndex(CbProperties.name, classIndexFilePath, classAllFrontMatters)
+
   });
 } else {
   console.log('codeboltChild has no children or does not exist.');
