@@ -87,7 +87,8 @@ if (codeboltChild && codeboltChild.children) {
       "cbparameters": {
         "parameters": [],
         "returns": {
-          "signatureTypeName": " "
+          "signatureTypeName": " ",
+          "description": " "
         }
       }
     }
@@ -107,7 +108,15 @@ if (codeboltChild && codeboltChild.children) {
         frontMatterVars.data.category = CbProperties.name;
         frontMatterVars.data.name = CbFunctions.name;
         frontMatterVars.cbbaseinfo.description = CbFunctions.comment && CbFunctions.comment.summary && CbFunctions.comment.summary.length > 0 ? CbFunctions.comment.summary[0].text : ' ';
-        
+
+
+        if (CbFunctions.comment && CbFunctions.comment.blockTags) {
+          CbFunctions.comment.blockTags.forEach(blockTag => {
+            if (blockTag.tag === "@returns") {
+              frontMatterVars.cbparameters.returns.description = blockTag.content && blockTag.content.length > 0 ? blockTag.content[0].text : ' ';
+            }
+          });
+        }
 
         if (CbFunctions.type && CbFunctions.type.declaration && CbFunctions.type.declaration.signatures) {
           CbFunctions.type.declaration.signatures.forEach(signature => {
@@ -116,7 +125,7 @@ if (codeboltChild && codeboltChild.children) {
                 parameterObj = {
                   "name": param.name,
                   "typeName": param.type.name,
-                  "description": param.comment && param.comment.text && param.comment.text.length > 0? param.comment.text[0].text :''
+                  "description": param.comment && param.comment.summary && param.comment.summary.length > 0? param.comment.summary[0].text :''
                 }
                 frontMatterVars.cbparameters.parameters.push(parameterObj);
               });
