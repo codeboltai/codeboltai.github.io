@@ -76,34 +76,33 @@ if (codeboltChild && codeboltChild.children) {
     const categoryFilePath = `${dir}/_category_.json`;
     createCategoryFile(categoryFilePath, CbProperties.name);
 
-    let frontMatterVars = {
-      "data": {
-        "name": " ",
-        "category": " ",
-      },
-      "cbbaseinfo": {
-        "description": " ",
-      },
-      "cbparameters": {
-        "parameters": [],
-        "returns": {
-          "signatureTypeName": " ",
-          "description": " "
-        }
-      }
-    }
-
-    let parameterObj = {
-      "name": " ",
-      "typeName": " ",
-      "description": " "
-    }
-
-
-
-
+    
     if (CbProperties.type && CbProperties.type.declaration && CbProperties.type.declaration.children) {
       CbProperties.type.declaration.children.forEach(CbFunctions => {
+
+
+        let frontMatterVars = {
+          "data": {
+            "name": " ",
+            "category": " ",
+          },
+          "cbbaseinfo": {
+            "description": " ",
+          },
+          "cbparameters": {
+            "parameters": [],
+            "returns": {
+              "signatureTypeName": " ",
+              "description": " "
+            }
+          }
+        }
+    
+        let parameterObj = {
+          "name": " ",
+          "typeName": " ",
+          "description": " "
+        }
 
         frontMatterVars.data.category = CbProperties.name;
         frontMatterVars.data.name = CbFunctions.name;
