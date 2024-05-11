@@ -15,9 +15,7 @@ const CBBaseInfo = () => {
         
         return (
           <p key={key}>
-            Name: {value.name}
-            <br/>
-            Category: {value.category}
+            Description: {value.description}
           </p>
         );
         // return Object.entries(value).map(([cbkey, cbvalue]) => {

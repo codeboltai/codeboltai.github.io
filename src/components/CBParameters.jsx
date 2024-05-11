@@ -6,26 +6,22 @@ import useFrontMatter from './useFrontMatter';
 
 const CBParameters = () => {
   const frontMatter = useFrontMatter();
-  console.log(frontMatter)
   return (
   <div>
     {Object.entries(frontMatter).map(([key, value]) => {
-      if (key === 'cbparamters') {
-        console.log(`Key: ${key}, Value: ${value}`);
-        
+      if (key === 'cbparameters') {  
         if (value.parameters) {
           return value.parameters.map((param, index) => {
-            console.log(param.name);
+            console.log("Parameter"+param);
             return (
               <p key={index}>
-                <strong>{param.name}</strong>
+                <strong>{param}</strong>
                 <br/>
               </p>
             );
           });
         }
       }
-      
       return null;
     })}
   </div>

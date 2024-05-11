@@ -52,13 +52,13 @@ function writeToFile(filePath, frontMatterVars){
       let newYamlContent = updateFrontmatter(frontMatterContent, { "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters });
       newFileContent = originalfileContent.replace(frontMatterMatch[0], `---\n${newYamlContent}---`);
     } else {
-      const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cblibrary": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+      const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
       newFileContent = frontMatter + originalfileContent;
     }
     fs.writeFileSync(filePath, newFileContent);
   } else {
-    const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cblibrary": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
-    newFileContent = frontMatter + "<CBBaseInfo/>";
+    const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+    newFileContent = frontMatter + "<CBBaseInfo/> \n <CBParameters/>";
     fs.writeFileSync(filePath, newFileContent);
   }
 }
@@ -86,9 +86,19 @@ if (codeboltChild && codeboltChild.children) {
       },
       "cbparameters": {
         "parameters": [],
-        "returndata": " ",
+        "returns": {
+          "signatureTypeName": " "
+        }
       }
     }
+
+    let parameterObj = {
+      "name": " ",
+      "typeName": " ",
+      "description": " "
+    }
+
+
 
 
     if (CbProperties.type && CbProperties.type.declaration && CbProperties.type.declaration.children) {
@@ -103,11 +113,15 @@ if (codeboltChild && codeboltChild.children) {
           CbFunctions.type.declaration.signatures.forEach(signature => {
             if (signature.parameters) {
               signature.parameters.forEach(param => {
-                frontMatterVars.cbparameters.parameters.push(`${param.name}: ${param.type.name}`);
-                console.log(`${param.name}: ${param.type.name}`);
+                parameterObj = {
+                  "name": param.name,
+                  "typeName": param.type.name,
+                  "description": param.comment && param.comment.text && param.comment.text.length > 0? param.comment.text[0].text :''
+                }
+                frontMatterVars.cbparameters.parameters.push(parameterObj);
               });
             }
-            frontMatterVars.cbparameters.returndata = signature.type.name;
+            frontMatterVars.cbparameters.returns.signatureTypeName = signature.type.name;
           });
         }
 
