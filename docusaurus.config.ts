@@ -83,7 +83,7 @@ const config: Config = {
           items: [
             {
               label: 'API',
-              to: '/docs/category/browser',
+              to: '/docs/index',
             },
           ],
         },

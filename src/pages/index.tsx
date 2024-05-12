@@ -19,7 +19,7 @@ function HomepageHeader() {
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/main">
+          <Link className="button button--secondary button--lg" to="/docs/index">
             CodeBolt Tutorial - 5min ⏱️
           </Link>
         </div>

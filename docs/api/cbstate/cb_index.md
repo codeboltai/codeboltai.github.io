@@ -1,0 +1,2 @@
+# cbstate
+- [getApplicationState](getApplicationState.md) -  

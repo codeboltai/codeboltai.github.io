@@ -1,0 +1,17 @@
+# browser
+- [click](click.md) - Clicks on a specified element on the page.
+- [close](close.md) - Closes the current page.
+- [enter](enter.md) - Simulates the Enter key press on the current page.
+- [extractText](extractText.md) - Extracts text from the current page.
+- [getContent](getContent.md) - Retrieves the content of the current page.
+- [getHTML](getHTML.md) - Retrieves the HTML content of the current page.
+- [getMarkdown](getMarkdown.md) - Retrieves the Markdown content of the current page.
+- [getPDF](getPDF.md) - Retrieves the PDF content of the current page.
+- [getUrl](getUrl.md) - Retrieves the current URL of the browser's active page.
+- [goToPage](goToPage.md) - Navigates to a specified URL.
+- [newPage](newPage.md) - Opens a new page in the browser.
+- [pdfToText](pdfToText.md) - Converts the PDF content of the current page to text.
+- [screenshot](screenshot.md) - Takes a screenshot of the current page.
+- [scroll](scroll.md) - Scrolls the current page in a specified direction by a specified number of pixels.
+- [search](search.md) - Performs a search on the current page using a specified query.
+- [type](type.md) - Types text into a specified element on the page.

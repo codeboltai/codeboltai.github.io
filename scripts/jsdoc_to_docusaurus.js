@@ -146,7 +146,7 @@ if (codeboltChild && codeboltChild.children) {
           });
         }
 
-        frontMatterVars.data.link = `${frontMatterVars.data.name}`;
+        frontMatterVars.data.link = `${frontMatterVars.data.name}.md`;
         const fileurl = `${dir}/${frontMatterVars.data.name}.md`;
         writeToFile(fileurl, frontMatterVars)
 

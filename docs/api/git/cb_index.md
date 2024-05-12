@@ -1,0 +1,12 @@
+# git
+- [add](add.md) - Adds changes in the local repository to the staging area at the given path.
+- [branch](branch.md) - Creates a new branch in the local repository at the given path.
+- [checkout](checkout.md) - Checks out a branch or commit in the local repository at the given path.
+- [clone](clone.md) - Clones a Git repository from the given URL to the specified path.
+- [commit](commit.md) - Commits the staged changes in the local repository with the given commit message.
+- [diff](diff.md) - Retrieves the diff of changes for a specific commit in the local repository.
+- [init](init.md) - Initializes a new Git repository at the given path.
+- [logs](logs.md) - Retrieves the commit logs for the local repository at the given path.
+- [pull](pull.md) - Pulls the latest changes from the remote repository to the local repository at the given path.
+- [push](push.md) - Pushes local repository changes to the remote repository at the given path.
+- [status](status.md) - Retrieves the status of the local repository at the given path.

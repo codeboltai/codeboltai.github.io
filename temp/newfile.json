@@ -35,7 +35,7 @@
           "fileName": "src/index.ts",
           "line": 39,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L39"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L39"
         }
       ],
       "signatures": [
@@ -64,7 +64,7 @@
               "fileName": "src/index.ts",
               "line": 39,
               "character": 4,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L39"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L39"
             }
           ],
           "type": {
@@ -85,9 +85,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 101,
+          "line": 100,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L101"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L100"
         }
       ],
       "type": {
@@ -129,7 +129,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 207,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L207"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L207"
                 }
               ],
               "type": {
@@ -145,7 +145,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 207,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L207"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L207"
                     }
                   ],
                   "signatures": [
@@ -160,7 +160,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 207,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L207"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L207"
                         }
                       ],
                       "parameters": [
@@ -224,7 +224,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 149,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L149"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L149"
                 }
               ],
               "type": {
@@ -240,7 +240,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 149,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L149"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L149"
                     }
                   ],
                   "signatures": [
@@ -255,7 +255,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 149,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L149"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L149"
                         }
                       ],
                       "type": {
@@ -298,7 +298,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 227,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L227"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L227"
                 }
               ],
               "type": {
@@ -314,7 +314,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 227,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L227"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L227"
                     }
                   ],
                   "signatures": [
@@ -329,7 +329,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 227,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L227"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L227"
                         }
                       ],
                       "type": {
@@ -372,7 +372,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 139,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L139"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L139"
                 }
               ],
               "type": {
@@ -388,7 +388,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 139,
                       "character": 17,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L139"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L139"
                     }
                   ],
                   "signatures": [
@@ -403,7 +403,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 139,
                           "character": 17,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L139"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L139"
                         }
                       ],
                       "type": {
@@ -435,7 +435,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 129,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L129"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L129"
                 }
               ],
               "type": {
@@ -451,7 +451,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 129,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L129"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L129"
                     }
                   ],
                   "signatures": [
@@ -466,7 +466,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 129,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L129"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L129"
                         }
                       ],
                       "type": {
@@ -509,7 +509,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 72,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L72"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L72"
                 }
               ],
               "type": {
@@ -525,7 +525,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 72,
                       "character": 13,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L72"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L72"
                     }
                   ],
                   "signatures": [
@@ -540,7 +540,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 72,
                           "character": 13,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L72"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L72"
                         }
                       ],
                       "type": {
@@ -594,7 +594,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 91,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L91"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L91"
                 }
               ],
               "type": {
@@ -610,7 +610,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 91,
                       "character": 17,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L91"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L91"
                     }
                   ],
                   "signatures": [
@@ -625,7 +625,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 91,
                           "character": 17,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L91"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L91"
                         }
                       ],
                       "type": {
@@ -668,7 +668,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 109,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L109"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L109"
                 }
               ],
               "type": {
@@ -684,7 +684,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 109,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L109"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L109"
                     }
                   ],
                   "signatures": [
@@ -699,7 +699,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 109,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L109"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L109"
                         }
                       ],
                       "type": {
@@ -742,7 +742,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 22,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L22"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L22"
                 }
               ],
               "type": {
@@ -758,7 +758,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 22,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L22"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L22"
                     }
                   ],
                   "signatures": [
@@ -773,7 +773,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 22,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L22"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L22"
                         }
                       ],
                       "type": {
@@ -827,7 +827,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 42,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L42"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L42"
                 }
               ],
               "type": {
@@ -843,7 +843,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 42,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L42"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L42"
                     }
                   ],
                   "signatures": [
@@ -858,7 +858,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 42,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L42"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L42"
                         }
                       ],
                       "parameters": [
@@ -922,7 +922,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 11,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L11"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L11"
                 }
               ],
               "type": {
@@ -938,7 +938,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 11,
                       "character": 13,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L11"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L11"
                     }
                   ],
                   "signatures": [
@@ -953,7 +953,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 11,
                           "character": 13,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L11"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L11"
                         }
                       ],
                       "type": {
@@ -985,7 +985,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 119,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L119"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L119"
                 }
               ],
               "type": {
@@ -1001,7 +1001,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 119,
                       "character": 15,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L119"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L119"
                     }
                   ],
                   "signatures": [
@@ -1016,7 +1016,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 119,
                           "character": 15,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L119"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L119"
                         }
                       ],
                       "type": {
@@ -1048,7 +1048,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 61,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L61"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L61"
                 }
               ],
               "type": {
@@ -1064,7 +1064,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 61,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L61"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L61"
                     }
                   ],
                   "signatures": [
@@ -1079,7 +1079,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 61,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L61"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L61"
                         }
                       ],
                       "type": {
@@ -1122,7 +1122,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 162,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L162"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L162"
                 }
               ],
               "type": {
@@ -1138,7 +1138,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 162,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L162"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L162"
                     }
                   ],
                   "signatures": [
@@ -1153,7 +1153,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 162,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L162"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L162"
                         }
                       ],
                       "parameters": [
@@ -1247,7 +1247,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 248,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L248"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L248"
                 }
               ],
               "type": {
@@ -1263,7 +1263,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 248,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L248"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L248"
                     }
                   ],
                   "signatures": [
@@ -1278,7 +1278,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 248,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L248"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L248"
                         }
                       ],
                       "parameters": [
@@ -1372,7 +1372,7 @@
                   "fileName": "src/modules/browser.ts",
                   "line": 185,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L185"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L185"
                 }
               ],
               "type": {
@@ -1388,7 +1388,7 @@
                       "fileName": "src/modules/browser.ts",
                       "line": 185,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L185"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L185"
                     }
                   ],
                   "signatures": [
@@ -1403,7 +1403,7 @@
                           "fileName": "src/modules/browser.ts",
                           "line": 185,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L185"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L185"
                         }
                       ],
                       "parameters": [
@@ -1496,7 +1496,7 @@
               "fileName": "src/modules/browser.ts",
               "line": 6,
               "character": 18,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/browser.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/browser.ts#L6"
             }
           ]
         }
@@ -1512,9 +1512,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 114,
+          "line": 113,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L114"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L113"
         }
       ],
       "type": {
@@ -1537,7 +1537,7 @@
                   "fileName": "src/modules/state.ts",
                   "line": 8,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/state.ts#L8"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/state.ts#L8"
                 }
               ],
               "type": {
@@ -1553,7 +1553,7 @@
                       "fileName": "src/modules/state.ts",
                       "line": 8,
                       "character": 25,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/state.ts#L8"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/state.ts#L8"
                     }
                   ],
                   "signatures": [
@@ -1568,7 +1568,7 @@
                           "fileName": "src/modules/state.ts",
                           "line": 8,
                           "character": 25,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/state.ts#L8"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/state.ts#L8"
                         }
                       ],
                       "type": {
@@ -1606,7 +1606,7 @@
               "fileName": "src/modules/state.ts",
               "line": 7,
               "character": 16,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/state.ts#L7"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/state.ts#L7"
             }
           ]
         }
@@ -1622,9 +1622,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 102,
+          "line": 101,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L102"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L101"
         }
       ],
       "type": {
@@ -1647,14 +1647,69 @@
                   "fileName": "src/modules/chat.ts",
                   "line": 14,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L14"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L14"
                 }
               ],
               "type": {
                 "type": "reference",
-                "target": 2696,
+                "target": 2700,
                 "name": "CustomEventEmitter",
                 "package": "@codebolt/codeboltjs"
+              },
+              "defaultValue": "..."
+            },
+            {
+              "id": 762,
+              "name": "stopProcess",
+              "variant": "declaration",
+              "kind": 1024,
+              "flags": {},
+              "sources": [
+                {
+                  "fileName": "src/modules/chat.ts",
+                  "line": 96,
+                  "character": 4,
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L96"
+                }
+              ],
+              "type": {
+                "type": "reflection",
+                "declaration": {
+                  "id": 763,
+                  "name": "__type",
+                  "variant": "declaration",
+                  "kind": 65536,
+                  "flags": {},
+                  "sources": [
+                    {
+                      "fileName": "src/modules/chat.ts",
+                      "line": 96,
+                      "character": 17,
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L96"
+                    }
+                  ],
+                  "signatures": [
+                    {
+                      "id": 764,
+                      "name": "__type",
+                      "variant": "signature",
+                      "kind": 4096,
+                      "flags": {},
+                      "sources": [
+                        {
+                          "fileName": "src/modules/chat.ts",
+                          "line": 96,
+                          "character": 17,
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L96"
+                        }
+                      ],
+                      "type": {
+                        "type": "intrinsic",
+                        "name": "void"
+                      }
+                    }
+                  ]
+                }
               },
               "defaultValue": "..."
             },
@@ -1669,7 +1724,7 @@
                   "fileName": "src/modules/chat.ts",
                   "line": 16,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L16"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L16"
                 }
               ],
               "signatures": [
@@ -1684,7 +1739,7 @@
                       "fileName": "src/modules/chat.ts",
                       "line": 16,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L16"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L16"
                     }
                   ],
                   "type": {
@@ -1716,7 +1771,7 @@
                   "fileName": "src/modules/chat.ts",
                   "line": 68,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L68"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L68"
                 }
               ],
               "signatures": [
@@ -1750,7 +1805,7 @@
                       "fileName": "src/modules/chat.ts",
                       "line": 68,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L68"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L68"
                     }
                   ],
                   "type": {
@@ -1773,12 +1828,12 @@
                               "fileName": "src/modules/chat.ts",
                               "line": 85,
                               "character": 12,
-                              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L85"
+                              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L85"
                             }
                           ],
                           "type": {
                             "type": "reference",
-                            "target": 2696,
+                            "target": 2700,
                             "name": "CustomEventEmitter",
                             "package": "@codebolt/codeboltjs"
                           },
@@ -1795,7 +1850,7 @@
                               "fileName": "src/modules/chat.ts",
                               "line": 86,
                               "character": 12,
-                              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L86"
+                              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L86"
                             }
                           ],
                           "type": {
@@ -1811,7 +1866,7 @@
                                   "fileName": "src/modules/chat.ts",
                                   "line": 86,
                                   "character": 25,
-                                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L86"
+                                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L86"
                                 }
                               ],
                               "signatures": [
@@ -1826,7 +1881,7 @@
                                       "fileName": "src/modules/chat.ts",
                                       "line": 86,
                                       "character": 25,
-                                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L86"
+                                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L86"
                                     }
                                   ],
                                   "type": {
@@ -1854,7 +1909,7 @@
                           "fileName": "src/modules/chat.ts",
                           "line": 84,
                           "character": 15,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L84"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L84"
                         }
                       ]
                     }
@@ -1873,7 +1928,7 @@
                   "fileName": "src/modules/chat.ts",
                   "line": 36,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L36"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L36"
                 }
               ],
               "signatures": [
@@ -1896,7 +1951,7 @@
                       "fileName": "src/modules/chat.ts",
                       "line": 36,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L36"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L36"
                     }
                   ],
                   "parameters": [
@@ -1938,7 +1993,7 @@
                   "fileName": "src/modules/chat.ts",
                   "line": 49,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L49"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L49"
                 }
               ],
               "signatures": [
@@ -1972,7 +2027,7 @@
                       "fileName": "src/modules/chat.ts",
                       "line": 49,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L49"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L49"
                     }
                   ],
                   "parameters": [
@@ -2019,7 +2074,8 @@
             {
               "title": "Properties",
               "children": [
-                746
+                746,
+                762
               ]
             },
             {
@@ -2037,7 +2093,7 @@
               "fileName": "src/modules/chat.ts",
               "line": 13,
               "character": 15,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/chat.ts#L13"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/chat.ts#L13"
             }
           ]
         }
@@ -2053,9 +2109,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 110,
+          "line": 109,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L110"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L109"
         }
       ],
       "type": {
@@ -2086,7 +2142,7 @@
                   "fileName": "src/modules/codeparsers.ts",
                   "line": 25,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L25"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L25"
                 }
               ],
               "type": {
@@ -2102,7 +2158,7 @@
                       "fileName": "src/modules/codeparsers.ts",
                       "line": 25,
                       "character": 22,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L25"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L25"
                     }
                   ],
                   "signatures": [
@@ -2117,7 +2173,7 @@
                           "fileName": "src/modules/codeparsers.ts",
                           "line": 25,
                           "character": 22,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L25"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L25"
                         }
                       ],
                       "parameters": [
@@ -2189,7 +2245,7 @@
                   "fileName": "src/modules/codeparsers.ts",
                   "line": 9,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L9"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L9"
                 }
               ],
               "type": {
@@ -2205,7 +2261,7 @@
                       "fileName": "src/modules/codeparsers.ts",
                       "line": 9,
                       "character": 22,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L9"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L9"
                     }
                   ],
                   "signatures": [
@@ -2220,7 +2276,7 @@
                           "fileName": "src/modules/codeparsers.ts",
                           "line": 9,
                           "character": 22,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L9"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L9"
                         }
                       ],
                       "parameters": [
@@ -2273,7 +2329,7 @@
                   "fileName": "src/modules/codeparsers.ts",
                   "line": 17,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L17"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L17"
                 }
               ],
               "type": {
@@ -2289,7 +2345,7 @@
                       "fileName": "src/modules/codeparsers.ts",
                       "line": 17,
                       "character": 25,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L17"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L17"
                     }
                   ],
                   "signatures": [
@@ -2304,7 +2360,7 @@
                           "fileName": "src/modules/codeparsers.ts",
                           "line": 17,
                           "character": 25,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L17"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L17"
                         }
                       ],
                       "parameters": [
@@ -2373,7 +2429,7 @@
               "fileName": "src/modules/codeparsers.ts",
               "line": 4,
               "character": 22,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeparsers.ts#L4"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeparsers.ts#L4"
             }
           ]
         }
@@ -2381,7 +2437,7 @@
       "defaultValue": "cbcodeparsers"
     },
     {
-      "id": 778,
+      "id": 781,
       "name": "codeutils",
       "variant": "declaration",
       "kind": 1024,
@@ -2389,15 +2445,15 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 104,
+          "line": 103,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L104"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L103"
         }
       ],
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 779,
+          "id": 782,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
@@ -2412,9 +2468,9 @@
               "sources": [
                 {
                   "fileName": "src/modules/codeutils.ts",
-                  "line": 19,
+                  "line": 28,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L19"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L28"
                 }
               ],
               "type": {
@@ -2428,9 +2484,9 @@
                   "sources": [
                     {
                       "fileName": "src/modules/codeutils.ts",
-                      "line": 19,
+                      "line": 28,
                       "character": 26,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L19"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L28"
                     }
                   ],
                   "signatures": [
@@ -2443,9 +2499,9 @@
                       "sources": [
                         {
                           "fileName": "src/modules/codeutils.ts",
-                          "line": 19,
+                          "line": 28,
                           "character": 26,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L19"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L28"
                         }
                       ],
                       "type": {
@@ -2470,7 +2526,7 @@
               "defaultValue": "..."
             },
             {
-              "id": 780,
+              "id": 783,
               "name": "getCodeTree",
               "variant": "declaration",
               "kind": 1024,
@@ -2499,13 +2555,13 @@
                   "fileName": "src/modules/codeutils.ts",
                   "line": 14,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L14"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L14"
                 }
               ],
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 781,
+                  "id": 784,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -2515,12 +2571,12 @@
                       "fileName": "src/modules/codeutils.ts",
                       "line": 14,
                       "character": 17,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L14"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L14"
                     }
                   ],
                   "signatures": [
                     {
-                      "id": 782,
+                      "id": 785,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -2530,66 +2586,7 @@
                           "fileName": "src/modules/codeutils.ts",
                           "line": 14,
                           "character": 17,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L14"
-                        }
-                      ],
-                      "parameters": [
-                        {
-                          "id": 783,
-                          "name": "fileName",
-                          "variant": "param",
-                          "kind": 32768,
-                          "flags": {},
-                          "comment": {
-                            "summary": [
-                              {
-                                "kind": "text",
-                                "text": "The name of the file."
-                              }
-                            ]
-                          },
-                          "type": {
-                            "type": "intrinsic",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 784,
-                          "name": "source",
-                          "variant": "param",
-                          "kind": 32768,
-                          "flags": {},
-                          "comment": {
-                            "summary": [
-                              {
-                                "kind": "text",
-                                "text": "The source code to generate the tree from."
-                              }
-                            ]
-                          },
-                          "type": {
-                            "type": "intrinsic",
-                            "name": "any"
-                          }
-                        },
-                        {
-                          "id": 785,
-                          "name": "filePath",
-                          "variant": "param",
-                          "kind": 32768,
-                          "flags": {},
-                          "comment": {
-                            "summary": [
-                              {
-                                "kind": "text",
-                                "text": "The file path where the source code is located."
-                              }
-                            ]
-                          },
-                          "type": {
-                            "type": "intrinsic",
-                            "name": "any"
-                          }
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L14"
                         }
                       ],
                       "type": {
@@ -2619,7 +2616,7 @@
               "title": "Properties",
               "children": [
                 786,
-                780
+                783
               ]
             }
           ],
@@ -2628,7 +2625,7 @@
               "fileName": "src/modules/codeutils.ts",
               "line": 6,
               "character": 20,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/codeutils.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/codeutils.ts#L6"
             }
           ]
         }
@@ -2644,9 +2641,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 106,
+          "line": 105,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L106"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L105"
         }
       ],
       "type": {
@@ -2688,7 +2685,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 52,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L52"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L52"
                 }
               ],
               "type": {
@@ -2704,7 +2701,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 52,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L52"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L52"
                     }
                   ],
                   "signatures": [
@@ -2719,7 +2716,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 52,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L52"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L52"
                         }
                       ],
                       "parameters": [
@@ -2783,7 +2780,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 101,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L101"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L101"
                 }
               ],
               "type": {
@@ -2799,7 +2796,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 101,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L101"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L101"
                     }
                   ],
                   "signatures": [
@@ -2814,7 +2811,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 101,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L101"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L101"
                         }
                       ],
                       "type": {
@@ -2846,7 +2843,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 92,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L92"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L92"
                 }
               ],
               "type": {
@@ -2862,7 +2859,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 92,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L92"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L92"
                     }
                   ],
                   "signatures": [
@@ -2877,7 +2874,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 92,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L92"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L92"
                         }
                       ],
                       "type": {
@@ -2909,7 +2906,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 29,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L29"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L29"
                 }
               ],
               "type": {
@@ -2925,7 +2922,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 29,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L29"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L29"
                     }
                   ],
                   "signatures": [
@@ -2940,7 +2937,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 29,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L29"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L29"
                         }
                       ],
                       "parameters": [
@@ -2993,7 +2990,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 19,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L19"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L19"
                 }
               ],
               "type": {
@@ -3009,7 +3006,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 19,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L19"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L19"
                     }
                   ],
                   "signatures": [
@@ -3024,7 +3021,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 19,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L19"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L19"
                         }
                       ],
                       "type": {
@@ -3056,7 +3053,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 40,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L40"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L40"
                 }
               ],
               "type": {
@@ -3072,7 +3069,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 40,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L40"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L40"
                     }
                   ],
                   "signatures": [
@@ -3087,7 +3084,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 40,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L40"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L40"
                         }
                       ],
                       "parameters": [
@@ -3140,7 +3137,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 10,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L10"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L10"
                 }
               ],
               "type": {
@@ -3156,7 +3153,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 10,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L10"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L10"
                     }
                   ],
                   "signatures": [
@@ -3171,7 +3168,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 10,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L10"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L10"
                         }
                       ],
                       "type": {
@@ -3214,7 +3211,7 @@
                   "fileName": "src/modules/crawler.ts",
                   "line": 73,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L73"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L73"
                 }
               ],
               "type": {
@@ -3230,7 +3227,7 @@
                       "fileName": "src/modules/crawler.ts",
                       "line": 73,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L73"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L73"
                     }
                   ],
                   "signatures": [
@@ -3245,7 +3242,7 @@
                           "fileName": "src/modules/crawler.ts",
                           "line": 73,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L73"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L73"
                         }
                       ],
                       "parameters": [
@@ -3330,7 +3327,7 @@
               "fileName": "src/modules/crawler.ts",
               "line": 6,
               "character": 18,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/crawler.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/crawler.ts#L6"
             }
           ]
         }
@@ -3346,9 +3343,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 113,
+          "line": 112,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L113"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L112"
         }
       ],
       "type": {
@@ -3390,7 +3387,7 @@
                   "fileName": "src/modules/dbmemory.ts",
                   "line": 13,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L13"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L13"
                 }
               ],
               "type": {
@@ -3406,7 +3403,7 @@
                       "fileName": "src/modules/dbmemory.ts",
                       "line": 13,
                       "character": 18,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L13"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L13"
                     }
                   ],
                   "signatures": [
@@ -3421,7 +3418,7 @@
                           "fileName": "src/modules/dbmemory.ts",
                           "line": 13,
                           "character": 18,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L13"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L13"
                         }
                       ],
                       "parameters": [
@@ -3515,7 +3512,7 @@
                   "fileName": "src/modules/dbmemory.ts",
                   "line": 34,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L34"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L34"
                 }
               ],
               "type": {
@@ -3531,7 +3528,7 @@
                       "fileName": "src/modules/dbmemory.ts",
                       "line": 34,
                       "character": 18,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L34"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L34"
                     }
                   ],
                   "signatures": [
@@ -3546,7 +3543,7 @@
                           "fileName": "src/modules/dbmemory.ts",
                           "line": 34,
                           "character": 18,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L34"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L34"
                         }
                       ],
                       "parameters": [
@@ -3606,7 +3603,7 @@
               "fileName": "src/modules/dbmemory.ts",
               "line": 6,
               "character": 17,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/dbmemory.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/dbmemory.ts#L6"
             }
           ]
         }
@@ -3622,9 +3619,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 117,
+          "line": 116,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L117"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L116"
         }
       ],
       "type": {
@@ -3647,7 +3644,7 @@
                   "fileName": "src/modules/debug.ts",
                   "line": 11,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/debug.ts#L11"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/debug.ts#L11"
                 }
               ],
               "signatures": [
@@ -3662,7 +3659,7 @@
                       "fileName": "src/modules/debug.ts",
                       "line": 11,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/debug.ts#L11"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/debug.ts#L11"
                     }
                   ],
                   "parameters": [
@@ -3685,9 +3682,80 @@
                       "flags": {},
                       "type": {
                         "type": "reference",
-                        "target": 2964,
+                        "target": 2968,
                         "name": "logType",
                         "package": "@codebolt/codeboltjs"
+                      }
+                    }
+                  ],
+                  "type": {
+                    "type": "reference",
+                    "target": {
+                      "sourceFileName": "node_modules/typescript/lib/lib.es5.d.ts",
+                      "qualifiedName": "Promise"
+                    },
+                    "typeArguments": [
+                      {
+                        "type": "intrinsic",
+                        "name": "unknown"
+                      }
+                    ],
+                    "name": "Promise",
+                    "package": "typescript"
+                  }
+                }
+              ]
+            },
+            {
+              "id": 945,
+              "name": "openDebugBrowser",
+              "variant": "declaration",
+              "kind": 2048,
+              "flags": {},
+              "sources": [
+                {
+                  "fileName": "src/modules/debug.ts",
+                  "line": 31,
+                  "character": 4,
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/debug.ts#L31"
+                }
+              ],
+              "signatures": [
+                {
+                  "id": 946,
+                  "name": "openDebugBrowser",
+                  "variant": "signature",
+                  "kind": 4096,
+                  "flags": {},
+                  "sources": [
+                    {
+                      "fileName": "src/modules/debug.ts",
+                      "line": 31,
+                      "character": 4,
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/debug.ts#L31"
+                    }
+                  ],
+                  "parameters": [
+                    {
+                      "id": 947,
+                      "name": "url",
+                      "variant": "param",
+                      "kind": 32768,
+                      "flags": {},
+                      "type": {
+                        "type": "intrinsic",
+                        "name": "string"
+                      }
+                    },
+                    {
+                      "id": 948,
+                      "name": "port",
+                      "variant": "param",
+                      "kind": 32768,
+                      "flags": {},
+                      "type": {
+                        "type": "intrinsic",
+                        "name": "number"
                       }
                     }
                   ],
@@ -3714,7 +3782,8 @@
             {
               "title": "Methods",
               "children": [
-                941
+                941,
+                945
               ]
             }
           ],
@@ -3723,7 +3792,7 @@
               "fileName": "src/modules/debug.ts",
               "line": 10,
               "character": 19,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/debug.ts#L10"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/debug.ts#L10"
             }
           ]
         }
@@ -3739,9 +3808,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 105,
+          "line": 104,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L105"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L104"
         }
       ],
       "type": {
@@ -3783,7 +3852,7 @@
                   "fileName": "src/modules/docutils.ts",
                   "line": 10,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/docutils.ts#L10"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/docutils.ts#L10"
                 }
               ],
               "type": {
@@ -3799,7 +3868,7 @@
                       "fileName": "src/modules/docutils.ts",
                       "line": 10,
                       "character": 17,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/docutils.ts#L10"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/docutils.ts#L10"
                     }
                   ],
                   "signatures": [
@@ -3814,7 +3883,7 @@
                           "fileName": "src/modules/docutils.ts",
                           "line": 10,
                           "character": 17,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/docutils.ts#L10"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/docutils.ts#L10"
                         }
                       ],
                       "parameters": [
@@ -3873,7 +3942,7 @@
               "fileName": "src/modules/docutils.ts",
               "line": 4,
               "character": 19,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/docutils.ts#L4"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/docutils.ts#L4"
             }
           ]
         }
@@ -3889,9 +3958,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 98,
+          "line": 97,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L98"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L97"
         }
       ],
       "type": {
@@ -3946,7 +4015,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 16,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L16"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L16"
                 }
               ],
               "type": {
@@ -3962,7 +4031,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 16,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L16"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L16"
                     }
                   ],
                   "signatures": [
@@ -3977,7 +4046,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 16,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L16"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L16"
                         }
                       ],
                       "parameters": [
@@ -4103,7 +4172,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 42,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L42"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L42"
                 }
               ],
               "type": {
@@ -4119,7 +4188,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 42,
                       "character": 18,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L42"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L42"
                     }
                   ],
                   "signatures": [
@@ -4134,7 +4203,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 42,
                           "character": 18,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L42"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L42"
                         }
                       ],
                       "parameters": [
@@ -4241,7 +4310,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 119,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L119"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L119"
                 }
               ],
               "type": {
@@ -4257,7 +4326,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 119,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L119"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L119"
                     }
                   ],
                   "signatures": [
@@ -4272,7 +4341,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 119,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L119"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L119"
                         }
                       ],
                       "parameters": [
@@ -4379,7 +4448,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 144,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L144"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L144"
                 }
               ],
               "type": {
@@ -4395,7 +4464,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 144,
                       "character": 18,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L144"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L144"
                     }
                   ],
                   "signatures": [
@@ -4410,7 +4479,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 144,
                           "character": 18,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L144"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L144"
                         }
                       ],
                       "parameters": [
@@ -4485,7 +4554,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 162,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L162"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L162"
                 }
               ],
               "type": {
@@ -4501,7 +4570,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 162,
                       "character": 13,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L162"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L162"
                     }
                   ],
                   "signatures": [
@@ -4516,7 +4585,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 162,
                           "character": 13,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L162"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L162"
                         }
                       ],
                       "parameters": [
@@ -4587,7 +4656,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 67,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L67"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L67"
                 }
               ],
               "type": {
@@ -4603,7 +4672,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 67,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L67"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L67"
                     }
                   ],
                   "signatures": [
@@ -4618,7 +4687,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 67,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L67"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L67"
                         }
                       ],
                       "parameters": [
@@ -4725,7 +4794,7 @@
                   "fileName": "src/modules/fs.ts",
                   "line": 93,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L93"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L93"
                 }
               ],
               "type": {
@@ -4741,7 +4810,7 @@
                       "fileName": "src/modules/fs.ts",
                       "line": 93,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L93"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L93"
                     }
                   ],
                   "signatures": [
@@ -4756,7 +4825,7 @@
                           "fileName": "src/modules/fs.ts",
                           "line": 93,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L93"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L93"
                         }
                       ],
                       "parameters": [
@@ -4859,7 +4928,7 @@
               "fileName": "src/modules/fs.ts",
               "line": 7,
               "character": 13,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/fs.ts#L7"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/fs.ts#L7"
             }
           ]
         }
@@ -4875,9 +4944,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 99,
+          "line": 98,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L99"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L98"
         }
       ],
       "type": {
@@ -4919,7 +4988,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 114,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L114"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L114"
                 }
               ],
               "type": {
@@ -4935,7 +5004,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 114,
                       "character": 9,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L114"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L114"
                     }
                   ],
                   "signatures": [
@@ -4950,7 +5019,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 114,
                           "character": 9,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L114"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L114"
                         }
                       ],
                       "parameters": [
@@ -5025,7 +5094,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 177,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L177"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L177"
                 }
               ],
               "type": {
@@ -5041,7 +5110,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 177,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L177"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L177"
                     }
                   ],
                   "signatures": [
@@ -5056,7 +5125,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 177,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L177"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L177"
                         }
                       ],
                       "parameters": [
@@ -5150,7 +5219,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 155,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L155"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L155"
                 }
               ],
               "type": {
@@ -5166,7 +5235,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 155,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L155"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L155"
                     }
                   ],
                   "signatures": [
@@ -5181,7 +5250,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 155,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L155"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L155"
                         }
                       ],
                       "parameters": [
@@ -5275,7 +5344,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 33,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L33"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L33"
                 }
               ],
               "type": {
@@ -5291,7 +5360,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 33,
                       "character": 11,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L33"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L33"
                     }
                   ],
                   "signatures": [
@@ -5306,7 +5375,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 33,
                           "character": 11,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L33"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L33"
                         }
                       ],
                       "parameters": [
@@ -5400,7 +5469,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 134,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L134"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L134"
                 }
               ],
               "type": {
@@ -5416,7 +5485,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 134,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L134"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L134"
                     }
                   ],
                   "signatures": [
@@ -5431,7 +5500,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 134,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L134"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L134"
                         }
                       ],
                       "parameters": [
@@ -5506,7 +5575,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 219,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L219"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L219"
                 }
               ],
               "type": {
@@ -5522,7 +5591,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 219,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L219"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L219"
                     }
                   ],
                   "signatures": [
@@ -5537,7 +5606,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 219,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L219"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L219"
                         }
                       ],
                       "parameters": [
@@ -5631,7 +5700,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 12,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L12"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L12"
                 }
               ],
               "type": {
@@ -5647,7 +5716,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 12,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L12"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L12"
                     }
                   ],
                   "signatures": [
@@ -5662,7 +5731,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 12,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L12"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L12"
                         }
                       ],
                       "parameters": [
@@ -5737,7 +5806,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 198,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L198"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L198"
                 }
               ],
               "type": {
@@ -5753,7 +5822,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 198,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L198"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L198"
                     }
                   ],
                   "signatures": [
@@ -5768,7 +5837,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 198,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L198"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L198"
                         }
                       ],
                       "parameters": [
@@ -5843,7 +5912,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 54,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L54"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L54"
                 }
               ],
               "type": {
@@ -5859,7 +5928,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 54,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L54"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L54"
                     }
                   ],
                   "signatures": [
@@ -5874,7 +5943,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 54,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L54"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L54"
                         }
                       ],
                       "parameters": [
@@ -5949,7 +6018,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 74,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L74"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L74"
                 }
               ],
               "type": {
@@ -5965,7 +6034,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 74,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L74"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L74"
                     }
                   ],
                   "signatures": [
@@ -5980,7 +6049,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 74,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L74"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L74"
                         }
                       ],
                       "parameters": [
@@ -6055,7 +6124,7 @@
                   "fileName": "src/modules/git.ts",
                   "line": 94,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L94"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L94"
                 }
               ],
               "type": {
@@ -6071,7 +6140,7 @@
                       "fileName": "src/modules/git.ts",
                       "line": 94,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L94"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L94"
                     }
                   ],
                   "signatures": [
@@ -6086,7 +6155,7 @@
                           "fileName": "src/modules/git.ts",
                           "line": 94,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L94"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L94"
                         }
                       ],
                       "parameters": [
@@ -6155,7 +6224,7 @@
               "fileName": "src/modules/git.ts",
               "line": 6,
               "character": 19,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/git.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/git.ts#L6"
             }
           ]
         }
@@ -6171,9 +6240,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 108,
+          "line": 107,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L108"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L107"
         }
       ],
       "type": {
@@ -6189,7 +6258,7 @@
               "fileName": "src/modules/knowledge.ts",
               "line": 1,
               "character": 20,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/knowledge.ts#L1"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/knowledge.ts#L1"
             }
           ]
         }
@@ -6205,9 +6274,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 100,
+          "line": 99,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L100"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L99"
         }
       ],
       "type": {
@@ -6229,7 +6298,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Sends an inference request to the LLM and returns the model's response.\nThe model is selected based on the provided "
+                    "text": "Sends an inference request to the LLM and returns the model's response.\r\nThe model is selected based on the provided "
                   },
                   {
                     "kind": "code",
@@ -6237,7 +6306,7 @@
                   },
                   {
                     "kind": "text",
-                    "text": ". If the specific model\nfor the role is not found, it falls back to the default model for the current agent,\nand ultimately to the default application-wide LLM if necessary."
+                    "text": ". If the specific model\r\nfor the role is not found, it falls back to the default model for the current agent,\r\nand ultimately to the default application-wide LLM if necessary."
                   }
                 ],
                 "blockTags": [
@@ -6257,7 +6326,7 @@
                   "fileName": "src/modules/llm.ts",
                   "line": 17,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/llm.ts#L17"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/llm.ts#L17"
                 }
               ],
               "type": {
@@ -6273,7 +6342,7 @@
                       "fileName": "src/modules/llm.ts",
                       "line": 17,
                       "character": 15,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/llm.ts#L17"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/llm.ts#L17"
                     }
                   ],
                   "signatures": [
@@ -6288,7 +6357,7 @@
                           "fileName": "src/modules/llm.ts",
                           "line": 17,
                           "character": 15,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/llm.ts#L17"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/llm.ts#L17"
                         }
                       ],
                       "parameters": [
@@ -6366,7 +6435,7 @@
               "fileName": "src/modules/llm.ts",
               "line": 6,
               "character": 14,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/llm.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/llm.ts#L6"
             }
           ]
         }
@@ -6382,9 +6451,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 111,
+          "line": 110,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L111"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L110"
         }
       ],
       "type": {
@@ -6406,7 +6475,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Initializes the output parser module.\nCurrently, this function does not perform any operations."
+                    "text": "Initializes the output parser module.\r\nCurrently, this function does not perform any operations."
                   }
                 ]
               },
@@ -6415,7 +6484,7 @@
                   "fileName": "src/modules/outputparsers.ts",
                   "line": 10,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L10"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L10"
                 }
               ],
               "type": {
@@ -6431,7 +6500,7 @@
                       "fileName": "src/modules/outputparsers.ts",
                       "line": 10,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L10"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L10"
                     }
                   ],
                   "signatures": [
@@ -6446,7 +6515,7 @@
                           "fileName": "src/modules/outputparsers.ts",
                           "line": 10,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L10"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L10"
                         }
                       ],
                       "parameters": [
@@ -6510,7 +6579,7 @@
                   "fileName": "src/modules/outputparsers.ts",
                   "line": 18,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L18"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L18"
                 }
               ],
               "type": {
@@ -6526,7 +6595,7 @@
                       "fileName": "src/modules/outputparsers.ts",
                       "line": 18,
                       "character": 17,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L18"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L18"
                     }
                   ],
                   "signatures": [
@@ -6541,7 +6610,7 @@
                           "fileName": "src/modules/outputparsers.ts",
                           "line": 18,
                           "character": 17,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L18"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L18"
                         }
                       ],
                       "parameters": [
@@ -6608,7 +6677,7 @@
                   "fileName": "src/modules/outputparsers.ts",
                   "line": 26,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L26"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L26"
                 }
               ],
               "type": {
@@ -6624,7 +6693,7 @@
                       "fileName": "src/modules/outputparsers.ts",
                       "line": 26,
                       "character": 19,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L26"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L26"
                     }
                   ],
                   "signatures": [
@@ -6639,7 +6708,7 @@
                           "fileName": "src/modules/outputparsers.ts",
                           "line": 26,
                           "character": 19,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L26"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L26"
                         }
                       ],
                       "parameters": [
@@ -6692,7 +6761,7 @@
               "fileName": "src/modules/outputparsers.ts",
               "line": 4,
               "character": 24,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/outputparsers.ts#L4"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/outputparsers.ts#L4"
             }
           ]
         }
@@ -6708,9 +6777,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 112,
+          "line": 111,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L112"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L111"
         }
       ],
       "type": {
@@ -6752,7 +6821,7 @@
                   "fileName": "src/modules/project.ts",
                   "line": 19,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L19"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L19"
                 }
               ],
               "type": {
@@ -6768,7 +6837,7 @@
                       "fileName": "src/modules/project.ts",
                       "line": 19,
                       "character": 20,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L19"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L19"
                     }
                   ],
                   "signatures": [
@@ -6783,7 +6852,7 @@
                           "fileName": "src/modules/project.ts",
                           "line": 19,
                           "character": 20,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L19"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L19"
                         }
                       ],
                       "type": {
@@ -6817,7 +6886,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Placeholder for a method to get project settings.\nCurrently, this method does not perform any operations."
+                    "text": "Placeholder for a method to get project settings.\r\nCurrently, this method does not perform any operations."
                   }
                 ]
               },
@@ -6826,7 +6895,7 @@
                   "fileName": "src/modules/project.ts",
                   "line": 12,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L12"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L12"
                 }
               ],
               "type": {
@@ -6842,7 +6911,7 @@
                       "fileName": "src/modules/project.ts",
                       "line": 12,
                       "character": 24,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L12"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L12"
                     }
                   ],
                   "signatures": [
@@ -6857,7 +6926,7 @@
                           "fileName": "src/modules/project.ts",
                           "line": 12,
                           "character": 24,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L12"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L12"
                         }
                       ],
                       "parameters": [
@@ -6906,7 +6975,7 @@
               "fileName": "src/modules/project.ts",
               "line": 6,
               "character": 18,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/project.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/project.ts#L6"
             }
           ]
         }
@@ -6922,9 +6991,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 109,
+          "line": 108,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L109"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L108"
         }
       ],
       "type": {
@@ -6955,7 +7024,7 @@
                   "fileName": "src/modules/rag.ts",
                   "line": 16,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L16"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L16"
                 }
               ],
               "type": {
@@ -6971,7 +7040,7 @@
                       "fileName": "src/modules/rag.ts",
                       "line": 16,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L16"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L16"
                     }
                   ],
                   "signatures": [
@@ -6986,7 +7055,7 @@
                           "fileName": "src/modules/rag.ts",
                           "line": 16,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L16"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L16"
                         }
                       ],
                       "parameters": [
@@ -7058,7 +7127,7 @@
                   "fileName": "src/modules/rag.ts",
                   "line": 8,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L8"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L8"
                 }
               ],
               "type": {
@@ -7074,7 +7143,7 @@
                       "fileName": "src/modules/rag.ts",
                       "line": 8,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L8"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L8"
                     }
                   ],
                   "signatures": [
@@ -7089,7 +7158,7 @@
                           "fileName": "src/modules/rag.ts",
                           "line": 8,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L8"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L8"
                         }
                       ],
                       "type": {
@@ -7121,7 +7190,7 @@
                   "fileName": "src/modules/rag.ts",
                   "line": 24,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L24"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L24"
                 }
               ],
               "type": {
@@ -7137,7 +7206,7 @@
                       "fileName": "src/modules/rag.ts",
                       "line": 24,
                       "character": 32,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L24"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L24"
                     }
                   ],
                   "signatures": [
@@ -7152,7 +7221,7 @@
                           "fileName": "src/modules/rag.ts",
                           "line": 24,
                           "character": 32,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L24"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L24"
                         }
                       ],
                       "parameters": [
@@ -7221,7 +7290,7 @@
               "fileName": "src/modules/rag.ts",
               "line": 4,
               "character": 14,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/rag.ts#L4"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/rag.ts#L4"
             }
           ]
         }
@@ -7237,9 +7306,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 107,
+          "line": 106,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L107"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L106"
         }
       ],
       "type": {
@@ -7281,7 +7350,7 @@
                   "fileName": "src/modules/search.ts",
                   "line": 28,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L28"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L28"
                 }
               ],
               "type": {
@@ -7297,7 +7366,7 @@
                       "fileName": "src/modules/search.ts",
                       "line": 28,
                       "character": 20,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L28"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L28"
                     }
                   ],
                   "signatures": [
@@ -7312,7 +7381,7 @@
                           "fileName": "src/modules/search.ts",
                           "line": 28,
                           "character": 20,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L28"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L28"
                         }
                       ],
                       "parameters": [
@@ -7376,7 +7445,7 @@
                   "fileName": "src/modules/search.ts",
                   "line": 9,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L9"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L9"
                 }
               ],
               "type": {
@@ -7392,7 +7461,7 @@
                       "fileName": "src/modules/search.ts",
                       "line": 9,
                       "character": 10,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L9"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L9"
                     }
                   ],
                   "signatures": [
@@ -7407,7 +7476,7 @@
                           "fileName": "src/modules/search.ts",
                           "line": 9,
                           "character": 10,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L9"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L9"
                         }
                       ],
                       "parameters": [
@@ -7474,7 +7543,7 @@
                   "fileName": "src/modules/search.ts",
                   "line": 17,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L17"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L17"
                 }
               ],
               "type": {
@@ -7490,7 +7559,7 @@
                       "fileName": "src/modules/search.ts",
                       "line": 17,
                       "character": 12,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L17"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L17"
                     }
                   ],
                   "signatures": [
@@ -7505,7 +7574,7 @@
                           "fileName": "src/modules/search.ts",
                           "line": 17,
                           "character": 12,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L17"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L17"
                         }
                       ],
                       "parameters": [
@@ -7566,7 +7635,7 @@
               "fileName": "src/modules/search.ts",
               "line": 4,
               "character": 17,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/search.ts#L4"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/search.ts#L4"
             }
           ]
         }
@@ -7582,9 +7651,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 115,
+          "line": 114,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L115"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L114"
         }
       ],
       "type": {
@@ -7626,7 +7695,7 @@
                   "fileName": "src/modules/task.ts",
                   "line": 12,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L12"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L12"
                 }
               ],
               "type": {
@@ -7642,7 +7711,7 @@
                       "fileName": "src/modules/task.ts",
                       "line": 12,
                       "character": 13,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L12"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L12"
                     }
                   ],
                   "signatures": [
@@ -7657,7 +7726,7 @@
                           "fileName": "src/modules/task.ts",
                           "line": 12,
                           "character": 13,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L12"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L12"
                         }
                       ],
                       "parameters": [
@@ -7732,7 +7801,7 @@
                   "fileName": "src/modules/task.ts",
                   "line": 34,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L34"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L34"
                 }
               ],
               "type": {
@@ -7748,7 +7817,7 @@
                       "fileName": "src/modules/task.ts",
                       "line": 34,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L34"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L34"
                     }
                   ],
                   "signatures": [
@@ -7763,7 +7832,7 @@
                           "fileName": "src/modules/task.ts",
                           "line": 34,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L34"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L34"
                         }
                       ],
                       "type": {
@@ -7817,7 +7886,7 @@
                   "fileName": "src/modules/task.ts",
                   "line": 54,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L54"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L54"
                 }
               ],
               "type": {
@@ -7833,7 +7902,7 @@
                       "fileName": "src/modules/task.ts",
                       "line": 54,
                       "character": 16,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L54"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L54"
                     }
                   ],
                   "signatures": [
@@ -7848,7 +7917,7 @@
                           "fileName": "src/modules/task.ts",
                           "line": 54,
                           "character": 16,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L54"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L54"
                         }
                       ],
                       "parameters": [
@@ -7909,7 +7978,7 @@
               "fileName": "src/modules/task.ts",
               "line": 6,
               "character": 19,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/task.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/task.ts#L6"
             }
           ]
         }
@@ -7917,7 +7986,7 @@
       "defaultValue": "task"
     },
     {
-      "id": 762,
+      "id": 765,
       "name": "terminal",
       "variant": "declaration",
       "kind": 1024,
@@ -7925,22 +7994,22 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 103,
+          "line": 102,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L103"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L102"
         }
       ],
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 763,
+          "id": 766,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
           "flags": {},
           "children": [
             {
-              "id": 764,
+              "id": 767,
               "name": "eventEmitter",
               "variant": "declaration",
               "kind": 1024,
@@ -7950,19 +8019,19 @@
                   "fileName": "src/modules/terminal.ts",
                   "line": 12,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L12"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L12"
                 }
               ],
               "type": {
                 "type": "reference",
-                "target": 2830,
+                "target": 2834,
                 "name": "CustomEventEmitter",
                 "package": "@codebolt/codeboltjs"
               },
               "defaultValue": "..."
             },
             {
-              "id": 765,
+              "id": 768,
               "name": "executeCommand",
               "variant": "declaration",
               "kind": 1024,
@@ -7971,7 +8040,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Executes a given command and returns the result.\nListens for messages from the WebSocket that indicate the output, error, or finish state\nof the executed command and resolves the promise accordingly."
+                    "text": "Executes a given command and returns the result.\r\nListens for messages from the WebSocket that indicate the output, error, or finish state\r\nof the executed command and resolves the promise accordingly."
                   }
                 ],
                 "blockTags": [
@@ -7991,13 +8060,13 @@
                   "fileName": "src/modules/terminal.ts",
                   "line": 22,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L22"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L22"
                 }
               ],
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 766,
+                  "id": 769,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -8007,12 +8076,12 @@
                       "fileName": "src/modules/terminal.ts",
                       "line": 22,
                       "character": 20,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L22"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L22"
                     }
                   ],
                   "signatures": [
                     {
-                      "id": 767,
+                      "id": 770,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -8022,12 +8091,12 @@
                           "fileName": "src/modules/terminal.ts",
                           "line": 22,
                           "character": 20,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L22"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L22"
                         }
                       ],
                       "parameters": [
                         {
-                          "id": 768,
+                          "id": 771,
                           "name": "command",
                           "variant": "param",
                           "kind": 32768,
@@ -8068,7 +8137,7 @@
               "defaultValue": "..."
             },
             {
-              "id": 769,
+              "id": 772,
               "name": "executeCommandRunUntilError",
               "variant": "declaration",
               "kind": 1024,
@@ -8077,7 +8146,7 @@
                 "summary": [
                   {
                     "kind": "text",
-                    "text": "Executes a given command and keeps running until an error occurs.\nListens for messages from the WebSocket and resolves the promise when an error is encountered."
+                    "text": "Executes a given command and keeps running until an error occurs.\r\nListens for messages from the WebSocket and resolves the promise when an error is encountered."
                   }
                 ],
                 "blockTags": [
@@ -8097,13 +8166,13 @@
                   "fileName": "src/modules/terminal.ts",
                   "line": 44,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L44"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L44"
                 }
               ],
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 770,
+                  "id": 773,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -8113,12 +8182,12 @@
                       "fileName": "src/modules/terminal.ts",
                       "line": 44,
                       "character": 33,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L44"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L44"
                     }
                   ],
                   "signatures": [
                     {
-                      "id": 771,
+                      "id": 774,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -8128,12 +8197,12 @@
                           "fileName": "src/modules/terminal.ts",
                           "line": 44,
                           "character": 33,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L44"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L44"
                         }
                       ],
                       "parameters": [
                         {
-                          "id": 772,
+                          "id": 775,
                           "name": "command",
                           "variant": "param",
                           "kind": 32768,
@@ -8174,7 +8243,7 @@
               "defaultValue": "..."
             },
             {
-              "id": 775,
+              "id": 778,
               "name": "executeCommandWithStream",
               "variant": "declaration",
               "kind": 2048,
@@ -8184,12 +8253,12 @@
                   "fileName": "src/modules/terminal.ts",
                   "line": 87,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L87"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L87"
                 }
               ],
               "signatures": [
                 {
-                  "id": 776,
+                  "id": 779,
                   "name": "executeCommandWithStream",
                   "variant": "signature",
                   "kind": 4096,
@@ -8198,7 +8267,7 @@
                     "summary": [
                       {
                         "kind": "text",
-                        "text": "Executes a given command and streams the output.\nListens for messages from the WebSocket and streams the output data."
+                        "text": "Executes a given command and streams the output.\r\nListens for messages from the WebSocket and streams the output data."
                       }
                     ],
                     "blockTags": [
@@ -8218,12 +8287,12 @@
                       "fileName": "src/modules/terminal.ts",
                       "line": 87,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L87"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L87"
                     }
                   ],
                   "parameters": [
                     {
-                      "id": 777,
+                      "id": 780,
                       "name": "command",
                       "variant": "param",
                       "kind": 32768,
@@ -8244,7 +8313,7 @@
                   ],
                   "type": {
                     "type": "reference",
-                    "target": 2830,
+                    "target": 2834,
                     "name": "CustomEventEmitter",
                     "package": "@codebolt/codeboltjs"
                   }
@@ -8252,7 +8321,7 @@
               ]
             },
             {
-              "id": 773,
+              "id": 776,
               "name": "sendManualInterrupt",
               "variant": "declaration",
               "kind": 2048,
@@ -8262,12 +8331,12 @@
                   "fileName": "src/modules/terminal.ts",
                   "line": 65,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L65"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L65"
                 }
               ],
               "signatures": [
                 {
-                  "id": 774,
+                  "id": 777,
                   "name": "sendManualInterrupt",
                   "variant": "signature",
                   "kind": 4096,
@@ -8291,7 +8360,7 @@
                       "fileName": "src/modules/terminal.ts",
                       "line": 65,
                       "character": 4,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L65"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L65"
                     }
                   ],
                   "type": {
@@ -8317,16 +8386,16 @@
             {
               "title": "Properties",
               "children": [
-                764,
-                765,
-                769
+                767,
+                768,
+                772
               ]
             },
             {
               "title": "Methods",
               "children": [
-                775,
-                773
+                778,
+                776
               ]
             }
           ],
@@ -8335,7 +8404,7 @@
               "fileName": "src/modules/terminal.ts",
               "line": 11,
               "character": 19,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/terminal.ts#L11"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/terminal.ts#L11"
             }
           ]
         }
@@ -8343,7 +8412,7 @@
       "defaultValue": "cbterminal"
     },
     {
-      "id": 945,
+      "id": 949,
       "name": "tokenizer",
       "variant": "declaration",
       "kind": 1024,
@@ -8351,22 +8420,22 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 118,
+          "line": 117,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L118"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L117"
         }
       ],
       "type": {
         "type": "reflection",
         "declaration": {
-          "id": 946,
+          "id": 950,
           "name": "__type",
           "variant": "declaration",
           "kind": 65536,
           "flags": {},
           "children": [
             {
-              "id": 947,
+              "id": 951,
               "name": "addToken",
               "variant": "declaration",
               "kind": 1024,
@@ -8395,13 +8464,13 @@
                   "fileName": "src/modules/tokenizer.ts",
                   "line": 13,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/tokenizer.ts#L13"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/tokenizer.ts#L13"
                 }
               ],
               "type": {
                 "type": "reflection",
                 "declaration": {
-                  "id": 948,
+                  "id": 952,
                   "name": "__type",
                   "variant": "declaration",
                   "kind": 65536,
@@ -8411,12 +8480,12 @@
                       "fileName": "src/modules/tokenizer.ts",
                       "line": 13,
                       "character": 14,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/tokenizer.ts#L13"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/tokenizer.ts#L13"
                     }
                   ],
                   "signatures": [
                     {
-                      "id": 949,
+                      "id": 953,
                       "name": "__type",
                       "variant": "signature",
                       "kind": 4096,
@@ -8426,12 +8495,12 @@
                           "fileName": "src/modules/tokenizer.ts",
                           "line": 13,
                           "character": 14,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/tokenizer.ts#L13"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/tokenizer.ts#L13"
                         }
                       ],
                       "parameters": [
                         {
-                          "id": 950,
+                          "id": 954,
                           "name": "key",
                           "variant": "param",
                           "kind": 32768,
@@ -8476,7 +8545,7 @@
             {
               "title": "Properties",
               "children": [
-                947
+                951
               ]
             }
           ],
@@ -8485,7 +8554,7 @@
               "fileName": "src/modules/tokenizer.ts",
               "line": 6,
               "character": 18,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/tokenizer.ts#L6"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/tokenizer.ts#L6"
             }
           ]
         }
@@ -8501,9 +8570,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 116,
+          "line": 115,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L116"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L115"
         }
       ],
       "type": {
@@ -8545,7 +8614,7 @@
                   "fileName": "src/modules/vectordb.ts",
                   "line": 35,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L35"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L35"
                 }
               ],
               "type": {
@@ -8561,7 +8630,7 @@
                       "fileName": "src/modules/vectordb.ts",
                       "line": 35,
                       "character": 19,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L35"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L35"
                     }
                   ],
                   "signatures": [
@@ -8576,7 +8645,7 @@
                           "fileName": "src/modules/vectordb.ts",
                           "line": 35,
                           "character": 19,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L35"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L35"
                         }
                       ],
                       "parameters": [
@@ -8651,7 +8720,7 @@
                   "fileName": "src/modules/vectordb.ts",
                   "line": 10,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L10"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L10"
                 }
               ],
               "type": {
@@ -8667,7 +8736,7 @@
                       "fileName": "src/modules/vectordb.ts",
                       "line": 10,
                       "character": 15,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L10"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L10"
                     }
                   ],
                   "signatures": [
@@ -8682,7 +8751,7 @@
                           "fileName": "src/modules/vectordb.ts",
                           "line": 10,
                           "character": 15,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L10"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L10"
                         }
                       ],
                       "parameters": [
@@ -8757,7 +8826,7 @@
                   "fileName": "src/modules/vectordb.ts",
                   "line": 59,
                   "character": 4,
-                  "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L59"
+                  "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L59"
                 }
               ],
               "type": {
@@ -8773,7 +8842,7 @@
                       "fileName": "src/modules/vectordb.ts",
                       "line": 59,
                       "character": 21,
-                      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L59"
+                      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L59"
                     }
                   ],
                   "signatures": [
@@ -8788,7 +8857,7 @@
                           "fileName": "src/modules/vectordb.ts",
                           "line": 59,
                           "character": 21,
-                          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L59"
+                          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L59"
                         }
                       ],
                       "parameters": [
@@ -8849,7 +8918,7 @@
               "fileName": "src/modules/vectordb.ts",
               "line": 3,
               "character": 17,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/modules/vectordb.ts#L3"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/modules/vectordb.ts#L3"
             }
           ]
         }
@@ -8865,9 +8934,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 97,
+          "line": 96,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L97"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L96"
         }
       ],
       "type": {
@@ -8879,7 +8948,7 @@
           },
           {
             "type": "reference",
-            "target": 1028,
+            "target": 1032,
             "name": "WebSocket",
             "package": "@types/ws"
           }
@@ -8896,9 +8965,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 94,
+          "line": 93,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L94"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L93"
         }
       ],
       "signatures": [
@@ -8934,9 +9003,9 @@
           "sources": [
             {
               "fileName": "src/index.ts",
-              "line": 94,
+              "line": 93,
               "character": 4,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L94"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L93"
             }
           ],
           "parameters": [
@@ -9033,9 +9102,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 48,
+          "line": 47,
           "character": 4,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L48"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L47"
         }
       ],
       "signatures": [
@@ -9071,9 +9140,9 @@
           "sources": [
             {
               "fileName": "src/index.ts",
-              "line": 48,
+              "line": 47,
               "character": 4,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L48"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L47"
             }
           ],
           "type": {
@@ -9103,9 +9172,9 @@
       "sources": [
         {
           "fileName": "src/index.ts",
-          "line": 63,
+          "line": 62,
           "character": 10,
-          "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L63"
+          "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L62"
         }
       ],
       "signatures": [
@@ -9150,9 +9219,9 @@
           "sources": [
             {
               "fileName": "src/index.ts",
-              "line": 63,
+              "line": 62,
               "character": 10,
-              "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L63"
+              "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L62"
             }
           ],
           "type": {
@@ -9188,7 +9257,7 @@
         907,
         744,
         857,
-        778,
+        781,
         795,
         896,
         939,
@@ -9202,8 +9271,8 @@
         842,
         826,
         912,
-        762,
-        945,
+        765,
+        949,
         925,
         590
       ]
@@ -9222,7 +9291,7 @@
       "fileName": "src/index.ts",
       "line": 33,
       "character": 6,
-      "url": "https://github.com/codeboltai/codeboltjs/blob/9116408eef64cf952c326a0bc2d71e35d54ea11c/src/index.ts#L33"
+      "url": "https://github.com/codeboltai/codeboltjs/blob/9666c43d9cde41c5f081874fa8399cd0db100375/src/index.ts#L33"
     }
   ]
 }

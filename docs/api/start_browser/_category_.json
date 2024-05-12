@@ -1,0 +1,11 @@
+{
+  "label": "start_browser",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "cb_index"
+  }
+}
