@@ -1,2 +1,8 @@
+---
+cbapicategory:
+  - name: addToken
+    link: addToken.md
+    description: Adds a token asynchronously.
+---
 # tokenizer
-- [addToken](addToken.md) - Adds a token asynchronously.
+<CBAPICategory />

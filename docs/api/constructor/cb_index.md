@@ -1,5 +1,5 @@
 ---
 cbapicategory:
 ---
-# knowledge
+# constructor
 <CBAPICategory />

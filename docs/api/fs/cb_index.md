@@ -1,8 +1,26 @@
+---
+cbapicategory:
+  - name: createFile
+    link: createFile.md
+    description:  
+  - name: createFolder
+    link: createFolder.md
+    description:  
+  - name: deleteFile
+    link: deleteFile.md
+    description:  
+  - name: deleteFolder
+    link: deleteFolder.md
+    description:  
+  - name: listFile
+    link: listFile.md
+    description:  
+  - name: readFile
+    link: readFile.md
+    description:  
+  - name: updateFile
+    link: updateFile.md
+    description:  
+---
 # fs
-- [createFile](createFile.md) -  
-- [createFolder](createFolder.md) -  
-- [deleteFile](deleteFile.md) -  
-- [deleteFolder](deleteFolder.md) -  
-- [listFile](listFile.md) -  
-- [readFile](readFile.md) -  
-- [updateFile](updateFile.md) -  
+<CBAPICategory />

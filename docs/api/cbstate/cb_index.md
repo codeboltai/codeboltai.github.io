@@ -1,2 +1,8 @@
+---
+cbapicategory:
+  - name: getApplicationState
+    link: getApplicationState.md
+    description:  
+---
 # cbstate
-- [getApplicationState](getApplicationState.md) -  
+<CBAPICategory />

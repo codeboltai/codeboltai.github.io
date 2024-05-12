@@ -63,11 +63,12 @@ function writeToFile(filePath, frontMatterVars){
 }
 
 function writeClassIndex(categoryName, indexFilePath, classAllFrontMatters) {
-  let classIndexContent = '';
-  classIndexContent += `# ${categoryName}\n`;
+  let classIndexContent = '---\ncbapicategory:\n';
+  
   classAllFrontMatters.forEach(frontMatter => {
-    classIndexContent += `- [${frontMatter.data.name}](${frontMatter.data.link}) - ${frontMatter.cbbaseinfo.description}\n`;
+    classIndexContent += `  - name: ${frontMatter.data.name}\n    link: ${frontMatter.data.link}\n    description: ${frontMatter.cbbaseinfo.description}\n`;
   });
+  classIndexContent += `---\n# ${categoryName}\n<CBAPICategory />\n`;
   fs.writeFileSync(indexFilePath, classIndexContent);
 }
 

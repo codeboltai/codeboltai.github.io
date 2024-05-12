@@ -1,4 +1,12 @@
-# project
-- [getProjectPath](getProjectPath.md) - Retrieves the path of the current project.
-- [getProjectSettings](getProjectSettings.md) - Placeholder for a method to get project settings.
+---
+cbapicategory:
+  - name: getProjectPath
+    link: getProjectPath.md
+    description: Retrieves the path of the current project.
+  - name: getProjectSettings
+    link: getProjectSettings.md
+    description: Placeholder for a method to get project settings.
 Currently, this method does not perform any operations.
+---
+# project
+<CBAPICategory />

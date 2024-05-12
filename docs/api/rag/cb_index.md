@@ -1,4 +1,14 @@
+---
+cbapicategory:
+  - name: add_file
+    link: add_file.md
+    description: Adds a file to the CodeBolt File System.
+  - name: init
+    link: init.md
+    description: Initializes the CodeBolt File System Module.
+  - name: retrieve_related_knowledge
+    link: retrieve_related_knowledge.md
+    description: Retrieves related knowledge for a given query and filename.
+---
 # rag
-- [add_file](add_file.md) - Adds a file to the CodeBolt File System.
-- [init](init.md) - Initializes the CodeBolt File System Module.
-- [retrieve_related_knowledge](retrieve_related_knowledge.md) - Retrieves related knowledge for a given query and filename.
+<CBAPICategory />
