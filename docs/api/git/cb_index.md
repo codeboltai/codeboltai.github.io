@@ -1,37 +1,37 @@
 ---
 cbapicategory:
   - name: add
-    link: add.md
+    link: add
     description: Adds changes in the local repository to the staging area at the given path.
   - name: branch
-    link: branch.md
+    link: branch
     description: Creates a new branch in the local repository at the given path.
   - name: checkout
-    link: checkout.md
+    link: checkout
     description: Checks out a branch or commit in the local repository at the given path.
   - name: clone
-    link: clone.md
+    link: clone
     description: Clones a Git repository from the given URL to the specified path.
   - name: commit
-    link: commit.md
+    link: commit
     description: Commits the staged changes in the local repository with the given commit message.
   - name: diff
-    link: diff.md
+    link: diff
     description: Retrieves the diff of changes for a specific commit in the local repository.
   - name: init
-    link: init.md
+    link: init
     description: Initializes a new Git repository at the given path.
   - name: logs
-    link: logs.md
+    link: logs
     description: Retrieves the commit logs for the local repository at the given path.
   - name: pull
-    link: pull.md
+    link: pull
     description: Pulls the latest changes from the remote repository to the local repository at the given path.
   - name: push
-    link: push.md
+    link: push
     description: Pushes local repository changes to the remote repository at the given path.
   - name: status
-    link: status.md
+    link: status
     description: Retrieves the status of the local repository at the given path.
 ---
 # git

@@ -1,7 +1,7 @@
 ---
 cbapicategory:
   - name: addToken
-    link: addToken.md
+    link: addToken
     description: Adds a token asynchronously.
 ---
 # tokenizer

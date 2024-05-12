@@ -1,22 +1,22 @@
 ---
 cbapicategory:
   - name: eventEmitter
-    link: eventEmitter.md
+    link: eventEmitter
     description:  
   - name: stopProcess
-    link: stopProcess.md
+    link: stopProcess
     description:  
   - name: getChatHistory
-    link: getChatHistory.md
+    link: getChatHistory
     description:  
   - name: processStarted
-    link: processStarted.md
+    link: processStarted
     description:  
   - name: sendMessage
-    link: sendMessage.md
+    link: sendMessage
     description:  
   - name: waitforReply
-    link: waitforReply.md
+    link: waitforReply
     description:  
 ---
 # chat

@@ -1,52 +1,52 @@
 ---
 cbapicategory:
   - name: click
-    link: click.md
+    link: click
     description: Clicks on a specified element on the page.
   - name: close
-    link: close.md
+    link: close
     description: Closes the current page.
   - name: enter
-    link: enter.md
+    link: enter
     description: Simulates the Enter key press on the current page.
   - name: extractText
-    link: extractText.md
+    link: extractText
     description: Extracts text from the current page.
   - name: getContent
-    link: getContent.md
+    link: getContent
     description: Retrieves the content of the current page.
   - name: getHTML
-    link: getHTML.md
+    link: getHTML
     description: Retrieves the HTML content of the current page.
   - name: getMarkdown
-    link: getMarkdown.md
+    link: getMarkdown
     description: Retrieves the Markdown content of the current page.
   - name: getPDF
-    link: getPDF.md
+    link: getPDF
     description: Retrieves the PDF content of the current page.
   - name: getUrl
-    link: getUrl.md
+    link: getUrl
     description: Retrieves the current URL of the browser's active page.
   - name: goToPage
-    link: goToPage.md
+    link: goToPage
     description: Navigates to a specified URL.
   - name: newPage
-    link: newPage.md
+    link: newPage
     description: Opens a new page in the browser.
   - name: pdfToText
-    link: pdfToText.md
+    link: pdfToText
     description: Converts the PDF content of the current page to text.
   - name: screenshot
-    link: screenshot.md
+    link: screenshot
     description: Takes a screenshot of the current page.
   - name: scroll
-    link: scroll.md
+    link: scroll
     description: Scrolls the current page in a specified direction by a specified number of pixels.
   - name: search
-    link: search.md
+    link: search
     description: Performs a search on the current page using a specified query.
   - name: type
-    link: type.md
+    link: type
     description: Types text into a specified element on the page.
 ---
 # browser

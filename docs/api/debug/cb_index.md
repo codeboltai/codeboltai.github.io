@@ -1,10 +1,10 @@
 ---
 cbapicategory:
   - name: debug
-    link: debug.md
+    link: debug
     description:  
   - name: openDebugBrowser
-    link: openDebugBrowser.md
+    link: openDebugBrowser
     description:  
 ---
 # debug

@@ -1,25 +1,25 @@
 ---
 cbapicategory:
   - name: createFile
-    link: createFile.md
+    link: createFile
     description:  
   - name: createFolder
-    link: createFolder.md
+    link: createFolder
     description:  
   - name: deleteFile
-    link: deleteFile.md
+    link: deleteFile
     description:  
   - name: deleteFolder
-    link: deleteFolder.md
+    link: deleteFolder
     description:  
   - name: listFile
-    link: listFile.md
+    link: listFile
     description:  
   - name: readFile
-    link: readFile.md
+    link: readFile
     description:  
   - name: updateFile
-    link: updateFile.md
+    link: updateFile
     description:  
 ---
 # fs

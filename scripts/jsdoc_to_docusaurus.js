@@ -25,7 +25,7 @@ function createFrontMatter(frontMatter) {
 function createCategoryFile(categoryPath, categoryName) {
   if (!fs.existsSync(categoryPath)) {
     fs.writeFileSync(categoryPath, JSON.stringify({
-      "label": categoryName,
+      "label": categoryName.charAt(0).toUpperCase() + categoryName.slice(1),
       "position": 2.5,
       "collapsible": true,
       "collapsed": true,
@@ -66,7 +66,7 @@ function writeClassIndex(categoryName, indexFilePath, classAllFrontMatters) {
   let classIndexContent = '---\ncbapicategory:\n';
   
   classAllFrontMatters.forEach(frontMatter => {
-    classIndexContent += `  - name: ${frontMatter.data.name}\n    link: ${frontMatter.data.link}\n    description: ${frontMatter.cbbaseinfo.description}\n`;
+    classIndexContent += `  - name: ${frontMatter.data.name}\n    link: ${frontMatter.data.name}\n    description: ${frontMatter.cbbaseinfo.description}\n`;
   });
   classIndexContent += `---\n# ${categoryName}\n<CBAPICategory />\n`;
   fs.writeFileSync(indexFilePath, classIndexContent);

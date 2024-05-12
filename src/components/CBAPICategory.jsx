@@ -11,9 +11,7 @@ const CBAPICategory = () => {
   return (
     <div>
       {Object.entries(frontMatter).map(([key, value]) => {
-        console.log(key)
-        if (key === "cbapicategory") {
-          console.log(value);
+        if (key === "cbapicategory" && value) {
           return (
             <ul>
               {value.map((item, index) => (
@@ -24,7 +22,6 @@ const CBAPICategory = () => {
             </ul>
           );
         }
-        
         return null;
       })}
     </div>

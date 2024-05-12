@@ -1,7 +1,7 @@
 ---
 cbapicategory:
   - name: getApplicationState
-    link: getApplicationState.md
+    link: getApplicationState
     description:  
 ---
 # cbstate
