@@ -6,12 +6,14 @@ import React from 'react';
 import {MDXProvider} from '@mdx-js/react';
 import CBBaseInfo from './CBBaseInfo';
 import CBParameters from './CBParameters';
+import CBAPICategory from './CBAPICategory';
 import FrontMatterContext from './FrontMatterContext';
 
 
 const components = {
   CBBaseInfo: props => <CBBaseInfo {...props} />,
-  CBParameters: props => <CBParameters {...props} />
+  CBParameters: props => <CBParameters {...props} />,
+  CBAPICategory: props => <CBAPICategory {...props} />
 };
 
 const CBProvider = ({children, frontMatter}) => (

@@ -1,4 +1,5 @@
-# browser
+# Browser
+
 - [click](click.md) - Clicks on a specified element on the page.
 - [close](close.md) - Closes the current page.
 - [enter](enter.md) - Simulates the Enter key press on the current page.

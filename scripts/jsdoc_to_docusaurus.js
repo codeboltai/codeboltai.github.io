@@ -71,10 +71,26 @@ function writeClassIndex(categoryName, indexFilePath, classAllFrontMatters) {
   fs.writeFileSync(indexFilePath, classIndexContent);
 }
 
+// function writeAPIIndex(){
+
+// }
+
+// let allClasses = [];
+// let classDetails = {
+//   "name": " ",
+//   "description": " ",
+//   "link": " "
+// };
 
 
 if (codeboltChild && codeboltChild.children) {
   codeboltChild.children.forEach(CbProperties => {
+
+    // classDetails.name = CbProperties.name;
+    // classDetails.description = CbProperties.comment && CbProperties.comment.summary && CbProperties.comment.summary.length > 0 ? CbProperties.comment.summary[0].text : ' ';
+    // classDetails.link = `${CbProperties.name}`;
+
+
     const dir = `../docs/api/${CbProperties.name}`;
 
     let classAllFrontMatters = [];
