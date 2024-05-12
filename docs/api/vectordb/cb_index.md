@@ -9,6 +9,7 @@ cbapicategory:
   - name: queryVectorItem
     link: queryVectorItem
     description: Queries a vector item from the vector database based on the provided key.
+
 ---
 # vectordb
 <CBAPICategory />

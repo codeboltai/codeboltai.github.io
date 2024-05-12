@@ -9,6 +9,7 @@ cbapicategory:
   - name: getFunctionsinClass
     link: getFunctionsinClass
     description: Retrieves the functions in a given class within a file.
+
 ---
 # codeparsers
 <CBAPICategory />

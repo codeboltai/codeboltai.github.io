@@ -9,6 +9,7 @@ cbapicategory:
   - name: updateTask
     link: updateTask
     description: Updates an existing task using a WebSocket message.
+
 ---
 # taskplaner
 <CBAPICategory />

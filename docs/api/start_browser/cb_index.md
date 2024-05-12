@@ -1,5 +1,6 @@
 ---
-cbapicategory:
+cbapicategory: []
+
 ---
 # start_browser
 <CBAPICategory />

@@ -63,11 +63,12 @@ function writeToFile(filePath, frontMatterVars){
 }
 
 function writeClassIndex(categoryName, indexFilePath, classAllFrontMatters) {
-  let classIndexContent = '---\ncbapicategory:\n';
-  
-  classAllFrontMatters.forEach(frontMatter => {
-    classIndexContent += `  - name: ${frontMatter.data.name}\n    link: ${frontMatter.data.name}\n    description: ${frontMatter.cbbaseinfo.description}\n`;
-  });
+  let classIndexContent = '---\n';
+  classIndexContent += `${yaml.dump({ cbapicategory: classAllFrontMatters.map(frontMatter => ({
+    name: frontMatter.data.name,
+    link: frontMatter.data.name,
+    description: frontMatter.cbbaseinfo.description
+  }))})}\n`;
   classIndexContent += `---\n# ${categoryName}\n<CBAPICategory />\n`;
   fs.writeFileSync(indexFilePath, classIndexContent);
 }

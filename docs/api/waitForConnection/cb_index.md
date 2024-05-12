@@ -1,5 +1,6 @@
 ---
-cbapicategory:
+cbapicategory: []
+
 ---
 # waitForConnection
 <CBAPICategory />

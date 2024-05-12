@@ -2,22 +2,23 @@
 cbapicategory:
   - name: eventEmitter
     link: eventEmitter
-    description:  
+    description: ' '
   - name: stopProcess
     link: stopProcess
-    description:  
+    description: ' '
   - name: getChatHistory
     link: getChatHistory
-    description:  
+    description: ' '
   - name: processStarted
     link: processStarted
-    description:  
+    description: ' '
   - name: sendMessage
     link: sendMessage
-    description:  
+    description: ' '
   - name: waitforReply
     link: waitforReply
-    description:  
+    description: ' '
+
 ---
 # chat
 <CBAPICategory />

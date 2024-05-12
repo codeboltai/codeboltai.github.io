@@ -9,6 +9,7 @@ cbapicategory:
   - name: search
     link: search
     description: Performs a search operation for the given query.
+
 ---
 # search
 <CBAPICategory />

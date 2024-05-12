@@ -6,6 +6,7 @@ cbapicategory:
   - name: getKnowledge
     link: getKnowledge
     description: Retrieves a value from the in-memory database by key.
+
 ---
 # dbmemory
 <CBAPICategory />

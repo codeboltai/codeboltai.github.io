@@ -41,13 +41,16 @@ cbapicategory:
     description: Takes a screenshot of the current page.
   - name: scroll
     link: scroll
-    description: Scrolls the current page in a specified direction by a specified number of pixels.
+    description: >-
+      Scrolls the current page in a specified direction by a specified number of
+      pixels.
   - name: search
     link: search
     description: Performs a search on the current page using a specified query.
   - name: type
     link: type
     description: Types text into a specified element on the page.
+
 ---
 # browser
 <CBAPICategory />

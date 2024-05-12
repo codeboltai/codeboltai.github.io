@@ -24,6 +24,7 @@ cbapicategory:
   - name: type
     link: type
     description: Types the provided text into an element with the specified ID.
+
 ---
 # crawler
 <CBAPICategory />

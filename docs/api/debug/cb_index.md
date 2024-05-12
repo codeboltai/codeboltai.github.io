@@ -2,10 +2,11 @@
 cbapicategory:
   - name: debug
     link: debug
-    description:  
+    description: ' '
   - name: openDebugBrowser
     link: openDebugBrowser
-    description:  
+    description: ' '
+
 ---
 # debug
 <CBAPICategory />

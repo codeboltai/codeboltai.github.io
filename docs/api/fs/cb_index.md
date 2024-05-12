@@ -2,25 +2,26 @@
 cbapicategory:
   - name: createFile
     link: createFile
-    description:  
+    description: ' '
   - name: createFolder
     link: createFolder
-    description:  
+    description: ' '
   - name: deleteFile
     link: deleteFile
-    description:  
+    description: ' '
   - name: deleteFolder
     link: deleteFolder
-    description:  
+    description: ' '
   - name: listFile
     link: listFile
-    description:  
+    description: ' '
   - name: readFile
     link: readFile
-    description:  
+    description: ' '
   - name: updateFile
     link: updateFile
-    description:  
+    description: ' '
+
 ---
 # fs
 <CBAPICategory />

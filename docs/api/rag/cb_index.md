@@ -9,6 +9,7 @@ cbapicategory:
   - name: retrieve_related_knowledge
     link: retrieve_related_knowledge
     description: Retrieves related knowledge for a given query and filename.
+
 ---
 # rag
 <CBAPICategory />

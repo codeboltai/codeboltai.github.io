@@ -2,7 +2,8 @@
 cbapicategory:
   - name: getApplicationState
     link: getApplicationState
-    description:  
+    description: ' '
+
 ---
 # cbstate
 <CBAPICategory />
