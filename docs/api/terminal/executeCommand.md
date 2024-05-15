@@ -1,7 +1,13 @@
 ---
 name: executeCommand
 cbbaseinfo:
-  description: "Executes a given command and returns the result.\r\nListens for messages from the WebSocket that indicate the output, error, or finish state\r\nof the executed command and resolves the promise accordingly."
+  description: >-
+    Executes a given command and returns the result.
+
+    Listens for messages from the WebSocket that indicate the output, error, or
+    finish state
+
+    of the executed command and resolves the promise accordingly.
 cbparameters:
   parameters:
     - name: command

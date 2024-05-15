@@ -5,7 +5,19 @@ cbapicategory:
     description: ' '
   - name: getCodeTree
     link: getCodeTree
-    description: Asynchronously generates a code tree from the provided source code.
+    description: ' '
+  - name: getJsTree
+    link: getJsTree
+    description: ' '
+  - name: getMatcherList
+    link: getMatcherList
+    description: ' '
+  - name: matchDetail
+    link: matchDetail
+    description: ' '
+  - name: performMatch
+    link: performMatch
+    description: ' '
 
 ---
 # codeutils

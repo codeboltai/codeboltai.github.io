@@ -1,7 +1,9 @@
 ---
 name: getProjectSettings
 cbbaseinfo:
-  description: "Placeholder for a method to get project settings.\r\nCurrently, this method does not perform any operations."
+  description: |-
+    Placeholder for a method to get project settings.
+    Currently, this method does not perform any operations.
 cbparameters:
   parameters:
     - name: output

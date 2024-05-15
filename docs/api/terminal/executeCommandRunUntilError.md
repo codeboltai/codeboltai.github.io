@@ -1,7 +1,11 @@
 ---
 name: executeCommandRunUntilError
 cbbaseinfo:
-  description: "Executes a given command and keeps running until an error occurs.\r\nListens for messages from the WebSocket and resolves the promise when an error is encountered."
+  description: >-
+    Executes a given command and keeps running until an error occurs.
+
+    Listens for messages from the WebSocket and resolves the promise when an
+    error is encountered.
 cbparameters:
   parameters:
     - name: command

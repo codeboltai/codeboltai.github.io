@@ -1,7 +1,9 @@
 ---
 name: init
 cbbaseinfo:
-  description: "Initializes the output parser module.\r\nCurrently, this function does not perform any operations."
+  description: |-
+    Initializes the output parser module.
+    Currently, this function does not perform any operations.
 cbparameters:
   parameters:
     - name: output

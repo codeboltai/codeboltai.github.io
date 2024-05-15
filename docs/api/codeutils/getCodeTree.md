@@ -1,12 +1,12 @@
 ---
 name: getCodeTree
 cbbaseinfo:
-  description: Asynchronously generates a code tree from the provided source code.
+  description: ' '
 cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the code tree.
+    description: ' '
 ---
 <CBBaseInfo/> 
  <CBParameters/>
