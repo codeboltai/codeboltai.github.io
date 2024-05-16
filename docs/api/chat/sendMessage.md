@@ -1,12 +1,16 @@
 ---
 name: sendMessage
 cbbaseinfo:
-  description: ' '
+  description: Sends a message through the WebSocket connection.
 cbparameters:
-  parameters: []
+  parameters:
+    - name: message
+      typeName: string
+      description: The message to be sent.
   returns:
-    signatureTypeName: ' '
+    signatureTypeName: void
     description: ' '
+    typeArgs: []
 ---
 <CBBaseInfo/> 
  <CBParameters/>

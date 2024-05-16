@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when navigation is complete.
+    typeArgs:
+      - type: reference
+        name: GoToPageResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

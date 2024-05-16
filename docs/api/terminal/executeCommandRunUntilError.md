@@ -14,6 +14,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when an error occurs during command execution.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

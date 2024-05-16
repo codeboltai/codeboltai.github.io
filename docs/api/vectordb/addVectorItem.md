@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when the item is successfully added.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

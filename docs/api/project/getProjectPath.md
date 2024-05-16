@@ -7,6 +7,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the project path response.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

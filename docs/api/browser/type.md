@@ -13,6 +13,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when the typing action is complete.
+    typeArgs:
+      - type: intrinsic
+        name: unknown
 ---
 <CBBaseInfo/> 
  <CBParameters/>

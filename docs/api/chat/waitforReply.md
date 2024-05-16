@@ -1,12 +1,18 @@
 ---
 name: waitforReply
 cbbaseinfo:
-  description: ' '
+  description: Waits for a reply to a sent message.
 cbparameters:
-  parameters: []
+  parameters:
+    - name: message
+      typeName: string
+      description: The message for which a reply is expected.
   returns:
-    signatureTypeName: ' '
-    description: ' '
+    signatureTypeName: Promise
+    description: A promise that resolves with the reply.
+    typeArgs:
+      - type: intrinsic
+        name: string
 ---
 <CBBaseInfo/> 
  <CBParameters/>

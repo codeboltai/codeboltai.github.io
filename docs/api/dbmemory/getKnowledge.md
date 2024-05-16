@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the memory get event.
+    typeArgs:
+      - type: reference
+        name: MemoryGetResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

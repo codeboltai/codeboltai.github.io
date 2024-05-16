@@ -13,6 +13,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the memory set event.
+    typeArgs:
+      - type: reference
+        name: MemorySetResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

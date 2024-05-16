@@ -7,6 +7,7 @@ cbparameters:
   returns:
     signatureTypeName: ' '
     description: ' '
+    typeArgs: []
 ---
 <CBBaseInfo/> 
  <CBParameters/>

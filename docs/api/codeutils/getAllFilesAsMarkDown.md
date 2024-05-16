@@ -1,12 +1,15 @@
 ---
 name: getAllFilesAsMarkDown
 cbbaseinfo:
-  description: ' '
+  description: Retrieves all files as Markdown.
 cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise
-    description: ' '
+    description: A promise that resolves with the Markdown content of all files.
+    typeArgs:
+      - type: intrinsic
+        name: string
 ---
 <CBBaseInfo/> 
  <CBParameters/>

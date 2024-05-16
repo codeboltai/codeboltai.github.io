@@ -7,6 +7,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: ' '
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

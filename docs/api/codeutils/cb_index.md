@@ -2,22 +2,21 @@
 cbapicategory:
   - name: getAllFilesAsMarkDown
     link: getAllFilesAsMarkDown
-    description: ' '
-  - name: getCodeTree
-    link: getCodeTree
-    description: ' '
+    description: Retrieves all files as Markdown.
   - name: getJsTree
     link: getJsTree
-    description: ' '
+    description: Retrieves a JavaScript tree structure for a given file path.
   - name: getMatcherList
     link: getMatcherList
-    description: ' '
+    description: Retrieves the list of matchers.
   - name: matchDetail
     link: matchDetail
-    description: ' '
+    description: Retrieves details of a match.
   - name: performMatch
     link: performMatch
-    description: ' '
+    description: >-
+      Performs a matching operation based on the provided matcher definition and
+      problem patterns.
 
 ---
 # codeutils

@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when the click action is complete.
+    typeArgs:
+      - type: intrinsic
+        name: unknown
 ---
 <CBBaseInfo/> 
  <CBParameters/>

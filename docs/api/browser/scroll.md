@@ -15,6 +15,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when the scroll action is complete.
+    typeArgs:
+      - type: intrinsic
+        name: unknown
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -7,6 +7,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the URL.
+    typeArgs:
+      - type: reference
+        name: UrlResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

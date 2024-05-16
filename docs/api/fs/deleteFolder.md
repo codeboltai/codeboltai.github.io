@@ -13,6 +13,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the server response.
+    typeArgs:
+      - type: reference
+        name: DeleteFolderResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

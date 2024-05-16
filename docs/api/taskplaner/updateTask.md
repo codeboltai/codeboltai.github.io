@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the update task event.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

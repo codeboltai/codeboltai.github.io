@@ -18,6 +18,9 @@ cbparameters:
     description: >-
       A promise that resolves with the command's output, error, or finish
       signal.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

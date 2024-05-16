@@ -124,9 +124,15 @@ if (codeboltChild && codeboltChild.children) {
             "parameters": [],
             "returns": {
               "signatureTypeName": " ",
-              "description": " "
+              "description": " ",
+              "typeArgs": []
             }
           }
+        }
+
+        let returnArgObj = {
+          "type": " ",
+          "name": " "
         }
     
         let parameterObj = {
@@ -148,8 +154,10 @@ if (codeboltChild && codeboltChild.children) {
           });
         }
 
+        // Function Signature of Input and Output
         if (CbFunctions.type && CbFunctions.type.declaration && CbFunctions.type.declaration.signatures) {
           CbFunctions.type.declaration.signatures.forEach(signature => {
+            // Input Parameters
             if (signature.parameters) {
               signature.parameters.forEach(param => {
                 parameterObj = {
@@ -160,10 +168,31 @@ if (codeboltChild && codeboltChild.children) {
                 frontMatterVars.cbparameters.parameters.push(parameterObj);
               });
             }
-            frontMatterVars.cbparameters.returns.signatureTypeName = signature.type.name;
+
+            //Output Parameters
+            if (signature.type) {
+              frontMatterVars.cbparameters.returns.signatureTypeName = signature.type.name;
+              if (signature.type.typeArguments) {
+                signature.type.typeArguments.forEach(typeArg => {
+                  if(typeArg.elementType){
+                    returnArgObj = {
+                      "type": typeArg.type,
+                      "name": typeArg.elementType.name
+                    }
+                  } else if(typeArg.name){
+                    returnArgObj = {
+                      "type": typeArg.type,
+                      "name": typeArg.name
+                    }
+                  }
+                  frontMatterVars.cbparameters.returns.typeArgs.push(returnArgObj);
+                });
+              }
+            }
           });
         }
 
+        
         frontMatterVars.data.link = `${frontMatterVars.data.name}.md`;
         const fileurl = `${dir}/${frontMatterVars.data.name}.md`;
         writeToFile(fileurl, frontMatterVars)

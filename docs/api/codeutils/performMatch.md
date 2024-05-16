@@ -1,19 +1,24 @@
 ---
 name: performMatch
 cbbaseinfo:
-  description: ' '
+  description: >-
+    Performs a matching operation based on the provided matcher definition and
+    problem patterns.
 cbparameters:
   parameters:
     - name: matcherDefinition
       typeName: object
-      description: ''
+      description: The definition of the matcher.
     - name: problemPatterns
-      description: ''
+      description: The patterns to match against.
     - name: problems
-      description: ''
+      description: The list of problems.
   returns:
     signatureTypeName: Promise
-    description: ' '
+    description: A promise that resolves with the matching problem response.
+    typeArgs:
+      - type: reference
+        name: MatchProblemResponse
 ---
 <CBBaseInfo/> 
  <CBParameters/>

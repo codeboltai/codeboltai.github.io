@@ -1,12 +1,17 @@
 ---
 name: getChatHistory
 cbbaseinfo:
-  description: ' '
+  description: Retrieves the chat history from the server.
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: ' '
-    description: ' '
+    signatureTypeName: Promise
+    description: >-
+      A promise that resolves with an array of ChatMessage objects representing
+      the chat history.
+    typeArgs:
+      - type: array
+        name: ChatMessage
 ---
 <CBBaseInfo/> 
  <CBParameters/>

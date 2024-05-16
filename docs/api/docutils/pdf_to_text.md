@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the converted text.
+    typeArgs:
+      - type: intrinsic
+        name: string
 ---
 <CBBaseInfo/> 
  <CBParameters/>

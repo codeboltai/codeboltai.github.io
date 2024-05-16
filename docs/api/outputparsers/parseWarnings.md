@@ -9,6 +9,7 @@ cbparameters:
       description: The output to parse for warning messages.
   returns:
     description: An array of warning messages.
+    typeArgs: []
 ---
 <CBBaseInfo/> 
  <CBParameters/>

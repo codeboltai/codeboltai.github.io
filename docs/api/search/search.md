@@ -10,6 +10,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the search results.
+    typeArgs:
+      - type: intrinsic
+        name: string
 ---
 <CBBaseInfo/> 
  <CBParameters/>

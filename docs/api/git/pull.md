@@ -12,6 +12,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the pull event.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>

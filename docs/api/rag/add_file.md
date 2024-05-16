@@ -13,6 +13,7 @@ cbparameters:
   returns:
     signatureTypeName: void
     description: ' '
+    typeArgs: []
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -7,6 +7,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the HTML content.
+    typeArgs:
+      - type: reference
+        name: HtmlReceived
 ---
 <CBBaseInfo/> 
  <CBParameters/>

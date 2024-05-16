@@ -15,6 +15,9 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the LLM's response.
+    typeArgs:
+      - type: intrinsic
+        name: any
 ---
 <CBBaseInfo/> 
  <CBParameters/>
