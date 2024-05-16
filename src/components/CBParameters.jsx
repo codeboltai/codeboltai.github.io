@@ -68,12 +68,14 @@ const CBParameters = () => {
               {hasReturns && (
                 <div>
                   <h3>Returns:</h3>
-                  <div className="description">
+                  <pre>
+                    <code>
                     {" "}
                     {`${value.returns.signatureTypeName}<${
                       value.returns.typeArgs[0].name || ""
                     }${formatReturnType(value.returns)}>`}
-                  </div>
+                    </code>
+                  </pre>
 
                   {value.returns.description}
                 </div>

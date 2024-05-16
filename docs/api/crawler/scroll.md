@@ -11,6 +11,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: scroll
+  category: crawler
+  link: scroll.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

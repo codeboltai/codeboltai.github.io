@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: screenshot
+  category: browser
+  link: screenshot.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

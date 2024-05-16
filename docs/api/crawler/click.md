@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: unknown
+data:
+  name: click
+  category: crawler
+  link: click.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

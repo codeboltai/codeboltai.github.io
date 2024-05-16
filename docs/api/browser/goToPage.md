@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: GoToPageResponse
+data:
+  name: goToPage
+  category: browser
+  link: goToPage.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

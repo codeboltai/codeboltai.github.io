@@ -10,6 +10,10 @@ cbparameters:
   returns:
     description: An array of warning messages.
     typeArgs: []
+data:
+  name: parseWarnings
+  category: outputparsers
+  link: parseWarnings.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

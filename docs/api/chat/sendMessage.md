@@ -11,6 +11,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: sendMessage
+  category: chat
+  link: sendMessage.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

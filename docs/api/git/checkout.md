@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: checkout
+  category: git
+  link: checkout.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: ReadFileResponse
+data:
+  name: readFile
+  category: fs
+  link: readFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

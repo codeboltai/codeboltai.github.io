@@ -17,6 +17,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: executeCommandRunUntilError
+  category: terminal
+  link: executeCommandRunUntilError.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

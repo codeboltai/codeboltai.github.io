@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: unknown
+data:
+  name: search
+  category: browser
+  link: search.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

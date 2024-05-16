@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: unknown
+data:
+  name: enter
+  category: browser
+  link: enter.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

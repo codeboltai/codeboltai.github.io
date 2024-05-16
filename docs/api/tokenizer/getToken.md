@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: getToken
+  category: tokenizer
+  link: getToken.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: addVectorItem
+  category: vectordb
+  link: addVectorItem.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

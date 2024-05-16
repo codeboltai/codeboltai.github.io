@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: diff
+  category: git
+  link: diff.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

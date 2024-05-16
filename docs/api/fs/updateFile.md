@@ -19,6 +19,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: UpdateFileResponse
+data:
+  name: updateFile
+  category: fs
+  link: updateFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -7,6 +7,10 @@ cbparameters:
   returns:
     description: ' '
     typeArgs: []
+data:
+  name: userMessageListener
+  category: chat
+  link: userMessageListener.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: extractText
+  category: browser
+  link: extractText.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -19,6 +19,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: CreateFileResponse
+data:
+  name: createFile
+  category: fs
+  link: createFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

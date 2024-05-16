@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getContent
+  category: browser
+  link: getContent.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: push
+  category: git
+  link: push.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

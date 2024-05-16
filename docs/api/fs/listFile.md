@@ -11,6 +11,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: listFile
+  category: fs
+  link: listFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

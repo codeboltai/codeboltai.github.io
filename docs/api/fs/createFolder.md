@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: CreateFolderResponse
+data:
+  name: createFolder
+  category: fs
+  link: createFolder.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

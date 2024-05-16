@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: HtmlReceived
+data:
+  name: getHTML
+  category: browser
+  link: getHTML.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

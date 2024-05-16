@@ -13,6 +13,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getProjectSettings
+  category: project
+  link: getProjectSettings.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

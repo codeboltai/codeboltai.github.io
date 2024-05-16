@@ -13,6 +13,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: init
+  category: outputparsers
+  link: init.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

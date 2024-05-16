@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: pdfToText
+  category: browser
+  link: pdfToText.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -14,6 +14,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getAstTreeInFile
+  category: codeparsers
+  link: getAstTreeInFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

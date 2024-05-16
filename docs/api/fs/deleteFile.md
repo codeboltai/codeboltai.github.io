@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: DeleteFileResponse
+data:
+  name: deleteFile
+  category: fs
+  link: deleteFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

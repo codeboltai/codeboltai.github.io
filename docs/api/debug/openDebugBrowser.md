@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: ' '
     description: ' '
     typeArgs: []
+data:
+  name: openDebugBrowser
+  category: debug
+  link: openDebugBrowser.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

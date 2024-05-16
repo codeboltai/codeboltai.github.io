@@ -12,6 +12,10 @@ cbparameters:
     typeArgs:
       - type: array
         name: ChatMessage
+data:
+  name: getChatHistory
+  category: chat
+  link: getChatHistory.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

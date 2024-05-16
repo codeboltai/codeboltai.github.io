@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: ' '
     description: ' '
     typeArgs: []
+data:
+  name: executeCommandWithStream
+  category: terminal
+  link: executeCommandWithStream.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: string
+data:
+  name: getAllFilesAsMarkDown
+  category: codeutils
+  link: getAllFilesAsMarkDown.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

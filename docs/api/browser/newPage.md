@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: newPage
+  category: browser
+  link: newPage.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

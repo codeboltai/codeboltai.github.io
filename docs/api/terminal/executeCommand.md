@@ -21,6 +21,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: executeCommand
+  category: terminal
+  link: executeCommand.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

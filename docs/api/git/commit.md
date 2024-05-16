@@ -15,6 +15,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: commit
+  category: git
+  link: commit.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

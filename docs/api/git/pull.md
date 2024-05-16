@@ -15,6 +15,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: pull
+  category: git
+  link: pull.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: getApplicationState
+  category: cbstate
+  link: getApplicationState.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: updateTask
+  category: taskplaner
+  link: updateTask.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

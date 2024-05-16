@@ -18,6 +18,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: inference
+  category: llm
+  link: inference.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

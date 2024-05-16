@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: ' '
     description: ' '
     typeArgs: []
+data:
+  name: sendManualInterrupt
+  category: terminal
+  link: sendManualInterrupt.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

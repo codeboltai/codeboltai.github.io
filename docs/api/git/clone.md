@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: clone
+  category: git
+  link: clone.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

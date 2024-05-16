@@ -48,15 +48,15 @@ function writeToFile(filePath, frontMatterVars){
     const frontMatterMatch = originalfileContent.match(/^---\n([\s\S]*?)\n---/);
     if (frontMatterMatch) {
       const frontMatterContent = frontMatterMatch[1];
-      let newYamlContent = updateFrontmatter(frontMatterContent, { "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters });
+      let newYamlContent = updateFrontmatter(frontMatterContent, { "data": frontMatterVars.data, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters });
       newFileContent = originalfileContent.replace(frontMatterMatch[0], `---\n${newYamlContent}---`);
     } else {
-      const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+      const frontMatter = createFrontMatter({ "data": frontMatterVars.data, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
       newFileContent = frontMatter + originalfileContent;
     }
     fs.writeFileSync(filePath, newFileContent);
   } else {
-    const frontMatter = createFrontMatter({ name: frontMatterVars.data.name, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
+    const frontMatter = createFrontMatter({ "data": frontMatterVars.data, "cbbaseinfo": frontMatterVars.cbbaseinfo, "cbparameters": frontMatterVars.cbparameters  });
     newFileContent = frontMatter + "<CBBaseInfo/> \n <CBParameters/>";
     fs.writeFileSync(filePath, newFileContent);
   }

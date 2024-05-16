@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: string
+data:
+  name: pdf_to_text
+  category: docutils
+  link: pdf_to_text.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

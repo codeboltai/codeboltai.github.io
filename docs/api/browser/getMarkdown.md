@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: GetMarkdownResponse
+data:
+  name: getMarkdown
+  category: browser
+  link: getMarkdown.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

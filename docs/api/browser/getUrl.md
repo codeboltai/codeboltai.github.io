@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: UrlResponse
+data:
+  name: getUrl
+  category: browser
+  link: getUrl.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

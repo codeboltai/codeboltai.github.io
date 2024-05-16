@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: getProjectPath
+  category: project
+  link: getProjectPath.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

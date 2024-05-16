@@ -18,6 +18,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: unknown
+data:
+  name: scroll
+  category: browser
+  link: scroll.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

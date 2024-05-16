@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: getMatchDetail
+data:
+  name: matchDetail
+  category: codeutils
+  link: matchDetail.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

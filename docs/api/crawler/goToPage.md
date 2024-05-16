@@ -11,6 +11,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: goToPage
+  category: crawler
+  link: goToPage.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

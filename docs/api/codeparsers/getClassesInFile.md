@@ -11,6 +11,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getClassesInFile
+  category: codeparsers
+  link: getClassesInFile.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

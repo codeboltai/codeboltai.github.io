@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: string
+data:
+  name: search
+  category: search
+  link: search.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

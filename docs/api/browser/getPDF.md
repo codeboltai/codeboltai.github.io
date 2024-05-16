@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getPDF
+  category: browser
+  link: getPDF.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

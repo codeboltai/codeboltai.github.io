@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: add
+  category: git
+  link: add.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

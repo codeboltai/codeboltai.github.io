@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: MemoryGetResponse
+data:
+  name: getKnowledge
+  category: dbmemory
+  link: getKnowledge.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

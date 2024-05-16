@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: void
+data:
+  name: addToAgentState
+  category: cbstate
+  link: addToAgentState.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

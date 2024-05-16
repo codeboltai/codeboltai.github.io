@@ -14,6 +14,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: getFunctionsinClass
+  category: codeparsers
+  link: getFunctionsinClass.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

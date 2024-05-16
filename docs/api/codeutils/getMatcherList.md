@@ -10,6 +10,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: GetMatcherListTreeResponse
+data:
+  name: getMatcherList
+  category: codeutils
+  link: getMatcherList.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

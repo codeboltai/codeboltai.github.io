@@ -16,6 +16,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: MemorySetResponse
+data:
+  name: addKnowledge
+  category: dbmemory
+  link: addKnowledge.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

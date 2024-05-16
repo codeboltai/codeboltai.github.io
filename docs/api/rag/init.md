@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: init
+  category: rag
+  link: init.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

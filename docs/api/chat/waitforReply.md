@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: string
+data:
+  name: waitforReply
+  category: chat
+  link: waitforReply.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

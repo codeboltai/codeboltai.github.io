@@ -8,6 +8,14 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: close
+  category: browser
+  link: close.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+
+
+ 

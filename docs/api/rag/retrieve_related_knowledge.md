@@ -14,6 +14,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: retrieve_related_knowledge
+  category: rag
+  link: retrieve_related_knowledge.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

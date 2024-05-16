@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: reference
         name: GetJsTreeResponse
+data:
+  name: getJsTree
+  category: codeutils
+  link: getJsTree.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

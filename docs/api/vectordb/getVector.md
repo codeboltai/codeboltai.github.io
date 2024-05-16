@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: any
+data:
+  name: getVector
+  category: vectordb
+  link: getVector.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

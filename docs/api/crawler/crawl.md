@@ -8,6 +8,10 @@ cbparameters:
     signatureTypeName: void
     description: ' '
     typeArgs: []
+data:
+  name: crawl
+  category: crawler
+  link: crawl.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

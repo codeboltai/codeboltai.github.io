@@ -13,6 +13,10 @@ cbparameters:
     typeArgs:
       - type: intrinsic
         name: string
+data:
+  name: get_first_link
+  category: search
+  link: get_first_link.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>
