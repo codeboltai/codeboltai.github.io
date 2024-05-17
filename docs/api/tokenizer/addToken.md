@@ -1,18 +1,18 @@
 ---
 name: addToken
 cbbaseinfo:
-  description: Adds a token asynchronously.
+  description: Adds a token to the system via WebSocket.
 cbparameters:
   parameters:
     - name: key
       typeName: string
-      description: The key of the token to add.
+      description: The key associated with the token to be added.
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the response.
+    description: A promise that resolves with the response from the add token event.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: AddTokenResponse
 data:
   name: addToken
   category: tokenizer

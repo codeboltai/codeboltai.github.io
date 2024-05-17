@@ -1,15 +1,15 @@
 ---
 name: getAgentState
 cbbaseinfo:
-  description: ' '
+  description: Retrieves the current state of the agent from the server via WebSocket.
 cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise
-    description: ' '
+    description: A promise that resolves with the agent's state.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: GetAgentStateResponse
 data:
   name: getAgentState
   category: cbstate

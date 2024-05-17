@@ -19,8 +19,8 @@ cbparameters:
       A promise that resolves with the command's output, error, or finish
       signal.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: ' '
+        name: ' '
 data:
   name: executeCommand
   category: terminal

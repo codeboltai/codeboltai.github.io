@@ -15,8 +15,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves when an error occurs during command execution.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: CommandError
 data:
   name: executeCommandRunUntilError
   category: terminal

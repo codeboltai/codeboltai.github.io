@@ -27,7 +27,7 @@ const CBParameters = () => {
   };
 
   return (
-    <div>
+    <div style={{marginTop: '1rem'}}>
       {Object.entries(frontMatter).map(([key, value]) => {
         if (key === "cbparameters") {
           const hasParameters = value.parameters && value.parameters.length > 0;

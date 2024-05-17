@@ -1,7 +1,9 @@
 ---
 name: stopProcess
 cbbaseinfo:
-  description: ' '
+  description: |-
+    Stops the ongoing process.
+    Sends a specific message to the server to stop the process.
 cbparameters:
   parameters: []
   returns:
