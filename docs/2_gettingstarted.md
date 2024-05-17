@@ -21,6 +21,6 @@ cblibrary:
 
 ## This is the documentation
 
-<CBBaseInfo />
+<!-- <CBBaseInfo /> -->
 
 <!-- <CBParameters /> -->
