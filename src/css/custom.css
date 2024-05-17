@@ -51,6 +51,9 @@
   padding: 20px;
   border-radius: 5px;
 }
+.cbbaseinfo{
+  margin-bottom: 20px;
+}
 [data-theme='dark'] .description{
   color: white;
   background-color: rgb(57, 56, 56);
