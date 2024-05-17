@@ -11,8 +11,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves when the item is successfully added.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: AddVectorItemResponse
 data:
   name: addVectorItem
   category: vectordb

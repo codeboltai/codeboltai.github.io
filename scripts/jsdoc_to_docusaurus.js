@@ -143,11 +143,25 @@ if (codeboltChild && codeboltChild.children) {
 
         frontMatterVars.data.category = CbProperties.name;
         frontMatterVars.data.name = CbFunctions.name;
-        frontMatterVars.cbbaseinfo.description = CbFunctions.comment && CbFunctions.comment.summary && CbFunctions.comment.summary.length > 0 ? CbFunctions.comment.summary[0].text : ' ';
 
 
-        if (CbFunctions.comment && CbFunctions.comment.blockTags) {
-          CbFunctions.comment.blockTags.forEach(blockTag => {
+        let CBFunctionSignature = {
+          "comment": {},
+          "sources": {},
+          "type": {}
+        };
+        
+        if(CbFunctions.kind = 1024){
+          CBFunctionSignature = {"comment": CbFunctions.comment, "sources": CbFunctions.sources, "type": CbFunctions.type};
+        }else if(CbFunctions.kind = 2048){
+          CBFunctionSignature = {"comment": CbFunctions.signatures[0].comment, "sources": CbFunctions.signatures[0].sources, "type": CbFunctions.signatures[0].type};
+        }
+
+        frontMatterVars.cbbaseinfo.description = CBFunctionSignature.comment && CBFunctionSignature.comment.summary && CBFunctionSignature.comment.summary.length > 0 ? CBFunctionSignature.comment.summary[0].text : ' ';
+
+
+        if (CBFunctionSignature.comment && CBFunctionSignature.comment.blockTags) {
+          CBFunctionSignature.comment.blockTags.forEach(blockTag => {
             if (blockTag.tag === "@returns") {
               frontMatterVars.cbparameters.returns.description = blockTag.content && blockTag.content.length > 0 ? blockTag.content[0].text : ' ';
             }
@@ -155,8 +169,8 @@ if (codeboltChild && codeboltChild.children) {
         }
 
         // Function Signature of Input and Output
-        if (CbFunctions.type && CbFunctions.type.declaration && CbFunctions.type.declaration.signatures) {
-          CbFunctions.type.declaration.signatures.forEach(signature => {
+        if (CBFunctionSignature.type && CBFunctionSignature.type.declaration && CBFunctionSignature.type.declaration.signatures) {
+          CBFunctionSignature.type.declaration.signatures.forEach(signature => {
             // Input Parameters
             if (signature.parameters) {
               signature.parameters.forEach(param => {

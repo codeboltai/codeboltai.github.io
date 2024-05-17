@@ -11,8 +11,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves with the retrieved vector.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: GetVectorResponse
 data:
   name: getVector
   category: vectordb

@@ -16,8 +16,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves with the LLM's response.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: LLMResponse
 data:
   name: inference
   category: llm

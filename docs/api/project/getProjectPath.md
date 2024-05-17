@@ -8,8 +8,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves with the project path response.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: GetProjectPathResponse
 data:
   name: getProjectPath
   category: project

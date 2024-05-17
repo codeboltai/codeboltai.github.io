@@ -1,15 +1,15 @@
 ---
 name: getApplicationState
 cbbaseinfo:
-  description: ' '
+  description: Retrieves the current application state from the server via WebSocket.
 cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise
-    description: ' '
+    description: A promise that resolves with the application state.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: ApplicationState
 data:
   name: getApplicationState
   category: cbstate

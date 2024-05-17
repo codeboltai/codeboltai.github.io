@@ -1,11 +1,13 @@
 ---
 name: userMessageListener
 cbbaseinfo:
-  description: ' '
+  description: >-
+    Sets up a listener for incoming WebSocket messages and emits a custom event
+    when a message is received.
 cbparameters:
   parameters: []
   returns:
-    description: ' '
+    description: The event emitter used for emitting custom events.
     typeArgs: []
 data:
   name: userMessageListener
