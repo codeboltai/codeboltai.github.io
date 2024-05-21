@@ -20,3 +20,8 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+ ### Examples
+ ```js
+ var a=1
+ ```
