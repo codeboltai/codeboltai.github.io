@@ -23,3 +23,19 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Examples: 
+```js
+// Add a user ID to the agent's state
+await codebolt.cbstate.addToAgentState("userID", "12345");
+
+// Add a configuration setting to the agent's state
+await codebolt.cbstate.addToAgentState("configSetting", "darkModeEnabled");
+
+```
+
+### Explanation
+The codebolt.cbstate.addToAgentState(key: string, value: string) function is used to set key-value pair to the current agent's state. This function allows you to store state information.
+
+
+

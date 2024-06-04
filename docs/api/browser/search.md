@@ -39,10 +39,4 @@ console.log(searchResults);
 
 ### Explanation: 
 
-The codebolt.browser.search(elementid: string, query: string) function is used to perform a search on the current page using a specified query. This function allows automation scripts to search for specific content or elements within the page, facilitating tasks such as data extraction, validation, or interaction.
-
-
-### Explanation of the code: 
-Performing a Search: The script calls codebolt.browser.search("searchBox", "example query") to perform a search using the search box element with the ID "searchBox" and the query "example query". The function returns a Promise that resolves with the search results.
-
-Processing Search Results: Once the search results are obtained, the script can process them as needed. This may include validating the presence of specific search results, extracting data from the results, or performing further actions based on the search outcome. 
+The codebolt.browser.search(elementid: string, query: string) function is used to perform a search on the current page using a specified query. This function allows automation scripts to search for specific content or elements within the page.

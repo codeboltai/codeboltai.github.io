@@ -25,8 +25,6 @@ data:
  <CBParameters/>
 
 
-
-
 ### Examples: 
 
 ```js
@@ -43,13 +41,4 @@ await codebolt.browser.type("password", "password123");
 
 ### Explanation
 
-
-The codebolt.browser.type(elementid: string, text: string) function is used to simulate typing text into a specified element on the current web page. This function is essential for automating form submissions, text input fields, or any interaction that involves entering textual data.
-
-
-### Explanation of the code
-  
-
-Typing into Input Fields: The script uses codebolt.browser.type(elementid, text) to simulate typing text into specific input fields on the web page. Each call to codebolt.browser.type() specifies the ID of the target element (e.g., input field) and the text to be entered.
-
-Form Filling: In this example, the script fills out a registration form by typing text into input fields for name, email, and password. This simulates user input and allows the automation script to interact with the web page as if a user were manually entering the information.
+The codebolt.browser.type(elementid: string, text: string) function is used to put  text into a specified element on the current web page. the type() have two parameter one is elementid and second is value. we can put the value automatic using this type() function.

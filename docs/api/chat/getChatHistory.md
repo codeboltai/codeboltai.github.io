@@ -19,3 +19,16 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+
+### Examples
+
+```js
+// Retrieve the chat history from the server
+const chatHistory = await codebolt.chat.getChatHistory();
+
+```
+
+### Explanation
+
+This function basically helps us get all the previous messages from our Codebolt chats. 

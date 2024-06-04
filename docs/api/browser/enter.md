@@ -38,8 +38,4 @@ await codebolt.browser.enter();
 
 ### Explanation:
 
-Navigation: The script navigates to the sign-in page of the website.
-
-Entering Data: Using codebolt.browser.type(), the script fills in the username and password fields with the appropriate credentials.
-
-Simulating Enter Key Press: Instead of clicking a submit button, the script uses codebolt.browser.enter() to simulate pressing the Enter key. This action triggers the default submission behavior of the form, submitting the entered username and password for authentication.
+The codebolt.browser.enter() function is used to submit the form. Suppose there is a login form and I want to automatically submit it using a script. Then, we want to send text to a username field on the login page using the type() function, which has two parameters: eventid and "value". After inputting all the information, we call enter() to submit the form.

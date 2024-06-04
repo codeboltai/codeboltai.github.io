@@ -16,7 +16,11 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples: 
+### Status 
+
+Working Progress...
+
+<!-- ### Examples: 
 
 ```js 
 
@@ -36,4 +40,4 @@ The codebolt.browser.screenshot() function is used to capture a screenshot of th
 
 Navigation: The script navigates to the desired web page using codebolt.browser.goToPage("https://example.com").
 
-Screenshot Capture: Once the page has loaded, the script calls codebolt.browser.screenshot() to capture a screenshot of the current page. This function takes a snapshot of the entire visible area of the web page, including all visible elements and content.
+Screenshot Capture: Once the page has loaded, the script calls codebolt.browser.screenshot() to capture a screenshot of the current page. This function takes a snapshot of the entire visible area of the web page, including all visible elements and content. -->

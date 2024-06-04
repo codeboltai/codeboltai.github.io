@@ -21,9 +21,9 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
- ### Examples
+### Examples
 
- ```js
+```js
 // Using Codebolt's browser API, you can interact with elements on a web page.
 // For example, let's say there's a button with the ID "test" on the page.
 // You can use Codebolt's browser API to click on this button.
@@ -42,12 +42,11 @@ data:
 // Putting it all together:
 codebolt.browser.click("#test");
 
- ```
+```
 
- ### Explaination 
+### Explaination 
 
 [Browser](../../concepts/browser)  Click function is used to click on the browser by selecting specific elementId.
 
-A browser is a used to access and display web pages on the internet. When a browser is open, users can interact with various elements on web pages, such as buttons, links, forms, and images.
+A browser is a used to access and display web pages. When a browser is open, users can interact with various elements on web pages, such as buttons, links, forms, and images.
 
-One common action in web development and automation is clicking on specific elements within a web page. This action is typically performed by selecting the element using its unique identifier, often referred to as the element ID, and then triggering a click event on that element.
