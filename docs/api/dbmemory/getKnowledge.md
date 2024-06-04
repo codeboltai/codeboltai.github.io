@@ -20,3 +20,26 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js 
+
+//set the userID and password 
+const UserID = await codebolt.dbmemory.getKnowledge("UserID")
+const Password = await codebolt.dbmemory.getKnowledge("Passowrd")
+
+console.log("UserId------",UserID);
+console.log("Password------",Password);
+
+///output
+
+///UserId------ admin
+///Password----- Test@123
+
+```
+
+### Explaination
+
+The getKnowledge method retrieves the value associated with a given key from the in-memory database, allowing you to access stored information using the unique identifier provided.
+

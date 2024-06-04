@@ -20,3 +20,16 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Examples 
+
+```js 
+
+const GetJsTree = await codebolt.codeutils.getJsTree();
+
+```
+
+
+### Explaination
+
+The method codebolt.codeutils.getJsTree(filePath: string) is designed to analyze a JavaScript file located at the given file path and return its tree structure. This tree structure is a hierarchical representation of the code within the file, which typically includes various elements such as functions, variables, classes, etc.

@@ -23,3 +23,24 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+
+### Example
+
+```js
+//error is a varialbe that stored error log 
+const error = "error log"
+
+//// Calling the `codebolt.debug.debug` method to log the error with its type (e.g., "warning", "error", etc.)
+const fileData = await codebolt.debug.debug(error, "error")
+
+//after executing this command then show the error in debug section on coltbolt.
+
+```
+
+![debug](../../../static/img/debug.png)
+
+
+### Explaination
+
+While executing the codebolt.debug.debug method, the error will be shown in the debug section of Codebolt.

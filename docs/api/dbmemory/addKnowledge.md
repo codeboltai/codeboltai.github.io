@@ -23,3 +23,24 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example
+
+```js 
+
+// Add a key-value pair to the in-memory database with the key "UserID" and the value "admin"
+await codebolt.dbmemory.addKnowledge("UserID", "admin")
+
+// Add a key-value pair to the in-memory database with the key "Password" and the value "Test@123"
+await codebolt.dbmemory.addKnowledge("Password", "Test@123")
+
+```
+
+
+### Explaination 
+
+Adding a key-value pair to an in-memory database involves storing a specific piece of information (value) that can be retrieved later using a unique identifier (key).
+
+Key: A unique identifier, typically a string, that is used to reference the data.
+
+Value: The actual data or information that you want to store. This can be any type of data, such as a number, a string, an object, etc.

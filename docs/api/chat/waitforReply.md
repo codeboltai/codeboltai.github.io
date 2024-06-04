@@ -20,3 +20,16 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example: 
+
+```js
+
+const message = await codebolt.chat.waitforReply(message: string)
+
+```
+
+### Explaination 
+
+The codebolt.chat.waitforReply(message: string) function is used to send a message  on the codebolt chat and wait for the reply. This function enables real-time communication by allowing the script to send text messages on the codebolt chat. This function returns the reply message, which we can store in a variable and use.
+
