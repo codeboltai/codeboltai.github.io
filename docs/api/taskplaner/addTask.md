@@ -20,3 +20,17 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js 
+
+await codebolt.taskplaner.addTask("Task Name")
+
+```
+
+### Explaination 
+
+The codebolt.taskplaner.addTask function takes a single parameter, task, which is a string representing the task you want to add. This function sends the task to the task planner system using a WebSocket message.
+
+task (string): The description of the task to be added.

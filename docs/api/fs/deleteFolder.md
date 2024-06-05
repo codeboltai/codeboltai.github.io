@@ -23,3 +23,21 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js 
+//Let's assume you want to delete a folder named oldFolder in the /home/user/documents directory.
+
+codebolt.fs.deleteFolder('oldFolder', '/home/user/documents');
+
+```
+
+
+### Explaination
+
+The codebolt.fs.deleteFolder method is used to delete a specified folder from a given directory. It has two parameters:
+
+foldername (string): The name of the folder to be deleted.
+
+folderpath (string): The path to the directory where the folder is located.

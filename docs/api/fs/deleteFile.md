@@ -23,3 +23,11 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+The codebolt.fs.deleteFile method is used to delete a specified file from a given directory. It has two parameters:
+
+filename (string): The name of the file to be deleted, including the file extension (e.g., "example.txt", "data.json").
+
+filePath (string): The path to the directory where the file is located.

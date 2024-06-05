@@ -24,3 +24,18 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+
+### Example 
+
+```js 
+
+codebolt.terminal.executeCommandRunUntilError("npm i nodemon")
+
+```
+
+### Explaination 
+
+The codebolt.terminal.executeCommandRunUntilError function takes a single parameter, command, which is a string representing the command you want to execute in the terminal. The function runs the specified command repeatedly until an error occurs.
+
+command (string): The command to be executed in the terminal.

@@ -17,3 +17,15 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+
+### Example 
+
+```js 
+
+const getpath = await codebolt.project.getProjectPath();
+
+```
+### Explaination
+
+The codebolt.project.getProjectPath() function is likely used to retrieve the path of the current project.

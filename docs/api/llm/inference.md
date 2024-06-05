@@ -25,3 +25,25 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js 
+
+const question = "Write an API to get all users from the User Table.";
+const llmRole = "assistant";
+
+const response = codebolt.llm.inference(question, llmRole);
+console.log(response);
+
+
+```
+
+
+### Explaination
+
+The codebolt.llm.inference function allows you to send an inference request to a Large Language Model (LLM) and retrieves the model's response. It has two parameter: 
+
+question (string): This parameter represents the input question or prompt you want to send to the LLM for inference.
+
+llmRole (string): This parameter specifies the role or type of Large Language Model (LLM) you want to use for inference. The role determines which variant of the LLM is selected for processing the input question and generating the response.

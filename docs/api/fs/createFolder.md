@@ -23,3 +23,21 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js
+
+//Let's assume you want to create a folder named newFolder in the /home/user/documents directory.
+
+codebolt.fs.createFolder('newFolder', '/home/user/documents');
+
+```
+
+### Explaination
+
+The codebolt.fs.createFolder method is used to create a new folder in a specified directory. It has two parameters:
+
+folderName (string): The name of the folder to be created.
+
+folderPath (string): The path where the folder will be created.

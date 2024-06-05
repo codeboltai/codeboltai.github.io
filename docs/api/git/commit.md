@@ -22,3 +22,17 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Example 
+
+```js
+
+const commitMessage = await codebolt.git.commit('test');
+
+```
+
+
+
+### Explaination 
+
+To use the codebolt.git.commit method properly, you need to understand how to make a commit in a Git repository using this method. The codebolt.git.commit function is likely used to commit changes in a Git repository with a specified commit message.

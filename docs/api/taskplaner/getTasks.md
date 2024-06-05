@@ -17,3 +17,15 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
+
+### Examples
+
+```js
+// It retrieves the current list of tasks from the task planner
+const getTask = await codebolt.taskplaner.getTasks()
+
+```
+
+### Explaination 
+
+The codebolt.taskplaner.getTasks function does not take any parameters. It retrieves the current list of tasks from the task planner.
