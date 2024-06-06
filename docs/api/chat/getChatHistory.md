@@ -21,7 +21,7 @@ data:
  <CBParameters/>
 
 
-### Examples
+### Example
 
 ```js
 // Retrieve the chat history from the server

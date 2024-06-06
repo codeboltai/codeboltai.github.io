@@ -16,16 +16,17 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples
- ```js
+### Example
+
+```js
  // Open the browser and navigate to a specific URL
- codebolt.browser.goToPage(url);
+codebolt.browser.goToPage(url);
 
 // Perform tests on the web page
 // (Assume you have performed all necessary tests)
 
 // Close the current page
- codebolt.browser.close();
+codebolt.browser.close();
 
  ```
 ### Explaination

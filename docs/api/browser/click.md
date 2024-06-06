@@ -21,7 +21,7 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples
+### Example
 
 ```js
 // Using Codebolt's browser API, you can interact with elements on a web page.

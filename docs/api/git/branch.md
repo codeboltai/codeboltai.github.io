@@ -27,3 +27,19 @@ data:
 ### Status 
 
 Working Progress...
+
+### Example 
+
+```js
+
+await git.branch('/path/to/repo', 'new-branch')
+
+```
+
+### Explaination
+
+Creates a new branch in the local repository.It has two parameter.
+
+path: A string specifying the local repository path.
+
+branch: A string specifying the new branch name.

@@ -24,3 +24,18 @@ data:
 ### Status 
 
 Work Progress...
+
+### Example 
+
+```js 
+
+await git.push('/path/to/repo')
+
+```
+
+
+### Explaination
+
+Push local changes to the remote repository. It has one parameter.
+
+path: A string specifying the local repository path.

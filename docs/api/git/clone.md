@@ -27,3 +27,19 @@ data:
 ### Status 
 
 Working Progress...
+
+### Example
+
+```js
+
+await git.clone('https://github.com/user/repo.git', '/path/to/local/repo')
+
+```
+
+### Explaination 
+
+Clone an existing Git repository from a given URL to a local directory. It has two parameter.
+
+url: A string specifying the remote repository URL.
+
+path: A string specifying the local directory path where the repository should be cloned.

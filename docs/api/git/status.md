@@ -24,3 +24,18 @@ data:
 ### Status
 
 Work Progress...
+
+
+### Example
+
+```js 
+
+await git.status('/path/to/repo')
+
+```
+
+### Expaination 
+
+Shows the working tree status of the local repository. It has one parameter.
+
+path: A string specifying the local repository path.

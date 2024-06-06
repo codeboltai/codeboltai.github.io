@@ -24,3 +24,19 @@ data:
 ### Status 
 
 Work Progress...
+
+
+### Example 
+
+```js 
+
+await git.logs('/path/to/repo')
+
+```
+
+
+### Explaination
+
+Displays the commit logs of the local repository.
+
+path: A string specifying the local repository path.

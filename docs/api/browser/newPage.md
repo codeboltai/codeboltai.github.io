@@ -16,7 +16,7 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples: 
+### Example
 
 ```js
 // Open a new page in the browser

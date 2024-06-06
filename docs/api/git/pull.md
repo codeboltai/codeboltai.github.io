@@ -26,3 +26,17 @@ data:
 ### Status 
 
 Work Progress...
+
+### Example 
+
+```js 
+
+await git.pull('/path/to/repo')
+
+```
+
+### Explaination 
+
+Pulls the latest changes from the remote repository into the local repository.
+
+path: A string specifying the local repository path.

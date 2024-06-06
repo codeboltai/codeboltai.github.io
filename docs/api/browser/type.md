@@ -25,7 +25,7 @@ data:
  <CBParameters/>
 
 
-### Examples: 
+### Example
 
 ```js
 // Type "John Doe" into the input field with the ID "name"

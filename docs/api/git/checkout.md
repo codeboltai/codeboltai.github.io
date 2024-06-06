@@ -27,3 +27,20 @@ data:
 ### Status 
 
 Working Progress...
+
+
+### Example 
+
+```js 
+
+await git.checkout('/path/to/repo', 'feature-branch')
+
+```
+
+### Explaination
+
+Check out a specific branch in the local repository. It has two parameter.
+
+path: A string specifying the local repository path.
+
+branch: A string specifying the branch name to be checked out.

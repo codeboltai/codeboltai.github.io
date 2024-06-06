@@ -25,3 +25,18 @@ data:
 ### Status 
 
 Work Progress...
+
+
+### Example
+
+```js
+
+await codebolt.git.init('/path/to/repo')
+
+```
+
+### Explaination
+
+Initialize a new Git repository in the specified directory. It has one parameter.
+
+path: A string specifying the directory path where the new Git repository should be initialized.

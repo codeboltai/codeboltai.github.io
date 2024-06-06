@@ -27,3 +27,19 @@ data:
 ### Status 
 
 Working Progress...
+
+### Example 
+
+```js
+
+await git.diff('abc123', '/path/to/repo')
+
+```
+
+### Explaination
+
+Shows the difference between the specified commit and the current state of the repository. It has two parameter.
+
+commitHash: A string specifying the commit hash to compare against.
+
+path: A string specifying the local repository path.

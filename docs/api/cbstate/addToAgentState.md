@@ -24,7 +24,7 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples: 
+### Example
 ```js
 // Add a user ID to the agent's state
 await codebolt.cbstate.addToAgentState("userID", "12345");

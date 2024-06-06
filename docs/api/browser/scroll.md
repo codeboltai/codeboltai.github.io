@@ -26,7 +26,7 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples: 
+### Example
 
 ```js
 
@@ -36,6 +36,6 @@ await codebolt.browser.scroll("down", "500");
 
 ```
 
-### Explanation:
+### Explanation
 
 The codebolt.browser.scroll(direction: string, pixels: string) function is used to scroll the current page in a specified direction by a specified number of pixels. This function is useful for automating scrolling actions on a web page, such as navigating through lengthy content or bringing specific elements into view.

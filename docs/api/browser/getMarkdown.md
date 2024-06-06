@@ -18,7 +18,7 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Examples: 
+### Example
 
 ```js
 

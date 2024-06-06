@@ -24,3 +24,17 @@ data:
 ### Status 
 
 Working Progress...
+
+### Example 
+
+```js
+
+await git.add('/path/to/repo/file.txt')
+
+```
+
+### Explaination
+
+Add changes in the specified directory to the staging area. It has one parameter.
+
+path: A string specifying the path of the directory or files to be added.
