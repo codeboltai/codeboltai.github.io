@@ -1,28 +1,28 @@
 ---
 cbapicategory:
   - name: click
-    link: click
+    link: crawler/click
     description: Simulates a click event on an element with the specified ID.
   - name: crawl
-    link: crawl
+    link: crawler/crawl
     description: Initiates a crawl process.
   - name: enter
-    link: enter
+    link: crawler/enter
     description: Simulates the Enter key press using the crawler.
   - name: goToPage
-    link: goToPage
+    link: crawler/goToPage
     description: Directs the crawler to navigate to a specified URL.
   - name: screenshot
-    link: screenshot
+    link: crawler/screenshot
     description: Takes a screenshot using the crawler.
   - name: scroll
-    link: scroll
+    link: crawler/scroll
     description: Scrolls the crawler in a specified direction.
   - name: start
-    link: start
+    link: crawler/start
     description: Starts the crawler.
   - name: type
-    link: type
+    link: crawler/type
     description: Types the provided text into an element with the specified ID.
 
 ---

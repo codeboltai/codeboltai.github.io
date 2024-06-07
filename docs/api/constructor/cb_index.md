@@ -1,6 +1,0 @@
----
-cbapicategory: []
-
----
-# constructor
-<CBAPICategory />
