@@ -1,13 +1,13 @@
 ---
 cbapicategory:
   - name: addTask
-    link: addTask
+    link: /docs/api/taskplaner/addTask
     description: Adds a task using a WebSocket message.
   - name: getTasks
-    link: getTasks
+    link: /docs/api/taskplaner/getTasks
     description: Retrieves all tasks using a WebSocket message.
   - name: updateTask
-    link: updateTask
+    link: /docs/api/taskplaner/updateTask
     description: Updates an existing task using a WebSocket message.
 
 ---

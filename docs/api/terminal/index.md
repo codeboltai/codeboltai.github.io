@@ -1,10 +1,10 @@
 ---
 cbapicategory:
   - name: eventEmitter
-    link: eventEmitter
+    link: /docs/api/terminal/eventEmitter
     description: ' '
   - name: executeCommand
-    link: executeCommand
+    link: /docs/api/terminal/executeCommand
     description: >-
       Executes a given command and returns the result.
 
@@ -13,17 +13,17 @@ cbapicategory:
 
       of the executed command and resolves the promise accordingly.
   - name: executeCommandRunUntilError
-    link: executeCommandRunUntilError
+    link: /docs/api/terminal/executeCommandRunUntilError
     description: >-
       Executes a given command and keeps running until an error occurs.
 
       Listens for messages from the WebSocket and resolves the promise when an
       error is encountered.
   - name: executeCommandWithStream
-    link: executeCommandWithStream
+    link: /docs/api/terminal/executeCommandWithStream
     description: ' '
   - name: sendManualInterrupt
-    link: sendManualInterrupt
+    link: /docs/api/terminal/sendManualInterrupt
     description: ' '
 
 ---

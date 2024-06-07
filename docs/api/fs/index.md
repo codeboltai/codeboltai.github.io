@@ -1,25 +1,25 @@
 ---
 cbapicategory:
   - name: createFile
-    link: createFile
+    link: /docs/api/fs/createFile
     description: ' '
   - name: createFolder
-    link: createFolder
+    link: /docs/api/fs/createFolder
     description: ' '
   - name: deleteFile
-    link: deleteFile
+    link: /docs/api/fs/deleteFile
     description: ' '
   - name: deleteFolder
-    link: deleteFolder
+    link: /docs/api/fs/deleteFolder
     description: ' '
   - name: listFile
-    link: listFile
+    link: /docs/api/fs/listFile
     description: ' '
   - name: readFile
-    link: readFile
+    link: /docs/api/fs/readFile
     description: ' '
   - name: updateFile
-    link: updateFile
+    link: /docs/api/fs/updateFile
     description: ' '
 
 ---
