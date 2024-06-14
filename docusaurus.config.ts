@@ -66,19 +66,19 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'userSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'Codebolt App',
         },
         {
           type: 'docSidebar',
           sidebarId: 'devSidebar',
           position: 'left',
-          label: 'Agents',
+          label: 'Agent Dev',
         },
         {
           type: 'docSidebar',
           sidebarId: 'jsapiSidebar',
           position: 'left',
-          label: 'API',
+          label: 'API Specs',
         },
         {
           to: '/blog', 
