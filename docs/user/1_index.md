@@ -1,23 +1,10 @@
 # Overview
 
-**Codebolt** is a Code Editor, with focus on AI Agents. It allows for software developers to use AI Agents for multiple things from code generation to testing, depoloyment and documentation. The Codebolt Agents are the building blocks of the Codebolt Platform. 
+### Get Started
+
+Codebolt is a lightweight yet powerful source code editor designed for your desktop, available on Windows and macOS.
+<!-- Start your journey with Codebolt by exploring these introductory videos. -->
 
 
-## Codebolt Agents
-Codebolt Agents are 
-<!-- - completion, 
-- generation, 
-- review, 
-- analysis, 
-- refactoring, 
-- testing, 
-- debugging, 
-- profiling, 
-- optimization, 
-- security, 
-- monitoring, 
-- deployment, 
-- integration, 
-- collaboration, 
-- documentation, 
-- visualization, etc. -->
+![get started](../../static/img/codebolt_application.png)
+
