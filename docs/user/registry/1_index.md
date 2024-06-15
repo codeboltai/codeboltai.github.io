@@ -11,9 +11,9 @@ Once logged in, users will land on the Codebolt home page. The registry provides
 
 ### Explore Latest Agents: 
 
-Bug hunter agents, Documentation agents ,Enhance your productivity with specialized agents designed to streamline your workflow and expand the platform's capabilities.
+Bug hunter agents and documentation agents help you work faster and make the platform more powerful
 
-![latest agents](../../../static/img/latest_agents.png)
+<!-- ![latest agents](../../../static/img/latest_agents.png) -->
 
 
 
