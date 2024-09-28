@@ -18,7 +18,7 @@ Here, you will have two options for signing up:
 
 ### Step 3: Authentication
 - **If you choose Google or Github**:
-  - You will be redirected to Google's or Github authentication page for authentication.
+  - You will be redirected to Google's or Github authentication page for Verification.
   - If you are a new user, you will be redirected to the username page.
 You need to create and add a username. After adding the username, you can proceed further.
 
