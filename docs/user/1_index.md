@@ -6,7 +6,7 @@ Codebolt is a fast, lightweight, and customizable source code editor for Windows
 Click on the "Get Started" button. This action initiates the sign-in process, where users are given two options for authentication: Google or GitHub.
 <!-- Start your journey with Codebolt by exploring these introductory videos. -->
 
-![get started](../../static/img/get_started.png)
+[![Watch the video](../../static/img/get_started.png)](../../static/video/onboarding.mp4)
 
 After successfully completing the onboarding process, users can sign in to explore the application dashboard. On the dashboard, users can:
 
