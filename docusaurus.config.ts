@@ -85,6 +85,12 @@ const config: Config = {
           label: 'Blog', 
           position: 'left'
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'appSidebar',
+          position: 'left',
+          label: 'Apps',
+        },
       ],
     },
     footer: {
