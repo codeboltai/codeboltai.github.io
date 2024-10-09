@@ -13,7 +13,7 @@ There is one Universal Agent that is integrated within the Codebolt Editor. This
 
 ## Custom Universal Agents
 
-You can also have Custom Universal Agents, that can route the user query requests to the appropriate agents using your custom logic or custom LLMs. We have an option to create your own Universal Agents. You can learn more about them at [Create your own Universal Agents](../UniversalAgents/createUniversalAgents.md)
+You can also have Custom Universal Agents, that can route the user query requests to the appropriate agents using your custom logic or custom LLMs. We have an option to create your own Universal Agents. You can learn more about them at [Create your own Universal Agents](./createUniversalAgents.md)
 
 
 ## Architecture Choices
