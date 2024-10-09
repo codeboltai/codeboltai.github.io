@@ -7,7 +7,7 @@ Follow the steps below to create a new agent using Codebolt.
 
 ### Step 1: Open Your Terminal and Run the Command
 
-Open your terminal in the directory where you want the agent to be created and run the following command:
+Open your terminal in the directory where you want the agent to be created and run the following command:   
 
 ```bash
 npx create-codebolt-agent your-agent-name
