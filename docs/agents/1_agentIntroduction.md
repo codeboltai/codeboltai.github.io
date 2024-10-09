@@ -20,10 +20,10 @@ Codebolt has Multiple Types of Agents that can do various tasks.
 - [Action Agents](./AgentTypes/actionAgents.md)
 
 ### Universal Agents
-Universal Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Universal Agents](./AgentTypes/universalAgents.md)
+Universal Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Universal Agents](./AgentTypes/UniversalAgents/universalAgents.md)
 
 ### Action Agents
 Action Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Action Agents](./AgentTypes/actionAgents.md)
 
 ## Create your own Agents
-You can create your own Agents and use them in the editor. You can learn more about them at [Create your own Agents](./AgentTypes/createYourOwnAgents.md)
+You can create your own Agents and use them in the editor. You can learn more about them at [Create your own Agents](./AgentTypes/UniversalAgents/createUniversalAgents.md)
