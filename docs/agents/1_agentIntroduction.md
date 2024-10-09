@@ -16,7 +16,7 @@ Codebolt Editor exposes all the functionality of the Editor in the format of API
 ## Codebolt Agents
 
 Codebolt has Multiple Types of Agents that can do various tasks.
-- [Universal Agents](./AgentTypes/universalAgents.md)
+- [Universal Agents](./AgentTypes/UniversalAgents/universalAgents.md)
 - [Action Agents](./AgentTypes/actionAgents.md)
 
 ### Universal Agents
