@@ -1,4 +1,4 @@
-# Create your First Extension
+# Create your First Agent
 
 
 ## Create Codebolt Agent

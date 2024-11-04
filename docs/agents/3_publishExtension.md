@@ -1,5 +1,5 @@
 
-# Publish Extension
+# Publish Agent
 
 ### Publish an Agent Using codebolt-cli
 
