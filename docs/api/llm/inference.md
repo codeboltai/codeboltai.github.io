@@ -58,4 +58,4 @@ The codebolt.llm.inference function allows you to send an inference request to a
 
 question (string): This parameter represents the input question or prompt you want to send to the LLM for inference.
 
-llmRole (string): This parameter specifies the role or type of Large Language Model (LLM) you want to use for inference. The role determines which variant of the LLM is selected for processing the input question and generating the response. LLMs role can be optional.
+llmRole (string): This parameter specifies the role or type of Large Language Model (LLM) you want to use for inference. The role determines which variant of the LLM is selected for processing the input question and generating the response. LLMs role can be 
