@@ -1,0 +1,132 @@
+{
+  "0": "{",
+  "1": "\n",
+  "2": " ",
+  "3": " ",
+  "4": "\"",
+  "5": "a",
+  "6": "c",
+  "7": "t",
+  "8": "i",
+  "9": "v",
+  "10": "e",
+  "11": "A",
+  "12": "g",
+  "13": "e",
+  "14": "n",
+  "15": "t",
+  "16": "\"",
+  "17": ":",
+  "18": " ",
+  "19": "f",
+  "20": "a",
+  "21": "l",
+  "22": "s",
+  "23": "e",
+  "24": ",",
+  "25": "\n",
+  "26": " ",
+  "27": " ",
+  "28": "\"",
+  "29": "p",
+  "30": "i",
+  "31": "n",
+  "32": "n",
+  "33": "e",
+  "34": "d",
+  "35": "A",
+  "36": "g",
+  "37": "e",
+  "38": "n",
+  "39": "t",
+  "40": "\"",
+  "41": ":",
+  "42": " ",
+  "43": "[",
+  "44": "]",
+  "45": "\n",
+  "46": "}",
+  "currentLayout": {
+    "grid": {
+      "root": {
+        "type": "branch",
+        "data": [
+          {
+            "type": "leaf",
+            "data": {
+              "views": [
+                "Code"
+              ],
+              "activeView": "Code",
+              "id": "1"
+            },
+            "size": 768
+          },
+          {
+            "type": "branch",
+            "data": [
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Chat"
+                  ],
+                  "activeView": "Chat",
+                  "id": "2"
+                },
+                "size": 378
+              },
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Preview",
+                    "Terminal-1730781415539"
+                  ],
+                  "activeView": "Preview",
+                  "id": "3"
+                },
+                "size": 378
+              }
+            ],
+            "size": 768
+          }
+        ],
+        "size": 756
+      },
+      "width": 1536,
+      "height": 756,
+      "orientation": "HORIZONTAL"
+    },
+    "panels": {
+      "Code": {
+        "id": "Code",
+        "contentComponent": "Code",
+        "title": "Code",
+        "renderer": "always"
+      },
+      "Chat": {
+        "id": "Chat",
+        "contentComponent": "Chat",
+        "title": "Chat",
+        "renderer": "always"
+      },
+      "Preview": {
+        "id": "Preview",
+        "contentComponent": "Preview",
+        "title": "Preview",
+        "renderer": "always"
+      },
+      "Terminal-1730781415539": {
+        "id": "Terminal-1730781415539",
+        "contentComponent": "Terminal",
+        "title": "Terminal",
+        "renderer": "always"
+      }
+    },
+    "activeGroup": "3"
+  },
+  "pinnedAgent": [],
+  "activeAgent": false,
+  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-2\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-11\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-18\",\"root-19\"],\"selectedItems\":[]}}"
+}
