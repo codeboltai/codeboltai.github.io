@@ -13,13 +13,14 @@ To use or run an agent, you’ll need to follow these steps:
 
 ![selectAgent](../../static/img/selectAgent.png)
 
-**To use a manual agent in chat, you can follow these steps:**
+**To use agent in chat, you can follow these steps:**
 
-Open the Agent Menu: In the chat interface, click on the # symbol. This will open a list of all available agents.
+In the chat interface, click on the `# symbol`. This will open list of all available agents.
 
-* Select an Agent: From the list, choose the agent that fits your task or query. For example, if you’re working on deployment, you might select CodeBolt Web Deployment.
+* **Select an Agent**: From the list, choose the agent that fits your task or query. For example, if you’re working on deployment, you might select CodeBolt Web Deployment.
 
-* Interact with the Agent: Once selected, you can start typing your query or command directly in the chat. The agent will process your request and respond based on its functionality.
+* **Interact with the Agent**: Once selected, you can start typing your query or command directly in the chat. The agent will process your request and respond based on its functionality.
 
-* Switch Agents if Needed: If you need help with a different type of task, click # again to open the agent list, select another agent, and start your next interaction.
+* **Switch Agents if Needed**: If you need help with a different type of task, click # again to open the agent list, select another agent, and start your next interaction.
 
+![runAgent2](../../static/img/runAgent2.png)

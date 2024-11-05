@@ -55,13 +55,12 @@
             "type": "leaf",
             "data": {
               "views": [
-                "Code",
-                "246e4754-a47e-46e4-9d07-27afbcc05f9d"
+                "Code"
               ],
               "activeView": "Code",
               "id": "1"
             },
-            "size": 822
+            "size": 877
           },
           {
             "type": "branch",
@@ -75,7 +74,7 @@
                   "activeView": "Chat",
                   "id": "2"
                 },
-                "size": 575
+                "size": 378
               },
               {
                 "type": "leaf",
@@ -86,10 +85,10 @@
                   "activeView": "Preview",
                   "id": "3"
                 },
-                "size": 181
+                "size": 378
               }
             ],
-            "size": 714
+            "size": 659
           }
         ],
         "size": 756
@@ -104,13 +103,6 @@
         "contentComponent": "Code",
         "tabComponent": "props.defaultTabComponent",
         "title": "Code",
-        "renderer": "always"
-      },
-      "246e4754-a47e-46e4-9d07-27afbcc05f9d": {
-        "id": "246e4754-a47e-46e4-9d07-27afbcc05f9d",
-        "contentComponent": "Terminal",
-        "tabComponent": "props.defaultTabComponent",
-        "title": "Terminal",
         "renderer": "always"
       },
       "Chat": {
@@ -154,5 +146,5 @@
     }
   ],
   "activeAgent": false,
-  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-2\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-9\",\"root-10\",\"root-11\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-18\",\"root-19\",\"root-20\",\"root-16-1\",\"root-16-3\",\"root-8\",\"root-8-2\",\"root-8-2-5\"],\"selectedItems\":[]}}"
+  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-2\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-11\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-18\",\"root-19\",\"root-20\",\"root-8\",\"root-8-2\"],\"selectedItems\":[]}}"
 }
