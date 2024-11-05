@@ -61,7 +61,7 @@
               "activeView": "Code",
               "id": "1"
             },
-            "size": 1151
+            "size": 822
           },
           {
             "type": "branch",
@@ -89,12 +89,12 @@
                 "size": 181
               }
             ],
-            "size": 381.796875
+            "size": 714
           }
         ],
         "size": 756
       },
-      "width": 1532.796875,
+      "width": 1536,
       "height": 756,
       "orientation": "HORIZONTAL"
     },
@@ -128,9 +128,31 @@
         "renderer": "always"
       }
     },
-    "activeGroup": "1"
+    "activeGroup": "2"
   },
-  "pinnedAgent": [],
+  "pinnedAgent": [
+    {
+      "id": 1,
+      "agentId": "6dd799b5-43c2-4c55-ba49-cae6cbac2498",
+      "title": "CodeBolt Dev",
+      "avatarSrc": "https://placehold.co/200x200",
+      "avatarFallback": "CE",
+      "description": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.",
+      "longDescription": "A basic agent designed for the Codebolt platform, offering a range of\nfunctionalities to enhance interaction with the platform.\n",
+      "zipFilePath": "https://storage.googleapis.com/codeboltai.appspot.com/agents/bvfiVEFStP.zip",
+      "agentPath": "C:\\Users\\NURSID\\AppData\\Roaming\\codebolt\\.codebolt\\6dd799b5-43c2-4c55-ba49-cae6cbac2498",
+      "isLocal": true,
+      "tags": [
+        "web",
+        "code-generation"
+      ],
+      "isInstalled": false,
+      "version": "1.1.6",
+      "createdAt": "2024-11-03T18:02:26.836Z",
+      "needsUpdate": false,
+      "currentPinned": false
+    }
+  ],
   "activeAgent": false,
   "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-2\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-9\",\"root-10\",\"root-11\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-18\",\"root-19\",\"root-20\",\"root-16-1\",\"root-16-3\",\"root-8\",\"root-8-2\",\"root-8-2-5\"],\"selectedItems\":[]}}"
 }
