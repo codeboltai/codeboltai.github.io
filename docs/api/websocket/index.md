@@ -1,6 +1,0 @@
----
-cbapicategory: []
-
----
-# websocket
-<CBAPICategory />
