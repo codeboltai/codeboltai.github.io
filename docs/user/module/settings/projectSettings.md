@@ -11,7 +11,7 @@ The App Settings section is where you define key details about your application:
 * App Description: A short description of the app’s purpose or functionality.
 * App GitHub Repo URL: The link to the application's GitHub repository, allowing easy access to the project’s codebase.
 
-![project_app_setting](../../../static/img/project_app_setting.png)
+![project_app_setting](../../../../static/img/project_app_setting.png)
 
 
 ### Technical Info
@@ -22,7 +22,7 @@ The Technical Info section provides information about the technology stack used 
 * Services: Lists any services integrated within the project, such as databases, APIs, or external tools.
 
 
-![project_tech_info](../../../static/img/project_tech_info.png)
+![project_tech_info](../../../../static/img/project_tech_info.png)
 
 
 ### Secrets
@@ -32,7 +32,7 @@ The Secrets section is used to store and manage sensitive information:
 * List Secrets: Displays a list of all stored secrets for easy access and management
 
 
-![project_secret](../../../static/img/project_secret.png)
+![project_secret](../../../../static/img/project_secret.png)
 
 
 ### Knowledge Base
@@ -42,7 +42,7 @@ The Knowledge Base section serves as a repository for important information rela
 * List Knowledge Base Entries: Displays all knowledge base entries, with options for editing or deletion.
 * Actions: Each entry has actions available for updates or adjustments.
 
-![project_knowledgebase](../../../static/img/project_knowledgebase.png)
+![project_knowledgebase](../../../../static/img/project_knowledgebase.png)
 
 ### Instruction
 There are two ways to add instructions in this section:
@@ -51,7 +51,7 @@ There are two ways to add instructions in this section:
 
 * Local File Instruction: Allows you to upload instructions in the form of files from your local system.
 
-![project_instruction](../../../static/img/project_instruction.png)
+![project_instruction](../../../../static/img/project_instruction.png)
 
 
 ### Usage Settings
@@ -63,16 +63,16 @@ The Usage section offers various settings to define how the application is used 
 * Layout Settings: Customize the layout and organization of the project environment.
 * Run Command: Define commands used to run or test the application in development mode.
 
-![project_develop](../../../static/img/project_develop.png)
+![project_develop](../../../../static/img/project_develop.png)
 
 
 **Install Settings**
 * Install Custom Agent: Allows installation of custom agents designed for specific tasks or integrations within the project.
 
-![project_install](../../../static/img/project_install.png)
+![project_install](../../../../static/img/project_install.png)
 
 
 **App Use Settings**
 * Customize how the app is used, with options to manage user roles, permissions, or usage guidelines specific to the application.
 
-![project_appuse](../../../static/img/project_appuse.png)
+![project_appuse](../../../../static/img/project_appuse.png)

@@ -1,4 +1,4 @@
-# Code View 
+# Code Editor 
 
 
 ![codeview](../../../../static/img/codeview.png)
