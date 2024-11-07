@@ -1,5 +1,5 @@
 # Settings
 
 
-- [ApplicationSettings](./ApplicationSettings)
-- [projectSettings](./projectSettings)
+- [ApplicationSettings](./ApplicationSettings/ApplicationSettings.md)
+- [projectSettings](./ProjectSettings/projectSettings.md)
