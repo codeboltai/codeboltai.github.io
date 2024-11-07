@@ -2,7 +2,7 @@
 
 The Template  is designed to facilitate the quick creation of new projects with predefined setups for popular JavaScript frameworks and libraries. By using templates, developers can skip the repetitive tasks involved in setting up project configurations and can jumpstart their work with an organized structure. The available templates include setups for React, Express, Next.js, and an Empty project option.
 
-![get started](../../static/img/template.png)
+<!-- ![get started](../../static/img/template.png) -->
 
 
 ### Template Options
