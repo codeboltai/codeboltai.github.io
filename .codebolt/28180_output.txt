@@ -1,0 +1,87 @@
+npm start && echo COMMAND_SUCCESS || echo COMMAND_FAILURE
+]0;Administrator: C:\WINDOWS\SYSTEM32\cmd.exe - npm  start ]0;npm]0;npm prefix]0;npm]0;npm start[?25l
+> codebolt-lib@0.0.0 start
+> docusaurus start[10;1H[K[?25h]0;Administrator:  C:\WINDOWS\system32\cmd.exe [33m
+ ------------------------------------------------------------------------------                                                                                 [K                         [25X[mUpdate available [2m3.3.2[22m → [32m3.6.0                         [K[33m                                                                                [K        [mTo upgrade Docusaurus packages with the latest version, run the         [K[33m                              [30X[mfollowing command:                                [K[33m        [36m`npm i @docusaurus/core@latest @docusaurus/preset-classic@latest        [33m       [36m@docusaurus/module-type-aliases@latest @docusaurus/tsconfig@latest       [33m                           [27X[36m@docusaurus/types@latest`                            [K[33m                                                                                [K ------------------------------------------------------------------------------ [36m[1m[23;1H[INFO][m Starting the development server...[33m[1m[WARNING][22m Duplicate routes found![m
+[33m- Attempting to create page at [36m[4m/docs/api/debug/[33m[24m, but a page already exists at th[m
+[33m[23;80Hhis route.[m
+[33m- Attempting to create page at [36m[4m/docs/api/search/[33m[24m, but a page already exists at t[m
+[33m[23;80Hthis route.[m
+[33mThis could lead to non-deterministic routing behavior.[m[32m[1m[SUCCESS][m Docusaurus website is running at: [36m[4mhttp://localhost:3000/[mBrowserslist: caniuse-lite is outdated. Please run:npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#read
+[23;80Hdme[32m● Client █[37m████████████████████████ [msetup (3%)[K[90mwatch run[K[m]0;Windows PowerShell]0;Administrator: Windows PowerShell[?25l[20;1H[K[32m
+● Client ███[37m██████████████████████ [mbuilding (10%) [90m0/3 entries 1/3 dependencies  
+ 0/0 modules 0 active[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ████[37m█████████████████████ [mbuilding (15%) [90m1/3 entries 62/111 dependenc  
+ies 23/43 modules 0 active[K[m
+[K
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████[37m███████████████████ [mbuilding (22%) [90m2/3 entries 139/166 dependen  
+cies 33/72 modules 0 active[K[m
+[K
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ████████████[37m█████████████ [mbuilding (46%) [90m2/3 entries 951/1000 depende  
+ncies 94/436 modules 0 active[K[m
+[K
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ████████████[37m█████████████ [mbuilding (46%) [90m2/3 entries 2200/2216 depend  
+encies 394/683 modules 0 active[K[m
+[K
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client █████████████████[37m████████ [mbuilding (65%) [90m3/3 entries 2405/2405 depend  
+encies 740/740 modules 0 active[K[m
+[K
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████████████████[37m███████ [msealing (70%)[K
+ [90mfinish module graph[K[m
+[K
+[K
+[K[23;1H[?25h[?25l[19;1H[K[32m
+● Client ██████████████████[37m███████ [msealing (70%)[K
+ [90mplugins[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████████████████[37m███████ [msealing (70%) [90mplugins[K[m
+ [90mWarnCaseSensitiveModulesPlugin[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████████████████[37m███████ [msealing (71%)[K
+ [90mdependencies optimization[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ███████████████████[37m██████ [msealing (73%)[K
+ [90mafter chunk graph[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ████████████████████[37m█████ [msealing (80%)[K
+ [90mmodule ids[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████████████████████[37m███ [msealing (87%)[K
+ [90mcode generation[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ██████████████████████[37m███ [msealing (88%)[K
+ [90mruntime requirements[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ███████████████████████[37m██ [msealing (89%)[K
+ [90mafter hashing[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+● Client ███████████████████████[37m██ [msealing (92%)[K
+ [90masset processing[K[m
+[K
+[K[?25h[?25l[19;1H[K[32m
+√ Client[K[90m
+  Compiled successfully in 3.04s[K[m
+[K[1m
+client[22m (webpack 5.91.0) compiled [32m[1msuccessfully[m[K
+[?25hCOMMAND_FAILURE[K]0;Administrator: C:\WINDOWS\SYSTEM32\cmd.exe - echo  COMMAND_FAILURE]0;Administrator: C:\WINDOWS\SYSTEM32\cmd.exeC:\btpl\codeboltai.github.io>

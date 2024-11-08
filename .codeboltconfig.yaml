@@ -1,0 +1,36 @@
+appName: codeboltai.github.io
+appUniqueId: nursid/codeboltai.github.io
+appInfo:
+  description: ''
+  appVersion: 1.0.0
+  appRepoUrl: ''
+  appIconUrl: ''
+  appAuthorUserId: nursid
+  forkedFrom: ''
+technicalInfo:
+  supportedLanguages:
+    - React
+  supportedFrameworks:
+    - React
+  secrets: []
+  services: []
+  knowledgebases: []
+  instruction: []
+usage:
+  develop:
+    agents: []
+    layout: ''
+    run:
+      - shell:
+          command: npm start
+  install:
+    steps: []
+    customInstallationAgent:
+      enabled: false
+      agent: ''
+  appUse:
+    prerunsteps: []
+    agents: []
+    layout: ''
+    appPreview:
+      type: ''
