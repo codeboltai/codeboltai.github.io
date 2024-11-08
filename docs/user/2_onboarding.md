@@ -88,3 +88,9 @@ For users who have previously completed the onboarding process, signing in throu
 ![Application Dashboard](../../static/img/codebolt_application.png)
 
 From here, you can access your existing projects, create new projects, and leverage the full capabilities of the CodeBolt platform to build and publish your applications efficiently.
+
+
+### Video Guide
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/YpZV_AFHsX8?si=aJOMHWsyMYJWAeaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+

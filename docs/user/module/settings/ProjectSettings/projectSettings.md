@@ -1,6 +1,10 @@
-# Project Setting
+# Project Settings
 
-The Project Settings module allows you to configure essential project parameters, technical details, secrets, knowledge base, instructions, and usage preferences. Each section within Project Settings serves a unique purpose, providing organized control over the project's configuration.
+In the **Project Settings** section, you can configure various options for your project:
 
-
-### App Settings
+1. [App Settings](AppSettings)
+2. [Technical Info](TechnicalInfo)
+3. [Secrets](Secrets)
+4. [Knowledge Base](KnowledgeBase)
+5. [Instructions](Instructions)
+5. [Usage](Usage)

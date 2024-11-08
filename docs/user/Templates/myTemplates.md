@@ -1,17 +1,12 @@
-# My Template
+# My Templates
 
-The Template  is designed to facilitate the quick creation of new projects with predefined setups for popular JavaScript frameworks and libraries. By using templates, developers can skip the repetitive tasks involved in setting up project configurations and can jumpstart their work with an organized structure. The available templates include setups for React, Express, Next.js, and an Empty project option.
+Streamline Your Workflow with Custom Templates: Codebolt enables users to upload their own project templates directly to their Codebolt portal. This powerful feature is designed for professionals who regularly initiate projects with specific structures or configurations.
 
-<!-- ![get started](../../static/img/template.png) -->
+Seamless Integration with Codebolt: Once uploaded, your custom templates are seamlessly integrated into the Codebolt app, empowering you to kickstart new projects efficiently while leveraging your personalized settings and configurations.
+
+![myTemplate](../../../static/img/mytemplates.png)
 
 
-### Template Options
-* React: Sets up a new React app with ES6+, JSX, and Webpack or Vite. Essential dependencies and folder structure are pre-configured. Start quickly by selecting the React template.
+## Video Guide
 
-* Express: Creates a back-end Express project for RESTful APIs, with basic middleware and error handling. Provides a suitable structure for server-side development; select Express to get started.
-
-* Next.js: Initializes a Next.js app with routing, page, and API setup. Perfect for full-stack development; choose Next.js to begin.
-
-* Empty: A minimal template with only essential files. Ideal for custom setups; use Empty to create a basic project foundation.
-
-**Each template is selectable for quick project setup!**
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/WCr68gOgiuw?si=WNd53WSaQ0AtKiku" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

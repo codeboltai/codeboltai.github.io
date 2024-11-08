@@ -1,17 +1,23 @@
-# Template
+# Templates
 
-The Template  is designed to facilitate the quick creation of new projects with predefined setups for popular JavaScript frameworks and libraries. By using templates, developers can skip the repetitive tasks involved in setting up project configurations and can jumpstart their work with an organized structure. The available templates include setups for React, Express, Next.js, and an Empty project option.
+Codebolt provides a library of pre-built project templates to help you get started quickly with popular frameworks and languages. These templates come pre-configured with recommended settings, folder structures, and boilerplate code, allowing you to dive right into building your application.
 
-<!-- ![get started](../../static/img/template.png) -->
+## Benefits of Using Templates
 
+- **Faster Project Setup**: Templates eliminate the need to manually configure your project from scratch. With just a few clicks, you can have a working project ready to go.
 
-### Template Options
-* React: Sets up a new React app with ES6+, JSX, and Webpack or Vite. Essential dependencies and folder structure are pre-configured. Start quickly by selecting the React template.
+- **Best Practices**: Templates follow industry best practices and conventions for the selected framework or language. This ensures your project starts off on the right foot with a clean and organized structure.
 
-* Express: Creates a back-end Express project for RESTful APIs, with basic middleware and error handling. Provides a suitable structure for server-side development; select Express to get started.
+## Creating a Project from a Template
 
-* Next.js: Initializes a Next.js app with routing, page, and API setup. Perfect for full-stack development; choose Next.js to begin.
+To create a new project using a template in Codebolt, follow these steps:
 
-* Empty: A minimal template with only essential files. Ideal for custom setups; use Empty to create a basic project foundation.
+1. Click on the "Create Project in workspace" button in the Codebolt dashboard.
+2. Browse the available templates or use the search bar to find a specific template.
+3. Select the desired template and provide a name for your project.
+5. Click "Create" to generate the project based on the selected template.
 
-**Each template is selectable for quick project setup!**
+Codebolt will then set up your project with the necessary files and configurations, and you'll be ready to start coding!
+
+![Template](../../../static/img/template.png)
+
