@@ -55,25 +55,14 @@
             "type": "leaf",
             "data": {
               "views": [
-                "Code"
-              ],
-              "activeView": "Code",
-              "id": "1"
-            },
-            "size": 907
-          },
-          {
-            "type": "leaf",
-            "data": {
-              "views": [
-                "Preview",
-                "Chat",
-                "Console"
+                "Code",
+                "Console",
+                "Chat"
               ],
               "activeView": "Chat",
-              "id": "3"
+              "id": "1"
             },
-            "size": 629
+            "size": 1536
           }
         ],
         "size": 756
@@ -90,11 +79,11 @@
         "title": "Code",
         "renderer": "always"
       },
-      "Preview": {
-        "id": "Preview",
-        "contentComponent": "Preview",
+      "Console": {
+        "id": "Console",
+        "contentComponent": "Console",
         "tabComponent": "props.defaultTabComponent",
-        "title": "Preview",
+        "title": "Console",
         "renderer": "always"
       },
       "Chat": {
@@ -103,16 +92,9 @@
         "tabComponent": "props.defaultTabComponent",
         "title": "Chat",
         "renderer": "always"
-      },
-      "Console": {
-        "id": "Console",
-        "contentComponent": "Console",
-        "tabComponent": "props.defaultTabComponent",
-        "title": "Console",
-        "renderer": "always"
       }
     },
-    "activeGroup": "3"
+    "activeGroup": "1"
   },
   "pinnedAgent": [
     {
@@ -138,5 +120,5 @@
     }
   ],
   "activeAgent": false,
-  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-11\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-18\",\"root-19\",\"root-20\",\"root-21\"],\"selectedItems\":[]}}"
+  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-19\",\"root-20\",\"root-21\",\"root-2\",\"root-17-1\"],\"selectedItems\":[]}}"
 }
