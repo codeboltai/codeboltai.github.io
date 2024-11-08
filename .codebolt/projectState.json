@@ -52,24 +52,44 @@
         "type": "branch",
         "data": [
           {
-            "type": "leaf",
-            "data": {
-              "views": [
-                "Code",
-                "Console",
-                "Chat"
-              ],
-              "activeView": "Chat",
-              "id": "1"
-            },
-            "size": 1536
+            "type": "branch",
+            "data": [
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Code",
+                    "Preview"
+                  ],
+                  "activeView": "Code",
+                  "id": "4"
+                },
+                "size": 684
+              },
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Console",
+                    "Chat",
+                    "Debug",
+                    "Git",
+                    "MarketPlace"
+                  ],
+                  "activeView": "Console",
+                  "id": "5"
+                },
+                "size": 852
+              }
+            ],
+            "size": 756
           }
         ],
-        "size": 756
+        "size": 1536
       },
       "width": 1536,
       "height": 756,
-      "orientation": "HORIZONTAL"
+      "orientation": "VERTICAL"
     },
     "panels": {
       "Code": {
@@ -77,6 +97,13 @@
         "contentComponent": "Code",
         "tabComponent": "props.defaultTabComponent",
         "title": "Code",
+        "renderer": "always"
+      },
+      "Preview": {
+        "id": "Preview",
+        "contentComponent": "Preview",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Preview",
         "renderer": "always"
       },
       "Console": {
@@ -92,9 +119,30 @@
         "tabComponent": "props.defaultTabComponent",
         "title": "Chat",
         "renderer": "always"
+      },
+      "Debug": {
+        "id": "Debug",
+        "contentComponent": "Debug",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Debug",
+        "renderer": "always"
+      },
+      "Git": {
+        "id": "Git",
+        "contentComponent": "Git",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Git",
+        "renderer": "always"
+      },
+      "MarketPlace": {
+        "id": "MarketPlace",
+        "contentComponent": "MarketPlace",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "MarketPlace",
+        "renderer": "always"
       }
     },
-    "activeGroup": "1"
+    "activeGroup": "5"
   },
   "pinnedAgent": [
     {
@@ -120,5 +168,5 @@
     }
   ],
   "activeAgent": false,
-  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-19\",\"root-20\",\"root-21\",\"root-2\",\"root-17-1\"],\"selectedItems\":[]}}"
+  "treeViewState": "{\"tree-2\":{\"focusedItem\":null,\"expandedItems\":[\"root-1\",\"root-3\",\"root-4\",\"root-5\",\"root-6\",\"root-7\",\"root-8\",\"root-9\",\"root-10\",\"root-12\",\"root-13\",\"root-14\",\"root-15\",\"root-16\",\"root-17\",\"root-19\",\"root-20\",\"root-21\",\"root-2\",\"root-17-1\",\"root-11\",\"root-18\"],\"selectedItems\":[]}}"
 }
