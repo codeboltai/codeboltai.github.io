@@ -25,5 +25,3 @@ Universal Agents are called whenever the user sends any chat in the editor or as
 ### Action Agents
 Action Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Action Agents](./AgentTypes/actionAgents.md)
 
-## Create your own Agents
-You can create your own Agents and use them in the editor. You can learn more about them at [Create your own Agents](./AgentTypes/UniversalAgents/createUniversalAgents.md)

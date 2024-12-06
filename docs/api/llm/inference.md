@@ -7,11 +7,16 @@ cbbaseinfo:
 cbparameters:
   parameters:
     - name: message
-      typeName: string
+      typeName: object
       description: The input message or prompt to be sent to the LLM.
     - name: llmrole
       typeName: string
+<<<<<<< HEAD
       description: The role of the LLM to determine which model to use. This parameter is optional.
+=======
+      description: The role of the LLM to determine which model to use
+      
+>>>>>>> 29130529741fc9e77724a073fca43156770b98f8
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the LLM's response.
@@ -28,7 +33,8 @@ data:
 
 ### Example 
 
-```js 
+```bash
+js 
 
 let message={
     messages:[{
@@ -43,11 +49,15 @@ let message={
 }
 
 
+<<<<<<< HEAD
 const response = codebolt.llm.inference(message,<optional llmrole>);
+=======
+const response = codebolt.llm.inference(message);
+>>>>>>> 29130529741fc9e77724a073fca43156770b98f8
 console.log(response);
 
-
 ```
+
 
 
 ### Explaination
@@ -56,4 +66,5 @@ The codebolt.llm.inference function allows you to send an inference request to a
 
 question (string): This parameter represents the input question or prompt you want to send to the LLM for inference.
 
-llmRole (string): This parameter specifies the role or type of Large Language Model (LLM) you want to use for inference. The role determines which variant of the LLM is selected for processing the input question and generating the response.
+llmRole (string): This parameter specifies the role or type of Large Language Model (LLM) you want to use for inference. The role determines which variant of the LLM is selected for processing the input question and generating the response. LLMs role can be optional.
+

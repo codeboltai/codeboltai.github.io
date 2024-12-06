@@ -24,11 +24,11 @@ data:
 
 ```js
 // Send a message through the WebSocket connection
-const message = await codebolt.chat.sendMessage("Hello, everyone!");
+const message = await codebolt.chat.sendMessage("Hi!");
 
 ```
 
-![sendMessage](../../../static/img/sendMessage.png)
+![sendMessage](../../../static/img/processStarted.png)
 
 
 ### Explanation

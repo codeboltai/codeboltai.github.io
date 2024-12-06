@@ -4,8 +4,8 @@ Whenever the user sends any chat in the editor, Universal Agents are called to h
 
 The Universal Agents performs the following tasks:
 - Understands the user's message and devises a plan to achieve the user's goal.
-- Creates a list of tasks to be performed to achieve the user's goal. In a sense, it generates a DAG (Directed Acyclic Graph) of tasks to be performed. See [Task Graph](./taskGraph.md)
-- Matches the tasks with the available agents and picks the best agents to perform those tasks. These could be one or more Agents depending on the Task Graph, and hence generating a DAG of Agents. See [Agent Graph](./agentGraph.md).
+- Creates a list of tasks to be performed to achieve the user's goal. In a sense, it generates a DAG (Directed Acyclic Graph) of tasks to be performed. 
+- Matches the tasks with the available agents and picks the best agents to perform those tasks. These could be one or more Agents depending on the Task Graph, and hence generating a DAG of Agents. 
 
 ## Integrated Universal Agent
 
