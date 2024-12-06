@@ -4,18 +4,21 @@ cbbaseinfo:
   description: ' '
 cbparameters:
   parameters:
-    - name: foldername
-      typeName: string
-      description: The name of the folder to delete.
     - name: folderpath
       typeName: string
-      description: The path of the folder to delete.
+      description: The path of the folder to search within.
+    - name: regex
+      typeName: RegExp
+      description: The regular expression pattern to match file contents.
+    - name: filePattern
+      typeName: string
+      description: The pattern to match file names.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the server response.
     typeArgs:
       - type: reference
-        name: DeleteFolderResponse
+        name: SearchFilesResponse
 data:
   name: searchFiles
   category: fs
@@ -27,17 +30,18 @@ data:
 ### Example 
 
 ```js 
-//Let's assume you want to delete a folder named oldFolder in the /home/user/documents directory.
-
-codebolt.fs.deleteFolder('oldFolder', '/home/user/documents');
+let { success, result } = await codebolt.fs.searchFiles(path, regex, filePattern);
+                    return [success, result]
 
 ```
 
 
 ### Explaination
 
-The codebolt.fs.deleteFolder method is used to delete a specified folder from a given directory. It has two parameters:
+The codebolt.fs.searchFiles method is used to search for files within a specified directory that match a given pattern. It has three parameters:
 
-foldername (string): The name of the folder to be deleted.
+folderpath (string): The path of the folder to search within.
 
-folderpath (string): The path to the directory where the folder is located.
+regex (RegExp): The regular expression pattern to match file contents.
+
+filePattern (string): The pattern to match file names.

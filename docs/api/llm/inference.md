@@ -11,12 +11,7 @@ cbparameters:
       description: The input message or prompt to be sent to the LLM.
     - name: llmrole
       typeName: string
-<<<<<<< HEAD
       description: The role of the LLM to determine which model to use. This parameter is optional.
-=======
-      description: The role of the LLM to determine which model to use
-      
->>>>>>> 29130529741fc9e77724a073fca43156770b98f8
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the LLM's response.
@@ -49,11 +44,7 @@ let message={
 }
 
 
-<<<<<<< HEAD
 const response = codebolt.llm.inference(message,<optional llmrole>);
-=======
-const response = codebolt.llm.inference(message);
->>>>>>> 29130529741fc9e77724a073fca43156770b98f8
 console.log(response);
 
 ```

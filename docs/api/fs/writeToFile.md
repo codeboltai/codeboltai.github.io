@@ -28,7 +28,7 @@ data:
 ```js
 
 
- let { success, result } = await codebolt.fs.readFile(toolInput.path);
+ let { success, result } = await codebolt.fs.readFile(path);
 
 ```
 

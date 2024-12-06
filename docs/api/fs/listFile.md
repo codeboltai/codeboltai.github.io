@@ -19,6 +19,14 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example 
+```js
 
-Comming soon...
+
+ let { success, result } = await codebolt.fs.listFile(path);
+
+```
+
+### Explaination
+
+The listFiles function is designed to list files in a specified directory, with options for recursive listing and ignoring certain directories. Here's a summary of its functionality:

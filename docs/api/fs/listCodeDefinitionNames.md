@@ -4,21 +4,15 @@ cbbaseinfo:
   description: ' '
 cbparameters:
   parameters:
-    - name: filename
-      typeName: string
-      description: The name of the file to update.
     - name: filePath
       typeName: string
       description: The path of the file to update.
-    - name: newContent
-      typeName: string
-      description: The new content to write into the file.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the server response.
     typeArgs:
       - type: reference
-        name: UpdateFileResponse
+        name: listCodeDefinitionNamesResponse
 data:
   name: listCodeDefinitionNames
   category: fs
@@ -27,6 +21,17 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status
 
-Comming soon...
+
+### Example 
+```js
+
+
+ let { success, result } = await codebolt.fs.listCodeDefinitionNames(path);
+
+```
+
+### Explaination
+
+The codebolt.fs.listCodeDefinitionNames method extract meaningful code definitions from a path source files
+returns success and result. as output.

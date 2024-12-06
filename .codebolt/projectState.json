@@ -1,0 +1,80 @@
+{
+  "activeAgent": false,
+  "currentLayout": {
+    "grid": {
+      "root": {
+        "type": "branch",
+        "data": [
+          {
+            "type": "leaf",
+            "data": {
+              "views": [
+                "Code"
+              ],
+              "activeView": "Code",
+              "id": "1"
+            },
+            "size": 849.9140625
+          },
+          {
+            "type": "branch",
+            "data": [
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Chat"
+                  ],
+                  "activeView": "Chat",
+                  "id": "2"
+                },
+                "size": 430
+              },
+              {
+                "type": "leaf",
+                "data": {
+                  "views": [
+                    "Preview"
+                  ],
+                  "activeView": "Preview",
+                  "id": "3"
+                },
+                "size": 430
+              }
+            ],
+            "size": 620.0859375
+          }
+        ],
+        "size": 860
+      },
+      "width": 1470,
+      "height": 860,
+      "orientation": "HORIZONTAL"
+    },
+    "panels": {
+      "Code": {
+        "id": "Code",
+        "contentComponent": "Code",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Code",
+        "renderer": "always"
+      },
+      "Chat": {
+        "id": "Chat",
+        "contentComponent": "Chat",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Chat",
+        "renderer": "always"
+      },
+      "Preview": {
+        "id": "Preview",
+        "contentComponent": "Preview",
+        "tabComponent": "props.defaultTabComponent",
+        "title": "Preview",
+        "renderer": "always"
+      }
+    },
+    "activeGroup": "1"
+  },
+  "pinnedAgent": []
+}
