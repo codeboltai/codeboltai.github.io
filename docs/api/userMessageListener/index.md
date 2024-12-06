@@ -1,6 +1,0 @@
----
-cbapicategory: []
-
----
-# userMessageListener
-<CBAPICategory />

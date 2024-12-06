@@ -1,5 +1,5 @@
 ---
-name: deleteFolder
+name: searchFiles
 cbbaseinfo:
   description: ' '
 cbparameters:
@@ -17,9 +17,9 @@ cbparameters:
       - type: reference
         name: DeleteFolderResponse
 data:
-  name: deleteFolder
+  name: searchFiles
   category: fs
-  link: deleteFolder.md
+  link: searchFiles.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>

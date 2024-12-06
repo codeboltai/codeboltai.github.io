@@ -11,7 +11,7 @@ cbparameters:
       description: The input message or prompt to be sent to the LLM.
     - name: llmrole
       typeName: string
-      description: The role of the LLM to determine which model to use.
+      description: The role of the LLM to determine which model to use. This parameter is optional.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the LLM's response.
@@ -30,10 +30,20 @@ data:
 
 ```js 
 
-const question = "Write an API to get all users from the User Table.";
-const llmRole = "assistant";
+let message={
+    messages:[{
+        "role":"system",
+        "content":"you are developer agent expert in writing code"
+    },{
+        "role":"user",
+        "content":"crete node js project"
+    }],
+    tools:[],
+    tool_choice: "auto",//if useing any tools
+}
 
-const response = codebolt.llm.inference(question, llmRole);
+
+const response = codebolt.llm.inference(message,<optional llmrole>);
 console.log(response);
 
 

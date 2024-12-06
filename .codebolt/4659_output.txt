@@ -1,0 +1,8 @@
+^C[31mhttp-server stopped.[39m[1G[0K\[1G[0KCOMMAND_SUCCESS
+::
+::
+::
+::
+::
+::  COMMAND HAS FINISHED
+bash-3.2$

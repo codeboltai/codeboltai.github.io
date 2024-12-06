@@ -1,5 +1,5 @@
 ---
-name: updateFile
+name: listCodeDefinitionNames
 cbbaseinfo:
   description: ' '
 cbparameters:
@@ -20,9 +20,9 @@ cbparameters:
       - type: reference
         name: UpdateFileResponse
 data:
-  name: updateFile
+  name: listCodeDefinitionNames
   category: fs
-  link: updateFile.md
+  link: listCodeDefinitionNames.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>
