@@ -21,6 +21,11 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example 
+```js
 
-Comming soon...
+
+ const addResponse = await codebolt.vectordb.addVectorItem({ id: "123", vector: [0.1, 0.2, 0.3] });
+        console.log("Add Vector Response:", addResponse);
+
+```

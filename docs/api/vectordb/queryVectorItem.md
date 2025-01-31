@@ -21,6 +21,15 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example
+```js
 
-Comming soon...
+ // Example: Querying a single vector item
+  const queryResponse = await codebolt.vectordb.queryVectorItem("123");
+        console.log("Query Vector Item Response:", queryResponse);
+
+      // Example: Querying multiple vector items
+  const queryItemsResponse = await codebolt.vectordb.queryVectorItems(["123", "456"], "/database/path");
+  console.log("Query Vector Items Response:", queryItemsResponse);
+
+```
