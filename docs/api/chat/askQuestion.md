@@ -24,7 +24,6 @@ data:
 ### Example:
 
 ```js
-
 const userResponse = await codebolt.chat.askQuestion(question: string)
 
 ```
