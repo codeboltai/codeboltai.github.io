@@ -27,6 +27,9 @@ cbapicategory:
   - name: waitforReply
     link: /docs/api/chat/waitforReply
     description: Waits for a reply to a sent message.
+  - name: askQuestion
+    link: /docs/api/chat/askQuestion
+    description: Asks a question to the user.  
 
 ---
 # chat

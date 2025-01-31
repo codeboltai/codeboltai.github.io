@@ -60,7 +60,7 @@
               "activeView": "Code",
               "id": "1"
             },
-            "size": 512
+            "size": 1152.7999877929688
           },
           {
             "type": "branch",
@@ -74,7 +74,7 @@
                   "activeView": "Chat",
                   "id": "2"
                 },
-                "size": 334
+                "size": 378
               },
               {
                 "type": "leaf",
@@ -85,16 +85,16 @@
                   "activeView": "Preview",
                   "id": "3"
                 },
-                "size": 334
+                "size": 378
               }
             ],
-            "size": 512
+            "size": 383.20001220703125
           }
         ],
-        "size": 668
+        "size": 756
       },
-      "width": 1024,
-      "height": 668,
+      "width": 1536,
+      "height": 756,
       "orientation": "HORIZONTAL"
     },
     "panels": {
@@ -120,7 +120,7 @@
         "renderer": "always"
       }
     },
-    "activeGroup": "2"
+    "activeGroup": "1"
   },
   "pinnedAgent": [
     {

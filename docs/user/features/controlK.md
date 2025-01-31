@@ -1,6 +1,7 @@
 # Ctrl K
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/CPH93ADilaM?si=HzjXTzyzxx-n31fU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+![LLMs Settings](../../../static/img/llm-setting.png)
 
 Ctrl K lets you edit and write code with the codebolt AI:
 
@@ -15,3 +16,8 @@ Ctrl K lets you edit and write code with the codebolt AI:
   - Review the diff showing the AI's edits
   - If you're happy with the changes, press Ctrl+Enter or Cmd+Enter to accept them
   - The AI's code will be inserted into your editor, replacing any previous selection
+
+
+### Video Guide
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/CPH93ADilaM?si=HzjXTzyzxx-n31fU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
