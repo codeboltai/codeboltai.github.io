@@ -22,6 +22,14 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example
 
-Comming soon...
+```js
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleRetrieveRelatedKnowledge() {
+    await codebolt.rag.retrieve_related_knowledge("What is CodeBolt?", "example.txt");
+    console.log("Related knowledge retrieved.");
+}
+
+exampleRetrieveRelatedKnowledge();

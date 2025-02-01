@@ -23,6 +23,18 @@ data:
 
 
 
-### Status 
+### Example 
 
-Comming soon...
+```js
+import codebolt from '@codebolt/codeboltjs';
+async function exampleGetToken() {
+  try {
+    const response = await codebolt.tokenizer.getToken("myTokenKey");
+    console.log("Token retrieved successfully:", response);
+    catch (error) {
+      console.error("Failed to retrieve token:", error);
+      }
+  }
+}
+
+```

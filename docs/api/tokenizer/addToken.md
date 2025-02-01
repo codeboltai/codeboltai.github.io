@@ -21,6 +21,21 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example
 
-Comming soon...
+```js
+
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleAddToken() {
+    try {
+        const response = await codebolt.tokenizer.addToken("myTokenKey");
+        console.log("Token added successfully:", response);
+    } catch (error) {
+        console.error("Failed to add token:", error);
+    }
+}
+
+exampleAddToken();
+
+```

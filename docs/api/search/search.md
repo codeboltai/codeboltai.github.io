@@ -21,6 +21,21 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
  
-### Status 
+### Example
 
-Comming soon...
+### Example
+
+```js
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleSearch() {
+    try {
+        const results = await codebolt.search.search("JavaScript documentation");
+        console.log("Search results:", results);
+    } catch (error) {
+        console.error("Failed to perform search:", error);
+    }
+}
+
+exampleSearch();
+```

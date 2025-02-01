@@ -1,7 +1,7 @@
 ---
 name: addTask
 cbbaseinfo:
-  description: Adds a task using a WebSocket message.
+  description: Adds a task to the system via WebSocket.
 cbparameters:
   parameters:
     - name: task
@@ -11,22 +11,31 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the add task event.
     typeArgs:
-      - type: intrinsic
-        name: any
+      - type: reference
+        name: AddTaskResponse
 data:
   name: addTask
   category: taskplaner
   link: addTask.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Example 
+### Example
 
-```js 
+```js
+import codebolt from '@codebolt/codeboltjs';
 
-await codebolt.taskplaner.addTask("Task Name")
+async function exampleAddTask() {
+    try {
+        const response = await codebolt.taskplaner.addTask("Complete project documentation");
+        console.log("Task added successfully:", response);
+    } catch (error) {
+        console.error("Failed to add task:", error);
+    }
+}
 
+exampleAddTask();
 ```
 
 ### Explaination 

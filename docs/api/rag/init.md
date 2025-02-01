@@ -16,6 +16,16 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>  
 
-### Status 
+### Example
 
-Comming soon...
+```js
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleInit() {
+    await codebolt.rag.init();
+    console.log("CodeBolt File System Module initialized.");
+}
+
+exampleInit();
+
+```

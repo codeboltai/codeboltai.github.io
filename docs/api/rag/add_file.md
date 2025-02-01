@@ -22,6 +22,15 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
 
-Comming soon...
+### Example
+
+```js
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleAddFile() {
+    await codebolt.rag.add_file("example.txt", "/path/to/file");
+    console.log("File added successfully.");
+}
+
+exampleAddFile();

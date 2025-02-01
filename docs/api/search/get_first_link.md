@@ -21,6 +21,18 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
+### Example
 
-Comming soon...
+```js
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleGetFirstLink() {
+    try {
+        const firstLink = await codebolt.bsearch.get_first_link("JavaScript documentation");
+        console.log("First link:", firstLink);
+    } catch (error) {
+        console.error("Failed to retrieve the first link:", error);
+    }
+}
+
+exampleGetFirstLink();

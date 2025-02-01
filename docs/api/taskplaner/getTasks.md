@@ -20,9 +20,23 @@ data:
 
 ### Examples
 
+
+### Example
+
 ```js
-// It retrieves the current list of tasks from the task planner
-const getTask = await codebolt.taskplaner.getTasks()
+import codebolt from '@codebolt/codeboltjs';
+
+async function exampleGetTasks() {
+    try {
+        const response =  await codebolt.taskplaner.getTasks()
+
+        console.log("Tasks retrieved successfully:", response);
+    } catch (error) {
+        console.error("Failed to retrieve tasks:", error);
+    }
+}
+
+exampleGetTasks();
 
 ```
 
