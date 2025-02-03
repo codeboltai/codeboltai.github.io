@@ -1,32 +1,32 @@
 ---
 name: listFile
 cbbaseinfo:
-  description: ' '
+  description: 'Lists all files in a specified directory.'
 cbparameters:
   parameters:
     - name: folderPath
       typeName: string
-      description: ''
+      description: The path of the directory to list files from.
+    - name: isRecursive
+      typeName: boolean
+      description: Whether to list files recursively.
   returns:
-    signatureTypeName: void
-    description: ' '
-    typeArgs: []
+    signatureTypeName: Promise
+    description: A promise that resolves with the list of files.
+    typeArgs:
+      - type: reference
+        name: FileListResponse
 data:
   name: listFile
   category: fs
   link: listFile.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 ### Example 
+
 ```js
+// Let's assume you want to list all files in the /home/user/documents directory.
 
-
- let { success, result } = await codebolt.fs.listFile(path);
-
-```
-
-### Explaination
-
-The listFiles function is designed to list files in a specified directory, with options for recursive listing and ignoring certain directories. Here's a summary of its functionality:
+codebolt.fs.listFile('/home/user/documents');

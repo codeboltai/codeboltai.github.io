@@ -1,18 +1,18 @@
 ---
 name: writeToFile
 cbbaseinfo:
-  description: 'Creates or updates a file and writes data to it.'
+  description: 'Writes content to a file at the specified path.'
 cbparameters:
   parameters:
-    - name: filePath
+    - name: relPath
       typeName: string
-      description: The path where the file should be created or updated.
-    - name: content
+      description: The relative path of the file to write to.
+    - name: newContent
       typeName: string
-      description: The content to write into the file.
+      description: The new content to write into the file.
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the server response.
+    description: A promise that resolves with the write operation result.
     typeArgs:
       - type: reference
         name: WriteToFileResponse
@@ -25,15 +25,8 @@ data:
 <CBParameters/>
 
 ### Example 
+
 ```js
+// Let's assume you want to write content to a file named example.txt in the /home/user/documents directory.
 
-
- let { success, result } = await codebolt.fs.readFile(path);
-
-```
-
-### Explaination
-
-The codebolt.fs.writeToFile method is used to create a new file or update in a specified pah, with content provided as a string. 
-
-returns success and result. as output.
+codebolt.fs.writeToFile('/home/user/documents/example.txt', 'This is the new content.');

@@ -1,21 +1,21 @@
 ---
 name: searchFiles
 cbbaseinfo:
-  description: ' '
+  description: 'Searches files in a given path using a regex pattern.'
 cbparameters:
   parameters:
-    - name: folderpath
+    - name: path
       typeName: string
-      description: The path of the folder to search within.
+      description: The path to search within.
     - name: regex
-      typeName: RegExp
-      description: The regular expression pattern to match file contents.
+      typeName: string
+      description: The regex pattern to search for.
     - name: filePattern
       typeName: string
-      description: The pattern to match file names.
+      description: The file pattern to match files.
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the server response.
+    description: A promise that resolves with the search results.
     typeArgs:
       - type: reference
         name: SearchFilesResponse
@@ -25,23 +25,11 @@ data:
   link: searchFiles.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 ### Example 
 
-```js 
-let { success, result } = await codebolt.fs.searchFiles(path, regex, filePattern);
-                    return [success, result]
+```js
+// Let's assume you want to search for files in the /home/user/documents directory that match the regex pattern "example" and have a .txt extension.
 
-```
-
-
-### Explaination
-
-The codebolt.fs.searchFiles method is used to search for files within a specified directory that match a given pattern. It has three parameters:
-
-folderpath (string): The path of the folder to search within.
-
-regex (RegExp): The regular expression pattern to match file contents.
-
-filePattern (string): The pattern to match file names.
+codebolt.fs.searchFiles('/home/user/documents', 'example', '*.txt');

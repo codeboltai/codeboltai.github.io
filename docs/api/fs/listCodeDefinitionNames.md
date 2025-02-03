@@ -1,37 +1,29 @@
 ---
 name: listCodeDefinitionNames
 cbbaseinfo:
-  description: ' '
+  description: 'Lists all code definition names in a given path.'
 cbparameters:
   parameters:
-    - name: filePath
+    - name: path
       typeName: string
-      description: The path of the file to update.
+      description: The path to search for code definitions.
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the server response.
+    description: A promise that resolves with the list of code definition names.
     typeArgs:
       - type: reference
-        name: listCodeDefinitionNamesResponse
+        name: ListCodeDefinitionNamesResponse
 data:
   name: listCodeDefinitionNames
   category: fs
   link: listCodeDefinitionNames.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
-
-
+<CBParameters/>
 
 ### Example 
+
 ```js
+// Let's assume you want to list all code definition names in the /home/user/projects directory.
 
-
- let { success, result } = await codebolt.fs.listCodeDefinitionNames(path);
-
-```
-
-### Explaination
-
-The codebolt.fs.listCodeDefinitionNames method extract meaningful code definitions from a path source files
-returns success and result. as output.
+codebolt.fs.listCodeDefinitionNames('/home/user/projects');
