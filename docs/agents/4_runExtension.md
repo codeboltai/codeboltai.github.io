@@ -18,3 +18,4 @@ Follow the steps below to run a new agent locally Codebolt.
 
 - *Select your desired local agent*
 
+![runlocal Agent](../../static/img/runlocalagent.png)
