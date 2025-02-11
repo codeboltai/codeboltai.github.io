@@ -9,18 +9,18 @@ Follow the steps below to create a new agent using Codebolt.
 - **Option 1: Use Agent Template**  
   Open Codebolt Application. Create Project In Workspace >  Select Agent Template > Create Project
   ![create agent](../../static/img/createAgent.png)
-  
+
+- *Navigate to the .codeboltAgents directory.*
+   ```bash
+      cd .codeboltAgents
+   
+   ```
+
 - **Option 2: Use Npx Command**  
   Open your terminal in the directory where you want the agent to be created and run the following command:  
   ```bash
   npx create-codebolt-agent your-agent-name
   ```
-
-Open your terminal in the directory where you want the agent to be created and run the following command:   
-
-```bash
-npx create-codebolt-agent your-agent-name
-```
 
 ![create agent](../../static/img/agent-create.png)
 
