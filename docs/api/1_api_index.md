@@ -2,7 +2,7 @@
 cbapicategory:
     - name: Agent
       link: /docs/api/agent
-      description: The browser module provides functions for interacting with the browser.
+      description: This module provides functionalities for creating customized, high-performance agents tailored to specific needs.
     - name: Browser
       link: /docs/api/browser
       description: The browser module provides functions for interacting with the browser.
