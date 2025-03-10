@@ -63,6 +63,12 @@ cbapicategory:
     - name: VectorDB
       link: /docs/api/vectordb
       description: Provides Vector DB related Functionalities for Storing and Managing of Vector Embedding
+    - name: MCP
+      link: /docs/api/mcp
+      description: Manages modular tools and services through WebSocket communication. Execute tools, retrieve tool details, and monitor enabled MCP instances in real-time
+    - name: Agent
+      link: /docs/api/agent
+      description: Manages AI agents for tasks using WebSocket. Start agents, assign tasks, and track their status in real-time.
 
 ---
 # Codebolt AI Agent Framework API
