@@ -76,6 +76,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'appSidebar',
+          position: 'left',
+          label: 'Apps',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'jsapiSidebar',
           position: 'left',
           label: 'API',
@@ -85,12 +91,7 @@ const config: Config = {
           label: 'Blog', 
           position: 'left'
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'appSidebar',
-          position: 'left',
-          label: 'Apps',
-        },
+        
       ],
     },
     footer: {
