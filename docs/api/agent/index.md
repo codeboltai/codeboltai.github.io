@@ -13,5 +13,5 @@ cbapicategory:
     link: /docs/api/agent/getAgentsList
     description: Lists all available agents of a specific type.
 ---
-# Agent
+# agent
 <CBAPICategory />
