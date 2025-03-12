@@ -8,10 +8,10 @@ cbapicategory:
     description:  Class for loading and managing AI system prompts from YAML files with key-based retrieval.
   - name: taskInstructions
     link: /docs/api/agentlib/taskInstructions
-    description: 
+    description: Encapsulates task instructions and their metadata, handling loading/processing from YAML files.
   - name: usermessage
     link: /docs/api/agentlib/usermessage
-    description: 
+    description: Handles user message processing with file/environment context attachment
 
 ---
 # cbstate
