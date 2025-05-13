@@ -11,7 +11,7 @@ To use or run an agent, you’ll need to follow these steps:
 
 * **Switch Agents as Needed**: If you need a different set of functions, return to your agent list to deactivate the current agent and select another. For instance, if you’re done with development and need to deploy, switch from CodeBolt Dev to CodeBolt Web Deployment for automated deployment support.
 
-![selectAgent](../../static/img/selectAgent.png)
+![selectAgent](../../static/img/browseAgent.png)
 
 **To use agent in chat, you can follow these steps:**
 
@@ -23,4 +23,6 @@ In the chat interface, click on the `# symbol`. This will open list of all avail
 
 * **Switch Agents if Needed**: If you need help with a different type of task, click # again to open the agent list, select another agent, and start your next interaction.
 
-![runAgent2](../../static/img/runAgent2.png)
+![runAgent2](../../static/img/selectMarketplaceAgent.png)
+
+![runAgent2](../../static/img/SelectFormAgent.png)

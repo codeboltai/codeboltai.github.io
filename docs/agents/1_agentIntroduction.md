@@ -1,4 +1,4 @@
-# App Introduction
+# Agent Introduction
 
 Codebolt is an extremely powerful tool for AI Code Editing and AI Code Generation. Most of the power of Codebolt comes from the ability to use Agents. These agents are powerful tools that can be used to automate tasks, generate code, and even create entire applications. 
 
@@ -13,7 +13,7 @@ Codebolt Editor exposes all the functionality of the Editor in the format of API
 - [JavaScript](https://github.com/codebolt-ai/codebolt-js)
 - [Python](https://github.com/codebolt-ai/codebolt-python) -->
 
-## Codebolt Agents
+<!-- ## Codebolt Agents
 
 Codebolt has Multiple Types of Agents that can do various tasks.
 - [Universal Agents](./AgentTypes/UniversalAgents/universalAgents.md)
@@ -23,5 +23,5 @@ Codebolt has Multiple Types of Agents that can do various tasks.
 Universal Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Universal Agents](./AgentTypes/UniversalAgents/universalAgents.md)
 
 ### Action Agents
-Action Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Action Agents](./AgentTypes/actionAgents.md)
+Action Agents are called whenever the user sends any chat in the editor or asks to perform any action that can be resolved to any agent. You can learn more about them at [Action Agents](./AgentTypes/actionAgents.md) -->
 

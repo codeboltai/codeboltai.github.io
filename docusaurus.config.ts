@@ -76,6 +76,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          sidebarId: 'toolSidebar',
+          position: 'left',
+          label: 'Tools',
+        },
+        {
+          type: 'docSidebar',
           sidebarId: 'appSidebar',
           position: 'left',
           label: 'Apps',
