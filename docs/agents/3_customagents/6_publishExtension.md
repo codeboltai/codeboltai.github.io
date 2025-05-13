@@ -21,4 +21,4 @@ Once you're in the correct directory and logged in, publish the agent using the 
 npx codebolt-cli publish
 ```
 
-![publish agent](../../static/img/publish_agent.png)
+![publish agent](../../../static/img/publish_agent.png)
