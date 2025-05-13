@@ -39,6 +39,6 @@ This guide will walk you through the process of running a local agent in Codebol
 ## Additional Information
 - Local agents run directly on your machine, ensuring your code and queries remain private
 - You can switch between different agents at any time by repeating the selection process
-- For information on creating your own custom agent, refer to our [Agent Development Guide](./agentDevelopment.md)
+- For information on creating your own custom agent, refer to our [Agent Development Guide](./2_firstExtension.md)
 
 

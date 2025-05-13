@@ -43,7 +43,7 @@ You can customize various aspects of your tool:
 - Output formatting and response handling
 - Integration with external services
 
-For detailed information on available configuration options, refer to the [Tool Configuration Reference](../reference/tool-configuration.md).
+For detailed information on available configuration options, refer to the [Tool Configuration Reference](../api/tool/index.md).
 
 ## Testing and Deployment
 
