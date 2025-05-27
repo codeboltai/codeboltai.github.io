@@ -25,7 +25,7 @@ data:
 
 ### Example
 ```js
-await codebolt.codebolttools.configureToolBox("analyticsTools", {
+await codeboltMCP.configureToolBox("analyticsTools", {
   apiKey: "12345",
   logging: true
 });

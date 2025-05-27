@@ -1,0 +1,8 @@
+{
+  "label": "History",
+  "position": 26,
+  "link": {
+    "type": "generated-index",
+    "description": "Chat history management and summarization functionality."
+  }
+} 

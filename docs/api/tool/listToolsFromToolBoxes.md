@@ -22,7 +22,7 @@ data:
 
 ### Example
 ```js
-const toolsList = await codebolt.codebolttools.listToolsFromToolBoxes([
+const toolsList = await codeboltMCP.listToolsFromToolBoxes([
   "analyticsTools",
   "dataProcessing"
 ]);

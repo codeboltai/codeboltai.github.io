@@ -7,6 +7,9 @@ cbparameters:
     - name: message
       typeName: string
       description: The message to be sent.
+    - name: payload
+      typeName: any
+      description: Additional data to send along with the message.
   returns:
     signatureTypeName: void
     description: ' '
@@ -17,15 +20,20 @@ data:
   link: sendMessage.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 
 ### Example
 
 ```js
-// Send a message through the WebSocket connection
-const message = await codebolt.chat.sendMessage("Hi!");
+// Send a simple message through the WebSocket connection
+codebolt.chat.sendMessage("Hi!", null);
 
+// Send a message with additional payload data
+codebolt.chat.sendMessage("Process complete", { 
+  status: "success", 
+  items: 5 
+});
 ```
 
 ![sendMessage](../../../static/img/processStarted.png)
@@ -33,4 +41,4 @@ const message = await codebolt.chat.sendMessage("Hi!");
 
 ### Explanation
 
-The codebolt.chat.sendMessage(message: string) function is used to send a message  on the codebolt chat . This function enables real-time communication by allowing the script to send text messages on the codebolt chat.
+The codebolt.chat.sendMessage function sends a message through the WebSocket connection, optionally with additional payload data. This function enables real-time communication by allowing the script to send text messages and structured data to the Codebolt chat.

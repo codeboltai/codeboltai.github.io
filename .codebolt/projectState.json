@@ -8,20 +8,29 @@
             "type": "leaf",
             "data": {
               "views": [
-                "Code",
-                "0e7ba2fb-4f85-485e-a1ef-b12ef330b962",
-                "Preview"
+                "Code"
               ],
               "activeView": "Code",
               "id": "1"
             },
-            "size": 1536
+            "size": 592
+          },
+          {
+            "type": "leaf",
+            "data": {
+              "views": [
+                "Chat"
+              ],
+              "activeView": "Chat",
+              "id": "2"
+            },
+            "size": 592
           }
         ],
-        "size": 756
+        "size": 860
       },
-      "width": 1536,
-      "height": 756,
+      "width": 1184,
+      "height": 860,
       "orientation": "HORIZONTAL"
     },
     "panels": {
@@ -32,18 +41,11 @@
         "title": "Code",
         "renderer": "always"
       },
-      "0e7ba2fb-4f85-485e-a1ef-b12ef330b962": {
-        "id": "0e7ba2fb-4f85-485e-a1ef-b12ef330b962",
-        "contentComponent": "Terminal",
+      "Chat": {
+        "id": "Chat",
+        "contentComponent": "Chat",
         "tabComponent": "props.defaultTabComponent",
-        "title": "Terminal",
-        "renderer": "always"
-      },
-      "Preview": {
-        "id": "Preview",
-        "contentComponent": "Preview",
-        "tabComponent": "props.defaultTabComponent",
-        "title": "Preview",
+        "title": "Chat",
         "renderer": "always"
       }
     },

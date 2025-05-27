@@ -19,5 +19,5 @@ data:
 
 ### Example
 ```js
-const availableToolBoxes = await codebolt.codebolttools.getAvailableToolBoxes();
+const availableToolBoxes = await codeboltMCP.getAvailableToolBoxes();
 console.log("Available ToolBoxes:", availableToolBoxes);

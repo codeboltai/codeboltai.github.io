@@ -1,0 +1,17 @@
+{
+  "rootHash": "432471293d81271bc74d88d0a0e4428a4b4ab8aa9f2e6e10850774334e8b2b8c",
+  "leaves": [
+    "2621d2c68302813173b10913b6197d07ae8416396a2f8aa0a64e488cc3760c43",
+    "ecf9116121a771be597830df649273217be987f12c2dd0c87ebf30054795d6ad"
+  ],
+  "filesList": [
+    {
+      "path": ".codebolt/merkle_tree.json",
+      "hash": "0626188b26fc0cf6989bd00cd77fc7fe145e386c6be0acc387360521e626feb8"
+    },
+    {
+      "path": ".codebolt/projectState.json",
+      "hash": "53787d2f86eb9be83094c1f8bda10f04eb81899ebc59d87089a206602baecd92"
+    }
+  ]
+}

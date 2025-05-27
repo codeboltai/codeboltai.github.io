@@ -28,5 +28,5 @@ cbapicategory:
     link: /docs/api/tool/executeTool
     description: Executes a specific tool from a toolbox.
 ---
-# codebolttools
+# codeboltMCP
 <CBAPICategory />

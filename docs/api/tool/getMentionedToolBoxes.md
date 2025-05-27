@@ -26,5 +26,5 @@ const message = {
   content: "Please use @analyticsTools and @dataProcessing",
   mentionedMCPs: ["analyticsTools", "dataProcessing"]
 };
-const mentioned = await codebolt.codebolttools.getMentionedToolBoxes(message);
+const mentioned = await codeboltMCP.getMentionedToolBoxes(message);
 console.log("Mentioned ToolBoxes:", mentioned);

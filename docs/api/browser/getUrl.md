@@ -5,33 +5,28 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: Promise
+    signatureTypeName: Promise<UrlResponse>
     description: A promise that resolves with the URL.
-    typeArgs:
-      - type: reference
-        name: UrlResponse
+    typeArgs: []
 data:
   name: getUrl
   category: browser
   link: getUrl.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
-
+<CBParameters/>
 
 ### Example
 
 ```js
-
 // Navigate to the home page
 await codebolt.browser.goToPage("https://example-website.com");
 
 // Retrieve and log the current URL
 let currentUrl = await codebolt.browser.getUrl();
 console.log(`Current URL: ${currentUrl}`);
-
 ```
 
 ### Explanation
 
-The codebolt.browser.getUrl() function is used to retrieve the URL of the current web page in the browser. This function returns the url, which we can store in a variable and use.
+The `codebolt.browser.getUrl()` function retrieves the URL of the current web page in the browser. This is useful for verifying the current location, tracking navigation, or collecting URLs during automated browsing sessions.

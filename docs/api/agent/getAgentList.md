@@ -6,7 +6,7 @@ cbparameters:
   parameters:
     - name: type
       typeName: Agents
-      description: The type of agents to list (default is Agents.DOWNLOADED)
+      description: The type of agents to list (LOCAL, ALL, DOWNLOADED). Default is DOWNLOADED.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the list of agents
@@ -29,15 +29,11 @@ const downloadedAgents = await codebolt.agent.getAgentsList();
 console.log("Downloaded Agents:", downloadedAgents);
 
 // Example 2: Getting list of local agents
-const localAgents = await codebolt.agent.getAgentsList(Agents.LOCAL);
-console.log("LOCAL Agents:", localAgents);
+const localAgents = await codebolt.agent.getAgentsList(codebolt.agent.Agents.LOCAL);
+console.log("Local Agents:", localAgents);
 
-// Example 3: Getting list of cloud agents
-const cloudAgents = await codebolt.agent.getAgentsList(Agents.CLOUD);
-console.log("CLOUD Agents:", cloudAgents);
-
-// Example 4: Getting list of all agents
-const allAgents = await codebolt.agent.getAgentsList(Agents.ALL);
-console.log("ALL Agents:", allAgents);
+// Example 3: Getting list of all agents
+const allAgents = await codebolt.agent.getAgentsList(codebolt.agent.Agents.ALL);
+console.log("All Agents:", allAgents);
 ```
 

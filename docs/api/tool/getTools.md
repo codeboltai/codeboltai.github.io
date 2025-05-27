@@ -22,7 +22,7 @@ data:
 
 ### Example
 ```js
-const toolInfo = await codebolt.codebolttools.getTools([
+const toolInfo = await codeboltMCP.getTools([
   { toolbox: "analyticsTools", toolName: "dataAnalyzer" },
   { toolbox: "dataProcessing", toolName: "csvParser" }
 ]);

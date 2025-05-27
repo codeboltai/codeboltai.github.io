@@ -22,5 +22,5 @@ data:
 
 ### Example
 ```js
-const results = await codebolt.codebolttools.searchAvailableToolBoxes("data");
+const results = await codeboltMCP.searchAvailableToolBoxes("data");
 console.log("Search Results:", results);

@@ -1,7 +1,7 @@
 ---
 name: getAgent
 cbbaseinfo:
-  description: Retrieves an agent based on the specified task.
+  description: "[DEPRECATED] Retrieves an agent based on the specified task. Use findAgent instead."
 cbparameters:
   parameters:
     - name: task
@@ -20,6 +20,8 @@ data:
 ---
 <CBBaseInfo/>
 <CBParameters/>
+
+> **⚠️ Deprecated:** This function is deprecated. Please use [findAgent](/docs/api/agent/findAgent) instead.
 
 ### Example
 

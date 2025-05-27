@@ -1,17 +1,17 @@
 ---
 cbapicategory:
-  - name: getAgent
-    link: /docs/api/agent/getAgent
-    description: Retrieves an agent based on the specified task via WebSocket.
   - name: startAgent
     link: /docs/api/agent/startAgent
-    description: Starts an agent for the specified task via WebSocket.
+    description: Starts an agent for the specified task with a given agent ID .
   - name: findAgent
     link: /docs/api/agent/findAgent
-    description: Retrieves an agent based on the specified task with filtering options.
+    description: Finds agents for a specified task with filtering options by location, source and maximum results.
   - name: getAgentsList
     link: /docs/api/agent/getAgentsList
-    description: Lists all available agents of a specific type.
+    description: Lists available agents of a specific type (downloaded, local, or all).
+  - name: getAgentsDetail
+    link: /docs/api/agent/getAgentsDetail
+    description: Retrieves detailed information for a list of specified agents .
 ---
-# agent
+# Agent
 <CBAPICategory />

@@ -28,7 +28,7 @@ data:
 
 ### Example
 ```js
-const result = await codebolt.codebolttools.executeTool(
+const result = await codeboltMCP.executeTool(
   "myToolBox",
   "dataProcessor",
   { inputData: "test" }

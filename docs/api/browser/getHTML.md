@@ -5,24 +5,21 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: Promise
+    signatureTypeName: Promise<HtmlReceived>
     description: A promise that resolves with the HTML content.
-    typeArgs:
-      - type: reference
-        name: HtmlReceived
+    typeArgs: []
 data:
   name: getHTML
   category: browser
   link: getHTML.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 
 ### Example
 
 ```js
-
 // Navigate to the product page
 await codebolt.browser.goToPage("https://example-ecommerce.com/product/12345")
 
@@ -31,10 +28,9 @@ const htmlContent = await codebolt.browser.getHTML()
 
 // Log the retrieved HTML content to the console (or save it as needed)
 console.log(htmlContent)
-
 ```
 
-### Explaination:
+### Explanation
 
-The codebolt.browser.getHTML() function is used to retrieve the HTML content of the current web page. This function is particularly useful for web scraping, data extraction, and automated testing scenarios where you need to capture the entire HTML structure and content of a web page for further analysis or processing.
+The `codebolt.browser.getHTML()` function retrieves the complete HTML content of the current web page. This function is particularly useful for web scraping, data extraction, and automated testing scenarios where you need to capture the entire HTML structure and content of a web page for further analysis or processing.
 

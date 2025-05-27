@@ -5,8 +5,8 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: void
-    description: ' '
+    signatureTypeName: Promise<ExtractTextResponse>
+    description: 'A promise that resolves with the extracted text from the page.'
     typeArgs: []
 data:
   name: extractText
@@ -14,7 +14,7 @@ data:
   link: extractText.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 ### Example 
 
@@ -27,10 +27,9 @@ const pageText = await codebolt.browser.extractText();
 
 // Log the extracted text to the console (or process it as needed)
 console.log(pageText);
-
 ```
 
-### Explaination: 
+### Explanation 
 
-If we want to extract all the text on the webpage, we can use the codebolt.browser.extractText() function. This function returns the text, which we can store in a variable and use.
+The `codebolt.browser.extractText()` function extracts all readable text content from the current webpage. This is useful for data analysis, content scraping, or generating summaries of webpage content. The function removes HTML markup and returns only the human-readable text that would be visible to a user browsing the page.
 

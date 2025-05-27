@@ -19,5 +19,5 @@ data:
 
 ### Example
 ```js
-const localToolBoxes = await codebolt.codebolttools.getLocalToolBoxes();
+const localToolBoxes = await codeboltMCP.getLocalToolBoxes();
 console.log("Local ToolBoxes:", localToolBoxes);

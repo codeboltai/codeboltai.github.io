@@ -80,12 +80,12 @@ const config: Config = {
           position: 'left',
           label: 'Tools',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'appSidebar',
-          position: 'left',
-          label: 'Apps',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'appSidebar',
+        //   position: 'left',
+        //   label: 'Apps',
+        // },
         {
           type: 'docSidebar',
           sidebarId: 'jsapiSidebar',

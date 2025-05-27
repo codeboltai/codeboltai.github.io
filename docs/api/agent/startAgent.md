@@ -4,6 +4,9 @@ cbbaseinfo:
   description: Starts an agent for the specified task.
 cbparameters:
   parameters:
+    - name: agentId
+      typeName: string
+      description: The ID of the agent to start.
     - name: task
       typeName: string
       description: The task for which the agent should be started.
@@ -25,7 +28,7 @@ data:
 
 ```js
 // Example: Starting an agent for a task
-const startResponse = await codebolt.agent.startAgent("dataProcessing");
+const startResponse = await codebolt.agent.startAgent("agent-123", "dataProcessing");
 console.log("Agent Start Response:", startResponse);
 
 ```

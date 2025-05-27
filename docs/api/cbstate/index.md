@@ -9,6 +9,12 @@ cbapicategory:
   - name: getApplicationState
     link: /docs/api/cbstate/getApplicationState
     description: Retrieves the current application state from the server via WebSocket.
+  - name: getProjectState
+    link: /docs/api/cbstate/getProjectState
+    description: Retrieves the current project state from the server via WebSocket.
+  - name: updateProjectState
+    link: /docs/api/cbstate/updateProjectState
+    description: Updates the project state on the server via WebSocket.
 
 ---
 # cbstate

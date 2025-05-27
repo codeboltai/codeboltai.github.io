@@ -12,13 +12,13 @@ cbparameters:
       description: Maximum number of agents to return (default 1).
     - name: agents
       typeName: array
-      description: List of agents to filter in vector database.
+      description: List of agents to filter in vector database (empty array for no filtering).
     - name: agentLocation
       typeName: AgentLocation
-      description: Location preference for agents (ALL, LOCAL_ONLY, REMOTE_ONLY).
+      description: Location preference for agents (ALL, LOCAL_ONLY, REMOTE_ONLY). Default is ALL.
     - name: getFrom
       typeName: FilterUsing
-      description: Filtering method (USE_AI, USE_VECTOR_DB, USE_BOTH).
+      description: Filtering method (USE_AI, USE_VECTOR_DB, USE_BOTH). Default is USE_VECTOR_DB.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the agent details.
@@ -36,7 +36,7 @@ data:
 ### Examples
 
 ```js
-// Example 1: Find a single agent for a task
+// Example 1: Find a single agent for a task using default parameters
 const agent = await codebolt.agent.findAgent("dataProcessing");
 console.log("Found Agent:", agent);
 
