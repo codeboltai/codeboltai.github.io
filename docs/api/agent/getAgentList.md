@@ -1,5 +1,5 @@
 ---
-name: getAgentsList
+name: GetAgentsList
 cbbaseinfo:
   description: Retrieves a list of agents based on the specified type.
 cbparameters:
