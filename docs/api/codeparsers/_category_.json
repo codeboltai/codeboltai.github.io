@@ -1,0 +1,11 @@
+{
+    "label": "Codeparsers",
+    "position": 2.5,
+    "collapsible": true,
+    "collapsed": true,
+    "className": "red",
+    "link": {
+      "type": "doc",
+      "id": "api/codeparsers/index"
+    }
+  }
