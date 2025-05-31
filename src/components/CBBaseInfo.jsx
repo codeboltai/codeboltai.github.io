@@ -27,7 +27,7 @@ const CBBaseInfo = () => {
     <div>
       {Object.entries(frontMatter).map(([key, value]) => {
         if (key === "cbbaseinfo") {
-          console.log(`Key: ${key}, Value: ${value}`);
+          // console.log(`Key: ${key}, Value: ${value}`);
 
           return (
             <div className="cbbaseinfo">
