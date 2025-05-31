@@ -29,11 +29,11 @@ const downloadedAgents = await codebolt.agent.getAgentsList();
 console.log("Downloaded Agents:", downloadedAgents);
 
 // Example 2: Getting list of local agents
-const localAgents = await codebolt.agent.getAgentsList(codebolt.agent.Agents.LOCAL);
+const localAgents = await codebolt.agent.getAgentsList("local");
 console.log("Local Agents:", localAgents);
 
 // Example 3: Getting list of all agents
-const allAgents = await codebolt.agent.getAgentsList(codebolt.agent.Agents.ALL);
+const allAgents = await codebolt.agent.getAgentsList("ALL");
 console.log("All Agents:", allAgents);
 ```
 

@@ -14,11 +14,21 @@ cbparameters:
       typeName: string
       description: The path where the file should be created.
   returns:
-    signatureTypeName: Promise
-    description: A promise that resolves with the server response.
-    typeArgs:
-      - type: reference
-        name: CreateFileResponse
+    signatureTypeName: CreateFileResponse
+    description: A response object containing file creation details.
+    properties:
+      - name: type
+        typeName: string
+        description: The response type identifier (always 'createFileResponse').
+      - name: success
+        typeName: boolean
+        description: Indicates whether the file creation was successful.
+      - name: message
+        typeName: string
+        description: A descriptive message about the operation result.
+      - name: fileName
+        typeName: string
+        description: The name of the created file.
 data:
   name: createFile
   category: fs
