@@ -46,7 +46,7 @@ codebolt.browser.click("#test");
 
 ### Explaination 
 
-[Browser](../../agents/modules/browser)  Click function is used to click on the browser by selecting specific elementId.
+[Browser](../browser)  Click function is used to click on the browser by selecting specific elementId.
 
 A browser is a used to access and display web pages. When a browser is open, users can interact with various elements on web pages, such as buttons, links, forms, and images.
 
