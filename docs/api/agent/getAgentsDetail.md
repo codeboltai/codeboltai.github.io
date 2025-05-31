@@ -1,5 +1,5 @@
 ---
-name: getAgentsDetail
+name: GetAgentsDetail
 cbbaseinfo:
   description: Retrieves detailed information for a list of specified agents.
 cbparameters:

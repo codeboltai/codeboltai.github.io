@@ -1,5 +1,5 @@
 ---
-name: startAgent
+name: StartAgent
 cbbaseinfo:
   description: Starts an agent for the specified task.
 cbparameters:

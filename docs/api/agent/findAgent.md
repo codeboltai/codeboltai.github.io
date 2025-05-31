@@ -1,5 +1,5 @@
 ---
-name: findAgent
+name: FindAgent
 cbbaseinfo:
   description: Finds an agent suitable for the specified task.
 cbparameters:

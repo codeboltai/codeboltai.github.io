@@ -6,8 +6,8 @@ import useFrontMatter from "./useFrontMatter";
 
 const CBAPICategory = () => {
   const frontMatter = useFrontMatter();
-  console.log(frontMatter)
-  console.log(Object.entries(frontMatter))
+  // console.log(frontMatter)
+  // console.log(Object.entries(frontMatter))
   return (
     <div>
       {Object.entries(frontMatter).map(([key, value]) => {
