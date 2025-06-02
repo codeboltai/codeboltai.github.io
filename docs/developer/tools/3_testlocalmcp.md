@@ -14,13 +14,13 @@ You can test your local MCP using either the graphical interface or the command-
 
 Access the MCP panel by clicking the MCP icon in the Codebolt interface.
 
-![Open MCP Panel](../../static/img/openMcp.png)
+![Open MCP Panel](/img/openMcp.png)
 
 #### 2. Select Local MCP
 
 From the dropdown menu, select "Local MCP" to connect to your locally running instance.
 
-![Select Local MCP](../../static/img/SelectMcp.png)
+![Select Local MCP](/img/SelectMcp.png)
 
 ### Option 2: Using the CLI
 

@@ -66,20 +66,20 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'userSidebar',
           position: 'left',
-          label: 'Docs',
+          label: 'User Guide',
         },
         {
           type: 'docSidebar',
           sidebarId: 'devSidebar',
           position: 'left',
-          label: 'Agents',
+          label: 'Developer Guide',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'toolSidebar',
-          position: 'left',
-          label: 'Tools',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'toolSidebar',
+        //   position: 'left',
+        //   label: 'Tools',
+        // },
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'appSidebar',

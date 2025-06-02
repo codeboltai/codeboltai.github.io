@@ -78,6 +78,10 @@ cbapicategory:
 ---
 # Direct API Access
 
+## Overview
+
+Codebolt provides a set of APIs that can be used by agents to interact with the Codebolt application. This allows to build agents that can interact with the Codebolt application. To start using the APIs from an agent, please refer to the Codebolt Agent documentation in the Developer Guide.
+
 ## API List
 
 <CBAPICategory />

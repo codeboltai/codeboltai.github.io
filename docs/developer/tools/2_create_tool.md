@@ -10,11 +10,11 @@ You can create a new tool using either the Codebolt UI or the CLI:
 
 Navigate to the Codebolt dashboard and use the tool creation interface:
 
-![Codebolt tool creation interface](../../static/img/mcpcreate.png)
+![Codebolt tool creation interface](/img/mcpcreate.png)
 
 Enter a descriptive name for your tool:
 
-![Naming your Codebolt tool](../../static/img/nameyourmcp.png)
+![Naming your Codebolt tool](/img/nameyourmcp.png)
 
 ### Option 2: Using the CLI
 
@@ -26,13 +26,13 @@ npx codebolt-cli createtool <toolName>
 
 Replace `<toolName>` with a descriptive name for your tool.
 
-![CLI tool creation example](../../static/img/createTool.png)
+![CLI tool creation example](/img/createTool.png)
 
 ## Tool Configuration
 
 After creation, your tool will be available in the `.codeboltAgent/tool` directory within your project structure. This directory contains all configuration and implementation files needed for your tool.
 
-![Tool directory structure](../../static/img/modifyyourtool.png)
+![Tool directory structure](/img/modifyyourtool.png)
 
 ## Customization Options
 
@@ -43,7 +43,7 @@ You can customize various aspects of your tool:
 - Output formatting and response handling
 - Integration with external services
 
-For detailed information on available configuration options, refer to the [Tool Configuration Reference](../api/apiaccess/tool/index.md).
+For detailed information on available configuration options, refer to the [Tool Configuration Reference](../../api/apiaccess/tool/index.md).
 
 ## Testing and Deployment
 

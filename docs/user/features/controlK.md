@@ -1,7 +1,7 @@
 # Ctrl K
 
 
-![LLMs Settings](../../../static/img/llm-setting.png)
+![LLMs Settings](/img/llm-setting.png)
 
 Ctrl K lets you edit and write code with the codebolt AI:
 

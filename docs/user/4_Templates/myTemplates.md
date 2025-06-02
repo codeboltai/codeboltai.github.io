@@ -4,7 +4,7 @@ Streamline Your Workflow with Custom Templates: Codebolt enables users to upload
 
 Seamless Integration with Codebolt: Once uploaded, your custom templates are seamlessly integrated into the Codebolt app, empowering you to kickstart new projects efficiently while leveraging your personalized settings and configurations.
 
-![myTemplate](../../../static/img/mytemplates.png)
+![myTemplate](/img/mytemplates.png)
 
 
 ## Video Guide

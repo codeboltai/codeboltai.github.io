@@ -3,7 +3,7 @@
 Use CodeBolt's built-in chat to get help from Agent AI. Start a new conversation to ask questions, solve problems, and get coding advice instantly. Agent AI assists with coding issues and project guidance, making troubleshooting faster and easier.
 
 
-![Chat](../../../static/img/chat_view.png)
+![Chat](/img/chat_view.png)
 
 <!-- ### Chat Features -->
 

@@ -19,5 +19,5 @@ To create a new project using a template in Codebolt, follow these steps:
 
 Codebolt will then set up your project with the necessary files and configurations, and you'll be ready to start coding!
 
-![Template](../../../static/img/template.png)
+![Template](/img/template.png)
 

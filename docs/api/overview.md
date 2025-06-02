@@ -1,5 +1,5 @@
 ---
-sidebar_label: API Overview
+sidebar_label: System Interfaces
 sidebar_position: 1
 ---
 # CodeboltAI System Interfaces

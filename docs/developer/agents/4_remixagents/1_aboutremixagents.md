@@ -19,13 +19,13 @@ The Remix Agent is suitable for environments where there is a need for real-time
 
 
 1. Navigate to the chat window and click on the "Create Agent" option.
-   ![How to create remix agent](../../../static/img/howtocreateremix.png)
+   ![How to create remix agent](/img/howtocreateremix.png)
 
 2. Select the "Remix Agent" from the options available.
-   ![Click on Remix Agent](../../../static/img/selectremix.png)
+   ![Click on Remix Agent](/img/selectremix.png)
 
 3. Modify the settings of the agent you wish to remix according to your requirements.
-   ![Modify settings](../../../static/img/modifymodelormcps.png)
+   ![Modify settings](/img/modifymodelormcps.png)
 
 ## Using Local MCPs
 

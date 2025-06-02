@@ -22,7 +22,7 @@ To begin creating a new agent:
 1. **Open Codebolt** and navigate to the chat interface.
 2. **Click on the "Create Agent" button** in the chat window. This option is typically found in the sidebar or main interface.
 
-![In chat window click on create agent](../../../static/img/create-agent.png)
+![In chat window click on create agent](/img/create-agent.png)
 
 ### 2. Select Agent Type
 
@@ -30,7 +30,7 @@ Next, you'll need to choose the type of agent you want to create:
 
 1. **Select "Custom Agent"** from the available options. This allows you to create an agent with your own defined functionality.
 
-![Select custom agent](../../../static/img/custom-agent.png)
+![Select custom agent](/img/custom-agent.png)
 
 ### 3. Configure Your Agent
 
@@ -39,7 +39,7 @@ Now it's time to set up the basic details for your agent:
 1. **Name Your Agent**: Enter a descriptive name that indicates the agent's purpose.
 2. **Add a Description**: Provide a brief description explaining what your agent does.
 
-![Name and description for agent](../../../static/img/agent-name.png)
+![Name and description for agent](/img/agent-name.png)
 
 ### 4. Creation Confirmation
 
@@ -47,7 +47,7 @@ After configuring your agent, the system will create the necessary files and str
 
 1. **Success Message**: You'll see a confirmation screen indicating that your agent has been successfully created.
 
-![Success confirmation screen](../../../static/img/success.png)
+![Success confirmation screen](/img/success.png)
 
 ### 5. Explore Generated Code
 
@@ -58,7 +58,7 @@ Codebolt will generate a starter code structure for your agent:
    - Configuration files
    - Dependencies and setup scripts
 
-![Generated code structure](../../../static/img/code.png)
+![Generated code structure](/img/code.png)
 
 ### 6. Understanding the Agent Structure
 

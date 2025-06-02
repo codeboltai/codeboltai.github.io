@@ -6,4 +6,4 @@
   - **LM Studio**
 - Additionally, you can explore and choose from the **Available Models** within each provider.
 
-![LLMs Settings](../../../static/img/llm-setting.png)
+![LLMs Settings](/img/llm-setting.png)

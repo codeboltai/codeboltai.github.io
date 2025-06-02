@@ -6,7 +6,7 @@
  - Manage version control through the chat interface.
 
 
-![git](../../../static/img/git.png)
+![git](/img/git.png)
 
 **Video Guide**
 

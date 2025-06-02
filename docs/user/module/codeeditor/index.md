@@ -1,7 +1,7 @@
 # Code Editor 
 
 
-![codeview](../../../../static/img/codeview.png)
+![codeview](/img/codeview.png)
 
 **Referance Video**
 
