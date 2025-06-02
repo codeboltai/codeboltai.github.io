@@ -1,0 +1,11 @@
+{
+  "label": "Direct API Access",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+        "type": "doc",
+        "id": "api/apiaccess/index"
+    }
+}

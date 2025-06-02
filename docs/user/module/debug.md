@@ -4,7 +4,7 @@
  - Monitor AI model usage and associated costs.
  - Inspect debug information related to AI models.
 
-![debug](../../../static/img/debug.png)
+![debug](/img/debug.png)
 
 **Video Guide**
 
