@@ -19,7 +19,7 @@ cbparameters:
 data:
   name: debug
   category: debug
-  link: debug.md
+  link: debugLog.md
 ---
 <CBBaseInfo/> 
  <CBParameters/>
@@ -32,7 +32,7 @@ data:
 const error = "error log"
 
 //// Calling the `codebolt.debug.debug` method to log the error with its type (e.g., "warning", "error", etc.)
-const fileData = await codebolt.debug.debug(error, "error")
+const fileData = await codebolt.debug.debuglog(error, "error")
 
 //after executing this command then show the error in debug section on coltbolt.
 

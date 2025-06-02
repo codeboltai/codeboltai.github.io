@@ -1,7 +1,7 @@
 ---
 cbapicategory:
   - name: debug
-    link: /docs/api/apiaccess/debug/debug
+    link: /docs/api/apiaccess/debug/debug-method
     description: Sends a log message to the debug websocket and waits for a response.
   - name: openDebugBrowser
     link: /docs/api/apiaccess/debug/openDebugBrowser
