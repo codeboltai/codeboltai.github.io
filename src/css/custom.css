@@ -85,6 +85,143 @@ body {
   background-color: inherit;
 }
 
+/* ===== SIDEBAR CUSTOMIZATION ===== */
+
+/* Make child/nested sidebar items smaller */
+.theme-doc-sidebar-item-link-level-1,
+.theme-doc-sidebar-item-category-level-1 {
+  font-size: 0.9rem;
+  padding-left: 1rem;
+}
+
+.theme-doc-sidebar-item-link-level-2,
+.theme-doc-sidebar-item-category-level-2 {
+  font-size: 0.85rem;
+  padding-left: 0.5rem;
+}
+
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-category-level-3 {
+  font-size: 0.8rem;
+  padding-left: 0.5rem;
+}
+
+.menu__link:hover, .menu__caret:hover {
+  background: transparent !important;
+} 
+
+/* Style for top-level sidebar items */
+.theme-doc-sidebar-item-link-level-0,
+.theme-doc-sidebar-item-category-level-0 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Remove the caret box styling and make it cleaner */
+.menu__list-item--collapsible .menu__caret {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-right: 0.5rem;
+  width: auto !important;
+  height: auto !important;
+  min-width: auto !important;
+}
+
+/* Remove hover effects on caret specifically */
+.menu__list-item--collapsible .menu__caret:hover {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Style the caret icon itself */
+.menu__list-item--collapsible .menu__caret:before {
+  content: '▶';
+  font-size: 0.5rem;
+  color: var(--ifm-color-emphasis-600);
+  transition: transform 0.2s ease;
+}
+
+/* Rotate caret when expanded */
+.menu__list-item--collapsible .menu__list-item-collapsible--active .menu__caret:before {
+  transform: rotate(90deg);
+}
+
+/* Adjust spacing for collapsible items */
+.menu__list-item--collapsible .menu__link {
+  padding-left: 0;
+}
+
+/* Remove any default button styling from caret */
+.menu__caret {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Make nested items more visually distinct */
+.menu__list .menu__list {
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+  margin-left: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+[data-theme='dark'] .menu__list .menu__list {
+  border-left-color: var(--ifm-color-emphasis-300);
+}
+
+/* Reduce spacing between sidebar items */
+.menu__list-item:not(:first-child) {
+  margin-top: 0.25rem;
+}
+
+/* Style active sidebar items */
+.menu__link--active {
+  font-weight: 600;
+  background-color: var(--ifm-color-primary-lightest);
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background-color: var(--ifm-color-primary-darkest);
+}
+
+/* Hover effects for sidebar items */
+.menu__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+/* Ensure collapsible items don't get unwanted hover boxes */
+.menu__list-item--collapsible:hover {
+  background: none !important;
+}
+
+/* More refined hover for the entire menu item container */
+.menu__list-item:hover {
+  background: none;
+}
+
+/* Only apply hover to the actual link, not the container */
+.menu__list-item .menu__link:not(.menu__caret):hover {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+  transform: translateX(2px);
+}
+
+[data-theme='dark'] .menu__list-item .menu__link:not(.menu__caret):hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
 [data-theme="dark"] .navbar {
   background-color: rgba(34, 31, 29, 0.9);
 }
