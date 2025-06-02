@@ -29,6 +29,62 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* Fix for white space issue - ensure full height layout */
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the main wrapper takes full height */
+#__docusaurus {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make the main content area expand to fill available space */
+.main-wrapper,
+main[role="main"],
+.theme-doc-markdown {
+  flex: 1;
+  min-height: calc(100vh - var(--ifm-navbar-height, 60px));
+}
+
+/* Ensure the container and content areas have proper background */
+.container,
+.row,
+.col {
+  background-color: inherit;
+}
+
+/* Ensure consistent background for the entire page */
+html {
+  background-color: var(--ifm-background-color, #ffffff);
+}
+
+[data-theme='dark'] html {
+  background-color: var(--ifm-background-color, #1b1b1d);
+}
+
+/* Prevent white space on overscroll */
+body {
+  overscroll-behavior: none;
+  background-color: var(--ifm-background-color, #ffffff);
+}
+
+[data-theme='dark'] body {
+  background-color: var(--ifm-background-color, #1b1b1d);
+}
+
+/* Ensure the page wrapper extends full height */
+.theme-doc-wrapper,
+.docs-wrapper {
+  min-height: 100vh;
+  background-color: inherit;
+}
+
 [data-theme="dark"] .navbar {
   background-color: rgba(34, 31, 29, 0.9);
 }
@@ -61,5 +117,4 @@
 }
 [data-theme='dark'] .footer {
   background-color: rgba(34, 31, 29, 0.9);
-
 }

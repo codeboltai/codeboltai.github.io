@@ -1,7 +1,7 @@
 {
     "label": "MCP Access",
     "position": 3,
-    "collapsible": true,
+    "collapsible": false,
     "collapsed": true,
     "className": "red",
     "link": {

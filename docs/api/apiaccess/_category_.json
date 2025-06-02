@@ -1,7 +1,7 @@
 {
   "label": "Direct API Access",
   "position": 2,
-  "collapsible": true,
+  "collapsible": false,
   "collapsed": true,
   "className": "red",
   "link": {
