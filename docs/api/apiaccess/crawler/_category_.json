@@ -1,0 +1,11 @@
+{
+  "label": "Crawler",
+  "position": 2.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "api/apiaccess/crawler/index"
+  }
+}
