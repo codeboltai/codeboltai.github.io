@@ -51,7 +51,7 @@ const config: Config = {
   themeConfig: {
     docs: {
       sidebar: {
-        autoCollapseCategories: true,
+        autoCollapseCategories: false,
       },
     },
     image: 'img/docusaurus-social-card.jpg',
