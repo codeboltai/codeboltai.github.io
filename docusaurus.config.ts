@@ -13,6 +13,10 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
+  markdown: {
+    mermaid: true,
+  },
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'codeboltai', // Usually your GitHub org/user name.
@@ -28,6 +32,7 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [
@@ -53,6 +58,9 @@ const config: Config = {
       sidebar: {
         autoCollapseCategories: true,
       },
+    },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'forest'},
     },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {

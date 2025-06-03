@@ -10,7 +10,7 @@ Once you've created and tested your tool, you can publish it to the Codebolt Too
 Before publishing your tool, ensure you have:
 
 - **Completed Tool**: A fully functional tool with proper configuration
-- **Testing**: Comprehensive testing completed (see [Testing Guide](./3_testlocalmcp.md))
+- **Testing**: Comprehensive testing completed (see [Testing Guide](./testlocalmcp.md))
 - **Documentation**: Clear README and usage examples
 - **CLI Access**: Codebolt CLI installed and authenticated
 - **Account**: Valid Codebolt account with publishing permissions
@@ -595,14 +595,14 @@ Ensure your tool complies with licenses:
 
 After publishing your tool:
 
-- [Monitor Usage](./5_tool_registry.md) - Track your tool's performance
-- [Community Engagement](./6_community.md) - Engage with users
-- [Advanced Patterns](./7_advanced_patterns.md) - Learn advanced techniques
-- [Maintenance Guide](./8_maintenance.md) - Keep your tool updated
+- [Monitor Usage](./tool_registry.md) - Track your tool's performance
+- [Community Engagement](./examples.md) - Engage with users
+- [Advanced Patterns](./examples.md) - Learn advanced techniques
+- [Maintenance Guide](./troubleshoot.md) - Keep your tool updated
 
 ## Support and Resources
 
-- **Documentation**: [Tool Registry Guide](./5_tool_registry.md)
+- **Documentation**: [Tool Registry Guide](./tool_registry.md)
 - **Community**: [Codebolt Discord](https://discord.gg/codebolt)
 - **Issues**: [GitHub Issues](https://github.com/codebolt/tools/issues)
 - **Email**: tools-support@codebolt.ai
