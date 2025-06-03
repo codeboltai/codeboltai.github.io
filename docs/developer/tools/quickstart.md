@@ -121,15 +121,26 @@ npx codebolt-cli inspecttool ./index.js
 
 ## Step 5: Test Your Tool in Codebolt Application
 
-Open the Codebolt Application and open the current project.
+- Open the Codebolt Application and open the current project.
+- Make Sure the [Tool is enabled for the Current Agent](../cli/agents.md#enable-tool).
+- In the Chat, ask the AI Agent with the following message:
+```
+User: Ask Greet Hello World tool to greet Alex.
+```
+The AI agent should respond with 
+```
+Agent: Hello, Alex!
+```
 
 
 
 ## Step 6: Publish Your Tool
 
+Publish the tool to the Codebolt Registry. This will make the tool available to other users or agents.
+
 ```bash
 # Publish to registry
-codebolt-cli publishtool
+npx codebolt-cli publishtool
 
 # Follow the prompts:
 # - GitHub URL (optional)
@@ -140,49 +151,37 @@ codebolt-cli publishtool
 
 ## Step 7: Use Your Tool
 
+Now you can use the tool in other projects from the registry.
+
 ```bash
 # Install your published tool
-codebolt-cli installtool hello-world-tool
+npx codebolt-cli installtool hello-world-tool
 
 # Use in another project
-codebolt-cli runtool greet hello-world-tool
+npx codebolt-cli runtool greet hello-world-tool
 ```
+
+---
+
+🎉 **Congratulations!** You've created, tested, and published your first Codebolt tool. Start building more complex tools by exploring the detailed documentation.
 
 ## Quick Commands Reference
 
 ```bash
 # Tool Management
-codebolt-cli createtool                    # Create new tool
-codebolt-cli runtool <function> <file>     # Test tool function
-codebolt-cli inspecttool <file>           # Debug tool interactively
-codebolt-cli publishtool                  # Publish to registry
+npx codebolt-cli createtool                    # Create new tool
+npx codebolt-cli runtool <function> <file>     # Test tool function
+npx codebolt-cli inspecttool <file>           # Debug tool interactively
+npx codebolt-cli publishtool                  # Publish to registry
 
 # Registry Operations
-codebolt-cli searchtools <query>          # Search tools
-codebolt-cli installtool <tool-name>      # Install tool
-codebolt-cli listtools --installed       # List installed tools
-codebolt-cli updatetool <tool-name>       # Update tool
+npx codebolt-cli searchtools <query>          # Search tools
+npx codebolt-cli installtool <tool-name>      # Install tool
+npx codebolt-cli listtools --installed       # List installed tools
+npx codebolt-cli updatetool <tool-name>       # Update tool
 ```
 
-## Example Use Cases
 
-### API Integration Tool
-```bash
-codebolt-cli createtool --name "Weather Tool" --id "weather-tool"
-# Add API key parameter and fetch weather data
-```
-
-### File Processing Tool
-```bash
-codebolt-cli createtool --name "CSV Parser" --id "csv-parser"
-# Add file reading and CSV parsing logic
-```
-
-### Data Transformation Tool
-```bash
-codebolt-cli createtool --name "JSON Formatter" --id "json-formatter"
-# Add JSON validation and formatting functions
-```
 
 ## Next Steps
 
@@ -192,39 +191,10 @@ Now that you've created your first tool, explore:
 - **[Testing Guide](./testlocalmcp.md)** - Comprehensive testing strategies
 - **[Publishing Guide](./publish_tool.md)** - Advanced publishing features
 - **[Tool Registry](./tool_registry.md)** - Discover and manage tools
+- **[Examples](./examples.md)** - Example use cases
 
-## Troubleshooting
 
-**Tool not working?**
-```bash
-# Check configuration
-cat codebolttool.yaml
 
-# Validate tool
-codebolt-cli runtool greet ./index.js
-```
-
-**Publishing failed?**
-```bash
-# Check authentication
-codebolt-cli whoami
-
-# Verify unique name
-codebolt-cli searchtools hello-world-tool
-```
-
-**Need help?**
-```bash
-# Get help
-codebolt-cli help
-
-# Check tool status
-codebolt-cli toolstatus hello-world-tool
-```
-
----
-
-🎉 **Congratulations!** You've created, tested, and published your first Codebolt tool. Start building more complex tools by exploring the detailed documentation.
 
 
 

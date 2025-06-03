@@ -610,7 +610,7 @@ parameters:
 
 ## Next Steps
 
-- [Test Your Tool Locally](./3_testlocalmcp.md) - Learn advanced testing techniques
-- [Publish Your Tool](./4_publish_tool.md) - Share your tool with the community
-- [Tool Registry](./5_tool_registry.md) - Discover and use existing tools
-- [Advanced Patterns](./6_advanced_patterns.md) - Learn advanced tool development patterns
+- [Test Your Tool Locally](./testlocalmcp.md) - Learn advanced testing techniques
+- [Publish Your Tool](./publish_tool.md) - Share your tool with the community
+- [Tool Registry](./tool_registry.md) - Discover and use existing tools
+- [Advanced Patterns](./advanced_patterns.md) - Learn advanced tool development patterns
