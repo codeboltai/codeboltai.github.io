@@ -1,3 +1,6 @@
+---
+sidebar_position: 5
+---
 # Tool Registry
 
 The Codebolt Tool Registry is a centralized repository where developers can discover, share, and manage tools. This guide covers how to find tools, install them, and manage your tool collection.

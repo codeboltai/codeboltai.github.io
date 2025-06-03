@@ -1,3 +1,6 @@
+---
+sidebar_position: 3
+---
 # Testing Tools Locally
 
 Testing is crucial for ensuring your tools work correctly before publishing them. This guide covers various methods for testing Codebolt tools locally, from basic CLI testing to comprehensive unit testing.

@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Creating Your First Tool
 
 This guide walks you through creating a complete Codebolt tool from scratch. You'll learn how to set up the configuration, implement functionality, and test your tool using both the Codebolt Application and CLI.

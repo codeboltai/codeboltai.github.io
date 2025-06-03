@@ -1,6 +1,20 @@
+---
+sidebar_position: 1
+---
 # Tools Overview
 
 Codebolt Tools are custom utilities that extend the capabilities of AI agents by providing specialized functionality. Built on the Model Context Protocol (MCP) standard, these tools allow you to integrate external services, automate tasks, and create domain-specific capabilities that agents can use when solving problems.
+
+:::info MCP Compatibility
+Codebolt Tools are built on the Model Context Protocol (MCP) standard, ensuring full backward compatibility. This means that any existing MCP implementation can be used as a Codebolt tool without modification. This compatibility allows developers to:
+
+- Use existing MCP tools directly in Codebolt
+- Share tools between different MCP-compatible platforms
+- Leverage the broader MCP ecosystem
+- Maintain consistency with MCP standards and best practices
+:::
+
+
 
 ## What are Codebolt Tools?
 
@@ -51,7 +65,7 @@ my-tool/
 
 ### 1. Tool Definition
 
-Tools are defined in `codebolttool.yaml`:
+Tools are defined in `codebolttool.yaml`. This allows for identification of tools in registry and codebolt application.
 
 ```yaml
 name: "File Manager"
@@ -73,7 +87,7 @@ parameters:
 
 ### 2. Tool Implementation
 
-Tools implement MCP-compatible functions:
+The tool implementation is a javascript class that extends the ToolBox class. The ToolBox class is a MCP-compatible class that provides the tool functionality. This is similar to [FastMCP](https://github.com/punkpeye/fastmcp) library, although you can use any MCP-compatible library.
 
 ```javascript
 // index.js

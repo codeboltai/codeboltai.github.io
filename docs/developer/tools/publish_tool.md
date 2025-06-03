@@ -1,3 +1,6 @@
+---
+sidebar_position: 4
+---
 # Publishing Tools
 
 Once you've created and tested your tool, you can publish it to the Codebolt Tool Registry to share it with the community. This guide covers the entire publishing process, from preparation to maintenance.
