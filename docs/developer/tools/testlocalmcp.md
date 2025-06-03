@@ -775,9 +775,9 @@ parameters:
 
 ## Next Steps
 
-- [Publish Your Tool](./4_publish_tool.md) - Share your tested tool
-- [Tool Registry](./5_tool_registry.md) - Discover existing tools
-- [Advanced Patterns](./6_advanced_patterns.md) - Learn advanced techniques
+- [Publish Your Tool](./publish_tool.md) - Share your tested tool
+- [Tool Registry](./tool_registry.md) - Discover existing tools
+- [Advanced Patterns](./examples.md) - Learn advanced techniques
 - [CLI Reference](../cli/tools.md) - Complete CLI documentation
 
 

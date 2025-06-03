@@ -359,7 +359,7 @@ docker run -p 3000:3000 my-awesome-app
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - see LICENSE file for details.
 ```
 
 ### 4. Environment Configuration

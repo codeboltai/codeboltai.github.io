@@ -801,8 +801,8 @@ updateVersion(type)
 ## Next Steps
 
 - **[Template Examples](./examples.md)** - Study real-world template implementations
-- **[Community Guidelines](./community.md)** - Understand community standards
-- **[Advanced Patterns](./advanced-patterns.md)** - Learn sophisticated template techniques
+- **[Publishing Templates](./publishing.md)** - Understand community standards
+- **[Template Configuration](./configuration.md)** - Learn sophisticated template techniques
 
 ---
 

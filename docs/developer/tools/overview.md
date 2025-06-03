@@ -531,9 +531,9 @@ DEBUG=codebolt:tools codebolt-cli runtool function_name ./tool/index.js
 
 ## Next Steps
 
-- [Create Your First Tool](./2_create_tool.md) - Step-by-step tool creation
-- [Test Tools Locally](./3_testlocalmcp.md) - Testing and debugging
-- [Publish Tools](./4_publish_tool.md) - Share your tools
+- [Create Your First Tool](./create_tool.md) - Step-by-step tool creation
+- [Test Tools Locally](./testlocalmcp.md) - Testing and debugging
+- [Publish Tools](./publish_tool.md) - Share your tools
 - [CLI Tool Commands](../cli/tools.md) - CLI reference
 
 

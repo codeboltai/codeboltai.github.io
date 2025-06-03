@@ -220,6 +220,6 @@ The authentication system integrates with the Codebolt API:
 After successful authentication:
 
 1. [Create your first agent](./agents.md)
-2. [Explore agent management](./agents.md#agent-lifecycle)
+2. [Explore agent management](./agents.md#agent-lifecycle-management)
 3. [Learn about tool development](./tools.md)
 4. [Review all available commands](./commands.md) 

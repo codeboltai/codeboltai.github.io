@@ -649,7 +649,7 @@ Now that you understand the core modules:
 1. **[Agent Framework](./agent-framework.md)** - Build sophisticated agents using the Agent class
 2. **[API Reference](./api-reference.md)** - Complete function documentation
 3. **[Examples](./examples.md)** - See real-world implementations
-4. **[Best Practices](./best-practices.md)** - Advanced patterns and optimization
+4. **[Examples](./examples.md)** - Advanced patterns and optimization
 
 ---
 

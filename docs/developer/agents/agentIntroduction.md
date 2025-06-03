@@ -209,8 +209,8 @@ Ready to create your first agent? Here's what you need:
 
 1. **Prerequisites**: Node.js, Codebolt CLI, and basic JavaScript knowledge
 2. **Quick Start**: Follow our [QuickStart Guide](./quickstart.md) for a 10-minute setup
-3. **Deep Dive**: Explore [Agent Architecture](./1_agentarchitecture.md) for detailed concepts
-4. **Examples**: Check out [Custom Agents](./3_customagents.md) for real-world examples
+3. **Deep Dive**: Explore [Agent Architecture](./1_agentarchitecture/1_architecture.md) for detailed concepts
+4. **Examples**: Check out [Custom Agents](./3_customagents/3_firstExtension.md) for real-world examples
 
 ## Agent Ecosystem
 
@@ -224,9 +224,9 @@ The Codebolt agent ecosystem includes:
 ## Next Steps
 
 - **[QuickStart Guide](./quickstart.md)** - Create your first agent in 10 minutes
-- **[Agent Architecture](./1_agentarchitecture.md)** - Understand the technical details
-- **[Using Agents](./2_usingagents.md)** - Learn how to effectively use agents
-- **[Custom Agents](./3_customagents.md)** - Build specialized agents for your needs
+- **[Agent Architecture](./1_agentarchitecture/1_architecture.md)** - Understand the technical details
+- **[Using Agents](./2_usingagents/5_runAgent.md)** - Learn how to effectively use agents
+- **[Custom Agents](./3_customagents/3_firstExtension.md)** - Build specialized agents for your needs
 
 ---
 

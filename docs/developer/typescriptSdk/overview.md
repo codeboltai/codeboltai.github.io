@@ -284,7 +284,7 @@ await codebolt.chat.sendMessage(`Found ${files.length} files to analyze`);
 - **[Agent Framework](./agent-framework.md)** - Building sophisticated agents
 - **[API Reference](./api-reference.md)** - Complete function documentation
 - **[Examples](./examples.md)** - Practical implementation examples
-- **[Best Practices](./best-practices.md)** - Advanced patterns and techniques
+- **[Examples](./examples.md)** - Advanced patterns and techniques
 
 ## Support
 

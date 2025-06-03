@@ -5,7 +5,7 @@ sidebar_label: QuickStart
 
 # QuickStart
 
-This guide will walk you through creating your first Codebolt agent in under 10 minutes. For detailed explanations, see the [complete documentation](./1_agentarchitecture.md).
+This guide will walk you through creating your first Codebolt agent in under 10 minutes. For detailed explanations, see the [complete documentation](./1_agentarchitecture/1_architecture.md).
 
 ## Prerequisites
 
@@ -283,9 +283,9 @@ try {
 
 Now that you've created your first agent, explore:
 
-- **[Agent Architecture](./1_agentarchitecture.md)** - Deep dive into agent concepts
-- **[Using Agents](./2_usingagents.md)** - Advanced usage patterns  
-- **[Custom Agents](./3_customagents.md)** - Building specialized agents
+- **[Agent Architecture](./1_agentarchitecture/1_architecture.md)** - Deep dive into agent concepts
+- **[Using Agents](./2_usingagents/5_runAgent.md)** - Advanced usage patterns  
+- **[Custom Agents](./3_customagents/3_firstExtension.md)** - Building specialized agents
 - **[Tools Integration](../tools/quickstart.md)** - Add tools to your agents
 
 ## Troubleshooting

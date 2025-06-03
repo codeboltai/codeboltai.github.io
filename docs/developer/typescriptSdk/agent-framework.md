@@ -697,7 +697,7 @@ const agent = taskComplexity === 'simple'
 
 - **[API Reference](./api-reference.md)** - Complete function documentation
 - **[Examples](./examples.md)** - Real-world agent implementations
-- **[Best Practices](./best-practices.md)** - Advanced patterns and optimization
+- **[Examples](./examples.md)** - Advanced patterns and optimization
 
 ---
 

@@ -5,7 +5,7 @@ sidebar_label: Quickstart
 
 # Quickstart
 
-This guide will walk you through creating your first Codebolt tool in under 10 minutes. For detailed explanations, see the [complete documentation](./tools.md).
+This guide will walk you through creating your first Codebolt tool in under 10 minutes. For detailed explanations, see the [complete documentation](./overview.md).
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ cd .codeboltAgents/tools/hello-world-tool
 
 ## Step 2: Configure Your Tool
 
-The tool details are written in [`codebolttool.yaml`](`codebolttool.yaml`). Edit `codebolttool.yaml`:
+The tool details are written in `codebolttool.yaml`. Edit `codebolttool.yaml`:
 
 ```yaml
 name: "Hello World Tool"
@@ -52,7 +52,7 @@ parameters:
 
 ## Step 3: Implement Tool Logic
 
-The Tool Logic is written using [ToolBox class](./tools.md#toolbox-class). Replace `index.js` content:
+The Tool Logic is written using [ToolBox class](./overview.md#tool-implementation-patterns). Replace `index.js` content:
 
 ```javascript
 const { ToolBox } = require('@codebolt/toolbox');
@@ -122,7 +122,7 @@ npx codebolt-cli inspecttool ./index.js
 ## Step 5: Test Your Tool in Codebolt Application
 
 - Open the Codebolt Application and open the current project.
-- Make Sure the [Tool is enabled for the Current Agent](../cli/agents.md#enable-tool).
+- Make Sure the Tool is enabled for the Current Agent (see [Agent Configuration](../cli/agents.md#agent-configuration)).
 - In the Chat, ask the AI Agent with the following message:
 ```
 User: Ask Greet Hello World tool to greet Alex.
@@ -187,7 +187,7 @@ npx codebolt-cli updatetool <tool-name>       # Update tool
 
 Now that you've created your first tool, explore:
 
-- **[Complete Tools Guide](./tools.md)** - Detailed concepts and patterns
+- **[Complete Tools Guide](./overview.md)** - Detailed concepts and patterns
 - **[Testing Guide](./testlocalmcp.md)** - Comprehensive testing strategies
 - **[Publishing Guide](./publish_tool.md)** - Advanced publishing features
 - **[Tool Registry](./tool_registry.md)** - Discover and manage tools

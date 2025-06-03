@@ -1088,7 +1088,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
 - **[Template Best Practices](./best-practices.md)** - Learn advanced template patterns
 - **[Publishing Templates](./publishing.md)** - Share your customized templates
-- **[Community Guidelines](./community.md)** - Contribute to the template ecosystem
+- **[Publishing Templates](./publishing.md)** - Contribute to the template ecosystem
 
 ---
 

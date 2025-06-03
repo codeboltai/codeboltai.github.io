@@ -485,4 +485,4 @@ metadata:
 - [Learn about tool development](./tools.md)
 - [Explore the complete command reference](./commands.md)
 - [See practical examples](./examples.md)
-- [Understand the agent SDK](../agents/) 
+- [Understand the agent SDK](../agents/agentIntroduction.md) 

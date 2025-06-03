@@ -572,7 +572,7 @@ codebolt-cli registry authors --top
 
 ## Next Steps
 
-- [Create Your Own Tool](./2_create_tool.md) - Build and share tools
-- [Advanced Tool Patterns](./6_advanced_patterns.md) - Learn advanced techniques
+- [Create Your Own Tool](./create_tool.md) - Build and share tools
+- [Advanced Tool Patterns](./examples.md) - Learn advanced techniques
 - [CLI Reference](../cli/tools.md) - Complete CLI documentation
-- [Community Guidelines](./7_community.md) - Engage with the community 
+- [Community Guidelines](./examples.md) - Engage with the community 
