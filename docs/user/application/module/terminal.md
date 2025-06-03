@@ -5,7 +5,7 @@
  - Interact with system processes, run scripts, and perform CLI tasks.
 
 
-![terminal](../../../static/img/terminal.png)
+![terminal](/img/terminal.png)
 
 **Referance Video**
 

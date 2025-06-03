@@ -8,7 +8,7 @@ The Agent Steps feature in Universal Agent allows you to define a sequence of up
 6. User Questions
 
 
-![Agent Steps](../../../../../static/settings/appSettings/7.png)
+![Agent Steps](../../../../../../static/settings/appSettings/7.png)
 
 
 For each step, you can specify which particular agent should be used. This allows you to customize the workflow and leverage the strengths of different AI models based on the task at hand.

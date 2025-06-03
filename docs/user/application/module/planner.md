@@ -6,7 +6,7 @@
  - Track ongoing and completed tasks for better productivity.
 
 
-![planner](../../../static/img/planner.png)  
+![planner](/img/planner.png)  
 
 **Video Guide**
 

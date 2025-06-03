@@ -2,7 +2,7 @@
 - In the **LLMs** section, you can add more LLM providers such as Anthropic and LM Studio. 
 - After adding providers, you can select your preferred provider in the **Default Settings** section.
 
-![Default Settings](../../../../../static/settings/appSettings/2.png)
+![Default Settings](../../../../../../static/settings/appSettings/2.png)
 
 - Make sure to update your settings after adding a new provider.
 

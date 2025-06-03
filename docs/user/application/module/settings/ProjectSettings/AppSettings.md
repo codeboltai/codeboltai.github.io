@@ -8,7 +8,7 @@ In the App Settings, you can:
 - Add a description
 - Specify the GitHub URL where the application's code repository will be maintained
 
-![AppSettings](../../../../../static/settings/projectSettings/1.png)
+![AppSettings](../../../../../../static/settings/projectSettings/1.png)
 
 ### Video Guide
 

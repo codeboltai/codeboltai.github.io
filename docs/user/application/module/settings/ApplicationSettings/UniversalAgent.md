@@ -3,7 +3,7 @@
   - Enable custom  Universal Agent
   - Use offline Universal Agent
 
-![UniversalAgent](../../../../../static/settings/appSettings/4.png)
+![UniversalAgent](../../../../../../static/settings/appSettings/4.png)
 
 ## Enable Custom Universal Agent  
 

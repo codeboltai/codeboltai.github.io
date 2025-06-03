@@ -16,7 +16,7 @@ The **Environment and Services** section allows you to configure and manage the 
    By providing the necessary connection URLs or configuration details, you can seamlessly integrate these services into your application.
 
 
-![EnvandServices](../../../../../static/settings/appSettings/8.png)
+![EnvandServices](../../../../../../static/settings/appSettings/8.png)
 
 By leveraging the **Environment and Services** section, you can streamline the setup and deployment process for your applications. It provides a centralized location to manage runtime dependencies and external service integrations, making it easier to develop, test, and deploy your applications across different environments.
 

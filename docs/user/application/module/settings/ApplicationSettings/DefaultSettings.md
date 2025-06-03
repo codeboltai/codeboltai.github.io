@@ -3,7 +3,7 @@
 The Default Provider and model you select during [onboarding](/docs/user/onboarding#first-time-users) you update it here. <br/>
 Also you can update Embedding provider and model.
 
-![Default Settings](../../../../../static/settings/appSettings/1.png)
+![Default Settings](../../../../../../static/settings/appSettings/1.png)
 
 
 ### Video Guide

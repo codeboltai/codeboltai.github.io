@@ -1,6 +1,6 @@
 # Secrets
 
-![AppSettings](../../../../../static/settings/projectSettings/3.png)
+![AppSettings](../../../../../../static/settings/projectSettings/3.png)
 
 Every project needs secrets to store sensitive information like API keys, database passwords, etc. In this section, you can add a list of secrets for your project:
 
