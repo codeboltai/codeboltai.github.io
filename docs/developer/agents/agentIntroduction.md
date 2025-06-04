@@ -15,7 +15,7 @@ Codebolt agents are intelligent AI assistants that leverage Codebolt's APIs to i
 
 ## What is it different?
 
-Codebolt agents are fundamentally different from other agents like in cursors or trae. Other code editors provide you with an option to create a custom code agent only by changing the core prompt or by selecting the available tools. On the contrary, a code bolt agent provides you with actual editor APIs for you or the AI to interact with the editor. Code bolt agents are code based agents where you can write custom codes which might include any process, any workflows along with agentic AI logics. While we also support a very simple cursor style agent creation called as [remix agents](/docs/developer/agents/remixAgents) but the real power of code bolt comes with custom code-based agents.
+Codebolt agents are fundamentally different from other agents like in cursors or trae. Other code editors provide you with an option to create a custom code agent only by changing the core prompt or by selecting the available tools. On the contrary, a code bolt agent provides you with actual editor APIs for you or the AI to interact with the editor. Code bolt agents are code based agents where you can write custom codes which might include any process, any workflows along with agentic AI logics. While we also support a very simple cursor style agent creation called as [remix agents](/docs/developer/agents/remixagents/aboutremixagents) but the real power of code bolt comes with custom code-based agents.
 
 ## How Agents Work
 
