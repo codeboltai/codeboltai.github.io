@@ -1,6 +1,6 @@
 ### Default Settings
 - In the **Default Settings**, you can set up the application's **LLM** and select a **Model**.
-The Default Provider and model you select during [onboarding](/docs/user/onboarding#first-time-users) you update it here. <br/>
+The Default Provider and model you select during [onboarding](/docs/user/application/onboarding#first-time-users) you update it here. <br/>
 Also you can update Embedding provider and model.
 
 ![Default Settings](/settings/appSettings/1.png)

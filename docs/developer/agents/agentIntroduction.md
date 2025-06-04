@@ -5,19 +5,17 @@ sidebar_label: Introduction
 
 # Agent Introduction
 
-Codebolt is an extremely powerful platform for AI-driven code editing and generation. The core strength of Codebolt lies in its agent-based architecture, where specialized AI agents handle different aspects of software development, from code generation to testing and deployment.
+Codebolt is an extremely powerful AI driven coding system. Think of Codebolt as the Selenium of code editors. Just like Selenium or Playwright lets you control an entire browser. Similarly, Codebolt allows agents to control the entire code editor. Codebolt has been built from ground up for the AI-Egentic era. 
+
+Unlike other editors like cursor where they have a single agent that is the core of the application, CodeBolt takes a different approach where it allows you to write your own agents and the agent logics.
 
 ## What is a Codebolt Agent?
 
-A Codebolt Agent is a custom AI-powered application that connects to the Codebolt platform to execute specific development tasks. Think of agents as specialized developers with unique skills - one might excel at React component generation, another at API development, and yet another at testing automation.
+Codebolt agents are intelligent AI assistants that leverage Codebolt's APIs to interact with your code editor. They analyze user requirements, communicate with large language models (LLMs), and execute actions like code editing, file manipulation, and task automation within your development environment.
 
-### Key Characteristics
+## What is it different?
 
-- **Specialized**: Each agent focuses on specific development tasks or domains
-- **Autonomous**: Agents can make decisions and take actions using LLM reasoning
-- **Connected**: Agents integrate seamlessly with the Codebolt application
-- **Extensible**: Agents can use tools and call other agents for complex workflows
-- **Reusable**: Once created, agents can be shared and used across projects
+Codebolt agents are fundamentally different from other agents like in cursors or trae. Other code editors provide you with an option to create a custom code agent only by changing the core prompt or by selecting the available tools. On the contrary, a code bolt agent provides you with actual editor APIs for you or the AI to interact with the editor. Code bolt agents are code based agents where you can write custom codes which might include any process, any workflows along with agentic AI logics. While we also support a very simple cursor style agent creation called as [remix agents](/docs/developer/agents/remixagents/aboutremixagents) but the real power of code bolt comes with custom code-based agents.
 
 ## How Agents Work
 
@@ -32,14 +30,20 @@ Codebolt agents operate through an agentic process flow that combines:
 
 ## Agent Architecture
 
+This is a very high level architecture of Codebolt and Agent Interaction. The Codebolt Application handles the orchestration of the agents based on the user chat and provides services for agents to use.
+
 ```mermaid
 graph TB
     subgraph "Codebolt Application"
         A[Codebolt Editor] 
         B[Agent Orchestrator]
-        C[Universal Agent Router]
-        D[Tool Registry]
-        E[File System]
+        C[Service Manager]
+
+         subgraph "Agent Services"
+            K[LLM Providers]
+            M[MCP Services]
+            E[File System]
+        end
     end
     
     subgraph "Agent Runtime"
@@ -49,62 +53,168 @@ graph TB
         I[System Prompts]
         J[Task Instructions]
     end
-    
-    subgraph "External Services"
-        K[LLM Providers]
-        L[External APIs]
-        M[Tool Services]
-    end
-    
     A --> B
-    B --> C
-    C --> F
+    A --> C
     F --> G
     G --> H
     H --> I
     H --> J
     
-    G <--> A
-    G <--> D
-    G <--> E
+    G <--> C
     
-    H --> K
-    H --> L
-    H --> M
-    
-    F --> B
+    C <--> E
+    C --> K
+    C --> M
+    B --> F
 ```
 
-## Agent Connection Flow
 
-Codebolt agents connect to the platform using the **CodeboltJS library**, which provides a comprehensive set of functions for:
 
-### 1. Communication Layer
+## Agent Flow
+
+The following sequence diagram illustrates the complete flow of how a user request is processed through Codebolt and agents:
+
+```mermaid
+sequenceDiagram
+
+    
+    participant User
+    box Codebolt Editor
+        participant Codebolt as Editor UI
+        participant LLM as LLM Service
+        participant Tools as MCP Services
+        participant ServiceMgr as Service Manager
+    end
+    participant Agent as Custom Agent
+    
+    User->>Codebolt: Send request/message
+    Note over User,Codebolt: User types a request in chat
+    
+    Codebolt->>Agent: Start agent & forward message
+    Note over Codebolt,Agent: Agent Orchestrator routes to appropriate agent
+    
+
+        Agent->>ServiceMgr: Send LLM request with context
+        Note over Agent,ServiceMgr: Agent calls LLM service via Service Manager
+        
+        ServiceMgr->>LLM: Route to LLM provider
+        Note over ServiceMgr,LLM: Service Manager handles LLM routing
+        
+        LLM->>ServiceMgr: Return response with tool calls
+        ServiceMgr->>Agent: Forward LLM response
+        Note over ServiceMgr,Agent: LLM suggests actions and tools to use
+    
+    loop Till LLM suggests to stop
+        Agent->>ServiceMgr: Request tool execution
+        Note over Agent,ServiceMgr: Agent calls specific tools via Service Manager
+        
+        ServiceMgr->>Tools: Execute tool/service
+        Note over ServiceMgr,Tools: File, code, MCP services, etc.
+        
+        Tools->>ServiceMgr: Return tool result
+        ServiceMgr->>Agent: Send tool result back
+
+    
+        Agent->>ServiceMgr: Send tool results for next LLM call
+        Note over Agent,ServiceMgr: Agent reports tool execution results
+        
+        ServiceMgr->>LLM: Send results to LLM
+        LLM->>ServiceMgr: Return next steps or completion
+        ServiceMgr->>Agent: Forward LLM response
+    end
+
+        Agent->>Codebolt: Task Completed, Send completion message
+        Codebolt->>User: Display final result
+
+```
+
+But again you are not limited to this flow. You can write your own agent logic and use the CodeboltJS library to interact with the editor.
+
+## Sample Agent Flow Code
+
+Here's a complete example of how an agent handles a user request using the **CodeboltJS library**:
+
 ```javascript
-// WebSocket connection for real-time communication
-codebolt.chat.onActionMessage().on("userMessage", async (req, response) => {
-    // Handle user messages and respond
+// Main agent entry point - handles incoming user messages
+codebolt.onMessage((userMessage)=> {
+    try {
+        // 1. Extract context
+        const projectContext = await codebolt.project.getContext();
+        
+        // 2. Get available tools for the agent
+        const tools = await codebolt.tools.listToolsFromToolBoxes(["codebolt", "filesystem"]);
+        
+        // 3. Prepare conversation with system context
+        const messages = [
+            {
+                role: "system",
+                content: "You are a helpful coding assistant. Analyze the user request and use available tools to complete the task."
+            },
+            {
+                role: "user", 
+                content: `${userMessage}\n\nProject context: ${JSON.stringify(projectContext)}`
+            }
+        ];
+        
+        // 4. Start conversation loop with LLM
+        let isTaskComplete = false;
+        let conversationHistory = [...messages];
+        
+        while (!isTaskComplete) {
+            // Send request to LLM with available tools
+            const llmResponse = await codebolt.llm.chat(conversationHistory, tools);
+            
+            // 5. Process LLM response and execute tool calls
+            if (llmResponse.tool_calls && llmResponse.tool_calls.length > 0) {
+                // Execute each tool call requested by LLM
+                for (const toolCall of llmResponse.tool_calls) {
+                    const toolResult = await codebolt.tools.executeToolCall(toolCall);
+                    
+                    // Add tool result to conversation
+                    conversationHistory.push({
+                        role: "tool",
+                        tool_call_id: toolCall.id,
+                        content: JSON.stringify(toolResult)
+                    });
+                }
+                
+                // Get LLM's next response after tool execution
+                const followUpResponse = await codebolt.llm.chat(conversationHistory, tools);
+                
+                // Check if LLM indicates task is complete
+                if (followUpResponse.content.includes("task completed") || 
+                    !followUpResponse.tool_calls) {
+                    isTaskComplete = true;
+                    
+                    // 6. Send final response to user
+                    return followUpResponse.content;
+                }
+            } else {
+                // No tool calls needed, task is complete
+                isTaskComplete = true;
+                return llmResponse.content;
+            }
+        }
+        
+    } catch (error) {
+        console.error('Error in agent:', error);
+    }
 });
 ```
 
-### 2. Tool Integration
-```javascript
-// Access to platform tools and external services
-const tools = await codebolt.tools.listToolsFromToolBoxes(["codebolt", "custom"]);
-```
+### Code Explanation:
 
-### 3. File System Access
-```javascript
-// Read, write, and manipulate project files
-const fileContent = await codebolt.fs.readFile("./src/component.js");
-await codebolt.fs.writeFile("./src/newComponent.js", generatedCode);
-```
+1. **Message Handling**: The agent listens for user messages via WebSocket connection
+2. **Context Gathering**: Retrieves project context and available tools
+3. **LLM Communication**: Sends user request with context to the LLM service
+4. **Tool Execution Loop**: 
+   - LLM responds with tool calls (file operations, code analysis, etc.)
+   - Agent executes each tool via Codebolt's service manager
+   - Results are sent back to LLM for next steps
+5. **Task Completion**: Loop continues until LLM indicates the task is finished
+6. **User Response**: Final result is sent back to the user through Codebolt UI
 
-### 4. LLM Integration
-```javascript
-// Interact with various LLM providers
-const response = await codebolt.llm.chat(messages, tools);
-```
+This example demonstrates the complete agent flow from the sequence diagram above, showing how agents use the **CodeboltJS library** to:
 
 ## Agent Types and Use Cases
 

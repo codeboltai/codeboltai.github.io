@@ -16,7 +16,7 @@ Codebolt Tools are MCP-compatible utilities that:
 - **Support Parameters**: Accept configuration and runtime parameters
 - **Are Testable**: Can be debugged and tested independently
 
-For detailed information about tool architecture and development concepts, see the [Tools Documentation](../tools/).
+For detailed information about tool architecture and development concepts, see the [Tools Documentation](../tools/overview).
 
 ## CLI Commands for Tools
 
@@ -322,7 +322,7 @@ codebolt-cli runtool query ./.codeboltAgents/tools/database-tool/index.js
 
 ## Next Steps
 
-- [Learn about detailed tool development](../tools/)
+- [Learn about detailed tool development](../tools/overview)
 - [Explore MCP protocol documentation](https://modelcontextprotocol.io/)
 - [See agent integration examples](./agents.md)
 - [Review complete command reference](./commands.md)
