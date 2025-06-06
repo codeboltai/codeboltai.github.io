@@ -13,7 +13,11 @@
               "activeView": "Code",
               "id": "1"
             },
+<<<<<<< HEAD
             "size": 1036
+=======
+            "size": 735
+>>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
           },
           {
             "type": "leaf",
@@ -24,13 +28,22 @@
               "activeView": "Chat",
               "id": "3"
             },
+<<<<<<< HEAD
             "size": 500
+=======
+            "size": 735
+>>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
           }
         ],
         "size": 756
       },
+<<<<<<< HEAD
       "width": 1536,
       "height": 756,
+=======
+      "width": 1470,
+      "height": 860,
+>>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
       "orientation": "HORIZONTAL"
     },
     "panels": {
