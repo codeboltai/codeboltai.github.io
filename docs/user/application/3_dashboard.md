@@ -28,14 +28,12 @@ To change your workspace location in Codebolt where your projects will be stored
   style={{
     maxWidth: '100%',
     height: 'auto',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+    borderRadius: '8px'
   }}
 >
   <source src="/onboarding/video/workspace.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
-
 
 
 
@@ -65,8 +63,7 @@ Templates are ready-made project setups like Empty, React, Node, Express, Next, 
   style={{
     maxWidth: '100%',
     height: 'auto',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+    borderRadius: '8px'
   }}
 >
   <source src="/onboarding/video/template.mp4" type="video/mp4" />
@@ -87,8 +84,7 @@ When you click on Help, it shows a video and steps that explain how to create a 
   style={{
     maxWidth: '100%',
     height: 'auto',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+    borderRadius: '8px'
   }}
 >
   <source src="/onboarding/video/help.mp4" type="video/mp4" />
@@ -101,5 +97,3 @@ When you click on Help, it shows a video and steps that explain how to create a 
 Click SignOut to securely end your Codebolt session and log out of the application.
 
 ![Open Project](/onboarding/singout.png)
-
-

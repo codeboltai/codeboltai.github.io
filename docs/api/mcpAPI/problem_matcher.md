@@ -1,67 +1,81 @@
 ---
 title: Problem Matcher MCP
-sidebar_label: codebolt.problem_matcher
+sidebar_label: codebolt-problem
 sidebar_position: 17
 ---
 
-# codebolt.problem_matcher
+# codebolt-problem
 
 Error and issue detection system for identifying and matching problems in code and output.
 
 ## Available Tools
 
-- `problem_matcher_match` - Match problems against patterns
-- `problem_matcher_init` - Initialize problem matcher with patterns
+- `problem_matcher_analyze` - Analyze content for problems
+- `problem_matcher_get_patterns` - Get problem matcher patterns for a language
+- `problem_matcher_add_pattern` - Add a custom problem matcher pattern
+- `problem_matcher_remove_pattern` - Remove a custom problem matcher pattern
+- `problem_matcher_list_problems` - List problems in files
 
 ## Sample Usage
 
 ```javascript
-// Initialize problem matcher with patterns
-const initResult = await codeboltMCP.executeTool(
-  "codebolt.problem_matcher",
-  "problem_matcher_init",
-  { 
-    patterns: [
-      {
-        name: "typescript_errors",
-        pattern: "^(.+)\\((\\d+),(\\d+)\\): error TS(\\d+): (.+)$",
-        file: 1,
-        line: 2,
-        column: 3,
-        code: 4,
-        message: 5
-      }
-    ]
+// Analyze content for problems
+const analyzeResult = await codebolt.tools.executeTool(
+  "codebolt-problem",
+  "problem_matcher_analyze",
+  {
+    content: 'Error: Cannot find module "express"\n    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:636:15)',
+    language: 'javascript',
+    filePath: './src/app.js'
   }
 );
 
-// Match problems in output
-const matchResult = await codeboltMCP.executeTool(
-  "codebolt.problem_matcher",
-  "problem_matcher_match",
-  { 
-    output: `
-      src/index.ts(10,5): error TS2304: Cannot find name 'undefinedVariable'.
-      src/utils.ts(25,12): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
-    `,
-    matcherName: "typescript_errors"
-  }
+// Get problem matcher patterns for a language
+const getPatternsResult = await codebolt.tools.executeTool(
+  "codebolt-problem",
+  "problem_matcher_get_patterns",
+  { language: 'javascript' }
 );
 
-// Match with custom severity
-const severityMatchResult = await codeboltMCP.executeTool(
-  "codebolt.problem_matcher",
-  "problem_matcher_match",
-  { 
-    output: "Warning: Deprecated function used in line 42",
-    options: {
-      severity: "warning",
-      source: "linter"
+// Add a custom problem matcher pattern
+const addPatternResult = await codebolt.tools.executeTool(
+  "codebolt-problem",
+  "problem_matcher_add_pattern",
+  {
+    name: 'custom-error-pattern',
+    language: 'javascript',
+    pattern: {
+      regexp: '^(.*?):(\\d+):(\\d+):\\s+(error|warning):\\s+(.*)$',
+      file: 1,
+      line: 2,
+      column: 3,
+      severity: 4,
+      message: 5
     }
+  }
+);
+
+// Remove a custom problem matcher pattern
+const removePatternResult = await codebolt.tools.executeTool(
+  "codebolt-problem",
+  "problem_matcher_remove_pattern",
+  {
+    name: 'custom-error-pattern',
+    language: 'javascript'
+  }
+);
+
+// List problems in files
+const listProblemsResult = await codebolt.tools.executeTool(
+  "codebolt-problem",
+  "problem_matcher_list_problems",
+  {
+    filePath: './src',
+    severity: 'error'
   }
 );
 ```
 
 :::info
-This functionality provides pattern-based problem detection for build tools, linters, and compilers.
+This functionality provides pattern-based problem detection for build tools, linters, and compilers through the MCP interface.
 ::: 

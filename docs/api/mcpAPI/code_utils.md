@@ -10,85 +10,70 @@ Code analysis and utility functions for processing and understanding code struct
 
 ## Available Tools
 
-- `code_utils_get_files_markdown` - Get files content in markdown format
-- `code_utils_get_js_tree` - Get JavaScript/TypeScript AST tree
-- `code_utils_perform_match` - Perform pattern matching on code
-- `code_utils_get_matcher_list` - Get list of available matchers
-- `code_utils_get_match_detail` - Get detailed match information
+- `get_files_markdown` - Get files content in markdown format
+- `get_js_tree` - Get JavaScript/TypeScript AST tree
+- `perform_match` - Perform pattern matching on code
+- `get_matcher_list` - Get list of available matchers
+- `get_match_detail` - Get detailed match information
 
 ## Sample Usage
 
 ```javascript
 // Get files content in markdown format
-const markdownResult = await codeboltMCP.executeTool(
+const markdownResult = await codebolt.tools.executeTool(
   "codebolt.code_utils",
-  "code_utils_get_files_markdown",
-  { 
-    files: ["src/index.js", "src/utils.js"],
-    includeLineNumbers: true,
-    syntax: "javascript"
-  }
+  "get_files_markdown",
+  {}
 );
 
 // Get JavaScript AST tree
-const astResult = await codeboltMCP.executeTool(
+const astResult = await codebolt.tools.executeTool(
   "codebolt.code_utils",
-  "code_utils_get_js_tree",
-  { 
-    filePath: "src/components/Button.tsx",
-    includeComments: true,
-    includeLocations: true
-  }
+  "get_js_tree",
+  { filePath: "./tests/terminal-test.js" }
 );
 
 // Perform pattern matching on code
-const matchResult = await codeboltMCP.executeTool(
+const matcherDefinition = {
+  owner: "eslint-compact",
+  pattern: [{
+    regexp: "^(.+):\\sline\\s(\\d+),\\scol\\s(\\d+),\\s(Error|Warning|Info)\\s-\\s(.+)\\s\\((.+)\\)$",
+    file: 1,
+    line: 2,
+    column: 3,
+    severity: 4,
+    message: 5,
+    code: 6
+  }]
+};
+const testProblems = [
+  { line: "src/file1.js: line 10, col 5, Error - Unexpected console statement (no-console)", source: "test" },
+  { line: "src/file2.js: line 25, col 8, Warning - 'var' used instead of 'let' or 'const' (no-var)", source: "test" },
+  { line: "This should not match", source: "test" },
+  {},
+  { line: "src/file3.js: line 5, col 15, Info - Missing JSDoc comment (require-jsdoc)", source: "test" }
+];
+const matchResult = await codebolt.tools.executeTool(
   "codebolt.code_utils",
-  "code_utils_perform_match",
-  { 
-    pattern: "function.*\\(",
-    files: ["src/**/*.js"],
-    matchType: "regex"
-  }
+  "perform_match",
+  { matcherDefinition, pattern: matcherDefinition.pattern, problems: testProblems }
 );
 
 // Get list of available matchers
-const matchersResult = await codeboltMCP.executeTool(
+const matchersResult = await codebolt.tools.executeTool(
   "codebolt.code_utils",
-  "code_utils_get_matcher_list",
-  { 
-    category: "javascript",
-    includeDescriptions: true
-  }
+  "get_matcher_list",
+  {}
 );
 
 // Get detailed match information
-const detailResult = await codeboltMCP.executeTool(
+const detailResult = await codebolt.tools.executeTool(
   "codebolt.code_utils",
-  "code_utils_get_match_detail",
-  { 
-    matchId: "match-123",
-    includeContext: true,
-    contextLines: 5
-  }
-);
-
-// Advanced code analysis
-const analysisResult = await codeboltMCP.executeTool(
-  "codebolt.code_utils",
-  "code_utils_get_js_tree",
-  { 
-    filePath: "src/api/auth.js",
-    analysis: {
-      extractFunctions: true,
-      extractClasses: true,
-      extractImports: true,
-      extractExports: true
-    }
-  }
+  "get_match_detail",
+  { matcherId: 'xmllint' }
 );
 ```
 
 :::info
-This functionality is similar to the [codeutils API](/docs/api/apiaccess/codeutils) and provides code analysis through MCP interface.
+This functionality provides code analysis through the MCP interface.
 ::: 

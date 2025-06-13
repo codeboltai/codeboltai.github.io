@@ -1,0 +1,99 @@
+[
+  {
+    "id": 24,
+    "avatarFallback": "CE",
+    "avatarSrc": "https://placehold.co/200x200",
+    "createdByUser": "ravis",
+    "description": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.",
+    "agent_id": "c4d3fdb9-cf9e-4f82-8a1d-0160bbfc9ae9",
+    "longDescription": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.\n",
+    "tags": [
+      "codebolt",
+      "developer"
+    ],
+    "title": "Act",
+    "zipFilePath": "https://pub-cd2980acaa6d4462a4356b5afe3a82d6.r2.dev/agent/536e028b-dcdf-46ba-a1b5-fd1b75d8bf6e.zip",
+    "unique_id": "act",
+    "metadata": {
+      "agent_routing": {
+        "worksonblankcode": true,
+        "worksonexistingcode": true,
+        "supportedlanguages": [],
+        "supportedframeworks": []
+      },
+      "defaultagentllm": {
+        "strict": true,
+        "modelorder": [
+          "ollama2"
+        ]
+      },
+      "sdlc_steps_managed": [],
+      "llm_role": [
+        {
+          "name": "documentationllm",
+          "description": "LLM to be used for advanced Documentation. Please select a model that excels in documentation tasks.",
+          "strict": true,
+          "modelorder": [
+            "gpt-4-turbo",
+            "gpt-3.5-turbo",
+            "mistral7b.perplexity",
+            "mistral7b.any",
+            "llama2-70b",
+            "llama2-15b",
+            "group.documentationmodels"
+          ]
+        },
+        {
+          "name": "testingllm",
+          "description": "LLM to be used for advanced Testing. Please select a model that excels in testing tasks.",
+          "strict": true,
+          "modelorder": [
+            "gpt-4-turbo",
+            "gpt-3.5-turbo",
+            "mistral7b.perplexity",
+            "mistral7b.any",
+            "llama2-70b",
+            "llama2-15b",
+            "group.testingmodels"
+          ]
+        },
+        {
+          "name": "actionllm",
+          "description": "LLM to be used for executing advanced actions.",
+          "strict": true,
+          "modelorder": [
+            "gpt-4-turbo",
+            "gpt-3.5-turbo",
+            "mistral7b.perplexity",
+            "mistral7b.any",
+            "llama2-70b",
+            "llama2-15b",
+            "group.actionmodels"
+          ]
+        }
+      ]
+    },
+    "initial_message": "Hello! I'm your advanced AI developer. How can I assist you today?",
+    "actions": [
+      {
+        "name": "Execute",
+        "description": "Executes the given task.",
+        "detailDescription": "more detailed description",
+        "actionPrompt": "Please run this code"
+      }
+    ],
+    "slug": "c4d3fdb9cf9e4f828a1d0160bbfc9ae9",
+    "version": "1.1.20",
+    "author": "codebolt",
+    "status": 1,
+    "updatedAt": "2025-04-25T16:22:10.487Z",
+    "sourceCodeUrl": "https://pub-cd2980acaa6d4462a4356b5afe3a82d6.r2.dev/agentsource/bdd6b947-7b8e-4aa5-8ac3-96539fd986ec.zip",
+    "lastUpdatedUI": 0,
+    "githubUrl": null,
+    "isInvalid": 0,
+    "isVerified": 0,
+    "isDisabled": 0,
+    "isPrivate": 0,
+    "isLocal": false
+  }
+]

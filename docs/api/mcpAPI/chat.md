@@ -1,57 +1,41 @@
 ---
 title: Chat MCP
 sidebar_label: codebolt.chat
-sidebar_position: 16
+sidebar_position: 19
 ---
 
 # codebolt.chat
 
-Chat and conversation management for handling chat sessions and message processing.
+Chat summarization and history tools.
 
 ## Available Tools
 
-- `chat_summarize_all` - Summarize all chat conversations
-- `chat_summarize` - Summarize a specific chat conversation
+- `chat_summarize_all` - Summarize all chat history
+- `chat_summarize` - Summarize a specific set of messages
 
 ## Sample Usage
 
 ```javascript
-// Summarize all chat conversations
-const summarizeAllResult = await codeboltMCP.executeTool(
+// Summarize all chat history
+const allSummary = await codebolt.tools.executeTool(
   "codebolt.chat",
   "chat_summarize_all",
-  { 
-    timeRange: "last_24_hours",
-    includeMetrics: true
-  }
+  {}
 );
 
-// Summarize a specific chat conversation
-const summarizeResult = await codeboltMCP.executeTool(
+// Summarize a specific set of messages
+const sampleMessages = [
+  { sender: 'user', text: 'Hello, how are you?' },
+  { sender: 'assistant', text: 'I am fine, thank you! How can I help you today?' },
+  { sender: 'user', text: 'Summarize our conversation.' }
+];
+const summary = await codebolt.tools.executeTool(
   "codebolt.chat",
   "chat_summarize",
-  { 
-    chatId: "chat-123",
-    maxLength: 500,
-    includeKeyPoints: true
-  }
-);
-
-// Summarize with custom options
-const customSummaryResult = await codeboltMCP.executeTool(
-  "codebolt.chat",
-  "chat_summarize",
-  { 
-    chatId: "chat-456",
-    options: {
-      focusOn: ["decisions", "action_items"],
-      format: "bullet_points",
-      language: "en"
-    }
-  }
+  { messages: sampleMessages, depth: 1 }
 );
 ```
 
 :::info
-This functionality is similar to the [chat API](/docs/api/apiaccess/chat) and provides conversation management through MCP interface.
+This functionality provides chat summarization through the MCP interface.
 ::: 
