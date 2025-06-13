@@ -542,6 +542,4 @@ codebolt mcp optimize-config --suggest
 
 ## Next Steps
 
-- [→ Advanced MCP Workflows](./4_advanced_workflows.md)
-- [→ Publishing to Marketplace](./5_publishing.md)
-- [→ Monitoring and Analytics](./6_monitoring.md) 
+No additional steps available. 

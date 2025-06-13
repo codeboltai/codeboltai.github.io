@@ -106,7 +106,6 @@ Model Context Protocol (MCP) is a framework that enables AI models to interact w
 
 - [→ Create Custom MCP Tools](./2_create_custom.md)
 - [→ Configure MCP Tools](./3_configure.md)
-- [→ Advanced MCP Workflows](./4_advanced_workflows.md)
 
 ## Common Use Cases
 

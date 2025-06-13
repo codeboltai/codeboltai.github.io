@@ -86,8 +86,7 @@ Now on the same page select a model provided by list of models from the selected
 
 After clicking on "Create Project in workspace" this screen will pop-up
 
-Here we can see [Template](./4_Templates/template.md) and [My Templates](./4_Templates/myTemplates.md) <br/>
-Just give a name to you project or you can keep a random name and click "Create Project"
+Give a name to your project or you can keep a random name and click "Create Project"
 
 ![Onboarding Project Creation](/onboarding/6.png)
 
