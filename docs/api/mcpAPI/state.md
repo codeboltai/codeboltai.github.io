@@ -6,68 +6,55 @@ sidebar_position: 13
 
 # codebolt.state
 
-Application state management for maintaining and updating system and agent states.
+State management operations for agents and projects.
 
 ## Available Tools
 
-- `state_get` - Get current application state
-- `state_get_agent` - Get specific agent state
-- `state_set_agent` - Set agent state
-- `state_remove_agent` - Remove agent from state
-- `state_update_project` - Update project state
+- `state_get` - Get global state by key
+- `state_set_agent` - Set agent-specific state
+- `state_get_agent` - Get agent-specific state
+- `state_remove_agent` - Remove agent-specific state
+- `state_update_project` - Update project-specific state
 
 ## Sample Usage
 
 ```javascript
-// Get current application state
-const getResult = await codeboltMCP.executeTool(
+// Get global state
+const getResult = await codebolt.tools.executeTool(
   "codebolt.state",
   "state_get",
-  {}
+  { key: "all" }
 );
 
-// Get specific agent state
-const agentResult = await codeboltMCP.executeTool(
-  "codebolt.state",
-  "state_get_agent",
-  { agentId: "agent-123" }
-);
-
-// Set agent state
-const setResult = await codeboltMCP.executeTool(
+// Set agent-specific state
+const setAgentResult = await codebolt.tools.executeTool(
   "codebolt.state",
   "state_set_agent",
-  { 
-    agentId: "agent-123",
-    state: {
-      status: "active",
-      currentTask: "code_analysis",
-      progress: 75
-    }
-  }
+  { key: "testKey", value: "testValue", type: "string" }
 );
 
-// Remove agent from state
-const removeResult = await codeboltMCP.executeTool(
+// Get agent-specific state
+const getAgentResult = await codebolt.tools.executeTool(
+  "codebolt.state",
+  "state_get_agent",
+  { variableName: "testKey" }
+);
+
+// Remove agent-specific state
+const removeAgentResult = await codebolt.tools.executeTool(
   "codebolt.state",
   "state_remove_agent",
-  { agentId: "agent-123" }
+  { key: "testKey", value: "testValue", type: "string" }
 );
 
-// Update project state
-const projectResult = await codeboltMCP.executeTool(
+// Update project-specific state
+const updateProjectResult = await codebolt.tools.executeTool(
   "codebolt.state",
   "state_update_project",
-  { 
-    projectId: "proj-456",
-    updates: {
-      lastModified: Date.now(),
-      buildStatus: "success"
-    }
-  }
+  { key: "projectKey", value: "projectValue" }
 );
 ```
 
 :::info
-This functionality is similar to the [cbstate API](/docs/api/apiaccess/cbstate) and provides state management through MCP interface.
+This functionality provides state management for agents and projects through the MCP interface.
 ::: 

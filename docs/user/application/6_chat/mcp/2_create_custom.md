@@ -369,6 +369,4 @@ CodeboltMCP.registerTool(databaseQueryTool);
 
 ## Next Steps
 
-- [→ Configure MCP Tools](./3_configure.md)
-- [→ Advanced MCP Workflows](./4_advanced_workflows.md)
-- [→ Publishing to Marketplace](./5_publishing.md) 
+- [→ Configure MCP Tools](./3_configure.md) 

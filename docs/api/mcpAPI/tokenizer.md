@@ -1,56 +1,36 @@
 ---
 title: Tokenizer MCP
 sidebar_label: codebolt.tokenizer
-sidebar_position: 15
+sidebar_position: 17
 ---
 
 # codebolt.tokenizer
 
-Text tokenization utilities for encoding and decoding text into tokens.
+Tokenizer operations for encoding and decoding text.
 
 ## Available Tools
 
 - `tokenizer_encode` - Encode text into tokens
-- `tokenizer_decode` - Decode tokens back to text
+- `tokenizer_decode` - Decode tokens into text
 
 ## Sample Usage
 
 ```javascript
-// Encode text into tokens
-const encodeResult = await codeboltMCP.executeTool(
+// Encode text
+const encodeResult = await codebolt.tools.executeTool(
   "codebolt.tokenizer",
   "tokenizer_encode",
-  { 
-    text: "Hello, world! This is a sample text.",
-    model: "gpt-4"
-  }
+  { text: "Hello MCP" }
 );
 
-// Decode tokens back to text
-const decodeResult = await codeboltMCP.executeTool(
+// Decode tokens
+const decodeResult = await codebolt.tools.executeTool(
   "codebolt.tokenizer",
   "tokenizer_decode",
-  { 
-    tokens: [15496, 11, 1917, 0, 1212, 374, 264, 6205, 1495, 13],
-    model: "gpt-4"
-  }
-);
-
-// Encode with specific options
-const advancedEncodeResult = await codeboltMCP.executeTool(
-  "codebolt.tokenizer",
-  "tokenizer_encode",
-  { 
-    text: "function calculateSum(a, b) { return a + b; }",
-    model: "gpt-4",
-    options: {
-      addSpecialTokens: true,
-      returnAttentionMask: true
-    }
-  }
+  { tokens: [1, 2, 3] }
 );
 ```
 
 :::info
-This functionality is similar to the [tokenizer API](/docs/api/apiaccess/tokenizer) and provides text tokenization through MCP interface.
+This functionality provides text tokenization through the MCP interface.
 ::: 

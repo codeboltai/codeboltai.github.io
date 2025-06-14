@@ -1,79 +1,52 @@
 ---
 title: Project MCP
 sidebar_label: codebolt.project
-sidebar_position: 19
+sidebar_position: 15
 ---
 
 # codebolt.project
 
-Project management operations for creating, opening, and managing development projects.
+Project management operations for retrieving project information.
 
 ## Available Tools
 
-- `project_create` - Create a new project
-- `project_open` - Open an existing project
-- `project_close` - Close the current project
-- `project_settings` - Get or update project settings
+- `project_get_path` - Get the project path
+- `project_get_settings` - Get project settings
+- `project_get_repo_map` - Get the repository map
+- `project_get_editor_status` - Get the editor status
 
 ## Sample Usage
 
 ```javascript
-// Create a new project
-const createResult = await codeboltMCP.executeTool(
+// Get project path
+const pathResult = await codebolt.tools.executeTool(
   "codebolt.project",
-  "project_create",
-  { 
-    name: "My Web App",
-    path: "/path/to/project",
-    template: "react-typescript",
-    settings: {
-      language: "typescript",
-      framework: "react"
-    }
-  }
-);
-
-// Open an existing project
-const openResult = await codeboltMCP.executeTool(
-  "codebolt.project",
-  "project_open",
-  { 
-    path: "/path/to/existing/project"
-  }
+  "project_get_path",
+  {}
 );
 
 // Get project settings
-const settingsResult = await codeboltMCP.executeTool(
+const settingsResult = await codebolt.tools.executeTool(
   "codebolt.project",
-  "project_settings",
-  { action: "get" }
+  "project_get_settings",
+  {}
 );
 
-// Update project settings
-const updateResult = await codeboltMCP.executeTool(
+// Get repository map
+const repoMapResult = await codebolt.tools.executeTool(
   "codebolt.project",
-  "project_settings",
-  { 
-    action: "update",
-    settings: {
-      buildCommand: "npm run build",
-      testCommand: "npm test",
-      linting: {
-        enabled: true,
-        rules: "strict"
-      }
-    }
-  }
+  "project_get_repo_map",
+  {}
 );
 
-// Close the current project
-const closeResult = await codeboltMCP.executeTool(
+// Get editor status
+const editorStatusResult = await codebolt.tools.executeTool(
   "codebolt.project",
-  "project_close",
-  { saveChanges: true }
+  "project_get_editor_status",
+  {}
 );
 ```
 
 :::info
-This functionality is similar to the [project API](/docs/api/apiaccess/project) and provides project management through MCP interface.
+This functionality provides project information retrieval through the MCP interface.
 ::: 

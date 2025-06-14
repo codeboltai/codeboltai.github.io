@@ -1,4 +1,6 @@
 {
+  "pinnedAgent": [],
+  "activeAgent": false,
   "currentLayout": {
     "grid": {
       "root": {
@@ -13,38 +15,25 @@
               "activeView": "Code",
               "id": "1"
             },
-<<<<<<< HEAD
-            "size": 1036
-=======
-            "size": 735
->>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
+            "size": 686
           },
           {
             "type": "leaf",
             "data": {
               "views": [
-                "Chat"
+                "17ba6055-813d-4dc3-8083-c731bd127256"
               ],
-              "activeView": "Chat",
+              "activeView": "17ba6055-813d-4dc3-8083-c731bd127256",
               "id": "3"
             },
-<<<<<<< HEAD
-            "size": 500
-=======
-            "size": 735
->>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
+            "size": 174
           }
         ],
-        "size": 756
+        "size": 1470
       },
-<<<<<<< HEAD
-      "width": 1536,
-      "height": 756,
-=======
       "width": 1470,
       "height": 860,
->>>>>>> 87debdf6a3fa9be0a12f54cc5e201cc2f5422606
-      "orientation": "HORIZONTAL"
+      "orientation": "VERTICAL"
     },
     "panels": {
       "Code": {
@@ -54,164 +43,26 @@
         "title": "Code",
         "renderer": "always"
       },
-      "Chat": {
-        "id": "Chat",
-        "contentComponent": "Chat",
+      "17ba6055-813d-4dc3-8083-c731bd127256": {
+        "id": "17ba6055-813d-4dc3-8083-c731bd127256",
+        "contentComponent": "Terminal",
         "tabComponent": "props.defaultTabComponent",
-        "title": "Chat",
+        "title": "Terminal",
         "renderer": "always"
       }
     },
     "activeGroup": "1"
   },
-  "pinnedAgent": [
+  "autoReadFile": [
     {
-      "agentId": "c4d3fdb9-cf9e-4f82-8a1d-0160bbfc9ae9",
-      "title": "Act",
-      "avatarSrc": "https://placehold.co/200x200",
-      "avatarFallback": "CE",
-      "description": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.",
-      "longDescription": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.\n",
-      "agentPath": "",
-      "requiredTools": null,
-      "metadata": {
-        "agent_routing": {
-          "worksonblankcode": true,
-          "worksonexistingcode": true,
-          "supportedlanguages": [],
-          "supportedframeworks": []
-        },
-        "defaultagentllm": {
-          "strict": true,
-          "modelorder": [
-            "ollama2"
-          ]
-        },
-        "sdlc_steps_managed": [],
-        "llm_role": [
-          {
-            "name": "documentationllm",
-            "description": "LLM to be used for advanced Documentation. Please select a model that excels in documentation tasks.",
-            "strict": true,
-            "modelorder": [
-              "gpt-4-turbo",
-              "gpt-3.5-turbo",
-              "mistral7b.perplexity",
-              "mistral7b.any",
-              "llama2-70b",
-              "llama2-15b",
-              "group.documentationmodels"
-            ]
-          },
-          {
-            "name": "testingllm",
-            "description": "LLM to be used for advanced Testing. Please select a model that excels in testing tasks.",
-            "strict": true,
-            "modelorder": [
-              "gpt-4-turbo",
-              "gpt-3.5-turbo",
-              "mistral7b.perplexity",
-              "mistral7b.any",
-              "llama2-70b",
-              "llama2-15b",
-              "group.testingmodels"
-            ]
-          },
-          {
-            "name": "actionllm",
-            "description": "LLM to be used for executing advanced actions.",
-            "strict": true,
-            "modelorder": [
-              "gpt-4-turbo",
-              "gpt-3.5-turbo",
-              "mistral7b.perplexity",
-              "mistral7b.any",
-              "llama2-70b",
-              "llama2-15b",
-              "group.actionmodels"
-            ]
-          }
-        ]
-      },
-      "version": "1.1.20",
-      "zipFilePath": "https://pub-cd2980acaa6d4462a4356b5afe3a82d6.r2.dev/agent/536e028b-dcdf-46ba-a1b5-fd1b75d8bf6e.zip",
-      "isLocal": false,
-      "isInstalled": true,
-      "currentPinned": true
+      "autoReadFile": true,
+      "agentId": "universal_agent"
     }
   ],
-  "activeAgent": {
-    "agentId": "c4d3fdb9-cf9e-4f82-8a1d-0160bbfc9ae9",
-    "title": "Act",
-    "avatarSrc": "https://placehold.co/200x200",
-    "avatarFallback": "CE",
-    "description": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.",
-    "longDescription": "Codebolt Dev, is  a highly skilled software developer with extensive knowledge in many programming languages, frameworks, design patterns, and best practices.\n",
-    "agentPath": "",
-    "requiredTools": null,
-    "metadata": {
-      "agent_routing": {
-        "worksonblankcode": true,
-        "worksonexistingcode": true,
-        "supportedlanguages": [],
-        "supportedframeworks": []
-      },
-      "defaultagentllm": {
-        "strict": true,
-        "modelorder": [
-          "ollama2"
-        ]
-      },
-      "sdlc_steps_managed": [],
-      "llm_role": [
-        {
-          "name": "documentationllm",
-          "description": "LLM to be used for advanced Documentation. Please select a model that excels in documentation tasks.",
-          "strict": true,
-          "modelorder": [
-            "gpt-4-turbo",
-            "gpt-3.5-turbo",
-            "mistral7b.perplexity",
-            "mistral7b.any",
-            "llama2-70b",
-            "llama2-15b",
-            "group.documentationmodels"
-          ]
-        },
-        {
-          "name": "testingllm",
-          "description": "LLM to be used for advanced Testing. Please select a model that excels in testing tasks.",
-          "strict": true,
-          "modelorder": [
-            "gpt-4-turbo",
-            "gpt-3.5-turbo",
-            "mistral7b.perplexity",
-            "mistral7b.any",
-            "llama2-70b",
-            "llama2-15b",
-            "group.testingmodels"
-          ]
-        },
-        {
-          "name": "actionllm",
-          "description": "LLM to be used for executing advanced actions.",
-          "strict": true,
-          "modelorder": [
-            "gpt-4-turbo",
-            "gpt-3.5-turbo",
-            "mistral7b.perplexity",
-            "mistral7b.any",
-            "llama2-70b",
-            "llama2-15b",
-            "group.actionmodels"
-          ]
-        }
-      ]
-    },
-    "version": "1.1.20",
-    "zipFilePath": "https://pub-cd2980acaa6d4462a4356b5afe3a82d6.r2.dev/agent/536e028b-dcdf-46ba-a1b5-fd1b75d8bf6e.zip",
-    "isLocal": false,
-    "isInstalled": true,
-    "currentPinned": true
-  }
+  "autoConfirm": [
+    {
+      "autoConfirm": true,
+      "agentId": "universal_agent"
+    }
+  ]
 }

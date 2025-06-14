@@ -1,48 +1,28 @@
 ---
 title: Terminal MCP
 sidebar_label: codebolt.terminal
-sidebar_position: 4
+sidebar_position: 16
 ---
 
 # codebolt.terminal
 
-Command execution and terminal operations for running system commands and scripts.
+Terminal command execution operations.
 
 ## Available Tools
 
-- `execute_command` - Execute terminal commands
+- `terminal_execute_command` - Execute a terminal command
 
 ## Sample Usage
 
 ```javascript
-// Execute a simple command
-const result = await codeboltMCP.executeTool(
+// Execute a terminal command
+const execResult = await codebolt.tools.executeTool(
   "codebolt.terminal",
-  "execute_command",
-  { command: "ls -la" }
-);
-
-// Execute command with working directory
-const dirResult = await codeboltMCP.executeTool(
-  "codebolt.terminal",
-  "execute_command",
-  { 
-    command: "npm install",
-    cwd: "/path/to/project"
-  }
-);
-
-// Execute command with environment variables
-const envResult = await codeboltMCP.executeTool(
-  "codebolt.terminal",
-  "execute_command",
-  { 
-    command: "node app.js",
-    env: { NODE_ENV: "production" }
-  }
+  "terminal_execute_command",
+  { command: "echo \"Hello from MCP\"" }
 );
 ```
 
 :::info
-This functionality is similar to the [terminal API](/docs/api/apiaccess/terminal) and provides command execution through MCP interface.
+This functionality provides terminal command execution through the MCP interface.
 ::: 

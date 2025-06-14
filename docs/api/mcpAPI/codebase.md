@@ -6,37 +6,31 @@ sidebar_position: 6
 
 # codebolt.codebase
 
-Code search and analysis tools for exploring and understanding codebases.
+Code search tools for exploring and understanding codebases.
 
 ## Available Tools
 
 - `codebase_search` - Search through codebase for specific patterns or content
-- `search_mcp_tool` - Search for MCP tools and their definitions
+- `search_mcp_tool` - Search for MCP tools
 
 ## Sample Usage
 
 ```javascript
 // Search codebase for specific content
-const searchResult = await codeboltMCP.executeTool(
+const searchResult = await codebolt.tools.executeTool(
   "codebolt.codebase",
   "codebase_search",
-  { 
-    query: "function authenticate",
-    fileTypes: ["js", "ts"]
-  }
+  { query: "function testCodebaseMCPTools" }
 );
 
 // Search for MCP tools
-const mcpSearchResult = await codeboltMCP.executeTool(
+const mcpSearchResult = await codebolt.tools.executeTool(
   "codebolt.codebase",
   "search_mcp_tool",
-  { 
-    toolName: "browser",
-    category: "automation"
-  }
+  { query: "test" }
 );
 ```
 
 :::info
-This functionality provides semantic search capabilities for understanding and navigating large codebases.
+This functionality provides search capabilities for exploring codebases through the MCP interface.
 ::: 

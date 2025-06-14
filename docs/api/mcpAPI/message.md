@@ -1,85 +1,50 @@
 ---
 title: Message MCP
 sidebar_label: codebolt.message
-sidebar_position: 20
+sidebar_position: 11
 ---
 
 # codebolt.message
 
-Message processing and communication system for handling inter-agent and user communication.
+Message handling and process management operations.
 
 ## Available Tools
 
 - `message_send` - Send a message
-- `ask_followup_question` - Ask a follow-up question
-- `message_process_started` - Mark message processing as started
-- `message_process_stopped` - Mark message processing as stopped
+- `message_process_start` - Start a message processing
+- `message_process_stop` - Stop a message processing
 
 ## Sample Usage
 
 ```javascript
 // Send a message
-const sendResult = await codeboltMCP.executeTool(
+const sendResult = await codebolt.tools.executeTool(
   "codebolt.message",
   "message_send",
+  { message: "Hello MCP" }
+);
+
+// Start message processing
+const startResult = await codebolt.tools.executeTool(
+  "codebolt.message",
+  "message_process_start",
   { 
-    recipient: "agent-123",
-    content: "Please analyze the code in src/utils.js",
-    type: "task_request",
-    priority: "high"
+    process: "testProcess",
+    message: "Hello MCP"
   }
 );
 
-// Ask a follow-up question
-const questionResult = await codeboltMCP.executeTool(
+// Stop message processing
+const stopResult = await codebolt.tools.executeTool(
   "codebolt.message",
-  "ask_followup_question",
+  "message_process_stop",
   { 
-    conversationId: "conv-456",
-    question: "What specific error handling should be implemented?",
-    context: {
-      previousMessage: "msg-789",
-      relatedFiles: ["src/error-handler.js"]
-    }
-  }
-);
-
-// Mark message processing as started
-const startedResult = await codeboltMCP.executeTool(
-  "codebolt.message",
-  "message_process_started",
-  { 
-    messageId: "msg-123",
-    processorId: "agent-456",
-    estimatedDuration: 30000
-  }
-);
-
-// Mark message processing as stopped
-const stoppedResult = await codeboltMCP.executeTool(
-  "codebolt.message",
-  "message_process_stopped",
-  { 
-    messageId: "msg-123",
-    processorId: "agent-456",
-    result: "completed",
-    output: "Analysis completed successfully"
-  }
-);
-
-// Send broadcast message
-const broadcastResult = await codeboltMCP.executeTool(
-  "codebolt.message",
-  "message_send",
-  { 
-    recipients: ["agent-123", "agent-456"],
-    content: "System maintenance scheduled for tonight",
-    type: "broadcast",
-    broadcast: true
+    process: "testProcess",
+    message: "Hello MCP"
   }
 );
 ```
 
 :::info
-This functionality provides a comprehensive messaging system for agent coordination and user communication.
+This functionality provides message handling and process management through the MCP interface.
 ::: 
