@@ -19,14 +19,24 @@ data:
 ### Example
 
 ```js
-// Navigate to the home page
-await codebolt.browser.goToPage("https://example-website.com");
+// Create a new browser page
+await codebolt.browser.newPage();
 
-// Retrieve and log the current URL
-let currentUrl = await codebolt.browser.getUrl();
-console.log(`Current URL: ${currentUrl}`);
+// Get the initial URL (usually about:blank or similar)
+const initialUrl = await codebolt.browser.getUrl();
+console.log('✅ Initial URL:', initialUrl);
+
+// Navigate to a specific website
+await codebolt.browser.goToPage('https://example.com');
+
+// Wait for page to load
+await new Promise(resolve => setTimeout(resolve, 2000));
+
+// Get the URL after navigation to verify successful navigation
+const currentUrl = await codebolt.browser.getUrl();
+console.log('✅ URL after navigation:', currentUrl);
 ```
 
 ### Explanation
 
-The `codebolt.browser.getUrl()` function retrieves the URL of the current web page in the browser. This is useful for verifying the current location, tracking navigation, or collecting URLs during automated browsing sessions.
+The `codebolt.browser.getUrl()` function retrieves the URL of the current web page in the browser. This function returns a promise that resolves with the current URL. It's particularly useful for verifying successful navigation, tracking the current location during automated browsing sessions, or confirming that redirects have occurred as expected. The function is commonly used in testing scenarios to assert that the browser is on the correct page.

@@ -16,25 +16,26 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-
-### Status 
-Coming soon...
-
-
 ### Example 
 
 ```js 
 // Navigate to a page
-await codebolt.browser.goToPage("https://example.com")
+await codebolt.browser.goToPage("https://example.com");
+
+// Wait for page to load
+await new Promise(resolve => setTimeout(resolve, 2000));
 
 // Get browser information
-const browserInfo = await codebolt.browser.getBrowserInfo()
+const browserInfoResult = await codebolt.browser.getBrowserInfo();
+console.log('✅ Browser info:', browserInfoResult);
 
-console.log(browserInfo)
-// Example output: { height: 800, width: 1200, scrollX: 0, scrollY: 50 }
+// The browser info contains viewport and scroll data
+if (browserInfoResult.success) {
+    console.log('Browser dimensions and scroll position:', browserInfoResult);
+    // Example output structure: { height: 800, width: 1200, scrollX: 0, scrollY: 50 }
+}
 ```
-
 
 ### Explanation 
 
-The `codebolt.browser.getBrowserInfo()` method retrieves information about the browser's current state, including dimensions (height and width) and scroll position (scrollX and scrollY) of the current page. This function is useful for responsive design testing, understanding the user's viewport, and for scripts that need to be aware of the browser's dimensions to perform certain actions. 
+The `codebolt.browser.getBrowserInfo()` method retrieves comprehensive information about the browser's current state. This function returns a promise that resolves with data including the browser's viewport dimensions (height and width) and current scroll position (scrollX and scrollY) of the current page. This function is particularly useful for responsive design testing, understanding the user's viewport context, and for automation scripts that need to be aware of the browser's dimensions and scroll state to perform certain actions accurately. The information is essential for creating viewport-aware automation and ensuring consistent behavior across different screen sizes. 

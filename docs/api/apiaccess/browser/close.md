@@ -6,7 +6,7 @@ cbparameters:
   parameters: []
   returns:
     signatureTypeName: void
-    description: ' '
+    description: 'Closes the browser page.'
     typeArgs: []
 data:
   name: close
@@ -19,20 +19,21 @@ data:
 ### Example
 
 ```js
- // Open the browser and navigate to a specific URL
-codebolt.browser.goToPage(url);
+// Wait for connection and create a new page
+await codebolt.waitForConnection();
+await codebolt.browser.newPage();
 
-// Perform tests on the web page
-// (Assume you have performed all necessary tests)
+// Navigate to a website and perform operations
+await codebolt.browser.goToPage('https://example.com');
+await new Promise(resolve => setTimeout(resolve, 2000));
 
-// Close the current page
+// Close the browser when done
 codebolt.browser.close();
+console.log('✅ Browser closed');
+```
 
- ```
-### Explaination
+### Explanation
 
-The script first opens a browser window/tab and navigates to the specified URL using codebolt.browser.goToPage(url). In this example, it navigates to "https://example.com".
-
-After completing the task on the current page, the codebolt.browser.close() function is used to close the current page.
+The `codebolt.browser.close()` function closes the current browser page or tab. This function is essential for proper cleanup after completing browser automation tasks. It's typically called at the end of automation workflows to free up system resources and close the browser session. The function does not return a promise and executes immediately. Using this function is a best practice to ensure that browser processes are properly terminated and don't consume unnecessary system resources after your automation tasks are completed.
 
  

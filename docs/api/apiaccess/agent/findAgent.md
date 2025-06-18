@@ -23,58 +23,8 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise that resolves with a findAgentByTaskResponse object containing an array of found agents.
     typeArgs:
-      - type: object
-        properties:
-          type:
-            type: string
-            description: The response type, always "findAgentByTaskResponse"
-          agents:
-            type: array
-            description: Array of found agents
-            items:
-              type: object
-              properties:
-                type:
-                  type: string
-                  description: The agent type, typically "function"
-                function:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      description: The name/identifier of the agent
-                    description:
-                      type: string
-                      description: Detailed description of the agent's capabilities
-                    parameters:
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          description: Parameter type, typically "object"
-                        properties:
-                          type: object
-                          properties:
-                            task:
-                              type: object
-                              properties:
-                                type:
-                                  type: string
-                                  description: Parameter type, typically "string"
-                                description:
-                                  type: string
-                                  description: Description of the task parameter
-                        required:
-                          type: array
-                          items:
-                            type: string
-                          description: Array of required parameter names
-                        additionalProperties:
-                          type: boolean
-                          description: Whether additional properties are allowed
-                    strict:
-                      type: boolean
-                      description: Whether the agent enforces strict parameter validation
+      - type: reference
+        name: FindAgentByTaskResponse
 data:
   name: findAgent
   category: agent
@@ -82,6 +32,18 @@ data:
 ---
 <CBBaseInfo/>
 <CBParameters/>
+
+### Response Structure
+
+The method returns a Promise that resolves to a `FindAgentByTaskResponse` object with:
+- `type`: The response type, always "findAgentByTaskResponse"
+- `agents`: Array of found agents, each containing:
+  - `type`: The agent type, typically "function"
+  - `function`: Agent function details including:
+    - `name`: The name/identifier of the agent
+    - `description`: Detailed description of the agent's capabilities
+    - `parameters`: Parameter specification object with type, properties, required fields, and additionalProperties flag
+    - `strict`: Boolean indicating whether the agent enforces strict parameter validation
 
 ### Examples
 
@@ -120,33 +82,6 @@ const filteredAgents = await codebolt.agent.findAgent(
 );
 console.log("Filtered Agents:", filteredAgents);
 ```
-
-### Response example:
-```js 
-{
-  "type": "findAgentByTaskResponse",
-  "agents": [
-    {
-      "type": "function",
-      "function": {
-        "name": "documentaionagent",
-        "description": "A basic agent designed for the Codebolt platform...",
-        "parameters": {
-          "type": "object",
-          "properties": {
-            "task": {
-              "type": "string",
-              "description": "The specific task to execute."
-            }
-          },
-          "required": ["task"],
-          "additionalProperties": false
-        },
-        "strict": true
-      }
-    }
-  ]
-}
 
 ### Notes
 - The `task` parameter should be a clear description of what you want the agent to do
