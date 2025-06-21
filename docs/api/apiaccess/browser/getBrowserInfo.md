@@ -35,7 +35,3 @@ if (browserInfoResult.success) {
     // Example output structure: { height: 800, width: 1200, scrollX: 0, scrollY: 50 }
 }
 ```
-
-### Explanation 
-
-The `codebolt.browser.getBrowserInfo()` method retrieves comprehensive information about the browser's current state. This function returns a promise that resolves with data including the browser's viewport dimensions (height and width) and current scroll position (scrollX and scrollY) of the current page. This function is particularly useful for responsive design testing, understanding the user's viewport context, and for automation scripts that need to be aware of the browser's dimensions and scroll state to perform certain actions accurately. The information is essential for creating viewport-aware automation and ensuring consistent behavior across different screen sizes. 

@@ -36,6 +36,4 @@ if (snapshotResult.success) {
 }
 ```
 
-### Explanation 
-
-The `codebolt.browser.getSnapShot()` method captures a complete snapshot of the current page's state. This function returns a promise that resolves with comprehensive data about the page. The snapshot includes information about the DOM structure, styles, and other page properties at the moment the snapshot is taken. Unlike a screenshot which captures only the visual representation, a snapshot contains structural data that can be used for detailed analysis, testing, debugging, or to restore the page state at a later time. This is particularly useful in automated testing scenarios and web analysis workflows. 
+ 

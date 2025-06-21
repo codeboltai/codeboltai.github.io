@@ -37,11 +37,3 @@ console.log('✅ Search performed:', searchResult);
 await codebolt.browser.search("searchBox", "codebolt browser automation");
 await codebolt.browser.search("q", "JavaScript tutorials");
 ```
-
-### Important Note
-
-The `search()` function requires the target search input element to have a specific ID and be present on the page. Interactive tests like `search()` require specific element IDs which may not be available on all pages. Ensure that the search input element exists and is functional before calling this function.
-
-### Explanation
-
-The `codebolt.browser.search(elementid, query)` function performs a search operation on the current page using a specified search input element and query. The function takes two parameters: an element ID (string) identifying the search input field and a query (string) containing the search terms. It returns a promise that resolves when the search action is complete. This function is useful for automating search operations on websites, testing search functionality, and performing content discovery tasks through programmatic search queries.

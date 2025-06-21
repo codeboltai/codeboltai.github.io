@@ -31,9 +31,3 @@ await new Promise(resolve => setTimeout(resolve, 2000));
 codebolt.browser.close();
 console.log('✅ Browser closed');
 ```
-
-### Explanation
-
-The `codebolt.browser.close()` function closes the current browser page or tab. This function is essential for proper cleanup after completing browser automation tasks. It's typically called at the end of automation workflows to free up system resources and close the browser session. The function does not return a promise and executes immediately. Using this function is a best practice to ensure that browser processes are properly terminated and don't consume unnecessary system resources after your automation tasks are completed.
-
- 

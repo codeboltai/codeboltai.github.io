@@ -1,17 +1,27 @@
 {
-  "rootHash": "432471293d81271bc74d88d0a0e4428a4b4ab8aa9f2e6e10850774334e8b2b8c",
+  "rootHash": "e21660dc920123c21561e5c3daa1df4766d0122d1ade82e9fd1357a64840b233",
   "leaves": [
-    "2621d2c68302813173b10913b6197d07ae8416396a2f8aa0a64e488cc3760c43",
-    "ecf9116121a771be597830df649273217be987f12c2dd0c87ebf30054795d6ad"
+    "102b0ba522ca4a776de94368b9637d662d38e256295e12da85f112ae4e87ba31",
+    "3d9be1b94a840c816d09e3261f53a6a86892b030c1f7510a9927bc566ba6722c",
+    "9f05954cafe2d562f52f58102fba6bde5ac34745eacf1dbed9c3fcb55ea3d12e",
+    "eec9d2aad94a377a457b08225bc49e309277bcc13e89bd8f52f1bbd7409dae18"
   ],
   "filesList": [
     {
-      "path": ".codebolt/merkle_tree.json",
-      "hash": "0626188b26fc0cf6989bd00cd77fc7fe145e386c6be0acc387360521e626feb8"
+      "path": ".codeboltconfig.yaml",
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": ".codebolt/projectState.json",
-      "hash": "53787d2f86eb9be83094c1f8bda10f04eb81899ebc59d87089a206602baecd92"
+      "path": ".gitignore",
+      "hash": "621b0093f67c1cba342cf761c1a19e30e54da65b4c1860408abe198efa7e2a3b"
+    },
+    {
+      "path": "README.md",
+      "hash": "b7aee3171aeecf62f2003900b8777483511d26429100c776f69f1a25128f9a12"
+    },
+    {
+      "path": "test-file.txt",
+      "hash": "398d4fe9a1703b1003a44512457753f90dde5926e31924d8f7ac5c45b83656b5"
     }
   ]
 }

@@ -16,11 +16,6 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-
-### Status 
-
-Comming soon...
-
 ### Example
 
 ```js
@@ -34,4 +29,4 @@ codebolt.browser.pdfToText();
 ```
 
 ### Explanation
-The codebolt.browser.pdfToText() function is used to convert the PDF content of the current page into text format. This function is particularly useful when dealing with PDF documents in web automation or data extraction scenarios where you need to extract textual information from PDF files. 
+The `codebolt.browser.pdfToText()` function is used to convert the PDF content of the current page into text format. This function is particularly useful when dealing with PDF documents in web automation or data extraction scenarios where you need to extract textual information from PDF files. 

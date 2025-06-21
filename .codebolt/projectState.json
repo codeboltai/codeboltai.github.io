@@ -1,6 +1,4 @@
 {
-  "pinnedAgent": [],
-  "activeAgent": false,
   "currentLayout": {
     "grid": {
       "root": {
@@ -15,25 +13,25 @@
               "activeView": "Code",
               "id": "1"
             },
-            "size": 686
+            "size": 1094
           },
           {
             "type": "leaf",
             "data": {
               "views": [
-                "17ba6055-813d-4dc3-8083-c731bd127256"
+                "Chat"
               ],
-              "activeView": "17ba6055-813d-4dc3-8083-c731bd127256",
-              "id": "3"
+              "activeView": "Chat",
+              "id": "2"
             },
-            "size": 174
+            "size": 440.390625
           }
         ],
-        "size": 1470
+        "size": 756
       },
-      "width": 1470,
-      "height": 860,
-      "orientation": "VERTICAL"
+      "width": 1534.390625,
+      "height": 756,
+      "orientation": "HORIZONTAL"
     },
     "panels": {
       "Code": {
@@ -43,26 +41,16 @@
         "title": "Code",
         "renderer": "always"
       },
-      "17ba6055-813d-4dc3-8083-c731bd127256": {
-        "id": "17ba6055-813d-4dc3-8083-c731bd127256",
-        "contentComponent": "Terminal",
+      "Chat": {
+        "id": "Chat",
+        "contentComponent": "Chat",
         "tabComponent": "props.defaultTabComponent",
-        "title": "Terminal",
+        "title": "Chat",
         "renderer": "always"
       }
     },
     "activeGroup": "1"
   },
-  "autoReadFile": [
-    {
-      "autoReadFile": true,
-      "agentId": "universal_agent"
-    }
-  ],
-  "autoConfirm": [
-    {
-      "autoConfirm": true,
-      "agentId": "universal_agent"
-    }
-  ]
+  "pinnedAgent": [],
+  "activeAgent": false
 }

@@ -39,9 +39,6 @@ if (markdownResult.success && markdownResult.markdown) {
 }
 ```
 
-### Explanation
-
-The `codebolt.browser.getMarkdown()` function converts and retrieves the content of the current web page in Markdown format. This function returns a promise that resolves with an object containing a `success` boolean and the `markdown` content. The function converts HTML content into a more readable and editable Markdown format, which is widely used in documentation, blogging, and content management systems. This is particularly useful for content extraction, documentation generation, and creating clean, formatted text from web pages.
 
 
 

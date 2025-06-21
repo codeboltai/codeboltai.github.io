@@ -1,12 +1,12 @@
 ---
 name: getUrl
 cbbaseinfo:
-  description: Retrieves the current URL of the browser's active page.
+  description: Gets the current URL of the active browser page.
 cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise<UrlResponse>
-    description: A promise that resolves with the URL.
+    description: A promise that resolves with the current URL and viewport information.
     typeArgs: []
 data:
   name: getUrl
@@ -37,6 +37,24 @@ const currentUrl = await codebolt.browser.getUrl();
 console.log('✅ URL after navigation:', currentUrl);
 ```
 
+### Response Structure
+
+```js
+{
+  event: 'browserActionResponse',
+  eventId: 'getUrl_1750401431606',
+  payload: {
+    content: '"https://www.google.com/"',
+    viewport: { 
+      width: 767, 
+      height: 577 
+    },
+    currentUrl: 'https://www.google.com/'
+  },
+  type: 'getUrlResponse'
+}
+```
+
 ### Explanation
 
-The `codebolt.browser.getUrl()` function retrieves the URL of the current web page in the browser. This function returns a promise that resolves with the current URL. It's particularly useful for verifying successful navigation, tracking the current location during automated browsing sessions, or confirming that redirects have occurred as expected. The function is commonly used in testing scenarios to assert that the browser is on the correct page.
+The `codebolt.browser.getUrl()` function retrieves the current URL of the active browser page along with viewport information. This function is essential for navigation verification and tracking the current page location.

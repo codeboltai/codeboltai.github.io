@@ -1,0 +1,6 @@
+npm install -g typescript-language-server typescript
+]0;C:\WINDOWS\SYSTEM32\cmd.exe - npm  install -g typescript-language-server typescript]0;C:\WINDOWS\system32\cmd.exe  - "node"   "C:\Users\NURSID\AppData\Roaming\npm\\node_modules\npm\bin\npm-cli.js" install -g typescript-language-server typescript]0;npm]0;npm install typescript-language-server typescript\[K|[K/[K-[K\[K|[K/[K-[K\[K|[K/[K-[K\[K|[K/[K-[K[K
+changed 2 packages in 4s
+[K]0;C:\WINDOWS\system32\cmd.exe [?25l
+C:\btpl\codeboltai.github.io>echo EXIT_CODE=%ERRORLEVEL%
+EXIT_CODE=0[12;1HC:\btpl\codeboltai.github.io>[?25h[?25lcd C:\btpl\codeboltai.github.io[14;1HC:\btpl\codeboltai.github.io>[?25hC:\btpl\codeboltai.github.io>

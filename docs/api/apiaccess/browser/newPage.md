@@ -1,7 +1,7 @@
 ---
 name: newPage
 cbbaseinfo:
-  description: Opens a new page in the browser.
+  description: Creates a new browser page or tab for web automation.
 cbparameters:
   parameters: []
   returns:
@@ -14,7 +14,7 @@ data:
   link: newPage.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
 ### Example
 
@@ -22,14 +22,26 @@ data:
 // Wait for connection to be established
 await codebolt.waitForConnection();
 
-// Open a new page in the browser
+// Create a new browser page
 const newPageResult = await codebolt.browser.newPage();
 console.log('✅ New page created:', newPageResult);
 
-// Navigate to a specific URL after creating the page
+// Navigate to a website after creating the page
 await codebolt.browser.goToPage('https://example.com');
+
+// Get the current URL to verify the page is ready
+const currentUrl = await codebolt.browser.getUrl();
+console.log('Current URL:', currentUrl);
+```
+
+### Response Structure
+
+```js
+{
+  type: 'newPageResponse'
+}
 ```
 
 ### Explanation
 
-The `codebolt.browser.newPage()` function creates a new browser tab or window. This function returns a promise that resolves when the new page is successfully created. It's typically used at the beginning of browser automation workflows to initialize a fresh browsing context. The function is useful in web automation, testing, and multi-page navigation scenarios where you need to interact with multiple pages simultaneously or start with a clean browser state.
+The `codebolt.browser.newPage()` function creates a new browser tab or window, initializing a fresh browsing session. This is typically the first function you'll call when starting browser automation workflows.

@@ -43,6 +43,3 @@ await codebolt.browser.scroll("left", "100");
 await codebolt.browser.scroll("right", "100");
 ```
 
-### Explanation
-
-The `codebolt.browser.scroll(direction, pixels)` function scrolls the current page in a specified direction by a specified number of pixels. This function accepts two parameters: `direction` (a string specifying the scroll direction such as 'down', 'up', 'left', or 'right') and `pixels` (a string specifying the number of pixels to scroll). The function returns a promise that resolves when the scroll action is complete. This is particularly useful for automating scrolling actions on web pages, navigating through lengthy content, bringing specific elements into view, or testing responsive behavior at different scroll positions.
