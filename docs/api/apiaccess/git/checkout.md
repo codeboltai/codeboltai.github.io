@@ -1,15 +1,16 @@
 ---
 name: checkout
 cbbaseinfo:
-  description: Checks out a branch or commit in the local repository at the given path.
+  description: 'Checks out a branch or commit in the Git repository. Switches the working directory to the specified branch.'
 cbparameters:
   parameters:
+    - name: branchName
+      typeName: string
+      description: 'The name of the branch or commit to check out.'
     - name: path
       typeName: string
-      description: The file system path of the local Git repository.
-    - name: branch
-      typeName: string
-      description: The name of the branch or commit to check out.
+      description: 'Optional. The file system path of the local Git repository. If not provided, uses the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the checkout event.
@@ -22,25 +23,22 @@ data:
   link: checkout.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Status 
+## Examples
 
-Comming soon...
+### Basic Branch Checkout
 
-
-### Example 
-
-```js 
-
-await git.checkout('/path/to/repo', 'feature-branch')
-
+```js
+// Switch to a specific branch
+const checkoutResult = await codebolt.git.checkout('test-branch');
+console.log('✅ Git checkout result:', checkoutResult);
 ```
 
-### Explaination
+### Checkout at Specific Path
 
-Check out a specific branch in the local repository. It has two parameter.
-
-path: A string specifying the local repository path.
-
-branch: A string specifying the branch name to be checked out.
+```js
+// Checkout branch in repository at specific path
+const checkoutResult = await codebolt.git.checkout('feature-branch', '/path/to/repo');
+console.log('Checkout result:', checkoutResult);
+```

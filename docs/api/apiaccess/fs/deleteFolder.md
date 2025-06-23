@@ -24,9 +24,20 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic Folder Deletion
 
 ```js
-// Let's assume you want to delete a folder named "exampleFolder" in the /home/user/documents directory.
+// Delete a folder from a specific directory
+const result = await codebolt.fs.deleteFolder('exampleFolder', '/home/user/documents');
+console.log('Folder deleted:', result);
+```
 
-codebolt.fs.deleteFolder('exampleFolder', '/home/user/documents');
+### Delete Folder from Current Directory
+
+```js
+// Delete a folder from the current working directory
+const deleteFolderResult = await codebolt.fs.deleteFolder('test-folder', '.');
+console.log('✅ Folder deleted:', deleteFolderResult);
+```

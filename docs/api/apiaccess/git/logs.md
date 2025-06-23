@@ -1,42 +1,68 @@
 ---
 name: logs
 cbbaseinfo:
-  description: Retrieves the commit logs for the local repository at the given path.
+  description: 'Retrieves the commit logs for the Git repository. Shows the commit history with details like hash, message, author, and date.'
 cbparameters:
   parameters:
     - name: path
       typeName: string
-      description: The file system path of the local Git repository.
+      description: 'Optional. The file system path of the local Git repository. If not provided, uses the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the logs event.
-    typeArgs:
-      - type: intrinsic
-        name: any
 data:
   name: logs
   category: git
   link: logs.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Status 
+## Examples
 
-Comming soon...
+### Basic Logs Retrieval
 
-
-### Example 
-
-```js 
-
-await git.logs('/path/to/repo')
-
+```js
+// Get commit logs for current repository
+const logsResult = await codebolt.git.logs();
+console.log('✅ Git logs result:', logsResult);
 ```
 
+### Logs at Specific Path
 
-### Explaination
+```js
+// Get commit logs for repository at specific path
+const logsResult = await codebolt.git.logs('/path/to/repo');
+console.log('Repository logs:', logsResult);
+```
 
-Displays the commit logs of the local repository.
+### Complete Git Workflow with Logs
 
-path: A string specifying the local repository path.
+```js
+// 1. Create and commit some changes
+await codebolt.fs.createFile('README.md', '# Git Test Repository\n\nThis is a test repository.');
+await codebolt.git.addAll();
+await codebolt.git.commit('Initial commit from CodeboltJS test');
+
+// 2. Get commit logs
+const logsResult = await codebolt.git.logs();
+console.log('✅ Git logs result:', logsResult);
+
+// 3. Work on a branch
+await codebolt.git.branch('test-branch');
+await codebolt.git.checkout('test-branch');
+
+await codebolt.fs.createFile('test-file.txt', 'This file was created in the test branch.');
+await codebolt.git.addAll();
+await codebolt.git.commit('Add test file in test branch');
+
+// 4. Check logs on branch
+const branchLogs = await codebolt.git.logs();
+console.log('Branch logs:', branchLogs);
+
+// 5. Switch back to main and check logs
+await codebolt.git.checkout('main');
+const mainLogsResult = await codebolt.git.logs();
+console.log('✅ Main branch logs:', mainLogsResult);
+```

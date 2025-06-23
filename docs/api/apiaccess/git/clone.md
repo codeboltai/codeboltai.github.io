@@ -13,9 +13,7 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the clone event.
-    typeArgs:
-      - type: intrinsic
-        name: any
+   
 data:
   name: clone
   category: git
@@ -23,10 +21,6 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
-
-### Status 
-
-Comming soon...
 
 ### Example
 
@@ -40,6 +34,6 @@ await git.clone('https://github.com/user/repo.git', '/path/to/local/repo')
 
 Clone an existing Git repository from a given URL to a local directory. It has two parameter.
 
-url: A string specifying the remote repository URL.
+**url:** A string specifying the remote repository URL.
 
-path: A string specifying the local directory path where the repository should be cloned.
+**path:** A string specifying the local directory path where the repository should be cloned.

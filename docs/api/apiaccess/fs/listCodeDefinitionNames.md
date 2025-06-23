@@ -1,7 +1,7 @@
 ---
 name: listCodeDefinitionNames
 cbbaseinfo:
-  description: 'Lists all code definition names in a given path.'
+  description: 'Lists all code definition names in a given path. Extracts function names, class names, method names, and other code definitions from source files.'
 cbparameters:
   parameters:
     - name: path
@@ -21,9 +21,32 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic Code Definition Extraction
 
 ```js
-// Let's assume you want to list all code definition names in the /home/user/projects directory.
+// Extract code definitions from current directory
+const result = await codebolt.fs.listCodeDefinitionNames('/home/user/projects');
+console.log('Code definitions found:', result);
+```
 
-codebolt.fs.listCodeDefinitionNames('/home/user/projects');
+### Extract from Current Directory
+
+```js
+// List all code definitions in current directory
+const codeDefResult = await codebolt.fs.listCodeDefinitionNames('.');
+console.log('✅ Code definitions in current directory:', codeDefResult);
+
+// Process the results
+if (codeDefResult.success && codeDefResult.result) {
+    console.log('Found code definitions:');
+    if (Array.isArray(codeDefResult.result)) {
+        codeDefResult.result.forEach((def, index) => {
+            console.log(`${index + 1}. ${def}`);
+        });
+    } else {
+        console.log('Result:', codeDefResult.result);
+    }
+}
+```

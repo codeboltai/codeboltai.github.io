@@ -1,7 +1,7 @@
 ---
 name: writeToFile
 cbbaseinfo:
-  description: 'Writes content to a file at the specified path.'
+  description: 'Writes content to a file at the specified path. Creates the file if it doesn\'t exist or overwrites if it does.'
 cbparameters:
   parameters:
     - name: relPath
@@ -24,9 +24,26 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic File Writing
 
 ```js
-// Let's assume you want to write content to a file named example.txt in the /home/user/documents directory.
+// Write content to a file (creates if doesn't exist, overwrites if exists)
+const result = await codebolt.fs.writeToFile(
+    '/home/user/documents/example.txt', 
+    'This is the new content.'
+);
+console.log('Write result:', result);
+```
 
-codebolt.fs.writeToFile('/home/user/documents/example.txt', 'This is the new content.');
+### Write to File in Current Directory
+
+```js
+// Write content to a file in current directory
+const writeResult = await codebolt.fs.writeToFile(
+    './fs-test-file.txt',
+    'This is content written using writeToFile method'
+);
+console.log('✅ Write to file:', writeResult);
+```

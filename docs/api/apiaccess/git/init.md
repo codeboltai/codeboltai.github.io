@@ -1,42 +1,57 @@
 ---
 name: init
 cbbaseinfo:
-  description: Initializes a new Git repository at the given path.
+  description: 'Initializes a new Git repository. Can be used in the current directory or at a specified path.'
 cbparameters:
   parameters:
     - name: path
       typeName: string
-      description: The file system path where the Git repository should be initialized.
+      description: 'Optional. The file system path where the Git repository should be initialized. If not provided, initializes in the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the init event.
-    typeArgs:
-      - type: intrinsic
-        name: any
 data:
   name: init
   category: git
   link: init.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
+## Examples
 
-### Status 
-
-Comming soon...
-
-
-### Example
+### Initialize Repository in Current Directory
 
 ```js
-
-await codebolt.git.init('/path/to/repo')
-
+// Initialize git repository in current directory
+const initResult = await codebolt.git.init();
+console.log('✅ Git init result:', initResult);
 ```
 
-### Explaination
+### Initialize Repository at Specific Path
 
-Initialize a new Git repository in the specified directory. It has one parameter.
+```js
+// Initialize git repository at specific path
+const initResult = await codebolt.git.init('/path/to/new/repo');
+console.log('Git repository initialized at:', initResult);
+```
 
-path: A string specifying the directory path where the new Git repository should be initialized.
+### Complete Git Setup Workflow
+
+```js
+// 1. Initialize repository
+const initResult = await codebolt.git.init();
+console.log('Repository initialized:', initResult);
+
+// 2. Check initial status
+const statusResult = await codebolt.git.status();
+console.log('Initial status:', statusResult);
+
+// 3. Create initial file
+await codebolt.fs.createFile('README.md', '# My Project\n\nInitial project setup.');
+
+// 4. Check status after file creation
+const statusAfterFile = await codebolt.git.status();
+console.log('Status after file creation:', statusAfterFile);
+```
