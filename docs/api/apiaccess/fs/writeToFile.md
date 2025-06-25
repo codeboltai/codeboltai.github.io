@@ -1,7 +1,7 @@
 ---
 name: writeToFile
 cbbaseinfo:
-  description: 'Writes content to a file at the specified path. Creates the file if it doesn\'t exist or overwrites if it does.'
+  description: 'Writes content to a file at the specified path. Creates the file if it doesnt exist or overwrites if it does.'
 cbparameters:
   parameters:
     - name: relPath
