@@ -1,15 +1,16 @@
 ---
 name: branch
 cbbaseinfo:
-  description: Creates a new branch in the local repository at the given path.
+  description: 'Creates a new branch in the Git repository. Can create branches in the current repository or at a specified path.'
 cbparameters:
   parameters:
+    - name: branchName
+      typeName: string
+      description: 'The name of the new branch to create.'
     - name: path
       typeName: string
-      description: The file system path of the local Git repository.
-    - name: branch
-      typeName: string
-      description: The name of the new branch to create.
+      description: 'Optional. The file system path of the local Git repository. If not provided, uses the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the branch event.
@@ -22,24 +23,22 @@ data:
   link: branch.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Status 
+## Examples
 
-Comming soon...
-
-### Example 
+### Basic Branch Creation
 
 ```js
-
-await git.branch('/path/to/repo', 'new-branch')
-
+// Create a new branch in current repository
+const branchResult = await codebolt.git.branch('test-branch');
+console.log('✅ Git branch creation result:', branchResult);
 ```
 
-### Explaination
+### Branch Creation at Specific Path
 
-Creates a new branch in the local repository.It has two parameter.
-
-path: A string specifying the local repository path.
-
-branch: A string specifying the new branch name.
+```js
+// Create a new branch in repository at specific path
+const branchResult = await codebolt.git.branch('feature-branch', '/path/to/repo');
+console.log('Branch created:', branchResult);
+```

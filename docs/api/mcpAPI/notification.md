@@ -1,76 +1,63 @@
 ---
 title: Notification MCP
 sidebar_label: codebolt.notification
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 # codebolt.notification
 
-Notification and messaging system for sending alerts and updates to users.
+Notification system for sending event-based notifications.
 
 ## Available Tools
 
-- `notification_send` - Send a general notification
-- `notification_info` - Send an info notification
-- `notification_warning` - Send a warning notification
-- `notification_error` - Send an error notification
-- `notification_success` - Send a success notification
+- `notification_send` - Send a notification with a specific event type
+
+## Event Types
+
+The following event types are supported:
+- `debug` - Debug notifications
+- `git` - Git operation notifications
+- `planner` - Planner notifications
+- `browser` - Browser operation notifications
+- `editor` - Editor notifications
+- `terminal` - Terminal notifications
+- `console` - Console notifications
+- `preview` - Preview notifications
 
 ## Sample Usage
 
 ```javascript
-// Send a general notification
-const sendResult = await codeboltMCP.executeTool(
+// Send a notification with event type
+const result = await codebolt.tools.executeTool(
   "codebolt.notification",
   "notification_send",
-  { 
-    title: "Task Update",
-    message: "Your task has been updated",
-    recipient: "user@example.com"
+  {
+    message: "Test notification for debug",
+    eventType: "debug"
   }
 );
 
-// Send an info notification
-const infoResult = await codeboltMCP.executeTool(
+// Send a notification for git operations
+const gitResult = await codebolt.tools.executeTool(
   "codebolt.notification",
-  "notification_info",
-  { 
-    message: "Process started successfully",
-    duration: 5000
+  "notification_send",
+  {
+    message: "Test notification for git",
+    eventType: "git"
   }
 );
 
-// Send a warning notification
-const warningResult = await codeboltMCP.executeTool(
+// Send a notification for browser operations
+const browserResult = await codebolt.tools.executeTool(
   "codebolt.notification",
-  "notification_warning",
-  { 
-    message: "Low disk space detected",
-    action: "cleanup_required"
-  }
-);
-
-// Send an error notification
-const errorResult = await codeboltMCP.executeTool(
-  "codebolt.notification",
-  "notification_error",
-  { 
-    message: "Failed to save file",
-    error: "Permission denied"
-  }
-);
-
-// Send a success notification
-const successResult = await codeboltMCP.executeTool(
-  "codebolt.notification",
-  "notification_success",
-  { 
-    message: "File uploaded successfully",
-    details: "Upload completed in 2.3 seconds"
+  "notification_send",
+  {
+    message: "Test notification for browser",
+    eventType: "browser"
   }
 );
 ```
 
 :::info
-This functionality provides a unified notification system for user alerts and system messages.
+This functionality provides event-based notifications through the MCP interface.
 ::: 

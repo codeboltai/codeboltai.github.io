@@ -13,7 +13,7 @@
               "activeView": "Code",
               "id": "1"
             },
-            "size": 592
+            "size": 1094
           },
           {
             "type": "leaf",
@@ -24,13 +24,13 @@
               "activeView": "Chat",
               "id": "2"
             },
-            "size": 592
+            "size": 440.390625
           }
         ],
-        "size": 860
+        "size": 756
       },
-      "width": 1184,
-      "height": 860,
+      "width": 1534.390625,
+      "height": 756,
       "orientation": "HORIZONTAL"
     },
     "panels": {

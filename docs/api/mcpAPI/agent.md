@@ -10,70 +10,50 @@ Agent management and lifecycle operations for controlling and coordinating AI ag
 
 ## Available Tools
 
-- `agent_start` - Start a new agent instance
-- `agent_find` - Find existing agents by criteria
-- `agent_list` - List all active agents
-- `agent_stop` - Stop a running agent
-- `agent_install` - Install a new agent
-- `attempt_completion` - Mark agent task as completed
+- `start` - Start a new agent instance
+- `find` - Find existing agents by task
+- `list` - List all active agents
+- `get_detail` - Get detailed information about a specific agent
 
 ## Sample Usage
 
 ```javascript
 // Start a new agent
-const startResult = await codeboltMCP.executeTool(
+const startResult = await codebolt.tools.executeTool(
   "codebolt.agent",
-  "agent_start",
+  "start",
   { 
-    agentType: "codeAnalyzer",
-    config: { language: "javascript" }
+    agentId: "act",
+    task: "Hi"
+  }
+);
+
+// Find agents by task
+const findResult = await codebolt.tools.executeTool(
+  "codebolt.agent",
+  "find",
+  { 
+    task: "create node js application"
   }
 );
 
 // List all active agents
-const listResult = await codeboltMCP.executeTool(
+const listResult = await codebolt.tools.executeTool(
   "codebolt.agent",
-  "agent_list",
+  "list",
   {}
 );
 
-// Find specific agents
-const findResult = await codeboltMCP.executeTool(
+// Get agent details
+const detailResult = await codebolt.tools.executeTool(
   "codebolt.agent",
-  "agent_find",
+  "get_detail",
   { 
-    criteria: { type: "codeAnalyzer", status: "active" }
-  }
-);
-
-// Stop an agent
-const stopResult = await codeboltMCP.executeTool(
-  "codebolt.agent",
-  "agent_stop",
-  { agentId: "agent-123" }
-);
-
-// Install a new agent
-const installResult = await codeboltMCP.executeTool(
-  "codebolt.agent",
-  "agent_install",
-  { 
-    source: "marketplace",
-    agentName: "testRunner"
-  }
-);
-
-// Mark task completion
-const completeResult = await codeboltMCP.executeTool(
-  "codebolt.agent",
-  "attempt_completion",
-  { 
-    agentId: "agent-123",
-    result: "Task completed successfully"
+    agentId: "ask"
   }
 );
 ```
 
 :::info
-This functionality provides comprehensive agent lifecycle management for orchestrating multiple AI agents.
+This functionality provides agent lifecycle management for orchestrating AI agents.
 ::: 

@@ -1,41 +1,38 @@
 ---
 name: status
 cbbaseinfo:
-  description: Retrieves the status of the local repository at the given path.
+  description: 'Retrieves the status of the Git repository. Shows working tree status including staged, unstaged, and untracked files.'
 cbparameters:
   parameters:
     - name: path
       typeName: string
-      description: The file system path of the local Git repository.
+      description: 'Optional. The file system path of the local Git repository. If not provided, uses the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the status event.
-    typeArgs:
-      - type: intrinsic
-        name: any
 data:
   name: status
   category: git
   link: status.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Status
+## Examples
 
-Comming soon...
+### Basic Status Check
 
-
-### Example
-
-```js 
-
-await git.status('/path/to/repo')
-
+```js
+// Check status of current repository
+const statusResult = await codebolt.git.status();
+console.log('✅ Git status result:', statusResult);
 ```
 
-### Expaination 
+### Status Check at Specific Path
 
-Shows the working tree status of the local repository. It has one parameter.
-
-path: A string specifying the local repository path.
+```js
+// Check status of repository at specific path
+const statusResult = await codebolt.git.status('/path/to/repo');
+console.log('Repository status:', statusResult);
+```

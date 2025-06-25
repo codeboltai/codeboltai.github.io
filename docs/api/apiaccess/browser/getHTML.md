@@ -16,21 +16,25 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-
 ### Example
 
 ```js
-// Navigate to the product page
-await codebolt.browser.goToPage("https://example-ecommerce.com/product/12345")
+// Navigate to the page
+await codebolt.browser.goToPage("https://example.com");
+
+// Wait for page to load
+await new Promise(resolve => setTimeout(resolve, 2000));
 
 // Retrieve the HTML content of the current page
-const htmlContent = await codebolt.browser.getHTML()
+const htmlResult = await codebolt.browser.getHTML();
+console.log('✅ HTML retrieved:', {
+    success: htmlResult.success,
+    htmlLength: htmlResult.html ? htmlResult.html.length : 0
+});
 
-// Log the retrieved HTML content to the console (or save it as needed)
-console.log(htmlContent)
+// Access the actual HTML content
+if (htmlResult.success && htmlResult.html) {
+    console.log('HTML content:', htmlResult.html);
+    // Process the HTML as needed
+}
 ```
-
-### Explanation
-
-The `codebolt.browser.getHTML()` function retrieves the complete HTML content of the current web page. This function is particularly useful for web scraping, data extraction, and automated testing scenarios where you need to capture the entire HTML structure and content of a web page for further analysis or processing.
-

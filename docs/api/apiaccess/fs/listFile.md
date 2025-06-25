@@ -10,6 +10,9 @@ cbparameters:
     - name: isRecursive
       typeName: boolean
       description: Whether to list files recursively.
+    - name: listFiles
+      typeName: boolean
+      description: Optional parameter to use listFiles mode for enhanced listing.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the list of files.
@@ -24,9 +27,20 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic Directory Listing
 
 ```js
-// Let's assume you want to list all files in the /home/user/documents directory.
+// List files in a specific directory (non-recursive)
+const files = await codebolt.fs.listFile('/home/user/documents', false);
+console.log('Files in directory:', files);
+```
 
-codebolt.fs.listFile('/home/user/documents');
+### Current Directory Listing
+
+```js
+// List files in current directory
+const listResult = await codebolt.fs.listFile('.', false);
+console.log('✅ Directory listing (listFile):', listResult);
+```

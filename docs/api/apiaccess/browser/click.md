@@ -8,45 +8,32 @@ cbparameters:
       typeName: string
       description: The ID of the element to click.
   returns:
-    signatureTypeName: Promise
+    signatureTypeName: Promise<ClickResponse>
     description: A promise that resolves when the click action is complete.
-    typeArgs:
-      - type: intrinsic
-        name: unknown
+    typeArgs: []
 data:
   name: click
   category: browser
   link: click.md
 ---
-<CBBaseInfo/> 
- <CBParameters/>
+<CBBaseInfo/>
+<CBParameters/>
 
 ### Example
 
 ```js
-// Using Codebolt's browser API, you can interact with elements on a web page.
-// For example, let's say there's a button with the ID "test" on the page.
-// You can use Codebolt's browser API to click on this button.
+// Navigate to a page with interactive elements
+await codebolt.browser.goToPage("https://example.com");
+await new Promise(resolve => setTimeout(resolve, 2000));
 
+// Click on a button with the ID "submit-btn"
+const clickResult = await codebolt.browser.click("submit-btn");
+console.log('✅ Clicked:', clickResult);
 
-// First, let's imagine there's a button with the ID "test" on the web page.
-// <button id="test">Click me</button>
+// Click on a link with a specific ID
+await codebolt.browser.click("nav-link");
 
-// Now, you want to use Codebolt's browser API to click on this button.
-
-// The syntax for clicking an element with a specific ID using Codebolt's browser API is:
-// await codebolt.browser.click("elementSelector")
-
-// In this case, the element selector is "#test" because we are targeting an element with the ID "test".
-
-// Putting it all together:
-codebolt.browser.click("#test");
-
+// Click on a checkbox or radio button
+await codebolt.browser.click("checkbox-id");
 ```
-
-### Explaination 
-
-[Browser](../browser)  Click function is used to click on the browser by selecting specific elementId.
-
-A browser is a used to access and display web pages. When a browser is open, users can interact with various elements on web pages, such as buttons, links, forms, and images.
 

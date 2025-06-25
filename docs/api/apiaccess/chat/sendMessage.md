@@ -22,23 +22,20 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-
-### Example
+### Examples
 
 ```js
-// Send a simple message through the WebSocket connection
-codebolt.chat.sendMessage("Hi!", null);
+// Example 1: Send a simple text message
+codebolt.chat.sendMessage("Hello, CodeBolt!");
 
-// Send a message with additional payload data
-codebolt.chat.sendMessage("Process complete", { 
-  status: "success", 
-  items: 5 
+// Example 3: Send a message with payload data
+codebolt.chat.sendMessage("File processing complete", {
+    timestamp: new Date().toISOString(),
+    source: 'codeboltjs-script',
+    fileCount: 5,
+    status: 'success'
 });
 ```
 
 ![sendMessage](/img/processStarted.png)
 
-
-### Explanation
-
-The codebolt.chat.sendMessage function sends a message through the WebSocket connection, optionally with additional payload data. This function enables real-time communication by allowing the script to send text messages and structured data to the Codebolt chat.

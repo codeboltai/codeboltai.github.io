@@ -16,15 +16,9 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-
-### Status 
-Comming soon...
-
-
 ### Example
 
 ```js
-
 
 await codebolt.browser.goToPage("https://example-ecommerce.com/product/12345")
 

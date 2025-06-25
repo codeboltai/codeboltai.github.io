@@ -1,15 +1,15 @@
 ---
 name: goToPage
 cbbaseinfo:
-  description: Navigates to a specified URL.
+  description: Navigates the browser to a specific URL.
 cbparameters:
   parameters:
     - name: url
       typeName: string
-      description: The URL to navigate to.
+      description: The URL to navigate to (must include protocol like https://).
   returns:
     signatureTypeName: Promise<GoToPageResponse>
-    description: A promise that resolves when navigation is complete.
+    description: A promise that resolves when navigation is initiated with page information.
     typeArgs: []
 data:
   name: goToPage
@@ -22,14 +22,47 @@ data:
 ### Example
 
 ```js
-//Navigate to a webpage using Codebolt's browser API
-await codebolt.browser.goToPage('https://docs.codebolt.ai/docs/api/apiaccess/browser/goToPage/')
+// Wait for connection and create a new page
+await codebolt.waitForConnection();
+await codebolt.browser.newPage();
+
+// Navigate to a webpage
+const goToResult = await codebolt.browser.goToPage('https://example.com');
+console.log('✅ Navigated to page:', goToResult);
+
+// Wait for the page to fully load
+await new Promise(resolve => setTimeout(resolve, 2000));
+
+// Verify the navigation was successful
+const currentUrl = await codebolt.browser.getUrl();
+console.log('✅ Current URL after navigation:', currentUrl);
+
+// Example with different websites
+await codebolt.browser.goToPage('https://www.google.com');
+await codebolt.browser.goToPage('https://github.com');
+```
+
+### Response Structure
+
+```js
+{
+  event: 'browserActionResponse',
+  eventId: 'goToPage_1750401433630',
+  payload: {
+    content: '"Navigated to https://example.com"',
+    viewport: { 
+      width: 767, 
+      height: 577 
+    },
+    currentUrl: 'https://example.com'
+  },
+  type: 'goToPageResponse'
+}
 ```
 
 ### Explanation
 
-The `codebolt.browser.goToPage(url)` function navigates the browser to a new web page specified by the URL parameter. When this function is called, the browser leaves the current page and loads the new page indicated by the URL. This is typically one of the first commands used in browser automation workflows.
-
+The `codebolt.browser.goToPage(url)` function navigates the browser to a specified URL. This is one of the most fundamental browser automation functions, allowing you to load different web pages programmatically.
 
 
 

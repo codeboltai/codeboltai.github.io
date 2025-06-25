@@ -5,8 +5,8 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: void
-    description: ' '
+    signatureTypeName: Promise<ScreenshotResponse>
+    description: A promise that resolves with the screenshot data.
     typeArgs: []
 data:
   name: screenshot
@@ -16,23 +16,20 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-### Status 
-
-Comming soon...
-
-
 ### Example 
 
 ```js 
-
 // Navigate to the page you want to capture
 await codebolt.browser.goToPage("https://example.com");
 
-// Take a screenshot of the current page
-codebolt.browser.screenshot();
+// Wait for page to load completely
+await new Promise(resolve => setTimeout(resolve, 2000));
 
+// Take a screenshot of the current page
+const screenshotResult = await codebolt.browser.screenshot();
+console.log('✅ Screenshot taken:', screenshotResult);
 ```
 
-### Explanation:
+### Explanation
 
-The codebolt.browser.screenshot() function is used to capture a screenshot of the current page displayed in the browser. This function is helpful for various purposes such as visual verification, debugging, or generating documentation.
+The `codebolt.browser.screenshot()` function captures a screenshot of the current page displayed in the browser. This function returns a promise that resolves with the screenshot data. The screenshot includes the visible portion of the webpage as it appears in the browser viewport. This function is helpful for various purposes such as visual verification, debugging, automated testing, generating documentation, or creating visual records of web pages during automation workflows.

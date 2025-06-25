@@ -1,76 +1,49 @@
 ---
 title: Config MCP
 sidebar_label: codebolt.config
-sidebar_position: 18
+sidebar_position: 22
 ---
 
 # codebolt.config
 
-Configuration management system for managing MCP and application settings.
+Configuration management for MCP servers.
 
 ## Available Tools
 
-- `configure_mcp` - Configure MCP settings and parameters
+- `configure_mcp` - Configure MCP server settings
 
 ## Sample Usage
 
 ```javascript
-// Configure MCP settings
-const configResult = await codeboltMCP.executeTool(
+// Configure filesystem MCP server
+const configResult = await codebolt.tools.executeTool(
   "codebolt.config",
   "configure_mcp",
-  { 
-    mcpName: "codebolt.browser",
-    settings: {
-      timeout: 30000,
-      headless: true,
-      viewport: {
-        width: 1920,
-        height: 1080
-      }
+  {
+    serverName: "filesystem",
+    config: {
+      command: "npx",
+      args: [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/other/allowed/dir"
+      ]
     }
-  }
-);
-
-// Configure multiple MCP tools
-const multiConfigResult = await codeboltMCP.executeTool(
-  "codebolt.config",
-  "configure_mcp",
-  { 
-    configurations: [
-      {
-        mcpName: "codebolt.git",
-        settings: {
-          defaultBranch: "main",
-          autoCommit: false
-        }
-      },
-      {
-        mcpName: "codebolt.terminal",
-        settings: {
-          shell: "/bin/bash",
-          timeout: 60000
-        }
-      }
-    ]
-  }
-);
-
-// Configure with environment-specific settings
-const envConfigResult = await codeboltMCP.executeTool(
-  "codebolt.config",
-  "configure_mcp",
-  { 
-    mcpName: "codebolt.debug",
-    settings: {
-      logLevel: "debug",
-      enableVerbose: true
-    },
-    environment: "development"
   }
 );
 ```
 
+## Parameters
+
+### configure_mcp
+- `serverName` (required) - Name of the server to configure (e.g., "filesystem")
+- `config` (required) - Configuration object containing server settings
+  - `command` - Command to run the server (e.g., "npx")
+  - `args` - Array of command arguments
+    - "-y" - Non-interactive mode for npx
+    - Package name (e.g., "@modelcontextprotocol/server-filesystem")
+    - Additional arguments like allowed directories
+
 :::info
-This functionality provides centralized configuration management for all MCP tools and services.
+This functionality provides server configuration management through the MCP interface. Currently supports filesystem server configuration.
 ::: 

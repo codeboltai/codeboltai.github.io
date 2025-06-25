@@ -16,24 +16,24 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-
-### Status 
-Coming soon...
-
-
 ### Example 
 
 ```js 
 // Navigate to a page
-await codebolt.browser.goToPage("https://example.com")
+await codebolt.browser.goToPage("https://example.com");
+
+// Wait for page to load
+await new Promise(resolve => setTimeout(resolve, 2000));
 
 // Get a snapshot of the current page
-const snapshot = await codebolt.browser.getSnapShot()
+const snapshotResult = await codebolt.browser.getSnapShot();
+console.log('✅ Snapshot taken:', snapshotResult);
 
-console.log(snapshot)
+// The snapshot contains comprehensive page state information
+if (snapshotResult.success) {
+    console.log('Snapshot data available for analysis');
+    // Process the snapshot data as needed
+}
 ```
 
-
-### Explanation 
-
-The `codebolt.browser.getSnapShot()` method captures a complete snapshot of the current page's state. This includes information about the DOM structure, styles, and other page properties at the moment the snapshot is taken. Unlike a screenshot which captures only the visual representation, a snapshot contains structural data that can be used for analysis, testing, or to restore the page state at a later time. 
+ 

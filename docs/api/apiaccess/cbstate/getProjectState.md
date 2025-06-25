@@ -1,327 +1,298 @@
-# getProjectState
+---
+name: getProjectState
+cbbaseinfo:
+  description: Retrieves the current project state from the server via WebSocket.
+cbparameters:
+  parameters: []
+  returns:
+    signatureTypeName: Promise
+    description: A promise that resolves with the project state containing project information, token usage, chats, and all custom project state data.
+    typeArgs:
+      - type: reference
+        name: GetProjectStateResponse
+data:
+  name: getProjectState
+  category: cbstate
+  link: getProjectState.md
+---
 
-Retrieves the current project state from the server via WebSocket.
+<CBBaseInfo/> 
+<CBParameters/>
 
-## Syntax
+## What is getProjectState?
 
-```typescript
-cbstate.getProjectState(): Promise<any>
+The `getProjectState` function allows you to retrieve comprehensive information about your current project, including both system information (like project path and token usage) and any custom data you've stored using `updateProjectState`. Think of it as getting a complete snapshot of your project's current status and configuration.
+
+**Key Points:**
+- 📊 **Complete project overview** - Get all project information in one call
+- 💾 **Persistent data** - Access data that survives across sessions
+- 🔧 **System + Custom data** - Both built-in project info and your custom settings
+- 📈 **Usage tracking** - Monitor token consumption and chat history
+
+## When to Use This
+
+Use `getProjectState` when you need to:
+- Check your project's current configuration and settings
+- Monitor token usage and project activity
+- Retrieve custom project data you've previously stored
+- Get a complete overview of your project's state
+- Debug project-level issues
+
+## Basic Usage
+
+### Simple Example - Get Project Overview
+```js
+// Get complete project information
+const projectState = await codebolt.cbstate.getProjectState();
+
+console.log('Response type:', projectState.type); // 'getProjectStateResponse'
+console.log('Project data:', projectState.projectState);
 ```
 
-## Parameters
+### Access Basic Project Information
+```js
+const projectState = await codebolt.cbstate.getProjectState();
 
-This function takes no parameters.
+// Access basic project details
+const projectPath = projectState.projectState.projectPath;
+const projectName = projectState.projectState.projectName;
+const tokenUsed = projectState.projectState.token_used;
 
-## Returns
+console.log(`Project Name: ${projectName}`);
+console.log(`Project Path: ${projectPath}`);
+console.log(`Tokens Used: ${tokenUsed}`);
+```
 
-- `Promise<any>` - A promise that resolves with the project state response
+### Access Custom Project Settings
+```js
+const projectState = await codebolt.cbstate.getProjectState();
+const state = projectState.projectState.state;
 
-## Description
+// Access custom data you've stored with updateProjectState
+if (state.project_name) {
+    console.log('Custom Project Name:', state.project_name);
+}
+if (state.version) {
+    console.log('Project Version:', state.version);
+}
+if (state.environment) {
+    console.log('Environment:', state.environment);
+}
+```
 
-The `getProjectState` function retrieves the current state of the project from the server. This includes project-specific configuration, settings, metadata, and other state information that is maintained at the project level.
+## Working with Complex Data
 
-Project state typically includes:
-- Project configuration settings
-- Build status and information
-- Environment variables
-- Project metadata
-- Custom project-specific data
+If you stored complex objects as JSON strings, you'll need to parse them:
 
-## Example
+```js
+const projectState = await codebolt.cbstate.getProjectState();
+const state = projectState.projectState.state;
 
-```typescript
-import cbstate from '@codebolt/cbstate';
-
-async function checkProjectState() {
-  try {
-    const projectState = await cbstate.getProjectState();
-    console.log('Current project state:', projectState);
-    
-    // Access specific state properties
-    if (projectState.data) {
-      console.log('Project name:', projectState.data.name);
-      console.log('Project version:', projectState.data.version);
-      console.log('Build status:', projectState.data.buildStatus);
+// Parse JSON configuration safely
+const parseJsonSafely = (jsonString) => {
+    try {
+        return JSON.parse(jsonString);
+    } catch (error) {
+        console.error('Failed to parse JSON:', error);
+        return null;
     }
-    
-    return projectState;
-  } catch (error) {
-    console.error('Failed to get project state:', error);
-    throw error;
-  }
-}
+};
 
-// Usage
-const state = await checkProjectState();
-```
-
-## Use Cases
-
-### Project Status Monitoring
-```typescript
-// Monitor project status
-async function monitorProjectStatus() {
-  const state = await cbstate.getProjectState();
-  
-  if (state.data?.buildStatus === 'building') {
-    console.log('Project is currently building...');
-    return { status: 'building', message: 'Build in progress' };
-  } else if (state.data?.buildStatus === 'failed') {
-    console.log('Last build failed');
-    return { status: 'failed', message: 'Build failed' };
-  } else if (state.data?.buildStatus === 'success') {
-    console.log('Project built successfully');
-    return { status: 'success', message: 'Build successful' };
-  }
-  
-  return { status: 'unknown', message: 'Build status unknown' };
-}
-```
-
-### Configuration Management
-```typescript
-// Get project configuration
-async function getProjectConfig() {
-  const state = await cbstate.getProjectState();
-  
-  const config = {
-    name: state.data?.name || 'Unknown Project',
-    version: state.data?.version || '1.0.0',
-    environment: state.data?.environment || 'development',
-    dependencies: state.data?.dependencies || [],
-    scripts: state.data?.scripts || {}
-  };
-  
-  return config;
-}
-
-// Use configuration for operations
-async function runBasedOnConfig() {
-  const config = await getProjectConfig();
-  
-  if (config.environment === 'production') {
-    console.log('Running in production mode');
-    // Production-specific logic
-  } else {
-    console.log('Running in development mode');
-    // Development-specific logic
-  }
-}
-```
-
-### State-Based Decision Making
-```typescript
-// Make decisions based on project state
-async function conditionalOperations() {
-  const state = await cbstate.getProjectState();
-  
-  // Check if project is ready for deployment
-  if (state.data?.testsStatus === 'passed' && 
-      state.data?.buildStatus === 'success' &&
-      state.data?.lintStatus === 'clean') {
-    
-    console.log('Project is ready for deployment');
-    return { readyForDeployment: true };
-  }
-  
-  // Identify what needs to be done
-  const issues = [];
-  if (state.data?.testsStatus !== 'passed') issues.push('tests');
-  if (state.data?.buildStatus !== 'success') issues.push('build');
-  if (state.data?.lintStatus !== 'clean') issues.push('linting');
-  
-  return { 
-    readyForDeployment: false, 
-    issues: issues 
-  };
-}
-```
-
-### Integration with Other Modules
-```typescript
-import cbstate from '@codebolt/cbstate';
-import cbproject from '@codebolt/project';
-
-// Sync project state with project operations
-async function syncProjectOperations() {
-  const projectState = await cbstate.getProjectState();
-  const projectPath = await cbproject.getProjectPath();
-  
-  // Combine state and path information
-  const combinedInfo = {
-    state: projectState.data,
-    path: projectPath.data?.path,
-    lastSync: new Date().toISOString()
-  };
-  
-  console.log('Combined project info:', combinedInfo);
-  return combinedInfo;
-}
-```
-
-## Advanced Examples
-
-### State Caching and Optimization
-```typescript
-class ProjectStateManager {
-  private cache: any = null;
-  private cacheTime = 0;
-  private cacheDuration = 10000; // 10 seconds
-  
-  async getState(useCache = true) {
-    const now = Date.now();
-    
-    if (useCache && this.cache && (now - this.cacheTime) < this.cacheDuration) {
-      return this.cache;
+// Access complex configuration stored as JSON
+if (state.ui_config) {
+    const uiConfig = parseJsonSafely(state.ui_config);
+    if (uiConfig) {
+        console.log('UI Theme:', uiConfig.theme);
+        console.log('Features:', uiConfig.features);
+        console.log('Settings:', uiConfig.settings);
     }
-    
-    const state = await cbstate.getProjectState();
-    this.cache = state;
-    this.cacheTime = now;
-    
-    return state;
-  }
-  
-  invalidateCache() {
-    this.cache = null;
-    this.cacheTime = 0;
-  }
-  
-  async waitForStateChange(property: string, expectedValue: any, timeout = 30000) {
-    const startTime = Date.now();
-    
-    while (Date.now() - startTime < timeout) {
-      const state = await this.getState(false); // Don't use cache
-      
-      if (state.data?.[property] === expectedValue) {
-        return state;
-      }
-      
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
-    
-    throw new Error(`Timeout waiting for ${property} to become ${expectedValue}`);
-  }
 }
 
-// Usage
-const stateManager = new ProjectStateManager();
-
-// Wait for build to complete
-try {
-  await stateManager.waitForStateChange('buildStatus', 'success', 60000);
-  console.log('Build completed successfully!');
-} catch (error) {
-  console.error('Build did not complete in time:', error);
+// Access project settings
+if (state.project_settings) {
+    const settings = parseJsonSafely(state.project_settings);
+    if (settings) {
+        console.log('Project Settings:', settings);
+    }
 }
 ```
 
-### State Comparison and Change Detection
-```typescript
-// Compare project states
-async function compareProjectStates(previousState: any) {
-  const currentState = await cbstate.getProjectState();
-  
-  const changes = [];
-  
-  // Compare specific properties
-  const properties = ['buildStatus', 'testsStatus', 'version', 'environment'];
-  
-  for (const prop of properties) {
-    const oldValue = previousState.data?.[prop];
-    const newValue = currentState.data?.[prop];
-    
-    if (oldValue !== newValue) {
-      changes.push({
-        property: prop,
-        oldValue: oldValue,
-        newValue: newValue
-      });
+## Complete Example - Project Dashboard
+
+Here's how you might create a project dashboard showing all important information:
+
+```js
+async function createProjectDashboard() {
+    try {
+        const projectState = await codebolt.cbstate.getProjectState();
+        const state = projectState.projectState.state;
+        
+        console.log('=== PROJECT DASHBOARD ===');
+        
+        // Basic project info
+        console.log('\n📁 Project Information:');
+        console.log(`Name: ${projectState.projectState.projectName}`);
+        console.log(`Path: ${projectState.projectState.projectPath}`);
+        console.log(`Custom Name: ${state.project_name || 'Not set'}`);
+        console.log(`Version: ${state.version || 'Not set'}`);
+        console.log(`Environment: ${state.environment || 'Not set'}`);
+        
+        // Usage statistics
+        console.log('\n📊 Usage Statistics:');
+        console.log(`Tokens Used: ${projectState.projectState.token_used}`);
+        console.log(`Chat Sessions: ${projectState.projectState.chats.length}`);
+        
+        // System status
+        console.log('\n🔧 System Status:');
+        console.log(`Active Agent: ${state.activeAgent ? 'Yes' : 'No'}`);
+        console.log(`Pinned Agents: ${state.pinnedAgent ? state.pinnedAgent.length : 0}`);
+        
+        // Custom settings
+        console.log('\n⚙️ Custom Settings:');
+        const customKeys = Object.keys(state).filter(key => 
+            !['activeAgent', 'currentLayout', 'pinnedAgent'].includes(key)
+        );
+        
+        if (customKeys.length > 0) {
+            customKeys.forEach(key => {
+                console.log(`${key}: ${state[key]}`);
+            });
+        } else {
+            console.log('No custom settings found');
+        }
+        
+        return projectState;
+    } catch (error) {
+        console.error('❌ Failed to create project dashboard:', error);
+        return null;
     }
-  }
-  
-  return {
-    hasChanges: changes.length > 0,
-    changes: changes,
-    currentState: currentState
-  };
 }
+
+// Create the dashboard
+createProjectDashboard();
 ```
 
-## Error Handling
+## Safe Data Access
 
-```typescript
-async function robustGetProjectState() {
-  try {
-    const state = await cbstate.getProjectState();
-    return state;
-  } catch (error) {
-    console.error('Failed to get project state:', error);
+Always check if data exists before using it:
+
+```js
+async function getProjectDataSafely() {
+    const projectState = await codebolt.cbstate.getProjectState();
     
-    // Handle specific error types
-    if (error.message.includes('network')) {
-      console.warn('Network error. Retrying...');
-      // Retry logic
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      return await cbstate.getProjectState();
-    }
-    
-    if (error.message.includes('unauthorized')) {
-      console.error('Unauthorized access to project state');
-      return {
-        success: false,
-        error: 'Unauthorized',
-        data: null
-      };
-    }
-    
-    // Return default state for other errors
-    return {
-      success: false,
-      error: error.message,
-      data: {
-        name: 'Unknown Project',
-        status: 'error'
-      }
+    // Helper function to safely access nested properties
+    const getProjectProperty = (key, defaultValue = null) => {
+        return projectState.projectState?.state?.[key] || defaultValue;
     };
-  }
+    
+    // Safe access to project data
+    const projectInfo = {
+        systemName: projectState.projectState?.projectName || 'Unknown',
+        customName: getProjectProperty('project_name', 'Not set'),
+        version: getProjectProperty('version', '1.0.0'),
+        environment: getProjectProperty('environment', 'development'),
+        tokenUsage: projectState.projectState?.token_used || 0
+    };
+    
+    console.log('Safe Project Info:', projectInfo);
+    return projectInfo;
 }
+
+getProjectDataSafely();
+```
+
+## Monitor Project Changes
+
+Track your project's evolution over time:
+
+```js
+async function monitorProject() {
+    const projectState = await codebolt.cbstate.getProjectState();
+    
+    const summary = {
+        projectInfo: {
+            name: projectState.projectState.projectName,
+            path: projectState.projectState.projectPath,
+            customName: projectState.projectState.state.project_name
+        },
+        usage: {
+            tokensUsed: projectState.projectState.token_used,
+            chatSessions: projectState.projectState.chats.length,
+            lastModified: projectState.projectState.state.last_modified
+        },
+        configuration: {
+            version: projectState.projectState.state.version,
+            environment: projectState.projectState.state.environment,
+            customSettings: Object.keys(projectState.projectState.state).length
+        }
+    };
+    
+    console.log('Project Summary:', summary);
+    return summary;
+}
+
+monitorProject();
+```
+
+## Find Specific Configuration
+
+Search for specific settings in your project state:
+
+```js
+async function findProjectSetting(settingName) {
+    const projectState = await codebolt.cbstate.getProjectState();
+    const state = projectState.projectState.state;
+    
+    if (state[settingName]) {
+        console.log(`Found setting '${settingName}':`, state[settingName]);
+        
+        // Try to parse as JSON if it looks like JSON
+        if (state[settingName].startsWith('{') || state[settingName].startsWith('[')) {
+            try {
+                const parsed = JSON.parse(state[settingName]);
+                console.log('Parsed value:', parsed);
+                return parsed;
+            } catch (error) {
+                console.log('Raw value:', state[settingName]);
+                return state[settingName];
+            }
+        }
+        
+        return state[settingName];
+    } else {
+        console.log(`Setting '${settingName}' not found`);
+        return null;
+    }
+}
+
+// Usage
+findProjectSetting('ui_config');
+findProjectSetting('version');
 ```
 
 ## Response Format
 
-The function typically returns an object with the following structure:
+When you call `getProjectState`, you'll get back a response like this:
 
-```typescript
+```js
 {
-  success: boolean;
-  data: {
-    name?: string;
-    version?: string;
-    environment?: string;
-    buildStatus?: 'pending' | 'building' | 'success' | 'failed';
-    testsStatus?: 'pending' | 'running' | 'passed' | 'failed';
-    lintStatus?: 'pending' | 'running' | 'clean' | 'issues';
-    dependencies?: string[];
-    scripts?: Record<string, string>;
-    lastBuild?: string;
-    lastTest?: string;
-    customData?: Record<string, any>;
-  };
-  timestamp?: string;
-  message?: string;
+  type: 'getProjectStateResponse',
+  projectState: {
+    token_used: 0,                    // Number of tokens consumed
+    chats: [],                        // Array of chat sessions
+    projectPath: 'C:\\path\\to\\project', // Full path to the project
+    projectName: 'project-name',      // Name of the current project
+    state: {
+      activeAgent: false,             // Whether an agent is currently active
+      currentLayout: {...},           // Current UI layout configuration
+      pinnedAgent: [...],             // Array of pinned agents
+      // Your custom project state values
+      project_name: 'My Awesome Project',
+      version: '1.0.0',
+      environment: 'development',
+      ui_config: '{"theme":"dark","features":["autocomplete"]}',
+      // ... other custom settings
+    }
+  }
 }
 ```
-
-## Performance Considerations
-
-- Project state queries may be expensive for large projects
-- Consider caching results for frequently accessed state
-- Use change detection to avoid unnecessary operations
-
-## Related Functions
-
-- [`getApplicationState()`](./getApplicationState.md) - Get application-wide state
-- [`getAgentState()`](./getAgentState.md) - Get agent-specific state
-- [`updateProjectState()`](./updateProjectState.md) - Update project state
-- [`addToAgentState()`](./addToAgentState.md) - Add to agent state 

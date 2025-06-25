@@ -1,57 +1,50 @@
 ---
 title: Memory MCP
 sidebar_label: codebolt.memory
-sidebar_position: 8
+sidebar_position: 10
 ---
 
 # codebolt.memory
 
-Memory storage and retrieval system for persisting and accessing data across sessions.
+Memory operations for storing and retrieving key-value pairs.
 
 ## Available Tools
 
-- `memory_set` - Store data in memory
-- `memory_get` - Retrieve data from memory
+- `memory_set` - Store a value in memory
+- `memory_get` - Retrieve a value from memory
 
 ## Sample Usage
 
 ```javascript
-// Store data in memory
-const setResult = await codeboltMCP.executeTool(
+// Store a value in memory
+const setResult = await codebolt.tools.executeTool(
   "codebolt.memory",
   "memory_set",
-  { 
-    key: "user_preferences",
-    value: {
-      theme: "dark",
-      language: "javascript",
-      autoSave: true
-    }
+  {
+    key: "test-key-1",
+    value: "This is a test memory value"
   }
 );
 
-// Retrieve data from memory
-const getResult = await codeboltMCP.executeTool(
+// Retrieve a value from memory
+const getResult = await codebolt.tools.executeTool(
   "codebolt.memory",
   "memory_get",
-  { key: "user_preferences" }
+  {
+    key: "test-key-1"
+  }
 );
 
-// Store session data
-const sessionResult = await codeboltMCP.executeTool(
+// Attempt to get non-existent key
+const nonExistentResult = await codebolt.tools.executeTool(
   "codebolt.memory",
-  "memory_set",
-  { 
-    key: "session_data",
-    value: {
-      startTime: Date.now(),
-      actions: []
-    },
-    ttl: 3600 // Time to live in seconds
+  "memory_get",
+  {
+    key: "non-existent-key-12345"
   }
 );
 ```
 
 :::info
-This functionality is similar to the [memory API](/docs/api/apiaccess/dbmemory) and provides persistent storage through MCP interface.
+This functionality provides simple key-value storage through the MCP interface.
 ::: 

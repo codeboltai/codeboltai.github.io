@@ -1,76 +1,108 @@
 ---
 title: Git MCP
 sidebar_label: codebolt.git
-sidebar_position: 3
+sidebar_position: 9
 ---
 
 # codebolt.git
 
-Git repository management and version control operations for managing code repositories.
+Git operations for version control and repository management.
 
 ## Available Tools
 
-- `git_init` - Initialize a new Git repository
-- `git_clone` - Clone a repository
-- `git_pull` - Pull changes from remote
-- `git_push` - Push changes to remote
-- `git_status` - Get working directory status
-- `git_add` - Add files to staging area
+- `git_init` - Initialize a new git repository
+- `git_add` - Add files to staging
 - `git_commit` - Commit staged changes
-- `git_checkout` - Checkout branch or files
-- `git_branch` - Create or list branches
-- `git_logs` - Get commit history
-- `git_diff` - Get changes between commits
+- `git_push` - Push commits to remote
+- `git_pull` - Pull changes from remote
+- `git_checkout` - Switch branches
+- `git_branch` - Create new branch
+- `git_logs` - View commit history
+- `git_diff` - View changes between commits
+- `git_status` - Check repository status
+- `git_clone` - Clone a repository
 
 ## Sample Usage
 
 ```javascript
-// Initialize a new Git repository
-const initResult = await codeboltMCP.executeTool(
+// Initialize a new repository
+const initResult = await codebolt.tools.executeTool(
   "codebolt.git",
   "git_init",
-  { path: "/path/to/project" }
+  { dir: "./" }
 );
 
-// Clone a repository
-const cloneResult = await codeboltMCP.executeTool(
+// Add files to staging
+const addResult = await codebolt.tools.executeTool(
   "codebolt.git",
-  "git_clone",
-  { 
-    url: "https://github.com/user/repo.git",
-    destination: "/path/to/clone"
-  }
+  "git_add",
+  { files: ["test.txt"] }
 );
 
-// Check repository status
-const statusResult = await codeboltMCP.executeTool(
+// Commit changes
+const commitResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_commit",
+  { message: "Test commit" }
+);
+
+// Push to remote
+const pushResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_push",
+  {}
+);
+
+// Pull from remote
+const pullResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_pull",
+  {}
+);
+
+// Switch branches
+const checkoutResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_checkout",
+  { branch: "main" }
+);
+
+// Create new branch
+const branchResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_branch",
+  { branch: "test-branch" }
+);
+
+// View commit history
+const logsResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_logs",
+  {}
+);
+
+// View changes
+const diffResult = await codebolt.tools.executeTool(
+  "codebolt.git",
+  "git_diff",
+  { commitHash: "HEAD~1" }
+);
+
+// Check status
+const statusResult = await codebolt.tools.executeTool(
   "codebolt.git",
   "git_status",
   {}
 );
 
-// Add files to staging
-const addResult = await codeboltMCP.executeTool(
+// Clone repository
+const cloneResult = await codebolt.tools.executeTool(
   "codebolt.git",
-  "git_add",
-  { files: ["file1.js", "file2.js"] }
-);
-
-// Commit changes
-const commitResult = await codeboltMCP.executeTool(
-  "codebolt.git",
-  "git_commit",
-  { message: "Add new features" }
-);
-
-// Get commit history
-const logsResult = await codeboltMCP.executeTool(
-  "codebolt.git",
-  "git_logs",
-  { limit: 10 }
+  "git_clone",
+  { url: "https://github.com/user/repo.git" }
 );
 ```
 
 :::info
-This functionality is similar to the [git API](/docs/api/apiaccess/git) and provides the same Git operations through MCP interface.
+This functionality provides Git operations through the MCP interface.
 ::: 

@@ -10,59 +10,139 @@ Browser automation and web interaction tools for controlling web browsers progra
 
 ## Available Tools
 
-- `launch` - Launch browser at specified URL
-- `click` - Click at specific coordinates
-- `type` - Type text into active element
-- `scroll_down` - Scroll page down
-- `scroll_up` - Scroll page up
-- `close` - Close the browser
-- `getHtml` - Get HTML of current page
-- `getContent` - Get text content of current page
-- `getMarkdown` - Get markdown version of current page
+- `navigate` - Navigate to a specific URL
+- `click` - Click on an element using a selector
+- `type` - Type text into an input element
 - `screenshot` - Take screenshot of current page
-- `extractText` - Extract text from current page
-- `browserEnter` - Press Enter key
-- `getPdf` - Get PDF version of current page
+- `get_content` - Get content of current page
+- `scroll` - Scroll the page in a specific direction
+- `new_page` - Create a new browser page
+- `get_url` - Get the current page URL
+- `get_html` - Get the HTML content of the current page
+- `get_markdown` - Get the page content in markdown format
+- `extract_text` - Extract text content from the current page
+- `get_snapshot` - Take a snapshot of the current page state
+- `get_info` - Get browser information
+- `search` - Search for text in an input element
+- `enter` - Simulate pressing the Enter key
+- `close` - Close the current browser page
 
 ## Sample Usage
 
 ```javascript
-// Launch browser at a specific URL
-const launchResult = await codeboltMCP.executeTool(
+// Navigate to a specific URL
+const navigateResult = await codebolt.tools.executeTool(
   "codebolt.browser",
-  "launch",
+  "navigate",
   { url: "https://example.com" }
 );
 
-// Click at specific coordinates
-const clickResult = await codeboltMCP.executeTool(
+// Click on an element using a selector
+const clickResult = await codebolt.tools.executeTool(
   "codebolt.browser",
   "click",
-  { x: 100, y: 200 }
+  { selector: "body" }
 );
 
-// Type text into active element
-const typeResult = await codeboltMCP.executeTool(
+// Type text into an input element
+const typeResult = await codebolt.tools.executeTool(
   "codebolt.browser",
   "type",
-  { text: "Hello World" }
+  { selector: "input", text: "test" }
 );
 
 // Take a screenshot
-const screenshotResult = await codeboltMCP.executeTool(
+const screenshotResult = await codebolt.tools.executeTool(
   "codebolt.browser",
   "screenshot",
+  { fullPage: true }
+);
+
+// Get page content
+const contentResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_content",
   {}
 );
 
-// Get page content as markdown
-const markdownResult = await codeboltMCP.executeTool(
+// Scroll the page
+const scrollResult = await codebolt.tools.executeTool(
   "codebolt.browser",
-  "getMarkdown",
+  "scroll",
+  { direction: "down", amount: 100 }
+);
+
+// Create a new page
+const newPageResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "new_page",
+  {}
+);
+
+// Get current URL
+const urlResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_url",
+  {}
+);
+
+// Get HTML content
+const htmlResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_html",
+  {}
+);
+
+// Get markdown content
+const markdownResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_markdown",
+  {}
+);
+
+// Extract text content
+const textResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "extract_text",
+  {}
+);
+
+// Get page snapshot
+const snapshotResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_snapshot",
+  {}
+);
+
+// Get browser info
+const infoResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "get_info",
+  {}
+);
+
+// Search in an input element
+const searchResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "search",
+  { selector: "input", query: "test query" }
+);
+
+// Simulate Enter key
+const enterResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "enter",
+  {}
+);
+
+// Close the browser
+const closeResult = await codebolt.tools.executeTool(
+  "codebolt.browser",
+  "close",
   {}
 );
 ```
 
 :::info
-This functionality is similar to the [browser API](/docs/api/apiaccess/browser) and provides the same capabilities through MCP interface.
+This functionality provides browser automation capabilities through the MCP interface.
 :::

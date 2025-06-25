@@ -24,9 +24,20 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic File Deletion
 
 ```js
-// Let's assume you want to delete a file named example.txt in the /home/user/documents directory.
+// Delete a file from a specific directory
+const result = await codebolt.fs.deleteFile('example.txt', '/home/user/documents');
+console.log('File deleted:', result);
+```
 
-codebolt.fs.deleteFile('example.txt', '/home/user/documents');
+### Delete File from Current Directory
+
+```js
+// Delete a file from the current working directory
+const deleteResult = await codebolt.fs.deleteFile('fs-test-file.txt', '.');
+console.log('✅ File deleted:', deleteResult);
+```

@@ -6,16 +6,14 @@ cbparameters:
   parameters:
     - name: elementid
       typeName: string
-      description: The ID of the element to perform the search in.
+      description: The ID of the search input element.
     - name: query
       typeName: string
       description: The search query.
   returns:
-    signatureTypeName: Promise
+    signatureTypeName: Promise<SearchResponse>
     description: A promise that resolves with the search results.
-    typeArgs:
-      - type: intrinsic
-        name: unknown
+    typeArgs: []
 data:
   name: search
   category: browser
@@ -24,19 +22,18 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
-
 ### Example
 
 ```js
+// Navigate to a page with a search feature
+await codebolt.browser.goToPage("https://example.com");
+await new Promise(resolve => setTimeout(resolve, 2000));
 
-// Perform a search using the search box element with ID "searchBox" and query "example query"
-const searchResults = await codebolt.browser.search("searchBox", "example query");
+// Perform a search using the search input element
+const searchResult = await codebolt.browser.search("search-input", "test query");
+console.log('✅ Search performed:', searchResult);
 
-// Process the search results (e.g., validate or extract data)
-console.log(searchResults);
-
+// Example with different search queries
+await codebolt.browser.search("searchBox", "codebolt browser automation");
+await codebolt.browser.search("q", "JavaScript tutorials");
 ```
-
-### Explanation
-
-The codebolt.browser.search(elementid: string, query: string) function is used to perform a search on the current page using a specified query. This function allows automation scripts to search for specific content or elements within the page.

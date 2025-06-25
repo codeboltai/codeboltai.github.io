@@ -1,8 +1,5 @@
 # Overview
 
-Natural language interface for exploring, editing, and managing code with contextual AI assistance in Chat mode
-
-## What is Chat?
 Chat is Codebolt AI assistant that lives in your sidebar, letting you interact with your codebase through natural language. You can ask questions, request code edits, get terminal command suggestions, and more - all without switching context.
 
 
@@ -31,72 +28,14 @@ Chat is Codebolt AI assistant that lives in your sidebar, letting you interact w
     <h3 style={{margin: '0 0 8px 0', fontSize: '18px', fontWeight: '600'}}>Run Commands</h3>
     <p style={{margin: '0', color: '#666', fontSize: '14px'}}>Get terminal command suggestions for your specific use case</p>
   </div>
-  
-  <div style={{border: '1px solid #e1e5e9', borderRadius: '8px', padding: '20px', backgroundColor: '#f8f9fa'}}>
-    <div style={{fontSize: '24px', marginBottom: '12px'}}>∞</div>
-    <h3 style={{margin: '0 0 8px 0', fontSize: '18px', fontWeight: '600'}}>Automate workflows</h3>
-    <p style={{margin: '0', color: '#666', fontSize: '14px'}}>Let Codebolt search, reason and execute to automate your workflows</p>
-  </div>
 </div>
 
 ## Getting Started
 
 Access Chat in the sidebar with `⌘+L` (Mac) or `Ctrl+I` (Windows/Linux). Type your request in natural language, and the AI will respond accordingly.
 
-## What can I do with Chat?
 
-<div style={{overflow: 'hidden', marginBottom: '8px'}}>
-  <details>
-    <summary>
-        Build Features
-    </summary>
-    <div style={{padding: '24px', backgroundColor: '#ffffff', color: '#64748b', lineHeight: '1.6'}}>
-      <p style={{margin: '0 0 16px 0'}}>
-        Chat has the ability to learn your codebase and make changes to it on your behalf. This is a powerful way to implement new features, and is the perfect tool for feature requests.
-      </p>
-      <p style={{margin: '0 0 16px 0'}}>
-        Simply explain to the chat, using <strong>Agent mode</strong>, what feature you would like it to implement. Chat will look at your codebase, and any relevant files, and suggest any necessary changes across these fields.
-      </p>
-      <p style={{margin: '0'}}>
-        In addition to code edits, Chat may suggest other changes, like adding new files, or adding packages with a package manager.
-      </p>
-    </div>
-  </details>
-</div>
-
-<div style={{overflow: 'hidden', marginBottom: '8px',  backgroundColor: '#ffffff',}}>
-  <details>
-    <summary>
-      Refactor code
-    </summary>
-    <div style={{padding: '24px', backgroundColor: '#ffffff', color: '#64748b', lineHeight: '1.6'}}>
-      <p style={{margin: '0 0 16px 0'}}>
-        Need to clean up messy code or reorganize your project? Codebolt can help make your code better and easier to maintain.
-      </p>
-      <p style={{margin: '0'}}>
-        Just describe what you want to improve, like "Make this code faster" or "Organize these files better." Codebolt will understand your project and make the changes safely.
-      </p>
-    </div>
-  </details>
-</div>
-
-<div style={{overflow: 'hidden', marginBottom: '8px',  backgroundColor: '#ffffff',}}>
-  <details>
-    <summary>
-       Setup new projects
-    </summary>
-    <div style={{padding: '24px', backgroundColor: '#ffffff', color: '#64748b', lineHeight: '1.6'}}>
-      <p style={{margin: '0 0 16px 0'}}>
-        Starting a new project from scratch? Codebolt makes it super easy!
-      </p>
-      <p style={{margin: '0'}}>
-        Tell it what kind of app you want to build - like a website, mobile app, or API. Codebolt will create all the folders, install the right tools, and write starter code so you can begin coding right away.
-      </p>
-    </div>
-  </details>
-</div>
-
-## Modes
+## Agent Modes
 
 Chat offers different modes optimized for specific tasks:
 

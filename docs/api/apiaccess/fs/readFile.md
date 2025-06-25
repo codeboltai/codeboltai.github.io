@@ -21,9 +21,20 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example 
+## Examples
+
+### Basic File Reading
 
 ```js
-// Let's assume you want to read the content of a file named example.txt in the /home/user/documents directory.
+// Read a file from absolute path
+const content = await codebolt.fs.readFile('/home/user/documents/example.txt');
+console.log('File content:', content);
+```
 
-codebolt.fs.readFile('/home/user/documents/example.txt');
+### Reading Files from Current Directory
+
+```js
+// Read a file from current directory using relative path
+const readResult = await codebolt.fs.readFile('./fs-test-file.txt');
+console.log('✅ File read:', readResult);
+```

@@ -1,15 +1,16 @@
 ---
 name: diff
 cbbaseinfo:
-  description: Retrieves the diff of changes for a specific commit in the local repository.
+  description: 'Retrieves the diff of changes for a specific commit in the Git repository. Shows the differences between the specified commit and the current state.'
 cbparameters:
   parameters:
     - name: commitHash
       typeName: string
-      description: The hash of the commit to retrieve the diff for.
+      description: 'The hash of the commit to retrieve the diff for.'
     - name: path
       typeName: string
-      description: The file system path of the local Git repository.
+      description: 'Optional. The file system path of the local Git repository. If not provided, uses the current directory.'
+      optional: true
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the diff event.
@@ -22,24 +23,14 @@ data:
   link: diff.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Status 
+## Examples
 
-Comming soon...
-
-### Example 
+### Basic Diff Operation
 
 ```js
-
-await git.diff('abc123', '/path/to/repo')
-
+// Get diff for a specific commit hash
+const diffResult = await codebolt.git.diff('abc123def456');
+console.log('✅ Git diff result:', diffResult);
 ```
-
-### Explaination
-
-Shows the difference between the specified commit and the current state of the repository. It has two parameter.
-
-commitHash: A string specifying the commit hash to compare against.
-
-path: A string specifying the local repository path.

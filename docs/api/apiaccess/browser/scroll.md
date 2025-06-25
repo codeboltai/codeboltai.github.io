@@ -8,16 +8,14 @@ cbparameters:
   parameters:
     - name: direction
       typeName: string
-      description: The direction to scroll.
+      description: The direction to scroll (e.g., 'down', 'up', 'left', 'right').
     - name: pixels
       typeName: string
       description: The number of pixels to scroll.
   returns:
-    signatureTypeName: Promise
+    signatureTypeName: Promise<ScrollResponse>
     description: A promise that resolves when the scroll action is complete.
-    typeArgs:
-      - type: intrinsic
-        name: unknown
+    typeArgs: []
 data:
   name: scroll
   category: browser
@@ -29,13 +27,19 @@ data:
 ### Example
 
 ```js
+// Navigate to a page with scrollable content
+await codebolt.browser.goToPage("https://example.com");
 
-// Scroll down the page by 500 pixels
-await codebolt.browser.scroll("down", "500");
+// Wait for page to load
+await new Promise(resolve => setTimeout(resolve, 2000));
 
+// Scroll down the page by 100 pixels
+const scrollResult = await codebolt.browser.scroll("down", "100");
+console.log('✅ Scrolled:', scrollResult);
 
+// You can also scroll in other directions
+await codebolt.browser.scroll("up", "50");
+await codebolt.browser.scroll("left", "100");
+await codebolt.browser.scroll("right", "100");
 ```
 
-### Explanation
-
-The codebolt.browser.scroll(direction: string, pixels: string) function is used to scroll the current page in a specified direction by a specified number of pixels. This function is useful for automating scrolling actions on a web page, such as navigating through lengthy content or bringing specific elements into view.

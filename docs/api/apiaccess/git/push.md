@@ -10,9 +10,6 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the push event.
-    typeArgs:
-      - type: intrinsic
-        name: any
 data:
   name: push
   category: git
@@ -20,10 +17,6 @@ data:
 ---
 <CBBaseInfo/> 
  <CBParameters/>
-
-### Status 
-
-Comming soon...
 
 ### Example 
 
@@ -38,4 +31,4 @@ await git.push('/path/to/repo')
 
 Push local changes to the remote repository. It has one parameter.
 
-path: A string specifying the local repository path.
+**path:** A string specifying the local repository path.

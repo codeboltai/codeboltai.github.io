@@ -5,7 +5,7 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: Promise<any>
+    signatureTypeName: Promise<EnterResponse>
     description: A promise that resolves when the Enter action is complete.
     typeArgs: []
 data:
@@ -19,19 +19,19 @@ data:
 ### Example
 
 ```js
-// Navigate to the sign-in page
-await codebolt.browser.goToPage("https://example.com/signin");
+// Navigate to a page with a form
+await codebolt.browser.goToPage("https://example.com/login");
+await new Promise(resolve => setTimeout(resolve, 2000));
 
-// Fill in the username field
-await codebolt.browser.type("#username", "your_username");
-
-// Fill in the password field
-await codebolt.browser.type("#password", "your_password");
+// Fill in form fields
+await codebolt.browser.type("username", "testuser");
+await codebolt.browser.type("password", "testpass");
 
 // Simulate pressing the Enter key to submit the form
-await codebolt.browser.enter();
+const enterResult = await codebolt.browser.enter();
+console.log('✅ Enter key pressed:', enterResult);
+
+// Alternative usage: after typing in a search box
+await codebolt.browser.type("search-input", "search query");
+await codebolt.browser.enter(); // Submit the search
 ```
-
-### Explanation
-
-The `codebolt.browser.enter()` function simulates pressing the Enter key on the current page. This is particularly useful for submitting forms, activating default buttons, or triggering other Enter key events on the page. After inputting information into form fields using the `type()` function, you can call `enter()` to submit the form without needing to locate and click a submit button.
