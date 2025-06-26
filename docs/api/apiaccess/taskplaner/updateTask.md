@@ -10,9 +10,6 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the update task event.
-    typeArgs:
-      - type: reference
-        name: UpdateTasksResponse
 data:
   name: updateTask
   category: taskplaner
@@ -21,20 +18,25 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example
 
-```js
+## Example
 
-import codebolt from '@codebolt/codeboltjs';
+```javascript
+const updateResult = await codebolt.taskplaner.updateTask('Complete project documentation - UPDATED with new requirements');
+console.log('✅ Task updated successfully');
+console.log('   - Response:', updateResult);
+console.log('   - Success:', updateResult?.success);
 
-async function exampleUpdateTask() {
-    try {
-        const response = await codebolt.taskplaner.updateTask("Update project documentation");
-        console.log("Task updated successfully:", response);
-    } catch (error) {
-        console.error("Failed to update task:", error);
-    }
+// Update multiple tasks with status
+const taskUpdates = [
+    'Review code changes - COMPLETED',
+    'Update unit tests - IN PROGRESS',
+    'Fix bug in authentication module - ASSIGNED to John',
+    'Prepare release notes - PENDING review'
+];
+
+for (const update of taskUpdates) {
+    await codebolt.taskplaner.updateTask(update);
 }
-
-exampleUpdateTask();
+console.log('✅ Multiple task updates completed');
 ```

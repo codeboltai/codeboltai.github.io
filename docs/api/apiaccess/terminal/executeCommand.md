@@ -1,8 +1,7 @@
 ---
 name: executeCommand
 cbbaseinfo:
-  description: >-
-    Executes a given command and returns the result.
+  description: Executes a given command and returns the result.
 
     Listens for messages from the WebSocket that indicate the output, error, or
     finish state
@@ -13,35 +12,40 @@ cbparameters:
     - name: command
       typeName: string
       description: The command to be executed.
+    - name: returnEmptyStringOnSuccess
+      typeName: boolean
+      description: Optional parameter to return empty string on success. Defaults to false.
   returns:
     signatureTypeName: Promise
-    description: >-
-      A promise that resolves with the command's output, error, or finish
-      signal.
-    typeArgs:
-      - type: ' '
-        name: ' '
+    description: A promise that resolves with the command's output or error.
+    typeArgs: []
 data:
   name: executeCommand
   category: terminal
   link: executeCommand.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Examples
- 
-```js 
+## Example
 
-// The codebolt.terminal.executeCommand function is likely used to execute a command in the terminal and retrieve the result.
+```javascript
+// Basic command execution
+const nodeVersionResult = await codebolt.terminal.executeCommand('node --version');
+console.log('✅ Node version:', nodeVersionResult);
 
-const cmd = await codebolt.terminal.executeCommand("npm i nodemon");
+const npmVersionResult = await codebolt.terminal.executeCommand('npm --version');
+console.log('✅ NPM version:', npmVersionResult);
 
+// Command with return empty string on success
+const emptyResult = await codebolt.terminal.executeCommand('echo "test"', true);
+console.log('✅ Empty result (success):', emptyResult);
+
+// Error handling
+try {
+    const result = await codebolt.terminal.executeCommand('invalidcommand');
+    console.log('Command result:', result);
+} catch (error) {
+    console.error('Command failed:', error.message);
+}
 ```
-
-
-### Explaination 
-
-The codebolt.terminal.executeCommand function takes a single parameter, which is the command you want to execute in the terminal. It returns the result of the command execution. It has one parameter.
-
-command (string): The command to be executed in the terminal. In this case, the command is "npm i nodemon", which installs the nodemon package using npm.

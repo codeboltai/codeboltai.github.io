@@ -1,8 +1,7 @@
 ---
 name: executeCommandRunUntilError
 cbbaseinfo:
-  description: >-
-    Executes a given command and keeps running until an error occurs.
+  description: Executes a given command and keeps running until an error occurs.
 
     Listens for messages from the WebSocket and resolves the promise when an
     error is encountered.
@@ -11,12 +10,13 @@ cbparameters:
     - name: command
       typeName: string
       description: The command to be executed.
+    - name: executeInMain
+      typeName: boolean
+      description: Optional parameter to execute in main terminal. Defaults to false.
   returns:
     signatureTypeName: Promise
     description: A promise that resolves when an error occurs during command execution.
-    typeArgs:
-      - type: reference
-        name: CommandError
+   
 data:
   name: executeCommandRunUntilError
   category: terminal
@@ -25,17 +25,22 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
+## Example
 
-### Example 
+```javascript
+// Run command until error occurs
+try {
+    const errorResult = await codebolt.terminal.executeCommandRunUntilError('npm run dev');
+    console.log('Command stopped due to error:', errorResult);
+} catch (error) {
+    console.error('Command execution failed:', error.message);
+}
 
-```js 
-
-codebolt.terminal.executeCommandRunUntilError("npm i nodemon")
-
+// Run in main terminal
+try {
+    const result = await codebolt.terminal.executeCommandRunUntilError('npm start', true);
+    console.log('Main terminal error:', result);
+} catch (error) {
+    console.error('Main terminal execution failed:', error.message);
+}
 ```
-
-### Explaination 
-
-The codebolt.terminal.executeCommandRunUntilError function takes a single parameter, command, which is a string representing the command you want to execute in the terminal. The function runs the specified command repeatedly until an error occurs.
-
-command (string): The command to be executed in the terminal.

@@ -1,7 +1,7 @@
 ---
 name: getToken
 cbbaseinfo:
-  description: Retrieves a token from the system via WebSocket.
+  description: Retrieves a token by its key from the system.
 cbparameters:
   parameters:
     - name: key
@@ -9,7 +9,7 @@ cbparameters:
       description: The key associated with the token to be retrieved.
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves with the response from the get token event.
+    description: A promise that resolves with the token response.
     typeArgs:
       - type: reference
         name: GetTokenResponse
@@ -19,22 +19,34 @@ data:
   link: getToken.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
+## Response Structure
 
+```javascript
+{
+  type: 'getTokenResponse',
+  token: string // The original token key/value
+}
+```
 
-### Example 
+## Example
 
 ```js
 import codebolt from '@codebolt/codeboltjs';
-async function exampleGetToken() {
-  try {
-    const response = await codebolt.tokenizer.getToken("myTokenKey");
-    console.log("Token retrieved successfully:", response);
-    catch (error) {
-      console.error("Failed to retrieve token:", error);
-      }
-  }
+
+async function getTokenExample() {
+    try {
+        const response = await codebolt.tokenizer.getToken("api_key_1");
+        console.log("Token retrieved:", response);
+        // Output: {
+        //   type: 'getTokenResponse',
+        //   token: 'api_key_1'
+        // }
+    } catch (error) {
+        console.error("Failed to retrieve token:", error);
+    }
 }
 
+getTokenExample();
 ```

@@ -7,39 +7,27 @@ cbparameters:
   returns:
     signatureTypeName: Promise
     description: A promise that resolves with the response from the get tasks event.
-    typeArgs:
-      - type: intrinsic
-        name: any
 data:
   name: getTasks
   category: taskplaner
   link: getTasks.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Examples
+## Example
 
+```javascript
+const tasksResult = await codebolt.taskplaner.getTasks();
+console.log('✅ Tasks retrieved successfully');
+console.log('   - Tasks:', tasksResult);
+console.log('   - Total tasks:', tasksResult?.data?.length || 0);
 
-### Example
-
-```js
-import codebolt from '@codebolt/codeboltjs';
-
-async function exampleGetTasks() {
-    try {
-        const response =  await codebolt.taskplaner.getTasks()
-
-        console.log("Tasks retrieved successfully:", response);
-    } catch (error) {
-        console.error("Failed to retrieve tasks:", error);
-    }
+// Check if tasks exist
+if (tasksResult?.data && tasksResult.data.length > 0) {
+    console.log('   - Sample tasks:');
+    tasksResult.data.slice(0, 3).forEach((task, index) => {
+        console.log(`     ${index + 1}. ${task}`);
+    });
 }
-
-exampleGetTasks();
-
 ```
-
-### Explaination 
-
-The codebolt.taskplaner.getTasks function does not take any parameters. It retrieves the current list of tasks from the task planner.
