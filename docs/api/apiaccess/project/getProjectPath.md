@@ -16,16 +16,28 @@ data:
   link: getProjectPath.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
+## Response Structure
 
-### Example 
-
-```js 
-
-const getpath = await codebolt.project.getProjectPath();
-
+```javascript
+{
+  type: 'getProjectPathResponse',
+  success: boolean,
+  message: string,
+  projectPath: string
+}
 ```
-### Explaination
 
-The codebolt.project.getProjectPath() function is likely used to retrieve the path of the current project.
+## Example
+
+```javascript
+const pathResult = await codebolt.project.getProjectPath();
+console.log(pathResult);
+// Output: {
+//   type: 'getProjectPathResponse',
+//   success: true,
+//   message: 'Project path retrieved successfully',
+//   projectPath: 'C:\\btpl\\API_TEST\\convinced-beige'
+// }
+```

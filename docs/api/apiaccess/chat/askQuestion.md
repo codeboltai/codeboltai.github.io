@@ -18,7 +18,7 @@ cbparameters:
     description: A promise that resolves with the user's response.
     typeArgs:
       - type: intrinsic
-        name: string
+        name: askQuestion 
 data:
   name: askQuestion
   category: chat
@@ -26,6 +26,56 @@ data:
 ---
 <CBBaseInfo/>
 <CBParameters/>
+
+## Response Structure
+
+The `askQuestion` function returns a response object with the following structure:
+
+```js
+{
+  type: 'feedbackResponse',
+  message: {
+    type: 'messageResponse',
+    userMessage: '',
+    currentFile: '',
+    mentionedFiles: [],
+    mentionedFullPaths: [],
+    mentionedFolders: [],
+    actions: [],
+    mentionedAgents: [],
+    selectedAgent: { id: '', name: '', lastMessage: {} },
+    universalAgentLastMessage: '',
+    mentionedMultiFile: [],
+    uploadedImages: [],
+    selection: null,
+    controlFiles: [],
+    feedbackMessage: 'Yes', // The user's response/selection
+    links: [],
+    terminalMessage: '',
+    messageId: 'zhkmrrla0s9gjpf7pz7ipj',
+    threadId: '3de168de-d7f9-4c58-8650-4d3029b3477c',
+    templateType: 'userChat',
+    processId: '',
+    mentionedMCPs: [],
+    mentionedDocs: [],
+    agentId: '6dd799b5-43c2-4c55-ba49-cae6cbac2498',
+    agentInstanceId: '3b1ab5e8-f367-4e19-9984-d20e6949aaed'
+  },
+  sender: { senderType: 'user', senderInfo: {} },
+  templateType: 'userChat',
+  data: { text: '' },
+  messageId: 'msg_1750742351218_ol08itg',
+  timestamp: '2025-06-24T05:19:11.218Z'
+}
+```
+
+### Key Response Fields
+
+- **`feedbackMessage`**: Contains the user's actual response or button selection
+- **`messageId`**: Unique identifier for the message
+- **`threadId`**: Identifier for the conversation thread
+- **`timestamp`**: When the response was received
+- **`agentId`** and **`agentInstanceId`**: Identifiers for the agent handling the question
 
 ### Examples
 
@@ -65,6 +115,14 @@ const errorAction = await codebolt.chat.askQuestion(
 );
 console.log('Error action choice:', errorAction);
 
+// Example 6: Accessing the feedback message from response
+const userChoice = await codebolt.chat.askQuestion(
+    "Do you want to continue?",
+    ["Yes", "No"]
+);
+// Access the actual user selection
+const selectedOption = userChoice.message.feedbackMessage;
+console.log('User selected:', selectedOption);
 ```
 
 ### Explanation
