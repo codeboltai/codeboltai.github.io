@@ -8,13 +8,13 @@ cbparameters:
       typeName: string
       description: The name of the toolbox to configure
     - name: config
-      typeName: any
-      description: Configuration object for the toolbox
+      typeName: object
+      description: Configuration object containing toolbox-specific settings
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves when configuration is complete
+    description: A promise that resolves with configuration result status
     typeArgs:
-      - type: any
+      - type: object
 data:
   name: configureToolBox
   category: tool
@@ -23,10 +23,14 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
-### Example
+### Simple Example
 ```js
-await codeboltMCP.configureToolBox("analyticsTools", {
-  apiKey: "12345",
-  logging: true
+// Basic SQLite toolbox configuration
+const result = await codebolt.tools.configureToolBox('sqlite', {
+  database_path: './my-database.db',
+  read_only: true
 });
-console.log("Toolbox configured successfully");
+
+console.log('Configuration successful:', result?.success);
+```
+

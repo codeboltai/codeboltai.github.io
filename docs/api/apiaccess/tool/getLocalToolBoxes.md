@@ -8,7 +8,7 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise resolving to an array of locally available toolbox configurations
     typeArgs:
-      - type: any
+      - type: array
 data:
   name: getLocalToolBoxes
   category: tool
@@ -17,7 +17,24 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
+### Response Structure
+```typescript
+Array<{
+  name: string;
+  version?: string;
+  description?: string;
+  path?: string;
+  // Additional local toolbox properties
+}>
+```
+
 ### Example
 ```js
-const localToolBoxes = await codeboltMCP.getLocalToolBoxes();
+const codebolt = require('@codebolt/codeboltjs');
+
+
+const localToolBoxes = await codebolt.tools.getLocalToolBoxes();
 console.log("Local ToolBoxes:", localToolBoxes);
+
+
+```

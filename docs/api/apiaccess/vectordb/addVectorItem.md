@@ -19,13 +19,32 @@ data:
   link: addVectorItem.md
 ---
 <CBBaseInfo/> 
- <CBParameters/>
+<CBParameters/>
 
-### Example 
+### Response Structure
+```typescript
+{
+  type: 'addVectorItemResponse';
+  message: string;  // 'success' when successful
+}
+```
+
+### Simple Example
 ```js
+// Add a text document to vector database
+const addResult = await codebolt.vectordb.addVectorItem('This is a test document for vector database');
+console.log('✅ Vector item addition result:', addResult);
+```
 
-
- const addResponse = await codebolt.vectordb.addVectorItem({ id: "123", vector: [0.1, 0.2, 0.3] });
-        console.log("Add Vector Response:", addResponse);
-
+### Detailed Example
+```js
+// Add vector item with error handling
+try {
+  const addResult = await codebolt.vectordb.addVectorItem('This is a test document for vector database');
+  console.log('✅ Vector item addition result:', addResult);
+  console.log('   - Type:', addResult.type);
+  console.log('   - Message:', addResult.message);
+} catch (error) {
+  console.log('⚠️  Vector item addition failed:', error.message);
+}
 ```

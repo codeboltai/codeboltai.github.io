@@ -6,9 +6,9 @@ cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise
-    description: A promise that resolves to an array of enabled toolbox configurations.
+    description: A promise that resolves to an object containing enabled toolbox configurations with their details.
     typeArgs:
-      - type: any
+      - type: object
 data:
   name: getEnabledToolBoxes
   category: tool
@@ -17,7 +17,27 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
+### Response Structure
+```typescript
+{
+  data: {
+    [toolboxName: string]: {
+      name: string;
+      version?: string;
+      description?: string;
+      enabled: boolean;
+      // Additional toolbox configuration properties
+    }
+  }
+}
+```
+
 ### Example
 ```js
-const enabledToolBoxes = await codeboltMCP.getEnabledToolBoxes();
+const codebolt = require('@codebolt/codeboltjs');
+
+
+const enabledToolBoxes = await codebolt.tools.getEnabledToolBoxes();
 console.log("Enabled ToolBoxes:", enabledToolBoxes);
+
+```

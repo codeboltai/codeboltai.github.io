@@ -1,19 +1,19 @@
 ---
-name: GetTools
+name: getTools
 cbbaseinfo:
-  description: Retrieves detailed information about specific tools from their toolboxes.
+  description: Retrieves detailed information about specific tools from their toolboxes, including schemas and parameters.
 cbparameters:
   parameters:
     - name: tools
       typeName: "Array<{ toolbox: string, toolName: string }>"
-      description: Array of tool identifiers to retrieve
+      description: Array of tool identifiers specifying toolbox and tool name pairs
   returns:
     signatureTypeName: Promise
-    description: A promise resolving to an array of tool configurations
+    description: A promise resolving to an array of detailed tool configurations
     typeArgs:
-      - type: any[]
+      - type: array
 data:
-  name: GetTools
+  name: getTools
   category: tool
   link: getTools.md
 ---
@@ -22,8 +22,33 @@ data:
 
 ### Example
 ```js
-const toolInfo = await codeboltMCP.getTools([
-  { toolbox: "analyticsTools", toolName: "dataAnalyzer" },
-  { toolbox: "dataProcessing", toolName: "csvParser" }
+// Get details for specific tools
+const toolsToGet = [
+  { toolbox: 'filesystem', toolName: 'read_file' },
+  { toolbox: 'sqlite', toolName: 'list_tables' },
+  { toolbox: 'filesystem', toolName: 'write_file' }
+];
+
+const toolDetails = await codeboltMCP.getTools(toolsToGet);
+console.log("Tool Details:", toolDetails);
+
+// Process tool information
+console.log("Tools requested:", toolsToGet.length);
+console.log("Tool details received:", toolDetails?.length || 0);
+
+```
+
+### Single Tool Query
+```js
+// Get details for a single tool
+const singleTool = await codeboltMCP.getTools([
+  { toolbox: 'filesystem', toolName: 'read_file' }
 ]);
-console.log("Tool Details:", toolInfo);
+
+console.log(singleTool)
+
+```
+
+
+### Status 
+comming soon....

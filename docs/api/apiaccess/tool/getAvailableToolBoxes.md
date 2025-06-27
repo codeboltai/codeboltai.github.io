@@ -8,7 +8,7 @@ cbparameters:
     signatureTypeName: Promise
     description: A promise resolving to an array of registry toolbox configurations
     typeArgs:
-      - type: any
+      - type: array
 data:
   name: getAvailableToolBoxes
   category: tool
@@ -17,7 +17,19 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
+
 ### Example
 ```js
-const availableToolBoxes = await codeboltMCP.getAvailableToolBoxes();
-console.log("Available ToolBoxes:", availableToolBoxes);
+const codebolt = require('@codebolt/codeboltjs');
+
+
+  try {
+        const  getTools= await codebolt.tools.getEnabledToolBoxes();
+        console.log('✅ Toolbox configuration result:', JSON.stringify(getTools, null, 2));
+    } catch (error) {
+        console.log('⚠️  Toolbox configuration failed:', error.message);
+    }
+```
+
+### Status 
+Comming Soon....
