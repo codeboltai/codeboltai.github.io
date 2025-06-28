@@ -91,7 +91,7 @@ When you click on Help, it shows a video and steps that explain how to create a 
   Your browser does not support the video tag.
 </video> -->
 
-<video 
+<!-- <video 
   autoPlay 
   muted 
   loop 
@@ -104,7 +104,7 @@ When you click on Help, it shows a video and steps that explain how to create a 
 >
   <source src="/onboarding/video/template.mp4" type="video/mp4" />
   Your browser does not support the video tag.
-</video>
+</video> -->
 
 ## SignOut
 
