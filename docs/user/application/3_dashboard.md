@@ -76,7 +76,7 @@ Templates are ready-made project setups like Empty, React, Node, Express, Next, 
 
 When you click on Help, it shows a video and steps that explain how to create a new project. This guides users through the process easily.
 
-<video 
+<!-- <video 
   autoPlay 
   muted 
   loop 
@@ -89,8 +89,22 @@ When you click on Help, it shows a video and steps that explain how to create a 
 >
   <source src="/onboarding/video/help.mp4" type="video/mp4" />
   Your browser does not support the video tag.
-</video>
+</video> -->
 
+<video 
+  autoPlay 
+  muted 
+  loop 
+  playsInline
+  style={{
+    maxWidth: '100%',
+    height: 'auto',
+    borderRadius: '8px'
+  }}
+>
+  <source src="/onboarding/video/template.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
 ## SignOut
 
