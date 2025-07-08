@@ -44,21 +44,16 @@ await codebolt.browser.goToPage('https://github.com');
 
 ### Response Structure
 
-```js
-{
-  event: 'browserActionResponse',
-  eventId: 'goToPage_1750401433630',
-  payload: {
-    content: '"Navigated to https://example.com"',
-    viewport: { 
-      width: 767, 
-      height: 577 
-    },
-    currentUrl: 'https://example.com'
-  },
-  type: 'goToPageResponse'
-}
-```
+The method returns a Promise that resolves to a `GoToPageResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "goToPageResponse"
+- `url`: Optional string containing the URL that was navigated to
+- `success`: Optional boolean indicating if the navigation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
 
 ### Explanation
 

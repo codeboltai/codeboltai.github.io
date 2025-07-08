@@ -16,6 +16,21 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `GetContentResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "getContentResponse"
+- `content`: Optional string containing the page content
+- `html`: Optional string containing the HTML content
+- `text`: Optional string containing the text content
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
+
 ### Example 
 
 ```js 
@@ -29,7 +44,9 @@ await new Promise(resolve => setTimeout(resolve, 2000));
 const contentResult = await codebolt.browser.getContent();
 console.log('✅ Content retrieved:', {
     success: contentResult.success,
-    contentLength: contentResult.content ? contentResult.content.length : 0
+    contentLength: contentResult.content ? contentResult.content.length : 0,
+    hasHtml: !!contentResult.html,
+    hasText: !!contentResult.text
 });
 
 // Access the actual content

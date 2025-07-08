@@ -14,21 +14,11 @@ cbparameters:
       typeName: string
       description: The path where the file should be created.
   returns:
-    signatureTypeName: CreateFileResponse
-    description: A response object containing file creation details.
-    properties:
-      - name: type
-        typeName: string
-        description: The response type identifier (always 'createFileResponse').
-      - name: success
-        typeName: boolean
-        description: Indicates whether the file creation was successful.
-      - name: message
-        typeName: string
-        description: A descriptive message about the operation result.
-      - name: fileName
-        typeName: string
-        description: The name of the created file.
+    signatureTypeName: Promise<CreateFileResponse>
+    description: A promise that resolves with file creation details.
+    typeArgs:
+      - type: reference
+        name: CreateFileResponse
 data:
   name: createFile
   category: fs
@@ -36,6 +26,19 @@ data:
 ---
 <CBBaseInfo/> 
 <CBParameters/>
+
+### Response Structure
+
+The method returns a Promise that resolves to a `CreateFileResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "createFileResponse"
+- `path`: Optional string containing the file path
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
 
 ## Examples
 

@@ -15,7 +15,7 @@ cbparameters:
     description: A promise that resolves when the agent has been successfully started.
     typeArgs:
       - type: reference
-        name: StartAgentResponse
+        name: TaskCompletionResponse
 data:
   name: startAgent
   category: agent
@@ -26,10 +26,19 @@ data:
 
 ### Response Structure
 
-The method returns a Promise that resolves to a `StartAgentResponse` object with:
-- `status`: Status of the agent start operation
-- `type`: Response type identifier
-- Additional agent-specific response data
+The method returns a Promise that resolves to a `TaskCompletionResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "taskCompletionResponse"
+- `from`: Optional string indicating the source of the response
+- `agentId`: Optional string containing the ID of the agent that was started
+- `task`: Optional string containing the task that was assigned to the agent
+- `result`: Optional field containing any result data from the agent start operation
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
 
 ### Examples
 
@@ -60,9 +69,10 @@ try {
         const startAgentResult = await codebolt.agent.startAgent("act", startTask);
         
         console.log('✅ Start agent result:', startAgentResult);
-        console.log('   - Agent ID:', agentId);
-        console.log('   - Task:', startTask);
-        console.log('   - Status:', startAgentResult?.status);
+        console.log('   - Agent ID:', startAgentResult?.agentId);
+        console.log('   - Task:', startAgentResult?.task);
+        console.log('   - Success:', startAgentResult?.success);
+        console.log('   - Result:', startAgentResult?.result);
         console.log('   - Response type:', startAgentResult?.type);
     } else {
         console.log('⚠️ No agents found to start');
@@ -75,7 +85,10 @@ try {
 try {
     const startResponse = await codebolt.agent.startAgent("act", "Help me with data analysis");
     console.log('Agent started successfully:', startResponse);
-    console.log('Status:', startResponse?.status);
+    console.log('Agent ID:', startResponse?.agentId);
+    console.log('Task:', startResponse?.task);
+    console.log('Success:', startResponse?.success);
+    console.log('Result:', startResponse?.result);
     console.log('Type:', startResponse?.type);
 } catch (error) {
     console.error('Failed to start agent:', error.message);

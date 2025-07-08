@@ -23,21 +23,28 @@ data:
 
 ### Response Structure
 
-The method returns a Promise that resolves to an `AgentsDetailResponse` object with:
-- `type`: "agentsDetailResponse"
-- `messageId`: Unique message identifier string
-- `threadId`: Thread identifier string
-- `success`: Boolean indicating if the request was successful
-- `payload`: Object containing the actual data:
-  - `agents`: Array of detailed agent objects, each containing:
-    - `id`: Unique agent identifier
-    - `name`: Agent display name
-    - `description`: Agent description text
-    - `capabilities`: Array of agent capabilities (may be empty)
-    - `isLocal`: Boolean indicating if the agent is local
-    - `version`: Version string of the agent
-    - `status`: Numeric status code (1 = active)
-    - `unique_id`: Unique identifier string for the agent
+The method returns a Promise that resolves to an `AgentsDetailResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "agentsDetailResponse"
+- `payload`: Optional object containing the actual agent details data
+  - `agents`: Array of agent detail objects with detailed agent information
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
+
+**Agent Detail Structure:**
+Each agent in the `payload.agents` array has the following structure:
+- `id`: Unique agent identifier
+- `name`: Agent display name
+- `description`: Agent description text
+- `capabilities`: Optional array of agent capabilities
+- `isLocal`: Boolean indicating if the agent is local
+- `version`: Version string of the agent
+- `status`: String status of the agent
+- `unique_id`: Unique identifier string for the agent
 
 ### Examples
 
@@ -54,8 +61,9 @@ if (agentsList?.agents && agentsList.agents.length > 0) {
     // Get detailed information for the selected agents
     const agentsDetailResult = await codebolt.agent.getAgentsDetail(agentIds);
     console.log('Agent details result type:', agentsDetailResult?.type); // "agentsDetailResponse"
-    console.log('Message ID:', agentsDetailResult?.messageId);
     console.log('Success:', agentsDetailResult?.success);
+    console.log('Message ID:', agentsDetailResult?.messageId);
+    console.log('Thread ID:', agentsDetailResult?.threadId);
     console.log('Details count:', agentsDetailResult?.payload?.agents?.length || 0);
     console.log('Agent details:', agentsDetailResult);
     
@@ -64,8 +72,12 @@ if (agentsList?.agents && agentsList.agents.length > 0) {
         const firstAgent = agentsDetailResult.payload.agents[0];
         console.log('First agent ID:', firstAgent.id);
         console.log('First agent name:', firstAgent.name);
+        console.log('First agent description:', firstAgent.description);
         console.log('First agent version:', firstAgent.version);
         console.log('First agent is local:', firstAgent.isLocal);
+        console.log('First agent status:', firstAgent.status);
+        console.log('First agent unique_id:', firstAgent.unique_id);
+        console.log('First agent capabilities:', firstAgent.capabilities);
     }
 }
 
@@ -73,6 +85,7 @@ if (agentsList?.agents && agentsList.agents.length > 0) {
 const allAgentDetails = await codebolt.agent.getAgentsDetail([]);
 console.log('All agent details:', allAgentDetails);
 console.log('Success:', allAgentDetails?.success);
+console.log('Type:', allAgentDetails?.type);
 console.log('Total agents:', allAgentDetails?.payload?.agents?.length || 0);
 
 // Display each agent's key information
@@ -81,10 +94,12 @@ if (allAgentDetails?.payload?.agents) {
         console.log(`Agent ${index + 1}:`);
         console.log(`  - ID: ${agent.id}`);
         console.log(`  - Name: ${agent.name}`);
+        console.log(`  - Description: ${agent.description}`);
         console.log(`  - Version: ${agent.version}`);
         console.log(`  - Status: ${agent.status}`);
         console.log(`  - Is Local: ${agent.isLocal}`);
         console.log(`  - Unique ID: ${agent.unique_id}`);
+        console.log(`  - Capabilities: ${agent.capabilities || 'None'}`);
     });
 }
 ```
@@ -93,3 +108,4 @@ if (allAgentDetails?.payload?.agents) {
 
 - Agent IDs can be obtained from the `getAgentsList()` method using `agent.function?.name`
 - Pass an empty array `[]` to get details for all available agents
+- The response includes both basic WebSocket response properties and detailed agent information in the `payload` field

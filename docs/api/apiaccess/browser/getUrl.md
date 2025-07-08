@@ -39,21 +39,17 @@ console.log('✅ URL after navigation:', currentUrl);
 
 ### Response Structure
 
-```js
-{
-  event: 'browserActionResponse',
-  eventId: 'getUrl_1750401431606',
-  payload: {
-    content: '"https://www.google.com/"',
-    viewport: { 
-      width: 767, 
-      height: 577 
-    },
-    currentUrl: 'https://www.google.com/'
-  },
-  type: 'getUrlResponse'
-}
-```
+The method returns a Promise that resolves to a `UrlResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "urlResponse"
+- `url`: Optional string containing the URL
+- `currentUrl`: Optional string containing the current URL
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
 
 ### Explanation
 

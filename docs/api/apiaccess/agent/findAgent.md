@@ -35,15 +35,25 @@ data:
 
 ### Response Structure
 
-The method returns a Promise that resolves to a `FindAgentByTaskResponse` object with:
-- `type`: The response type, always "findAgentByTaskResponse"
-- `agents`: Array of found agents, each containing:
-  - `type`: The agent type, typically "function"
-  - `function`: Agent function details including:
-    - `name`: The name/identifier of the agent
-    - `description`: Detailed description of the agent's capabilities
-    - `parameters`: Parameter specification object with type, properties, required fields, and additionalProperties flag
-    - `strict`: Boolean indicating whether the agent enforces strict parameter validation
+The method returns a Promise that resolves to a `FindAgentByTaskResponse` object with the following properties:
+
+**Response Properties:**
+- `type`: Always "findAgentByTaskResponse"
+- `agents`: Optional array of agent objects containing found agents
+- `success`: Optional boolean indicating if the operation was successful
+- `message`: Optional string with additional information
+- `error`: Optional string containing error details if the operation failed
+- `messageId`: Optional unique identifier for the message
+- `threadId`: Optional thread identifier
+
+**Agent Structure:**
+Each agent in the `agents` array has the following structure:
+- `type`: Always "function"
+- `function`: Agent function details including:
+  - `name`: The name/identifier of the agent
+  - `description`: Detailed description of the agent's capabilities
+  - `parameters`: Parameter specification object with type, properties, required fields, and additionalProperties flag
+  - `strict`: Optional boolean indicating whether the agent enforces strict parameter validation
 
 ### Examples
 
