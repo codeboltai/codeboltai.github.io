@@ -6,12 +6,10 @@ cbparameters:
   parameters:
     - name: query
       typeName: string
-      description: Search string to match against toolbox metadata (name, description, tags)
+      description: Search string to match against toolbox metadata (name, description, tags).
   returns:
-    signatureTypeName: Promise
-    description: A promise resolving to an array of matching toolbox configurations
-    typeArgs:
-      - type: array
+    signatureTypeName: Promise<SearchAvailableToolBoxesResponse>
+    description: A promise that resolves with a `SearchAvailableToolBoxesResponse` object containing matching toolbox configurations.
 data:
   name: searchAvailableToolBoxes
   category: tool
@@ -20,55 +18,78 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
+### Response Structure
 
-### Example
-```js
-// Search for filesystem-related toolboxes
-const results = await codeboltMCP.searchAvailableToolBoxes("filesystem");
-console.log("Search Results:", results);
-console.log("Found toolboxes:", results?.length || 0);
+The method returns a Promise that resolves to a `SearchAvailableToolBoxesResponse` object with the following properties:
 
-// Display search results
-results?.forEach(toolbox => {
-  console.log(`\nFound: ${toolbox.name}`);
-  if (toolbox.description) console.log(`  Description: ${toolbox.description}`);
-  if (toolbox.version) console.log(`  Version: ${toolbox.version}`);
-  if (toolbox.matchScore) console.log(`  Match Score: ${toolbox.matchScore}`);
-});
+- **`type`** (string): Always "searchAvailableToolBoxesResponse".
+- **`data`** (object, optional): Object containing search results and metadata.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information about the operation.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
 
-// Search for data processing tools
-const dataResults = await codeboltMCP.searchAvailableToolBoxes("data processing");
-console.log("Data processing toolboxes found:", dataResults?.map(tb => tb.name) || []);
-```
+### Examples
 
-### Advanced Search Examples
-```js
-// Search with different query types
-const queries = ["sqlite", "database", "web scraping", "analytics"];
+```javascript
+// Example 1: Search for filesystem-related toolboxes
+const results = await codebolt.mcp.searchAvailableToolBoxes("filesystem");
+console.log("Response type:", results.type); // "searchAvailableToolBoxesResponse"
+console.log("Search results:", results.data);
+
+// Example 2: Search with result processing
+const searchResult = await codebolt.mcp.searchAvailableToolBoxes("database");
+if (searchResult.success && searchResult.data) {
+    console.log("✅ Search completed successfully");
+    console.log("Found toolboxes:", searchResult.data);
+    
+    // Process search results if they're in array format
+    if (Array.isArray(searchResult.data)) {
+        searchResult.data.forEach(toolbox => {
+            console.log(`- ${toolbox.name}: ${toolbox.description || 'No description'}`);
+        });
+    }
+} else {
+    console.error("❌ Search failed:", searchResult.error);
+}
+
+// Example 3: Multiple search queries
+const queries = ["sqlite", "web scraping", "analytics"];
 
 for (const query of queries) {
-  try {
-    const searchResults = await codeboltMCP.searchAvailableToolBoxes(query);
-    console.log(`\nQuery: "${query}" - Found ${searchResults?.length || 0} toolboxes`);
-    searchResults?.slice(0, 3).forEach(tb => {
-      console.log(`  - ${tb.name}: ${tb.description || 'No description'}`);
-    });
-  } catch (error) {
-    console.error(`Search failed for "${query}":`, error.message);
-  }
+    try {
+        const result = await codebolt.mcp.searchAvailableToolBoxes(query);
+        
+        if (result.success && result.data) {
+            console.log(`✅ Query "${query}": Found results`);
+            console.log(`   Data:`, result.data);
+        } else {
+            console.log(`❌ Query "${query}": No results found`);
+        }
+    } catch (error) {
+        console.error(`Error searching for "${query}":`, error);
+    }
+}
+
+// Example 4: Error handling
+try {
+    const response = await codebolt.mcp.searchAvailableToolBoxes("machine learning");
+    
+    if (response.success && response.data) {
+        console.log('✅ Search completed successfully');
+        console.log('Results:', response.data);
+    } else {
+        console.error('❌ Search failed:', response.error);
+    }
+} catch (error) {
+    console.error('Error performing search:', error);
 }
 ```
 
-### Error Handling
-```js
-try {
-  const results = await codeboltMCP.searchAvailableToolBoxes("filesystem");
-  if (results && results.length > 0) {
-    console.log("Search successful, found results");
-  } else {
-    console.log("No toolboxes found matching the query");
-  }
-} catch (error) {
-  console.error("Toolbox search failed:", error.message);
-}
-```
+### Notes
+
+- The `query` parameter should be a descriptive string related to the functionality you're looking for.
+- Search results are returned in the `data` property and may contain toolbox metadata and match scores.
+- Use this method to discover available toolboxes before configuring or using them.
+- This operation communicates with the system via WebSocket for real-time processing.
