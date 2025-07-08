@@ -9,16 +9,13 @@ cbparameters:
       description: The matcher configuration object containing owner and pattern definitions.
     - name: problemPatterns
       typeName: array
-      description: Array of pattern objects defining how to match and extract information.
+      description: Array of pattern objects defining how to match and extract information from problem text.
     - name: problems
       typeName: array
-      description: Array of problem objects containing line text and source information to be matched.
+      description: "Optional: Array of problem objects containing line text and source information to be matched. Defaults to an empty array."
   returns:
     signatureTypeName: Promise<MatchProblemResponse>
-    description: A promise that resolves with structured problem information extracted from the input.
-    typeArgs:
-      - type: reference
-        name: MatchProblemResponse
+    description: A promise that resolves with a `MatchProblemResponse` object containing structured problem information extracted from the input.
 data:
   name: performMatch
   category: codeutils
@@ -27,21 +24,27 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-## Description
+### Response Structure
 
-The `performMatch` function applies pattern matching rules to a collection of problems (typically tool output or log entries) and extracts structured information such as file paths, line numbers, error messages, and severity levels.
+The method returns a Promise that resolves to a `MatchProblemResponse` object with the following properties:
 
-## Usage
+- **`type`** (string): Always "matchProblemResponse".
+- **`matches`** (array, optional): An array of matched problem objects with the following structure:
+  - **`file`** (string): The file path where the issue was found.
+  - **`line`** (number): The line number where the issue occurred.
+  - **`column`** (number): The column number where the issue occurred.
+  - **`message`** (string): Descriptive error or warning message.
+  - **`severity`** (string): The severity level ("error", "warning", or "info").
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
+### Examples
 
 ```javascript
-const result = await codebolt.codeutils.performMatch(matcherDefinition, problemPatterns, problems);
-```
-
-## Examples
-
-### ESLint Output Processing
-
-```javascript
+// Example 1: ESLint output processing
 const matcherDefinition = {
   owner: "eslint-compact",
   pattern: [{
@@ -55,106 +58,58 @@ const matcherDefinition = {
   }]
 };
 
+const problemPatterns = matcherDefinition.pattern;
+
 const testProblems = [
   { line: "src/file1.js: line 10, col 5, Error - Unexpected console statement (no-console)", source: "test" },
-  { line: "src/file2.js: line 25, col 8, Warning - 'var' used instead of 'let' or 'const' (no-var)", source: "test" },
-  { line: "This should not match", source: "test" }, // Invalid line
-  {}, // Empty object
-  { line: "src/file3.js: line 5, col 15, Info - Missing JSDoc comment (require-jsdoc)", source: "test" }
+  { line: "src/file2.js: line 25, col 8, Warning - 'var' used instead of 'let' or 'const' (no-var)", source: "test" }
 ];
 
-const performMatchResult = await codebolt.codeutils.performMatch(
-  matcherDefinition, 
-  matcherDefinition.pattern, 
-  testProblems
-);
+const result = await codebolt.codeutils.performMatch(matcherDefinition, problemPatterns, testProblems);
+console.log("Matched problems:", result.matches);
 
-console.log(performMatchResult);
-// Output:
-// {
-//   payload: [
-//     {
-//       file: 'src/file1.js',
-//       line: '10',
-//       column: '5',
-//       severity: 'Error',
-//       message: 'Unexpected console statement',
-//       code: 'no-console'
-//     },
-//     {
-//       file: 'src/file2.js',
-//       line: '25',
-//       column: '8',
-//       severity: 'Warning',
-//       message: "'var' used instead of 'let' or 'const'",
-//       code: 'no-var'
-//     },
-//     {
-//       file: 'src/file3.js',
-//       line: '5',
-//       column: '15',
-//       severity: 'Info',
-//       message: 'Missing JSDoc comment',
-//       code: 'require-jsdoc'
-//     }
-//   ],
-//   type: 'matchProblemResponse'
-// }
-```
+// Example 2: Error handling
+try {
+  const result = await codebolt.codeutils.performMatch(null, [], []);
+  if (result.success) {
+    console.log("Pattern matching successful");
+    console.log("Found matches:", result.matches?.length || 0);
+  } else {
+    console.error("Pattern matching failed:", result.error);
+  }
+} catch (error) {
+  console.error("Error:", error);
+}
 
-### Security Pattern Matching
-
-```javascript
-const complexMatcher = {
-  name: 'security-checker',
-  patterns: [
-    'eval\\(',
-    'innerHTML\\s*=',
-    'document\\.write\\(',
-    'setTimeout\\(.*string'
-  ],
-  severity: 'high',
-  category: 'security'
+// Example 3: Processing compiler output
+const compilerMatcher = {
+  owner: "typescript-compiler",
+  pattern: [{
+    regexp: "^(.+)\\((\\d+),(\\d+)\\):\\s(error|warning)\\s(.+)$",
+    file: 1,
+    line: 2,
+    column: 3,
+    severity: 4,
+    message: 5
+  }]
 };
 
-const securityPatterns = [
-  { pattern: 'eval\\(', message: 'Avoid using eval()' },
-  { pattern: 'innerHTML\\s*=', message: 'Use textContent instead of innerHTML' }
+const compilerProblems = [
+  { line: "src/index.ts(15,8): error TS2304: Cannot find name 'unknownVariable'.", source: "tsc" },
+  { line: "src/utils.ts(22,15): warning TS6133: 'unusedParam' is declared but never used.", source: "tsc" }
 ];
 
-const complexMatchResult = await codebolt.codeutils.performMatch(
-  complexMatcher,
-  securityPatterns,
-  []
+const compilerResult = await codebolt.codeutils.performMatch(
+  compilerMatcher, 
+  compilerMatcher.pattern, 
+  compilerProblems
 );
-
-console.log(complexMatchResult);
-// Output:
-// {
-//   payload: [],
-//   type: 'matchProblemResponse'
-// }
+console.log("Compiler issues found:", compilerResult.matches);
 ```
 
-## Response Format
+### Matcher Definition Structure
 
-```javascript
-{
-  payload: [
-    {
-      file: 'string',       // File path where the issue was found
-      line: 'string',       // Line number (as string)
-      column: 'string',     // Column number (as string)
-      severity: 'string',   // Severity level (Error/Warning/Info)
-      message: 'string',    // Descriptive error message
-      code: 'string'        // Error code or rule identifier
-    }
-  ],
-  type: 'matchProblemResponse'
-}
-```
-
-## Matcher Definition Structure
+The `matcherDefinition` parameter should follow this structure:
 
 ```javascript
 {
@@ -167,13 +122,15 @@ console.log(complexMatchResult);
       column: number,       // Capture group index for column number
       severity: number,     // Capture group index for severity
       message: number,      // Capture group index for message
-      code: number          // Capture group index for error code
+      code: number          // Capture group index for error code (optional)
     }
   ]
 }
 ```
 
-## Problem Input Format
+### Problem Input Format
+
+The `problems` parameter should be an array of objects with this structure:
 
 ```javascript
 [
@@ -184,10 +141,12 @@ console.log(complexMatchResult);
 ]
 ```
 
-## Pattern Matching Rules
+### Notes
 
-1. **Regular Expression Matching**: Each problem line is tested against the provided regex pattern
-2. **Capture Group Extraction**: Information is extracted based on capture group indices
-3. **Invalid Line Handling**: Lines that don't match the pattern are ignored
-4. **Empty Object Filtering**: Empty or malformed problem objects are skipped
-5. **Structured Output**: Successfully matched problems are converted to structured format
+- The function applies regular expression patterns to extract structured information from unstructured text.
+- Each problem line is tested against the provided regex pattern in the matcher definition.
+- Information is extracted based on capture group indices specified in the pattern.
+- Lines that don't match the pattern are ignored.
+- Empty or malformed problem objects are automatically skipped.
+- Successfully matched problems are converted to a structured format with file, line, column, severity, and message information.
+- The function is commonly used to process output from linters, compilers, and other development tools.

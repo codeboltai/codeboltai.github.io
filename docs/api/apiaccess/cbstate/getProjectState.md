@@ -19,6 +19,27 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `GetProjectStateResponse` object with the following properties:
+
+- **`type`** (string): Always "getProjectStateResponse".
+- **`projectState`** (object, optional): Contains the complete project state as a `Record<string, any>` object with:
+  - **`token_used`** (number): Number of tokens consumed in the current project
+  - **`chats`** (array): Array of chat sessions associated with this project
+  - **`projectPath`** (string): Full path to the current project directory
+  - **`projectName`** (string): Name of the current project
+  - **`state`** (object): Nested object containing custom project state data including:
+    - **`activeAgent`** (boolean): Whether an agent is currently active
+    - **`currentLayout`** (object): Current UI layout configuration
+    - **`pinnedAgent`** (array): Array of pinned agents
+    - Custom key-value pairs you've stored using `updateProjectState`
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
 ## What is getProjectState?
 
 The `getProjectState` function allows you to retrieve comprehensive information about your current project, including both system information (like project path and token usage) and any custom data you've stored using `updateProjectState`. Think of it as getting a complete snapshot of your project's current status and configuration.

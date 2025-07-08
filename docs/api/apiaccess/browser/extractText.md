@@ -16,6 +16,19 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an `ExtractTextResponse` object with the following properties:
+
+- **`type`** (string): Always "extractTextResponse".
+- **`text`** (string, optional): The extracted text content from the current page
+- **`content`** (string, optional): Alternative property for the extracted text
+- **`success`** (boolean, optional): Indicates if the operation was successful
+- **`message`** (string, optional): A message with additional information
+- **`error`** (string, optional): Error details if the operation failed
+- **`messageId`** (string, optional): A unique identifier for the message
+- **`threadId`** (string, optional): The thread identifier
+
 ### Example 
 
 ```js
@@ -36,6 +49,8 @@ console.log('✅ Text extracted:', {
 if (textResult.success && textResult.text) {
     console.log('Extracted text:', textResult.text);
     // Process the text as needed for analysis or storage
+} else {
+    console.error('Failed to extract text:', textResult.error);
 }
 ```
 

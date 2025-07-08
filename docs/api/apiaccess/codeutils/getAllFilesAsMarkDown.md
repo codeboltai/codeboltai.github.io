@@ -5,11 +5,8 @@ cbbaseinfo:
 cbparameters:
   parameters: []
   returns:
-    signatureTypeName: Promise<MarkdownResponse>
-    description: A promise that resolves with the Markdown content of all files in the project.
-    typeArgs:
-      - type: intrinsic
-        name: string
+    signatureTypeName: Promise<GetAllFilesMarkdownResponse>
+    description: A promise that resolves with a `GetAllFilesMarkdownResponse` object containing the Markdown content of all files in the project.
 data:
   name: getAllFilesAsMarkDown
   category: codeutils
@@ -18,33 +15,55 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-## Description
+### Response Structure
 
-The `getAllFilesAsMarkDown` function scans the current project directory and converts all files into a single formatted Markdown document. Each file is presented with its full path as a header followed by its content in appropriate code blocks with syntax highlighting.
+The method returns a Promise that resolves to a `GetAllFilesMarkdownResponse` object with the following properties:
 
-## Usage
+- **`type`** (string): Always "getAllFilesMarkdownResponse".
+- **`markdown`** (string, optional): Complete markdown content of all files in the project.
+- **`files`** (array, optional): An array of file objects with the following structure:
+  - **`path`** (string): The file path.
+  - **`content`** (string): The file content.
+  - **`language`** (string, optional): The programming language of the file.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
+### Examples
 
 ```javascript
+// Example 1: Get all files as markdown
 const markdownResult = await codebolt.codeutils.getAllFilesAsMarkDown();
-```
+console.log("Markdown Content:", markdownResult.markdown);
+console.log("Files Array:", markdownResult.files);
 
-## Example
+// Example 2: Error handling
+try {
+  const result = await codebolt.codeutils.getAllFilesAsMarkDown();
+  if (result.success) {
+    console.log("Generated markdown successfully");
+    console.log("Content length:", result.markdown?.length);
+  } else {
+    console.error("Failed to generate markdown:", result.error);
+  }
+} catch (error) {
+  console.error("Error:", error);
+}
 
-```javascript
-const markdownResult = await codebolt.codeutils.getAllFilesAsMarkDown();
-console.log(markdownResult);
-```
-
-## Response Format
-
-```javascript
-{
-  type: 'getAllFilesMarkdownResponse',
-  markdown: 'string'  // Complete markdown content of all files
+// Example 3: Processing individual files
+const result = await codebolt.codeutils.getAllFilesAsMarkDown();
+if (result.files) {
+  result.files.forEach(file => {
+    console.log(`File: ${file.path}`);
+    console.log(`Language: ${file.language || 'unknown'}`);
+    console.log(`Content length: ${file.content.length} characters`);
+  });
 }
 ```
 
-## Sample Output
+### Sample Output
 
 The function returns markdown content in the following format:
 
@@ -93,26 +112,11 @@ app.listen(port, () => {
 }
 ```
 
-## Performance
+### Notes
 
-The function is optimized for performance:
-
-```javascript
-// Performance testing example
-const startTime = Date.now();
-const perfMarkdownResult = await codebolt.codeutils.getAllFilesAsMarkDown();
-const endTime = Date.now();
-
-console.log('Performance:', {
-  duration: `${endTime - startTime}ms`,  // Typically ~3ms
-  success: !!perfMarkdownResult
-});
-```
-
-## Features
-
-- **Complete Project Overview**: Includes all files in the project
-- **Syntax Highlighting**: Proper code block formatting for different file types
-- **File Separation**: Clear separation between files with headers and dividers
-- **Fast Processing**: Optimized for quick generation (typically 3ms)
-- **Full Path Display**: Shows complete file paths for easy navigation
+- The function scans the current project directory and converts all files into a single formatted Markdown document.
+- Each file is presented with its full path as a header followed by its content in appropriate code blocks with syntax highlighting.
+- The function is optimized for performance and typically completes in ~3ms.
+- Files are separated with headers and dividers for easy navigation.
+- The `files` array provides structured access to individual file information.
+- If the operation fails, check the `error` property for details.

@@ -27,55 +27,17 @@ data:
 <CBBaseInfo/>
 <CBParameters/>
 
-## Response Structure
+### Response Structure
 
-The `askQuestion` function returns a response object with the following structure:
+The method returns a Promise that resolves to a `string` containing the user's response or button selection.
 
-```js
-{
-  type: 'feedbackResponse',
-  message: {
-    type: 'messageResponse',
-    userMessage: '',
-    currentFile: '',
-    mentionedFiles: [],
-    mentionedFullPaths: [],
-    mentionedFolders: [],
-    actions: [],
-    mentionedAgents: [],
-    selectedAgent: { id: '', name: '', lastMessage: {} },
-    universalAgentLastMessage: '',
-    mentionedMultiFile: [],
-    uploadedImages: [],
-    selection: null,
-    controlFiles: [],
-    feedbackMessage: 'Yes', // The user's response/selection
-    links: [],
-    terminalMessage: '',
-    messageId: 'zhkmrrla0s9gjpf7pz7ipj',
-    threadId: '3de168de-d7f9-4c58-8650-4d3029b3477c',
-    templateType: 'userChat',
-    processId: '',
-    mentionedMCPs: [],
-    mentionedDocs: [],
-    agentId: '6dd799b5-43c2-4c55-ba49-cae6cbac2498',
-    agentInstanceId: '3b1ab5e8-f367-4e19-9984-d20e6949aaed'
-  },
-  sender: { senderType: 'user', senderInfo: {} },
-  templateType: 'userChat',
-  data: { text: '' },
-  messageId: 'msg_1750742351218_ol08itg',
-  timestamp: '2025-06-24T05:19:11.218Z'
-}
-```
+This method waits for the user to respond to the question and returns their selection as a string. The response corresponds to:
+- The text of the button the user clicked (if buttons are provided)
+- The feedback text if `withFeedback` is enabled and the user provides additional input
+- Free-form text input if no buttons are specified
+- The exact button label if custom buttons are provided
 
-### Key Response Fields
-
-- **`feedbackMessage`**: Contains the user's actual response or button selection
-- **`messageId`**: Unique identifier for the message
-- **`threadId`**: Identifier for the conversation thread
-- **`timestamp`**: When the response was received
-- **`agentId`** and **`agentInstanceId`**: Identifiers for the agent handling the question
+**Note**: While the underlying WebSocket response contains additional metadata (messageId, threadId, timestamp, etc.), this method extracts and returns only the user's actual response/selection for simplicity.
 
 ### Examples
 

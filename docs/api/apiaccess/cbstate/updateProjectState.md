@@ -25,6 +25,18 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an `UpdateProjectStateResponse` object with the following properties:
+
+- **`type`** (string): Always "updateProjectStateResponse".
+- **`message`** (string): Contains the result of the update operation. When successful, this will be "success".
+- **`state`** (object, optional): May contain the updated state information as a `Record<string, any>` object.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
 ## What is updateProjectState?
 
 The `updateProjectState` function allows you to save and update information that needs to be shared across your entire project. Think of it as a project-wide storage system where you can store settings, configurations, and data that should persist and be accessible from anywhere in your project.

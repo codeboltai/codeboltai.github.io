@@ -19,6 +19,24 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an array of class information objects. Each object in the array has the following properties:
+
+- **`name`** (string): The name of the class found in the file.
+- **`location`** (string): The absolute file path where the class is defined.
+
+**Success Response**: Array of class objects:
+```typescript
+Array<{
+  name: string;
+  location: string;
+}>
+```
+
+**Error Response**: If the file doesn't exist or is not supported, the method returns an object with:
+- **`error`** (string): Description of the error that occurred (e.g., "File does not exist or is not accessible: /path/to/file", "Unsupported file type: .txt").
+
 ## Description
 
 The `getClassesInFile` function parses a source code file and extracts information about all classes defined within it. This function supports multiple programming languages including JavaScript, TypeScript, and Python.

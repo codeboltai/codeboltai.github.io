@@ -27,55 +27,16 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-## Response Structure
+### Response Structure
 
-The `sendConfirmationRequest` function returns a response object with the following structure:
+The method returns a Promise that resolves to a `string` containing the user's response or button selection.
 
-```js
-{
-  type: 'feedbackResponse',
-  message: {
-    type: 'messageResponse',
-    userMessage: '',
-    currentFile: '',
-    mentionedFiles: [],
-    mentionedFullPaths: [],
-    mentionedFolders: [],
-    actions: [],
-    mentionedAgents: [],
-    selectedAgent: { id: '', name: '', lastMessage: {} },
-    universalAgentLastMessage: '',
-    mentionedMultiFile: [],
-    uploadedImages: [],
-    selection: null,
-    controlFiles: [],
-    feedbackMessage: 'Yes', // The user's response/selection
-    links: [],
-    terminalMessage: '',
-    messageId: 'q0onroq8puonkvang8u5g',
-    threadId: '3de168de-d7f9-4c58-8650-4d3029b3477c',
-    templateType: 'userChat',
-    processId: '',
-    mentionedMCPs: [],
-    mentionedDocs: [],
-    agentId: '6dd799b5-43c2-4c55-ba49-cae6cbac2498',
-    agentInstanceId: 'b28af372-1e67-48cb-8018-2f60d60aa3db'
-  },
-  sender: { senderType: 'user', senderInfo: {} },
-  templateType: 'userChat',
-  data: { text: '' },
-  messageId: 'msg_1750742836249_v01cpdk',
-  timestamp: '2025-06-24T05:27:16.250Z'
-}
-```
+This method waits for the user to respond to the confirmation request and returns their selection as a string. The response corresponds to:
+- The text of the button the user clicked (e.g., "Yes", "No", "Continue", etc.)
+- The feedback text if `withFeedback` is enabled and the user provides additional input
+- The exact button label if custom buttons are provided
 
-### Key Response Fields
-
-- **`feedbackMessage`**: Contains the user's actual response or button selection
-- **`messageId`**: Unique identifier for the message
-- **`threadId`**: Identifier for the conversation thread
-- **`timestamp`**: When the response was received
-- **`agentId`** and **`agentInstanceId`**: Identifiers for the agent handling the confirmation
+**Note**: While the underlying WebSocket response contains additional metadata (messageId, threadId, timestamp, etc.), this method extracts and returns only the user's actual response/selection for simplicity.
 
 ### Examples
 

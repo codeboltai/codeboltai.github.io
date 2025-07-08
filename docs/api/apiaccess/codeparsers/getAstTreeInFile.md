@@ -22,6 +22,23 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an `ASTNode` object with the following properties:
+
+- **`type`** (string): The node type (varies by programming language, e.g., "class_declaration", "function_declaration", "program").
+- **`text`** (string): The source code text for this node.
+- **`startPosition`** (object): Object containing the starting position with:
+  - **`row`** (number): The starting row number
+  - **`column`** (number): The starting column number
+- **`endPosition`** (object): Object containing the ending position with:
+  - **`row`** (number): The ending row number
+  - **`column`** (number): The ending column number
+- **`children`** (array): Array of child `ASTNode` objects representing nested code structures.
+
+**Error Response**: If the file doesn't exist, is not supported, or the specified class is not found, the method returns an object with:
+- **`error`** (string): Description of the error that occurred.
+
 ## Examples
 
 The `getAstTreeInFile` function generates Abstract Syntax Trees for various programming languages. The output structure varies by language but consistently includes `type`, `text`, `startPosition`, `endPosition`, and `children` properties.

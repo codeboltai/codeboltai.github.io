@@ -22,6 +22,10 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+This method returns `void` and does not provide a response. The message is sent immediately when the method is called.
+
 ### Examples
 
 ```js

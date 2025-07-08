@@ -19,6 +19,10 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+This method returns `void` and does not provide a response. The request handler is set up immediately when the method is called.
+
 ### Example
 
 ```js

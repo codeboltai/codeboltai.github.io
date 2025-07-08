@@ -25,6 +25,19 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an `AddToAgentStateResponse` object with the following properties:
+
+- **`type`** (string): Always "addToAgentStateResponse".
+- **`payload`** (object, optional): Contains the response data including:
+  - **`success`** (boolean): Indicates if the operation was successful.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
 ## What is addToAgentState?
 
 The `addToAgentState` function allows you to store temporary information that's specific to your current agent session. Think of it as a temporary storage system where you can save data that only needs to exist while your agent is running.

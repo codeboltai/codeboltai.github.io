@@ -21,6 +21,23 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `UserMessage` object with the following properties:
+
+- **`type`** (string): The type of the WebSocket response.
+- **`id`** (string): Unique identifier for the message.
+- **`content`** (string): The actual message content/text from the user.
+- **`sender`** (string): Always "user" for this response.
+- **`timestamp`** (string): When the message was sent (ISO 8601 format).
+- **`text`** (string, optional): The text content of the message.
+- **`images`** (array, optional): Any images included in the message.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
 ### Example: 
 
 ```js

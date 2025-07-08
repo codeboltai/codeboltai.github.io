@@ -12,10 +12,7 @@ cbparameters:
       description: The value to be stored. Can be string, number, boolean, object, array, null, or undefined.
   returns:
     signatureTypeName: Promise<MemorySetResponse>
-    description: A promise that resolves with the response from the memory set operation including success status and type.
-    typeArgs:
-      - type: reference
-        name: MemorySetResponse
+    description: A promise that resolves with a `MemorySetResponse` object containing the response type and operation metadata.
 data:
   name: addKnowledge
   category: dbmemory
@@ -23,6 +20,71 @@ data:
 ---
 <CBBaseInfo/> 
 <CBParameters/>
+
+### Response Structure
+
+The method returns a Promise that resolves to a `MemorySetResponse` object with the following properties:
+
+- **`type`** (string): Always "memorySetResponse".
+- **`key`** (string, optional): The key that was used to store the value.
+- **`value`** (any, optional): The value that was stored.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
+### Examples
+
+```javascript
+// Example 1: Store user information
+const result = await codebolt.dbmemory.addKnowledge('user:123', { 
+  name: 'John Doe', 
+  age: 30,
+  role: 'developer'
+});
+console.log("Response type:", result.type); // "memorySetResponse"
+console.log("Key stored:", result.key); // "user:123"
+console.log("Success:", result.success); // true (if successful)
+
+// Example 2: Store configuration setting
+const configResult = await codebolt.dbmemory.addKnowledge('config:theme', 'dark');
+console.log("Theme stored:", configResult.type); // "memorySetResponse"
+
+// Example 3: Store array data
+const tagsResult = await codebolt.dbmemory.addKnowledge('tags:project', ['javascript', 'nodejs', 'codebolt']);
+console.log("Tags stored:", tagsResult.type); // "memorySetResponse"
+
+// Example 4: Store complex object with error handling
+try {
+  const sessionResult = await codebolt.dbmemory.addKnowledge('session:current', {
+    sessionId: 'sess_' + Date.now(),
+    userId: 'user:123',
+    startTime: new Date().toISOString(),
+    preferences: {
+      theme: 'dark',
+      language: 'en'
+    }
+  });
+  
+  if (sessionResult.success) {
+    console.log("Session data stored successfully");
+  } else {
+    console.error("Failed to store session data:", sessionResult.error);
+  }
+} catch (error) {
+  console.error("Error storing session data:", error);
+}
+```
+
+### Notes
+
+- The function stores data in an in-memory database using a key-value structure.
+- All JavaScript data types are supported (strings, numbers, booleans, objects, arrays, null, undefined).
+- Use namespaced keys for better organization (e.g., 'user:123', 'config:theme').
+- The response includes the stored key and value for verification.
+- If the operation fails, check the `error` property for details.
+- The function can be used for caching user data, configuration settings, session information, and project state.
 
 ## Description
 
@@ -128,15 +190,6 @@ console.log('✅ Project configuration stored successfully');
 
 </TabItem>
 </Tabs>
-
-## Response Format
-
-```javascript
-{
-  type: 'string',        // Response type identifier
-  success: boolean       // Indicates if the operation was successful
-}
-```
 
 ## Updating Existing Data
 

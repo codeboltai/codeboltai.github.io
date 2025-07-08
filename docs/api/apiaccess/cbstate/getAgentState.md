@@ -19,6 +19,21 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `GetAgentStateResponse` object with the following properties:
+
+- **`type`** (string): Always "getAgentStateResponse".
+- **`payload`** (object, optional): Contains all key-value pairs stored in the agent state. This is a `Record<string, any>` object where:
+  - Keys are string identifiers you've added using `addToAgentState`
+  - Values are the corresponding string values you stored
+  - System keys like `ports` may also be included
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
 ## What is getAgentState?
 
 The `getAgentState` function allows you to retrieve all the temporary information you've stored during your current agent session. Think of it as checking what's in your agent's temporary storage box - you can see everything you've saved using `addToAgentState`.

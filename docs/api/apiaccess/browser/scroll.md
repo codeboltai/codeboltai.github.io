@@ -24,6 +24,23 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `BrowserActionResponseData` object with the following properties:
+
+- **`type`** (string): Always "scrollResponse".
+- **`payload`** (object, optional): Contains the response data including:
+  - **`action`** (string, optional): The action that was performed
+  - **`success`** (boolean, optional): Indicates if the scroll was successful
+  - **`content`** (string, optional): Additional content information
+  - **`viewport`** (object, optional): Updated viewport information after scrolling
+- **`eventId`** (string, optional): Event identifier for the scroll action
+- **`success`** (boolean, optional): Indicates if the operation was successful
+- **`message`** (string, optional): A message with additional information
+- **`error`** (string, optional): Error details if the operation failed
+- **`messageId`** (string, optional): A unique identifier for the message
+- **`threadId`** (string, optional): The thread identifier
+
 ### Example
 
 ```js
@@ -37,9 +54,22 @@ await new Promise(resolve => setTimeout(resolve, 2000));
 const scrollResult = await codebolt.browser.scroll("down", "100");
 console.log('✅ Scrolled:', scrollResult);
 
+// Check if the scroll was successful
+if (scrollResult.success) {
+  console.log('Page scrolled successfully');
+} else {
+  console.error('Scroll failed:', scrollResult.error);
+}
+
 // You can also scroll in other directions
 await codebolt.browser.scroll("up", "50");
 await codebolt.browser.scroll("left", "100");
 await codebolt.browser.scroll("right", "100");
 ```
+
+### Notes
+
+- The `direction` parameter accepts values: "up", "down", "left", "right"
+- The `pixels` parameter should be a string representing the number of pixels to scroll
+- The viewport information in the response reflects the new scroll position
 

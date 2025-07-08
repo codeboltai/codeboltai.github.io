@@ -22,6 +22,28 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to an array of function information objects. Each object in the array has the following properties:
+
+- **`name`** (string): The name of the function/method found in the class.
+- **`class`** (string): The name of the class containing the function (matches the `className` parameter).
+- **`location`** (string): The absolute file path where the function is defined.
+
+**Success Response**: Array of function objects:
+```typescript
+Array<{
+  name: string;
+  class: string;
+  location: string;
+}>
+```
+
+**Error Response**: If the file doesn't exist or is not supported, the method returns an object with:
+- **`error`** (string): Description of the error that occurred (e.g., "File does not exist or is not accessible: /path/to/file").
+
+**Note**: Constructor methods (like `constructor` in JavaScript/TypeScript or `__init__` in Python) are typically excluded from the results.
+
 ## Description
 
 The `getFunctionsinClass` function parses a source code file and extracts information about all functions/methods defined within a specified class. This function supports multiple programming languages including JavaScript, TypeScript, and Python.

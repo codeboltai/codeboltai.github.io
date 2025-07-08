@@ -9,10 +9,7 @@ cbparameters:
       description: The unique key of the value to retrieve. Supports namespaced keys (e.g., 'user:123', 'config:theme').
   returns:
     signatureTypeName: Promise<MemoryGetResponse>
-    description: A promise that resolves with the response containing the retrieved data, response type, and metadata.
-    typeArgs:
-      - type: reference
-        name: MemoryGetResponse
+    description: A promise that resolves with a `MemoryGetResponse` object containing the retrieved data, response type, and metadata.
 data:
   name: getKnowledge
   category: dbmemory
@@ -20,6 +17,71 @@ data:
 ---
 <CBBaseInfo/> 
 <CBParameters/>
+
+### Response Structure
+
+The method returns a Promise that resolves to a `MemoryGetResponse` object with the following properties:
+
+- **`type`** (string): Always "memoryGetResponse".
+- **`key`** (string, optional): The key that was used to retrieve the value.
+- **`value`** (any, optional): The retrieved value from the database. Will be `null` if the key doesn't exist.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
+### Examples
+
+```javascript
+// Example 1: Retrieve user information
+const userResult = await codebolt.dbmemory.getKnowledge('user:123');
+console.log("Response type:", userResult.type); // "memoryGetResponse"
+console.log("Key retrieved:", userResult.key); // "user:123"
+console.log("User data:", userResult.value); // { name: 'John Doe', age: 30, role: 'developer' }
+
+// Example 2: Retrieve configuration setting
+const themeResult = await codebolt.dbmemory.getKnowledge('config:theme');
+console.log("Theme:", themeResult.value); // 'dark'
+
+// Example 3: Handle non-existent key
+const nonExistentResult = await codebolt.dbmemory.getKnowledge('non:existent:key');
+console.log("Response type:", nonExistentResult.type); // "memoryGetResponse"
+console.log("Data found:", nonExistentResult.value); // null
+console.log("Key exists:", nonExistentResult.value !== null); // false
+
+// Example 4: Safe data access with error handling
+try {
+  const sessionResult = await codebolt.dbmemory.getKnowledge('session:current');
+  
+  if (sessionResult.success && sessionResult.value !== null) {
+    console.log("Session ID:", sessionResult.value.sessionId);
+    console.log("User ID:", sessionResult.value.userId);
+    console.log("Theme preference:", sessionResult.value.preferences?.theme);
+  } else {
+    console.log("No session data found or operation failed");
+  }
+} catch (error) {
+  console.error("Error retrieving session data:", error);
+}
+
+// Example 5: Using optional chaining for safe access
+const projectResult = await codebolt.dbmemory.getKnowledge('project:config');
+const projectName = projectResult.value?.name || 'Unknown Project';
+const autoSave = projectResult.value?.settings?.autoSave || false;
+console.log("Project name:", projectName);
+console.log("Auto save enabled:", autoSave);
+```
+
+### Notes
+
+- The function retrieves data from the in-memory database using a unique key.
+- Returns `null` in the `value` property when the key doesn't exist.
+- The response preserves the original data types during retrieval.
+- Use optional chaining (`?.`) for safe access to nested properties.
+- The `key` property in the response confirms which key was used for retrieval.
+- If the operation fails, check the `error` property for details.
+- Works seamlessly with data stored using `addKnowledge`.
 
 ## Description
 

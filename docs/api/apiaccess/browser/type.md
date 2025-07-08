@@ -22,6 +22,23 @@ data:
 <CBBaseInfo/> 
  <CBParameters/>
 
+### Response Structure
+
+The method returns a Promise that resolves to a `BrowserActionResponseData` object with the following properties:
+
+- **`type`** (string): Always "typeResponse".
+- **`payload`** (object, optional): Contains the response data including:
+  - **`action`** (string, optional): The action that was performed
+  - **`success`** (boolean, optional): Indicates if the typing was successful
+  - **`content`** (string, optional): Additional content information
+  - **`viewport`** (object, optional): Current viewport information
+- **`eventId`** (string, optional): Event identifier for the type action
+- **`success`** (boolean, optional): Indicates if the operation was successful
+- **`message`** (string, optional): A message with additional information
+- **`error`** (string, optional): Error details if the operation failed
+- **`messageId`** (string, optional): A unique identifier for the message
+- **`threadId`** (string, optional): The thread identifier
+
 ### Example
 
 ```js
@@ -32,6 +49,13 @@ await new Promise(resolve => setTimeout(resolve, 2000));
 // Type text into various input fields
 const typeResult = await codebolt.browser.type("username", "testuser");
 console.log('✅ Typed username:', typeResult);
+
+// Check if the typing was successful
+if (typeResult.success) {
+  console.log('Text entered successfully');
+} else {
+  console.error('Typing failed:', typeResult.error);
+}
 
 // Type email into email field
 await codebolt.browser.type("email", "user@example.com");
