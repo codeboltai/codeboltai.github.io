@@ -6,13 +6,10 @@ cbparameters:
   parameters:
     - name: agentList
       typeName: array
-      description: List of agent IDs to get details for (empty array for all agents).
+      description: "Optional: An array of agent IDs to get details for. If the array is empty, it retrieves details for all agents. Defaults to an empty array."
   returns:
-    signatureTypeName: Promise
-    description: A promise that resolves with the detailed information of the specified agents.
-    typeArgs:
-      - type: reference
-        name: AgentsDetailResponse
+    signatureTypeName: Promise<AgentsDetailResponse>
+    description: A promise that resolves with an `AgentsDetailResponse` object containing the detailed information of the specified agents.
 data:
   name: getAgentsDetail
   category: agent
@@ -25,87 +22,65 @@ data:
 
 The method returns a Promise that resolves to an `AgentsDetailResponse` object with the following properties:
 
-**Response Properties:**
-- `type`: Always "agentsDetailResponse"
-- `payload`: Optional object containing the actual agent details data
-  - `agents`: Array of agent detail objects with detailed agent information
-- `success`: Optional boolean indicating if the operation was successful
-- `message`: Optional string with additional information
-- `error`: Optional string containing error details if the operation failed
-- `messageId`: Optional unique identifier for the message
-- `threadId`: Optional thread identifier
+- **`type`** (string): Always "agentsDetailResponse".
+- **`payload`** (object, optional): An object containing the agent details.
+  - **`agents`** (array): An array of agent detail objects.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
 
-**Agent Detail Structure:**
 Each agent in the `payload.agents` array has the following structure:
-- `id`: Unique agent identifier
-- `name`: Agent display name
-- `description`: Agent description text
-- `capabilities`: Optional array of agent capabilities
-- `isLocal`: Boolean indicating if the agent is local
-- `version`: Version string of the agent
-- `status`: String status of the agent
-- `unique_id`: Unique identifier string for the agent
+- **`id`** (string): The unique identifier of the agent.
+- **`name`** (string): The display name of the agent.
+- **`description`** (string): A description of the agent's capabilities.
+- **`capabilities`** (array, optional): An array of strings describing the agent's capabilities.
+- **`isLocal`** (boolean): `true` if the agent is local, `false` otherwise.
+- **`version`** (string): The version of the agent.
+- **`status`** (string): The current status of the agent (e.g., "enabled", "disabled").
+- **`unique_id`** (string): Another unique identifier for the agent.
 
 ### Examples
 
-```js
-// Example 1: Get details for specific agents
-// First, get the list of available agents
-const agentsList = await codebolt.agent.getAgentsList('downloaded');
+```javascript
+// Example 1: Get details for a few specific agents
+async function getSpecificAgentDetails() {
+  // First, get a list of available agents
+  const listResponse = await codebolt.agent.getAgentsList('downloaded');
+  
+  if (listResponse?.agents && listResponse.agents.length > 0) {
+    // Get the IDs of the first two agents
+    const agentIds = listResponse.agents.slice(0, 2).map(agent => agent.function.name);
+    
+    console.log("Requesting details for agent IDs:", agentIds);
+    
+    // Get the details for the selected agents
+    const detailsResponse = await codebolt.agent.getAgentsDetail(agentIds);
+    console.log("Agent Details:", detailsResponse);
 
-if (agentsList?.agents && agentsList.agents.length > 0) {
-    // Extract agent IDs from the first few agents
-    const agentIds = agentsList.agents.slice(0, 3).map(agent => agent.function?.name);
-    console.log('Agent IDs to get details for:', agentIds);
-    
-    // Get detailed information for the selected agents
-    const agentsDetailResult = await codebolt.agent.getAgentsDetail(agentIds);
-    console.log('Agent details result type:', agentsDetailResult?.type); // "agentsDetailResponse"
-    console.log('Success:', agentsDetailResult?.success);
-    console.log('Message ID:', agentsDetailResult?.messageId);
-    console.log('Thread ID:', agentsDetailResult?.threadId);
-    console.log('Details count:', agentsDetailResult?.payload?.agents?.length || 0);
-    console.log('Agent details:', agentsDetailResult);
-    
-    // Access individual agent details
-    if (agentsDetailResult?.payload?.agents?.length > 0) {
-        const firstAgent = agentsDetailResult.payload.agents[0];
-        console.log('First agent ID:', firstAgent.id);
-        console.log('First agent name:', firstAgent.name);
-        console.log('First agent description:', firstAgent.description);
-        console.log('First agent version:', firstAgent.version);
-        console.log('First agent is local:', firstAgent.isLocal);
-        console.log('First agent status:', firstAgent.status);
-        console.log('First agent unique_id:', firstAgent.unique_id);
-        console.log('First agent capabilities:', firstAgent.capabilities);
+    if (detailsResponse.success) {
+      detailsResponse.payload.agents.forEach(agent => {
+        console.log(`- Name: ${agent.name}, Version: ${agent.version}, Status: ${agent.status}`);
+      });
     }
+  }
 }
+getSpecificAgentDetails();
 
-// Example 2: Get details for all agents (using empty array)
-const allAgentDetails = await codebolt.agent.getAgentsDetail([]);
-console.log('All agent details:', allAgentDetails);
-console.log('Success:', allAgentDetails?.success);
-console.log('Type:', allAgentDetails?.type);
-console.log('Total agents:', allAgentDetails?.payload?.agents?.length || 0);
+// Example 2: Get details for all available agents
+async function getAllAgentDetails() {
+  // Pass an empty array to get details for all agents
+  const allDetails = await codebolt.agent.getAgentsDetail([]);
+  console.log("All Agent Details:", allDetails);
 
-// Display each agent's key information
-if (allAgentDetails?.payload?.agents) {
-    allAgentDetails.payload.agents.forEach((agent, index) => {
-        console.log(`Agent ${index + 1}:`);
-        console.log(`  - ID: ${agent.id}`);
-        console.log(`  - Name: ${agent.name}`);
-        console.log(`  - Description: ${agent.description}`);
-        console.log(`  - Version: ${agent.version}`);
-        console.log(`  - Status: ${agent.status}`);
-        console.log(`  - Is Local: ${agent.isLocal}`);
-        console.log(`  - Unique ID: ${agent.unique_id}`);
-        console.log(`  - Capabilities: ${agent.capabilities || 'None'}`);
-    });
+  if (allDetails.success) {
+    console.log(`Found details for ${allDetails.payload.agents.length} agents.`);
+  }
 }
+getAllAgentDetails();
 ```
 
 ### Usage Notes
-
-- Agent IDs can be obtained from the `getAgentsList()` method using `agent.function?.name`
-- Pass an empty array `[]` to get details for all available agents
-- The response includes both basic WebSocket response properties and detailed agent information in the `payload` field
+- You can obtain agent IDs from the `getAgentsList()` method. The ID is typically found in `agent.function.name`.
+- This function is useful for getting a deeper understanding of an agent's capabilities, version, and status before using it.

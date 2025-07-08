@@ -6,8 +6,7 @@ cbparameters:
   parameters: []
   returns:
     signatureTypeName: Promise<UrlResponse>
-    description: A promise that resolves with the current URL and viewport information.
-    typeArgs: []
+    description: A promise that resolves with a `UrlResponse` object containing the current URL.
 data:
   name: getUrl
   category: browser
@@ -16,41 +15,41 @@ data:
 <CBBaseInfo/> 
 <CBParameters/>
 
-### Example
-
-```js
-// Create a new browser page
-await codebolt.browser.newPage();
-
-// Get the initial URL (usually about:blank or similar)
-const initialUrl = await codebolt.browser.getUrl();
-console.log('✅ Initial URL:', initialUrl);
-
-// Navigate to a specific website
-await codebolt.browser.goToPage('https://example.com');
-
-// Wait for page to load
-await new Promise(resolve => setTimeout(resolve, 2000));
-
-// Get the URL after navigation to verify successful navigation
-const currentUrl = await codebolt.browser.getUrl();
-console.log('✅ URL after navigation:', currentUrl);
-```
-
 ### Response Structure
 
 The method returns a Promise that resolves to a `UrlResponse` object with the following properties:
 
-**Response Properties:**
-- `type`: Always "urlResponse"
-- `url`: Optional string containing the URL
-- `currentUrl`: Optional string containing the current URL
-- `success`: Optional boolean indicating if the operation was successful
-- `message`: Optional string with additional information
-- `error`: Optional string containing error details if the operation failed
-- `messageId`: Optional unique identifier for the message
-- `threadId`: Optional thread identifier
+- **`type`** (string): Always "getUrlResponse".
+- **`url`** (string, optional): The current URL of the page.
+- **`currentUrl`** (string, optional): An alias for the current URL.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
+
+### Example
+
+```javascript
+// First, create a new page and navigate to a URL.
+await codebolt.browser.newPage();
+await codebolt.browser.goToPage('https://www.google.com');
+
+// Now, get the current URL.
+const urlResponse = await codebolt.browser.getUrl();
+console.log('URL Response:', urlResponse);
+
+if (urlResponse.success) {
+  console.log('The current URL is:', urlResponse.url);
+  // You can use this URL to verify navigation or for other purposes.
+  if (urlResponse.url.includes('google.com')) {
+    console.log('Successfully navigated to Google.');
+  }
+} else {
+  console.error('Failed to get URL:', urlResponse.error);
+}
+```
 
 ### Explanation
 
-The `codebolt.browser.getUrl()` function retrieves the current URL of the active browser page along with viewport information. This function is essential for navigation verification and tracking the current page location.
+The `codebolt.browser.getUrl()` function is essential for tracking the browser's current location. It's commonly used after a navigation action (like `goToPage` or `click`) to confirm that the browser has loaded the correct page. The returned `UrlResponse` object provides the URL and other useful metadata.

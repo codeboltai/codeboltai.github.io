@@ -9,22 +9,19 @@ cbparameters:
       description: The task description for which an agent is needed (e.g., "Write a function to sum of Two number", "create node js app").
     - name: maxResult
       typeName: number
-      description: Maximum number of agents to return (default 1, commonly used values are 3-10).
+      description: "Optional: Maximum number of agents to return. Defaults to 1."
     - name: agents
       typeName: array
-      description: List of specific agent names/IDs to filter in vector database (empty array for no filtering).
+      description: "Optional: List of specific agent names or IDs to filter from the vector database. Defaults to an empty array (no filtering)."
     - name: agentLocation
       typeName: string
-      description: Location preference for agents. Valid values are 'remote_only', 'local_only', 'all'. Default is 'all'.
+      description: "Optional: Location preference for agents. Defaults to 'all'. Possible values are 'all', 'local_only', 'remote_only'."
     - name: getFrom
       typeName: string
-      description: Filtering method. Valid values are 'use_ai', 'use_vector_db', 'use_both'. Default is 'use_vector_db'.
+      description: "Optional: The filtering method to use. Defaults to 'use_vector_db'. Possible values are 'use_ai', 'use_vector_db', 'use_both'."
   returns:
-    signatureTypeName: Promise
-    description: A promise that resolves with a findAgentByTaskResponse object containing an array of found agents.
-    typeArgs:
-      - type: reference
-        name: FindAgentByTaskResponse
+    signatureTypeName: Promise<FindAgentByTaskResponse>
+    description: A promise that resolves with a `FindAgentByTaskResponse` object containing an array of found agents.
 data:
   name: findAgent
   category: agent
@@ -37,66 +34,63 @@ data:
 
 The method returns a Promise that resolves to a `FindAgentByTaskResponse` object with the following properties:
 
-**Response Properties:**
-- `type`: Always "findAgentByTaskResponse"
-- `agents`: Optional array of agent objects containing found agents
-- `success`: Optional boolean indicating if the operation was successful
-- `message`: Optional string with additional information
-- `error`: Optional string containing error details if the operation failed
-- `messageId`: Optional unique identifier for the message
-- `threadId`: Optional thread identifier
+- **`type`** (string): Always "findAgentByTaskResponse".
+- **`agents`** (array, optional): An array of agent objects that match the task.
+- **`success`** (boolean, optional): Indicates if the operation was successful.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
 
-**Agent Structure:**
 Each agent in the `agents` array has the following structure:
-- `type`: Always "function"
-- `function`: Agent function details including:
-  - `name`: The name/identifier of the agent
-  - `description`: Detailed description of the agent's capabilities
-  - `parameters`: Parameter specification object with type, properties, required fields, and additionalProperties flag
-  - `strict`: Optional boolean indicating whether the agent enforces strict parameter validation
+- **`type`** (string): Always "function".
+- **`function`** (object): Details of the agent function, including:
+  - **`name`** (string): The name or identifier of the agent.
+  - **`description`** (string): A detailed description of the agent's capabilities.
+  - **`parameters`** (object): An object specifying the parameters the agent accepts.
+  - **`strict`** (boolean, optional): Indicates if the agent enforces strict parameter validation.
 
 ### Examples
 
-```js
-// Example 1: Find agents for a specific task with default parameters
-const agent = await codebolt.agent.findAgent("Write a function to sum of Two number");
+```javascript
+// Example 1: Find the single best agent for a task (default parameters)
+const agent = await codebolt.agent.findAgent("Write a function to calculate the factorial of a number");
 console.log("Found Agent:", agent);
 
-// Example 2: Find multiple agents with remote-only preference
+// Example 2: Find up to 5 agents for a task, searching both local and remote
 const agents = await codebolt.agent.findAgent(
-  "create node js app",
-  10, // maxResult
-  [], // agents filter
-  'remote_only', // agentLocation
+  "Create a simple Express.js server",
+  5, // maxResult
+  [], // agents (no filter)
+  'all', // agentLocation
   'use_both' // getFrom
 );
 console.log("Found Agents:", agents);
 
-// Example 3: Find agents using AI filtering with local-only preference
-const aiFilteredAgents = await codebolt.agent.findAgent(
-  "Analyze data and provide insights",
+// Example 3: Find a local agent using only AI filtering
+const aiFilteredAgent = await codebolt.agent.findAgent(
+  "Analyze a dataset and create a visualization",
   1,
   [],
   'local_only',
   'use_ai'
 );
-console.log("AI Filtered Agents:", aiFilteredAgents);
+console.log("AI Filtered Agent:", aiFilteredAgent);
 
-// Example 4: Find agents with specific agent filtering
-const filteredAgents = await codebolt.agent.findAgent(
-  "Code generation task",
-  2,
-  ['agent1', 'agent2'], // specific agents to filter
-  'all',
-  'use_both'
+// Example 4: Find specific agents by name/ID from remote agents
+const specificAgents = await codebolt.agent.findAgent(
+  "Generate a CI/CD pipeline for a Node.js project",
+  3,
+  ['ci-builder-agent', 'deployment-helper'], // specific agents to filter
+  'remote_only',
+  'use_vector_db'
 );
-console.log("Filtered Agents:", filteredAgents);
+console.log("Filtered Agents:", specificAgents);
 ```
 
 ### Notes
-- The `task` parameter should be a clear description of what you want the agent to do
-- When using `remote_only` or `local_only`, make sure you have agents available in those locations
-- Using `use_both` for filtering provides the most comprehensive results but may be slower
-- The returned agents array contains detailed information about each agent including their capabilities and metadata
-- Each agent in the response includes its function signature and parameter requirements
+- The `task` parameter should be a clear and concise description of the desired action.
+- `agentLocation` helps you control where to search for agents, which can be useful for security or performance reasons.
+- `getFrom` allows you to choose between a faster vector-based search, a more intelligent AI-based search, or a combination of both.
+- The response will contain a list of agents that you can then use with `codebolt.agent.startAgent`.
 

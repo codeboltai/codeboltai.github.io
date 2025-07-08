@@ -1,21 +1,18 @@
 ---
 name: StartAgent
 cbbaseinfo:
-  description: Starts an agent for the specified task.
+  description: Starts an agent with a specific task.
 cbparameters:
   parameters:
     - name: agentId
       typeName: string
-      description: The ID of the agent to start.
+      description: The unique identifier of the agent to start.
     - name: task
       typeName: string
-      description: The task for which the agent should be started.
+      description: The task description for the agent to execute.
   returns:
-    signatureTypeName: Promise
-    description: A promise that resolves when the agent has been successfully started.
-    typeArgs:
-      - type: reference
-        name: TaskCompletionResponse
+    signatureTypeName: Promise<TaskCompletionResponse>
+    description: A promise that resolves with a `TaskCompletionResponse` object upon agent completion.
 data:
   name: startAgent
   category: agent
@@ -28,70 +25,71 @@ data:
 
 The method returns a Promise that resolves to a `TaskCompletionResponse` object with the following properties:
 
-**Response Properties:**
-- `type`: Always "taskCompletionResponse"
-- `from`: Optional string indicating the source of the response
-- `agentId`: Optional string containing the ID of the agent that was started
-- `task`: Optional string containing the task that was assigned to the agent
-- `result`: Optional field containing any result data from the agent start operation
-- `success`: Optional boolean indicating if the operation was successful
-- `message`: Optional string with additional information
-- `error`: Optional string containing error details if the operation failed
-- `messageId`: Optional unique identifier for the message
-- `threadId`: Optional thread identifier
+- **`type`** (string): Always "taskCompletionResponse".
+- **`from`** (string, optional): The source of the response.
+- **`agentId`** (string, optional): The ID of the agent that was started.
+- **`task`** (string, optional): The task that was assigned to the agent.
+- **`result`** (any, optional): Any result data from the agent's execution.
+- **`success`** (boolean, optional): Indicates if the agent started and completed the task successfully.
+- **`message`** (string, optional): A message with additional information.
+- **`error`** (string, optional): Error details if the operation failed.
+- **`messageId`** (string, optional): A unique identifier for the message.
+- **`threadId`** (string, optional): The thread identifier.
 
 ### Examples
 
-```js
-// Example 1: Complete workflow - Find and start an agent
-try {
-    // First, find an appropriate agent for the task
-    const findResult = await codebolt.agent.findAgent(
-        'create node js app',
-        10, // maxResult
-        [], // agents filter
-        'remote_only', // agentLocation
-        'use_both' // getFrom
-    );
-    
-    console.log('✅ Find result:', findResult);
+```javascript
+// Example 1: Find an agent and then start it
+async function findAndStartAgent() {
+  try {
+    // Find an agent for a specific task
+    const findResult = await codebolt.agent.findAgent("Create a REST API with Express");
     
     if (findResult?.agents && findResult.agents.length > 0) {
-        // Extract agent ID from the found agent
-        const agentId = findResult.agents[0].function?.name || 
-                       findResult.agents[0].id || 
-                       findResult.agents[0].name;
-        
-        const startTask = 'Hi how are you';
-        console.log('✅ Starting agent:', agentId, 'with task:', startTask);
-        
-        // Start the agent with the task
-        const startAgentResult = await codebolt.agent.startAgent("act", startTask);
-        
-        console.log('✅ Start agent result:', startAgentResult);
-        console.log('   - Agent ID:', startAgentResult?.agentId);
-        console.log('   - Task:', startAgentResult?.task);
-        console.log('   - Success:', startAgentResult?.success);
-        console.log('   - Result:', startAgentResult?.result);
-        console.log('   - Response type:', startAgentResult?.type);
+      const agentId = findResult.agents[0].function.name;
+      const task = "Create a new Express.js project with a single endpoint '/hello' that returns 'Hello, World!'";
+      
+      console.log(`Starting agent '${agentId}' with task: ${task}`);
+      
+      // Start the agent with the found ID and a specific task
+      const startResult = await codebolt.agent.startAgent(agentId, task);
+      
+      console.log("Agent execution finished:", startResult);
+      if (startResult.success) {
+        console.log("Result:", startResult.result);
+      } else {
+        console.error("Error:", startResult.error);
+      }
     } else {
-        console.log('⚠️ No agents found to start');
+      console.log("No suitable agent found for the task.");
     }
-} catch (error) {
-    console.log('⚠️ Agent starting failed:', error.message);
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
 }
 
-// Example 2: Direct agent start (if you know the agent ID)
-try {
-    const startResponse = await codebolt.agent.startAgent("act", "Help me with data analysis");
-    console.log('Agent started successfully:', startResponse);
-    console.log('Agent ID:', startResponse?.agentId);
-    console.log('Task:', startResponse?.task);
-    console.log('Success:', startResponse?.success);
-    console.log('Result:', startResponse?.result);
-    console.log('Type:', startResponse?.type);
-} catch (error) {
-    console.error('Failed to start agent:', error.message);
+findAndStartAgent();
+
+// Example 2: Start an agent directly with a known agent ID
+async function startKnownAgent() {
+  try {
+    const agentId = "code-generator-agent"; // A known agent ID
+    const task = "Generate a Python function to find prime numbers up to n.";
+    
+    console.log(`Starting known agent '${agentId}'`);
+    
+    const response = await codebolt.agent.startAgent(agentId, task);
+    
+    console.log("Agent response:", response);
+  } catch (error) {
+    console.error("Failed to start agent:", error);
+  }
 }
 
+startKnownAgent();
 ```
+
+### Notes
+- Before starting an agent, you typically need to know its `agentId`. You can get this ID by using `findAgent` or `getAgentsList`.
+- The `task` should be a specific instruction for the agent to perform.
+- The `TaskCompletionResponse` provides detailed information about the outcome of the agent's execution.
