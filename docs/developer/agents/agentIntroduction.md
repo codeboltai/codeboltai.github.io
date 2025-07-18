@@ -202,6 +202,9 @@ codebolt.onMessage((userMessage)=> {
 });
 ```
 
+
+
+
 ### Code Explanation:
 
 1. **Message Handling**: The agent listens for user messages via WebSocket connection
