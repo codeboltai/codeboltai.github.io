@@ -800,7 +800,7 @@ updateVersion(type)
 
 ## Next Steps
 
-- **[Template Examples](Docs/templates/examples.md)** - Study real-world template implementations
+- **[Template Examples](2_Docs/templates/examples.md)** - Study real-world template implementations
 - **[Publishing Templates](publishing.md)** - Understand community standards
 - **[Template Configuration](configuration.md)** - Learn sophisticated template techniques
 

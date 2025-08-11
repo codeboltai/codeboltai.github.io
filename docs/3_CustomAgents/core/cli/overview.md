@@ -795,8 +795,8 @@ Ready to master the Codebolt CLI? Here's your learning path:
 
 ## Related Documentation
 
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Create workflows that can be executed via CLI
-- [Agents](CustomAgents/agents/overview.md) - Manage and run agents from the command line
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Create workflows that can be executed via CLI
+- [Agents](3_CustomAgents/agents/overview.md) - Manage and run agents from the command line
 - [API Reference](../../api-reference.md) - Complete CLI command reference
 
 ## Community Resources

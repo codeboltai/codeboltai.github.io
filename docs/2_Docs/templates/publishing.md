@@ -411,7 +411,7 @@ node scripts/validate-config.js
 After publishing your template:
 
 1. **[Template Best Practices](best-practices.md)** - Learn advanced template patterns
-2. **[Template Examples](Docs/templates/examples.md)** - Study successful template implementations
+2. **[Template Examples](2_Docs/templates/examples.md)** - Study successful template implementations
 3. **[Best Practices](best-practices.md)** - Understand community standards
 
 ---

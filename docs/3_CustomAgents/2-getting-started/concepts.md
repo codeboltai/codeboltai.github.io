@@ -14,7 +14,7 @@ Agents can analyze code, suggest improvements, generate documentation, run tests
 - Customizable behavior
 - Integration with your development tools
 
-[Learn more about Agents →](CustomAgents/agents/overview.md)
+[Learn more about Agents →](3_CustomAgents/agents/overview.md)
 
 ## Multi-Agents
 
@@ -28,7 +28,7 @@ For example, you might have one agent analyze code quality, another handle testi
 - Parallel and sequential task execution
 - Shared context and data flow
 
-[Learn more about Multi-Agents →](CustomAgents/core/multi-agents/overview.md)
+[Learn more about Multi-Agents →](3_CustomAgents/core/multi-agents/overview.md)
 
 ## MCP Tools
 
@@ -42,7 +42,7 @@ MCP Tools make Codebolt infinitely extensible, allowing you to integrate with yo
 - Custom AI model support
 - Community-driven ecosystem
 
-[Learn more about MCP Tools →](CustomAgents/Tools/overview.md)
+[Learn more about MCP Tools →](3_CustomAgents/Tools/overview.md)
 
 ## Inline Edit
 
@@ -56,7 +56,7 @@ This feature bridges the gap between thinking about a change and implementing it
 - Context-aware suggestions
 - Undo/redo support
 
-[Learn more about Inline Edit →](CustomAgents/core/inline-edit/overview.md)
+[Learn more about Inline Edit →](3_CustomAgents/core/inline-edit/overview.md)
 
 ## Chats
 
@@ -70,7 +70,7 @@ The chat interface understands your project context, can reference your code, an
 - Learning and exploration
 - Integration with project files
 
-[Learn more about Chats →](CustomAgents/core/chats/overview.md)
+[Learn more about Chats →](3_CustomAgents/core/chats/overview.md)
 
 ## Task Flow
 
@@ -84,7 +84,7 @@ Task Flow can automate everything from code generation and testing to deployment
 - Integration with agents and tools
 - Conditional logic and branching
 
-[Learn more about Task Flow →](CustomAgents/core/task-flow/overview.md)
+[Learn more about Task Flow →](3_CustomAgents/core/task-flow/overview.md)
 
 ## Context
 
@@ -98,7 +98,7 @@ Context includes your file structure, import relationships, coding style, projec
 - Code pattern recognition
 - Team convention learning
 
-[Learn more about Context →](CustomAgents/core/context/overview.md)
+[Learn more about Context →](3_CustomAgents/core/context/overview.md)
 
 ## CLI
 
@@ -112,7 +112,7 @@ Whether you're generating code, running agents, managing workflows, or analyzing
 - CI/CD integration
 - Batch operations
 
-[Learn more about CLI →](CustomAgents/core/cli/overview.md)
+[Learn more about CLI →](3_CustomAgents/core/cli/overview.md)
 
 ## TypeScript SDK
 
@@ -126,7 +126,7 @@ The SDK provides APIs for creating custom agents, MCP tools, workflow steps, and
 - Type-safe development
 - Rich documentation and examples
 
-[Learn more about TypeScript SDK →](CustomAgents/core/typescript-sdk/overview.md)
+[Learn more about TypeScript SDK →](3_CustomAgents/typescript-sdk/overview.md)
 
 ## How These Concepts Work Together
 
@@ -157,6 +157,6 @@ Now that you understand the core concepts, you're ready to:
 
 1. **Explore specific features** by following the links to detailed guides
 2. **Try the hands-on tutorials** in [tutorials.md](../tutorials.md)
-3. **Build your first custom solution** using the [TypeScript SDK](CustomAgents/core/typescript-sdk/overview.md)
+3. **Build your first custom solution** using the [TypeScript SDK](3_CustomAgents/typescript-sdk/overview.md)
 
 Each concept has its own dedicated section in the [Core](../core/) documentation where you'll find detailed guides, examples, and best practices. Choose the concept that interests you most and dive in!

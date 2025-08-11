@@ -86,7 +86,7 @@ The CodeboltJS TypeScript SDK (`@codebolt/codeboltjs`) is the core library that 
 
 ---
 
-### 📋 [Templates](Docs/templates/overview.md)
+### 📋 [Templates](2_Docs/templates/overview.md)
 **Pre-configured application blueprints for rapid development**
 
 Codebolt Templates are reusable project templates that provide complete application blueprints with best practices, configurations, and development workflows. They enable rapid bootstrapping of new projects.
@@ -110,7 +110,7 @@ Codebolt Templates are reusable project templates that provide complete applicat
 ### For New Developers
 1. **Start with [Agents](./agents/quickstart.md)** - Learn the core concepts and create your first agent
 2. **Install the [CLI](./cli/installation.md)** - Set up your development environment
-3. **Explore [Templates](Docs/templates/overview.md)** - Use existing templates to bootstrap projects
+3. **Explore [Templates](2_Docs/templates/overview.md)** - Use existing templates to bootstrap projects
 4. **Build [Tools](./tools/quickstart.md)** - Extend functionality with custom tools
 
 ### For Experienced Developers

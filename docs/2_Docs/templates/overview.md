@@ -259,7 +259,7 @@ Ready to start using Codebolt Templates? Here's your next steps:
 2. **[Template Configuration](configuration.md)** - Deep dive into `codeboltconfig.yaml`
 3. **[Publishing Templates](publishing.md)** - Share your templates with the community
 4. **[Template Best Practices](best-practices.md)** - Guidelines for creating quality templates
-5. **[Template Examples](Docs/templates/examples.md)** - Explore real-world template implementations
+5. **[Template Examples](2_Docs/templates/examples.md)** - Explore real-world template implementations
 
 ## Support and Community
 

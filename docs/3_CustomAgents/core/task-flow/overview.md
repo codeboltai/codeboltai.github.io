@@ -921,10 +921,10 @@ Ready to build powerful workflows? Here's your learning path:
 
 ## Related Features
 
-- [Agents](CustomAgents/agents/overview.md) - Use agents as workflow steps
-- [Multi-Agents](CustomAgents/core/multi-agents/overview.md) - Coordinate multiple agents in workflows
-- [MCP Tools](CustomAgents/Tools/overview.md) - Extend workflows with external integrations
-- [CLI](CustomAgents/core/cli/overview.md) - Manage workflows programmatically
+- [Agents](3_CustomAgents/agents/overview.md) - Use agents as workflow steps
+- [Multi-Agents](3_CustomAgents/core/multi-agents/overview.md) - Coordinate multiple agents in workflows
+- [MCP Tools](3_CustomAgents/Tools/overview.md) - Extend workflows with external integrations
+- [CLI](3_CustomAgents/core/cli/overview.md) - Manage workflows programmatically
 
 ## Community Resources
 

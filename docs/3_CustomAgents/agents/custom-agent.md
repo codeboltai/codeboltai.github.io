@@ -766,9 +766,9 @@ codebolt agent publish react-component-analyzer-1.0.0.cbag
 Now that you can create custom agents, explore:
 
 1. **[Remix Agents](remix-agent.md)** - Modify existing agents
-2. **[Multi-Agent Systems](CustomAgents/core/multi-agents/overview.md)** - Coordinate multiple agents
-3. **[Task Flow Integration](CustomAgents/core/task-flow/overview.md)** - Use agents in workflows
-4. **[MCP Tools](CustomAgents/Tools/overview.md)** - Extend agent capabilities
+2. **[Multi-Agent Systems](3_CustomAgents/core/multi-agents/overview.md)** - Coordinate multiple agents
+3. **[Task Flow Integration](3_CustomAgents/core/task-flow/overview.md)** - Use agents in workflows
+4. **[MCP Tools](3_CustomAgents/Tools/overview.md)** - Extend agent capabilities
 
 ## Community Resources
 

@@ -332,7 +332,7 @@ Ready to create your own agents? Check out these guides:
 
 - [Creating Custom Agents](custom-agent.md) - Step-by-step agent development
 - [Remixing Agents](remix-agent.md) - Modify existing agents for your needs
-- [Multi-Agent Coordination](CustomAgents/core/multi-agents/overview.md) - Orchestrate multiple agents
+- [Multi-Agent Coordination](3_CustomAgents/core/multi-agents/overview.md) - Orchestrate multiple agents
 
 ## Examples and Templates
 

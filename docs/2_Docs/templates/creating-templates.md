@@ -708,7 +708,7 @@ Once your template is ready:
 1. **[Template Configuration](configuration.md)** - Fine-tune your `codeboltconfig.yaml`
 2. **[Publishing Templates](publishing.md)** - Share your template with the community
 3. **[Template Best Practices](best-practices.md)** - Learn advanced template patterns
-4. **[Template Examples](Docs/templates/examples.md)** - Study successful template implementations
+4. **[Template Examples](2_Docs/templates/examples.md)** - Study successful template implementations
 
 ---
 

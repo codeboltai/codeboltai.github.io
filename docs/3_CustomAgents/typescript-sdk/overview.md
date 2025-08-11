@@ -1420,9 +1420,9 @@ Ready to build powerful Codebolt extensions? Here's your development path:
 
 ## Related Documentation
 
-- [Agents](CustomAgents/agents/overview.md) - Learn about the agent system you'll be extending
-- [MCP Tools](CustomAgents/Tools/overview.md) - Understand the tool architecture
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Build custom workflow components
+- [Agents](3_CustomAgents/agents/overview.md) - Learn about the agent system you'll be extending
+- [MCP Tools](3_CustomAgents/Tools/overview.md) - Understand the tool architecture
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Build custom workflow components
 - [API Reference](../../api-reference.md) - Complete SDK API documentation
 
 ## Community Resources

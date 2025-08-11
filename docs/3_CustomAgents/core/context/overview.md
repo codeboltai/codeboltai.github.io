@@ -900,10 +900,10 @@ Ready to leverage Context for smarter AI assistance? Here's your path:
 
 ## Related Features
 
-- [Agents](CustomAgents/agents/overview.md) - Agents use context for intelligent decision-making
-- [Chats](CustomAgents/core/chats/overview.md) - Context powers relevant, project-aware conversations
-- [Inline Edit](CustomAgents/core/inline-edit/overview.md) - Context ensures code transformations fit your patterns
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Workflows adapt based on project context
+- [Agents](3_CustomAgents/agents/overview.md) - Agents use context for intelligent decision-making
+- [Chats](3_CustomAgents/core/chats/overview.md) - Context powers relevant, project-aware conversations
+- [Inline Edit](3_CustomAgents/core/inline-edit/overview.md) - Context ensures code transformations fit your patterns
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Workflows adapt based on project context
 
 ## Community Resources
 

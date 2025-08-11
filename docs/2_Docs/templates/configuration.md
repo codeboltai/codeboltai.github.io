@@ -641,7 +641,7 @@ node scripts/validate-config.js
 
 - **[Publishing Templates](publishing.md)** - Learn how to publish your template
 - **[Template Best Practices](best-practices.md)** - Advanced template patterns
-- **[Template Examples](Docs/templates/examples.md)** - Study real-world configurations
+- **[Template Examples](2_Docs/templates/examples.md)** - Study real-world configurations
 
 ---
 

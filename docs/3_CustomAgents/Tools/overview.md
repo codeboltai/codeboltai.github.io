@@ -1002,9 +1002,9 @@ Ready to create your own MCP Tools? Here's your development path:
 
 ## Related Documentation
 
-- [TypeScript SDK](CustomAgents/core/typescript-sdk/overview.md) - Build tools with full TypeScript support
-- [Agents](CustomAgents/agents/overview.md) - Use MCP Tools in intelligent agents
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Integrate tools into automated workflows
+- [TypeScript SDK](3_CustomAgents/typescript-sdk/overview.md) - Build tools with full TypeScript support
+- [Agents](3_CustomAgents/agents/overview.md) - Use MCP Tools in intelligent agents
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Integrate tools into automated workflows
 - [API Reference](../../api-reference.md) - Complete MCP Tool API documentation
 
 ## Community Resources

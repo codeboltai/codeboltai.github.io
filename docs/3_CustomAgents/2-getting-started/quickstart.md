@@ -210,12 +210,12 @@ Now that you've got the basics down, here's what to explore next:
 ### Immediate Next Steps
 1. **Learn Core Concepts**: [concepts.md](concepts.md) - Understand the fundamentals
 2. **Create Custom Agents**: [../core/agents/custom-agent.md](custom-agent.md)
-3. **Explore Multi-Agent Workflows**: [../core/multi-agents/overview.md](CustomAgents/core/multi-agents/overview.md)
+3. **Explore Multi-Agent Workflows**: [../core/multi-agents/overview.md](3_CustomAgents/core/multi-agents/overview.md)
 
 ### Advanced Features
-1. **MCP Tools**: [../core/mcp-tools/overview.md](CustomAgents/Tools/overview.md) - Extend Codebolt's capabilities
-2. **Task Flow Automation**: [../core/task-flow/overview.md](CustomAgents/core/task-flow/overview.md)
-3. **TypeScript SDK**: [../core/typescript-sdk/overview.md](CustomAgents/core/typescript-sdk/overview.md) - Build custom integrations
+1. **MCP Tools**: [../core/mcp-tools/overview.md](3_CustomAgents/Tools/overview.md) - Extend Codebolt's capabilities
+2. **Task Flow Automation**: [../core/task-flow/overview.md](3_CustomAgents/core/task-flow/overview.md)
+3. **TypeScript SDK**: [../core/typescript-sdk/overview.md](3_CustomAgents/typescript-sdk/overview.md) - Build custom integrations
 
 ### Real-World Projects
 1. **End-to-End Tutorials**: [../tutorials.md](../tutorials.md) - Complete project walkthroughs

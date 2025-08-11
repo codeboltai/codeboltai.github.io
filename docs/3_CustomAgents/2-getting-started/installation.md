@@ -102,7 +102,7 @@ nvm use 18
 
 Once installation is complete:
 
-1. **Take the Quickstart Tutorial**: [quickstart.md](CustomAgents/2_getting-started/quickstart.md)
+1. **Take the Quickstart Tutorial**: [quickstart.md](3_CustomAgents/2-getting-started/quickstart.md)
 2. **Learn Core Concepts**: [concepts.md](concepts.md)
 3. **Create Your First Agent**: [../core/agents/custom-agent.md](custom-agent.md)
 

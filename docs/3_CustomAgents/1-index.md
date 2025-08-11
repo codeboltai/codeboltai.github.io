@@ -20,17 +20,17 @@ Codebolt AI Editor is a revolutionary development environment that combines the 
 ## Quick Links
 
 ### 🚀 Getting Started
-- [Installation Guide](CustomAgents/2_getting-started/installation.md) - Set up Codebolt AI Editor on your system
-- [Quickstart Tutorial](CustomAgents/2_getting-started/quickstart.md) - Get up and running in minutes
+- [Installation Guide](3_CustomAgents/2-getting-started/installation.md) - Set up Codebolt AI Editor on your system
+- [Quickstart Tutorial](3_CustomAgents/2-getting-started/quickstart.md) - Get up and running in minutes
 - [Core Concepts](concepts.md) - Understand the fundamental building blocks
 
 ### 🔧 Core Features
-- [Agents](CustomAgents/agents/overview.md) - Learn about AI agents and how to create them
-- [Multi-Agents](CustomAgents/core/multi-agents/overview.md) - Coordinate multiple agents for complex tasks
-- [Inline Edit](CustomAgents/core/inline-edit/overview.md) - Master the Ctrl+K feature for quick edits
-- [MCP Tools](CustomAgents/Tools/overview.md) - Extend functionality with Modular Component Plugins
-- [Chats](CustomAgents/core/chats/overview.md) - Leverage AI-assisted conversations
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Automate your development workflows
+- [Agents](3_CustomAgents/agents/overview.md) - Learn about AI agents and how to create them
+- [Multi-Agents](3_CustomAgents/core/multi-agents/overview.md) - Coordinate multiple agents for complex tasks
+- [Inline Edit](3_CustomAgents/core/inline-edit/overview.md) - Master the Ctrl+K feature for quick edits
+- [MCP Tools](3_CustomAgents/Tools/overview.md) - Extend functionality with Modular Component Plugins
+- [Chats](3_CustomAgents/core/chats/overview.md) - Leverage AI-assisted conversations
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Automate your development workflows
 
 ### 📚 Learn More
 - [End-to-End Tutorials](tutorials.md) - Complete project walkthroughs

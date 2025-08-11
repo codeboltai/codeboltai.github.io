@@ -631,9 +631,9 @@ Ready to master Inline Edit? Here's your learning path:
 
 ## Related Features
 
-- [Agents](CustomAgents/agents/overview.md) - Automate Inline Edit with intelligent agents
-- [Task Flow](CustomAgents/core/task-flow/overview.md) - Include Inline Edit in automated workflows
-- [Chats](CustomAgents/core/chats/overview.md) - Get help crafting effective prompts
-- [CLI](CustomAgents/core/cli/overview.md) - Use Inline Edit programmatically
+- [Agents](3_CustomAgents/agents/overview.md) - Automate Inline Edit with intelligent agents
+- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Include Inline Edit in automated workflows
+- [Chats](3_CustomAgents/core/chats/overview.md) - Get help crafting effective prompts
+- [CLI](3_CustomAgents/core/cli/overview.md) - Use Inline Edit programmatically
 
 Inline Edit transforms how you think about code modification. Instead of manually implementing every change, focus on describing your intent and let AI handle the implementation details. Start with simple transformations and gradually tackle more complex refactoring as you become comfortable with the feature.
