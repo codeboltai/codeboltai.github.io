@@ -11,10 +11,14 @@
             "id": "c883305ca140b86c",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "develop2/getting-started/quickstart.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "quickstart"
             }
           }
         ]
@@ -90,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "developer/structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for structure"
             }
           },
           {
@@ -108,11 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "developer/structure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
+              "title": "Outgoing links from structure"
             }
           },
           {
@@ -136,12 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "developer/structure.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of structure"
             }
           }
         ]
@@ -163,13 +170,41 @@
   },
   "active": "c883305ca140b86c",
   "lastOpenFiles": [
-    "developer/agents/agentIntroduction.md",
-    "developer/agents/multi-agent.md",
-    "developer/agents/quickstart.md",
-    "developer/agents/2_usingagents/index.md",
-    "developer/agents/2_usingagents/5_runAgent.md",
-    "developer/agents/1_agentarchitecture/index.md",
-    "developer/agents/1_agentarchitecture/createagent.md",
-    "developer/agents/1_agentarchitecture/1_architecture.md"
+    "develop2/getting-started/installation.md",
+    "develop2/getting-started/concepts.md",
+    "develop2/getting-started/quickstart.md",
+    "develop2/core/chats/overview.md",
+    "develop2/core/agents/remix-agent.md",
+    "develop2/core/agents/overview.md",
+    "develop2/core/agents/custom-agent.md",
+    "develop2/index.md",
+    "developer/structure.md",
+    "develop2/core/typescript-sdk/overview.md",
+    "develop2/core/typescript-sdk",
+    "develop2/core/cli/overview.md",
+    "develop2/core/cli",
+    "develop2/core/context/overview.md",
+    "develop2/core/context",
+    "develop2/core/task-flow/overview.md",
+    "develop2/core/task-flow",
+    "develop2/core/chats",
+    "develop2/core/mcp-tools/overview.md",
+    "develop2/core/mcp-tools",
+    "develop2/core/inline-edit/overview.md",
+    "develop2/core/inline-edit",
+    "develop2/core/multi-agents/overview.md",
+    "develop2/core/multi-agents",
+    "develop2/core/agents",
+    "develop2/core",
+    "developer/structure-recommendations.md",
+    "developer/overview.md",
+    "developer/testing/main-index.md",
+    "developer/testing/index.md",
+    "developer/testing/agents-index.md",
+    "developer/2_core/1_index.md",
+    "developer/testing/tools-index.md",
+    "developer/testing/templates-index.md",
+    "developer/testing/sdk-index.md",
+    "developer/testing/getting-started-index.md"
   ]
 }
