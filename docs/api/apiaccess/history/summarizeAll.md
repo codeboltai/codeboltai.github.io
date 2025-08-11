@@ -138,4 +138,4 @@ async function safeSummarizeAll() {
 
 ## Related Functions
 
-- [`summarize()`](./summarize.md) - For summarizing specific message sets with depth control 
+- [`summarize()`](summarize.md) - For summarizing specific message sets with depth control 

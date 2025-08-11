@@ -229,4 +229,4 @@ async function cachedSummarize(messages, depth) {
 
 ## Related Functions
 
-- [`summarizeAll()`](./summarizeAll.md) - For summarizing the complete conversation history 
+- [`summarizeAll()`](summarizeAll.md) - For summarizing the complete conversation history 

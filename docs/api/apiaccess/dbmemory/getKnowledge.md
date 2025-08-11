@@ -310,7 +310,7 @@ if (result?.data !== null && result?.data !== undefined) {
 
 ## Integration with addKnowledge
 
-This function works seamlessly with [`addKnowledge`](./addKnowledge.md):
+This function works seamlessly with [`addKnowledge`](addKnowledge.md):
 
 ```javascript
 // Store data

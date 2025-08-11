@@ -86,7 +86,7 @@ The CodeboltJS TypeScript SDK (`@codebolt/codeboltjs`) is the core library that 
 
 ---
 
-### 📋 [Templates](./templates/overview.md)
+### 📋 [Templates](Docs/templates/overview.md)
 **Pre-configured application blueprints for rapid development**
 
 Codebolt Templates are reusable project templates that provide complete application blueprints with best practices, configurations, and development workflows. They enable rapid bootstrapping of new projects.
@@ -98,10 +98,10 @@ Codebolt Templates are reusable project templates that provide complete applicat
 - **Registry Integration**: Publish and discover templates in the community
 
 **What You'll Learn:**
-- [Creating Templates](./templates/creating-templates.md) - Build reusable project templates
-- [Configuration](./templates/configuration.md) - Set up codeboltconfig.yaml
-- [Best Practices](./templates/best-practices.md) - Follow industry standards
-- [Publishing](./templates/publishing.md) - Share templates with the community
+- [Creating Templates](creating-templates.md) - Build reusable project templates
+- [Configuration](configuration.md) - Set up codeboltconfig.yaml
+- [Best Practices](best-practices.md) - Follow industry standards
+- [Publishing](publishing.md) - Share templates with the community
 
 ---
 
@@ -110,14 +110,14 @@ Codebolt Templates are reusable project templates that provide complete applicat
 ### For New Developers
 1. **Start with [Agents](./agents/quickstart.md)** - Learn the core concepts and create your first agent
 2. **Install the [CLI](./cli/installation.md)** - Set up your development environment
-3. **Explore [Templates](./templates/overview.md)** - Use existing templates to bootstrap projects
+3. **Explore [Templates](Docs/templates/overview.md)** - Use existing templates to bootstrap projects
 4. **Build [Tools](./tools/quickstart.md)** - Extend functionality with custom tools
 
 ### For Experienced Developers
 1. **Deep dive into the [TypeScript SDK](./typescriptSdk/overview.md)** - Leverage the full power of the platform
 2. **Create [Custom Agents](./agents/3_customagents/3_firstExtension.md)** - Build sophisticated AI workflows
 3. **Develop [Advanced Tools](./tools/create_tool.md)** - Create specialized utilities
-4. **Contribute [Templates](./templates/creating-templates.md)** - Share best practices with the community
+4. **Contribute [Templates](creating-templates.md)** - Share best practices with the community
 
 ## Development Workflow
 
