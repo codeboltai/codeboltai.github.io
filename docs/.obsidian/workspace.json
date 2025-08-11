@@ -1,0 +1,210 @@
+{
+  "main": {
+    "id": "58868f78a0b65155",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d6d37a584a1e8c1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c883305ca140b86c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "develop2/getting-started/quickstart.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "quickstart"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "42b8c6dbc71fcc9f",
+    "type": "split",
+    "children": [
+      {
+        "id": "7678df9b513761e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9c82afebc22e5868",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "6144f355cfca36f6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "f12cc918926aca12",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "52e5aab60c3501c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "4b6a4e70319625be",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0aec1ddf801bdc8f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "developer/structure.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for structure"
+            }
+          },
+          {
+            "id": "1a0363d20a6cb729",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "developer/structure.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from structure"
+            }
+          },
+          {
+            "id": "d2a659d473856434",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "9c37cf6fa25182a6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "developer/structure.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of structure"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "c883305ca140b86c",
+  "lastOpenFiles": [
+    "develop2/getting-started/installation.md",
+    "develop2/getting-started/concepts.md",
+    "develop2/getting-started/quickstart.md",
+    "develop2/core/chats/overview.md",
+    "develop2/core/agents/remix-agent.md",
+    "develop2/core/agents/overview.md",
+    "develop2/core/agents/custom-agent.md",
+    "develop2/index.md",
+    "developer/structure.md",
+    "develop2/core/typescript-sdk/overview.md",
+    "develop2/core/typescript-sdk",
+    "develop2/core/cli/overview.md",
+    "develop2/core/cli",
+    "develop2/core/context/overview.md",
+    "develop2/core/context",
+    "develop2/core/task-flow/overview.md",
+    "develop2/core/task-flow",
+    "develop2/core/chats",
+    "develop2/core/mcp-tools/overview.md",
+    "develop2/core/mcp-tools",
+    "develop2/core/inline-edit/overview.md",
+    "develop2/core/inline-edit",
+    "develop2/core/multi-agents/overview.md",
+    "develop2/core/multi-agents",
+    "develop2/core/agents",
+    "develop2/core",
+    "developer/structure-recommendations.md",
+    "developer/overview.md",
+    "developer/testing/main-index.md",
+    "developer/testing/index.md",
+    "developer/testing/agents-index.md",
+    "developer/2_core/1_index.md",
+    "developer/testing/tools-index.md",
+    "developer/testing/templates-index.md",
+    "developer/testing/sdk-index.md",
+    "developer/testing/getting-started-index.md"
+  ]
+}
