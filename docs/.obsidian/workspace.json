@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "develop2/getting-started/quickstart.md",
+                "file": "developer/2_getting-started/concepts.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "quickstart"
+              "title": "concepts"
             }
           }
         ]
@@ -170,6 +170,13 @@
   },
   "active": "c883305ca140b86c",
   "lastOpenFiles": [
+    "developer/structure.md",
+    "developer21/agents/3_advancagent.md",
+    "developer21/agents/agentIntroduction.md",
+    "developer21/agents/quickstart.md",
+    "developer/2_getting-started/quickstart.md",
+    "developer/2_getting-started/concepts.md",
+    "developer/1_index.md",
     "develop2/getting-started/installation.md",
     "develop2/getting-started/concepts.md",
     "develop2/getting-started/quickstart.md",
@@ -178,7 +185,6 @@
     "develop2/core/agents/overview.md",
     "develop2/core/agents/custom-agent.md",
     "develop2/index.md",
-    "developer/structure.md",
     "develop2/core/typescript-sdk/overview.md",
     "develop2/core/typescript-sdk",
     "develop2/core/cli/overview.md",
@@ -199,12 +205,6 @@
     "developer/structure-recommendations.md",
     "developer/overview.md",
     "developer/testing/main-index.md",
-    "developer/testing/index.md",
-    "developer/testing/agents-index.md",
-    "developer/2_core/1_index.md",
-    "developer/testing/tools-index.md",
-    "developer/testing/templates-index.md",
-    "developer/testing/sdk-index.md",
-    "developer/testing/getting-started-index.md"
+    "developer/testing/index.md"
   ]
 }
