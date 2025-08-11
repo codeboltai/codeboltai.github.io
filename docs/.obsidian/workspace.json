@@ -168,8 +168,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c883305ca140b86c",
+  "active": "9c82afebc22e5868",
   "lastOpenFiles": [
+    "MultiAgentOrchestration/ParallelAgentExecution",
+    "MultiAgentOrchestration/AgentObservabiltiy",
+    "MultiAgentOrchestration/TaskOrchestor",
+    "MultiAgentOrchestration/RemoteTaskExecution",
+    "MultiAgentOrchestration/RemoteAgentExecution",
+    "MultiAgentOrchestration/Tasks",
     "CustomAgents/core/multi-agents/overview.md",
     "MultiAgentOrchestration/index.md",
     "MultiAgentOrchestration",
@@ -199,12 +205,6 @@
     "api/ApiAccess/fs/createFile.md",
     "Docs/portal/8_setting/apikey.md",
     "Docs/application/1_getstarted/index.md",
-    "Docs/application/1_getstarted/1_codeboltide.md",
-    "CustomAgents/Architecture",
-    "CustomAgents/CoreConcepts",
-    "develop2/core/typescript-sdk",
-    "develop2/core/cli",
-    "develop2/core/context",
-    "develop2/core/task-flow"
+    "CustomAgents/Architecture"
   ]
 }
