@@ -6,19 +6,6 @@ This guide will walk you through the step-by-step process of installing Codebolt
 
 Before installing Codebolt AI Editor, ensure your system meets the following requirements:
 
-### System Requirements
-- **Operating System**: Windows 10/11, macOS 10.15+, or Linux (Ubuntu 18.04+, CentOS 7+)
-- **Memory**: Minimum 4GB RAM (8GB recommended)
-- **Storage**: At least 2GB free disk space
-- **Network**: Internet connection for initial setup and AI features
-
-### Required Software
-- **Node.js**: Version 16.0 or higher
-  - Download from [nodejs.org](https://nodejs.org/)
-  - Verify installation: `node --version`
-- **Git**: Latest version recommended
-  - Download from [git-scm.com](https://git-scm.com/)
-  - Verify installation: `git --version`
 
 ## Installation Steps
 
@@ -66,72 +53,7 @@ Before installing Codebolt AI Editor, ensure your system meets the following req
 3. **Verify Installation**
    ```bash
    codebolt --version
-   ```
-
-### Linux Installation
-
-#### Ubuntu/Debian
-```bash
-# Add Codebolt repository
-curl -fsSL https://packages.codebolt.ai/gpg | sudo gpg --dearmor -o /usr/share/keyrings/codebolt-archive-keyring.gpg
-
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/codebolt-archive-keyring.gpg] https://packages.codebolt.ai/apt stable main" | sudo tee /etc/apt/sources.list.d/codebolt.list
-
-# Update package list and install
-sudo apt update
-sudo apt install codebolt-ai-editor
-```
-
-#### CentOS/RHEL/Fedora
-```bash
-# Add Codebolt repository
-sudo tee /etc/yum.repos.d/codebolt.repo <<EOF
-[codebolt]
-name=Codebolt AI Editor
-baseurl=https://packages.codebolt.ai/rpm/stable
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.codebolt.ai/gpg
-EOF
-
-# Install using yum/dnf
-sudo yum install codebolt-ai-editor
-# or for newer systems:
-# sudo dnf install codebolt-ai-editor
-```
-
-#### Verify Installation
-```bash
-codebolt --version
-```
-
-## Post-Installation Setup
-
-### 1. Initialize Codebolt
-```bash
-codebolt init
-```
-This command will:
-- Create the necessary configuration files
-- Set up the default workspace
-- Initialize the agent registry
-
-### 2. Sign In to Codebolt Cloud (Optional)
-```bash
-codebolt auth login
-```
-- Provides access to cloud-based agents and models
-- Enables collaboration features
-- Syncs settings across devices
-
-### 3. Install Extensions (Optional)
-```bash
-# Install popular extensions
-codebolt extension install typescript-support
-codebolt extension install git-integration
-codebolt extension install python-tools
-```
-
+   ``
 ## Troubleshooting Common Issues
 
 ### Issue: "Command not found: codebolt"
