@@ -21,3 +21,5 @@ yarn-error.log*
 .codeboltAgents
 .qodo
 .codebolt
+
+.obsidian
