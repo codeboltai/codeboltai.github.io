@@ -1,44 +1,73 @@
-# Welcome to Codebolt AI Editor
+# Custom Agents in Codebolt
 
-Welcome to Codebolt AI Editor, the next-generation AI-powered code editor designed to accelerate your development workflow through intelligent automation and seamless AI integration.
+Codebolt is built from the ground up to support custom, code-based agents. Unlike other code editors where the agent logic is a closed "secret sauce" (or forks where the core agent behavior is buried in the editor), Codebolt exposes clear, composable APIs so you can implement and own the full agent behavior in code.
 
-## What is Codebolt AI Editor?
+This is a fundamental difference: in Codebolt, you write the logic that drives the agent’s decision-making and execution—the **Agentic Loop**—instead of treating it as a black box.
 
-Codebolt AI Editor is a revolutionary development environment that combines the power of artificial intelligence with traditional coding tools to provide an unparalleled programming experience. Built for modern developers, it offers intelligent code generation, automated workflows, and context-aware assistance to help you build better software faster.
+## What is the Agentic Loop?
 
-## Key Features
+The **Agentic Loop** is the iterative cycle an agent follows to solve a task by perceiving context, reasoning, taking actions, and learning from results until it reaches a done state.
 
-- **AI-Powered Agents**: Create custom agents that can understand your codebase and perform complex tasks autonomously
-- **Multi-Agent Coordination**: Orchestrate multiple agents to work together on complex projects
-- **Inline Edit (Ctrl+K)**: Make instant code modifications with AI assistance directly in your editor
-- **Intelligent Chats**: Get coding help through natural language conversations with AI
-- **Task Flow Automation**: Build and manage sophisticated workflows that integrate seamlessly with your development process
-- **Context-Aware Intelligence**: Leverage deep project understanding for smarter suggestions and actions
-- **Command Line Interface**: Powerful CLI tools for automation and scripting
-- **TypeScript SDK**: Extend Codebolt with custom integrations and extensions
+```mermaid
+%%{init: {'themeVariables': { 'fontSize': '12px', 'loopTextColor': '#000000', 'labelBoxBorderColor': '#000000', 'labelBoxBkgColor': '#ffffcc' }, 'sequence': { 'useMaxWidth': false, 'boxMargin': 10, 'boxTextMargin': 5 }}}%%
+sequenceDiagram
+    autonumber
+    participant User as User
+    participant Agent as Agent
+    participant LLM as LLM
+    participant Memory as State
+    participant Tool as Tool
 
-## Quick Links
+    User->>Agent: in - intent/prompt
+    activate Agent
+    Agent->>Memory: Gather context (code, history, state)
+    Memory-->>Agent: 
+    deactivate Agent
+    activate Agent
+    Agent->>LLM: Build prompt (context, tools, etc) and Call LLM 
+    LLM-->>Agent: LLM Response (Tool call(s) with args)
+    deactivate Agent
+    loop Agentic Loop
+        activate Agent
+        Agent->>Tool: Call Tool
+        Tool-->>Agent: Tool Execution Results
+        deactivate Agent
+        activate Agent
+        Agent->>Memory: Update memory/state/conversation history with Tool Execution Results
+        Memory-->>Agent: 
+        deactivate Agent
+        activate Agent
+        Agent->>LLM: Update Prompt with Tool and Call LLM
+        LLM-->>Agent: Tool call with args or Clarification question or Done
+        deactivate Agent
+    end
+    Agent->>User: End the Agent if LLM Says Done
+```
 
-### 🚀 Getting Started
-- [Installation Guide](3_CustomAgents/2-getting-started/installation.md) - Set up Codebolt AI Editor on your system
-- [Quickstart Tutorial](3_CustomAgents/2-getting-started/quickstart.md) - Get up and running in minutes
-- [Core Concepts](concepts.md) - Understand the fundamental building blocks
+### How it runs in Codebolt
 
-### 🔧 Core Features
-- [Agents](3_CustomAgents/agents/overview.md) - Learn about AI agents and how to create them
-- [Multi-Agents](3_CustomAgents/core/multi-agents/overview.md) - Coordinate multiple agents for complex tasks
-- [Inline Edit](3_CustomAgents/core/inline-edit/overview.md) - Master the Ctrl+K feature for quick edits
-- [MCP Tools](3_CustomAgents/Tools/overview.md) - Extend functionality with Modular Component Plugins
-- [Chats](3_CustomAgents/core/chats/overview.md) - Leverage AI-assisted conversations
-- [Task Flow](3_CustomAgents/core/task-flow/overview.md) - Automate your development workflows
+- Capture the user’s goal and current project context.
+- Build a structured prompt with relevant code, history, and available tools.
+- Call the model to reason about the next step (respond, ask, call tools, or finish).
+- If tools are selected, execute them (filesystem, git, browser, tests, vector search, etc.).
+- Observe results, update agent state, enrich context, and iterate.
+- Stop when the model or your policy signals completion and return the final answer.
 
-### 📚 Learn More
-- [End-to-End Tutorials](tutorials.md) - Complete project walkthroughs
-- [API Reference](api-reference.md) - Detailed technical documentation
-- [Troubleshooting](troubleshooting.md) - Common issues and solutions
+### Why exposing the Agentic Loop via APIs matters
+- **Full control**: Own the reasoning and action policy. Tailor when to plan, when to execute, when to ask for clarification, and when to stop.
+- **Determinism and testing**: Swap models, freeze prompts, inject mocks, and write unit/integration tests for each loop stage.
+- **Composability**: Mix and match tools, memory, RAG, and evaluators. Compose multi-agent patterns or delegate to remote agents.
+- **Safety and governance**: Enforce guardrails, approvals, rate limits, and sandboxed execution at the exact decision points.
+- **Observability**: Instrument every loop turn—prompts, tool I/O, and state transitions—for debugging and analytics.
+- **Performance tuning**: Cache sub-results, short-circuit trivial steps, batch tool calls, and control token/latency budgets.
+- **Portability**: Bring your agent logic to different projects or environments without rewriting editor internals.
 
-## Community & Support
+This page is an overview—specific API references are available elsewhere in the docs, but you don’t need them to understand the central idea: Codebolt lets you implement your own Agentic Loop, end to end.
 
-Join our growing community of developers who are revolutionizing how code is written with AI assistance. Whether you're building your first agent or orchestrating complex multi-agent workflows, we're here to help you succeed.
-
-Ready to transform your coding experience? Let's get started!
+### Agentic Loop vs. simple prompt-based editors
+- **Engineered loop vs. single-shot prompts**: Codebolt agents iterate with planning, tool use, and state. Prompt-only editors send a static prompt per turn with limited control over process.
+- **Actionable tools vs. plain text**: Agents execute filesystem, git, web, test, and other tools programmatically and verify results; prompt-only flows rely on manual copy-paste by the user.
+- **Policy control vs. hidden heuristics**: You define stop criteria, retries, approvals, and delegation. Simple editors hide these choices inside product logic.
+- **Traceable vs. opaque**: Every turn, prompt, tool call, and state change can be observed and tested. Prompt-only workflows typically expose just chat history.
+- **Safer by construction**: Guardrails and sandboxes live at action boundaries. Prompt-only systems offer coarse safeguards around text generation.
+- **Faster and cheaper at scale**: You can cache, batch, and short-circuit steps. One-shot prompting offers fewer levers for cost/latency control.
