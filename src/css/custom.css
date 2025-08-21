@@ -257,3 +257,8 @@ body {
 [data-theme='dark'] .footer {
   background-color: rgba(34, 31, 29, 0.9);
 }
+
+p{
+  margin: 0;
+  padding: 0;
+}

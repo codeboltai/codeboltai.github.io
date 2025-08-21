@@ -76,24 +76,24 @@ const config: Config = {
           position: 'left',
           label: 'User Guide',
         },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'devSidebar',
+        //   position: 'left',
+        //   label: 'Developer Guide',
+        // },
         {
           type: 'docSidebar',
-          sidebarId: 'devSidebar',
+          sidebarId: 'customAgentsSidebar',
           position: 'left',
-          label: 'Developer Guide',
+          label: 'Custom Agents',
         },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'toolSidebar',
-        //   position: 'left',
-        //   label: 'Tools',
-        // },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'appSidebar',
-        //   position: 'left',
-        //   label: 'Apps',
-        // },
+        {
+          type: 'docSidebar',
+          sidebarId: 'multiAgentsSidebar',
+          position: 'left',
+          label: 'Multi-Agent Orchestration',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'jsapiSidebar',
