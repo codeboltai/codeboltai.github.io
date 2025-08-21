@@ -81,7 +81,7 @@ cbapicategory:
 
 ## Overview
 
-Codebolt exposes all the major functions needed to create an AI Agent using the [CodeboltJS SDK](). The SDK provides a list of functions that you can use when creating a Codebolt Agent. Although these functions can be used in any mode, but they are primarily used for [Agent creation in Direct Function Mode]().
+Codebolt exposes all the major functions needed to create an AI Agent using the CodeboltJS SDK. The SDK provides a list of functions that you can use when creating a Codebolt Agent. Although these functions can be used in any mode, but they are primarily used for Agent creation in Direct Function Mode.
 
 The major functions exposed are:
 <CBAPICategory />

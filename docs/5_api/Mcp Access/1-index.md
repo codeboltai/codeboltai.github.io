@@ -6,7 +6,8 @@ Codebolt provides access to the various functions in a MCP Tool format, where wh
 In Typical Tools Calling format, you will write the following Code to send the tool data in Manual Format:
 
 For sending the Request to the LLM:
-```
+
+```js
 var tools = [
 	{
 		name: "WriteFile",
@@ -21,12 +22,14 @@ var tools = [
 ```
 
 And when you call the LLM using:
-```
+
+```js
 var result = codebolt.llm.inference(message, tools)
 ```
 
 and you then when you get the result, you will then parse the tool call result from the result and call the relevant api in a format like:
-```
+
+```js
 let toolexecutionresult = {};
 foreach(tool in result.tools){
 	if(tool === "fileRead"){
@@ -43,17 +46,19 @@ foreach(tool in result.tools){
 }
 ```
 
-You can then send the Tool Execution Result back to the LLM in the [Agent Execution Loop]() using something like:
-```
+You can then send the Tool Execution Result back to the LLM in the Agent Execution Loop using something like:
+
+```js
 codebolt.llm.inference(message, [...tools,...toolexecutionResult])
 ```
 
 ### 1.1.2 Automated Tool Management with Tool Access API
 
-As we see in [1.1.1]() for each tool we need to write the Tool Array giving the MCP Tool Name, Detail of the MCP Tool along with the schema of the input. Also when we get the response from the LLM, then we have to manually check the tool that has been called, also then we have manually format the functions and inputs and call each of the api. 
+As we see in section 1.1.1 for each tool we need to write the Tool Array giving the MCP Tool Name, Detail of the MCP Tool along with the schema of the input. Also when we get the response from the LLM, then we have to manually check the tool that has been called, also then we have manually format the functions and inputs and call each of the api. 
 
 You can simplify the creation of the tool Json using the MCP Access in the following format:
-```
+
+```js
 var tools = codeboltjs.tools.getTools([
 	{toolbox: filesystem, toolName: 'read_file'},
 	{toolbox: filesystem, toolName: 'write_file'}
@@ -78,14 +83,14 @@ var tools = [
 
 Calling this getTools gives the complete json including a unique name, description, schema, for the tool. 
 
-All the functionalities exposed in the [API Access]() are also exposed as Tool Format. 
+All the functionalities exposed in the API Access are also exposed as Tool Format. 
 
 Also now when you receive the response from the LLM, since the Tool Names are consistent and pre-defined, we can simply let codebolt process the response automatically.
 #### 1.1.2.1 Process all Tools using a single api:
 
 Since the tools are in defined name and schema, you can directly process them.
 
-```
+```js
 var llmResult = codebolt.llm.inference(message, tools)
 var toolsexecutionresult = codebolt.tools.executeTool(llmResult.tools)
 ```
@@ -94,7 +99,7 @@ var toolsexecutionresult = codebolt.tools.executeTool(llmResult.tools)
 
 If you want more control then you can process the tools one by one in a loop. This is much handy if you have added any custom tools at the code level.
 
-```
+```js
 var toolexeutionresult = [];
 var result = codebolt.llm.inference(message, tools)
 foreach (resulttool in result.tools){
@@ -110,7 +115,7 @@ foreach (resulttool in result.tools){
 Processing Tools One By One allows you to add Custom Functions in Tool Call from the Agent. 
 
 Example:  when writing an Agent, you want to add a Custom Calculator Add Tool along with other tools, then you can add the tool from the agent and then process the tool before sending it for default tool processing. A Sample Code would be:
-```
+```js
 var tools = codeboltjs.tools.getTools([
 	{toolbox: filesystem, toolName: 'read_file'},
 	{toolbox: filesystem, toolName: 'write_file'}
@@ -140,16 +145,18 @@ foreach (resulttool in llmResult.tools){
 
 In the above example, we have added a custom Tool Call called as mycalculatoradd, which has been added by the agent and this gets processed at agent level. This allows agent creators to create custom tools at the agent level, instead of relying on the Codebolt provided Tools or custom MCPs added by the user. 
 
-Please read more about the different ways in which [agent creators can add and run tools from the Agent logic]()
+Please read more about the different ways in which agent creators can add and run tools from the Agent logic
 
 ## 1.2 Custom Functionality Calling
 
 The Mcp tools call can also be used as an alternative to directly calling the API Access Library. So for file read you can either call:
-```
+
+```js
 codebolt.fs.readfile(filename, filecontent, filepath)
 ```
 or you can call 
-```
+
+```js
 codebolt.tool.executeTool("codebolt_readfile", filename, filecontent, filepath)
 ```
 
