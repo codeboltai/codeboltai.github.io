@@ -7,8 +7,20 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - runner: [self-hosted, macOS, ARM64]
+            fallback: ubuntu-latest
+      fail-fast: false
+    runs-on: ${{ matrix.runner }}
+    continue-on-error: ${{ matrix.fallback != '' }}
+    defaults:
+      run:
+        working-directory: documentation
     env:
+      # Bump Node heap to 6 GB — the typedoc-generated type-reference
+      # content pushes Docusaurus's webpack bundle past the default 2 GB.
       NODE_OPTIONS: --max-old-space-size=6144
     steps:
       - uses: actions/checkout@v4
