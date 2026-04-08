@@ -34,11 +34,11 @@ Starts execution of an ActionBlock by name with optional parameters.
 
 ### Returns
 
-- **`Promise<[StartActionBlockResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartActionBlockResponse)>`**: A promise that resolves to the execution result.
+- **`Promise<[StartActionBlockResponse](/docs/reference/type-reference/codeboltjs/interfaces/StartActionBlockResponse)>`**: A promise that resolves to the execution result.
 
 ### Response Structure
 
-Returns [`StartActionBlockResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartActionBlockResponse) with execution result.
+Returns [`StartActionBlockResponse`](/docs/reference/type-reference/codeboltjs/interfaces/StartActionBlockResponse) with execution result.
 
 **Response Properties:**
 - `type` (string): Always "startActionBlockResponse"

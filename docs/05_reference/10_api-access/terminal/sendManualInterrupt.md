@@ -25,7 +25,7 @@ Sends a manual interrupt signal (SIGINT) to the terminal to cancel or stop a cur
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`TerminalInterruptResponse`](/docs/api/11_doc-type-ref/types/interfaces/TerminalInterruptResponse) object with the following properties:
+The method returns a Promise that resolves to a [`TerminalInterruptResponse`](/docs/reference/type-reference/types/interfaces/TerminalInterruptResponse) object with the following properties:
 
 #### TerminalInterruptResponse
 - **`type`** (string): Always "terminalInterrupted".

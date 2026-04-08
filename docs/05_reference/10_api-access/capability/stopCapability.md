@@ -29,11 +29,11 @@ Stops a currently running capability execution by execution ID. This cancels the
 
 ### Returns
 
-- **`Promise<[StopCapabilityResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StopCapabilityResponse)>`**: A promise that resolves when the execution has been stopped.
+- **`Promise<[StopCapabilityResponse](/docs/reference/type-reference/codeboltjs/interfaces/StopCapabilityResponse)>`**: A promise that resolves when the execution has been stopped.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`StopCapabilityResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StopCapabilityResponse) object.
+The method returns a Promise that resolves to a [`StopCapabilityResponse`](/docs/reference/type-reference/codeboltjs/interfaces/StopCapabilityResponse) object.
 
 **Response Properties:**
 - `type` (string): Always "stopCapabilityResponse"

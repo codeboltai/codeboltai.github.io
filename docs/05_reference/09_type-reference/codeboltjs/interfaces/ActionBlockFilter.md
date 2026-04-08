@@ -2,7 +2,7 @@
 title: ActionBlockFilter
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/actionBlock.ts:45
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="type"></a> `type?` | [`ActionBlockType`](../enumerations/ActionBlockType) | [packages/codeboltjs/src/modules/actionBlock.ts:46](packages/codeboltjs/src/modules/actionBlock.ts#L46) |
+| <a id="type"></a> `type?` | [`ActionBlockType`](../enumerations/ActionBlockType) | packages/codeboltjs/src/modules/actionBlock.ts:46 |

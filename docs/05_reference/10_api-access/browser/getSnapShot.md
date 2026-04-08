@@ -26,7 +26,7 @@ Retrieves a snapshot of the current page.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`BrowserSnapshotResponse`](/docs/api/11_doc-type-ref/types/interfaces/BrowserSnapshotResponse) object with the following properties:
+The method returns a Promise that resolves to a [`BrowserSnapshotResponse`](/docs/reference/type-reference/types/interfaces/BrowserSnapshotResponse) object with the following properties:
 
 - **`type`** (string): Always "getSnapShotResponse".
 - **`payload`** (object, optional): Contains the response data including:

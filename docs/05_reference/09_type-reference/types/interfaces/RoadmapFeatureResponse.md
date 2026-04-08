@@ -2,7 +2,7 @@
 title: RoadmapFeatureResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:174
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="feature"></a> `feature` | [`Feature`](Feature) | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:175](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L175) |
+| <a id="feature"></a> `feature` | [`Feature`](Feature) | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:175 |

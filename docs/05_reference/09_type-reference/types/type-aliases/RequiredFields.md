@@ -2,7 +2,7 @@
 title: RequiredFields
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

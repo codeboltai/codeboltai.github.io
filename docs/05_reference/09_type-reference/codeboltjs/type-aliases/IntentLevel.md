@@ -2,7 +2,7 @@
 title: IntentLevel
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

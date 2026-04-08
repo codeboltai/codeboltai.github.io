@@ -27,16 +27,16 @@ codebolt.roadmap.createIdea(data: CreateIdeaData, projectPath: string): Promise<
 Creates a new idea as a pre-roadmap suggestion. Ideas can be reviewed and potentially promoted to features.
 ### Parameters
 
-- **`data`** ([CreateIdeaData](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateIdeaData)): Idea data including title, description, and optional metadata
+- **`data`** ([CreateIdeaData](/docs/reference/type-reference/codeboltjs/interfaces/CreateIdeaData)): Idea data including title, description, and optional metadata
 - **`projectPath`** (string): Optional project path (uses active project if not provided)
 
 ### Returns
 
-- **`Promise<[RoadmapIdeaResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RoadmapIdeaResponse)>`**: A promise that resolves to the created idea
+- **`Promise<[RoadmapIdeaResponse](/docs/reference/type-reference/codeboltjs/interfaces/RoadmapIdeaResponse)>`**: A promise that resolves to the created idea
 
 ### Parameter Details
 
-The [`CreateIdeaData`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateIdeaData) interface includes:
+The [`CreateIdeaData`](/docs/reference/type-reference/codeboltjs/interfaces/CreateIdeaData) interface includes:
 - **`title`** (string, required): Idea title
 - **`description`** (string, optional): Detailed idea description
 - **`category`** (string, optional): Idea category

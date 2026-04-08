@@ -47,11 +47,11 @@ codebolt.persistentMemory.create(config: CreatePersistentMemoryParams): Promise<
 Creates a new persistent memory configuration for defining how agents access and retrieve persistent knowledge.
 ### Parameters
 
-- **`config`** ([CreatePersistentMemoryParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreatePersistentMemoryParams)): Memory configuration object.
+- **`config`** ([CreatePersistentMemoryParams](/docs/reference/type-reference/codeboltjs/interfaces/CreatePersistentMemoryParams)): Memory configuration object.
 
 ### Returns
 
-- **`Promise<[PersistentMemoryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/PersistentMemoryResponse)>`**: A promise that resolves to the created memory details.
+- **`Promise<[PersistentMemoryResponse](/docs/reference/type-reference/codeboltjs/interfaces/PersistentMemoryResponse)>`**: A promise that resolves to the created memory details.
 
 ### Examples
 

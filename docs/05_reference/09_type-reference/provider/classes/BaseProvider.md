@@ -2,7 +2,7 @@
 title: BaseProvider
 ---
 
-[**@codebolt/provider**](../index)
+[**@codebolt/provider**](../index.md)
 
 ***
 
@@ -43,9 +43,9 @@ Defined in: BaseProvider.ts:41
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="agentserver"></a> `agentServer` | `protected` | [`AgentServerConnection`](../interfaces/AgentServerConnection) | [BaseProvider.ts:35](packages/provider/src/lib/BaseProvider.ts#L35) |
-| <a id="config"></a> `config` | `readonly` | [`BaseProviderConfig`](../interfaces/BaseProviderConfig) | [BaseProvider.ts:28](packages/provider/src/lib/BaseProvider.ts#L28) |
-| <a id="state"></a> `state` | `protected` | [`ProviderState`](../interfaces/ProviderState) & \{ `connectedEnvironments?`: `string`[]; `environmentId?`: `string`; `providerId?`: `string`; `startTime?`: `number`; \} | [BaseProvider.ts:29](packages/provider/src/lib/BaseProvider.ts#L29) |
+| <a id="agentserver"></a> `agentServer` | `protected` | [`AgentServerConnection`](../interfaces/AgentServerConnection) | BaseProvider.ts:35 |
+| <a id="config"></a> `config` | `readonly` | [`BaseProviderConfig`](../interfaces/BaseProviderConfig) | BaseProvider.ts:28 |
+| <a id="state"></a> `state` | `protected` | [`ProviderState`](../interfaces/ProviderState) & \{ `connectedEnvironments?`: `string`[]; `environmentId?`: `string`; `providerId?`: `string`; `startTime?`: `number`; \} | BaseProvider.ts:29 |
 
 ## Methods
 

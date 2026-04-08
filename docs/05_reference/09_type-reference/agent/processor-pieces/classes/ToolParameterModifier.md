@@ -2,7 +2,7 @@
 title: ToolParameterModifier
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -44,7 +44,7 @@ BasePreToolCallProcessor.constructor
 
 | Property | Modifier | Type | Default value | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePreToolCallProcessor.context` | [packages/agent/src/processor-pieces/base/basePreToolCallProcessor.ts:19](packages/agent/src/processor-pieces/base/basePreToolCallProcessor.ts#L19) |
+| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePreToolCallProcessor.context` | packages/agent/src/processor-pieces/base/basePreToolCallProcessor.ts:19 |
 
 ## Methods
 

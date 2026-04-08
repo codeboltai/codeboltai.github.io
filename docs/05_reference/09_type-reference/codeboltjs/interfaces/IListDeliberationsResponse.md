@@ -2,7 +2,7 @@
 title: IListDeliberationsResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

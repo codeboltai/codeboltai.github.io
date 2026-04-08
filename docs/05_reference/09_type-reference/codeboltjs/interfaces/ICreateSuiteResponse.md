@@ -2,7 +2,7 @@
 title: ICreateSuiteResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

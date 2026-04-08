@@ -2,7 +2,7 @@
 title: ProcessControl
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,4 +16,4 @@ Process control return type without cleanup
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="stopprocess"></a> `stopProcess` | () => `void` | [common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:155](common/types/src/codeboltjstypes/libFunctionTypes/chat.ts#L155) |
+| <a id="stopprocess"></a> `stopProcess` | () => `void` | common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:155 |

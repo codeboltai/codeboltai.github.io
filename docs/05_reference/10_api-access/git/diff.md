@@ -33,11 +33,11 @@ Retrieves the diff of changes for a specific commit in the Git repository. Shows
 
 ### Returns
 
-- **`Promise<GitDiffResponse>`**: A promise that resolves with a [`GitDiffResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitDiffResponse) object containing the diff data and change statistics.
+- **`Promise<GitDiffResponse>`**: A promise that resolves with a [`GitDiffResponse`](/docs/reference/type-reference/types/interfaces/GitDiffResponse) object containing the diff data and change statistics.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitDiffResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitDiffResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitDiffResponse`](/docs/reference/type-reference/types/interfaces/GitDiffResponse) object with the following properties:
 
 - **`type`** (string): Always "gitDiffResponse".
 - **`data`** (DiffResult | string, optional): The diff data, which can be either:

@@ -36,7 +36,7 @@ Executes a given command and keeps running until an error occurs. This method is
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`CommandError`](/docs/api/11_doc-type-ref/types/interfaces/CommandError) object when an error occurs:
+The method returns a Promise that resolves to a [`CommandError`](/docs/reference/type-reference/types/interfaces/CommandError) object when an error occurs:
 
 #### CommandError (Error Response)
 - **`type`** (string): Always "commandError".
@@ -373,6 +373,6 @@ await monitorWithCleanup(
 - Use `executeInMain: true` when you need the command to run in the main terminal context
 - The method is ideal for monitoring development servers, build processes, and background services
 - Consider implementing retry logic for recoverable errors
-- Always handle the resolved [`CommandError`](/docs/api/11_doc-type-ref/types/interfaces/CommandError) to understand why the process stopped
+- Always handle the resolved [`CommandError`](/docs/reference/type-reference/types/interfaces/CommandError) to understand why the process stopped
 - For processes that should run indefinitely, this method helps detect when they unexpectedly terminate
 - Use appropriate cleanup procedures when the monitored process stops

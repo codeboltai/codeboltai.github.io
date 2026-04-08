@@ -29,7 +29,7 @@ Creates a new context rule engine with rules for memory inclusion/exclusion.
 
 ### Returns
 
-- **`Promise<[ContextRuleEngineResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the created rule engine details.
+- **`Promise<[ContextRuleEngineResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the created rule engine details.
 
 ### Examples
 

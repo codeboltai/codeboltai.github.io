@@ -2,7 +2,7 @@
 title: JobDependencyResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

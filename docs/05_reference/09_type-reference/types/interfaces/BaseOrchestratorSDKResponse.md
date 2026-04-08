@@ -2,7 +2,7 @@
 title: BaseOrchestratorSDKResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -27,6 +27,6 @@ Types for the orchestrator module functions
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | [`OrchestratorError`](OrchestratorError) | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L9) |
-| <a id="success"></a> `success` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L8) |
+| <a id="error"></a> `error?` | [`OrchestratorError`](OrchestratorError) | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:10 |
+| <a id="message"></a> `message?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:9 |
+| <a id="success"></a> `success` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:8 |

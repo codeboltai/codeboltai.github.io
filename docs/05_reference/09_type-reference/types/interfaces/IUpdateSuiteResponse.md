@@ -2,7 +2,7 @@
 title: IUpdateSuiteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:225
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:226](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L226) |
-| `payload.suite` | [`TestSuite`](TestSuite) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:226](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L226) |
+| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:226 |
+| `payload.suite` | [`TestSuite`](TestSuite) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:226 |

@@ -2,7 +2,7 @@
 title: JobBidListResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:395
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="bids"></a> `bids` | [`JobBid`](JobBid)[] | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:396](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L396) |
+| <a id="bids"></a> `bids` | [`JobBid`](JobBid)[] | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:396 |

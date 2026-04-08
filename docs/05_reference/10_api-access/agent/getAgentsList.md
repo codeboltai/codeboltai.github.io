@@ -28,11 +28,11 @@ Retrieves a list of agents based on the specified type.
 
 ### Returns
 
-- **`Promise<ListAgentsResponse>`**: A promise that resolves with a [`ListAgentsResponse`](/docs/api/11_doc-type-ref/types/interfaces/ListAgentsResponse) object containing the list of agents.
+- **`Promise<ListAgentsResponse>`**: A promise that resolves with a [`ListAgentsResponse`](/docs/reference/type-reference/types/interfaces/ListAgentsResponse) object containing the list of agents.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ListAgentsResponse`](/docs/api/11_doc-type-ref/types/interfaces/ListAgentsResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ListAgentsResponse`](/docs/reference/type-reference/types/interfaces/ListAgentsResponse) object with the following properties:
 
 - **`type`** (string): Always "listAgentsResponse".
 - **`agents`** (array, optional): An array of agent objects.

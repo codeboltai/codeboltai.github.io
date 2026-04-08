@@ -2,7 +2,7 @@
 title: UpdatePhaseData
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

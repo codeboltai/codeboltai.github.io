@@ -28,11 +28,11 @@ Commits the staged changes in the local repository with the given commit message
 
 ### Returns
 
-- **`Promise<GitCommitResponse>`**: A promise that resolves with a [`GitCommitResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitCommitResponse) object containing the commit information and metadata.
+- **`Promise<GitCommitResponse>`**: A promise that resolves with a [`GitCommitResponse`](/docs/reference/type-reference/types/interfaces/GitCommitResponse) object containing the commit information and metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitCommitResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitCommitResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitCommitResponse`](/docs/reference/type-reference/types/interfaces/GitCommitResponse) object with the following properties:
 
 - **`type`** (string): Always "gitCommitResponse".
 - **`content`** (string, optional): Content or message about the commit operation.

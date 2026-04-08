@@ -2,7 +2,7 @@
 title: CalendarUpdatePayload
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

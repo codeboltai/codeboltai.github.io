@@ -24,11 +24,11 @@ codebolt.groupFeedback.reply(params: IReplyParams): Promise<IReplyResponse>
 Adds a reply to a specific response in a feedback session, enabling threaded discussions.
 ### Parameters
 
-- **`params`** ([IReplyParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IReplyParams)): Parameters including feedbackId, responseId, participantId, and reply content.
+- **`params`** ([IReplyParams](/docs/reference/type-reference/codeboltjs/interfaces/IReplyParams)): Parameters including feedbackId, responseId, participantId, and reply content.
 
 ### Returns
 
-- **`Promise<[IReplyResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IReplyResponse)>`**: A promise that resolves with the added reply details.
+- **`Promise<[IReplyResponse](/docs/reference/type-reference/codeboltjs/interfaces/IReplyResponse)>`**: A promise that resolves with the added reply details.
 
 ### Examples
 

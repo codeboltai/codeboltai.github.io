@@ -29,11 +29,11 @@ Retrieves detailed information about a specific ActionBlock including metadata, 
 
 ### Returns
 
-- **`Promise<[GetActionBlockDetailResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetActionBlockDetailResponse)>`**: A promise that resolves to ActionBlock details.
+- **`Promise<[GetActionBlockDetailResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetActionBlockDetailResponse)>`**: A promise that resolves to ActionBlock details.
 
 ### Response Structure
 
-Returns [`GetActionBlockDetailResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetActionBlockDetailResponse) with detailed ActionBlock information.
+Returns [`GetActionBlockDetailResponse`](/docs/reference/type-reference/codeboltjs/interfaces/GetActionBlockDetailResponse) with detailed ActionBlock information.
 
 **Response Properties:**
 - `type` (string): Always "getActionBlockDetailResponse"

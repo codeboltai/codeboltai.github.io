@@ -25,11 +25,11 @@ codebolt.agentDeliberation.get(params: IGetDeliberationParams): Promise<IGetDeli
 Retrieves details of a specific deliberation including responses and votes.
 ### Parameters
 
-- **`params`** ([IGetDeliberationParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetDeliberationParams)): Parameters including deliberation ID and optional view type.
+- **`params`** ([IGetDeliberationParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetDeliberationParams)): Parameters including deliberation ID and optional view type.
 
 ### Returns
 
-- **`Promise<[IGetDeliberationResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetDeliberationResponse)>`**: A promise that resolves to deliberation details.
+- **`Promise<[IGetDeliberationResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetDeliberationResponse)>`**: A promise that resolves to deliberation details.
 
 ### Examples
 

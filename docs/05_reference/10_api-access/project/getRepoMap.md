@@ -32,7 +32,7 @@ Retrieves the repository map for the current project, providing a structural ove
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetRepoMapResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetRepoMapResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetRepoMapResponse`](/docs/reference/type-reference/types/interfaces/GetRepoMapResponse) object with the following properties:
 
 - **`type`** (string): Always "getRepoMapResponse".
 - **`repoMap`** (any, optional): The repository map data containing project structure information. The exact structure depends on the project type and configuration.

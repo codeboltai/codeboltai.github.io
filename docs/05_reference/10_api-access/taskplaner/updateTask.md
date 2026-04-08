@@ -32,7 +32,7 @@ Updates an existing task in the task management system via WebSocket communicati
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`UpdateTasksResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateTasksResponse) object with the following properties:
+The method returns a Promise that resolves to an [`UpdateTasksResponse`](/docs/reference/type-reference/types/interfaces/UpdateTasksResponse) object with the following properties:
 
 - **`type`** (string): Always "updateTasksResponse".
 - **`task`** (Task, optional): The updated Task object containing:

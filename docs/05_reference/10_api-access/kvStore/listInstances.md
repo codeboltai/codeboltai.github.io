@@ -21,11 +21,11 @@ codebolt.kvStore.listInstances(): Promise<KVInstanceListResponse>
 Lists all available KV store instances with their basic information.
 ### Returns
 
-- **`Promise<[KVInstanceListResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceListResponse)>`**: A promise that resolves with an array of all KV store instances and their metadata.
+- **`Promise<[KVInstanceListResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceListResponse)>`**: A promise that resolves with an array of all KV store instances and their metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVInstanceListResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceListResponse) object:
+The method returns a Promise that resolves to a [`KVInstanceListResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceListResponse) object:
 
 ```typescript
 {

@@ -29,11 +29,11 @@ Lists capabilities that have a specific tag. Useful for finding capabilities rel
 
 ### Returns
 
-- **`Promise<[ListCapabilitiesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities with the specified tag.
+- **`Promise<[ListCapabilitiesResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities with the specified tag.
 
 ### Response Structure
 
-Returns a [`ListCapabilitiesResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse) with capabilities matching the tag.
+Returns a [`ListCapabilitiesResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse) with capabilities matching the tag.
 
 ### Examples
 

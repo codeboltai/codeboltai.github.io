@@ -19,7 +19,7 @@ const instance = await codebolt.getBrowserInstance(instanceId);
 
 ## Return Value
 
-Returns a promise that resolves to a [`BrowserInstanceInfo`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/BrowserInstanceInfo) object if found, or `null` if the instance doesn't exist:
+Returns a promise that resolves to a [`BrowserInstanceInfo`](/docs/reference/type-reference/codeboltjs/interfaces/BrowserInstanceInfo) object if found, or `null` if the instance doesn't exist:
 
 ```js
 {
@@ -180,7 +180,7 @@ try {
 
 ## Related Functions
 
-- [`listBrowserInstances()`](/docs/api/apiaccess/browser/listInstances) - List all instances
-- [`setActiveBrowserInstance()`](/docs/api/apiaccess/browser/setActiveInstance) - Set active instance
-- [`openNewBrowserInstance()`](/docs/api/apiaccess/browser/openNewInstance) - Create new instance
-- [`closeBrowserInstance()`](/docs/api/apiaccess/browser/closeInstance) - Close instance
+- [`listBrowserInstances()`](/docs/reference/api-access/browser/listInstances) - List all instances
+- [`setActiveBrowserInstance()`](/docs/reference/api-access/browser/setActiveInstance) - Set active instance
+- [`openNewBrowserInstance()`](/docs/reference/api-access/browser/openNewInstance) - Create new instance
+- [`closeBrowserInstance()`](/docs/reference/api-access/browser/closeInstance) - Close instance

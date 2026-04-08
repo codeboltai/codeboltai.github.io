@@ -21,11 +21,11 @@ codebolt.browser.getUrl(): Promise<UrlResponse>
 Gets the current URL of the active browser page. 
 ### Returns
 
-- **`Promise<UrlResponse>`**: A promise that resolves with a [`UrlResponse`](/docs/api/11_doc-type-ref/types/interfaces/UrlResponse) object containing the current URL.
+- **`Promise<UrlResponse>`**: A promise that resolves with a [`UrlResponse`](/docs/reference/type-reference/types/interfaces/UrlResponse) object containing the current URL.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`UrlResponse`](/docs/api/11_doc-type-ref/types/interfaces/UrlResponse) object with the following properties:
+The method returns a Promise that resolves to a [`UrlResponse`](/docs/reference/type-reference/types/interfaces/UrlResponse) object with the following properties:
 
 - **`type`** (string): Always "getUrlResponse".
 - **`url`** (string, optional): The current URL of the page.
@@ -60,4 +60,4 @@ if (urlResponse.success) {
 
 ### Explanation
 
-The `codebolt.browser.getUrl()` function is essential for tracking the browser's current location. It's commonly used after a navigation action (like `goToPage` or `click`) to confirm that the browser has loaded the correct page. The returned [`UrlResponse`](/docs/api/11_doc-type-ref/types/interfaces/UrlResponse) object provides the URL and other useful metadata.
+The `codebolt.browser.getUrl()` function is essential for tracking the browser's current location. It's commonly used after a navigation action (like `goToPage` or `click`) to confirm that the browser has loaded the correct page. The returned [`UrlResponse`](/docs/reference/type-reference/types/interfaces/UrlResponse) object provides the URL and other useful metadata.

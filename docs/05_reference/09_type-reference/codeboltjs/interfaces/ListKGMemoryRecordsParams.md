@@ -2,7 +2,7 @@
 title: ListKGMemoryRecordsParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

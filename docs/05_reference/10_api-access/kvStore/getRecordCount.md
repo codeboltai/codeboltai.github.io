@@ -34,11 +34,11 @@ Gets the total number of records in an instance or namespace.
 
 ### Returns
 
-- **`Promise<[KVRecordCountResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVRecordCountResponse)>`**: A promise that resolves with the total record count.
+- **`Promise<[KVRecordCountResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVRecordCountResponse)>`**: A promise that resolves with the total record count.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVRecordCountResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVRecordCountResponse) object:
+The method returns a Promise that resolves to a [`KVRecordCountResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVRecordCountResponse) object:
 
 ```typescript
 {

@@ -2,7 +2,7 @@
 title: BaseLLMSDKResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -20,6 +20,6 @@ Base response interface for LLM operations
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:116](common/types/src/codeboltjstypes/libFunctionTypes/llm.ts#L116) |
-| <a id="message"></a> `message?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:115](common/types/src/codeboltjstypes/libFunctionTypes/llm.ts#L115) |
-| <a id="success"></a> `success?` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:114](common/types/src/codeboltjstypes/libFunctionTypes/llm.ts#L114) |
+| <a id="error"></a> `error?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:116 |
+| <a id="message"></a> `message?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:115 |
+| <a id="success"></a> `success?` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:114 |

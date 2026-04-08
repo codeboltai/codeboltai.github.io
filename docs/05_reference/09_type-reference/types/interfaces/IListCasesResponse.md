@@ -2,7 +2,7 @@
 title: IListCasesResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:249
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `cases`: [`TestCase`](TestCase)[]; \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:250](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L250) |
-| `payload.cases` | [`TestCase`](TestCase)[] | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:250](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L250) |
+| <a id="payload"></a> `payload` | \{ `cases`: [`TestCase`](TestCase)[]; \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:250 |
+| `payload.cases` | [`TestCase`](TestCase)[] | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:250 |

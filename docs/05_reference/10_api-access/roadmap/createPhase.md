@@ -27,16 +27,16 @@ codebolt.roadmap.createPhase(data: CreatePhaseData, projectPath: string): Promis
 Creates a new phase in the project roadmap. Phases represent major milestones or stages of project development.
 ### Parameters
 
-- **`data`** ([CreatePhaseData](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreatePhaseData)): Phase data including name, description, and order
+- **`data`** ([CreatePhaseData](/docs/reference/type-reference/codeboltjs/interfaces/CreatePhaseData)): Phase data including name, description, and order
 - **`projectPath`** (string): Optional project path (uses active project if not provided)
 
 ### Returns
 
-- **`Promise<[RoadmapPhaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RoadmapPhaseResponse)>`**: A promise that resolves to the created phase
+- **`Promise<[RoadmapPhaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/RoadmapPhaseResponse)>`**: A promise that resolves to the created phase
 
 ### Parameter Details
 
-The [`CreatePhaseData`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreatePhaseData) interface includes:
+The [`CreatePhaseData`](/docs/reference/type-reference/codeboltjs/interfaces/CreatePhaseData) interface includes:
 - **`name`** (string, required): Phase name
 - **`description`** (string, optional): Phase description
 - **`order`** (number, optional): Phase order in the roadmap (default: appended to end)

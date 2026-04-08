@@ -29,7 +29,7 @@ Lists file update intents with optional filtering.
 
 ### Returns
 
-- **`Promise<[FileUpdateIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/FileUpdateIntent)[]>`**: A promise that resolves with an array of file update intents.
+- **`Promise<[FileUpdateIntent](/docs/reference/type-reference/codeboltjs/interfaces/FileUpdateIntent)[]>`**: A promise that resolves with an array of file update intents.
 
 ### Examples
 

@@ -2,7 +2,7 @@
 title: TaskUpdateTool
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -38,14 +38,14 @@ Defined in: packages/codeboltjs/src/tools/task/task-update.ts:77
 
 | Property | Modifier | Type | Default value | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="canupdateoutput"></a> `canUpdateOutput` | `readonly` | `boolean` | `false` | Whether the tool supports live (streaming) output | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`canUpdateOutput`](BaseDeclarativeTool.md#canupdateoutput) | [packages/codeboltjs/src/tools/base-tool.ts:69](packages/codeboltjs/src/tools/base-tool.ts#L69) |
-| <a id="description"></a> `description` | `readonly` | `string` | `undefined` | Description of what the tool does | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`description`](BaseDeclarativeTool.md#description) | [packages/codeboltjs/src/tools/base-tool.ts:65](packages/codeboltjs/src/tools/base-tool.ts#L65) |
-| <a id="displayname"></a> `displayName` | `readonly` | `string` | `undefined` | The user-friendly display name of the tool | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`displayName`](BaseDeclarativeTool.md#displayname) | [packages/codeboltjs/src/tools/base-tool.ts:64](packages/codeboltjs/src/tools/base-tool.ts#L64) |
-| <a id="isoutputmarkdown"></a> `isOutputMarkdown` | `readonly` | `boolean` | `true` | Whether the tool's output should be rendered as markdown | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`isOutputMarkdown`](BaseDeclarativeTool.md#isoutputmarkdown) | [packages/codeboltjs/src/tools/base-tool.ts:68](packages/codeboltjs/src/tools/base-tool.ts#L68) |
-| <a id="kind"></a> `kind` | `readonly` | [`Kind`](../enumerations/Kind) | `undefined` | The kind of tool for categorization and permissions | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`kind`](BaseDeclarativeTool.md#kind) | [packages/codeboltjs/src/tools/base-tool.ts:66](packages/codeboltjs/src/tools/base-tool.ts#L66) |
-| <a id="name"></a> `name` | `readonly` | `string` | `undefined` | The internal name of the tool (used for API calls) | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`name`](BaseDeclarativeTool.md#name) | [packages/codeboltjs/src/tools/base-tool.ts:63](packages/codeboltjs/src/tools/base-tool.ts#L63) |
-| <a id="name-1"></a> `Name` | `readonly` | `string` | `'task_update'` | - | - | [packages/codeboltjs/src/tools/task/task-update.ts:75](packages/codeboltjs/src/tools/task/task-update.ts#L75) |
-| <a id="parameterschema"></a> `parameterSchema` | `readonly` | `unknown` | `undefined` | - | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`parameterSchema`](BaseDeclarativeTool.md#parameterschema) | [packages/codeboltjs/src/tools/base-tool.ts:67](packages/codeboltjs/src/tools/base-tool.ts#L67) |
+| <a id="canupdateoutput"></a> `canUpdateOutput` | `readonly` | `boolean` | `false` | Whether the tool supports live (streaming) output | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`canUpdateOutput`](BaseDeclarativeTool.md#canupdateoutput) | packages/codeboltjs/src/tools/base-tool.ts:69 |
+| <a id="description"></a> `description` | `readonly` | `string` | `undefined` | Description of what the tool does | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`description`](BaseDeclarativeTool.md#description) | packages/codeboltjs/src/tools/base-tool.ts:65 |
+| <a id="displayname"></a> `displayName` | `readonly` | `string` | `undefined` | The user-friendly display name of the tool | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`displayName`](BaseDeclarativeTool.md#displayname) | packages/codeboltjs/src/tools/base-tool.ts:64 |
+| <a id="isoutputmarkdown"></a> `isOutputMarkdown` | `readonly` | `boolean` | `true` | Whether the tool's output should be rendered as markdown | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`isOutputMarkdown`](BaseDeclarativeTool.md#isoutputmarkdown) | packages/codeboltjs/src/tools/base-tool.ts:68 |
+| <a id="kind"></a> `kind` | `readonly` | [`Kind`](../enumerations/Kind) | `undefined` | The kind of tool for categorization and permissions | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`kind`](BaseDeclarativeTool.md#kind) | packages/codeboltjs/src/tools/base-tool.ts:66 |
+| <a id="name"></a> `name` | `readonly` | `string` | `undefined` | The internal name of the tool (used for API calls) | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`name`](BaseDeclarativeTool.md#name) | packages/codeboltjs/src/tools/base-tool.ts:63 |
+| <a id="name-1"></a> `Name` | `readonly` | `string` | `'task_update'` | - | - | packages/codeboltjs/src/tools/task/task-update.ts:75 |
+| <a id="parameterschema"></a> `parameterSchema` | `readonly` | `unknown` | `undefined` | - | [`BaseDeclarativeTool`](BaseDeclarativeTool).[`parameterSchema`](BaseDeclarativeTool.md#parameterschema) | packages/codeboltjs/src/tools/base-tool.ts:67 |
 
 ## Accessors
 

@@ -2,7 +2,7 @@
 title: SwarmResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -45,9 +45,9 @@ Base response structure for all swarm operations
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | \{ `code`: `string`; `details?`: `any`; `message`: `string`; \} | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:176](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L176) |
-| `error.code` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:177](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L177) |
-| `error.details?` | `any` | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:179](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L179) |
-| `error.message` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:178](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L178) |
-| <a id="requestid"></a> `requestId?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:175](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L175) |
-| <a id="success"></a> `success` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:174](common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts#L174) |
+| <a id="error"></a> `error?` | \{ `code`: `string`; `details?`: `any`; `message`: `string`; \} | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:176 |
+| `error.code` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:177 |
+| `error.details?` | `any` | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:179 |
+| `error.message` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:178 |
+| <a id="requestid"></a> `requestId?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:175 |
+| <a id="success"></a> `success` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/swarm.ts:174 |

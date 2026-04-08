@@ -2,7 +2,7 @@
 title: IAddCaseToSuiteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:137
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="caseid"></a> `caseId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:139](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L139) |
-| <a id="suiteid"></a> `suiteId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:138](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L138) |
+| <a id="caseid"></a> `caseId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:139 |
+| <a id="suiteid"></a> `suiteId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:138 |

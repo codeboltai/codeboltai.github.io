@@ -34,7 +34,7 @@ Marks a file update intent as completed.
 
 ### Returns
 
-- **`Promise<[FileUpdateIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/FileUpdateIntent)>`**: A promise that resolves with the completed intent.
+- **`Promise<[FileUpdateIntent](/docs/reference/type-reference/codeboltjs/interfaces/FileUpdateIntent)>`**: A promise that resolves with the completed intent.
 
 ### Examples
 

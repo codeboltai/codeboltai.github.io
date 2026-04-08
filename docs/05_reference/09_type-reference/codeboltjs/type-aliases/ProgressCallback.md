@@ -2,7 +2,7 @@
 title: ProgressCallback
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

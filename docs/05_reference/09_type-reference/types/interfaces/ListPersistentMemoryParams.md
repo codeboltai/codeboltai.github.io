@@ -2,7 +2,7 @@
 title: ListPersistentMemoryParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="activeonly"></a> `activeOnly?` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:80](common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts#L80) |
-| <a id="inputscope"></a> `inputScope?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:79](common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts#L79) |
+| <a id="activeonly"></a> `activeOnly?` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:80 |
+| <a id="inputscope"></a> `inputScope?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:79 |

@@ -2,7 +2,7 @@
 title: TaskPriority
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

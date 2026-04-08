@@ -2,7 +2,7 @@
 title: IMarkEventsCompleteParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/calendar.ts:154
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="eventids"></a> `eventIds` | `string`[] | [packages/codeboltjs/src/modules/calendar.ts:155](packages/codeboltjs/src/modules/calendar.ts#L155) |
+| <a id="eventids"></a> `eventIds` | `string`[] | packages/codeboltjs/src/modules/calendar.ts:155 |

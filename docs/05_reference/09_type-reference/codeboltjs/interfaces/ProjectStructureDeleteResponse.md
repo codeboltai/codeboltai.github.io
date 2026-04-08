@@ -2,7 +2,7 @@
 title: ProjectStructureDeleteResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: ActionPlanGroupType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -26,7 +26,7 @@ Retrieves the Markdown content of the current page.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetMarkdownResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetMarkdownResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetMarkdownResponse`](/docs/reference/type-reference/types/interfaces/GetMarkdownResponse) object with the following properties:
 
 - **`type`** (string): Always "getMarkdownResponse".
 - **`markdown`** (string, optional): The Markdown content of the current page

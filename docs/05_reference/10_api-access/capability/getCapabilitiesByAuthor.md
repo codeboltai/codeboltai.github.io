@@ -29,11 +29,11 @@ Lists capabilities created by a specific author. Useful for finding all capabili
 
 ### Returns
 
-- **`Promise<[ListCapabilitiesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities by the specified author.
+- **`Promise<[ListCapabilitiesResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities by the specified author.
 
 ### Response Structure
 
-Returns a [`ListCapabilitiesResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse) with capabilities from the specified author.
+Returns a [`ListCapabilitiesResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse) with capabilities from the specified author.
 
 ### Examples
 

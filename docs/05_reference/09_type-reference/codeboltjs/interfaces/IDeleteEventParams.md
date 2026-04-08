@@ -2,7 +2,7 @@
 title: IDeleteEventParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/calendar.ts:114
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="eventid"></a> `eventId` | `string` | [packages/codeboltjs/src/modules/calendar.ts:115](packages/codeboltjs/src/modules/calendar.ts#L115) |
+| <a id="eventid"></a> `eventId` | `string` | packages/codeboltjs/src/modules/calendar.ts:115 |

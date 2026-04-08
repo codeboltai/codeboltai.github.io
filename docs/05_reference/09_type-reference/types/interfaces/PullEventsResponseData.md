@@ -2,7 +2,7 @@
 title: PullEventsResponseData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,5 +16,5 @@ Response data for pullEvents
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="count"></a> `count` | `number` | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:325](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L325) |
-| <a id="events"></a> `events` | [`AgentEventMessage`](AgentEventMessage)[] | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:324](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L324) |
+| <a id="count"></a> `count` | `number` | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:325 |
+| <a id="events"></a> `events` | [`AgentEventMessage`](AgentEventMessage)[] | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:324 |

@@ -38,11 +38,11 @@ Adds karma points to an agent. Karma can be positive or negative and should be a
 
 ### Returns
 
-- **`Promise<[AddKarmaResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddKarmaResponse)>`**: A promise that resolves when karma has been added.
+- **`Promise<[AddKarmaResponse](/docs/reference/type-reference/codeboltjs/interfaces/AddKarmaResponse)>`**: A promise that resolves when karma has been added.
 
 ### Response Structure
 
-Returns an [`AddKarmaResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddKarmaResponse) with the result of the karma operation.
+Returns an [`AddKarmaResponse`](/docs/reference/type-reference/codeboltjs/interfaces/AddKarmaResponse) with the result of the karma operation.
 
 **Response Properties:**
 - `type` (string): Response type identifier

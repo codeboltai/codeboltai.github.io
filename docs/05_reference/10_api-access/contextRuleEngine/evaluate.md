@@ -29,7 +29,7 @@ Evaluates rules against provided variables.
 
 ### Returns
 
-- **`Promise<[EvaluateRulesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EvaluateRulesResponse)>`**: A promise that resolves with evaluation results.
+- **`Promise<[EvaluateRulesResponse](/docs/reference/type-reference/codeboltjs/interfaces/EvaluateRulesResponse)>`**: A promise that resolves with evaluation results.
 
 ### Examples
 

@@ -2,7 +2,7 @@
 title: JobLockStatus
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

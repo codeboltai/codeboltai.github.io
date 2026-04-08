@@ -2,7 +2,7 @@
 title: JobUnlockRequestAddResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:366
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="job"></a> `job?` | [`Job`](Job) | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:367](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L367) |
+| <a id="job"></a> `job?` | [`Job`](Job) | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:367 |

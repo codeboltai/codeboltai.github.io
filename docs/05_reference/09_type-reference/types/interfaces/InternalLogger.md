@@ -2,7 +2,7 @@
 title: InternalLogger
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

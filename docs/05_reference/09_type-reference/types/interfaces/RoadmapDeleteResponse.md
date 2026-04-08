@@ -2,7 +2,7 @@
 title: RoadmapDeleteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:165
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="success"></a> `success` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:166](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L166) |
+| <a id="success"></a> `success` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:166 |

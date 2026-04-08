@@ -2,7 +2,7 @@
 title: ConnectionPool
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

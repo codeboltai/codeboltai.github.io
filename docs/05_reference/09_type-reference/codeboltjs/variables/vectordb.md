@@ -2,7 +2,7 @@
 title: vectordb
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -23,7 +23,7 @@ Defined in: packages/codeboltjs/src/modules/vectordb.ts:4
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="addvectoritem"></a> `addVectorItem()` | (`item`: `any`) => `Promise`\<`AddVectorItemResponse`\> | Adds a new vector item to the vector database. | [packages/codeboltjs/src/modules/vectordb.ts:31](packages/codeboltjs/src/modules/vectordb.ts#L31) |
-| <a id="getvector"></a> `getVector()` | (`key`: `string`) => `Promise`\<`GetVectorResponse`\> | Retrieves a vector from the vector database based on the provided key. | [packages/codeboltjs/src/modules/vectordb.ts:11](packages/codeboltjs/src/modules/vectordb.ts#L11) |
-| <a id="queryvectoritem"></a> `queryVectorItem()` | (`key`: `string`) => `Promise`\<`QueryVectorItemResponse`\> | Queries a vector item from the vector database based on the provided key. | [packages/codeboltjs/src/modules/vectordb.ts:50](packages/codeboltjs/src/modules/vectordb.ts#L50) |
-| <a id="queryvectoritems"></a> `queryVectorItems()` | (`items`: \[\], `dbPath`: `string`) => `Promise`\<`QueryVectorItemResponse`\> | Queries a vector item from the vector database based on the provided key. | [packages/codeboltjs/src/modules/vectordb.ts:68](packages/codeboltjs/src/modules/vectordb.ts#L68) |
+| <a id="addvectoritem"></a> `addVectorItem()` | (`item`: `any`) => `Promise`\<`AddVectorItemResponse`\> | Adds a new vector item to the vector database. | packages/codeboltjs/src/modules/vectordb.ts:31 |
+| <a id="getvector"></a> `getVector()` | (`key`: `string`) => `Promise`\<`GetVectorResponse`\> | Retrieves a vector from the vector database based on the provided key. | packages/codeboltjs/src/modules/vectordb.ts:11 |
+| <a id="queryvectoritem"></a> `queryVectorItem()` | (`key`: `string`) => `Promise`\<`QueryVectorItemResponse`\> | Queries a vector item from the vector database based on the provided key. | packages/codeboltjs/src/modules/vectordb.ts:50 |
+| <a id="queryvectoritems"></a> `queryVectorItems()` | (`items`: \[\], `dbPath`: `string`) => `Promise`\<`QueryVectorItemResponse`\> | Queries a vector item from the vector database based on the provided key. | packages/codeboltjs/src/modules/vectordb.ts:68 |

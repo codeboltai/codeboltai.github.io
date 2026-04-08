@@ -2,7 +2,7 @@
 title: BaseMemorySDKResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -26,8 +26,8 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:74
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:77](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L77) |
-| <a id="message"></a> `message?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:76](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L76) |
-| <a id="requestid"></a> `requestId?` | `string` | Request identifier | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:79](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L79) |
-| <a id="success"></a> `success?` | `boolean` | - | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:75](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L75) |
-| <a id="timestamp"></a> `timestamp?` | `string` | Response timestamp | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:81](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L81) |
+| <a id="error"></a> `error?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:77 |
+| <a id="message"></a> `message?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:76 |
+| <a id="requestid"></a> `requestId?` | `string` | Request identifier | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:79 |
+| <a id="success"></a> `success?` | `boolean` | - | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:75 |
+| <a id="timestamp"></a> `timestamp?` | `string` | Response timestamp | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:81 |

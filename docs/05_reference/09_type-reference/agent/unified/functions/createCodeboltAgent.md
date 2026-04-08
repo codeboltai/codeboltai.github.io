@@ -2,7 +2,7 @@
 title: createCodeboltAgent
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 

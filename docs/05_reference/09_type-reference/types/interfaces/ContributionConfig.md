@@ -2,7 +2,7 @@
 title: ContributionConfig
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="format"></a> `format` | `"markdown"` \| `"text"` \| `"json"` | [common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:38](common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts#L38) |
-| <a id="max_tokens"></a> `max_tokens?` | `number` | [common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:40](common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts#L40) |
-| <a id="template"></a> `template?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:39](common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts#L39) |
+| <a id="format"></a> `format` | `"markdown"` \| `"text"` \| `"json"` | common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:38 |
+| <a id="max_tokens"></a> `max_tokens?` | `number` | common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:40 |
+| <a id="template"></a> `template?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/persistentMemory.ts:39 |

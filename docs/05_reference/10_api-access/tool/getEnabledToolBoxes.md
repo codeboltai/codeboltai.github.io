@@ -21,11 +21,11 @@ codebolt.tool.getEnabledToolBoxes(): Promise<GetEnabledToolBoxesResponse>
 Retrieves the list of currently enabled toolboxes that are available for use.
 ### Returns
 
-- **`Promise<GetEnabledToolBoxesResponse>`**: A promise that resolves with a [`GetEnabledToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetEnabledToolBoxesResponse) object containing the enabled toolbox configurations.
+- **`Promise<GetEnabledToolBoxesResponse>`**: A promise that resolves with a [`GetEnabledToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/GetEnabledToolBoxesResponse) object containing the enabled toolbox configurations.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetEnabledToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetEnabledToolBoxesResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetEnabledToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/GetEnabledToolBoxesResponse) object with the following properties:
 
 - **`type`** (string): Always "getEnabledToolBoxesResponse".
 - **`data`** (array, optional): Array of enabled toolbox configurations with their details.

@@ -34,7 +34,7 @@ Adds a new talent skill to the system. Talents represent specialized skills that
 
 ### Returns
 
-- **`Promise<[AddTalentResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddTalentResponse)>`**: A promise that resolves when talent is added.
+- **`Promise<[AddTalentResponse](/docs/reference/type-reference/codeboltjs/interfaces/AddTalentResponse)>`**: A promise that resolves when talent is added.
 
 ### Examples
 

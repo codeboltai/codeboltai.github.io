@@ -21,11 +21,11 @@ codebolt.git.addAll(): Promise<AddResponse>
 Adds changes in the local repository to the staging area. This command stages all changes (modified, deleted, and new files) for the next commit. 
 ### Returns
 
-- **`Promise<AddResponse>`**: A promise that resolves with an [`AddResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddResponse) object containing the response from the add operation.
+- **`Promise<AddResponse>`**: A promise that resolves with an [`AddResponse`](/docs/reference/type-reference/types/interfaces/AddResponse) object containing the response from the add operation.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`AddResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddResponse) object with the following properties:
+The method returns a Promise that resolves to an [`AddResponse`](/docs/reference/type-reference/types/interfaces/AddResponse) object with the following properties:
 
 - **`type`** (string): Always "AddResponse".
 - **`content`** (string, optional): Content or message about the add operation.

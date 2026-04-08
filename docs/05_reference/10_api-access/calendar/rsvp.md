@@ -24,15 +24,15 @@ codebolt.calendar.rsvp(params: IRSVPParams): Promise<IRSVPResponse>
 Records a participant's RSVP response (accept or decline) for a calendar event, updating their attendance status.
 ### Parameters
 
-- **`params`** ([IRSVPParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IRSVPParams)): Parameters including eventId, participantId, and RSVP status
+- **`params`** ([IRSVPParams](/docs/reference/type-reference/codeboltjs/interfaces/IRSVPParams)): Parameters including eventId, participantId, and RSVP status
 
 ### Returns
 
-- **`Promise<[IRSVPResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IRSVPResponse)>`**: A promise that resolves to the updated event with RSVP status
+- **`Promise<[IRSVPResponse](/docs/reference/type-reference/codeboltjs/interfaces/IRSVPResponse)>`**: A promise that resolves to the updated event with RSVP status
 
 ### Parameter Details
 
-The [`IRSVPParams`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IRSVPParams) interface includes:
+The [`IRSVPParams`](/docs/reference/type-reference/codeboltjs/interfaces/IRSVPParams) interface includes:
 - **`eventId`** (string, required): The unique identifier of the event
 - **`participantId`** (string, required): The unique identifier of the participant
 - **`status`** ('accepted' | 'declined', required): The RSVP response

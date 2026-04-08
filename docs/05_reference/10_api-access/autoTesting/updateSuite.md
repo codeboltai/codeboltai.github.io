@@ -25,11 +25,11 @@ codebolt.autoTesting.updateSuite(params: IUpdateSuiteParams): Promise<IUpdateSui
 Updates an existing test suite's name, description, or test case assignments.
 ### Parameters
 
-- **`params`** ([IUpdateSuiteParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateSuiteParams)): Parameters including suite ID and fields to update.
+- **`params`** ([IUpdateSuiteParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateSuiteParams)): Parameters including suite ID and fields to update.
 
 ### Returns
 
-- **`Promise<[IUpdateSuiteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateSuiteResponse)>`**: A promise that resolves to the updated suite.
+- **`Promise<[IUpdateSuiteResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateSuiteResponse)>`**: A promise that resolves to the updated suite.
 
 ### Examples
 

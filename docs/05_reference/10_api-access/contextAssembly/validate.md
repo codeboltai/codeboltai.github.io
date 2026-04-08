@@ -29,7 +29,7 @@ Validates a context assembly request without fetching data.
 
 ### Returns
 
-- **`Promise<[ContextValidateResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextValidateResponse)>`**: A promise that resolves with validation results.
+- **`Promise<[ContextValidateResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextValidateResponse)>`**: A promise that resolves with validation results.
 
 ### Response Structure
 

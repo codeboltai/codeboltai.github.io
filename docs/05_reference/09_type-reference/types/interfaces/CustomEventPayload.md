@@ -2,7 +2,7 @@
 title: CustomEventPayload
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,6 +16,6 @@ Payload for custom events
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="data"></a> `data` | `Record`\<`string`, `any`\> | Arbitrary data for the custom event | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:136](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L136) |
-| <a id="eventname"></a> `eventName` | `string` | Name/identifier for the custom event | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:134](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L134) |
-| <a id="type"></a> `type` | `"custom"` | - | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:132](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L132) |
+| <a id="data"></a> `data` | `Record`\<`string`, `any`\> | Arbitrary data for the custom event | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:136 |
+| <a id="eventname"></a> `eventName` | `string` | Name/identifier for the custom event | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:134 |
+| <a id="type"></a> `type` | `"custom"` | - | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:132 |

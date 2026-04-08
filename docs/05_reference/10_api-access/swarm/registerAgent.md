@@ -48,11 +48,11 @@ Registers a new agent to a swarm, making it available for task assignment and co
 ### Parameters
 
 - **`swarmId`** (string): The ID of the swarm to register the agent to.
-- **`data`** ([AgentRegistration](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AgentRegistration)): Agent registration configuration.
+- **`data`** ([AgentRegistration](/docs/reference/type-reference/codeboltjs/interfaces/AgentRegistration)): Agent registration configuration.
 
 ### Returns
 
-- **`Promise<[RegisterAgentResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RegisterAgentResponse)>`**: A promise that resolves with the agent registration details.
+- **`Promise<[RegisterAgentResponse](/docs/reference/type-reference/codeboltjs/interfaces/RegisterAgentResponse)>`**: A promise that resolves with the agent registration details.
 
 ### Examples
 

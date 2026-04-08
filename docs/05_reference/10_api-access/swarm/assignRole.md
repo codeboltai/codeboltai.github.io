@@ -37,7 +37,7 @@ Assigns a role to an agent, granting them the role's permissions and responsibil
 
 ### Returns
 
-- **`Promise<[AssignRoleResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AssignRoleResponse)>`**: A promise that resolves when the role is assigned.
+- **`Promise<[AssignRoleResponse](/docs/reference/type-reference/codeboltjs/interfaces/AssignRoleResponse)>`**: A promise that resolves when the role is assigned.
 
 ### Examples
 

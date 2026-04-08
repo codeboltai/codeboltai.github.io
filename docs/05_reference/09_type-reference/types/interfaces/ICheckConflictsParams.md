@@ -2,7 +2,7 @@
 title: ICheckConflictsParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:197
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="agentid"></a> `agentId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:198](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L198) |
-| <a id="paths"></a> `paths` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:199](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L199) |
+| <a id="agentid"></a> `agentId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:198 |
+| <a id="paths"></a> `paths` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:199 |

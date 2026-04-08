@@ -2,7 +2,7 @@
 title: BaseStateSDKResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -25,6 +25,6 @@ Types for the cbstate module functions
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/state.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/state.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/state.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/state.ts#L9) |
-| <a id="success"></a> `success?` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/state.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/state.ts#L8) |
+| <a id="error"></a> `error?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/state.ts:10 |
+| <a id="message"></a> `message?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/state.ts:9 |
+| <a id="success"></a> `success?` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/state.ts:8 |

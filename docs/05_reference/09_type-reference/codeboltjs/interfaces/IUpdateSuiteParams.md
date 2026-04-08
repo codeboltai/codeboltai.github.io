@@ -2,7 +2,7 @@
 title: IUpdateSuiteParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

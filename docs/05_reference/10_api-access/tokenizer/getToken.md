@@ -28,11 +28,11 @@ Retrieves a token by its key from the system.
 
 ### Returns
 
-- **`Promise<GetTokenResponse>`**: A promise that resolves with a [`GetTokenResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetTokenResponse) object containing the token response.
+- **`Promise<GetTokenResponse>`**: A promise that resolves with a [`GetTokenResponse`](/docs/reference/type-reference/types/interfaces/GetTokenResponse) object containing the token response.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetTokenResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetTokenResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetTokenResponse`](/docs/reference/type-reference/types/interfaces/GetTokenResponse) object with the following properties:
 
 - **`type`** (string): Always "getTokenResponse".
 - **`tokens`** (string[], optional): Array of tokens retrieved from the system.

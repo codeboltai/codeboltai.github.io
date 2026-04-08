@@ -24,11 +24,11 @@ codebolt.groupFeedback.respond(params: IRespondParams): Promise<IRespondResponse
 Adds a response to a feedback session from a participant.
 ### Parameters
 
-- **`params`** ([IRespondParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IRespondParams)): Parameters including feedbackId, participantId, and array of responses.
+- **`params`** ([IRespondParams](/docs/reference/type-reference/codeboltjs/interfaces/IRespondParams)): Parameters including feedbackId, participantId, and array of responses.
 
 ### Returns
 
-- **`Promise<[IRespondResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IRespondResponse)>`**: A promise that resolves with the added response details.
+- **`Promise<[IRespondResponse](/docs/reference/type-reference/codeboltjs/interfaces/IRespondResponse)>`**: A promise that resolves with the added response details.
 
 ### Examples
 

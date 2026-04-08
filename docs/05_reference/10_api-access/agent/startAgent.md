@@ -32,11 +32,11 @@ Starts an agent with a specific task.
 
 ### Returns
 
-- **`Promise<TaskCompletionResponse>`**: A promise that resolves with a [`TaskCompletionResponse`](/docs/api/11_doc-type-ref/types/interfaces/TaskCompletionResponse) object upon agent completion.
+- **`Promise<TaskCompletionResponse>`**: A promise that resolves with a [`TaskCompletionResponse`](/docs/reference/type-reference/types/interfaces/TaskCompletionResponse) object upon agent completion.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`TaskCompletionResponse`](/docs/api/11_doc-type-ref/types/interfaces/TaskCompletionResponse) object with the following properties:
+The method returns a Promise that resolves to a [`TaskCompletionResponse`](/docs/reference/type-reference/types/interfaces/TaskCompletionResponse) object with the following properties:
 
 - **`type`** (string): Always "taskCompletionResponse".
 - **`from`** (string, optional): The source of the response.
@@ -879,7 +879,7 @@ if (result.success && result.result) {
 
 - Before starting an agent, you typically need to know its `agentId`. You can get this ID by using `findAgent` or `getAgentsList`.
 - The `task` should be a specific instruction for the agent to perform.
-- The [`TaskCompletionResponse`](/docs/api/11_doc-type-ref/types/interfaces/TaskCompletionResponse) provides detailed information about the outcome of the agent's execution.
+- The [`TaskCompletionResponse`](/docs/reference/type-reference/types/interfaces/TaskCompletionResponse) provides detailed information about the outcome of the agent's execution.
 - Always implement proper error handling and timeout mechanisms.
 - Consider implementing caching, retries, and circuit breakers for production use.
 - Monitor agent execution times and success rates for performance optimization.

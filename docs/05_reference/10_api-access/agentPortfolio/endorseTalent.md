@@ -29,7 +29,7 @@ Endorses a talent skill to validate its quality and verify the agent's expertise
 
 ### Returns
 
-- **`Promise<[EndorseTalentResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EndorseTalentResponse)>`**: A promise that resolves when talent is endorsed.
+- **`Promise<[EndorseTalentResponse](/docs/reference/type-reference/codeboltjs/interfaces/EndorseTalentResponse)>`**: A promise that resolves when talent is endorsed.
 
 ### Examples
 

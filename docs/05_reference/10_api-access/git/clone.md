@@ -36,7 +36,7 @@ Clones a Git repository from a given URL to a specified local directory. Downloa
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitCloneResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitCloneResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitCloneResponse`](/docs/reference/type-reference/types/interfaces/GitCloneResponse) object with the following properties:
 
 - **`type`** (string): Always "gitCloneResponse" or similar response type identifier.
 - **`success`** (boolean, optional): Indicates if the clone operation was successful.

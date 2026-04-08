@@ -2,7 +2,7 @@
 title: AgentMessagePayload
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

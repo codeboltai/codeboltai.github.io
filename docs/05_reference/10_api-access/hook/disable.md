@@ -28,7 +28,7 @@ Disables a hook to prevent it from triggering on events.
 
 ### Returns
 
-- **`Promise<[HookResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the disabled hook details.
+- **`Promise<[HookResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the disabled hook details.
 
 ### Examples
 

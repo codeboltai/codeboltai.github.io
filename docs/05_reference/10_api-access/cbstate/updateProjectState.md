@@ -39,7 +39,7 @@ Updates the project state on the server via WebSocket.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`UpdateProjectStateResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateProjectStateResponse) object with the following properties:
+The method returns a Promise that resolves to an [`UpdateProjectStateResponse`](/docs/reference/type-reference/types/interfaces/UpdateProjectStateResponse) object with the following properties:
 
 - **`type`** (string): Always "updateProjectStateResponse".
 - **`message`** (string): Contains the result of the update operation. When successful, this will be "success".

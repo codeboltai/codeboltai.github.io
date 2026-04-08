@@ -2,7 +2,7 @@
 title: ICreateMemoryParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/episodicMemory.ts:49
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="title"></a> `title` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:50](packages/codeboltjs/src/modules/episodicMemory.ts#L50) |
+| <a id="title"></a> `title` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:50 |

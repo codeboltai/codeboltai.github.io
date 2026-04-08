@@ -25,11 +25,11 @@ codebolt.autoTesting.getCase(params: IGetCaseParams): Promise<IGetCaseResponse>
 Retrieves details of a specific test case.
 ### Parameters
 
-- **`params`** ([IGetCaseParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetCaseParams)): Parameters including the case ID.
+- **`params`** ([IGetCaseParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetCaseParams)): Parameters including the case ID.
 
 ### Returns
 
-- **`Promise<[IGetCaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetCaseResponse)>`**: A promise that resolves to the test case details.
+- **`Promise<[IGetCaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetCaseResponse)>`**: A promise that resolves to the test case details.
 
 ### Examples
 

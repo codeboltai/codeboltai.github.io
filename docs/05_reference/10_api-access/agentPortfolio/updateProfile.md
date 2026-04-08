@@ -33,7 +33,7 @@ Updates an agent's profile information including display name, bio, specialties,
 
 ### Returns
 
-- **`Promise<[UpdateProfileResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/UpdateProfileResponse)>`**: A promise that resolves to the updated profile.
+- **`Promise<[UpdateProfileResponse](/docs/reference/type-reference/codeboltjs/interfaces/UpdateProfileResponse)>`**: A promise that resolves to the updated profile.
 
 ### Examples
 

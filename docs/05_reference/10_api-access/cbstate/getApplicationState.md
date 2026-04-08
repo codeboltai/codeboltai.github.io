@@ -29,7 +29,7 @@ Retrieves the current application state from the server via WebSocket.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetAppStateResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAppStateResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetAppStateResponse`](/docs/reference/type-reference/types/interfaces/GetAppStateResponse) object with the following properties:
 
 - **`type`** (string): Always "getAppStateResponse".
 - **`state`** (object, optional): Contains the complete application state as a `Record<string, any>` object with:

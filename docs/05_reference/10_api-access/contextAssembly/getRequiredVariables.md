@@ -29,7 +29,7 @@ Gets required variables for specific memory types.
 
 ### Returns
 
-- **`Promise<[RequiredVariablesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RequiredVariablesResponse)>`**: A promise that resolves with required variable information.
+- **`Promise<[RequiredVariablesResponse](/docs/reference/type-reference/codeboltjs/interfaces/RequiredVariablesResponse)>`**: A promise that resolves with required variable information.
 
 ### Response Structure
 

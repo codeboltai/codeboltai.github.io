@@ -2,7 +2,7 @@
 title: crawlerNotifications
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

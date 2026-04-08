@@ -36,7 +36,7 @@ Executes a given command in the terminal environment and returns the result. Thi
 
 ### Response Structure
 
-The method returns a Promise that resolves to either a [`CommandFinish`](/docs/api/11_doc-type-ref/types/interfaces/CommandFinish) or [`CommandError`](/docs/api/11_doc-type-ref/types/interfaces/CommandError) object:
+The method returns a Promise that resolves to either a [`CommandFinish`](/docs/reference/type-reference/types/interfaces/CommandFinish) or [`CommandError`](/docs/reference/type-reference/types/interfaces/CommandError) object:
 
 #### CommandFinish (Success Response)
 - **`type`** (string): Always "commandFinish".
@@ -344,5 +344,5 @@ const batchResults = await batchExecution(commands);
 - Both `stdout` and `stderr` may contain output depending on the command
 - Commands are executed in the current working directory of the terminal
 - Long-running commands should use `executeCommandWithStream` for real-time output
-- Always handle both success ([`CommandFinish`](/docs/api/11_doc-type-ref/types/interfaces/CommandFinish)) and error ([`CommandError`](/docs/api/11_doc-type-ref/types/interfaces/CommandError)) response types
+- Always handle both success ([`CommandFinish`](/docs/reference/type-reference/types/interfaces/CommandFinish)) and error ([`CommandError`](/docs/reference/type-reference/types/interfaces/CommandError)) response types
 - Consider implementing timeouts for commands that might hang indefinitely

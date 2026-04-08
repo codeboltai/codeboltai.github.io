@@ -29,7 +29,7 @@ Deletes a testimonial by its ID.
 
 ### Returns
 
-- **`Promise<[DeleteTestimonialResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/DeleteTestimonialResponse)>`**: A promise that resolves when testimonial is deleted.
+- **`Promise<[DeleteTestimonialResponse](/docs/reference/type-reference/codeboltjs/interfaces/DeleteTestimonialResponse)>`**: A promise that resolves when testimonial is deleted.
 
 ### Examples
 

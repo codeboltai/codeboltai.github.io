@@ -2,7 +2,7 @@
 title: AnyDeclarativeTool
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

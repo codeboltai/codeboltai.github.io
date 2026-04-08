@@ -25,7 +25,7 @@ Retrieves the path of the current project including the project name and full pa
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetProjectPathResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetProjectPathResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetProjectPathResponse`](/docs/reference/type-reference/types/interfaces/GetProjectPathResponse) object with the following properties:
 
 - **`type`** (string): Always "getProjectPathResponse".
 - **`path`** (string, optional): The full path to the current project directory.

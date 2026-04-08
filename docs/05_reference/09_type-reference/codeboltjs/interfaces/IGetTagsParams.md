@@ -2,7 +2,7 @@
 title: IGetTagsParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: packages/codeboltjs/src/modules/episodicMemory.ts:85
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="memoryid"></a> `memoryId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:86](packages/codeboltjs/src/modules/episodicMemory.ts#L86) |
-| <a id="swarmid"></a> `swarmId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:87](packages/codeboltjs/src/modules/episodicMemory.ts#L87) |
+| <a id="memoryid"></a> `memoryId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:86 |
+| <a id="swarmid"></a> `swarmId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:87 |

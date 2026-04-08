@@ -2,7 +2,7 @@
 title: CreateKGViewParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="instanceid"></a> `instanceId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:153](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L153) |
-| <a id="name"></a> `name` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:152](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L152) |
-| <a id="templateid"></a> `templateId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:154](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L154) |
+| <a id="instanceid"></a> `instanceId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:153 |
+| <a id="name"></a> `name` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:152 |
+| <a id="templateid"></a> `templateId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:154 |

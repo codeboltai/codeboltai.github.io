@@ -29,7 +29,7 @@ Gets details of a specific file update intent.
 
 ### Returns
 
-- **`Promise<[FileUpdateIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/FileUpdateIntent)>`**: A promise that resolves with the intent details.
+- **`Promise<[FileUpdateIntent](/docs/reference/type-reference/codeboltjs/interfaces/FileUpdateIntent)>`**: A promise that resolves with the intent details.
 
 ### Examples
 

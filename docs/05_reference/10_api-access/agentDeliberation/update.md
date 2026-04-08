@@ -25,11 +25,11 @@ codebolt.agentDeliberation.update(params: IUpdateDeliberationParams): Promise<IU
 Updates an existing deliberation's status or request message.
 ### Parameters
 
-- **`params`** ([IUpdateDeliberationParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateDeliberationParams)): Parameters including deliberation ID and fields to update.
+- **`params`** ([IUpdateDeliberationParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateDeliberationParams)): Parameters including deliberation ID and fields to update.
 
 ### Returns
 
-- **`Promise<[IUpdateDeliberationResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateDeliberationResponse)>`**: A promise that resolves to the updated deliberation.
+- **`Promise<[IUpdateDeliberationResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateDeliberationResponse)>`**: A promise that resolves to the updated deliberation.
 
 ### Examples
 

@@ -2,7 +2,7 @@
 title: GitDiffRequestNotify
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: DeepPartial
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

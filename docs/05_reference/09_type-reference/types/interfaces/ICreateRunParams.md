@@ -2,7 +2,7 @@
 title: ICreateRunParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:178
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="name"></a> `name?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:180](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L180) |
-| <a id="testsuiteid"></a> `testSuiteId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:179](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L179) |
+| <a id="name"></a> `name?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:180 |
+| <a id="testsuiteid"></a> `testSuiteId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:179 |

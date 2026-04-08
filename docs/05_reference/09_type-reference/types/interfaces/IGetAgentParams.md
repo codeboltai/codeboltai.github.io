@@ -2,7 +2,7 @@
 title: IGetAgentParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:215
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="agentid"></a> `agentId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:216](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L216) |
+| <a id="agentid"></a> `agentId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:216 |

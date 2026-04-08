@@ -2,7 +2,7 @@
 title: ChatCompressionOptions
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: packages/agent/src/processor-pieces/preInferenceProcessors/chatCompr
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="contextpercentagethreshold"></a> `contextPercentageThreshold?` | `number` | [packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:38](packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts#L38) |
-| <a id="enablecompression"></a> `enableCompression?` | `boolean` | [packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:39](packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts#L39) |
-| <a id="force"></a> `force?` | `boolean` | [packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:40](packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts#L40) |
+| <a id="contextpercentagethreshold"></a> `contextPercentageThreshold?` | `number` | packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:38 |
+| <a id="enablecompression"></a> `enableCompression?` | `boolean` | packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:39 |
+| <a id="force"></a> `force?` | `boolean` | packages/agent/src/processor-pieces/preInferenceProcessors/chatCompressionModifier.ts:40 |

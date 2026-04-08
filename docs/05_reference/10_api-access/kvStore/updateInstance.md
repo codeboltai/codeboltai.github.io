@@ -34,11 +34,11 @@ Updates the name or description of a KV store instance.
 
 ### Returns
 
-- **`Promise<[KVInstanceResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the updated instance details.
+- **`Promise<[KVInstanceResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the updated instance details.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse) object:
+The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse) object:
 
 ```typescript
 {

@@ -30,11 +30,11 @@ Lists all available ActionBlocks in the project or at a specified path.
 
 ### Returns
 
-- **`Promise<[ListActionBlocksResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListActionBlocksResponse)>`**: A promise that resolves with a list of available ActionBlocks.
+- **`Promise<[ListActionBlocksResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListActionBlocksResponse)>`**: A promise that resolves with a list of available ActionBlocks.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ListActionBlocksResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListActionBlocksResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ListActionBlocksResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListActionBlocksResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "listActionBlocksResponse"

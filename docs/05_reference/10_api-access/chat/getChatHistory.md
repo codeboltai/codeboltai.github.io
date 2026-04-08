@@ -31,7 +31,7 @@ Retrieves the chat history from the server.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetChatHistoryResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetChatHistoryResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetChatHistoryResponse`](/docs/reference/type-reference/types/interfaces/GetChatHistoryResponse) object with the following properties:
 
 - **`type`** (string): Always "getChatHistoryResponse".
 - **`messages`** (array, optional): An array of chat message objects containing the conversation history. Each message has:

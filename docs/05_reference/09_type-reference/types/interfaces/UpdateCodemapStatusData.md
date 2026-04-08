@@ -2,7 +2,7 @@
 title: UpdateCodemapStatusData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:50
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:52](common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts#L52) |
-| <a id="status"></a> `status` | [`CodemapStatus`](../type-aliases/CodemapStatus) | [common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:51](common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts#L51) |
+| <a id="error"></a> `error?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:52 |
+| <a id="status"></a> `status` | [`CodemapStatus`](../type-aliases/CodemapStatus) | common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:51 |

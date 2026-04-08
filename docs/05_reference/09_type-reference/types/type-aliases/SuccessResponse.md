@@ -2,7 +2,7 @@
 title: SuccessResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -27,5 +27,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/common.ts:185
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="data"></a> `data?` | `T` | [common/types/src/codeboltjstypes/libFunctionTypes/common.ts:185](common/types/src/codeboltjstypes/libFunctionTypes/common.ts#L185) |
-| <a id="success"></a> `success` | `true` | [common/types/src/codeboltjstypes/libFunctionTypes/common.ts:185](common/types/src/codeboltjstypes/libFunctionTypes/common.ts#L185) |
+| <a id="data"></a> `data?` | `T` | common/types/src/codeboltjstypes/libFunctionTypes/common.ts:185 |
+| <a id="success"></a> `success` | `true` | common/types/src/codeboltjstypes/libFunctionTypes/common.ts:185 |

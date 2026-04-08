@@ -2,7 +2,7 @@
 title: crawler
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -26,8 +26,8 @@ A module for controlling a web crawler through WebSocket messages.
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="click"></a> `click()` | (`id`: `string`) => `Promise`\<`any`\> | Simulates a click event on an element with the specified ID. | [packages/codeboltjs/src/modules/crawler.ts:52](packages/codeboltjs/src/modules/crawler.ts#L52) |
-| <a id="gotopage"></a> `goToPage()` | (`url`: `string`) => `void` | Directs the crawler to navigate to a specified URL. | [packages/codeboltjs/src/modules/crawler.ts:29](packages/codeboltjs/src/modules/crawler.ts#L29) |
-| <a id="screenshot"></a> `screenshot()` | () => `void` | Takes a screenshot using the crawler. | [packages/codeboltjs/src/modules/crawler.ts:19](packages/codeboltjs/src/modules/crawler.ts#L19) |
-| <a id="scroll"></a> `scroll()` | (`direction`: `string`) => `void` | Scrolls the crawler in a specified direction. | [packages/codeboltjs/src/modules/crawler.ts:40](packages/codeboltjs/src/modules/crawler.ts#L40) |
-| <a id="start"></a> `start()` | () => `void` | Starts the crawler. | [packages/codeboltjs/src/modules/crawler.ts:10](packages/codeboltjs/src/modules/crawler.ts#L10) |
+| <a id="click"></a> `click()` | (`id`: `string`) => `Promise`\<`any`\> | Simulates a click event on an element with the specified ID. | packages/codeboltjs/src/modules/crawler.ts:52 |
+| <a id="gotopage"></a> `goToPage()` | (`url`: `string`) => `void` | Directs the crawler to navigate to a specified URL. | packages/codeboltjs/src/modules/crawler.ts:29 |
+| <a id="screenshot"></a> `screenshot()` | () => `void` | Takes a screenshot using the crawler. | packages/codeboltjs/src/modules/crawler.ts:19 |
+| <a id="scroll"></a> `scroll()` | (`direction`: `string`) => `void` | Scrolls the crawler in a specified direction. | packages/codeboltjs/src/modules/crawler.ts:40 |
+| <a id="start"></a> `start()` | () => `void` | Starts the crawler. | packages/codeboltjs/src/modules/crawler.ts:10 |

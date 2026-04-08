@@ -25,11 +25,11 @@ codebolt.autoTesting.deleteSuite(params: IDeleteSuiteParams): Promise<IDeleteSui
 Deletes a test suite and all its associations.
 ### Parameters
 
-- **`params`** ([IDeleteSuiteParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IDeleteSuiteParams)): Parameters including the suite ID to delete.
+- **`params`** ([IDeleteSuiteParams](/docs/reference/type-reference/codeboltjs/interfaces/IDeleteSuiteParams)): Parameters including the suite ID to delete.
 
 ### Returns
 
-- **`Promise<[IDeleteSuiteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IDeleteSuiteResponse)>`**: A promise that resolves when the suite is deleted.
+- **`Promise<[IDeleteSuiteResponse](/docs/reference/type-reference/codeboltjs/interfaces/IDeleteSuiteResponse)>`**: A promise that resolves when the suite is deleted.
 
 ### Examples
 

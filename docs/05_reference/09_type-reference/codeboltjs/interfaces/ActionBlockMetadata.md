@@ -2,7 +2,7 @@
 title: ActionBlockMetadata
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,8 +14,8 @@ Defined in: packages/codeboltjs/src/modules/actionBlock.ts:12
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="author"></a> `author?` | `string` | [packages/codeboltjs/src/modules/actionBlock.ts:13](packages/codeboltjs/src/modules/actionBlock.ts#L13) |
-| <a id="dependencies"></a> `dependencies?` | `string`[] | [packages/codeboltjs/src/modules/actionBlock.ts:15](packages/codeboltjs/src/modules/actionBlock.ts#L15) |
-| <a id="inputs"></a> `inputs?` | [`ActionBlockInput`](ActionBlockInput)[] | [packages/codeboltjs/src/modules/actionBlock.ts:16](packages/codeboltjs/src/modules/actionBlock.ts#L16) |
-| <a id="outputs"></a> `outputs?` | [`ActionBlockOutput`](ActionBlockOutput)[] | [packages/codeboltjs/src/modules/actionBlock.ts:17](packages/codeboltjs/src/modules/actionBlock.ts#L17) |
-| <a id="tags"></a> `tags?` | `string`[] | [packages/codeboltjs/src/modules/actionBlock.ts:14](packages/codeboltjs/src/modules/actionBlock.ts#L14) |
+| <a id="author"></a> `author?` | `string` | packages/codeboltjs/src/modules/actionBlock.ts:13 |
+| <a id="dependencies"></a> `dependencies?` | `string`[] | packages/codeboltjs/src/modules/actionBlock.ts:15 |
+| <a id="inputs"></a> `inputs?` | [`ActionBlockInput`](ActionBlockInput)[] | packages/codeboltjs/src/modules/actionBlock.ts:16 |
+| <a id="outputs"></a> `outputs?` | [`ActionBlockOutput`](ActionBlockOutput)[] | packages/codeboltjs/src/modules/actionBlock.ts:17 |
+| <a id="tags"></a> `tags?` | `string`[] | packages/codeboltjs/src/modules/actionBlock.ts:14 |

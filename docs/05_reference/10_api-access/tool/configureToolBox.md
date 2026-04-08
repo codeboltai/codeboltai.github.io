@@ -32,11 +32,11 @@ Configures a specific toolbox with provided configuration settings.
 
 ### Returns
 
-- **`Promise<ConfigureToolBoxResponse>`**: A promise that resolves with a [`ConfigureToolBoxResponse`](/docs/api/11_doc-type-ref/types/interfaces/ConfigureToolBoxResponse) object containing the configuration result.
+- **`Promise<ConfigureToolBoxResponse>`**: A promise that resolves with a [`ConfigureToolBoxResponse`](/docs/reference/type-reference/types/interfaces/ConfigureToolBoxResponse) object containing the configuration result.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ConfigureToolBoxResponse`](/docs/api/11_doc-type-ref/types/interfaces/ConfigureToolBoxResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ConfigureToolBoxResponse`](/docs/reference/type-reference/types/interfaces/ConfigureToolBoxResponse) object with the following properties:
 
 - **`type`** (string): Always "configureToolBoxResponse".
 - **`configuration`** (object, optional): The configuration object that was applied to the toolbox.

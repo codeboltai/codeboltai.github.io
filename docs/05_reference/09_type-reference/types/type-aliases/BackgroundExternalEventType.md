@@ -2,7 +2,7 @@
 title: BackgroundExternalEventType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

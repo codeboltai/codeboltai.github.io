@@ -21,11 +21,11 @@ codebolt.codeutils.getAllFilesAsMarkDown(): Promise<GetAllFilesMarkdownResponse>
 Retrieves all files in the current project as formatted Markdown content with syntax highlighting. 
 ### Returns
 
-- **`Promise<GetAllFilesMarkdownResponse>`**: A promise that resolves with a [`GetAllFilesMarkdownResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAllFilesMarkdownResponse) object containing the Markdown content of all files in the project.
+- **`Promise<GetAllFilesMarkdownResponse>`**: A promise that resolves with a [`GetAllFilesMarkdownResponse`](/docs/reference/type-reference/types/interfaces/GetAllFilesMarkdownResponse) object containing the Markdown content of all files in the project.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetAllFilesMarkdownResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAllFilesMarkdownResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetAllFilesMarkdownResponse`](/docs/reference/type-reference/types/interfaces/GetAllFilesMarkdownResponse) object with the following properties:
 
 - **`type`** (string): Always "getAllFilesMarkdownResponse".
 - **`markdown`** (string, optional): Complete markdown content of all files in the project.

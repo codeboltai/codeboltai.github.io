@@ -17,7 +17,9 @@
     "write-heading-ids": "npx docusaurus write-heading-ids",
     "typecheck": "tsc",
     "generate-types": "node scripts/generate-type-docs.js --clean",
-    "generate-types:watch": "node scripts/generate-type-docs.js --watch"
+    "postgenerate-types": "npm run postprocess-typedoc",
+    "generate-types:watch": "node scripts/generate-type-docs.js --watch",
+    "postprocess-typedoc": "python scripts/postprocess-typedoc-links.py && python scripts/postprocess-typedoc-breadcrumbs.py"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",

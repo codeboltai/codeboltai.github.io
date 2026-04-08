@@ -29,7 +29,7 @@ Appends a single event to an event log stream.
 
 ### Returns
 
-- **`Promise<[EventLogAppendResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogAppendResponse)>`**: A promise that resolves with the appended event details.
+- **`Promise<[EventLogAppendResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogAppendResponse)>`**: A promise that resolves with the appended event details.
 
 ### Response Structure
 

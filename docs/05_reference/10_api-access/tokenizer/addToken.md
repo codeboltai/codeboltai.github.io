@@ -28,11 +28,11 @@ Adds a token to the system and returns tokenized array.
 
 ### Returns
 
-- **`Promise<AddTokenResponse>`**: A promise that resolves with an [`AddTokenResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddTokenResponse) object containing the tokenization response.
+- **`Promise<AddTokenResponse>`**: A promise that resolves with an [`AddTokenResponse`](/docs/reference/type-reference/types/interfaces/AddTokenResponse) object containing the tokenization response.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`AddTokenResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddTokenResponse) object with the following properties:
+The method returns a Promise that resolves to an [`AddTokenResponse`](/docs/reference/type-reference/types/interfaces/AddTokenResponse) object with the following properties:
 
 - **`type`** (string): Always "addTokenResponse".
 - **`token`** (string, optional): The token that was added to the system.

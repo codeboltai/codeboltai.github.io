@@ -2,7 +2,7 @@
 title: JobUpdateResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:119
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="job"></a> `job?` | [`Job`](Job) | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:120](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L120) |
+| <a id="job"></a> `job?` | [`Job`](Job) | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:120 |

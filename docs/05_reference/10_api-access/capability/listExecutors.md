@@ -22,11 +22,11 @@ codebolt.capability.listExecutors(): Promise<ListExecutorsResponse>
 Lists all available capability executors that can run capabilities. Executors are the runtime environments for capabilities.
 ### Returns
 
-- **`Promise<[ListExecutorsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListExecutorsResponse)>`**: A promise that resolves to a list of available executors.
+- **`Promise<[ListExecutorsResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListExecutorsResponse)>`**: A promise that resolves to a list of available executors.
 
 ### Response Structure
 
-Returns a [`ListExecutorsResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListExecutorsResponse) with array of executor objects.
+Returns a [`ListExecutorsResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListExecutorsResponse) with array of executor objects.
 
 **Response Properties:**
 - `type` (string): Always "listExecutorsResponse"

@@ -2,7 +2,7 @@
 title: IdeContext
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: packages/agent/src/processor-pieces/messageModifiers/ideContextModif
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="workspacestate"></a> `workspaceState?` | \{ `openFiles`: [`FileInfo`](FileInfo)[]; \} | [packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts:24](packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts#L24) |
-| `workspaceState.openFiles` | [`FileInfo`](FileInfo)[] | [packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts:25](packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts#L25) |
+| <a id="workspacestate"></a> `workspaceState?` | \{ `openFiles`: [`FileInfo`](FileInfo)[]; \} | packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts:24 |
+| `workspaceState.openFiles` | [`FileInfo`](FileInfo)[] | packages/agent/src/processor-pieces/messageModifiers/ideContextModifier.ts:25 |

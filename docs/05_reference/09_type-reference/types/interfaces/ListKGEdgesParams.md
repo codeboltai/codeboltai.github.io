@@ -2,7 +2,7 @@
 title: ListKGEdgesParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="from_node_id"></a> `from_node_id?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:165](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L165) |
-| <a id="kind"></a> `kind?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:164](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L164) |
-| <a id="to_node_id"></a> `to_node_id?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:166](common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts#L166) |
+| <a id="from_node_id"></a> `from_node_id?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:165 |
+| <a id="kind"></a> `kind?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:164 |
+| <a id="to_node_id"></a> `to_node_id?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/knowledgeGraph.ts:166 |

@@ -2,7 +2,7 @@
 title: Tool
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -38,11 +38,11 @@ Defined in: packages/agent/src/unified/agent/tools.ts:16
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="description"></a> `description` | `string` | [packages/agent/src/unified/agent/tools.ts:11](packages/agent/src/unified/agent/tools.ts#L11) |
-| <a id="executionfunction"></a> `executionFunction` | (`context`: `unknown`) => `unknown` | [packages/agent/src/unified/agent/tools.ts:14](packages/agent/src/unified/agent/tools.ts#L14) |
-| <a id="id"></a> `id` | `string` | [packages/agent/src/unified/agent/tools.ts:10](packages/agent/src/unified/agent/tools.ts#L10) |
-| <a id="inputschema"></a> `inputSchema` | `ZodType` | [packages/agent/src/unified/agent/tools.ts:12](packages/agent/src/unified/agent/tools.ts#L12) |
-| <a id="outputschema"></a> `outputSchema?` | `ZodType`\<`any`, `ZodTypeDef`, `any`\> | [packages/agent/src/unified/agent/tools.ts:13](packages/agent/src/unified/agent/tools.ts#L13) |
+| <a id="description"></a> `description` | `string` | packages/agent/src/unified/agent/tools.ts:11 |
+| <a id="executionfunction"></a> `executionFunction` | (`context`: `unknown`) => `unknown` | packages/agent/src/unified/agent/tools.ts:14 |
+| <a id="id"></a> `id` | `string` | packages/agent/src/unified/agent/tools.ts:10 |
+| <a id="inputschema"></a> `inputSchema` | `ZodType` | packages/agent/src/unified/agent/tools.ts:12 |
+| <a id="outputschema"></a> `outputSchema?` | `ZodType`\<`any`, `ZodTypeDef`, `any`\> | packages/agent/src/unified/agent/tools.ts:13 |
 
 ## Methods
 

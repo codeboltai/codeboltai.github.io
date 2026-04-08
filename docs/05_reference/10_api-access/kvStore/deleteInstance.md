@@ -29,11 +29,11 @@ Deletes a KV store instance and all its data, including all namespaces and recor
 
 ### Returns
 
-- **`Promise<[KVDeleteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVDeleteResponse)>`**: A promise that resolves with the deletion status.
+- **`Promise<[KVDeleteResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVDeleteResponse)>`**: A promise that resolves with the deletion status.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVDeleteResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVDeleteResponse) object:
+The method returns a Promise that resolves to a [`KVDeleteResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVDeleteResponse) object:
 
 ```typescript
 {

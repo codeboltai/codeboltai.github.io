@@ -2,7 +2,7 @@
 title: UnexpectedStateError
 ---
 
-[**@codebolt/mcp**](../index)
+[**@codebolt/mcp**](../index.md)
 
 ***
 
@@ -53,7 +53,7 @@ FastMCPError.constructor
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="extras"></a> `extras?` | `public` | `Extras` | Additional context for the error | - | [packages/mcp/src/mcpServer.ts:126](packages/mcp/src/mcpServer.ts#L126) |
+| <a id="extras"></a> `extras?` | `public` | `Extras` | Additional context for the error | - | packages/mcp/src/mcpServer.ts:126 |
 | <a id="message"></a> `message` | `public` | `string` | - | `FastMCPError.message` | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1077 |
 | <a id="name"></a> `name` | `public` | `string` | - | `FastMCPError.name` | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1076 |
 | <a id="stack"></a> `stack?` | `public` | `string` | - | `FastMCPError.stack` | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1078 |

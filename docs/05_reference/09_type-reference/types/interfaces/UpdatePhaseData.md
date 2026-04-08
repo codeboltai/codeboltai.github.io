@@ -2,7 +2,7 @@
 title: UpdatePhaseData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:87
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="description"></a> `description?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:89](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L89) |
-| <a id="name"></a> `name?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:88](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L88) |
-| <a id="order"></a> `order?` | `number` | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:90](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L90) |
+| <a id="description"></a> `description?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:89 |
+| <a id="name"></a> `name?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:88 |
+| <a id="order"></a> `order?` | `number` | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:90 |

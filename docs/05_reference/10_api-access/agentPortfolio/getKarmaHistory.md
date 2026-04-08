@@ -34,7 +34,7 @@ Retrieves the karma history of an agent, showing all karma changes over time.
 
 ### Returns
 
-- **`Promise<[GetKarmaHistoryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetKarmaHistoryResponse)>`**: A promise that resolves to the karma history.
+- **`Promise<[GetKarmaHistoryResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetKarmaHistoryResponse)>`**: A promise that resolves to the karma history.
 
 ### Examples
 

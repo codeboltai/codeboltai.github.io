@@ -39,7 +39,7 @@ Gets conversations involving an agent with pagination support for handling large
 
 ### Returns
 
-- **`Promise<[GetConversationsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetConversationsResponse)>`**: A promise that resolves to the list of conversations.
+- **`Promise<[GetConversationsResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetConversationsResponse)>`**: A promise that resolves to the list of conversations.
 
 ### Examples
 

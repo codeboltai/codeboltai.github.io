@@ -2,7 +2,7 @@
 title: CodeboltAgentConfig
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -21,7 +21,7 @@ Configuration options for CodeboltAgent
 | Property | Type | Description | Overrides | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
 | <a id="defaultprocessors"></a> `defaultProcessors?` | `boolean` | - | - | `AgentConfig.defaultProcessors` | common/types/dist/agent/highLevelAgentTypes/agentTypes.d.ts:15 |
-| <a id="enablelogging"></a> `enableLogging?` | `boolean` | Enable logging for debugging purposes. Defaults to true. | `AgentConfig.enableLogging` | - | [packages/agent/src/unified/agent/codeboltAgent.ts:33](packages/agent/src/unified/agent/codeboltAgent.ts#L33) |
+| <a id="enablelogging"></a> `enableLogging?` | `boolean` | Enable logging for debugging purposes. Defaults to true. | `AgentConfig.enableLogging` | - | packages/agent/src/unified/agent/codeboltAgent.ts:33 |
 | <a id="instructions"></a> `instructions?` | `string` | - | - | `AgentConfig.instructions` | common/types/dist/agent/highLevelAgentTypes/agentTypes.d.ts:6 |
 | <a id="llmconfig"></a> `llmConfig?` | `LLMConfig` | LLM configuration | - | `AgentConfig.llmConfig` | common/types/dist/agent/highLevelAgentTypes/agentTypes.d.ts:21 |
 | <a id="maxconversationlength"></a> `maxConversationLength?` | `number` | Maximum conversation length before summarization | - | `AgentConfig.maxConversationLength` | common/types/dist/agent/highLevelAgentTypes/agentTypes.d.ts:19 |

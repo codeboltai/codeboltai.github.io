@@ -2,7 +2,7 @@
 title: JobType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

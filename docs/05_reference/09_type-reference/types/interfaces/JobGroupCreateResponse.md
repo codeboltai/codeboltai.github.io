@@ -2,7 +2,7 @@
 title: JobGroupCreateResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:147
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="group"></a> `group` | [`JobGroup`](JobGroup) | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:148](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L148) |
+| <a id="group"></a> `group` | [`JobGroup`](JobGroup) | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:148 |

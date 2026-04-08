@@ -2,7 +2,7 @@
 title: FileUpdateIntentOverlapResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="result"></a> `result` | [`IntentOverlapResult`](IntentOverlapResult) | [common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:151](common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts#L151) |
+| <a id="result"></a> `result` | [`IntentOverlapResult`](IntentOverlapResult) | common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:151 |

@@ -32,11 +32,11 @@ Creates a new folder at the specified path. This function allows you to create d
 
 ### Returns
 
-- **`Promise<CreateFolderResponse>`**: A promise that resolves with a [`CreateFolderResponse`](/docs/api/11_doc-type-ref/types/interfaces/CreateFolderResponse) object containing the response type and folder creation metadata.
+- **`Promise<CreateFolderResponse>`**: A promise that resolves with a [`CreateFolderResponse`](/docs/reference/type-reference/types/interfaces/CreateFolderResponse) object containing the response type and folder creation metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`CreateFolderResponse`](/docs/api/11_doc-type-ref/types/interfaces/CreateFolderResponse) object with the following properties:
+The method returns a Promise that resolves to a [`CreateFolderResponse`](/docs/reference/type-reference/types/interfaces/CreateFolderResponse) object with the following properties:
 
 - **`type`** (string): Always "createFolderResponse".
 - **`path`** (string, optional): The full path where the folder was created.

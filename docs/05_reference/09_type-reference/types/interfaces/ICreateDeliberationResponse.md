@@ -2,7 +2,7 @@
 title: ICreateDeliberationResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:12
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `deliberation`: [`Deliberation`](Deliberation); \} | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:124](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L124) |
-| `payload.deliberation` | [`Deliberation`](Deliberation) | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:124](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L124) |
+| <a id="payload"></a> `payload` | \{ `deliberation`: [`Deliberation`](Deliberation); \} | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:124 |
+| `payload.deliberation` | [`Deliberation`](Deliberation) | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:124 |

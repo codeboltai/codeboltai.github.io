@@ -2,7 +2,7 @@
 title: IDeleteSuiteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:133
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="id"></a> `id` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:134](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L134) |
+| <a id="id"></a> `id` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:134 |

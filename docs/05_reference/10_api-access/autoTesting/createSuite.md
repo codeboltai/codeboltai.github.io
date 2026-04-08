@@ -25,11 +25,11 @@ codebolt.autoTesting.createSuite(params: ICreateSuiteParams): Promise<ICreateSui
 Creates a new test suite for organizing test cases.
 ### Parameters
 
-- **`params`** ([ICreateSuiteParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateSuiteParams)): Parameters for creating the test suite.
+- **`params`** ([ICreateSuiteParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateSuiteParams)): Parameters for creating the test suite.
 
 ### Returns
 
-- **`Promise<[ICreateSuiteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateSuiteResponse)>`**: A promise that resolves to the created test suite.
+- **`Promise<[ICreateSuiteResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateSuiteResponse)>`**: A promise that resolves to the created test suite.
 
 ### Examples
 

@@ -32,7 +32,7 @@ Adds a new task to the task management system via WebSocket communication. This 
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`AddTaskResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddTaskResponse) object with the following properties:
+The method returns a Promise that resolves to an [`AddTaskResponse`](/docs/reference/type-reference/types/interfaces/AddTaskResponse) object with the following properties:
 
 - **`type`** (string): Always "addTaskResponse".
 - **`task`** (Task, optional): The newly created Task object containing:

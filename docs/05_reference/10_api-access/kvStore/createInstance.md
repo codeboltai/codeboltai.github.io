@@ -34,11 +34,11 @@ Creates a new KV store instance for storing key-value data.
 
 ### Returns
 
-- **`Promise<[KVInstanceResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the created instance details including ID, name, and timestamps.
+- **`Promise<[KVInstanceResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the created instance details including ID, name, and timestamps.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse) object:
+The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse) object:
 
 ```typescript
 {

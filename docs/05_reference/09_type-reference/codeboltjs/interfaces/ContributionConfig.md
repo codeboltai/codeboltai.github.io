@@ -2,7 +2,7 @@
 title: ContributionConfig
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

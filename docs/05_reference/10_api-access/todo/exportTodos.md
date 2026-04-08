@@ -49,7 +49,7 @@ Exports todos in JSON or Markdown format with optional filtering.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`ExportTodosResponse`](/docs/api/11_doc-type-ref/types/interfaces/ExportTodosResponse) object with the following properties:
+The method returns a Promise that resolves to an [`ExportTodosResponse`](/docs/reference/type-reference/types/interfaces/ExportTodosResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "exportTodosResponse"

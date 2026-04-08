@@ -2,7 +2,7 @@
 title: IGetRunResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:265
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:266](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L266) |
-| `payload.run` | [`TestRun`](TestRun) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:266](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L266) |
+| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:266 |
+| `payload.run` | [`TestRun`](TestRun) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:266 |

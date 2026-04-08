@@ -2,7 +2,7 @@
 title: WarningParseResult
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:4
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="warnings"></a> `warnings` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:50](common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts#L50) |
+| <a id="warnings"></a> `warnings` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:50 |

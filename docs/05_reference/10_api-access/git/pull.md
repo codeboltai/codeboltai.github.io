@@ -21,11 +21,11 @@ codebolt.git.pull(): Promise<GitPullResponse>
 Pulls the latest changes from the remote repository to the local repository. Fetches and merges changes from the remote branch into the current local branch. 
 ### Returns
 
-- **`Promise<GitPullResponse>`**: A promise that resolves with a [`GitPullResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitPullResponse) object containing the pull operation results and change statistics.
+- **`Promise<GitPullResponse>`**: A promise that resolves with a [`GitPullResponse`](/docs/reference/type-reference/types/interfaces/GitPullResponse) object containing the pull operation results and change statistics.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitPullResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitPullResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitPullResponse`](/docs/reference/type-reference/types/interfaces/GitPullResponse) object with the following properties:
 
 - **`type`** (string): Always "gitPullResponse".
 - **`success`** (boolean, optional): Indicates if the operation was successful.

@@ -2,7 +2,7 @@
 title: IGetThreadParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:268
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="threadid"></a> `threadId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:269](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L269) |
+| <a id="threadid"></a> `threadId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:269 |

@@ -26,7 +26,7 @@ Retrieves browser information like height, width, scroll position of the current
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`BrowserInfoResponse`](/docs/api/11_doc-type-ref/types/interfaces/BrowserInfoResponse) object with the following properties:
+The method returns a Promise that resolves to a [`BrowserInfoResponse`](/docs/reference/type-reference/types/interfaces/BrowserInfoResponse) object with the following properties:
 
 - **`type`** (string): Always "getBrowserInfoResponse".
 - **`payload`** (object, optional): Contains the response data including:

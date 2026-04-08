@@ -2,7 +2,7 @@
 title: ToolChoice
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

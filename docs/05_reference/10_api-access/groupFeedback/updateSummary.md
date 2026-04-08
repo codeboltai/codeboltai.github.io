@@ -24,11 +24,11 @@ codebolt.groupFeedback.updateSummary(params: IUpdateSummaryParams): Promise<IUpd
 Updates the summary of a feedback session, consolidating key points and action items.
 ### Parameters
 
-- **`params`** ([IUpdateSummaryParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateSummaryParams)): Parameters including feedbackId and the new summary content.
+- **`params`** ([IUpdateSummaryParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateSummaryParams)): Parameters including feedbackId and the new summary content.
 
 ### Returns
 
-- **`Promise<[IUpdateSummaryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateSummaryResponse)>`**: A promise that resolves with the updated summary.
+- **`Promise<[IUpdateSummaryResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateSummaryResponse)>`**: A promise that resolves with the updated summary.
 
 ### Examples
 

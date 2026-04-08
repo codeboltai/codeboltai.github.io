@@ -26,15 +26,15 @@ codebolt.actionBlock.list(filter: ActionBlockFilter): Promise<ListActionBlocksRe
 Lists all available ActionBlocks with optional filtering by type.
 ### Parameters
 
-- **`filter`** ([ActionBlockFilter](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ActionBlockFilter), optional): Optional filter to narrow results by type (filesystem, runtime, or builtin).
+- **`filter`** ([ActionBlockFilter](/docs/reference/type-reference/codeboltjs/interfaces/ActionBlockFilter), optional): Optional filter to narrow results by type (filesystem, runtime, or builtin).
 
 ### Returns
 
-- **`Promise<[ListActionBlocksResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListActionBlocksResponse)>`**: A promise that resolves to the list of ActionBlocks.
+- **`Promise<[ListActionBlocksResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListActionBlocksResponse)>`**: A promise that resolves to the list of ActionBlocks.
 
 ### Response Structure
 
-Returns [`ListActionBlocksResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListActionBlocksResponse) with array of ActionBlocks.
+Returns [`ListActionBlocksResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListActionBlocksResponse) with array of ActionBlocks.
 
 **Response Properties:**
 - `type` (string): Always "listActionBlocksResponse"

@@ -33,11 +33,11 @@ Checks out a branch or commit in the Git repository. Switches the working direct
 
 ### Returns
 
-- **`Promise<GitCheckoutResponse>`**: A promise that resolves with a [`GitCheckoutResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitCheckoutResponse) object containing the checkout operation results.
+- **`Promise<GitCheckoutResponse>`**: A promise that resolves with a [`GitCheckoutResponse`](/docs/reference/type-reference/types/interfaces/GitCheckoutResponse) object containing the checkout operation results.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitCheckoutResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitCheckoutResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitCheckoutResponse`](/docs/reference/type-reference/types/interfaces/GitCheckoutResponse) object with the following properties:
 
 - **`type`** (string): Always "gitCheckoutResponse".
 - **`branch`** (string, optional): The name of the branch that was checked out.

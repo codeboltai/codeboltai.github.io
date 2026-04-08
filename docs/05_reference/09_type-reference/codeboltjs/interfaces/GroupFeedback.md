@@ -2,7 +2,7 @@
 title: GroupFeedback
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

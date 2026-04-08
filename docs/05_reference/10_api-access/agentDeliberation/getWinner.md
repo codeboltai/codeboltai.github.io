@@ -25,11 +25,11 @@ codebolt.agentDeliberation.getWinner(params: IGetWinnerParams): Promise<IGetWinn
 Gets the winning response of a completed deliberation based on vote count.
 ### Parameters
 
-- **`params`** ([IGetWinnerParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetWinnerParams)): Parameters including the deliberation ID.
+- **`params`** ([IGetWinnerParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetWinnerParams)): Parameters including the deliberation ID.
 
 ### Returns
 
-- **`Promise<[IGetWinnerResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetWinnerResponse)>`**: A promise that resolves to the winning response and vote details.
+- **`Promise<[IGetWinnerResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetWinnerResponse)>`**: A promise that resolves to the winning response and vote details.
 
 ### Examples
 

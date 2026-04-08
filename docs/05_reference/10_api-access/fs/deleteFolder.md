@@ -32,11 +32,11 @@ Deletes a folder at the specified path. This function allows you to remove direc
 
 ### Returns
 
-- **`Promise<DeleteFolderResponse>`**: A promise that resolves with a [`DeleteFolderResponse`](/docs/api/11_doc-type-ref/types/interfaces/DeleteFolderResponse) object containing the response type and folder deletion metadata.
+- **`Promise<DeleteFolderResponse>`**: A promise that resolves with a [`DeleteFolderResponse`](/docs/reference/type-reference/types/interfaces/DeleteFolderResponse) object containing the response type and folder deletion metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`DeleteFolderResponse`](/docs/api/11_doc-type-ref/types/interfaces/DeleteFolderResponse) object with the following properties:
+The method returns a Promise that resolves to a [`DeleteFolderResponse`](/docs/reference/type-reference/types/interfaces/DeleteFolderResponse) object with the following properties:
 
 - **`type`** (string): Always "deleteFolderResponse".
 - **`path`** (string, optional): The full path of the folder that was deleted.

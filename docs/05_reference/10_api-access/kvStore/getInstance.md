@@ -29,11 +29,11 @@ Gets details of a specific KV store instance including its configuration and met
 
 ### Returns
 
-- **`Promise<[KVInstanceResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the instance details including ID, name, description, and timestamps.
+- **`Promise<[KVInstanceResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse)>`**: A promise that resolves with the instance details including ID, name, description, and timestamps.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVInstanceResponse) object:
+The method returns a Promise that resolves to a [`KVInstanceResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVInstanceResponse) object:
 
 ```typescript
 {

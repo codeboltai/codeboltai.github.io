@@ -45,11 +45,11 @@ Creates a new team within a swarm to organize agents for specific tasks or proje
 ### Parameters
 
 - **`swarmId`** (string): The ID of the swarm to create the team in.
-- **`data`** ([CreateTeamRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateTeamRequest)): Team creation configuration.
+- **`data`** ([CreateTeamRequest](/docs/reference/type-reference/codeboltjs/interfaces/CreateTeamRequest)): Team creation configuration.
 
 ### Returns
 
-- **`Promise<[CreateTeamResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateTeamResponse)>`**: A promise that resolves to the created team details.
+- **`Promise<[CreateTeamResponse](/docs/reference/type-reference/codeboltjs/interfaces/CreateTeamResponse)>`**: A promise that resolves to the created team details.
 
 ### Examples
 

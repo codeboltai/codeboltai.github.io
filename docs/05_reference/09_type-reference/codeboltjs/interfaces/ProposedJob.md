@@ -2,7 +2,7 @@
 title: ProposedJob
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: ProcessControlWithCleanup
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,5 +16,5 @@ Process control return type with cleanup
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="cleanup"></a> `cleanup` | () => `void` | [common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:148](common/types/src/codeboltjstypes/libFunctionTypes/chat.ts#L148) |
-| <a id="stopprocess"></a> `stopProcess` | () => `void` | [common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:147](common/types/src/codeboltjstypes/libFunctionTypes/chat.ts#L147) |
+| <a id="cleanup"></a> `cleanup` | () => `void` | common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:148 |
+| <a id="stopprocess"></a> `stopProcess` | () => `void` | common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:147 |

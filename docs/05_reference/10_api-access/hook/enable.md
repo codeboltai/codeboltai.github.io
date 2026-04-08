@@ -28,7 +28,7 @@ Enables a hook to make it active and allow it to trigger on events.
 
 ### Returns
 
-- **`Promise<[HookResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the enabled hook details.
+- **`Promise<[HookResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the enabled hook details.
 
 ### Examples
 

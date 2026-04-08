@@ -24,15 +24,15 @@ codebolt.calendar.updateEvent(params: IUpdateEventParams): Promise<IUpdateEventR
 Updates an existing calendar event. Only the fields specified in the parameters are updated; all other fields remain unchanged.
 ### Parameters
 
-- **`params`** ([IUpdateEventParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateEventParams)): Event update parameters including eventId and fields to update
+- **`params`** ([IUpdateEventParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateEventParams)): Event update parameters including eventId and fields to update
 
 ### Returns
 
-- **`Promise<[IUpdateEventResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateEventResponse)>`**: A promise that resolves to the updated event data
+- **`Promise<[IUpdateEventResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateEventResponse)>`**: A promise that resolves to the updated event data
 
 ### Parameter Details
 
-The [`IUpdateEventParams`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateEventParams) interface includes:
+The [`IUpdateEventParams`](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateEventParams) interface includes:
 
 **Required Parameter:**
 - **`eventId`** (string): The unique identifier of the event to update

@@ -24,11 +24,11 @@ codebolt.groupFeedback.get(params: IGetFeedbackParams): Promise<IGetFeedbackResp
 Retrieves details of a specific feedback session including all responses.
 ### Parameters
 
-- **`params`** ([IGetFeedbackParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetFeedbackParams)): Parameters including the feedbackId to retrieve.
+- **`params`** ([IGetFeedbackParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetFeedbackParams)): Parameters including the feedbackId to retrieve.
 
 ### Returns
 
-- **`Promise<[IGetFeedbackResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetFeedbackResponse)>`**: A promise that resolves with the feedback session details.
+- **`Promise<[IGetFeedbackResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetFeedbackResponse)>`**: A promise that resolves with the feedback session details.
 
 ### Examples
 

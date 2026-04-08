@@ -69,6 +69,6 @@ async function refactorCode(filePath, diff, prompt) {
 Utils API functions return typed responses:
 
 **File Editing:**
-- [`FsEditFileAndApplyDiffResponse`](/docs/api/11_doc-type-ref/types/interfaces/FsEditFileAndApplyDiffResponse): Result of file editing operation
+- [`FsEditFileAndApplyDiffResponse`](/docs/reference/type-reference/types/interfaces/FsEditFileAndApplyDiffResponse): Result of file editing operation
 
 <CBAPICategory />

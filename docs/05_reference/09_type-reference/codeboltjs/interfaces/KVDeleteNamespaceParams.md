@@ -2,7 +2,7 @@
 title: KVDeleteNamespaceParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

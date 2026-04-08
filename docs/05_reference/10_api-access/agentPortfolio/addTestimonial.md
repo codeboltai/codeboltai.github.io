@@ -38,11 +38,11 @@ Adds a testimonial for an agent. Testimonials provide detailed feedback and can 
 
 ### Returns
 
-- **`Promise<[AddTestimonialResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddTestimonialResponse)>`**: A promise that resolves when the testimonial is added.
+- **`Promise<[AddTestimonialResponse](/docs/reference/type-reference/codeboltjs/interfaces/AddTestimonialResponse)>`**: A promise that resolves when the testimonial is added.
 
 ### Response Structure
 
-Returns an [`AddTestimonialResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddTestimonialResponse) with the created testimonial.
+Returns an [`AddTestimonialResponse`](/docs/reference/type-reference/codeboltjs/interfaces/AddTestimonialResponse) with the created testimonial.
 
 **Response Properties:**
 - `type` (string): Response type identifier

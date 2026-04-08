@@ -2,7 +2,7 @@
 title: IGetSuiteResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

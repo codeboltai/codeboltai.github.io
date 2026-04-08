@@ -2,7 +2,7 @@
 title: IGetWinnerResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:15
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `votes`: [`DeliberationVote`](DeliberationVote)[]; `winner?`: [`DeliberationResponse`](DeliberationResponse); \} | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L153) |
-| `payload.votes` | [`DeliberationVote`](DeliberationVote)[] | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L153) |
-| `payload.winner?` | [`DeliberationResponse`](DeliberationResponse) | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L153) |
+| <a id="payload"></a> `payload` | \{ `votes`: [`DeliberationVote`](DeliberationVote)[]; `winner?`: [`DeliberationResponse`](DeliberationResponse); \} | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153 |
+| `payload.votes` | [`DeliberationVote`](DeliberationVote)[] | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153 |
+| `payload.winner?` | [`DeliberationResponse`](DeliberationResponse) | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:153 |

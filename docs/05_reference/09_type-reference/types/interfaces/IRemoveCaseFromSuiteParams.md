@@ -2,7 +2,7 @@
 title: IRemoveCaseFromSuiteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:142
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="caseid"></a> `caseId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:144](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L144) |
-| <a id="suiteid"></a> `suiteId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:143](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L143) |
+| <a id="caseid"></a> `caseId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:144 |
+| <a id="suiteid"></a> `suiteId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:143 |

@@ -2,7 +2,7 @@
 title: PheromoneType
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -34,7 +34,7 @@ Updates the name or description of an event log instance.
 
 ### Returns
 
-- **`Promise<[EventLogInstanceResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogInstanceResponse)>`**: A promise that resolves with the updated instance details.
+- **`Promise<[EventLogInstanceResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogInstanceResponse)>`**: A promise that resolves with the updated instance details.
 
 ### Examples
 

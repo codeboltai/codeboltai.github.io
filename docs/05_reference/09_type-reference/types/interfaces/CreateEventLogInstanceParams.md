@@ -2,7 +2,7 @@
 title: CreateEventLogInstanceParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:71
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="description"></a> `description?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:73](common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts#L73) |
-| <a id="name"></a> `name` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:72](common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts#L72) |
+| <a id="description"></a> `description?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:73 |
+| <a id="name"></a> `name` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:72 |

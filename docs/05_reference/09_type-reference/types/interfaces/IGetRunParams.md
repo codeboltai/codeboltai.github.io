@@ -2,7 +2,7 @@
 title: IGetRunParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:183
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="id"></a> `id` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:184](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L184) |
+| <a id="id"></a> `id` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:184 |

@@ -2,7 +2,7 @@
 title: UpdateThreadStatusResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -20,10 +20,10 @@ Response for updating thread status
 
 | Property | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `string` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`error`](BaseThreadSDKResponse.md#error) | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`message`](BaseThreadSDKResponse.md#message) | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L9) |
-| <a id="previousstatus"></a> `previousStatus?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:219](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L219) |
-| <a id="status"></a> `status?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:218](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L218) |
-| <a id="success"></a> `success?` | `boolean` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`success`](BaseThreadSDKResponse.md#success) | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L8) |
-| <a id="threadid"></a> `threadId?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:217](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L217) |
-| <a id="updatedat"></a> `updatedAt?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:220](common/types/src/codeboltjstypes/libFunctionTypes/thread.ts#L220) |
+| <a id="error"></a> `error?` | `string` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`error`](BaseThreadSDKResponse.md#error) | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:10 |
+| <a id="message"></a> `message?` | `string` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`message`](BaseThreadSDKResponse.md#message) | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:9 |
+| <a id="previousstatus"></a> `previousStatus?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:219 |
+| <a id="status"></a> `status?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:218 |
+| <a id="success"></a> `success?` | `boolean` | [`BaseThreadSDKResponse`](BaseThreadSDKResponse).[`success`](BaseThreadSDKResponse.md#success) | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:8 |
+| <a id="threadid"></a> `threadId?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:217 |
+| <a id="updatedat"></a> `updatedAt?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/thread.ts:220 |

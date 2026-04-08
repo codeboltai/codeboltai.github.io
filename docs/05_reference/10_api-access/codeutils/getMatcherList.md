@@ -21,11 +21,11 @@ codebolt.codeutils.getMatcherList(): Promise<GetMatcherListTreeResponse>
 Retrieves the complete list of available problem matchers for various programming languages and tools. 
 ### Returns
 
-- **`Promise<GetMatcherListTreeResponse>`**: A promise that resolves with a [`GetMatcherListTreeResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetMatcherListTreeResponse) object containing the list of all available matchers with their patterns and configurations.
+- **`Promise<GetMatcherListTreeResponse>`**: A promise that resolves with a [`GetMatcherListTreeResponse`](/docs/reference/type-reference/types/interfaces/GetMatcherListTreeResponse) object containing the list of all available matchers with their patterns and configurations.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetMatcherListTreeResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetMatcherListTreeResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetMatcherListTreeResponse`](/docs/reference/type-reference/types/interfaces/GetMatcherListTreeResponse) object with the following properties:
 
 - **`type`** (string): Always "getMatcherListTreeResponse".
 - **`matchers`** (array, optional): An array of matcher objects with the following structure:

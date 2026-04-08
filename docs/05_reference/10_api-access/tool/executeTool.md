@@ -36,11 +36,11 @@ Executes a specific tool from a configured toolbox with provided parameters.
 
 ### Returns
 
-- **`Promise<ExecuteToolResponse>`**: A promise that resolves with an [`ExecuteToolResponse`](/docs/api/11_doc-type-ref/types/interfaces/ExecuteToolResponse) object containing the tool execution result.
+- **`Promise<ExecuteToolResponse>`**: A promise that resolves with an [`ExecuteToolResponse`](/docs/reference/type-reference/types/interfaces/ExecuteToolResponse) object containing the tool execution result.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`ExecuteToolResponse`](/docs/api/11_doc-type-ref/types/interfaces/ExecuteToolResponse) object with the following properties:
+The method returns a Promise that resolves to an [`ExecuteToolResponse`](/docs/reference/type-reference/types/interfaces/ExecuteToolResponse) object with the following properties:
 
 - **`type`** (string): Always "executeToolResponse".
 - **`toolName`** (string, optional): The name of the executed tool.

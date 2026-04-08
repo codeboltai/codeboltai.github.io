@@ -28,7 +28,7 @@ Retrieves details of a specific hook by its ID.
 
 ### Returns
 
-- **`Promise<[HookResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the hook details.
+- **`Promise<[HookResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the hook details.
 
 ### Examples
 

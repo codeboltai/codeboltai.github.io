@@ -2,7 +2,7 @@
 title: RoadmapCreator
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

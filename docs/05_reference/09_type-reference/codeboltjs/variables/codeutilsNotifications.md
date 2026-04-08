@@ -2,7 +2,7 @@
 title: codeutilsNotifications
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

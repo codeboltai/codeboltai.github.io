@@ -2,7 +2,7 @@
 title: ICreateSuiteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:213
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:214](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L214) |
-| `payload.suite` | [`TestSuite`](TestSuite) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:214](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L214) |
+| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:214 |
+| `payload.suite` | [`TestSuite`](TestSuite) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:214 |

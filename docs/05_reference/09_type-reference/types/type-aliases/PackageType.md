@@ -2,7 +2,7 @@
 title: PackageType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: Agent
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 

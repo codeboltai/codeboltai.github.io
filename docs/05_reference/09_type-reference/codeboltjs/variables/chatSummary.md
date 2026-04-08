@@ -2,7 +2,7 @@
 title: chatSummary
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -27,5 +27,5 @@ Provides functionality to create summaries of conversation history.
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="summarize"></a> `summarize()` | (`messages`: \{ `content`: `string`; `role`: `string`; \}[], `depth`: `number`) => `Promise`\<`GetSummarizeResponse`\> | Summarizes a specific part of the chat history. | [packages/codeboltjs/src/modules/history.ts:49](packages/codeboltjs/src/modules/history.ts#L49) |
-| <a id="summarizeall"></a> `summarizeAll()` | () => `Promise`\<`GetSummarizeAllResponse`\> | Summarizes the entire chat history. | [packages/codeboltjs/src/modules/history.ts:32](packages/codeboltjs/src/modules/history.ts#L32) |
+| <a id="summarize"></a> `summarize()` | (`messages`: \{ `content`: `string`; `role`: `string`; \}[], `depth`: `number`) => `Promise`\<`GetSummarizeResponse`\> | Summarizes a specific part of the chat history. | packages/codeboltjs/src/modules/history.ts:49 |
+| <a id="summarizeall"></a> `summarizeAll()` | () => `Promise`\<`GetSummarizeAllResponse`\> | Summarizes the entire chat history. | packages/codeboltjs/src/modules/history.ts:32 |

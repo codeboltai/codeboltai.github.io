@@ -2,7 +2,7 @@
 title: IGetCaseParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:157
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="id"></a> `id` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:158](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L158) |
+| <a id="id"></a> `id` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:158 |

@@ -21,7 +21,7 @@ codebolt.contextRuleEngine.list(): Promise<ContextRuleEngineListResponse>
 Lists all available rule engines.
 ### Returns
 
-- **`Promise<[ContextRuleEngineListResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextRuleEngineListResponse)>`**: A promise that resolves with an array of all rule engines.
+- **`Promise<[ContextRuleEngineListResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextRuleEngineListResponse)>`**: A promise that resolves with an array of all rule engines.
 
 ### Examples
 

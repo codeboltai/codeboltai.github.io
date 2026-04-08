@@ -29,11 +29,11 @@ Queries the KV store using a flexible DSL to filter, sort, and paginate records.
 
 ### Returns
 
-- **`Promise<[KVQueryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVQueryResponse)>`**: A promise that resolves with matching records and pagination metadata.
+- **`Promise<[KVQueryResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVQueryResponse)>`**: A promise that resolves with matching records and pagination metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVQueryResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVQueryResponse) object:
+The method returns a Promise that resolves to a [`KVQueryResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVQueryResponse) object:
 
 ```typescript
 {

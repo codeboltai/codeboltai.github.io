@@ -2,7 +2,7 @@
 title: IGetMessageParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:298
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="messageid"></a> `messageId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:299](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L299) |
+| <a id="messageid"></a> `messageId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:299 |

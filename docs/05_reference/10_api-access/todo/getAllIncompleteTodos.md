@@ -26,7 +26,7 @@ Retrieves all todo items that are not yet completed.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetAllIncompleteTodosResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAllIncompleteTodosResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetAllIncompleteTodosResponse`](/docs/reference/type-reference/types/interfaces/GetAllIncompleteTodosResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "getAllIncompleteTodosResponse"

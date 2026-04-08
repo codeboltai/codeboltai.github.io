@@ -40,7 +40,7 @@ codebolt.fs.searchFiles(path: string, regex: string, filePattern: string): Promi
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`SearchFilesResponse`](/docs/api/11_doc-type-ref/types/interfaces/SearchFilesResponse) object with the following properties:
+The method returns a Promise that resolves to a [`SearchFilesResponse`](/docs/reference/type-reference/types/interfaces/SearchFilesResponse) object with the following properties:
 
 - **`type`** (string): Always "searchFilesResponse" or similar response type identifier.
 - **`results`** (array, optional): Array of search results with file paths and match information.

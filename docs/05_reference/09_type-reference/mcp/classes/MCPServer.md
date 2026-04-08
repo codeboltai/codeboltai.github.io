@@ -2,7 +2,7 @@
 title: MCPServer
 ---
 
-[**@codebolt/mcp**](../index)
+[**@codebolt/mcp**](../index.md)
 
 ***
 
@@ -59,7 +59,7 @@ FastMCPEventEmitter.constructor
 | <a id="_emittype"></a> ` _emitType?` | `public` | `FastMCPEvents`\<`FastMCPSessionAuth`\> | - | `FastMCPEventEmitter. _emitType` | node\_modules/.pnpm/strict-event-emitter-types@2.0.0/node\_modules/strict-event-emitter-types/types/src/index.d.ts:7 |
 | <a id="_eventstype"></a> ` _eventsType?` | `public` | `FastMCPEvents`\<`FastMCPSessionAuth`\> | - | `FastMCPEventEmitter. _eventsType` | node\_modules/.pnpm/strict-event-emitter-types@2.0.0/node\_modules/strict-event-emitter-types/types/src/index.d.ts:6 |
 | <a id="capturerejectionsymbol"></a> `[captureRejectionSymbol]?` | `public` | \<`K`\>(`error`: `Error`, `event`: `string` \| `symbol`, ...`args`: `AnyRest`) => `void` | - | `FastMCPEventEmitter.[captureRejectionSymbol]` | node\_modules/.pnpm/@types+node@20.19.19/node\_modules/@types/node/events.d.ts:103 |
-| <a id="options"></a> `options` | `public` | `ServerOptions`\<`T`\> | Configuration options for the toolbox | - | [packages/mcp/src/mcpServer.ts:1236](packages/mcp/src/mcpServer.ts#L1236) |
+| <a id="options"></a> `options` | `public` | `ServerOptions`\<`T`\> | Configuration options for the toolbox | - | packages/mcp/src/mcpServer.ts:1236 |
 
 ## Accessors
 

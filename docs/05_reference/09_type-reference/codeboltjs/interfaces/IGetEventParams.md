@@ -2,7 +2,7 @@
 title: IGetEventParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/calendar.ts:118
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="eventid"></a> `eventId` | `string` | [packages/codeboltjs/src/modules/calendar.ts:119](packages/codeboltjs/src/modules/calendar.ts#L119) |
+| <a id="eventid"></a> `eventId` | `string` | packages/codeboltjs/src/modules/calendar.ts:119 |

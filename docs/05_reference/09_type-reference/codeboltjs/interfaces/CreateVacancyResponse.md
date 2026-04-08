@@ -2,7 +2,7 @@
 title: CreateVacancyResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

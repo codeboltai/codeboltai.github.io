@@ -2,7 +2,7 @@
 title: ChatCompressionModifier
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -44,7 +44,7 @@ BasePreInferenceProcessor.constructor
 
 | Property | Modifier | Type | Default value | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePreInferenceProcessor.context` | [packages/agent/src/processor-pieces/base/basePreInferenceProcessor.ts:15](packages/agent/src/processor-pieces/base/basePreInferenceProcessor.ts#L15) |
+| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePreInferenceProcessor.context` | packages/agent/src/processor-pieces/base/basePreInferenceProcessor.ts:15 |
 
 ## Methods
 

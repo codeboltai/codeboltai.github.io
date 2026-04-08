@@ -39,7 +39,7 @@ Checks for overlapping intents without creating a new one.
 
 ### Returns
 
-- **`Promise<[IntentOverlapResult](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IntentOverlapResult)>`**: A promise that resolves with overlap information.
+- **`Promise<[IntentOverlapResult](/docs/reference/type-reference/codeboltjs/interfaces/IntentOverlapResult)>`**: A promise that resolves with overlap information.
 
 ### Examples
 

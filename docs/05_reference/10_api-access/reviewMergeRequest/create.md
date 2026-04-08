@@ -24,15 +24,15 @@ codebolt.reviewMergeRequest.create(data: CreateReviewMergeRequest): Promise<{ re
 Creates a new review or merge request with the specified details, including task description, changes, and optional merge configuration.
 ### Parameters
 
-- **`data`** ([CreateReviewMergeRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateReviewMergeRequest)): Complete request data including type, task info, changes, and merge config
+- **`data`** ([CreateReviewMergeRequest](/docs/reference/type-reference/codeboltjs/interfaces/CreateReviewMergeRequest)): Complete request data including type, task info, changes, and merge config
 
 ### Returns
 
-- **`Promise<{ request: [ReviewMergeRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ReviewMergeRequest) }>`**: A promise that resolves to the created request
+- **`Promise<{ request: [ReviewMergeRequest](/docs/reference/type-reference/codeboltjs/interfaces/ReviewMergeRequest) }>`**: A promise that resolves to the created request
 
 ### Parameter Details
 
-The [`CreateReviewMergeRequest`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateReviewMergeRequest) interface includes:
+The [`CreateReviewMergeRequest`](/docs/reference/type-reference/codeboltjs/interfaces/CreateReviewMergeRequest) interface includes:
 
 **Required Parameters:**
 - **`type`** (ReviewRequestType): 'review' or 'review_merge'

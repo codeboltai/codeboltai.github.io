@@ -28,11 +28,11 @@ Creates a new job in a specified job group. Jobs represent units of work like ta
 ### Parameters
 
 - **`groupId`** (string): The ID of the job group to create the job in.
-- **`data`** ([CreateJobData](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateJobData)): The job data including name, type, priority, and optional fields.
+- **`data`** ([CreateJobData](/docs/reference/type-reference/codeboltjs/interfaces/CreateJobData)): The job data including name, type, priority, and optional fields.
 
 ### Returns
 
-- **`Promise<[JobCreateResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/JobCreateResponse)>`**: A promise that resolves with the created job.
+- **`Promise<[JobCreateResponse](/docs/reference/type-reference/codeboltjs/interfaces/JobCreateResponse)>`**: A promise that resolves with the created job.
 
 ### CreateJobData Properties
 

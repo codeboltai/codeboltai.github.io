@@ -2,7 +2,7 @@
 title: KGMemoryRecordResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

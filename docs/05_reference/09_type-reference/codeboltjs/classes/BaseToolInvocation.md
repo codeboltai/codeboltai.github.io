@@ -2,7 +2,7 @@
 title: BaseToolInvocation
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -47,7 +47,7 @@ Defined in: packages/codeboltjs/src/tools/base-tool.ts:37
 
 | Property | Modifier | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="params"></a> `params` | `readonly` | `TParams` | The validated parameters for this specific invocation | [packages/codeboltjs/src/tools/base-tool.ts:37](packages/codeboltjs/src/tools/base-tool.ts#L37) |
+| <a id="params"></a> `params` | `readonly` | `TParams` | The validated parameters for this specific invocation | packages/codeboltjs/src/tools/base-tool.ts:37 |
 
 ## Methods
 

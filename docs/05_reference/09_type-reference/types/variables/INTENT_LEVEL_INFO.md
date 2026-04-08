@@ -2,7 +2,7 @@
 title: INTENT_LEVEL_INFO
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -29,7 +29,7 @@ Queries events using a flexible DSL with filtering, sorting, and aggregation cap
 
 ### Returns
 
-- **`Promise<[EventLogQueryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogQueryResponse)>`**: A promise that resolves with matching events or aggregations.
+- **`Promise<[EventLogQueryResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogQueryResponse)>`**: A promise that resolves with matching events or aggregations.
 
 ### Response Structure
 

@@ -2,7 +2,7 @@
 title: LoopDetectionModifier
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -44,7 +44,7 @@ BasePostInferenceProcessor.constructor
 
 | Property | Modifier | Type | Default value | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePostInferenceProcessor.context` | [packages/agent/src/processor-pieces/base/basePostInferenceProcessor.ts:16](packages/agent/src/processor-pieces/base/basePostInferenceProcessor.ts#L16) |
+| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePostInferenceProcessor.context` | packages/agent/src/processor-pieces/base/basePostInferenceProcessor.ts:16 |
 
 ## Methods
 

@@ -2,7 +2,7 @@
 title: CreateIdeaData
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

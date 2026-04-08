@@ -24,15 +24,15 @@ codebolt.calendar.createEvent(params: ICreateEventParams): Promise<ICreateEventR
 Creates a new calendar event with support for various event types, recurrence, participants, and reminders.
 ### Parameters
 
-- **`params`** ([ICreateEventParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateEventParams)): Event creation parameters including title, time, type, and optional settings
+- **`params`** ([ICreateEventParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateEventParams)): Event creation parameters including title, time, type, and optional settings
 
 ### Returns
 
-- **`Promise<[ICreateEventResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateEventResponse)>`**: A promise that resolves to the created event data
+- **`Promise<[ICreateEventResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateEventResponse)>`**: A promise that resolves to the created event data
 
 ### Parameter Details
 
-The [`ICreateEventParams`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateEventParams) interface includes:
+The [`ICreateEventParams`](/docs/reference/type-reference/codeboltjs/interfaces/ICreateEventParams) interface includes:
 
 **Required Parameters:**
 - **`title`** (string): The event title

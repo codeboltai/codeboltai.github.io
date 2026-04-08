@@ -19,7 +19,7 @@ None
 
 ## Return Value
 
-Returns a promise that resolves to an array of [`BrowserInstanceInfo`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/BrowserInstanceInfo) objects:
+Returns a promise that resolves to an array of [`BrowserInstanceInfo`](/docs/reference/type-reference/codeboltjs/interfaces/BrowserInstanceInfo) objects:
 
 ```js
 [
@@ -127,7 +127,7 @@ Track multiple concurrent browser automation tasks.
 
 ## Related Functions
 
-- [`getBrowserInstance()`](/docs/api/apiaccess/browser/getInstance) - Get specific instance details
-- [`setActiveBrowserInstance()`](/docs/api/apiaccess/browser/setActiveInstance) - Set active instance
-- [`openNewBrowserInstance()`](/docs/api/apiaccess/browser/openNewInstance) - Create new instance
-- [`closeBrowserInstance()`](/docs/api/apiaccess/browser/closeInstance) - Close instance
+- [`getBrowserInstance()`](/docs/reference/api-access/browser/getInstance) - Get specific instance details
+- [`setActiveBrowserInstance()`](/docs/reference/api-access/browser/setActiveInstance) - Set active instance
+- [`openNewBrowserInstance()`](/docs/reference/api-access/browser/openNewInstance) - Create new instance
+- [`closeBrowserInstance()`](/docs/reference/api-access/browser/closeInstance) - Close instance

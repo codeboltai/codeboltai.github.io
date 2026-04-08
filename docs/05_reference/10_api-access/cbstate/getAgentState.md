@@ -28,7 +28,7 @@ Retrieves the current state of the agent from the server via WebSocket.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetAgentStateResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAgentStateResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetAgentStateResponse`](/docs/reference/type-reference/types/interfaces/GetAgentStateResponse) object with the following properties:
 
 - **`type`** (string): Always "getAgentStateResponse".
 - **`payload`** (object, optional): Contains all key-value pairs stored in the agent state. This is a `Record<string, any>` object where:

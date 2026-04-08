@@ -25,11 +25,11 @@ codebolt.autoTesting.updateRunCaseStatus(params: IUpdateRunCaseParams): Promise<
 Updates the status of a specific test case within a run.
 ### Parameters
 
-- **`params`** ([IUpdateRunCaseParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunCaseParams)): Parameters including run ID, case ID, status, and optional user override flag.
+- **`params`** ([IUpdateRunCaseParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunCaseParams)): Parameters including run ID, case ID, status, and optional user override flag.
 
 ### Returns
 
-- **`Promise<[IUpdateRunCaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunCaseResponse)>`**: A promise that resolves to the updated test run.
+- **`Promise<[IUpdateRunCaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunCaseResponse)>`**: A promise that resolves to the updated test run.
 
 ### Examples
 

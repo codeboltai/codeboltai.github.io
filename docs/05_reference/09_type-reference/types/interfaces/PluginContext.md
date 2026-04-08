@@ -2,7 +2,7 @@
 title: PluginContext
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,9 +14,9 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:508
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="config"></a> `config` | [`ConfigurationManager`](ConfigurationManager) | [common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:510](common/types/src/codeboltjstypes/libFunctionTypes/internal.ts#L510) |
-| <a id="logger"></a> `logger` | [`InternalLogger`](InternalLogger) | [common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:509](common/types/src/codeboltjstypes/libFunctionTypes/internal.ts#L509) |
-| <a id="state"></a> `state` | [`InternalState`](InternalState) | [common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:511](common/types/src/codeboltjstypes/libFunctionTypes/internal.ts#L511) |
+| <a id="config"></a> `config` | [`ConfigurationManager`](ConfigurationManager) | common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:510 |
+| <a id="logger"></a> `logger` | [`InternalLogger`](InternalLogger) | common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:509 |
+| <a id="state"></a> `state` | [`InternalState`](InternalState) | common/types/src/codeboltjstypes/libFunctionTypes/internal.ts:511 |
 
 ## Methods
 

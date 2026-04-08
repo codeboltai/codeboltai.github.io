@@ -25,11 +25,11 @@ codebolt.autoTesting.getRun(params: IGetRunParams): Promise<IGetRunResponse>
 Retrieves details of a specific test run including case results and step statuses.
 ### Parameters
 
-- **`params`** ([IGetRunParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetRunParams)): Parameters including the run ID.
+- **`params`** ([IGetRunParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetRunParams)): Parameters including the run ID.
 
 ### Returns
 
-- **`Promise<[IGetRunResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetRunResponse)>`**: A promise that resolves to the test run with detailed results.
+- **`Promise<[IGetRunResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetRunResponse)>`**: A promise that resolves to the test run with detailed results.
 
 ### Examples
 

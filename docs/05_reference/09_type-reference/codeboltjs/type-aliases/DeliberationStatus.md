@@ -2,7 +2,7 @@
 title: DeliberationStatus
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

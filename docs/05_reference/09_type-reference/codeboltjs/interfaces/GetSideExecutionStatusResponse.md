@@ -2,7 +2,7 @@
 title: GetSideExecutionStatusResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

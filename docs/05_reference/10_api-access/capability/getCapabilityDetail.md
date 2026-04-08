@@ -30,15 +30,15 @@ Retrieves detailed information about a specific capability including its metadat
 ### Parameters
 
 - **`capabilityName`** (string): The name of the capability to retrieve details for.
-- **`capabilityType`** ([CapabilityType](/docs/api/11_doc-type-ref/codeboltjs/type-aliases/CapabilityType), optional): Optional type to narrow the search and ensure correct capability retrieval.
+- **`capabilityType`** ([CapabilityType](/docs/reference/type-reference/codeboltjs/type-aliases/CapabilityType), optional): Optional type to narrow the search and ensure correct capability retrieval.
 
 ### Returns
 
-- **`Promise<[GetCapabilityDetailResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetCapabilityDetailResponse)>`**: A promise that resolves to detailed information about the specified capability.
+- **`Promise<[GetCapabilityDetailResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetCapabilityDetailResponse)>`**: A promise that resolves to detailed information about the specified capability.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetCapabilityDetailResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetCapabilityDetailResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetCapabilityDetailResponse`](/docs/reference/type-reference/codeboltjs/interfaces/GetCapabilityDetailResponse) object with the following properties:
 
 **Response Properties:**
 - `type` (string): Always "getCapabilityDetailResponse"

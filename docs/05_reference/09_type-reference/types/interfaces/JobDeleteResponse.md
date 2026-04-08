@@ -2,7 +2,7 @@
 title: JobDeleteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:127
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="deleted"></a> `deleted` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:128](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L128) |
+| <a id="deleted"></a> `deleted` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:128 |

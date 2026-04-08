@@ -24,11 +24,11 @@ codebolt.groupFeedback.create(params: ICreateFeedbackParams): Promise<ICreateFee
 Creates a new feedback session for collecting structured feedback from multiple participants.
 ### Parameters
 
-- **`params`** ([ICreateFeedbackParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateFeedbackParams)): Feedback session parameters including title, description, participants, questions, and metadata.
+- **`params`** ([ICreateFeedbackParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateFeedbackParams)): Feedback session parameters including title, description, participants, questions, and metadata.
 
 ### Returns
 
-- **`Promise<[ICreateFeedbackResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateFeedbackResponse)>`**: A promise that resolves with the created feedback session details.
+- **`Promise<[ICreateFeedbackResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateFeedbackResponse)>`**: A promise that resolves with the created feedback session details.
 
 ### Response Structure
 

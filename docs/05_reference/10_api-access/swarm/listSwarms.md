@@ -22,7 +22,7 @@ codebolt.swarm.listSwarms(): Promise<ListSwarmsResponse>
 Lists all available swarms in the system.
 ### Returns
 
-- **`Promise<[ListSwarmsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListSwarmsResponse)>`**: A promise that resolves to an array of all swarms.
+- **`Promise<[ListSwarmsResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListSwarmsResponse)>`**: A promise that resolves to an array of all swarms.
 
 ### Examples
 

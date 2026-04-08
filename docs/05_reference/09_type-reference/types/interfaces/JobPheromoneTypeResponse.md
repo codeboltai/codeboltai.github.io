@@ -2,7 +2,7 @@
 title: JobPheromoneTypeResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:316
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="types"></a> `types` | [`PheromoneType`](PheromoneType)[] | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:317](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L317) |
+| <a id="types"></a> `types` | [`PheromoneType`](PheromoneType)[] | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:317 |

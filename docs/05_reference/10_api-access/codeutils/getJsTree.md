@@ -28,11 +28,11 @@ Retrieves a JavaScript tree structure for a given file path. Analyzes JavaScript
 
 ### Returns
 
-- **`Promise<JSTreeResponse>`**: A promise that resolves with a [`JSTreeResponse`](/docs/api/11_doc-type-ref/types/interfaces/JSTreeResponse) object containing file structure or error information.
+- **`Promise<JSTreeResponse>`**: A promise that resolves with a [`JSTreeResponse`](/docs/reference/type-reference/types/interfaces/JSTreeResponse) object containing file structure or error information.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`JSTreeResponse`](/docs/api/11_doc-type-ref/types/interfaces/JSTreeResponse) object with the following properties:
+The method returns a Promise that resolves to a [`JSTreeResponse`](/docs/reference/type-reference/types/interfaces/JSTreeResponse) object with the following properties:
 
 - **`event`** (string): Always "getJsTreeResponse".
 - **`payload`** (object, optional): Contains the parsed file structure when successful:

@@ -29,11 +29,11 @@ Lists all namespaces within a KV store instance.
 
 ### Returns
 
-- **`Promise<[KVNamespacesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVNamespacesResponse)>`**: A promise that resolves with an array of namespace names.
+- **`Promise<[KVNamespacesResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVNamespacesResponse)>`**: A promise that resolves with an array of namespace names.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVNamespacesResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVNamespacesResponse) object:
+The method returns a Promise that resolves to a [`KVNamespacesResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVNamespacesResponse) object:
 
 ```typescript
 {

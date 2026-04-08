@@ -2,7 +2,7 @@
 title: MessageRoute
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/common.ts:150
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="handler"></a> `handler` | (`message`: `any`) => `void` | [common/types/src/codeboltjstypes/libFunctionTypes/common.ts:152](common/types/src/codeboltjstypes/libFunctionTypes/common.ts#L152) |
-| <a id="messagetypes"></a> `messageTypes` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/common.ts:151](common/types/src/codeboltjstypes/libFunctionTypes/common.ts#L151) |
+| <a id="handler"></a> `handler` | (`message`: `any`) => `void` | common/types/src/codeboltjstypes/libFunctionTypes/common.ts:152 |
+| <a id="messagetypes"></a> `messageTypes` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/common.ts:151 |

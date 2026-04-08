@@ -2,7 +2,7 @@
 title: DependencyType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

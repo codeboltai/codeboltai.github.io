@@ -29,7 +29,7 @@ Gets details of a specific rule engine.
 
 ### Returns
 
-- **`Promise<[ContextRuleEngineResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the rule engine details.
+- **`Promise<[ContextRuleEngineResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the rule engine details.
 
 ### Examples
 

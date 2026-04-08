@@ -56,7 +56,7 @@ await codebolt.browser.goToPage('https://github.com');
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GoToPageResponse`](/docs/api/11_doc-type-ref/types/interfaces/GoToPageResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GoToPageResponse`](/docs/reference/type-reference/types/interfaces/GoToPageResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "goToPageResponse"

@@ -260,11 +260,11 @@ If you have specific requirements or suggestions for the Knowledge module, pleas
 
 ## Related Modules
 
-- [Knowledge Graph](/docs/api/apiaccess/knowledgeGraph) - Graph-based knowledge representation
-- [Persistent Memory](/docs/api/apiaccess/persistentMemory) - Long-term memory storage
-- [RAG](/docs/api/apiaccess/rag) - Retrieval-augmented generation
-- [Memory](/docs/api/apiaccess/memory) - General memory operations
-- [VectorDB](/docs/api/apiaccess/vectordb) - Vector database for semantic search
+- [Knowledge Graph](/docs/reference/api-access/knowledgeGraph) - Graph-based knowledge representation
+- [Persistent Memory](/docs/reference/api-access/persistentMemory) - Long-term memory storage
+- [RAG](/docs/reference/api-access/rag) - Retrieval-augmented generation
+- [Memory](/docs/reference/api-access/memory) - General memory operations
+- [VectorDB](/docs/reference/api-access/vectordb) - Vector database for semantic search
 
 ## Best Practices (Interim)
 

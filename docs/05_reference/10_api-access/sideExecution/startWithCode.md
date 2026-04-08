@@ -40,11 +40,11 @@ Starts a side execution process using inline JavaScript code.
 
 ### Returns
 
-- **`Promise<[StartSideExecutionResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartSideExecutionResponse)>`**: A promise that resolves with the side execution ID and initial status.
+- **`Promise<[StartSideExecutionResponse](/docs/reference/type-reference/codeboltjs/interfaces/StartSideExecutionResponse)>`**: A promise that resolves with the side execution ID and initial status.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`StartSideExecutionResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartSideExecutionResponse) object with the following properties:
+The method returns a Promise that resolves to a [`StartSideExecutionResponse`](/docs/reference/type-reference/codeboltjs/interfaces/StartSideExecutionResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "startSideExecutionResponse"

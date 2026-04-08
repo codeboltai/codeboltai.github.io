@@ -26,15 +26,15 @@ codebolt.capability.listCapabilities(filter: CapabilityFilter): Promise<ListCapa
 Lists all available capabilities with optional filtering by type, tags, or author.
 ### Parameters
 
-- **`filter`** ([CapabilityFilter](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CapabilityFilter), optional): Optional filter criteria to narrow down the list of capabilities.
+- **`filter`** ([CapabilityFilter](/docs/reference/type-reference/codeboltjs/interfaces/CapabilityFilter), optional): Optional filter criteria to narrow down the list of capabilities.
 
 ### Returns
 
-- **`Promise<[ListCapabilitiesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities matching the filter criteria.
+- **`Promise<[ListCapabilitiesResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of capabilities matching the filter criteria.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ListCapabilitiesResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ListCapabilitiesResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse) object with the following properties:
 
 **Response Properties:**
 - `type` (string): Always "listCapabilitiesResponse"

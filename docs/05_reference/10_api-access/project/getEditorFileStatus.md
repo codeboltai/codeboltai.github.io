@@ -25,7 +25,7 @@ Retrieves the current status of files in the editor, including information about
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetEditorFileStatusResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetEditorFileStatusResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetEditorFileStatusResponse`](/docs/reference/type-reference/types/interfaces/GetEditorFileStatusResponse) object with the following properties:
 
 - **`type`** (string): Always "getEditorFileStatusResponse".
 - **`editorStatus`** (string, optional): A formatted string containing information about visible files and open tabs in the editor.

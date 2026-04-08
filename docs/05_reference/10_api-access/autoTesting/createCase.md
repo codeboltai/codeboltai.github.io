@@ -25,11 +25,11 @@ codebolt.autoTesting.createCase(params: ICreateCaseParams): Promise<ICreateCaseR
 Creates a new test case with steps, labels, and priority.
 ### Parameters
 
-- **`params`** ([ICreateCaseParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateCaseParams)): Parameters for creating the test case including key, name, steps, and labels.
+- **`params`** ([ICreateCaseParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateCaseParams)): Parameters for creating the test case including key, name, steps, and labels.
 
 ### Returns
 
-- **`Promise<[ICreateCaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateCaseResponse)>`**: A promise that resolves to the created test case.
+- **`Promise<[ICreateCaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateCaseResponse)>`**: A promise that resolves to the created test case.
 
 ### Examples
 

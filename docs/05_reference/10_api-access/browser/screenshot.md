@@ -26,7 +26,7 @@ Captures a screenshot of the current browser page as base64 encoded image data. 
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`BrowserScreenshotResponse`](/docs/api/11_doc-type-ref/types/interfaces/BrowserScreenshotResponse) object with the following properties:
+The method returns a Promise that resolves to a [`BrowserScreenshotResponse`](/docs/reference/type-reference/types/interfaces/BrowserScreenshotResponse) object with the following properties:
 
 - **`type`** (string): Always "screenshotResponse" or similar response type identifier.
 - **`payload`** (object, optional): Contains the screenshot data and metadata

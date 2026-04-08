@@ -28,11 +28,11 @@ Adds review feedback to a merge request, including approvals, change requests, o
 ### Parameters
 
 - **`id`** (string): The unique identifier of the review request
-- **`feedback`** ([AddReviewFeedback](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddReviewFeedback)): Review feedback including agent info, type, and comment
+- **`feedback`** ([AddReviewFeedback](/docs/reference/type-reference/codeboltjs/interfaces/AddReviewFeedback)): Review feedback including agent info, type, and comment
 
 ### Returns
 
-- **`Promise<{ request: [ReviewMergeRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ReviewMergeRequest) }>`**: A promise that resolves to the updated request with new review
+- **`Promise<{ request: [ReviewMergeRequest](/docs/reference/type-reference/codeboltjs/interfaces/ReviewMergeRequest) }>`**: A promise that resolves to the updated request with new review
 
 ### Parameter Details
 

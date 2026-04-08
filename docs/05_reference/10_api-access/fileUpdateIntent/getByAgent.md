@@ -29,7 +29,7 @@ Gets all intents claimed by a specific agent.
 
 ### Returns
 
-- **`Promise<[FileUpdateIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/FileUpdateIntent)[]>`**: A promise that resolves with an array of the agent's intents.
+- **`Promise<[FileUpdateIntent](/docs/reference/type-reference/codeboltjs/interfaces/FileUpdateIntent)[]>`**: A promise that resolves with an array of the agent's intents.
 
 ### Examples
 

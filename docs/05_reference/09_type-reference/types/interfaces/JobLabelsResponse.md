@@ -2,7 +2,7 @@
 title: JobLabelsResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:143
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="labels"></a> `labels` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:144](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L144) |
+| <a id="labels"></a> `labels` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:144 |

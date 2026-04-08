@@ -2,7 +2,7 @@
 title: AssembledContext
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

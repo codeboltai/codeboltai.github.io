@@ -2,7 +2,7 @@
 title: GitStatusResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/git.ts:31
 
 | Property | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="data"></a> `data?` | [`GitStatusData`](GitStatusData) | - | [common/types/src/codeboltjstypes/libFunctionTypes/git.ts:32](common/types/src/codeboltjstypes/libFunctionTypes/git.ts#L32) |
-| <a id="error"></a> `error?` | `string` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`error`](BaseGitSDKResponse.md#error) | [common/types/src/codeboltjstypes/libFunctionTypes/git.ts:12](common/types/src/codeboltjstypes/libFunctionTypes/git.ts#L12) |
-| <a id="message"></a> `message?` | `string` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`message`](BaseGitSDKResponse.md#message) | [common/types/src/codeboltjstypes/libFunctionTypes/git.ts:11](common/types/src/codeboltjstypes/libFunctionTypes/git.ts#L11) |
-| <a id="success"></a> `success?` | `boolean` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`success`](BaseGitSDKResponse.md#success) | [common/types/src/codeboltjstypes/libFunctionTypes/git.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/git.ts#L10) |
+| <a id="data"></a> `data?` | [`GitStatusData`](GitStatusData) | - | common/types/src/codeboltjstypes/libFunctionTypes/git.ts:32 |
+| <a id="error"></a> `error?` | `string` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`error`](BaseGitSDKResponse.md#error) | common/types/src/codeboltjstypes/libFunctionTypes/git.ts:12 |
+| <a id="message"></a> `message?` | `string` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`message`](BaseGitSDKResponse.md#message) | common/types/src/codeboltjstypes/libFunctionTypes/git.ts:11 |
+| <a id="success"></a> `success?` | `boolean` | [`BaseGitSDKResponse`](BaseGitSDKResponse).[`success`](BaseGitSDKResponse.md#success) | common/types/src/codeboltjstypes/libFunctionTypes/git.ts:10 |

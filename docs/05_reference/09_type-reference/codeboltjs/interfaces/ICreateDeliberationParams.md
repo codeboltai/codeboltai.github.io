@@ -2,7 +2,7 @@
 title: ICreateDeliberationParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

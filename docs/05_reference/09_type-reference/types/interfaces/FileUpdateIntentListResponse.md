@@ -2,7 +2,7 @@
 title: FileUpdateIntentListResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="intents"></a> `intents` | [`FileUpdateIntent`](FileUpdateIntent)[] | [common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:147](common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts#L147) |
+| <a id="intents"></a> `intents` | [`FileUpdateIntent`](FileUpdateIntent)[] | common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:147 |

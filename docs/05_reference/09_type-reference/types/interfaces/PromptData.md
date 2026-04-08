@@ -2,7 +2,7 @@
 title: PromptData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

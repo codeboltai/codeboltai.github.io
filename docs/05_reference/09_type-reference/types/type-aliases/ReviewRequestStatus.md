@@ -2,7 +2,7 @@
 title: ReviewRequestStatus
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

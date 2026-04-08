@@ -26,11 +26,11 @@ codebolt.autoTesting.listCases(params: IListCasesParams): Promise<IListCasesResp
 Lists all available test cases.
 ### Parameters
 
-- **`params`** ([IListCasesParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IListCasesParams), optional): Optional parameters for filtering.
+- **`params`** ([IListCasesParams](/docs/reference/type-reference/codeboltjs/interfaces/IListCasesParams), optional): Optional parameters for filtering.
 
 ### Returns
 
-- **`Promise<[IListCasesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IListCasesResponse)>`**: A promise that resolves to the list of test cases.
+- **`Promise<[IListCasesResponse](/docs/reference/type-reference/codeboltjs/interfaces/IListCasesResponse)>`**: A promise that resolves to the list of test cases.
 
 ### Examples
 

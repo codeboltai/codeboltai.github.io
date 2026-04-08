@@ -21,7 +21,7 @@ codebolt.contextRuleEngine.getPossibleVariables(): Promise<PossibleVariablesResp
 Gets all possible variables for rule configuration.
 ### Returns
 
-- **`Promise<[PossibleVariablesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/PossibleVariablesResponse)>`**: A promise that resolves with available variables.
+- **`Promise<[PossibleVariablesResponse](/docs/reference/type-reference/codeboltjs/interfaces/PossibleVariablesResponse)>`**: A promise that resolves with available variables.
 
 ### Examples
 

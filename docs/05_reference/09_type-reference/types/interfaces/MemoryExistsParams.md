@@ -2,7 +2,7 @@
 title: MemoryExistsParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:206
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="key"></a> `key` | `string` | Memory key | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:208](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L208) |
+| <a id="key"></a> `key` | `string` | Memory key | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:208 |

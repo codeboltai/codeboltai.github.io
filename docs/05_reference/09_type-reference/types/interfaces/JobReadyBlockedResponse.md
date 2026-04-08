@@ -2,7 +2,7 @@
 title: JobReadyBlockedResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:139
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="jobs"></a> `jobs` | [`Job`](Job)[] | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:140](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L140) |
+| <a id="jobs"></a> `jobs` | [`Job`](Job)[] | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:140 |

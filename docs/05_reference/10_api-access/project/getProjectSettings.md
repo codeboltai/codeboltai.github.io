@@ -25,7 +25,7 @@ Retrieves the current project settings including user information, workspace det
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetProjectSettingsResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetProjectSettingsResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetProjectSettingsResponse`](/docs/reference/type-reference/types/interfaces/GetProjectSettingsResponse) object with the following properties:
 
 - **`type`** (string): Always "getProjectSettingsResponse".
 - **`projectSettings`** (object, optional): Comprehensive project configuration containing:

@@ -50,11 +50,11 @@ codebolt.memoryIngestion.execute(params: ExecuteIngestionParams): Promise<Ingest
 Executes a memory ingestion pipeline to process and route data.
 ### Parameters
 
-- **`params`** ([ExecuteIngestionParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ExecuteIngestionParams)): Execution parameters containing pipeline ID and data.
+- **`params`** ([ExecuteIngestionParams](/docs/reference/type-reference/codeboltjs/interfaces/ExecuteIngestionParams)): Execution parameters containing pipeline ID and data.
 
 ### Returns
 
-- **`Promise<[IngestionExecuteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IngestionExecuteResponse)>`**: A promise that resolves to execution results.
+- **`Promise<[IngestionExecuteResponse](/docs/reference/type-reference/codeboltjs/interfaces/IngestionExecuteResponse)>`**: A promise that resolves to execution results.
 
 ### Examples
 

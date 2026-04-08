@@ -47,11 +47,11 @@ codebolt.memoryIngestion.create(config: CreateIngestionPipelineParams): Promise<
 Creates a new memory ingestion pipeline for processing and routing data into memory stores.
 ### Parameters
 
-- **`config`** ([CreateIngestionPipelineParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateIngestionPipelineParams)): Pipeline configuration object.
+- **`config`** ([CreateIngestionPipelineParams](/docs/reference/type-reference/codeboltjs/interfaces/CreateIngestionPipelineParams)): Pipeline configuration object.
 
 ### Returns
 
-- **`Promise<[IngestionPipelineResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IngestionPipelineResponse)>`**: A promise that resolves to the created pipeline details.
+- **`Promise<[IngestionPipelineResponse](/docs/reference/type-reference/codeboltjs/interfaces/IngestionPipelineResponse)>`**: A promise that resolves to the created pipeline details.
 
 ### Examples
 

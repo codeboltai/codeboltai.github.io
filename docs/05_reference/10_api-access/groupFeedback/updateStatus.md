@@ -24,11 +24,11 @@ codebolt.groupFeedback.updateStatus(params: IUpdateStatusParams): Promise<IUpdat
 Updates the status of a feedback session to control its lifecycle.
 ### Parameters
 
-- **`params`** ([IUpdateStatusParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateStatusParams)): Parameters including feedbackId and the new status value.
+- **`params`** ([IUpdateStatusParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateStatusParams)): Parameters including feedbackId and the new status value.
 
 ### Returns
 
-- **`Promise<[IUpdateStatusResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateStatusResponse)>`**: A promise that resolves with the updated status.
+- **`Promise<[IUpdateStatusResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateStatusResponse)>`**: A promise that resolves with the updated status.
 
 ### Examples
 

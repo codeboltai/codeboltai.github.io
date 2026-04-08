@@ -2,7 +2,7 @@
 title: UpdatePlanData
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: packages/codeboltjs/src/modules/requirementPlan.ts:31
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="content"></a> `content` | `string` \| [`RequirementPlanDocument`](RequirementPlanDocument) | [packages/codeboltjs/src/modules/requirementPlan.ts:33](packages/codeboltjs/src/modules/requirementPlan.ts#L33) |
-| <a id="filepath"></a> `filePath` | `string` | [packages/codeboltjs/src/modules/requirementPlan.ts:32](packages/codeboltjs/src/modules/requirementPlan.ts#L32) |
+| <a id="content"></a> `content` | `string` \| [`RequirementPlanDocument`](RequirementPlanDocument) | packages/codeboltjs/src/modules/requirementPlan.ts:33 |
+| <a id="filepath"></a> `filePath` | `string` | packages/codeboltjs/src/modules/requirementPlan.ts:32 |

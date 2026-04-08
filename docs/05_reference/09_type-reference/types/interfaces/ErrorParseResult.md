@@ -2,7 +2,7 @@
 title: ErrorParseResult
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:4
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="errors"></a> `errors` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:45](common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts#L45) |
+| <a id="errors"></a> `errors` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:45 |

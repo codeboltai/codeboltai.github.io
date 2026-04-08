@@ -2,7 +2,7 @@
 title: StopProcessMessage
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -22,5 +22,5 @@ Stop process message structure
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="reason"></a> `reason?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:139](common/types/src/codeboltjstypes/libFunctionTypes/chat.ts#L139) |
-| <a id="type"></a> `type` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:138](common/types/src/codeboltjstypes/libFunctionTypes/chat.ts#L138) |
+| <a id="reason"></a> `reason?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:139 |
+| <a id="type"></a> `type` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/chat.ts:138 |

@@ -28,11 +28,11 @@ Initializes a new Git repository. Can be used in the current directory or at a s
 
 ### Returns
 
-- **`Promise<GitInitResponse>`**: A promise that resolves with a [`GitInitResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitInitResponse) object containing the response type and initialization metadata.
+- **`Promise<GitInitResponse>`**: A promise that resolves with a [`GitInitResponse`](/docs/reference/type-reference/types/interfaces/GitInitResponse) object containing the response type and initialization metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitInitResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitInitResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitInitResponse`](/docs/reference/type-reference/types/interfaces/GitInitResponse) object with the following properties:
 
 - **`type`** (string): Always "gitInitResponse".
 - **`success`** (boolean, optional): Indicates if the operation was successful.

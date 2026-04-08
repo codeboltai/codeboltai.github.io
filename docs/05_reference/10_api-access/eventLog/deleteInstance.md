@@ -29,7 +29,7 @@ Deletes an event log instance and all its events.
 
 ### Returns
 
-- **`Promise<[EventLogInstanceResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogInstanceResponse)>`**: A promise that resolves when the instance is deleted.
+- **`Promise<[EventLogInstanceResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogInstanceResponse)>`**: A promise that resolves when the instance is deleted.
 
 ### Examples
 

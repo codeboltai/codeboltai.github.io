@@ -2,7 +2,7 @@
 title: UpdateEventLogInstanceParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:76
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="description"></a> `description?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:78](common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts#L78) |
-| <a id="name"></a> `name?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:77](common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts#L77) |
+| <a id="description"></a> `description?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:78 |
+| <a id="name"></a> `name?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/eventLog.ts:77 |

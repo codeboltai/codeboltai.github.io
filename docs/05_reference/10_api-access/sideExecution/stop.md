@@ -30,11 +30,11 @@ Stops a running side execution process.
 
 ### Returns
 
-- **`Promise<[StopSideExecutionResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StopSideExecutionResponse)>`**: A promise that resolves when the execution is stopped.
+- **`Promise<[StopSideExecutionResponse](/docs/reference/type-reference/codeboltjs/interfaces/StopSideExecutionResponse)>`**: A promise that resolves when the execution is stopped.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`StopSideExecutionResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StopSideExecutionResponse) object with the following properties:
+The method returns a Promise that resolves to a [`StopSideExecutionResponse`](/docs/reference/type-reference/codeboltjs/interfaces/StopSideExecutionResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "stopSideExecutionResponse"

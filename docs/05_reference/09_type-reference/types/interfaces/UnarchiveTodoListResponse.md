@@ -2,7 +2,7 @@
 title: UnarchiveTodoListResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -21,10 +21,10 @@ Types for the cbtodo module functions
 
 | Property | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ |
-| <a id="archived"></a> `archived?` | `boolean` | Archived status | - | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:124](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L124) |
-| <a id="error"></a> `error?` | `string` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`error`](BaseTodoSDKResponse.md#error) | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L10) |
-| <a id="id"></a> `id?` | `string` | Unarchived list ID | - | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:122](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L122) |
-| <a id="message"></a> `message?` | `string` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`message`](BaseTodoSDKResponse.md#message) | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L9) |
-| <a id="requestid"></a> `requestId?` | `string` | Request identifier | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`requestId`](BaseTodoSDKResponse.md#requestid) | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:12](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L12) |
-| <a id="success"></a> `success?` | `boolean` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`success`](BaseTodoSDKResponse.md#success) | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L8) |
-| <a id="timestamp"></a> `timestamp?` | `string` | Response timestamp | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`timestamp`](BaseTodoSDKResponse.md#timestamp) | [common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:14](common/types/src/codeboltjstypes/libFunctionTypes/todo.ts#L14) |
+| <a id="archived"></a> `archived?` | `boolean` | Archived status | - | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:124 |
+| <a id="error"></a> `error?` | `string` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`error`](BaseTodoSDKResponse.md#error) | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:10 |
+| <a id="id"></a> `id?` | `string` | Unarchived list ID | - | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:122 |
+| <a id="message"></a> `message?` | `string` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`message`](BaseTodoSDKResponse.md#message) | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:9 |
+| <a id="requestid"></a> `requestId?` | `string` | Request identifier | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`requestId`](BaseTodoSDKResponse.md#requestid) | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:12 |
+| <a id="success"></a> `success?` | `boolean` | - | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`success`](BaseTodoSDKResponse.md#success) | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:8 |
+| <a id="timestamp"></a> `timestamp?` | `string` | Response timestamp | [`BaseTodoSDKResponse`](BaseTodoSDKResponse).[`timestamp`](BaseTodoSDKResponse.md#timestamp) | common/types/src/codeboltjstypes/libFunctionTypes/todo.ts:14 |

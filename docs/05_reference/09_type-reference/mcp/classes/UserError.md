@@ -2,7 +2,7 @@
 title: UserError
 ---
 
-[**@codebolt/mcp**](../index)
+[**@codebolt/mcp**](../index.md)
 
 ***
 
@@ -47,7 +47,7 @@ Creates a new UnexpectedStateError.
 
 | Property | Modifier | Type | Description | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="extras"></a> `extras?` | `public` | `Extras` | Additional context for the error | [`UnexpectedStateError`](UnexpectedStateError).[`extras`](UnexpectedStateError.md#extras) | [packages/mcp/src/mcpServer.ts:126](packages/mcp/src/mcpServer.ts#L126) |
+| <a id="extras"></a> `extras?` | `public` | `Extras` | Additional context for the error | [`UnexpectedStateError`](UnexpectedStateError).[`extras`](UnexpectedStateError.md#extras) | packages/mcp/src/mcpServer.ts:126 |
 | <a id="message"></a> `message` | `public` | `string` | - | [`UnexpectedStateError`](UnexpectedStateError).[`message`](UnexpectedStateError.md#message) | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1077 |
 | <a id="name"></a> `name` | `public` | `string` | - | [`UnexpectedStateError`](UnexpectedStateError).[`name`](UnexpectedStateError.md#name) | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1076 |
 | <a id="stack"></a> `stack?` | `public` | `string` | - | [`UnexpectedStateError`](UnexpectedStateError).[`stack`](UnexpectedStateError.md#stack) | node\_modules/.pnpm/typescript@5.9.3/node\_modules/typescript/lib/lib.es5.d.ts:1078 |

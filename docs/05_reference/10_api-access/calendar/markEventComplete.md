@@ -24,15 +24,15 @@ codebolt.calendar.markEventComplete(params: IMarkEventCompleteParams): Promise<I
 Marks a single calendar event as complete, recording the completion timestamp and updating the event status.
 ### Parameters
 
-- **`params`** ([IMarkEventCompleteParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IMarkEventCompleteParams)): Parameters containing the eventId to mark as complete
+- **`params`** ([IMarkEventCompleteParams](/docs/reference/type-reference/codeboltjs/interfaces/IMarkEventCompleteParams)): Parameters containing the eventId to mark as complete
 
 ### Returns
 
-- **`Promise<[IMarkEventCompleteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IMarkEventCompleteResponse)>`**: A promise that resolves to the completed event data
+- **`Promise<[IMarkEventCompleteResponse](/docs/reference/type-reference/codeboltjs/interfaces/IMarkEventCompleteResponse)>`**: A promise that resolves to the completed event data
 
 ### Parameter Details
 
-The [`IMarkEventCompleteParams`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IMarkEventCompleteParams) interface includes:
+The [`IMarkEventCompleteParams`](/docs/reference/type-reference/codeboltjs/interfaces/IMarkEventCompleteParams) interface includes:
 - **`eventId`** (string, required): The unique identifier of the event to mark as complete
 
 ### Response Structure

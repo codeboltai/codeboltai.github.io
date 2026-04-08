@@ -32,11 +32,11 @@ Deletes a file at the specified path. This function allows you to remove files f
 
 ### Returns
 
-- **`Promise<DeleteFileResponse>`**: A promise that resolves with a [`DeleteFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/DeleteFileResponse) object containing the response type and file deletion metadata.
+- **`Promise<DeleteFileResponse>`**: A promise that resolves with a [`DeleteFileResponse`](/docs/reference/type-reference/types/interfaces/DeleteFileResponse) object containing the response type and file deletion metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`DeleteFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/DeleteFileResponse) object with the following properties:
+The method returns a Promise that resolves to a [`DeleteFileResponse`](/docs/reference/type-reference/types/interfaces/DeleteFileResponse) object with the following properties:
 
 - **`type`** (string): Always "deleteFileResponse".
 - **`path`** (string, optional): The full path of the file that was deleted.

@@ -2,7 +2,7 @@
 title: CapabilityType
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

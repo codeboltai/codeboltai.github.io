@@ -2,7 +2,7 @@
 title: RequiredVariablesResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

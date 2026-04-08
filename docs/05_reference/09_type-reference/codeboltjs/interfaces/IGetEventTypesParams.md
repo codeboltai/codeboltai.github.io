@@ -2,7 +2,7 @@
 title: IGetEventTypesParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: packages/codeboltjs/src/modules/episodicMemory.ts:80
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="memoryid"></a> `memoryId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:81](packages/codeboltjs/src/modules/episodicMemory.ts#L81) |
-| <a id="swarmid"></a> `swarmId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:82](packages/codeboltjs/src/modules/episodicMemory.ts#L82) |
+| <a id="memoryid"></a> `memoryId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:81 |
+| <a id="swarmid"></a> `swarmId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:82 |

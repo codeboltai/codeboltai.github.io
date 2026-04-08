@@ -28,7 +28,7 @@ Initializes the hook manager for a project directory, setting up the infrastruct
 
 ### Returns
 
-- **`Promise<[HookInitializeResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookInitializeResponse)>`**: A promise that resolves when the hook manager is initialized.
+- **`Promise<[HookInitializeResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookInitializeResponse)>`**: A promise that resolves when the hook manager is initialized.
 
 ### Response Structure
 

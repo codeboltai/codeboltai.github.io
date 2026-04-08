@@ -2,7 +2,7 @@
 title: InferenceResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,4 +16,4 @@ Inference response wrapper
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="completion"></a> `completion` | [`LLMCompletion`](LLMCompletion) | [common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:171](common/types/src/codeboltjstypes/libFunctionTypes/llm.ts#L171) |
+| <a id="completion"></a> `completion` | [`LLMCompletion`](LLMCompletion) | common/types/src/codeboltjstypes/libFunctionTypes/llm.ts:171 |

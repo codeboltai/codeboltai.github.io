@@ -54,7 +54,7 @@ Imports todos from JSON or Markdown format with optional merge strategy.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`ImportTodosResponse`](/docs/api/11_doc-type-ref/types/interfaces/ImportTodosResponse) object with the following properties:
+The method returns a Promise that resolves to an [`ImportTodosResponse`](/docs/reference/type-reference/types/interfaces/ImportTodosResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "importTodosResponse"

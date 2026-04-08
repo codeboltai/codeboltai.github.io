@@ -2,7 +2,7 @@
 title: ListExecutorsResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

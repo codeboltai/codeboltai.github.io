@@ -2,7 +2,7 @@
 title: IGetDeliberationParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:76
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="id"></a> `id` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:77](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L77) |
-| <a id="view"></a> `view?` | `"request"` \| `"full"` \| `"responses"` \| `"votes"` \| `"winner"` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:78](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L78) |
+| <a id="id"></a> `id` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:77 |
+| <a id="view"></a> `view?` | `"request"` \| `"full"` \| `"responses"` \| `"votes"` \| `"winner"` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:78 |

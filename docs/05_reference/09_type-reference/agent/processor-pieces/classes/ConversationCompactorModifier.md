@@ -2,7 +2,7 @@
 title: ConversationCompactorModifier
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -44,7 +44,7 @@ BasePostToolCallProcessor.constructor
 
 | Property | Modifier | Type | Default value | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ | ------ | ------ |
-| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePostToolCallProcessor.context` | [packages/agent/src/processor-pieces/base/basePostToolCallProcessor.ts:16](packages/agent/src/processor-pieces/base/basePostToolCallProcessor.ts#L16) |
+| <a id="context"></a> `context` | `protected` | `Record`\<`string`, `unknown`\> | `\{\}` | `BasePostToolCallProcessor.context` | packages/agent/src/processor-pieces/base/basePostToolCallProcessor.ts:16 |
 
 ## Methods
 

@@ -2,7 +2,7 @@
 title: ToolInvocation
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -23,7 +23,7 @@ Represents a validated and ready-to-execute tool call
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="params"></a> `params` | `TParams` | The validated parameters for this specific invocation | [packages/codeboltjs/src/tools/types.ts:283](packages/codeboltjs/src/tools/types.ts#L283) |
+| <a id="params"></a> `params` | `TParams` | The validated parameters for this specific invocation | packages/codeboltjs/src/tools/types.ts:283 |
 
 ## Methods
 

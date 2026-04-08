@@ -39,11 +39,11 @@ Starts execution of a skill with optional parameters and timeout settings. This 
 
 ### Returns
 
-- **`Promise<[StartCapabilityResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartCapabilityResponse)>`**: A promise that resolves to the execution response containing the execution ID and initial status.
+- **`Promise<[StartCapabilityResponse](/docs/reference/type-reference/codeboltjs/interfaces/StartCapabilityResponse)>`**: A promise that resolves to the execution response containing the execution ID and initial status.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`StartCapabilityResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/StartCapabilityResponse) object with the following properties:
+The method returns a Promise that resolves to a [`StartCapabilityResponse`](/docs/reference/type-reference/codeboltjs/interfaces/StartCapabilityResponse) object with the following properties:
 
 **Response Properties:**
 - `type` (string): Always "startCapabilityResponse"

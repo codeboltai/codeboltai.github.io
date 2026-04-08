@@ -21,7 +21,7 @@ codebolt.eventLog.listInstances(): Promise<EventLogInstanceListResponse>
 Lists all available event log instances.
 ### Returns
 
-- **`Promise<[EventLogInstanceListResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogInstanceListResponse)>`**: A promise that resolves with an array of all event log instances.
+- **`Promise<[EventLogInstanceListResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogInstanceListResponse)>`**: A promise that resolves with an array of all event log instances.
 
 ### Response Structure
 

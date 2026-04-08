@@ -2,7 +2,7 @@
 title: ToolExecutionTuple
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

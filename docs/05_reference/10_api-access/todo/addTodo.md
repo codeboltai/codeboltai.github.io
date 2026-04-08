@@ -49,7 +49,7 @@ Adds a new todo item with optional priority and tags.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`AddTodoResponse`](/docs/api/11_doc-type-ref/types/interfaces/AddTodoResponse) object with the following properties:
+The method returns a Promise that resolves to an [`AddTodoResponse`](/docs/reference/type-reference/types/interfaces/AddTodoResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "addTodoResponse"

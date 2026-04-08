@@ -29,7 +29,7 @@ Gets all portfolios associated with a specific project.
 
 ### Returns
 
-- **`Promise<[GetPortfoliosByProjectResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetPortfoliosByProjectResponse)>`**: A promise that resolves to the list of portfolios.
+- **`Promise<[GetPortfoliosByProjectResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetPortfoliosByProjectResponse)>`**: A promise that resolves to the list of portfolios.
 
 ### Examples
 

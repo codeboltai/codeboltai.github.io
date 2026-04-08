@@ -2,7 +2,7 @@
 title: SaveCodemapData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:46
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="codemap"></a> `codemap` | [`Codemap`](Codemap) | [common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:47](common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts#L47) |
+| <a id="codemap"></a> `codemap` | [`Codemap`](Codemap) | common/types/src/codeboltjstypes/libFunctionTypes/codemap.ts:47 |

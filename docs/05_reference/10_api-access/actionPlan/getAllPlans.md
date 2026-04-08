@@ -105,6 +105,6 @@ try {
 
 ## Related Methods
 
-- [getPlanDetail](/docs/api/apiaccess/actionPlan/getPlanDetail) - Get details of a specific plan
-- [createActionPlan](/docs/api/apiaccess/actionPlan/createActionPlan) - Create a new plan
-- [updateActionPlan](/docs/api/apiaccess/actionPlan/updateActionPlan) - Update an existing plan
+- [getPlanDetail](/docs/reference/api-access/actionPlan/getPlanDetail) - Get details of a specific plan
+- [createActionPlan](/docs/reference/api-access/actionPlan/createActionPlan) - Create a new plan
+- [updateActionPlan](/docs/reference/api-access/actionPlan/updateActionPlan) - Update an existing plan

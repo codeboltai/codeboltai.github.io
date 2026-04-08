@@ -32,11 +32,11 @@ Requests to open a debug browser at the specified URL and port. This enables deb
 
 ### Returns
 
-- **`Promise<OpenDebugBrowserResponse>`**: A promise that resolves with an [`OpenDebugBrowserResponse`](/docs/api/11_doc-type-ref/types/interfaces/OpenDebugBrowserResponse) object containing the response type and browser configuration.
+- **`Promise<OpenDebugBrowserResponse>`**: A promise that resolves with an [`OpenDebugBrowserResponse`](/docs/reference/type-reference/types/interfaces/OpenDebugBrowserResponse) object containing the response type and browser configuration.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`OpenDebugBrowserResponse`](/docs/api/11_doc-type-ref/types/interfaces/OpenDebugBrowserResponse) object with the following properties:
+The method returns a Promise that resolves to an [`OpenDebugBrowserResponse`](/docs/reference/type-reference/types/interfaces/OpenDebugBrowserResponse) object with the following properties:
 
 - **`type`** (string): Always "openDebugBrowserResponse".
 - **`url`** (string, optional): The URL where the debug browser was opened.

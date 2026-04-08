@@ -25,11 +25,11 @@ codebolt.autoTesting.deleteCase(params: IDeleteCaseParams): Promise<IDeleteCaseR
 Deletes a test case.
 ### Parameters
 
-- **`params`** ([IDeleteCaseParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IDeleteCaseParams)): Parameters including the case ID to delete.
+- **`params`** ([IDeleteCaseParams](/docs/reference/type-reference/codeboltjs/interfaces/IDeleteCaseParams)): Parameters including the case ID to delete.
 
 ### Returns
 
-- **`Promise<[IDeleteCaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IDeleteCaseResponse)>`**: A promise that resolves when the case is deleted.
+- **`Promise<[IDeleteCaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/IDeleteCaseResponse)>`**: A promise that resolves when the case is deleted.
 
 ### Examples
 

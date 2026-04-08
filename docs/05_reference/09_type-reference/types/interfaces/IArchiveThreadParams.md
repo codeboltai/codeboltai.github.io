@@ -2,7 +2,7 @@
 title: IArchiveThreadParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:289
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="threadid"></a> `threadId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:290](common/types/src/codeboltjstypes/libFunctionTypes/mail.ts#L290) |
+| <a id="threadid"></a> `threadId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/mail.ts:290 |

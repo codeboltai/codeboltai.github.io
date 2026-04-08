@@ -42,11 +42,11 @@ Adds a memory record (node) to a knowledge graph instance with typed attributes 
 ### Parameters
 
 - **`instanceId`** (string): The ID of the instance to add the record to.
-- **`record`** ([CreateKGMemoryRecordParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateKGMemoryRecordParams)): Record data object.
+- **`record`** ([CreateKGMemoryRecordParams](/docs/reference/type-reference/codeboltjs/interfaces/CreateKGMemoryRecordParams)): Record data object.
 
 ### Returns
 
-- **`Promise<[KGMemoryRecordResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KGMemoryRecordResponse)>`**: A promise that resolves to the created record details.
+- **`Promise<[KGMemoryRecordResponse](/docs/reference/type-reference/codeboltjs/interfaces/KGMemoryRecordResponse)>`**: A promise that resolves to the created record details.
 
 ### Examples
 

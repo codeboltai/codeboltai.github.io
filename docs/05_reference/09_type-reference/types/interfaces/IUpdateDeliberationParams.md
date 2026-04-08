@@ -2,7 +2,7 @@
 title: IUpdateDeliberationParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:92
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="deliberationid"></a> `deliberationId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:93](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L93) |
-| <a id="requestmessage"></a> `requestMessage?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:95](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L95) |
-| <a id="status"></a> `status?` | [`DeliberationStatus`](../type-aliases/DeliberationStatus) | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:94](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L94) |
+| <a id="deliberationid"></a> `deliberationId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:93 |
+| <a id="requestmessage"></a> `requestMessage?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:95 |
+| <a id="status"></a> `status?` | [`DeliberationStatus`](../type-aliases/DeliberationStatus) | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:94 |

@@ -2,7 +2,7 @@
 title: dbmemory
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -23,5 +23,5 @@ A module for handling in-memory database operations via WebSocket.
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="addknowledge"></a> `addKnowledge()` | (`key`: `string`, `value`: `MemoryValue`) => `Promise`\<`MemorySetResponse`\> | Adds a key-value pair to the in-memory database. | [packages/codeboltjs/src/modules/dbmemory.ts:19](packages/codeboltjs/src/modules/dbmemory.ts#L19) |
-| <a id="getknowledge"></a> `getKnowledge()` | (`key`: `string`) => `Promise`\<`MemoryGetResponse`\> | Retrieves a value from the in-memory database by key. | [packages/codeboltjs/src/modules/dbmemory.ts:35](packages/codeboltjs/src/modules/dbmemory.ts#L35) |
+| <a id="addknowledge"></a> `addKnowledge()` | (`key`: `string`, `value`: `MemoryValue`) => `Promise`\<`MemorySetResponse`\> | Adds a key-value pair to the in-memory database. | packages/codeboltjs/src/modules/dbmemory.ts:19 |
+| <a id="getknowledge"></a> `getKnowledge()` | (`key`: `string`) => `Promise`\<`MemoryGetResponse`\> | Retrieves a value from the in-memory database by key. | packages/codeboltjs/src/modules/dbmemory.ts:35 |

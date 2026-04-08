@@ -2,7 +2,7 @@
 title: CreatePhaseData
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

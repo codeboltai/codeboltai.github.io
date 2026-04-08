@@ -2,7 +2,7 @@
 title: FileUpdateIntentBlockedFilesResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="blockedfiles"></a> `blockedFiles` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:155](common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts#L155) |
+| <a id="blockedfiles"></a> `blockedFiles` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/fileUpdateIntent.ts:155 |

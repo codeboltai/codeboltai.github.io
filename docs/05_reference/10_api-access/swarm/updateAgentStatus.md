@@ -43,11 +43,11 @@ Updates an agent's status within a swarm to indicate their current activity and 
 
 - **`swarmId`** (string): The ID of the swarm containing the agent.
 - **`agentId`** (string): The ID of the agent to update.
-- **`data`** ([AgentStatusUpdate](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AgentStatusUpdate)): Status update information.
+- **`data`** ([AgentStatusUpdate](/docs/reference/type-reference/codeboltjs/interfaces/AgentStatusUpdate)): Status update information.
 
 ### Returns
 
-- **`Promise<[UpdateStatusResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/UpdateStatusResponse)>`**: A promise that resolves when the status is updated.
+- **`Promise<[UpdateStatusResponse](/docs/reference/type-reference/codeboltjs/interfaces/UpdateStatusResponse)>`**: A promise that resolves when the status is updated.
 
 ### Examples
 

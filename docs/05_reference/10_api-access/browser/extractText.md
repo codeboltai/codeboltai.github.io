@@ -26,7 +26,7 @@ Extracts text from the current page.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`ExtractTextResponse`](/docs/api/11_doc-type-ref/types/interfaces/ExtractTextResponse) object with the following properties:
+The method returns a Promise that resolves to an [`ExtractTextResponse`](/docs/reference/type-reference/types/interfaces/ExtractTextResponse) object with the following properties:
 
 - **`type`** (string): Always "extractTextResponse".
 - **`text`** (string, optional): The extracted text content from the current page

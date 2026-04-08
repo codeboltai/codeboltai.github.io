@@ -2,7 +2,7 @@
 title: IUpdateRunStepResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:281
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:282](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L282) |
-| `payload.run` | [`TestRun`](TestRun) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:282](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L282) |
+| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:282 |
+| `payload.run` | [`TestRun`](TestRun) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:282 |

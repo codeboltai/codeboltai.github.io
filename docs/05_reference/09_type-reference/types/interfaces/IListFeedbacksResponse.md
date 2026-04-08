@@ -2,7 +2,7 @@
 title: IListFeedbacksResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:1
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `feedbacks`: [`GroupFeedback`](GroupFeedback)[]; `total`: `number`; \} | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L126) |
-| `payload.feedbacks` | [`GroupFeedback`](GroupFeedback)[] | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L126) |
-| `payload.total` | `number` | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L126) |
+| <a id="payload"></a> `payload` | \{ `feedbacks`: [`GroupFeedback`](GroupFeedback)[]; `total`: `number`; \} | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126 |
+| `payload.feedbacks` | [`GroupFeedback`](GroupFeedback)[] | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126 |
+| `payload.total` | `number` | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:126 |

@@ -48,11 +48,11 @@ Creates a new role within a swarm to define agent responsibilities and permissio
 ### Parameters
 
 - **`swarmId`** (string): The ID of the swarm to create the role in.
-- **`data`** ([CreateRoleRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateRoleRequest)): Role creation configuration.
+- **`data`** ([CreateRoleRequest](/docs/reference/type-reference/codeboltjs/interfaces/CreateRoleRequest)): Role creation configuration.
 
 ### Returns
 
-- **`Promise<[CreateRoleResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateRoleResponse)>`**: A promise that resolves to the created role details.
+- **`Promise<[CreateRoleResponse](/docs/reference/type-reference/codeboltjs/interfaces/CreateRoleResponse)>`**: A promise that resolves to the created role details.
 
 ### Examples
 

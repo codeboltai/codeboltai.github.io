@@ -2,7 +2,7 @@
 title: IDeleteSuiteParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

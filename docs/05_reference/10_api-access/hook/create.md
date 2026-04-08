@@ -24,11 +24,11 @@ codebolt.hook.create(config: HookConfig): Promise<HookResponse>
 Creates a new hook with the specified configuration for automated event handling.
 ### Parameters
 
-- **`config`** ([HookConfig](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookConfig)): Hook configuration including name, events, filters, actions, and settings.
+- **`config`** ([HookConfig](/docs/reference/type-reference/codeboltjs/interfaces/HookConfig)): Hook configuration including name, events, filters, actions, and settings.
 
 ### Returns
 
-- **`Promise<[HookResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the created hook details.
+- **`Promise<[HookResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookResponse)>`**: A promise that resolves with the created hook details.
 
 ### Response Structure
 

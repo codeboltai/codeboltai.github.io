@@ -2,7 +2,7 @@
 title: GetToolsResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -21,9 +21,9 @@ Types for the cbmcp module functions
 
 | Property | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="data"></a> `data?` | \{ `description?`: `string`; `parameters?`: `Record`\<`string`, `unknown`\>; `toolbox`: `string`; `toolName`: `string`; \}[] | - | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:143](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L143) |
-| <a id="error"></a> `error?` | `string` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`error`](BaseMCPSDKResponse.md#error) | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`message`](BaseMCPSDKResponse.md#message) | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L9) |
-| <a id="servername"></a> `serverName?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:142](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L142) |
-| <a id="success"></a> `success?` | `boolean` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`success`](BaseMCPSDKResponse.md#success) | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L8) |
-| <a id="tools"></a> `tools?` | \{ `description`: `string`; `name`: `string`; `parameters`: `Record`\<`string`, `unknown`\>; \}[] | - | [common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:137](common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts#L137) |
+| <a id="data"></a> `data?` | \{ `description?`: `string`; `parameters?`: `Record`\<`string`, `unknown`\>; `toolbox`: `string`; `toolName`: `string`; \}[] | - | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:143 |
+| <a id="error"></a> `error?` | `string` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`error`](BaseMCPSDKResponse.md#error) | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:10 |
+| <a id="message"></a> `message?` | `string` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`message`](BaseMCPSDKResponse.md#message) | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:9 |
+| <a id="servername"></a> `serverName?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:142 |
+| <a id="success"></a> `success?` | `boolean` | [`BaseMCPSDKResponse`](BaseMCPSDKResponse).[`success`](BaseMCPSDKResponse.md#success) | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:8 |
+| <a id="tools"></a> `tools?` | \{ `description`: `string`; `name`: `string`; `parameters`: `Record`\<`string`, `unknown`\>; \}[] | - | common/types/src/codeboltjstypes/libFunctionTypes/mcp.ts:137 |

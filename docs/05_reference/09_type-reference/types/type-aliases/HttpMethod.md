@@ -2,7 +2,7 @@
 title: HttpMethod
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: DirectoryContextOptions
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/agent/src/processor-pieces/messageModifiers/directoryContex
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="workspacedirectories"></a> `workspaceDirectories?` | `string`[] | [packages/agent/src/processor-pieces/messageModifiers/directoryContextModifier.ts:46](packages/agent/src/processor-pieces/messageModifiers/directoryContextModifier.ts#L46) |
+| <a id="workspacedirectories"></a> `workspaceDirectories?` | `string`[] | packages/agent/src/processor-pieces/messageModifiers/directoryContextModifier.ts:46 |

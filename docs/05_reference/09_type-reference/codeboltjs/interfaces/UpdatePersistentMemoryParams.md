@@ -2,7 +2,7 @@
 title: UpdatePersistentMemoryParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

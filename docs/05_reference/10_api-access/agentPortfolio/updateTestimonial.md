@@ -33,7 +33,7 @@ Updates an existing testimonial with new content.
 
 ### Returns
 
-- **`Promise<[UpdateTestimonialResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/UpdateTestimonialResponse)>`**: A promise that resolves to the updated testimonial.
+- **`Promise<[UpdateTestimonialResponse](/docs/reference/type-reference/codeboltjs/interfaces/UpdateTestimonialResponse)>`**: A promise that resolves to the updated testimonial.
 
 ### Examples
 

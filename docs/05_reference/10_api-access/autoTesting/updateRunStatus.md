@@ -25,11 +25,11 @@ codebolt.autoTesting.updateRunStatus(params: IUpdateRunStatusParams): Promise<IU
 Updates the overall status of a test run.
 ### Parameters
 
-- **`params`** ([IUpdateRunStatusParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunStatusParams)): Parameters including run ID and new status.
+- **`params`** ([IUpdateRunStatusParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunStatusParams)): Parameters including run ID and new status.
 
 ### Returns
 
-- **`Promise<[IUpdateRunStatusResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunStatusResponse)>`**: A promise that resolves to the updated test run.
+- **`Promise<[IUpdateRunStatusResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunStatusResponse)>`**: A promise that resolves to the updated test run.
 
 ### Examples
 

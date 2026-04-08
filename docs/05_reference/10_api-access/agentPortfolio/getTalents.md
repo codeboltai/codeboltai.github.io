@@ -30,7 +30,7 @@ Retrieves talents, optionally filtered by agent. Returns list of available talen
 
 ### Returns
 
-- **`Promise<[GetTalentsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetTalentsResponse)>`**: A promise that resolves to the list of talents.
+- **`Promise<[GetTalentsResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetTalentsResponse)>`**: A promise that resolves to the list of talents.
 
 ### Examples
 

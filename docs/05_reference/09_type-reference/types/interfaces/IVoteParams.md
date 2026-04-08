@@ -2,7 +2,7 @@
 title: IVoteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,7 +14,7 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:10
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="deliberationid"></a> `deliberationId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:106](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L106) |
-| <a id="responseid"></a> `responseId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:107](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L107) |
-| <a id="voterid"></a> `voterId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:108](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L108) |
-| <a id="votername"></a> `voterName` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:109](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L109) |
+| <a id="deliberationid"></a> `deliberationId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:106 |
+| <a id="responseid"></a> `responseId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:107 |
+| <a id="voterid"></a> `voterId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:108 |
+| <a id="votername"></a> `voterName` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:109 |

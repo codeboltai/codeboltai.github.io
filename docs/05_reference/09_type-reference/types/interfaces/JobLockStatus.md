@@ -2,7 +2,7 @@
 title: JobLockStatus
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -18,5 +18,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:212
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="islocked"></a> `isLocked` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:213](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L213) |
-| <a id="lock"></a> `lock?` | [`JobLock`](JobLock) | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:214](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L214) |
+| <a id="islocked"></a> `isLocked` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:213 |
+| <a id="lock"></a> `lock?` | [`JobLock`](JobLock) | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:214 |

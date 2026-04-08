@@ -2,7 +2,7 @@
 title: IUpdateStatusResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:1
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `feedback`: [`GroupFeedback`](GroupFeedback); \} | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:142](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L142) |
-| `payload.feedback` | [`GroupFeedback`](GroupFeedback) | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:142](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L142) |
+| <a id="payload"></a> `payload` | \{ `feedback`: [`GroupFeedback`](GroupFeedback); \} | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:142 |
+| `payload.feedback` | [`GroupFeedback`](GroupFeedback) | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:142 |

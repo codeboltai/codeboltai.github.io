@@ -2,7 +2,7 @@
 title: SystemNotificationPayload
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

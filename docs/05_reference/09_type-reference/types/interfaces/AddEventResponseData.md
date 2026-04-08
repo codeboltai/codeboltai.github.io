@@ -2,7 +2,7 @@
 title: AddEventResponseData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,4 +16,4 @@ Response data for addEvent
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="event"></a> `event` | [`AgentEventMessage`](AgentEventMessage) | [common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:332](common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts#L332) |
+| <a id="event"></a> `event` | [`AgentEventMessage`](AgentEventMessage) | common/types/src/codeboltjstypes/libFunctionTypes/eventQueue.ts:332 |

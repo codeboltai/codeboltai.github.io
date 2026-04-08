@@ -2,7 +2,7 @@
 title: MemoryValue
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

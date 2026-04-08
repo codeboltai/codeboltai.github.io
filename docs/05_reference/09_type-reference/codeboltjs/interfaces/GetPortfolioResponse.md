@@ -2,7 +2,7 @@
 title: GetPortfolioResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

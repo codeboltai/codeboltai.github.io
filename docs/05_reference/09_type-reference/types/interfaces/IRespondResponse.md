@@ -2,7 +2,7 @@
 title: IRespondResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:14
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `response`: [`DeliberationResponse`](DeliberationResponse); \} | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:145](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L145) |
-| `payload.response` | [`DeliberationResponse`](DeliberationResponse) | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:145](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L145) |
+| <a id="payload"></a> `payload` | \{ `response`: [`DeliberationResponse`](DeliberationResponse); \} | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:145 |
+| `payload.response` | [`DeliberationResponse`](DeliberationResponse) | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:145 |

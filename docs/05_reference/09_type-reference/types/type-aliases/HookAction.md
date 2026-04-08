@@ -2,7 +2,7 @@
 title: HookAction
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

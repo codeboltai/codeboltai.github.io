@@ -32,11 +32,11 @@ Sends a log message to the debug websocket and waits for a response. The log wil
 
 ### Returns
 
-- **`Promise<DebugAddLogResponse>`**: A promise that resolves with a [`DebugAddLogResponse`](/docs/api/11_doc-type-ref/types/interfaces/DebugAddLogResponse) object containing the response type and log metadata.
+- **`Promise<DebugAddLogResponse>`**: A promise that resolves with a [`DebugAddLogResponse`](/docs/reference/type-reference/types/interfaces/DebugAddLogResponse) object containing the response type and log metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`DebugAddLogResponse`](/docs/api/11_doc-type-ref/types/interfaces/DebugAddLogResponse) object with the following properties:
+The method returns a Promise that resolves to a [`DebugAddLogResponse`](/docs/reference/type-reference/types/interfaces/DebugAddLogResponse) object with the following properties:
 
 - **`type`** (string): Always "debugAddLogResponse".
 - **`logId`** (string, optional): A unique identifier for the log entry that was created.

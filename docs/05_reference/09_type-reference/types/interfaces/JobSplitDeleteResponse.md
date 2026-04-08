@@ -2,7 +2,7 @@
 title: JobSplitDeleteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:346
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="job"></a> `job?` | [`Job`](Job) | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:347](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L347) |
+| <a id="job"></a> `job?` | [`Job`](Job) | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:347 |

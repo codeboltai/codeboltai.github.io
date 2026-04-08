@@ -2,7 +2,7 @@
 title: MemoryDeleteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:183
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="key"></a> `key` | `string` | Memory key | [common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:185](common/types/src/codeboltjstypes/libFunctionTypes/memory.ts#L185) |
+| <a id="key"></a> `key` | `string` | Memory key | common/types/src/codeboltjstypes/libFunctionTypes/memory.ts:185 |

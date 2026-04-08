@@ -53,11 +53,11 @@ codebolt.episodicMemory.queryEvents(params: IQueryEventsParams): Promise<IQueryE
 Queries events from an episodic memory with optional filters for time range, type, agent, tags, and more.
 ### Parameters
 
-- **`params`** ([IQueryEventsParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IQueryEventsParams)): Query parameters with optional filters.
+- **`params`** ([IQueryEventsParams](/docs/reference/type-reference/codeboltjs/interfaces/IQueryEventsParams)): Query parameters with optional filters.
 
 ### Returns
 
-- **`Promise<[IQueryEventsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IQueryEventsResponse)>`**: A promise that resolves to filtered events.
+- **`Promise<[IQueryEventsResponse](/docs/reference/type-reference/codeboltjs/interfaces/IQueryEventsResponse)>`**: A promise that resolves to filtered events.
 
 ### Examples
 

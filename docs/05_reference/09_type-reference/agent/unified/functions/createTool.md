@@ -2,7 +2,7 @@
 title: createTool
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 

@@ -105,13 +105,13 @@ async function runTool(server, tool, params) {
 MCP API functions return typed responses:
 
 **Server Discovery:**
-- [`GetEnabledMCPSResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetEnabledMCPSResponse): List of enabled servers
-- [`GetMcpListResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetMcpListResponse): List of all available servers
-- [`GetLocalToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetLocalToolBoxesResponse): Local server information
+- [`GetEnabledMCPSResponse`](/docs/reference/type-reference/types/interfaces/GetEnabledMCPSResponse): List of enabled servers
+- [`GetMcpListResponse`](/docs/reference/type-reference/types/interfaces/GetMcpListResponse): List of all available servers
+- [`GetLocalToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/GetLocalToolBoxesResponse): Local server information
 
 **Tool Operations:**
-- [`GetAllMCPToolsResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetAllMCPToolsResponse): All tools from enabled servers
-- [`ExecuteToolResponse`](/docs/api/11_doc-type-ref/types/interfaces/ExecuteToolResponse): Tool execution results
-- [`GetToolsResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetToolsResponse): Detailed tool information
+- [`GetAllMCPToolsResponse`](/docs/reference/type-reference/types/interfaces/GetAllMCPToolsResponse): All tools from enabled servers
+- [`ExecuteToolResponse`](/docs/reference/type-reference/types/interfaces/ExecuteToolResponse): Tool execution results
+- [`GetToolsResponse`](/docs/reference/type-reference/types/interfaces/GetToolsResponse): Detailed tool information
 
 <CBAPICategory />

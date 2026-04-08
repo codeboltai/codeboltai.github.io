@@ -2,7 +2,7 @@
 title: JobPheromoneRemoveResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

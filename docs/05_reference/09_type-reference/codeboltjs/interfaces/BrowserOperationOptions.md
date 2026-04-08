@@ -2,7 +2,7 @@
 title: BrowserOperationOptions
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -28,4 +28,4 @@ Additional operation-specific options
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="instanceid"></a> `instanceId?` | `string` | Browser instance ID (optional - uses active instance if not provided) | [packages/codeboltjs/src/types/libFunctionTypes.ts:841](packages/codeboltjs/src/types/libFunctionTypes.ts#L841) |
+| <a id="instanceid"></a> `instanceId?` | `string` | Browser instance ID (optional - uses active instance if not provided) | packages/codeboltjs/src/types/libFunctionTypes.ts:841 |

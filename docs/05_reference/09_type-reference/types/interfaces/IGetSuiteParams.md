@@ -2,7 +2,7 @@
 title: IGetSuiteParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:120
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="id"></a> `id` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:121](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L121) |
+| <a id="id"></a> `id` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:121 |

@@ -2,7 +2,7 @@
 title: ICreateFeedbackResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

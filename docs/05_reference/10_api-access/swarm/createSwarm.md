@@ -38,11 +38,11 @@ codebolt.swarm.createSwarm(data: CreateSwarmRequest): Promise<CreateSwarmRespons
 Creates a new swarm for multi-agent coordination and task management.
 ### Parameters
 
-- **`data`** ([CreateSwarmRequest](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateSwarmRequest)): Configuration object for the new swarm.
+- **`data`** ([CreateSwarmRequest](/docs/reference/type-reference/codeboltjs/interfaces/CreateSwarmRequest)): Configuration object for the new swarm.
 
 ### Returns
 
-- **`Promise<[CreateSwarmResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/CreateSwarmResponse)>`**: A promise that resolves to the created swarm details.
+- **`Promise<[CreateSwarmResponse](/docs/reference/type-reference/codeboltjs/interfaces/CreateSwarmResponse)>`**: A promise that resolves to the created swarm details.
 
 ### Examples
 

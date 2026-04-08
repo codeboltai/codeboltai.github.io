@@ -2,7 +2,7 @@
 title: IUpdateRunCaseResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:277
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:278](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L278) |
-| `payload.run` | [`TestRun`](TestRun) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:278](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L278) |
+| <a id="payload"></a> `payload` | \{ `run`: [`TestRun`](TestRun); \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:278 |
+| `payload.run` | [`TestRun`](TestRun) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:278 |

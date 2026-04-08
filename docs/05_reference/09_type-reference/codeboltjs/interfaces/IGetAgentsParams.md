@@ -2,7 +2,7 @@
 title: IGetAgentsParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: packages/codeboltjs/src/modules/episodicMemory.ts:90
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="memoryid"></a> `memoryId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:91](packages/codeboltjs/src/modules/episodicMemory.ts#L91) |
-| <a id="swarmid"></a> `swarmId?` | `string` | [packages/codeboltjs/src/modules/episodicMemory.ts:92](packages/codeboltjs/src/modules/episodicMemory.ts#L92) |
+| <a id="memoryid"></a> `memoryId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:91 |
+| <a id="swarmid"></a> `swarmId?` | `string` | packages/codeboltjs/src/modules/episodicMemory.ts:92 |

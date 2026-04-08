@@ -2,7 +2,7 @@
 title: IGetSuiteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,6 +14,6 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:217
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); `testCases`: [`TestCase`](TestCase)[]; \} | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L218) |
-| `payload.suite` | [`TestSuite`](TestSuite) | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L218) |
-| `payload.testCases` | [`TestCase`](TestCase)[] | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L218) |
+| <a id="payload"></a> `payload` | \{ `suite`: [`TestSuite`](TestSuite); `testCases`: [`TestCase`](TestCase)[]; \} | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218 |
+| `payload.suite` | [`TestSuite`](TestSuite) | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218 |
+| `payload.testCases` | [`TestCase`](TestCase)[] | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:218 |

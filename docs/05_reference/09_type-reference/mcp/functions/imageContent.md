@@ -2,7 +2,7 @@
 title: imageContent
 ---
 
-[**@codebolt/mcp**](../index)
+[**@codebolt/mcp**](../index.md)
 
 ***
 

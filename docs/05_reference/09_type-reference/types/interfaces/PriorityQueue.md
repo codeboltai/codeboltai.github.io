@@ -2,7 +2,7 @@
 title: PriorityQueue
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

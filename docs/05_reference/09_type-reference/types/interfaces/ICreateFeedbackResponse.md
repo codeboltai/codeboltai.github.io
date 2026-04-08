@@ -2,7 +2,7 @@
 title: ICreateFeedbackResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:1
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `feedback`: [`GroupFeedback`](GroupFeedback); \} | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:114](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L114) |
-| `payload.feedback` | [`GroupFeedback`](GroupFeedback) | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:114](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L114) |
+| <a id="payload"></a> `payload` | \{ `feedback`: [`GroupFeedback`](GroupFeedback); \} | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:114 |
+| `payload.feedback` | [`GroupFeedback`](GroupFeedback) | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:114 |

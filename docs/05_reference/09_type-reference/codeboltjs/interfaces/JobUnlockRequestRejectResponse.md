@@ -2,7 +2,7 @@
 title: JobUnlockRequestRejectResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

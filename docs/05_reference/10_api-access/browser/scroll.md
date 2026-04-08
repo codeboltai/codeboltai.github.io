@@ -39,7 +39,7 @@ Scrolls the current page in a specified direction by a specified number of pixel
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`BrowserActionResponseData`](/docs/api/11_doc-type-ref/types/interfaces/BrowserActionResponseData) object with the following properties:
+The method returns a Promise that resolves to a [`BrowserActionResponseData`](/docs/reference/type-reference/types/interfaces/BrowserActionResponseData) object with the following properties:
 
 - **`type`** (string): Always "scrollResponse".
 - **`payload`** (object, optional): Contains the response data including:

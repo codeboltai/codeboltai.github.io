@@ -2,7 +2,7 @@
 title: IListRunsParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:187
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="suiteid"></a> `suiteId?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:188](common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts#L188) |
+| <a id="suiteid"></a> `suiteId?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/autoTesting.ts:188 |

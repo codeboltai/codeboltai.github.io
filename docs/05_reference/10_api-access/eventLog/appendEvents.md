@@ -29,7 +29,7 @@ Appends multiple events to an event log stream in a batch.
 
 ### Returns
 
-- **`Promise<[EventLogAppendMultipleResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogAppendMultipleResponse)>`**: A promise that resolves with all appended events and count.
+- **`Promise<[EventLogAppendMultipleResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogAppendMultipleResponse)>`**: A promise that resolves with all appended events and count.
 
 ### Response Structure
 

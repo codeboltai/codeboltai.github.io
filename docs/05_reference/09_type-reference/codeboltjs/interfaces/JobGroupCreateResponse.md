@@ -2,7 +2,7 @@
 title: JobGroupCreateResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

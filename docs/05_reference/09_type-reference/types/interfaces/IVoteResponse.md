@@ -2,7 +2,7 @@
 title: IVoteResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:14
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="payload"></a> `payload` | \{ `vote`: [`DeliberationVote`](DeliberationVote); \} | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:149](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L149) |
-| `payload.vote` | [`DeliberationVote`](DeliberationVote) | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:149](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L149) |
+| <a id="payload"></a> `payload` | \{ `vote`: [`DeliberationVote`](DeliberationVote); \} | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:149 |
+| `payload.vote` | [`DeliberationVote`](DeliberationVote) | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:149 |

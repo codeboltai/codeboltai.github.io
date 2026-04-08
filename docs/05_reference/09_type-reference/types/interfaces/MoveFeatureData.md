@@ -2,7 +2,7 @@
 title: MoveFeatureData
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:116
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="targetphaseid"></a> `targetPhaseId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:117](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L117) |
+| <a id="targetphaseid"></a> `targetPhaseId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:117 |

@@ -28,7 +28,7 @@ Creates a new requirement plan file with the specified filename. The file is ini
 
 ### Returns
 
-- **`Promise<[RequirementPlanCreateResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RequirementPlanCreateResponse)>`**: A promise that resolves to creation result with file path
+- **`Promise<[RequirementPlanCreateResponse](/docs/reference/type-reference/codeboltjs/interfaces/RequirementPlanCreateResponse)>`**: A promise that resolves to creation result with file path
 
 ### Parameter Details
 

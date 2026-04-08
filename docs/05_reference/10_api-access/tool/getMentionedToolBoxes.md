@@ -26,7 +26,7 @@ codebolt.tool.getMentionedToolBoxes(userMessage: UserMessage): Promise
 Extracts toolbox mentions from a user message object containing MCP references.
 ### Parameters
 
-- **`userMessage`** ([UserMessage](/docs/api/11_doc-type-ref/codeboltjs/interfaces/UserMessage)): Message object containing user input with toolbox mentions in mentionedMCPs array
+- **`userMessage`** ([UserMessage](/docs/reference/type-reference/codeboltjs/interfaces/UserMessage)): Message object containing user input with toolbox mentions in mentionedMCPs array
 
 ### Returns
 

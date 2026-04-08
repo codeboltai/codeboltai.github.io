@@ -25,11 +25,11 @@ codebolt.autoTesting.addCaseToSuite(params: IAddCaseToSuiteParams): Promise<IAdd
 Adds a test case to a test suite.
 ### Parameters
 
-- **`params`** ([IAddCaseToSuiteParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IAddCaseToSuiteParams)): Parameters including suite ID and case ID.
+- **`params`** ([IAddCaseToSuiteParams](/docs/reference/type-reference/codeboltjs/interfaces/IAddCaseToSuiteParams)): Parameters including suite ID and case ID.
 
 ### Returns
 
-- **`Promise<[IAddCaseToSuiteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IAddCaseToSuiteResponse)>`**: A promise that resolves to the updated suite.
+- **`Promise<[IAddCaseToSuiteResponse](/docs/reference/type-reference/codeboltjs/interfaces/IAddCaseToSuiteResponse)>`**: A promise that resolves to the updated suite.
 
 ### Examples
 

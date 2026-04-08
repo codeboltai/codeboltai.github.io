@@ -21,11 +21,11 @@ codebolt.git.push(): Promise<GitPushResponse>
 Pushes local repository changes to the remote repository. Uploads committed changes from the local branch to the corresponding remote branch. 
 ### Returns
 
-- **`Promise<GitPushResponse>`**: A promise that resolves with a [`GitPushResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitPushResponse) object containing the push operation results.
+- **`Promise<GitPushResponse>`**: A promise that resolves with a [`GitPushResponse`](/docs/reference/type-reference/types/interfaces/GitPushResponse) object containing the push operation results.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitPushResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitPushResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitPushResponse`](/docs/reference/type-reference/types/interfaces/GitPushResponse) object with the following properties:
 
 - **`type`** (string): Always "gitPushResponse".
 - **`success`** (boolean, optional): Indicates if the operation was successful.

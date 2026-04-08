@@ -39,7 +39,7 @@ Creates a new file update intent with automatic overlap detection.
 
 ### Returns
 
-- **`Promise<{ intent?: [FileUpdateIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/FileUpdateIntent), overlap?: [IntentOverlapResult](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IntentOverlapResult) }>`**: A promise that resolves with the created intent and overlap information.
+- **`Promise<{ intent?: [FileUpdateIntent](/docs/reference/type-reference/codeboltjs/interfaces/FileUpdateIntent), overlap?: [IntentOverlapResult](/docs/reference/type-reference/codeboltjs/interfaces/IntentOverlapResult) }>`**: A promise that resolves with the created intent and overlap information.
 
 ### Response Structure
 

@@ -31,12 +31,12 @@ Updates an existing feature's information. Only the specified fields are updated
 ### Parameters
 
 - **`featureId`** (string): The ID of the feature to update
-- **`data`** ([UpdateFeatureData](/docs/api/11_doc-type-ref/codeboltjs/interfaces/UpdateFeatureData)): Partial feature data with fields to update
+- **`data`** ([UpdateFeatureData](/docs/reference/type-reference/codeboltjs/interfaces/UpdateFeatureData)): Partial feature data with fields to update
 - **`projectPath`** (string): Optional project path (uses active project if not provided)
 
 ### Returns
 
-- **`Promise<[RoadmapFeatureResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RoadmapFeatureResponse)>`**: A promise that resolves to the updated feature
+- **`Promise<[RoadmapFeatureResponse](/docs/reference/type-reference/codeboltjs/interfaces/RoadmapFeatureResponse)>`**: A promise that resolves to the updated feature
 
 ### Parameter Details
 

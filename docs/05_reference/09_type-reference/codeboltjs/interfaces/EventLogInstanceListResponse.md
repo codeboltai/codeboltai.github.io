@@ -2,7 +2,7 @@
 title: EventLogInstanceListResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: IdeaStatus
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

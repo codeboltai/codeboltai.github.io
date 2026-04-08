@@ -59,7 +59,7 @@ Updates an existing todo item's status, title, priority, or tags.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`UpdateTodoResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateTodoResponse) object with the following properties:
+The method returns a Promise that resolves to an [`UpdateTodoResponse`](/docs/reference/type-reference/types/interfaces/UpdateTodoResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "updateTodoResponse"

@@ -15,7 +15,7 @@ const instance = await codebolt.openNewBrowserInstance(options);
 
 ## Parameters
 
-- **options** ([`BrowserInstanceOptions`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/BrowserInstanceOptions), optional): Configuration options for the new instance
+- **options** ([`BrowserInstanceOptions`](/docs/reference/type-reference/codeboltjs/interfaces/BrowserInstanceOptions), optional): Configuration options for the new instance
 
 ### BrowserInstanceOptions
 
@@ -260,7 +260,7 @@ async function safeCreateInstance(options = {}) {
 
 ## Related Functions
 
-- [`listBrowserInstances()`](/docs/api/apiaccess/browser/listInstances) - List all instances
-- [`getBrowserInstance()`](/docs/api/apiaccess/browser/getInstance) - Get specific instance
-- [`setActiveBrowserInstance()`](/docs/api/apiaccess/browser/setActiveInstance) - Set active instance
-- [`closeBrowserInstance()`](/docs/api/apiaccess/browser/closeInstance) - Close instance
+- [`listBrowserInstances()`](/docs/reference/api-access/browser/listInstances) - List all instances
+- [`getBrowserInstance()`](/docs/reference/api-access/browser/getInstance) - Get specific instance
+- [`setActiveBrowserInstance()`](/docs/reference/api-access/browser/setActiveInstance) - Set active instance
+- [`closeBrowserInstance()`](/docs/reference/api-access/browser/closeInstance) - Close instance

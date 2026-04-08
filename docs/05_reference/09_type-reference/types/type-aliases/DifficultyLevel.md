@@ -2,7 +2,7 @@
 title: DifficultyLevel
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

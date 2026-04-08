@@ -36,11 +36,11 @@ Performs pattern matching on a list of problems using a specified matcher defini
 
 ### Returns
 
-- **`Promise<MatchProblemResponse>`**: A promise that resolves with a [`MatchProblemResponse`](/docs/api/11_doc-type-ref/types/interfaces/MatchProblemResponse) object containing structured problem information extracted from the input.
+- **`Promise<MatchProblemResponse>`**: A promise that resolves with a [`MatchProblemResponse`](/docs/reference/type-reference/types/interfaces/MatchProblemResponse) object containing structured problem information extracted from the input.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`MatchProblemResponse`](/docs/api/11_doc-type-ref/types/interfaces/MatchProblemResponse) object with the following properties:
+The method returns a Promise that resolves to a [`MatchProblemResponse`](/docs/reference/type-reference/types/interfaces/MatchProblemResponse) object with the following properties:
 
 - **`type`** (string): Always "matchProblemResponse".
 - **`matches`** (array, optional): An array of matched problem objects with the following structure:

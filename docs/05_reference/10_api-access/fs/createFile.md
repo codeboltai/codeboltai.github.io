@@ -36,11 +36,11 @@ Creates a new file with the specified content at the given path. This function a
 
 ### Returns
 
-- **`Promise<CreateFileResponse>`**: A promise that resolves with a [`CreateFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/CreateFileResponse) object containing the response type and file creation metadata.
+- **`Promise<CreateFileResponse>`**: A promise that resolves with a [`CreateFileResponse`](/docs/reference/type-reference/types/interfaces/CreateFileResponse) object containing the response type and file creation metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`CreateFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/CreateFileResponse) object with the following properties:
+The method returns a Promise that resolves to a [`CreateFileResponse`](/docs/reference/type-reference/types/interfaces/CreateFileResponse) object with the following properties:
 
 - **`type`** (string): Always "createFileResponse".
 - **`path`** (string, optional): The full path where the file was created.

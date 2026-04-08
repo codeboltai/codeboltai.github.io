@@ -2,7 +2,7 @@
 title: JobPheromoneAggregatedResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/job.ts:332
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="aggregations"></a> `aggregations` | [`PheromoneAggregation`](PheromoneAggregation)[] | [common/types/src/codeboltjstypes/libFunctionTypes/job.ts:333](common/types/src/codeboltjstypes/libFunctionTypes/job.ts#L333) |
+| <a id="aggregations"></a> `aggregations` | [`PheromoneAggregation`](PheromoneAggregation)[] | common/types/src/codeboltjstypes/libFunctionTypes/job.ts:333 |

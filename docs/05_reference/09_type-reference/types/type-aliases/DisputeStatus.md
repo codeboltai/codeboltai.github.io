@@ -2,7 +2,7 @@
 title: DisputeStatus
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

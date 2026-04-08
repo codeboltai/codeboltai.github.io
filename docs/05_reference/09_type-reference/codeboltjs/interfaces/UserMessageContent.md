@@ -2,7 +2,7 @@
 title: UserMessageContent
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -16,5 +16,5 @@ Content block within a user message
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="text"></a> `text` | `string` | The text content | [packages/codeboltjs/src/types/libFunctionTypes.ts:239](packages/codeboltjs/src/types/libFunctionTypes.ts#L239) |
-| <a id="type"></a> `type` | `string` | Type of content (e.g., "text", "image") | [packages/codeboltjs/src/types/libFunctionTypes.ts:237](packages/codeboltjs/src/types/libFunctionTypes.ts#L237) |
+| <a id="text"></a> `text` | `string` | The text content | packages/codeboltjs/src/types/libFunctionTypes.ts:239 |
+| <a id="type"></a> `type` | `string` | Type of content (e.g., "text", "image") | packages/codeboltjs/src/types/libFunctionTypes.ts:237 |

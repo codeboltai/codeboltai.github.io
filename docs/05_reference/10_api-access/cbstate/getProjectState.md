@@ -28,7 +28,7 @@ Retrieves the current project state from the server via WebSocket.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetProjectStateResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetProjectStateResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetProjectStateResponse`](/docs/reference/type-reference/types/interfaces/GetProjectStateResponse) object with the following properties:
 
 - **`type`** (string): Always "getProjectStateResponse".
 - **`projectState`** (object, optional): Contains the complete project state as a `Record<string, any>` object with:

@@ -42,11 +42,11 @@ Executes a persistent memory retrieval pipeline with context and returns formatt
 ### Parameters
 
 - **`memoryId`** (string): The ID of the persistent memory to execute.
-- **`intent`** ([PipelineExecutionIntent](/docs/api/11_doc-type-ref/codeboltjs/interfaces/PipelineExecutionIntent)): Execution intent with context and query information.
+- **`intent`** ([PipelineExecutionIntent](/docs/reference/type-reference/codeboltjs/interfaces/PipelineExecutionIntent)): Execution intent with context and query information.
 
 ### Returns
 
-- **`Promise<[PersistentMemoryExecuteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/PersistentMemoryExecuteResponse)>`**: A promise that resolves to retrieval results.
+- **`Promise<[PersistentMemoryExecuteResponse](/docs/reference/type-reference/codeboltjs/interfaces/PersistentMemoryExecuteResponse)>`**: A promise that resolves to retrieval results.
 
 ### Examples
 

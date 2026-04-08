@@ -2,7 +2,7 @@
 title: TaskStatus
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

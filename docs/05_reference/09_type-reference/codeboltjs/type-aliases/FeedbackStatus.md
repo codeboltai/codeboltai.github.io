@@ -2,7 +2,7 @@
 title: FeedbackStatus
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

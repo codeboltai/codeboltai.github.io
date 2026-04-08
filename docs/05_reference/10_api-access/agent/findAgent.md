@@ -44,11 +44,11 @@ Finds an agent suitable for the specified task using AI and/or vector database f
 
 ### Returns
 
-- **`Promise<FindAgentByTaskResponse>`**: A promise that resolves with a [`FindAgentByTaskResponse`](/docs/api/11_doc-type-ref/types/interfaces/FindAgentByTaskResponse) object containing an array of found agents.
+- **`Promise<FindAgentByTaskResponse>`**: A promise that resolves with a [`FindAgentByTaskResponse`](/docs/reference/type-reference/types/interfaces/FindAgentByTaskResponse) object containing an array of found agents.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`FindAgentByTaskResponse`](/docs/api/11_doc-type-ref/types/interfaces/FindAgentByTaskResponse) object with the following properties:
+The method returns a Promise that resolves to a [`FindAgentByTaskResponse`](/docs/reference/type-reference/types/interfaces/FindAgentByTaskResponse) object with the following properties:
 
 - **`type`** (string): Always "findAgentByTaskResponse".
 - **`agents`** (array, optional): An array of agent objects that match the task.

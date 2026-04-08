@@ -2,7 +2,7 @@
 title: IDeleteSuiteResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

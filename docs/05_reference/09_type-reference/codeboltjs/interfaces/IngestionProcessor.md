@@ -2,7 +2,7 @@
 title: IngestionProcessor
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

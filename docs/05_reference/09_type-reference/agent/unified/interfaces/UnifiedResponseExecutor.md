@@ -2,7 +2,7 @@
 title: UnifiedResponseExecutor
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 

@@ -49,11 +49,11 @@ Stores a value in the KV store with a specified key within a namespace.
 
 ### Returns
 
-- **`Promise<[KVSetResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVSetResponse)>`**: A promise that resolves with the stored record details including timestamps.
+- **`Promise<[KVSetResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVSetResponse)>`**: A promise that resolves with the stored record details including timestamps.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVSetResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVSetResponse) object:
+The method returns a Promise that resolves to a [`KVSetResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVSetResponse) object:
 
 ```typescript
 {

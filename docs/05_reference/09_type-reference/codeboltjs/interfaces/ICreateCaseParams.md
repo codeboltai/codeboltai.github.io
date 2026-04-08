@@ -2,7 +2,7 @@
 title: ICreateCaseParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

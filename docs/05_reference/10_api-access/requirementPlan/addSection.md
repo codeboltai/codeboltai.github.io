@@ -31,12 +31,12 @@ Adds a new section to a requirement plan document. Sections can contain various 
 ### Parameters
 
 - **`filePath`** (string): Path to the plan file
-- **`section`** (`Omit<RequirementPlanSection, 'id' | 'order'>`): Section data to add (id and order are auto-generated). See [RequirementPlanSection](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RequirementPlanSection)
+- **`section`** (`Omit<RequirementPlanSection, 'id' | 'order'>`): Section data to add (id and order are auto-generated). See [RequirementPlanSection](/docs/reference/type-reference/codeboltjs/interfaces/RequirementPlanSection)
 - **`afterIndex`** (number): Optional index to insert section after (-1 for beginning)
 
 ### Returns
 
-- **`Promise<[RequirementPlanSectionResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RequirementPlanSectionResponse)>`**: A promise that resolves to the updated document
+- **`Promise<[RequirementPlanSectionResponse](/docs/reference/type-reference/codeboltjs/interfaces/RequirementPlanSectionResponse)>`**: A promise that resolves to the updated document
 
 ### Parameter Details
 

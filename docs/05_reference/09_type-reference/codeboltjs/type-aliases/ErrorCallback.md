@@ -2,7 +2,7 @@
 title: ErrorCallback
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

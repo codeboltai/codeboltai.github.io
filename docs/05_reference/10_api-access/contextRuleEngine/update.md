@@ -34,7 +34,7 @@ Updates an existing rule engine.
 
 ### Returns
 
-- **`Promise<[ContextRuleEngineResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the updated rule engine.
+- **`Promise<[ContextRuleEngineResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextRuleEngineResponse)>`**: A promise that resolves with the updated rule engine.
 
 ### Examples
 

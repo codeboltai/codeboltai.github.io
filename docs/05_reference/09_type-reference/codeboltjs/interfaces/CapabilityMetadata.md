@@ -2,7 +2,7 @@
 title: CapabilityMetadata
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

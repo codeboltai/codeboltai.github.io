@@ -26,7 +26,7 @@ Retrieves the HTML content of the current page.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`HtmlReceived`](/docs/api/11_doc-type-ref/types/interfaces/HtmlReceived) object with the following properties:
+The method returns a Promise that resolves to a [`HtmlReceived`](/docs/reference/type-reference/types/interfaces/HtmlReceived) object with the following properties:
 
 - **`type`** (string): Always "htmlReceived".
 - **`html`** (string, optional): The HTML content of the current page

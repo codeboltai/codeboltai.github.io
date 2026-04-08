@@ -2,7 +2,7 @@
 title: CreatePlanData
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: packages/codeboltjs/src/modules/requirementPlan.ts:27
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="filename"></a> `fileName` | `string` | [packages/codeboltjs/src/modules/requirementPlan.ts:28](packages/codeboltjs/src/modules/requirementPlan.ts#L28) |
+| <a id="filename"></a> `fileName` | `string` | packages/codeboltjs/src/modules/requirementPlan.ts:28 |

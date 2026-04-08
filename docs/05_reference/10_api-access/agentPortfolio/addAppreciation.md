@@ -33,7 +33,7 @@ Adds an appreciation message for an agent. Appreciations are short messages of g
 
 ### Returns
 
-- **`Promise<[AddAppreciationResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/AddAppreciationResponse)>`**: A promise that resolves when appreciation is added.
+- **`Promise<[AddAppreciationResponse](/docs/reference/type-reference/codeboltjs/interfaces/AddAppreciationResponse)>`**: A promise that resolves when appreciation is added.
 
 ### Examples
 

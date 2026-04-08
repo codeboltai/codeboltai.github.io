@@ -2,7 +2,7 @@
 title: CapabilityFilter
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,6 +16,6 @@ Filter options for listing capabilities
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="author"></a> `author?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:76](common/types/src/codeboltjstypes/libFunctionTypes/capability.ts#L76) |
-| <a id="tags"></a> `tags?` | `string`[] | [common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:75](common/types/src/codeboltjstypes/libFunctionTypes/capability.ts#L75) |
-| <a id="type"></a> `type?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:74](common/types/src/codeboltjstypes/libFunctionTypes/capability.ts#L74) |
+| <a id="author"></a> `author?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:76 |
+| <a id="tags"></a> `tags?` | `string`[] | common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:75 |
+| <a id="type"></a> `type?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/capability.ts:74 |

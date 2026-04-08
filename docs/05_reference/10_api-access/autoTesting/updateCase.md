@@ -25,11 +25,11 @@ codebolt.autoTesting.updateCase(params: IUpdateCaseParams): Promise<IUpdateCaseR
 Updates an existing test case's properties or steps.
 ### Parameters
 
-- **`params`** ([IUpdateCaseParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateCaseParams)): Parameters including case ID and fields to update.
+- **`params`** ([IUpdateCaseParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateCaseParams)): Parameters including case ID and fields to update.
 
 ### Returns
 
-- **`Promise<[IUpdateCaseResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateCaseResponse)>`**: A promise that resolves to the updated test case.
+- **`Promise<[IUpdateCaseResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateCaseResponse)>`**: A promise that resolves to the updated test case.
 
 ### Examples
 

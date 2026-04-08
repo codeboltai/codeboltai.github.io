@@ -2,7 +2,7 @@
 title: codebaseSearch
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -25,5 +25,5 @@ Mirrors the codebaseSearch.cli.ts operations via WebSocket.
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="search"></a> `search()` | (`query`: `string`, `targetDirectories?`: `string`[]) => `Promise`\<[`CodebaseSearchResponse`](../interfaces/CodebaseSearchResponse)\> | Perform a semantic search across the codebase | [packages/codeboltjs/src/modules/codebaseSearch.ts:21](packages/codeboltjs/src/modules/codebaseSearch.ts#L21) |
-| <a id="searchmcptool"></a> `searchMcpTool()` | (`query`: `string`, `tags?`: `string`[]) => `Promise`\<[`McpToolSearchResponse`](../interfaces/McpToolSearchResponse)\> | Search for MCP tools by query and optional tags | [packages/codeboltjs/src/modules/codebaseSearch.ts:39](packages/codeboltjs/src/modules/codebaseSearch.ts#L39) |
+| <a id="search"></a> `search()` | (`query`: `string`, `targetDirectories?`: `string`[]) => `Promise`\<[`CodebaseSearchResponse`](../interfaces/CodebaseSearchResponse)\> | Perform a semantic search across the codebase | packages/codeboltjs/src/modules/codebaseSearch.ts:21 |
+| <a id="searchmcptool"></a> `searchMcpTool()` | (`query`: `string`, `tags?`: `string`[]) => `Promise`\<[`McpToolSearchResponse`](../interfaces/McpToolSearchResponse)\> | Search for MCP tools by query and optional tags | packages/codeboltjs/src/modules/codebaseSearch.ts:39 |

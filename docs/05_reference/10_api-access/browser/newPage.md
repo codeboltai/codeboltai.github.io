@@ -21,11 +21,11 @@ codebolt.browser.newPage(): Promise<BrowserActionResponseData>
 Creates a new browser page or tab for web automation. 
 ### Returns
 
-- **`Promise<BrowserActionResponseData>`**: A promise that resolves with a [`BrowserActionResponseData`](/docs/api/11_doc-type-ref/types/interfaces/BrowserActionResponseData) object when the new page is created.
+- **`Promise<BrowserActionResponseData>`**: A promise that resolves with a [`BrowserActionResponseData`](/docs/reference/type-reference/types/interfaces/BrowserActionResponseData) object when the new page is created.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`BrowserActionResponseData`](/docs/api/11_doc-type-ref/types/interfaces/BrowserActionResponseData) object, which may contain the following properties:
+The method returns a Promise that resolves to a [`BrowserActionResponseData`](/docs/reference/type-reference/types/interfaces/BrowserActionResponseData) object, which may contain the following properties:
 
 - **`type`** (string): Always "newPageResponse".
 - **`success`** (boolean, optional): Indicates if the operation was successful.

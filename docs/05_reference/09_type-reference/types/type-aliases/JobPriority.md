@@ -2,7 +2,7 @@
 title: JobPriority
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

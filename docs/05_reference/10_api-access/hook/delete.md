@@ -28,7 +28,7 @@ Deletes a hook by its ID, permanently removing it from the system.
 
 ### Returns
 
-- **`Promise<[HookDeleteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookDeleteResponse)>`**: A promise that resolves when the hook is deleted.
+- **`Promise<[HookDeleteResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookDeleteResponse)>`**: A promise that resolves when the hook is deleted.
 
 ### Response Structure
 

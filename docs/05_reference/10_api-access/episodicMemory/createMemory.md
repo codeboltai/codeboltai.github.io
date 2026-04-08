@@ -29,11 +29,11 @@ codebolt.episodicMemory.createMemory(params: ICreateMemoryParams): Promise<ICrea
 Creates a new episodic memory container for storing time-ordered events.
 ### Parameters
 
-- **`params`** ([ICreateMemoryParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateMemoryParams)): Memory creation parameters.
+- **`params`** ([ICreateMemoryParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateMemoryParams)): Memory creation parameters.
 
 ### Returns
 
-- **`Promise<[ICreateMemoryResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateMemoryResponse)>`**: A promise that resolves to the created memory details.
+- **`Promise<[ICreateMemoryResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateMemoryResponse)>`**: A promise that resolves to the created memory details.
 
 ### Examples
 

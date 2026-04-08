@@ -34,7 +34,7 @@ Evaluates context rules without fetching memory content.
 
 ### Returns
 
-- **`Promise<[RuleEvaluationResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RuleEvaluationResponse)>`**: A promise that resolves with rule evaluation results.
+- **`Promise<[RuleEvaluationResponse](/docs/reference/type-reference/codeboltjs/interfaces/RuleEvaluationResponse)>`**: A promise that resolves with rule evaluation results.
 
 ### Response Structure
 

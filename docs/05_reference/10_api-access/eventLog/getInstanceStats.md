@@ -29,7 +29,7 @@ Gets statistics and metadata for an event log instance.
 
 ### Returns
 
-- **`Promise<[EventLogStatsResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/EventLogStatsResponse)>`**: A promise that resolves with instance statistics.
+- **`Promise<[EventLogStatsResponse](/docs/reference/type-reference/codeboltjs/interfaces/EventLogStatsResponse)>`**: A promise that resolves with instance statistics.
 
 ### Response Structure
 

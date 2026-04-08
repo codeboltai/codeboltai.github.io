@@ -2,7 +2,7 @@
 title: ICreateSuiteParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

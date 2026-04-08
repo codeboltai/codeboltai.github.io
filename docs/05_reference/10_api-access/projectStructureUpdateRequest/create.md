@@ -39,18 +39,18 @@ Creates a new project structure update request.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`UpdateRequestResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateRequestResponse) object with the following properties:
+The method returns a Promise that resolves to an [`UpdateRequestResponse`](/docs/reference/type-reference/types/interfaces/UpdateRequestResponse) object with the following properties:
 
 **Response Properties:**
 - `success`: Boolean indicating if the operation was successful
-- `data`: The created [`ProjectStructureUpdateRequest`](/docs/api/11_doc-type-ref/types/interfaces/ProjectStructureUpdateRequest) object
+- `data`: The created [`ProjectStructureUpdateRequest`](/docs/reference/type-reference/types/interfaces/ProjectStructureUpdateRequest) object
   - `id`: Unique identifier for the request
   - `title`: Short title describing the change
   - `description`: Detailed description of what and why
   - `status`: Current status ('draft', 'waiting_for_dispute', 'disputed', 'actively_being_worked', 'waiting_to_merge', 'merged')
   - `author`: Who created the request
   - `authorType`: 'user' or 'agent'
-  - `changes`: Array of [`UpdateRequestChange`](/docs/api/11_doc-type-ref/types/interfaces/UpdateRequestChange) objects
+  - `changes`: Array of [`UpdateRequestChange`](/docs/reference/type-reference/types/interfaces/UpdateRequestChange) objects
   - `disputes`: Array of dispute objects
   - `watchers`: Array of watcher objects
   - `createdAt`: Creation timestamp
@@ -464,7 +464,7 @@ async function proposeDependencyUpdate(packageId, newDependencies) {
 - The `title` field is required and should be concise but descriptive
 - The `author` and `authorType` fields are required for tracking
 - All new requests start in 'draft' status
-- Changes are specified as an array of [`UpdateRequestChange`](/docs/api/11_doc-type-ref/types/interfaces/UpdateRequestChange) objects
+- Changes are specified as an array of [`UpdateRequestChange`](/docs/reference/type-reference/types/interfaces/UpdateRequestChange) objects
 - Each change must specify a `packageId` and `packageAction`
 - The `workspacePath` parameter is optional but recommended for clarity
 - Created requests receive a unique ID for subsequent operations

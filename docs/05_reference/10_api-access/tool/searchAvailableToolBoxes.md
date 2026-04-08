@@ -28,11 +28,11 @@ Searches available toolboxes by name or description using a query string.
 
 ### Returns
 
-- **`Promise<SearchAvailableToolBoxesResponse>`**: A promise that resolves with a [`SearchAvailableToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/SearchAvailableToolBoxesResponse) object containing matching toolbox configurations.
+- **`Promise<SearchAvailableToolBoxesResponse>`**: A promise that resolves with a [`SearchAvailableToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/SearchAvailableToolBoxesResponse) object containing matching toolbox configurations.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`SearchAvailableToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/SearchAvailableToolBoxesResponse) object with the following properties:
+The method returns a Promise that resolves to a [`SearchAvailableToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/SearchAvailableToolBoxesResponse) object with the following properties:
 
 - **`type`** (string): Always "searchAvailableToolBoxesResponse".
 - **`data`** (object, optional): Object containing search results and metadata.

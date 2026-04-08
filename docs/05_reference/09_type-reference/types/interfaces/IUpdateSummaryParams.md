@@ -2,7 +2,7 @@
 title: IUpdateSummaryParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:1
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="feedbackid"></a> `feedbackId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:104](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L104) |
-| <a id="summary"></a> `summary` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:105](common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts#L105) |
+| <a id="feedbackid"></a> `feedbackId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:104 |
+| <a id="summary"></a> `summary` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/groupFeedback.ts:105 |

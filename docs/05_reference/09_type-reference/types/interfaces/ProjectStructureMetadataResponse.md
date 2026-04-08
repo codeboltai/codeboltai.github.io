@@ -2,7 +2,7 @@
 title: ProjectStructureMetadataResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/projectStructure.t
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="metadata"></a> `metadata` | [`WorkspaceMetadata`](WorkspaceMetadata) | [common/types/src/codeboltjstypes/libFunctionTypes/projectStructure.ts:149](common/types/src/codeboltjstypes/libFunctionTypes/projectStructure.ts#L149) |
+| <a id="metadata"></a> `metadata` | [`WorkspaceMetadata`](WorkspaceMetadata) | common/types/src/codeboltjstypes/libFunctionTypes/projectStructure.ts:149 |

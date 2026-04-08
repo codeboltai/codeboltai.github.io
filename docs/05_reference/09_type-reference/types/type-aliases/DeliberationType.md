@@ -2,7 +2,7 @@
 title: DeliberationType
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

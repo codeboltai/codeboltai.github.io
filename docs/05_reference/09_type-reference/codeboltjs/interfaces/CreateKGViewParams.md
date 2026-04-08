@@ -2,7 +2,7 @@
 title: CreateKGViewParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

@@ -28,7 +28,7 @@ Retrieves a requirement plan document by its file path, including all sections a
 
 ### Returns
 
-- **`Promise<[RequirementPlanGetResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/RequirementPlanGetResponse)>`**: A promise that resolves to the plan document
+- **`Promise<[RequirementPlanGetResponse](/docs/reference/type-reference/codeboltjs/interfaces/RequirementPlanGetResponse)>`**: A promise that resolves to the plan document
 
 ### Parameter Details
 

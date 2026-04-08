@@ -2,7 +2,7 @@
 title: IListFeedbacksResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

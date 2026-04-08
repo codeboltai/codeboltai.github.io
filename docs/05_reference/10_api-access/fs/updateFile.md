@@ -36,11 +36,11 @@ Updates the content of a file at the specified path. This function allows you to
 
 ### Returns
 
-- **`Promise<UpdateFileResponse>`**: A promise that resolves with an [`UpdateFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateFileResponse) object containing the response type and file update metadata.
+- **`Promise<UpdateFileResponse>`**: A promise that resolves with an [`UpdateFileResponse`](/docs/reference/type-reference/types/interfaces/UpdateFileResponse) object containing the response type and file update metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to an [`UpdateFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/UpdateFileResponse) object with the following properties:
+The method returns a Promise that resolves to an [`UpdateFileResponse`](/docs/reference/type-reference/types/interfaces/UpdateFileResponse) object with the following properties:
 
 - **`type`** (string): Always "updateFileResponse".
 - **`path`** (string, optional): The full path of the file that was updated.

@@ -2,7 +2,7 @@
 title: AddEventInput
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

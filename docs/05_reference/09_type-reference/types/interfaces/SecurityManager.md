@@ -2,7 +2,7 @@
 title: SecurityManager
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -21,7 +21,7 @@ codebolt.hook.list(): Promise<HookListResponse>
 Lists all hooks in the system with their configurations and status.
 ### Returns
 
-- **`Promise<[HookListResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/HookListResponse)>`**: A promise that resolves with an array of all hooks.
+- **`Promise<[HookListResponse](/docs/reference/type-reference/codeboltjs/interfaces/HookListResponse)>`**: A promise that resolves with an array of all hooks.
 
 ### Response Structure
 

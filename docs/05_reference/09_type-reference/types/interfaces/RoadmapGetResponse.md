@@ -2,7 +2,7 @@
 title: RoadmapGetResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:152
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="roadmap"></a> `roadmap` | [`RoadmapData`](RoadmapData) | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:153](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L153) |
+| <a id="roadmap"></a> `roadmap` | [`RoadmapData`](RoadmapData) | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:153 |

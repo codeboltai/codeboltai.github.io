@@ -34,7 +34,7 @@ Retrieves the complete list of todo items.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetTodoListResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetTodoListResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetTodoListResponse`](/docs/reference/type-reference/types/interfaces/GetTodoListResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "getTodoListResponse"

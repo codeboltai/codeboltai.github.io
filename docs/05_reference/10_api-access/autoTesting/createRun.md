@@ -25,11 +25,11 @@ codebolt.autoTesting.createRun(params: ICreateRunParams): Promise<ICreateRunResp
 Creates a new test run from a test suite for execution tracking.
 ### Parameters
 
-- **`params`** ([ICreateRunParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateRunParams)): Parameters including test suite ID and optional run name.
+- **`params`** ([ICreateRunParams](/docs/reference/type-reference/codeboltjs/interfaces/ICreateRunParams)): Parameters including test suite ID and optional run name.
 
 ### Returns
 
-- **`Promise<[ICreateRunResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ICreateRunResponse)>`**: A promise that resolves to the created test run.
+- **`Promise<[ICreateRunResponse](/docs/reference/type-reference/codeboltjs/interfaces/ICreateRunResponse)>`**: A promise that resolves to the created test run.
 
 ### Examples
 

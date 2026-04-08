@@ -2,7 +2,7 @@
 title: CodemapUpdateResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

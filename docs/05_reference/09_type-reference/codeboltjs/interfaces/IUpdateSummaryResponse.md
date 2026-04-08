@@ -2,7 +2,7 @@
 title: IUpdateSummaryResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

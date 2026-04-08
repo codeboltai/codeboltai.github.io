@@ -29,7 +29,7 @@ Deletes a rule engine.
 
 ### Returns
 
-- **`Promise<[ContextRuleEngineDeleteResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextRuleEngineDeleteResponse)>`**: A promise that resolves with deletion status.
+- **`Promise<[ContextRuleEngineDeleteResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextRuleEngineDeleteResponse)>`**: A promise that resolves with deletion status.
 
 ### Examples
 

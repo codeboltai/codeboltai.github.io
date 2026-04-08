@@ -2,7 +2,7 @@
 title: BaseFsSDKResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -35,6 +35,6 @@ Types for the cbfs module functions
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `any` | [common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/fs.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/fs.ts#L9) |
-| <a id="success"></a> `success` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/fs.ts#L8) |
+| <a id="error"></a> `error?` | `any` | common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:10 |
+| <a id="message"></a> `message?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:9 |
+| <a id="success"></a> `success` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/fs.ts:8 |

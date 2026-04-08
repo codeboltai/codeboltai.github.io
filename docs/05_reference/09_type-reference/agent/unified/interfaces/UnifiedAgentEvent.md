@@ -2,7 +2,7 @@
 title: UnifiedAgentEvent
 ---
 
-[**@codebolt/agent**](../../index)
+[**@codebolt/agent**](../index.md)
 
 ***
 
@@ -23,7 +23,7 @@ The framework is designed to be modular, extensible, and easy to use.
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="context"></a> `context?` | `Record`\<`string`, `any`\> | [packages/agent/src/unified/types/types.ts:265](packages/agent/src/unified/types/types.ts#L265) |
-| <a id="data"></a> `data?` | `any` | [packages/agent/src/unified/types/types.ts:263](packages/agent/src/unified/types/types.ts#L263) |
-| <a id="timestamp"></a> `timestamp` | `string` | [packages/agent/src/unified/types/types.ts:264](packages/agent/src/unified/types/types.ts#L264) |
-| <a id="type"></a> `type` | [`UnifiedAgentEventType`](../type-aliases/UnifiedAgentEventType) | [packages/agent/src/unified/types/types.ts:262](packages/agent/src/unified/types/types.ts#L262) |
+| <a id="context"></a> `context?` | `Record`\<`string`, `any`\> | packages/agent/src/unified/types/types.ts:265 |
+| <a id="data"></a> `data?` | `any` | packages/agent/src/unified/types/types.ts:263 |
+| <a id="timestamp"></a> `timestamp` | `string` | packages/agent/src/unified/types/types.ts:264 |
+| <a id="type"></a> `type` | [`UnifiedAgentEventType`](../type-aliases/UnifiedAgentEventType) | packages/agent/src/unified/types/types.ts:262 |

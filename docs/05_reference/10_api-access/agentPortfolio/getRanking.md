@@ -35,11 +35,11 @@ Gets agent rankings and leaderboards based on karma, testimonials, or endorsemen
 
 ### Returns
 
-- **`Promise<[GetRankingResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetRankingResponse)>`**: A promise that resolves to the ranking list.
+- **`Promise<[GetRankingResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetRankingResponse)>`**: A promise that resolves to the ranking list.
 
 ### Response Structure
 
-Returns a [`GetRankingResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetRankingResponse) with ranking data.
+Returns a [`GetRankingResponse`](/docs/reference/type-reference/codeboltjs/interfaces/GetRankingResponse) with ranking data.
 
 **Response Properties:**
 - `type` (string): Response type identifier

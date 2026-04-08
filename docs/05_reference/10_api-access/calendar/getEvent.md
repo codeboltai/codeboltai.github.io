@@ -24,15 +24,15 @@ codebolt.calendar.getEvent(params: IGetEventParams): Promise<IGetEventResponse>
 Retrieves a single calendar event by its ID, including all event details, participants, and metadata.
 ### Parameters
 
-- **`params`** ([IGetEventParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetEventParams)): Parameters containing the eventId to retrieve
+- **`params`** ([IGetEventParams](/docs/reference/type-reference/codeboltjs/interfaces/IGetEventParams)): Parameters containing the eventId to retrieve
 
 ### Returns
 
-- **`Promise<[IGetEventResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetEventResponse)>`**: A promise that resolves to the requested event data
+- **`Promise<[IGetEventResponse](/docs/reference/type-reference/codeboltjs/interfaces/IGetEventResponse)>`**: A promise that resolves to the requested event data
 
 ### Parameter Details
 
-The [`IGetEventParams`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IGetEventParams) interface includes:
+The [`IGetEventParams`](/docs/reference/type-reference/codeboltjs/interfaces/IGetEventParams) interface includes:
 - **`eventId`** (string, required): The unique identifier of the event to retrieve
 
 ### Response Structure

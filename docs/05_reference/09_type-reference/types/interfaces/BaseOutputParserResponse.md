@@ -2,7 +2,7 @@
 title: BaseOutputParserResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -24,5 +24,5 @@ Types for the cboutputparsers module functions
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | `Error` | [common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts#L9) |
-| <a id="success"></a> `success` | `boolean` | [common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts#L8) |
+| <a id="error"></a> `error?` | `Error` | common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:9 |
+| <a id="success"></a> `success` | `boolean` | common/types/src/codeboltjstypes/libFunctionTypes/outputparsers.ts:8 |

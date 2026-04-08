@@ -2,7 +2,7 @@
 title: UpdateTasksResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 

@@ -2,7 +2,7 @@
 title: JobPheromoneAggregatedResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

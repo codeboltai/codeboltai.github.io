@@ -29,11 +29,11 @@ Gets the current status of a capability execution, including progress, results, 
 
 ### Returns
 
-- **`Promise<[GetExecutionStatusResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetExecutionStatusResponse)>`**: A promise that resolves to the current execution status.
+- **`Promise<[GetExecutionStatusResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetExecutionStatusResponse)>`**: A promise that resolves to the current execution status.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetExecutionStatusResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetExecutionStatusResponse) object.
+The method returns a Promise that resolves to a [`GetExecutionStatusResponse`](/docs/reference/type-reference/codeboltjs/interfaces/GetExecutionStatusResponse) object.
 
 **Response Properties:**
 - `type` (string): Always "getExecutionStatusResponse"

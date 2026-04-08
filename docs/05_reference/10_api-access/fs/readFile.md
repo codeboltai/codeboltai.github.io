@@ -28,11 +28,11 @@ Reads the content of a file from the specified path. Returns the file content al
 
 ### Returns
 
-- **`Promise<ReadFileResponse>`**: A promise that resolves with a [`ReadFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/ReadFileResponse) object containing the file content and read operation metadata.
+- **`Promise<ReadFileResponse>`**: A promise that resolves with a [`ReadFileResponse`](/docs/reference/type-reference/types/interfaces/ReadFileResponse) object containing the file content and read operation metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ReadFileResponse`](/docs/api/11_doc-type-ref/types/interfaces/ReadFileResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ReadFileResponse`](/docs/reference/type-reference/types/interfaces/ReadFileResponse) object with the following properties:
 
 - **`type`** (string): Always "readFileResponse".
 - **`content`** (string, optional): The content of the file that was read.

@@ -30,11 +30,11 @@ Gets the current status and details of a side execution process.
 
 ### Returns
 
-- **`Promise<[GetSideExecutionStatusResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetSideExecutionStatusResponse)>`**: A promise that resolves with the execution status and details.
+- **`Promise<[GetSideExecutionStatusResponse](/docs/reference/type-reference/codeboltjs/interfaces/GetSideExecutionStatusResponse)>`**: A promise that resolves with the execution status and details.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetSideExecutionStatusResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/GetSideExecutionStatusResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetSideExecutionStatusResponse`](/docs/reference/type-reference/codeboltjs/interfaces/GetSideExecutionStatusResponse) object with the following properties:
 
 **Response Properties:**
 - `type`: Always "getSideExecutionStatusResponse"

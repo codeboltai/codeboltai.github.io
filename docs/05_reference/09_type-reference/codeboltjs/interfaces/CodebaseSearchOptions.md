@@ -2,7 +2,7 @@
 title: CodebaseSearchOptions
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

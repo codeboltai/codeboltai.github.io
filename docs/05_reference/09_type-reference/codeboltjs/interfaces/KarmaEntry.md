@@ -2,7 +2,7 @@
 title: KarmaEntry
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

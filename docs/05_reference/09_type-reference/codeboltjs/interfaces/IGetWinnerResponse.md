@@ -2,7 +2,7 @@
 title: IGetWinnerResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

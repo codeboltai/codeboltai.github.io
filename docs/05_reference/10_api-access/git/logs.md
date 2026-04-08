@@ -28,11 +28,11 @@ Retrieves the commit logs for the Git repository. Shows the commit history with 
 
 ### Returns
 
-- **`Promise<GitLogsResponse>`**: A promise that resolves with a [`GitLogsResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitLogsResponse) object containing the commit history and log data.
+- **`Promise<GitLogsResponse>`**: A promise that resolves with a [`GitLogsResponse`](/docs/reference/type-reference/types/interfaces/GitLogsResponse) object containing the commit history and log data.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitLogsResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitLogsResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitLogsResponse`](/docs/reference/type-reference/types/interfaces/GitLogsResponse) object with the following properties:
 
 - **`type`** (string): Always "gitLogsResponse".
 - **`data`** (CommitSummary[], optional): Array of commit objects with the following properties:

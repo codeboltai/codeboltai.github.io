@@ -28,11 +28,11 @@ Retrieves a value from the in-memory database by key. Returns the stored data al
 
 ### Returns
 
-- **`Promise<MemoryGetResponse>`**: A promise that resolves with a [`MemoryGetResponse`](/docs/api/11_doc-type-ref/types/interfaces/MemoryGetResponse) object containing the retrieved data, response type, and metadata.
+- **`Promise<MemoryGetResponse>`**: A promise that resolves with a [`MemoryGetResponse`](/docs/reference/type-reference/types/interfaces/MemoryGetResponse) object containing the retrieved data, response type, and metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`MemoryGetResponse`](/docs/api/11_doc-type-ref/types/interfaces/MemoryGetResponse) object with the following properties:
+The method returns a Promise that resolves to a [`MemoryGetResponse`](/docs/reference/type-reference/types/interfaces/MemoryGetResponse) object with the following properties:
 
 - **`type`** (string): Always "memoryGetResponse".
 - **`key`** (string, optional): The key that was used to retrieve the value.

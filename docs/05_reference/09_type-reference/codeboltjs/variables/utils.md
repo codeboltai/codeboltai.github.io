@@ -2,7 +2,7 @@
 title: utils
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -20,4 +20,4 @@ Defined in: packages/codeboltjs/src/modules/utils.ts:6
 
 | Name | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="editfileandapplydiff"></a> `editFileAndApplyDiff()` | (`filePath`: `string`, `diff`: `string`, `diffIdentifier`: `string`, `prompt`: `string`, `applyModel?`: `string`) => `Promise`\<`FsEditFileAndApplyDiffResponse`\> | Edits a file and applies a diff with AI assistance. | [packages/codeboltjs/src/modules/utils.ts:17](packages/codeboltjs/src/modules/utils.ts#L17) |
+| <a id="editfileandapplydiff"></a> `editFileAndApplyDiff()` | (`filePath`: `string`, `diff`: `string`, `diffIdentifier`: `string`, `prompt`: `string`, `applyModel?`: `string`) => `Promise`\<`FsEditFileAndApplyDiffResponse`\> | Edits a file and applies a diff with AI assistance. | packages/codeboltjs/src/modules/utils.ts:17 |

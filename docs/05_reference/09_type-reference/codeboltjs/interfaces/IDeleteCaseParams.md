@@ -2,7 +2,7 @@
 title: IDeleteCaseParams
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

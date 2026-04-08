@@ -2,7 +2,7 @@
 title: IngestionTrigger
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

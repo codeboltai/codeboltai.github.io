@@ -347,7 +347,7 @@ async function closeWithErrorHandling(instanceId) {
 
 ## Related Functions
 
-- [`listBrowserInstances()`](/docs/api/apiaccess/browser/listInstances) - List all instances
-- [`getBrowserInstance()`](/docs/api/apiaccess/browser/getInstance) - Get specific instance
-- [`openNewBrowserInstance()`](/docs/api/apiaccess/browser/openNewInstance) - Create new instance
-- [`setActiveBrowserInstance()`](/docs/api/apiaccess/browser/setActiveInstance) - Set active instance
+- [`listBrowserInstances()`](/docs/reference/api-access/browser/listInstances) - List all instances
+- [`getBrowserInstance()`](/docs/reference/api-access/browser/getInstance) - Get specific instance
+- [`openNewBrowserInstance()`](/docs/reference/api-access/browser/openNewInstance) - Create new instance
+- [`setActiveBrowserInstance()`](/docs/reference/api-access/browser/setActiveInstance) - Set active instance

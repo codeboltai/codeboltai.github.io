@@ -28,11 +28,11 @@ Creates a new branch in the Git repository. Creates a new branch pointer at the 
 
 ### Returns
 
-- **`Promise<GitBranchResponse>`**: A promise that resolves with a [`GitBranchResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitBranchResponse) object containing the branch creation results.
+- **`Promise<GitBranchResponse>`**: A promise that resolves with a [`GitBranchResponse`](/docs/reference/type-reference/types/interfaces/GitBranchResponse) object containing the branch creation results.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GitBranchResponse`](/docs/api/11_doc-type-ref/types/interfaces/GitBranchResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GitBranchResponse`](/docs/reference/type-reference/types/interfaces/GitBranchResponse) object with the following properties:
 
 - **`type`** (string): Always "gitBranchResponse".
 - **`branch`** (string, optional): The name of the branch that was created.

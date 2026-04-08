@@ -2,7 +2,7 @@
 title: AgentConversation
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

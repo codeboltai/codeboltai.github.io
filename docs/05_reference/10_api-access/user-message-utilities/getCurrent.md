@@ -26,7 +26,7 @@ Gets the current user message object containing all message data.
 
 ### Response Structure
 
-Returns a [`FlatUserMessage`](/docs/api/11_doc-type-ref/types/interfaces/FlatUserMessage) object or `undefined`:
+Returns a [`FlatUserMessage`](/docs/reference/type-reference/types/interfaces/FlatUserMessage) object or `undefined`:
 
 **FlatUserMessage Properties:**
 - `userMessage`: The text content of the user's message

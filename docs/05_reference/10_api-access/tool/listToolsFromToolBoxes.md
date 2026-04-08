@@ -28,11 +28,11 @@ Lists all tools from the specified toolboxes with their capabilities and descrip
 
 ### Returns
 
-- **`Promise<ListToolsFromToolBoxesResponse>`**: A promise that resolves with a [`ListToolsFromToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/ListToolsFromToolBoxesResponse) object containing tools from the specified toolboxes.
+- **`Promise<ListToolsFromToolBoxesResponse>`**: A promise that resolves with a [`ListToolsFromToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/ListToolsFromToolBoxesResponse) object containing tools from the specified toolboxes.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`ListToolsFromToolBoxesResponse`](/docs/api/11_doc-type-ref/types/interfaces/ListToolsFromToolBoxesResponse) object with the following properties:
+The method returns a Promise that resolves to a [`ListToolsFromToolBoxesResponse`](/docs/reference/type-reference/types/interfaces/ListToolsFromToolBoxesResponse) object with the following properties:
 
 - **`type`** (string): Always "listToolsFromToolBoxesResponse".
 - **`data`** (array, optional): Array of tools from the specified toolboxes with their details.

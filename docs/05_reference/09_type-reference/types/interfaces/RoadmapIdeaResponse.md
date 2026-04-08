@@ -2,7 +2,7 @@
 title: RoadmapIdeaResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:183
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="idea"></a> `idea` | [`Idea`](Idea) | [common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:184](common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts#L184) |
+| <a id="idea"></a> `idea` | [`Idea`](Idea) | common/types/src/codeboltjstypes/libFunctionTypes/roadmap.ts:184 |

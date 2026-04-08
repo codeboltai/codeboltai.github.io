@@ -39,11 +39,11 @@ Retrieves a value from the KV store by key within a namespace.
 
 ### Returns
 
-- **`Promise<[KVGetResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVGetResponse)>`**: A promise that resolves with the value and existence status.
+- **`Promise<[KVGetResponse](/docs/reference/type-reference/codeboltjs/interfaces/KVGetResponse)>`**: A promise that resolves with the value and existence status.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`KVGetResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/KVGetResponse) object:
+The method returns a Promise that resolves to a [`KVGetResponse`](/docs/reference/type-reference/codeboltjs/interfaces/KVGetResponse) object:
 
 ```typescript
 {

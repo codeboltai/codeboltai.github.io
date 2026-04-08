@@ -32,11 +32,11 @@ Adds a key-value pair to the in-memory database. Supports storing various data t
 
 ### Returns
 
-- **`Promise<MemorySetResponse>`**: A promise that resolves with a [`MemorySetResponse`](/docs/api/11_doc-type-ref/types/interfaces/MemorySetResponse) object containing the response type and operation metadata.
+- **`Promise<MemorySetResponse>`**: A promise that resolves with a [`MemorySetResponse`](/docs/reference/type-reference/types/interfaces/MemorySetResponse) object containing the response type and operation metadata.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`MemorySetResponse`](/docs/api/11_doc-type-ref/types/interfaces/MemorySetResponse) object with the following properties:
+The method returns a Promise that resolves to a [`MemorySetResponse`](/docs/reference/type-reference/types/interfaces/MemorySetResponse) object with the following properties:
 
 - **`type`** (string): Always "memorySetResponse".
 - **`key`** (string, optional): The key that was used to store the value.

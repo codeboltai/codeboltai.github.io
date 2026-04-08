@@ -2,7 +2,7 @@
 title: PossibleVariablesResponse
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

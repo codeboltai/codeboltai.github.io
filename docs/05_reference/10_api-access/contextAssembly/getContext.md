@@ -29,7 +29,7 @@ Assembles context from various memory sources based on rules and variables.
 
 ### Returns
 
-- **`Promise<[ContextAssemblyResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ContextAssemblyResponse)>`**: A promise that resolves with assembled context from all memory sources.
+- **`Promise<[ContextAssemblyResponse](/docs/reference/type-reference/codeboltjs/interfaces/ContextAssemblyResponse)>`**: A promise that resolves with assembled context from all memory sources.
 
 ### Response Structure
 

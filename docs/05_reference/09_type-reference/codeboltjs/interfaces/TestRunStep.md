@@ -2,7 +2,7 @@
 title: TestRunStep
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 

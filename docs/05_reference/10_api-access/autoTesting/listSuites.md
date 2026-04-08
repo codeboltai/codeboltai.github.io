@@ -26,11 +26,11 @@ codebolt.autoTesting.listSuites(params: IListSuitesParams): Promise<IListSuitesR
 Lists all available test suites.
 ### Parameters
 
-- **`params`** ([IListSuitesParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IListSuitesParams), optional): Optional parameters for filtering.
+- **`params`** ([IListSuitesParams](/docs/reference/type-reference/codeboltjs/interfaces/IListSuitesParams), optional): Optional parameters for filtering.
 
 ### Returns
 
-- **`Promise<[IListSuitesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IListSuitesResponse)>`**: A promise that resolves to the list of test suites.
+- **`Promise<[IListSuitesResponse](/docs/reference/type-reference/codeboltjs/interfaces/IListSuitesResponse)>`**: A promise that resolves to the list of test suites.
 
 ### Examples
 

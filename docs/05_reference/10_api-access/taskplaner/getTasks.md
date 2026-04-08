@@ -25,7 +25,7 @@ Retrieves all tasks from the task management system using WebSocket communicatio
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`GetTasksResponse`](/docs/api/11_doc-type-ref/types/interfaces/GetTasksResponse) object with the following properties:
+The method returns a Promise that resolves to a [`GetTasksResponse`](/docs/reference/type-reference/types/interfaces/GetTasksResponse) object with the following properties:
 
 - **`type`** (string): Always "getTasksResponse".
 - **`tasks`** (Task[], optional): An array of Task objects containing all tasks in the system. Each Task object has:

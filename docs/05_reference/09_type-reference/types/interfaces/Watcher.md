@@ -2,7 +2,7 @@
 title: Watcher
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -16,7 +16,7 @@ An agent or user watching for updates
 
 | Property | Type | Description | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="createdat"></a> `createdAt` | `string` | When they started watching | [common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:191](common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts#L191) |
-| <a id="id"></a> `id` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:186](common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts#L186) |
-| <a id="watcherid"></a> `watcherId` | `string` | Agent ID or user ID | [common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:188](common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts#L188) |
-| <a id="watchertype"></a> `watcherType` | [`ActorType`](../type-aliases/ActorType) | - | [common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:189](common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts#L189) |
+| <a id="createdat"></a> `createdAt` | `string` | When they started watching | common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:191 |
+| <a id="id"></a> `id` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:186 |
+| <a id="watcherid"></a> `watcherId` | `string` | Agent ID or user ID | common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:188 |
+| <a id="watchertype"></a> `watcherType` | [`ActorType`](../type-aliases/ActorType) | - | common/types/src/codeboltjstypes/libFunctionTypes/projectStructureUpdateRequest.ts:189 |

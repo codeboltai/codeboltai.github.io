@@ -2,7 +2,7 @@
 title: IGetWinnerParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,4 +14,4 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:11
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="deliberationid"></a> `deliberationId` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:113](common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts#L113) |
+| <a id="deliberationid"></a> `deliberationId` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/deliberation.ts:113 |

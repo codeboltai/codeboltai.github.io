@@ -28,11 +28,11 @@ Retrieves detailed configuration and pattern information for a specific problem 
 
 ### Returns
 
-- **`Promise<getMatchDetail>`**: A promise that resolves with a [`getMatchDetail`](/docs/api/11_doc-type-ref/types/interfaces/getMatchDetail) object containing the detailed matcher configuration including patterns and rules.
+- **`Promise<getMatchDetail>`**: A promise that resolves with a [`getMatchDetail`](/docs/reference/type-reference/types/interfaces/getMatchDetail) object containing the detailed matcher configuration including patterns and rules.
 
 ### Response Structure
 
-The method returns a Promise that resolves to a [`getMatchDetail`](/docs/api/11_doc-type-ref/types/interfaces/getMatchDetail) object with the following properties:
+The method returns a Promise that resolves to a [`getMatchDetail`](/docs/reference/type-reference/types/interfaces/getMatchDetail) object with the following properties:
 
 - **`type`** (string): Always "getMatchDetailResponse".
 - **`matcher`** (object, optional): The detailed matcher configuration with the following structure:

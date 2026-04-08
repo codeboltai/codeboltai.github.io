@@ -2,7 +2,7 @@
 title: DeleteOrchestratorResponse
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -21,7 +21,7 @@ Types for the orchestrator module functions
 
 | Property | Type | Inherited from | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="error"></a> `error?` | [`OrchestratorError`](OrchestratorError) | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`error`](BaseOrchestratorSDKResponse.md#error) | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:10](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L10) |
-| <a id="message"></a> `message?` | `string` | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`message`](BaseOrchestratorSDKResponse.md#message) | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:9](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L9) |
-| <a id="requestid"></a> `requestId?` | `string` | - | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:117](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L117) |
-| <a id="success"></a> `success` | `boolean` | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`success`](BaseOrchestratorSDKResponse.md#success) | [common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:8](common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts#L8) |
+| <a id="error"></a> `error?` | [`OrchestratorError`](OrchestratorError) | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`error`](BaseOrchestratorSDKResponse.md#error) | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:10 |
+| <a id="message"></a> `message?` | `string` | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`message`](BaseOrchestratorSDKResponse.md#message) | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:9 |
+| <a id="requestid"></a> `requestId?` | `string` | - | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:117 |
+| <a id="success"></a> `success` | `boolean` | [`BaseOrchestratorSDKResponse`](BaseOrchestratorSDKResponse).[`success`](BaseOrchestratorSDKResponse.md#success) | common/types/src/codeboltjstypes/libFunctionTypes/orchestrator.ts:8 |

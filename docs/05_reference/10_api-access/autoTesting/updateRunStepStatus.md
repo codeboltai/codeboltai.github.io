@@ -25,11 +25,11 @@ codebolt.autoTesting.updateRunStepStatus(params: IUpdateRunStepParams): Promise<
 Updates the status of a specific test step within a run and case.
 ### Parameters
 
-- **`params`** ([IUpdateRunStepParams](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunStepParams)): Parameters including run ID, case ID, step ID, status, logs, and user override flag.
+- **`params`** ([IUpdateRunStepParams](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunStepParams)): Parameters including run ID, case ID, step ID, status, logs, and user override flag.
 
 ### Returns
 
-- **`Promise<[IUpdateRunStepResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/IUpdateRunStepResponse)>`**: A promise that resolves to the updated test run.
+- **`Promise<[IUpdateRunStepResponse](/docs/reference/type-reference/codeboltjs/interfaces/IUpdateRunStepResponse)>`**: A promise that resolves to the updated test run.
 
 ### Examples
 

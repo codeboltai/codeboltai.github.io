@@ -22,11 +22,11 @@ codebolt.capability.listSkills(): Promise<ListCapabilitiesResponse>
 Lists all available skills. This is a convenience method that filters capabilities by type 'skill'.
 ### Returns
 
-- **`Promise<[ListCapabilitiesResponse](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of all skills.
+- **`Promise<[ListCapabilitiesResponse](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse)>`**: A promise that resolves to a list of all skills.
 
 ### Response Structure
 
-Returns a [`ListCapabilitiesResponse`](/docs/api/11_doc-type-ref/codeboltjs/interfaces/ListCapabilitiesResponse) with an array of skill capabilities.
+Returns a [`ListCapabilitiesResponse`](/docs/reference/type-reference/codeboltjs/interfaces/ListCapabilitiesResponse) with an array of skill capabilities.
 
 ### Examples
 

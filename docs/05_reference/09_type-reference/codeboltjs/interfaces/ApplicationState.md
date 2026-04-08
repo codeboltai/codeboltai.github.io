@@ -2,7 +2,7 @@
 title: ApplicationState
 ---
 
-[**@codebolt/codeboltjs**](../index)
+[**@codebolt/codeboltjs**](../index.md)
 
 ***
 
@@ -25,9 +25,9 @@ This file contains:
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="currentproject"></a> `currentProject?` | `string` | [packages/codeboltjs/src/types/commonTypes.ts:19](packages/codeboltjs/src/types/commonTypes.ts#L19) |
-| <a id="openfiles"></a> `openFiles?` | `string`[] | [packages/codeboltjs/src/types/commonTypes.ts:21](packages/codeboltjs/src/types/commonTypes.ts#L21) |
-| <a id="recentprojects"></a> `recentProjects?` | `string`[] | [packages/codeboltjs/src/types/commonTypes.ts:22](packages/codeboltjs/src/types/commonTypes.ts#L22) |
-| <a id="sessiondata"></a> `sessionData?` | `Record`\<`string`, `any`\> | [packages/codeboltjs/src/types/commonTypes.ts:24](packages/codeboltjs/src/types/commonTypes.ts#L24) |
-| <a id="userpreferences"></a> `userPreferences?` | `Record`\<`string`, `any`\> | [packages/codeboltjs/src/types/commonTypes.ts:23](packages/codeboltjs/src/types/commonTypes.ts#L23) |
-| <a id="workingdirectory"></a> `workingDirectory?` | `string` | [packages/codeboltjs/src/types/commonTypes.ts:20](packages/codeboltjs/src/types/commonTypes.ts#L20) |
+| <a id="currentproject"></a> `currentProject?` | `string` | packages/codeboltjs/src/types/commonTypes.ts:19 |
+| <a id="openfiles"></a> `openFiles?` | `string`[] | packages/codeboltjs/src/types/commonTypes.ts:21 |
+| <a id="recentprojects"></a> `recentProjects?` | `string`[] | packages/codeboltjs/src/types/commonTypes.ts:22 |
+| <a id="sessiondata"></a> `sessionData?` | `Record`\<`string`, `any`\> | packages/codeboltjs/src/types/commonTypes.ts:24 |
+| <a id="userpreferences"></a> `userPreferences?` | `Record`\<`string`, `any`\> | packages/codeboltjs/src/types/commonTypes.ts:23 |
+| <a id="workingdirectory"></a> `workingDirectory?` | `string` | packages/codeboltjs/src/types/commonTypes.ts:20 |

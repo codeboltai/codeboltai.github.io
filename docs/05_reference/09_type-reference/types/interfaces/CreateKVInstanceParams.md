@@ -2,7 +2,7 @@
 title: CreateKVInstanceParams
 ---
 
-[**@codebolt/types**](../index)
+[**@codebolt/types**](../index.md)
 
 ***
 
@@ -14,5 +14,5 @@ Defined in: common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts:65
 
 | Property | Type | Defined in |
 | ------ | ------ | ------ |
-| <a id="description"></a> `description?` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts:67](common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts#L67) |
-| <a id="name"></a> `name` | `string` | [common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts:66](common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts#L66) |
+| <a id="description"></a> `description?` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts:67 |
+| <a id="name"></a> `name` | `string` | common/types/src/codeboltjstypes/libFunctionTypes/kvStore.ts:66 |
