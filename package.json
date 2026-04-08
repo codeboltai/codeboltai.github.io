@@ -6,6 +6,7 @@
     "docusaurus": "npx docusaurus",
     "start": "npx docusaurus start --no-open",
     "build": "npx docusaurus build",
+    "build:cf": "NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
     "build:no-types": "npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "deploy": "npx docusaurus deploy",
