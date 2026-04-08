@@ -21,7 +21,13 @@ const config: Config = {
     },
   },
 
-  // onBrokenAnchors: 'warn',
+  // Typedoc-generated content has thousands of inherited-property cross-
+  // references whose anchor IDs don't survive Docusaurus's normalization
+  // (collisions with sibling properties, inherited-member mangling, etc.).
+  // These are internal to the auto-generated reference and not navigation
+  // any reader clicks — ignoring them keeps the build clean.
+  onBrokenAnchors: 'ignore',
+
   customFields: {
     onDuplicatePresets: 'warn',
     onExtraPlugins: 'warn',
