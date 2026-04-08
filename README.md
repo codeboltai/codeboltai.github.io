@@ -1,6 +1,6 @@
 # CodeBolt Documentation Website
 
-This is the Source Code for Codebolt Documentation Website
+This is the Codebolt Documentation Website
 
 ### Installation
 
