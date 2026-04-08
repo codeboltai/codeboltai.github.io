@@ -1,0 +1,11 @@
+{
+  "label": "Search",
+  "position": 22.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/search/index"
+  }
+}

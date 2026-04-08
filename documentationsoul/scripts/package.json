@@ -1,0 +1,12 @@
+{
+    "name": "updatejson",
+    "version": "1.0.0",
+    "description": "Generate blog posts using OpenCode SDK",
+    "type": "module",
+    "scripts": {
+        "updatejson": "node update_docs.js"
+    },
+    "dependencies": {
+        "@opencode-ai/sdk": "^1.0.0"
+    }
+}

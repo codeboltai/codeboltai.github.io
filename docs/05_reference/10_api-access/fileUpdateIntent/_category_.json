@@ -1,0 +1,11 @@
+{
+  "label": "File Update Intent",
+  "position": 13.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/fileUpdateIntent/index"
+  }
+}

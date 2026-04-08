@@ -1,0 +1,11 @@
+{
+  "label": "Thread",
+  "position": 26.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/thread/index"
+  }
+}

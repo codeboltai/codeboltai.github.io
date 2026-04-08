@@ -1,0 +1,11 @@
+{
+  "label": "Episodic Memory",
+  "position": 11.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/episodicMemory/index"
+  }
+}

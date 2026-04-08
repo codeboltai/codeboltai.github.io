@@ -1,0 +1,42 @@
+---
+sidebar_position: 1
+title: Surfaces Overview
+---
+
+# Surfaces
+
+Codebolt is the same agent runtime no matter how you talk to it. The **surface** is the part you actually see and touch — and you have four to pick from depending on what you're doing.
+
+## Pick your surface
+
+| Surface | Best for | Trade-off |
+|---|---|---|
+| **[Desktop app](./02_desktop-app/01_workspace-and-projects.md)** | Daily coding work, multi-panel context, visual diffs, rich chat | Heaviest install, single machine |
+| **[CLI](./03_cli/01_overview.md)** | Scripting, CI, one-off commands, remote SSH | Less visual, no live preview |
+| **[TUI](./04_tui.md)** | Terminal-only environments where you still want a UI | Fewer panels than desktop |
+| **[Headless](./05_headless.md)** | Servers, automation, agent execution without any UI | No interactive chat |
+
+The same project, the same agents, the same memory — only the surface differs.
+
+## What stays the same across surfaces
+
+- **Agents and tools** — the same allowlists, the same MCP servers, the same capabilities
+- **Memory** — shadow git, episodic memory, vector store, KG all live in the project, not the UI
+- **Settings and profiles** — config is per-project (and per-user), surface-agnostic
+- **The event log** — every surface writes to the same append-only log
+
+## What varies
+
+- **Chat ergonomics** — multi-tab in the desktop, one-shot in the CLI, single-thread in the TUI, scripted in headless. See [Chat](../03_chat/01_overview.md).
+- **Context affordances** — `@mentions`, panel pickers, and inline previews are desktop-only.
+- **Inline editing** — Ctrl+K-style inline edits are desktop-only.
+- **Multi-pane diffs** — visual diffs are richest in the desktop app.
+
+## About this section
+
+The pages under **Surfaces** are **reference catalogs** for each surface — what panels, commands, or navigation keys exist on that surface. For **how to do a specific thing** (install an MCP server, switch models, manage chat tabs) use the feature sections below (Chat, Agents, Tools & MCP, etc.) — those pages show all surfaces side by side via tabs.
+
+## See also
+
+- [Installation](../../01_getting-started/03_installation/01_overview.md)
+- [Quickstart](../../01_getting-started/02_quickstart.md)

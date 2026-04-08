@@ -1,0 +1,8 @@
+{
+  "name": "codebolt-docs",
+  "account_id": "8073e84dbfc4e2bc95666192dcee62c0",
+  "compatibility_date": "2026-04-07",
+  "assets": {
+    "directory": "./build"
+  }
+}

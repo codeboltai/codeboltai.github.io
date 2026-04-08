@@ -1,0 +1,8 @@
+{
+  "label": "Provider",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "reference/type-reference/provider/index"
+  }
+}

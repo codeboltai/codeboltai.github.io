@@ -1,0 +1,10 @@
+{
+  "label": "Requirement Plan",
+  "position": 15,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/requirementPlan/index"
+  }
+}

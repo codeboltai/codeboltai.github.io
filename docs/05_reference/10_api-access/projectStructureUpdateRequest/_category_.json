@@ -1,0 +1,11 @@
+{
+  "label": "Project Structure Update Request",
+  "position": 100,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/projectStructureUpdateRequest/index"
+  }
+}

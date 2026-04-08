@@ -1,0 +1,11 @@
+{
+  "label": "Context Assembly",
+  "position": 8.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/contextAssembly/index"
+  }
+}

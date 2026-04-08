@@ -1,0 +1,11 @@
+{
+  "label": "Event Log",
+  "position": 12.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/eventLog/index"
+  }
+}

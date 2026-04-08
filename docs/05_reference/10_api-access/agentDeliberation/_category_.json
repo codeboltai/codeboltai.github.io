@@ -1,0 +1,11 @@
+{
+  "label": "Agent Deliberation",
+  "position": 4.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/api-access/agentDeliberation/index"
+  }
+}

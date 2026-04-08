@@ -1,259 +1,1712 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * CodeBolt Documentation — Global Styles
+ * Design language: minimal, sharp edges, monospace accents,
+ * tight tracking, subtle borders, dot-grid feel.
  */
 
-/* You can override the default Infima variables here. */
+/* ═══════════════════════════════════════════
+   1. CSS VARIABLES / COLOR PALETTE
+   ═══════════════════════════════════════════ */
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #78350f;
+  --ifm-color-primary-dark: #451a03;
+  --ifm-color-primary-darker: #451a03;
+  --ifm-color-primary-darkest: #451a03;
+  --ifm-color-primary-light: #92400e;
+  --ifm-color-primary-lighter: #b45309;
+  --ifm-color-primary-lightest: #d97706;
+
+  --ifm-font-size-base: 15px;
+  --ifm-container-width: 1400px;
+  --ifm-spacing-horizontal: 0;
+  --ifm-navbar-height: 3.5rem;
+  --ifm-code-font-size: 85%;
+  --doc-sidebar-width: 250px;
+  --ifm-toc-link-color: #666;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-spacing-horizontal: 2rem;
+
+  /* Template-aligned tokens */
+  --cb-border: rgba(0, 0, 0, 0.08);
+  --cb-border-hover: rgba(0, 0, 0, 0.2);
+  --cb-surface: rgba(0, 0, 0, 0.02);
+  --cb-muted: #737373;
+  --cb-radius: 0px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #fbbf24;
+  --ifm-color-primary-dark: #f59e0b;
+  --ifm-color-primary-darker: #d97706;
+  --ifm-color-primary-darkest: #b45309;
+  --ifm-color-primary-light: #fcd34d;
+  --ifm-color-primary-lighter: #fde68a;
+  --ifm-color-primary-lightest: #fef3c7;
+
+  --ifm-background-color: #050505;
+  --ifm-navbar-background-color: rgba(5, 5, 5, 0.8);
+  --ifm-footer-background-color: #050505;
+  --ifm-menu-color: #a1a1aa;
+  --ifm-menu-color-active: #fafafa;
+  --ifm-heading-color: #fafafa;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
+
+  --cb-border: rgba(255, 255, 255, 0.08);
+  --cb-border-hover: rgba(255, 255, 255, 0.2);
+  --cb-surface: rgba(255, 255, 255, 0.03);
+  --cb-muted: #a1a1aa;
 }
 
-/* Fix for white space issue - ensure full height layout */
-html, body {
+/* ═══════════════════════════════════════════
+   2. BASE / RESETS
+   ═══════════════════════════════════════════ */
+
+html,
+body {
   height: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  overscroll-behavior: none;
+  background-color: var(--ifm-background-color, #ffffff);
 }
 
-/* Ensure the main wrapper takes full height */
+[data-theme='dark'] html,
+[data-theme='dark'] body {
+  background-color: #050505;
+}
+
 #__docusaurus {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Make the main content area expand to fill available space */
 .main-wrapper,
-main[role="main"],
-.theme-doc-markdown {
+main[role="main"] {
   flex: 1;
-  padding-bottom: 20px;
-  /* min-height: calc(100vh - var(--ifm-navbar-height, 60px)); */
+  /* padding-bottom: 20px; */
 }
 
-/* Ensure the container and content areas have proper background */
 .container,
 .row,
 .col {
   background-color: inherit;
 }
 
-/* Ensure consistent background for the entire page */
-html {
-  background-color: var(--ifm-background-color, #ffffff);
+p {
+  margin: 0;
+  padding: 0;
 }
 
-[data-theme='dark'] html {
-  background-color: var(--ifm-background-color, #1b1b1d);
+/* ═══════════════════════════════════════════
+   3. TYPOGRAPHY
+   ═══════════════════════════════════════════ */
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--ifm-heading-color);
 }
 
-/* Prevent white space on overscroll */
-body {
-  overscroll-behavior: none;
-  background-color: var(--ifm-background-color, #ffffff);
+h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ifm-heading-color);
+  margin-top: 2rem;
 }
 
-[data-theme='dark'] body {
-  background-color: var(--ifm-background-color, #1b1b1d);
+h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ifm-heading-color);
 }
 
-/* Ensure the page wrapper extends full height */
+/* ═══════════════════════════════════════════
+   4. NAVBAR
+   ═══════════════════════════════════════════ */
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--cb-border);
+  box-shadow: none !important;          /* prevent on-scroll shadow from changing layout */
+  height: 3.5rem;
+  min-height: 3.5rem;
+  max-height: 3.5rem;                   /* lock height across scroll states */
+  padding: 0 1rem;
+  transition: none;                      /* no animated height/padding transitions */
+}
+
+/* Lock the sidebar's sticky position so it doesn't reflow on scroll */
+.theme-doc-sidebar-container,
+aside.theme-doc-sidebar-container {
+  position: sticky;
+  top: var(--ifm-navbar-height);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Logo spacing */
+.navbar__brand {
+  margin-right: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.navbar__logo {
+  margin-right: 0.5rem;
+  height: 1.5rem;
+}
+
+.navbar__title {
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+  color: var(--ifm-heading-color);
+}
+
+/* Nav links — muted by default, foreground on hover */
+.navbar__items {
+  gap: 0.25rem;
+}
+
+.navbar__link {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--cb-muted) !important;
+  transition: color 0.2s;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0;
+  position: relative;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-heading-color) !important;
+  background: transparent;
+}
+
+.navbar__link--active {
+  color: var(--ifm-heading-color) !important;
+}
+
+/* Active indicator — bottom bar like the template */
+.navbar__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 1.5px;
+  background: var(--ifm-color-primary);
+}
+
+/* ── Navbar Dropdown menus ── */
+.navbar__item.dropdown .navbar__link {
+  gap: 0.25rem;
+}
+
+.dropdown__menu {
+  border-radius: 0 !important;
+  border: 1px solid var(--cb-border) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  padding: 0.5rem 0 !important;
+  min-width: 180px;
+  background: var(--ifm-background-color);
+}
+
+[data-theme='dark'] .dropdown__menu {
+  background: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dropdown__link {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--cb-muted) !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0 !important;
+  transition: all 0.15s;
+}
+
+.dropdown__link:hover {
+  background: var(--cb-surface) !important;
+  color: var(--ifm-heading-color) !important;
+}
+
+.dropdown__link--active {
+  color: var(--ifm-heading-color) !important;
+  background: var(--cb-surface) !important;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .dropdown__link--active {
+  color: #fff !important;
+}
+
+/* ── Theme toggle ── */
+.navbar__items--right > div[class*="toggle"],
+.navbar__items--right > button[class*="toggle"],
+[class*="colorModeToggle"] button {
+  /* border: 1px solid var(--cb-border); */
+  border-radius: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+[class*="colorModeToggle"] button:hover {
+  border-color: var(--cb-border-hover);
+  background: var(--cb-surface);
+}
+
+/* ── Search bar ── */
+.navbar .DocSearch-Button,
+.navbar .search-bar-container input,
+.navbar [class*="searchBar"] input {
+  background-color: var(--cb-surface);
+  border: 1px solid var(--cb-border);
+  border-radius: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.8rem;
+  height: 2rem;
+}
+
+[data-theme="dark"] .navbar .DocSearch-Button,
+[data-theme="dark"] .navbar .search-bar-container input,
+[data-theme="dark"] .navbar [class*="searchBar"] input {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--cb-muted);
+}
+
+[data-theme="dark"] .navbar .DocSearch-Button .DocSearch-Search-Icon,
+[data-theme="dark"] .navbar [class*="searchBar"] svg {
+  color: var(--cb-muted);
+}
+
+.navbar .DocSearch-Button:hover,
+.navbar [class*="searchBar"] input:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .navbar .DocSearch-Button:hover,
+[data-theme="dark"] .navbar [class*="searchBar"] input:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+/* ── Search results dropdown ── */
+[class*="searchResultsColumn"],
+.search-result-match {
+  border-radius: 0 !important;
+}
+
+ul[class*="searchResults"],
+div[class*="searchResults"] {
+  border: 1px solid var(--cb-border);
+  border-radius: 0 !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: var(--ifm-background-color);
+}
+
+[data-theme='dark'] ul[class*="searchResults"],
+[data-theme='dark'] div[class*="searchResults"] {
+  background: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Search result items */
+[class*="searchResult"] {
+  border-bottom: 1px solid var(--cb-border);
+  padding: 0.75rem 1rem;
+}
+
+[class*="searchResult"]:last-child {
+  border-bottom: none;
+}
+
+[class*="searchResult"]:hover,
+[class*="searchResult"][aria-selected="true"] {
+  background: var(--cb-surface) !important;
+}
+
+[class*="searchResultTitle"] {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+[class*="searchResultContent"] {
+  font-size: 0.8rem;
+  color: var(--cb-muted);
+  font-weight: 300;
+}
+
+/* ── Mobile hamburger ── */
+.navbar__toggle {
+  color: var(--cb-muted);
+  margin-right: 0.5rem;
+}
+
+/* ── Mobile sidebar (navbar-sidebar) ── */
+.navbar-sidebar {
+  background: var(--ifm-background-color);
+  border-right: 1px solid var(--cb-border);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .navbar-sidebar {
+  background: #050505;
+  border-right-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-sidebar__brand {
+  border-bottom: 1px solid var(--cb-border);
+  padding: 0.75rem 1rem;
+  height: 3.5rem;
+}
+
+[data-theme='dark'] .navbar-sidebar__brand {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.navbar-sidebar__close {
+  color: var(--cb-muted);
+}
+
+.navbar-sidebar__items {
+  padding: 0.5rem 0;
+}
+
+.navbar-sidebar .menu__link {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--cb-muted) !important;
+  padding: 0.6rem 1.25rem !important;
+  border-radius: 0 !important;
+  transition: all 0.15s;
+}
+
+.navbar-sidebar .menu__link:hover {
+  background: var(--cb-surface) !important;
+  color: var(--ifm-heading-color) !important;
+}
+
+.navbar-sidebar .menu__link--active {
+  color: var(--ifm-heading-color) !important;
+  background: var(--cb-surface) !important;
+  border-left: 2px solid var(--ifm-color-primary) !important;
+  font-weight: 500;
+}
+
+/* Mobile sidebar back button */
+.navbar-sidebar__back {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--cb-muted);
+  border-bottom: 1px solid var(--cb-border);
+  padding: 0.6rem 1rem;
+}
+
+[data-theme='dark'] .navbar-sidebar__back {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Navbar sidebar overlay ── */
+.navbar-sidebar__backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .navbar-sidebar__backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* ═══════════════════════════════════════════
+   5. SIDEBAR
+   ═══════════════════════════════════════════ */
+
+.theme-doc-sidebar-container {
+  background-color: transparent !important;
+  border-right: 1px solid var(--cb-border) !important;
+  padding: 0.75rem 0.75rem 0.75rem 1rem !important;
+}
+
+/* Sidebar menu itself */
+.menu {
+  padding: 0.5rem 0 !important;
+}
+
+/* ── Top-level category labels — monospace kicker style ── */
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link,
+.theme-doc-sidebar-item-link-level-0 > .menu__link {
+  font-size: 0.7rem;
+  font-family: var(--ifm-font-family-monospace);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cb-muted) !important;
+  font-weight: 500;
+  padding: 0.5rem 0.5rem 0.35rem !important;
+  margin-top: 1rem;
+}
+
+.theme-doc-sidebar-item-category-level-1:first-child > .menu__list-item-collapsible > .menu__link {
+  margin-top: 0;
+}
+
+/* Sidebar item sizing — nested levels */
+.theme-doc-sidebar-item-link-level-1,
+.theme-doc-sidebar-item-category-level-1 {
+  font-size: 0.85rem;
+}
+
+.theme-doc-sidebar-item-link-level-2,
+.theme-doc-sidebar-item-category-level-2,
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-category-level-3 {
+  font-size: 0.8rem;
+}
+
+/* Sidebar link base */
+.menu__link {
+  padding: 0.3rem 0.65rem !important;
+  line-height: 1.5;
+  font-size: 0.84rem;
+  font-weight: 400;
+  color: var(--cb-muted) !important;
+  border-radius: 0 !important;
+  transition: all 0.15s;
+}
+
+/* Active sidebar item */
+.menu__link--active {
+  font-weight: 500 !important;
+  background-color: var(--cb-surface) !important;
+  color: var(--ifm-heading-color) !important;
+  border-radius: 0 !important;
+  border-left: 2px solid var(--ifm-color-primary) !important;
+}
+
+[data-theme='dark'] .menu__link--active {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #fff !important;
+}
+
+/* Hover */
+.menu__link:hover,
+.menu__caret:hover {
+  background: transparent !important;
+}
+
+.menu__list-item .menu__link:not(.menu__caret):hover {
+  background-color: var(--cb-surface) !important;
+  color: var(--ifm-heading-color) !important;
+  border-radius: 0 !important;
+  transform: none;
+}
+
+[data-theme='dark'] .menu__list-item .menu__link:not(.menu__caret):hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: #fff !important;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: transparent !important;
+}
+
+/* Nested items — thin left border */
+.menu__list .menu__list {
+  border-left: 1px solid var(--cb-border);
+  margin-left: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+[data-theme='dark'] .menu__list .menu__list {
+  border-left-color: rgba(255, 255, 255, 0.06);
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0.1rem;
+}
+
+/* ── Caret (expand/collapse arrow) ── */
+.menu__list-item--collapsible .menu__caret {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-right: 0.4rem;
+  width: auto !important;
+  height: auto !important;
+  min-width: auto !important;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.menu__list-item--collapsible .menu__caret:hover {
+  background: none !important;
+}
+
+.menu__list-item--collapsible .menu__caret:before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid var(--cb-muted);
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.menu__list-item--collapsible .menu__list-item-collapsible--active .menu__caret:before {
+  transform: rotate(90deg);
+}
+
+.menu__list-item--collapsible .menu__link {
+  padding-left: 0;
+}
+
+/* ── Category separator line between groups ── */
+.menu > .menu__list > .menu__list-item--collapsible + .menu__list-item--collapsible {
+  border-top: 1px solid var(--cb-border);
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+[data-theme='dark'] .menu > .menu__list > .menu__list-item--collapsible + .menu__list-item--collapsible {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ═══════════════════════════════════════════
+   6. DOC CONTENT AREA
+   ═══════════════════════════════════════════ */
+
+.theme-doc-markdown {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.theme-doc-main-container {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* ── Body text — light weight, relaxed reading ── */
+.theme-doc-markdown p {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 1.25rem;
+}
+
+[data-theme='dark'] .theme-doc-markdown p {
+  color: #a1a1aa;
+}
+
+/* ── Headings inside docs ── */
+.theme-doc-markdown h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--cb-border);
+}
+
+.theme-doc-markdown h2 {
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cb-border);
+}
+
+.theme-doc-markdown h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.theme-doc-markdown h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--cb-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Links — primary color, no underline until hover ── */
+.theme-doc-markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+
+.theme-doc-markdown a:hover {
+  border-bottom-color: var(--ifm-color-primary);
+}
+
+/* ── Lists — tighter, lighter ── */
+.theme-doc-markdown ul,
+.theme-doc-markdown ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.theme-doc-markdown li {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+  margin-bottom: 0.35rem;
+}
+
+[data-theme='dark'] .theme-doc-markdown li {
+  color: #a1a1aa;
+}
+
+.theme-doc-markdown li::marker {
+  color: var(--cb-muted);
+}
+
+/* ── Blockquotes ── */
+.theme-doc-markdown blockquote {
+  border-left: 3px solid var(--cb-border);
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--cb-surface);
+  border-radius: 0;
+}
+
+.theme-doc-markdown blockquote p {
+  font-style: italic;
+  color: var(--cb-muted);
+  font-weight: 300;
+}
+
+[data-theme='dark'] .theme-doc-markdown blockquote {
+  border-left-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ── Horizontal rules ── */
+.theme-doc-markdown hr {
+  border: none;
+  border-top: 1px solid var(--cb-border);
+  margin: 2.5rem 0;
+}
+
+/* ── Strong / emphasis ── */
+.theme-doc-markdown strong {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+/* ── Tabs (used in installation etc.) ── */
+.tabs-container {
+  margin: 1.5rem 0;
+}
+
+.tabs {
+  border-bottom: 1px solid var(--cb-border);
+}
+
+.tabs__item {
+  border-radius: 0 !important;
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.6rem 1.25rem;
+  color: var(--cb-muted);
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.tabs__item:hover {
+  background: transparent;
+  color: var(--ifm-heading-color);
+}
+
+.tabs__item--active {
+  font-weight: 500;
+  color: var(--ifm-heading-color) !important;
+  border-bottom-color: var(--ifm-color-primary) !important;
+  background: transparent !important;
+}
+
+[data-theme='dark'] .tabs__item--active {
+  color: #fff !important;
+}
+
+/* ── Buttons inside docs (download buttons, CTA etc.) ── */
+.theme-doc-markdown .button {
+  border-radius: 0 !important;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  box-shadow: none !important;
+  transition: all 0.2s;
+}
+
+.theme-doc-markdown .button--primary {
+  background: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.theme-doc-markdown .button--primary:hover {
+  opacity: 0.9;
+}
+
+/* ── Breadcrumbs — monospace-like, subtle ── */
+.breadcrumbs__link {
+  font-size: 0.75rem;
+  font-family: var(--ifm-font-family-monospace);
+  color: var(--cb-muted);
+  letter-spacing: 0.02em;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background-color: transparent !important;
+  color: var(--ifm-heading-color) !important;
+  border: none !important;
+}
+
+.breadcrumbs__item:not(:last-child):after {
+  opacity: 0.3;
+}
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 40px !important;
+}
+
+/* ── Pagination — sharp, bordered ── */
+.pagination-nav {
+  margin: 3rem 0;
+  gap: 1rem;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--cb-border) !important;
+  border-radius: 0 !important;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.25s;
+  position: relative;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--cb-border-hover) !important;
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme='dark'] .pagination-nav__link:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.pagination-nav__sublabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cb-muted);
+}
+
+.pagination-nav__label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ═══════════════════════════════════════════
+   7. TABLE OF CONTENTS (right sidebar)
+   ═══════════════════════════════════════════ */
+
+/* TOC heading label */
+.theme-doc-toc-desktop::before {
+  content: 'ON THIS PAGE';
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--cb-muted);
+  margin-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.table-of-contents {
+  border-left: 1px solid var(--cb-border) !important;
+  padding-left: 0 !important;
+}
+
+[data-theme='dark'] .table-of-contents {
+  border-left-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.table-of-contents__link {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--cb-muted);
+  padding: 0.2rem 0 0.2rem 0.75rem;
+  display: block;
+  transition: all 0.15s;
+  border-left: 1.5px solid transparent;
+  margin-left: -1px;
+}
+
+.table-of-contents__link:hover {
+  color: var(--ifm-heading-color);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-heading-color) !important;
+  font-weight: 500;
+  background-color: transparent !important;
+  border-left-color: var(--ifm-color-primary) !important;
+  border-radius: 0 !important;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+/* Nested TOC items */
+.table-of-contents .table-of-contents__link {
+  font-size: 0.75rem;
+}
+
+.theme-doc-toc-container.col.col--3 {
+  padding-left: 0 !important;
+  padding-right: 0.5rem !important;
+}
+
+.theme-doc-toc-desktop {
+  max-width: none !important;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 60px) + 1rem);
+}
+
+/* ═══════════════════════════════════════════
+   8. TABLES — sharp, minimal borders
+   ═══════════════════════════════════════════ */
+
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 0;
+  overflow: hidden;
+  font-size: 0.875rem;
+  border: 1px solid var(--cb-border);
+}
+
+thead {
+  background-color: var(--cb-surface);
+}
+
+[data-theme='dark'] thead {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--cb-border);
+}
+
+th {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--ifm-color-emphasis-800);
+}
+
+[data-theme='dark'] th {
+  color: #fff;
+}
+
+td:first-child,
+td:nth-child(2) {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.82rem;
+  color: inherit;
+}
+
+[data-theme='dark'] td:first-child,
+[data-theme='dark'] td:nth-child(2) {
+  color: var(--ifm-color-primary);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover {
+  background-color: var(--cb-surface);
+}
+
+/* ═══════════════════════════════════════════
+   9. CODE BLOCKS — sharp, bordered
+   ═══════════════════════════════════════════ */
+
+div[class*='codeBlockContainer'] {
+  border-radius: 0 !important;
+  border: 1px solid var(--cb-border) !important;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+[data-theme='dark'] div[class*='codeBlockContainer'] {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background-color: #0a0a0a !important;
+}
+
+[data-theme='dark'] .prism-code {
+  background-color: #0a0a0a !important;
+}
+
+/* Code block title bar */
+div[class*='codeBlockTitle'] {
+  border-bottom: 1px solid var(--cb-border) !important;
+  border-radius: 0 !important;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  color: var(--cb-muted);
+}
+
+[data-theme='dark'] div[class*='codeBlockTitle'] {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Inline code */
+code {
+  border-radius: 0;
+  border: 1px solid var(--cb-border);
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Don't double-border code inside code blocks */
+pre code {
+  border: none;
+  padding: 0;
+}
+
+/* ═══════════════════════════════════════════
+   10. ADMONITIONS — sharp, left accent
+   ═══════════════════════════════════════════ */
+
+.alert {
+  border: 1px solid var(--cb-border);
+  border-radius: 0;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none;
+  background-color: transparent;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark'] .alert {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.alert::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+}
+
+.alert--secondary { background-color: var(--cb-surface); }
+.alert--secondary::after { background-color: var(--cb-muted); }
+
+.alert--info { background-color: rgba(59, 130, 246, 0.03); }
+.alert--info::after { background-color: #3b82f6; }
+
+.alert--success { background-color: rgba(16, 185, 129, 0.03); }
+.alert--success::after { background-color: #10b981; }
+
+.alert--warning { background-color: rgba(245, 158, 11, 0.03); }
+.alert--warning::after { background-color: #f59e0b; }
+
+.alert--danger { background-color: rgba(239, 68, 68, 0.03); }
+.alert--danger::after { background-color: #ef4444; }
+
+.admonition-heading {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ifm-heading-color);
+}
+
+.admonition-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-800);
+}
+
+[data-theme='dark'] .admonition-content {
+  color: #a1a1aa;
+}
+
+/* ═══════════════════════════════════════════
+   11. IMAGES
+   ═══════════════════════════════════════════ */
+
+.theme-doc-markdown img {
+  border-radius: 6px;
+  border: 1px solid var(--cb-border);
+  outline: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  margin: 2.5rem auto;
+  display: block;
+  transition: all 0.25s ease;
+}
+
+[data-theme='dark'] .theme-doc-markdown img {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+.theme-doc-markdown img:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--cb-border-hover);
+}
+
+[data-theme='dark'] .theme-doc-markdown img:hover {
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ═══════════════════════════════════════════
+   11b. MDX INLINE CARD GRIDS (used in overview etc.)
+   Override rounded inline styles from MDX content
+   ═══════════════════════════════════════════ */
+
+.theme-doc-markdown div[style*="grid"] > a {
+  border-radius: 0 !important;
+  border-color: var(--cb-border) !important;
+  transition: border-color 0.25s, transform 0.2s !important;
+  box-shadow: none !important;
+}
+
+.theme-doc-markdown div[style*="grid"] > a:hover {
+  border-color: var(--ifm-color-primary) !important;
+  box-shadow: none !important;
+}
+
+.theme-doc-markdown div[style*="grid"] > a h3 {
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em;
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-top: 0;
+}
+
+.theme-doc-markdown div[style*="grid"] > a p {
+  font-size: 0.82rem !important;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════════
+   12. DESCRIPTION / INFO BLOCKS
+   ═══════════════════════════════════════════ */
+
+.description {
+  margin-bottom: 20px;
+  background-color: var(--cb-surface);
+  border: 1px solid var(--cb-border);
+  color: inherit;
+  width: fit-content;
+  padding: 14px 18px;
+  border-radius: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cbbaseinfo {
+  margin-bottom: 20px;
+}
+
+[data-theme='dark'] .description {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #a1a1aa;
+}
+
+/* ═══════════════════════════════════════════
+   13. FOOTER — minimal, bordered
+   ═══════════════════════════════════════════ */
+
+.footer {
+  background-color: var(--ifm-background-color) !important;
+  border-top: none;
+  box-shadow: none;
+  padding: 2rem 0;
+}
+
+.footer--dark {
+  background-color: var(--ifm-background-color) !important;
+  --ifm-footer-background-color: transparent;
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+  color: var(--cb-muted);
+  letter-spacing: 0.02em;
+}
+
+[data-theme='dark'] .footer,
+[data-theme='dark'] .footer--dark {
+  background-color: #050505 !important;
+  border-top: none;
+}
+
+/* ═══════════════════════════════════════════
+   14. SCROLLBAR — thin, minimal
+   ═══════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.15);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.3);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+[data-theme='dark'] * {
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+
+/* ═══════════════════════════════════════════
+   15. DOC PAGE LAYOUT OVERRIDES
+   ═══════════════════════════════════════════ */
+
 .theme-doc-wrapper,
 .docs-wrapper {
   min-height: 100vh;
   background-color: inherit;
 }
 
-/* ===== SIDEBAR CUSTOMIZATION ===== */
-
-/* Make child/nested sidebar items smaller */
-.theme-doc-sidebar-item-link-level-1,
-.theme-doc-sidebar-item-category-level-1 {
-  font-size: 0.9rem;
-  padding-left: 1rem;
+html {
+  background-color: var(--ifm-background-color, #ffffff);
 }
 
-.theme-doc-sidebar-item-link-level-2,
-.theme-doc-sidebar-item-category-level-2 {
-  font-size: 0.85rem;
-  padding-left: 0.5rem;
+[data-theme='dark'] html {
+  background-color: #050505;
 }
 
-.theme-doc-sidebar-item-link-level-3,
-.theme-doc-sidebar-item-category-level-3 {
-  font-size: 0.8rem;
-  padding-left: 0.5rem;
+/* Remove border between sidebar and main on dark */
+[data-theme='dark'] .theme-doc-sidebar-container {
+  border-right-color: rgba(255, 255, 255, 0.05) !important;
 }
 
-.menu__link:hover, .menu__caret:hover {
+/* Remove any stray lines/borders between content and footer */
+.main-wrapper {
+  border-bottom: none !important;
+}
+
+main {
+  border-bottom: none !important;
+}
+
+footer {
+  border-top: none !important;
+}
+
+/* ═══════════════════════════════════════════
+   16. DOC PAGE DOT-GRID BACKGROUND
+   ═══════════════════════════════════════════ */
+
+.docs-wrapper {
+  position: relative;
+}
+
+.docs-wrapper::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+[data-theme='dark'] .docs-wrapper::before {
+  opacity: 0.07;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+}
+
+/* Ensure content sits above grid */
+.theme-doc-sidebar-container,
+.theme-doc-main-container,
+.theme-doc-toc-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════════
+   17. GLOBAL FONT STACK & ANTI-ALIASING
+   ═══════════════════════════════════════════ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Monospace usage — code, labels, breadcrumbs */
+code,
+.pagination-nav__sublabel,
+.breadcrumbs__link,
+.admonition-heading {
+  font-family: 'SF Mono', 'Cascadia Code', 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* ═══════════════════════════════════════════
+   18. SELECTION COLOR
+   ═══════════════════════════════════════════ */
+
+::selection {
+  background: rgba(251, 191, 36, 0.2);
+  color: inherit;
+}
+
+[data-theme='dark'] ::selection {
+  background: rgba(251, 191, 36, 0.25);
+}
+
+/* ═══════════════════════════════════════════
+   19. MERMAID DIAGRAMS
+   ═══════════════════════════════════════════ */
+
+/* Container */
+.docusaurus-mermaid-container {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.docusaurus-mermaid-container svg {
+  max-width: 100%;
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] .docusaurus-mermaid-container svg {
   background: transparent !important;
-} 
+}
 
-/* Style for top-level sidebar items */
-.theme-doc-sidebar-item-link-level-0,
-.theme-doc-sidebar-item-category-level-0 {
-  font-size: 1rem;
+/* Node styling — dark mode */
+[data-theme='dark'] .docusaurus-mermaid-container .node rect,
+[data-theme='dark'] .docusaurus-mermaid-container .node circle,
+[data-theme='dark'] .docusaurus-mermaid-container .node polygon,
+[data-theme='dark'] .docusaurus-mermaid-container .node path {
+  fill: #1a1a1a !important;
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .node .label,
+[data-theme='dark'] .docusaurus-mermaid-container .nodeLabel {
+  color: #e4e4e7 !important;
+  fill: #e4e4e7 !important;
+}
+
+/* Edge / arrow styling */
+[data-theme='dark'] .docusaurus-mermaid-container .edge-pattern-solid,
+[data-theme='dark'] .docusaurus-mermaid-container .flowchart-link,
+[data-theme='dark'] .docusaurus-mermaid-container path.path {
+  stroke: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel {
+  background: #050505 !important;
+  color: #a1a1aa !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel rect {
+  fill: #050505 !important;
+  stroke: none !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .edgeLabel span {
+  color: #a1a1aa !important;
+}
+
+/* Arrow markers */
+[data-theme='dark'] .docusaurus-mermaid-container marker path {
+  fill: rgba(255, 255, 255, 0.3) !important;
+  stroke: none !important;
+}
+
+/* Subgraph styling */
+[data-theme='dark'] .docusaurus-mermaid-container .cluster rect {
+  fill: rgba(255, 255, 255, 0.03) !important;
+  stroke: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .cluster span,
+[data-theme='dark'] .docusaurus-mermaid-container .cluster .nodeLabel {
+  color: #a1a1aa !important;
+  fill: #a1a1aa !important;
+}
+
+/* Sequence diagram — dark mode */
+[data-theme='dark'] .docusaurus-mermaid-container .actor {
+  fill: #1a1a1a !important;
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .actor-line {
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container text.actor {
+  fill: #e4e4e7 !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .messageLine0,
+[data-theme='dark'] .docusaurus-mermaid-container .messageLine1 {
+  stroke: rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .messageText {
+  fill: #a1a1aa !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .activation0,
+[data-theme='dark'] .docusaurus-mermaid-container .activation1,
+[data-theme='dark'] .docusaurus-mermaid-container .activation2 {
+  fill: rgba(251, 191, 36, 0.1) !important;
+  stroke: rgba(251, 191, 36, 0.3) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .loopLine {
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .loopText,
+[data-theme='dark'] .docusaurus-mermaid-container .loopText tspan {
+  fill: #a1a1aa !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container rect.note {
+  fill: #1a1a1a !important;
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .noteText {
+  fill: #a1a1aa !important;
+}
+
+/* State diagram — dark mode */
+[data-theme='dark'] .docusaurus-mermaid-container .state-note-edge-label,
+[data-theme='dark'] .docusaurus-mermaid-container .statediagram-state rect {
+  fill: #1a1a1a !important;
+  stroke: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='dark'] .docusaurus-mermaid-container .statediagram-state .stateTitle {
+  fill: #e4e4e7 !important;
+}
+
+/* Light mode refinements */
+.docusaurus-mermaid-container .node rect,
+.docusaurus-mermaid-container .node circle,
+.docusaurus-mermaid-container .node polygon {
+  stroke: rgba(0, 0, 0, 0.15) !important;
+}
+
+.docusaurus-mermaid-container .edgeLabel {
+  font-size: 0.8rem;
+}
+
+.docusaurus-mermaid-container .nodeLabel {
+  font-size: 0.85rem;
+}
+
+/* ═══════════════════════════════════════════
+   READABILITY OVERRIDES
+   The base theme leans on light font weights (300/400) which
+   feels thin on most displays. Bump body text and tighten
+   line-height a touch.
+   ═══════════════════════════════════════════ */
+
+:root {
+  --ifm-font-size-base: 15.5px;
+  --ifm-line-height-base: 1.65;
+  --ifm-font-weight-base: 420;
+  --ifm-font-weight-semibold: 600;
+  --ifm-font-color-base: #232323;
+}
+
+[data-theme='dark'] {
+  --ifm-font-color-base: #dcdcdc;
+}
+
+html, body {
+  font-weight: 420;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.markdown,
+.markdown p,
+.markdown li,
+.markdown td,
+.theme-doc-markdown {
+  font-weight: 420;
+  color: var(--ifm-font-color-base);
+}
+
+.markdown strong,
+.markdown b {
+  font-weight: 600;
+}
+
+/* Headings get a real weight, not 300 */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6,
+article h1,
+article h2,
+article h3,
+article h4 {
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+}
+
+/* Left sidebar (nav menu) */
+.menu__link {
+  font-weight: 450;
+}
+.menu__link--active {
+  font-weight: 600;
+}
+.menu__list-item-collapsible .menu__link {
   font-weight: 500;
 }
 
-/* Remove the caret box styling and make it cleaner */
-.menu__list-item--collapsible .menu__caret {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  margin-right: 0.5rem;
-  width: auto !important;
-  height: auto !important;
-  min-width: auto !important;
+/* Right sidebar (table of contents) */
+.table-of-contents__link {
+  font-weight: 420;
 }
-
-/* Remove hover effects on caret specifically */
-.menu__list-item--collapsible .menu__caret:hover {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Style the caret icon itself */
-.menu__list-item--collapsible .menu__caret:before {
-  content: '▶';
-  font-size: 0.5rem;
-  color: var(--ifm-color-emphasis-600);
-  transition: transform 0.2s ease;
-}
-
-/* Rotate caret when expanded */
-.menu__list-item--collapsible .menu__list-item-collapsible--active .menu__caret:before {
-  transform: rotate(90deg);
-}
-
-/* Adjust spacing for collapsible items */
-.menu__list-item--collapsible .menu__link {
-  padding-left: 0;
-}
-
-/* Remove any default button styling from caret */
-.menu__caret {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  outline: none;
-  cursor: pointer;
-}
-
-/* Make nested items more visually distinct */
-.menu__list .menu__list {
-  border-left: 1px solid var(--ifm-color-emphasis-200);
-  margin-left: 0.75rem;
-  padding-left: 0.5rem;
-}
-
-[data-theme='dark'] .menu__list .menu__list {
-  border-left-color: var(--ifm-color-emphasis-300);
-}
-
-/* Reduce spacing between sidebar items */
-.menu__list-item:not(:first-child) {
-  margin-top: 0.25rem;
-}
-
-/* Style active sidebar items */
-.menu__link--active {
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
   font-weight: 600;
-  background-color: var(--ifm-color-primary-lightest);
+}
+
+/* ═══════════════════════════════════════════
+   TABS — give them a visible container so the
+   reader can tell where each tab block ends.
+   ═══════════════════════════════════════════ */
+
+.tabs-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  background: rgba(0, 0, 0, 0.015);
+  margin: 1.25rem 0 1.75rem;
+  overflow: hidden;
 }
 
-[data-theme='dark'] .menu__link--active {
-  background-color: var(--ifm-color-primary-darkest);
+[data-theme='dark'] .tabs-container {
+  border-color: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.02);
 }
 
-/* Hover effects for sidebar items */
-.menu__link:hover {
-  background-color: var(--ifm-color-emphasis-100);
-  border-radius: 6px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+/* Tab strip sits flush at the top with a subtle separator */
+.tabs-container > ul.tabs {
+  margin: 0;
+  padding: 0.25rem 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
 }
 
-[data-theme='dark'] .menu__link:hover {
-  background-color: var(--ifm-color-emphasis-200);
+[data-theme='dark'] .tabs-container > ul.tabs {
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.015);
 }
 
-/* Ensure collapsible items don't get unwanted hover boxes */
-.menu__list-item--collapsible:hover {
-  background: none !important;
+/* Tab content panel — give it real padding inside the box */
+.tabs-container > [role="tabpanel"],
+.tabs-container > div[class*="margin-top"] {
+  padding: 1rem 1.25rem;
 }
 
-/* More refined hover for the entire menu item container */
-.menu__list-item:hover {
-  background: none;
+/* Code blocks inside tabs shouldn't add their own outer margin */
+.tabs-container > [role="tabpanel"] > :first-child,
+.tabs-container > div[class*="margin-top"] > :first-child {
+  margin-top: 0;
+}
+.tabs-container > [role="tabpanel"] > :last-child,
+.tabs-container > div[class*="margin-top"] > :last-child {
+  margin-bottom: 0;
 }
 
-/* Only apply hover to the actual link, not the container */
-.menu__list-item .menu__link:not(.menu__caret):hover {
-  background-color: var(--ifm-color-emphasis-100);
-  border-radius: 6px;
-  transform: translateX(2px);
+/* ═══════════════════════════════════════════
+   MOBILE FIXES
+   - Theme toggle was overlapping with search button (both
+     positioned in the right cluster with no gap rules).
+   - Menu items in the slide-out sidebar were rendered but
+     hidden by an overflow / max-height bug from the
+     custom navbar height override.
+   ═══════════════════════════════════════════ */
+
+/* When the mobile slide-out menu is open, hide the absolutely-
+   positioned search bar from the main navbar so it doesn't stack
+   on top of the drawer. The drawer has its own header. */
+.navbar-sidebar--show .navbar [class*="searchBar"],
+html:has(.navbar-sidebar--show) .navbar [class*="searchBar"] {
+  display: none !important;
+}
+/* If Docusaurus mirrors the search into the drawer brand bar,
+   hide that copy too — the drawer is for menu navigation, not search. */
+.navbar-sidebar [class*="searchBar"],
+.navbar-sidebar__brand [class*="searchBar"] {
+  display: none !important;
 }
 
-[data-theme='dark'] .menu__list-item .menu__link:not(.menu__caret):hover {
-  background-color: var(--ifm-color-emphasis-200);
+@media (max-width: 996px) {
+  /* Right cluster needs to be position:relative so we can place
+     children absolutely inside it without escaping. */
+  .navbar__items--right {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    min-width: 6.5rem !important;
+  }
+
+  /* Theme toggle: pinned to the far right. */
+  .navbar__items--right [class*="colorModeToggle"],
+  .navbar__items--right > div[class*="toggle"],
+  .navbar__items--right > button[class*="toggle"],
+  .navbar [class*="colorModeToggle"] {
+    position: absolute !important;
+    right: 0.25rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    z-index: 2;
+  }
+
+  /* Search bar: pinned to the LEFT of the toggle, collapsed to
+     icon-size by default, expanding on focus. The @easyops-cn
+     search-local plugin's own absolute positioning is overridden. */
+  .navbar [class*="searchBar"],
+  .navbar form[class*="searchBar"],
+  .navbar div[class*="searchBar"] {
+    position: absolute !important;
+    right: 3rem !important;             /* leaves room for the toggle */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    left: auto !important;
+    width: 2.25rem !important;
+    min-width: 2.25rem !important;
+    max-width: 2.25rem !important;
+    transition: width 0.2s ease, max-width 0.2s ease, min-width 0.2s ease;
+    z-index: 1;
+  }
+  /* On focus, expand the search box to the left so it doesn't
+     overlap the toggle (which stays pinned at right: 0.25rem). */
+  .navbar [class*="searchBar"]:focus-within,
+  .navbar form[class*="searchBar"]:focus-within,
+  .navbar div[class*="searchBar"]:focus-within {
+    width: 12rem !important;
+    min-width: 12rem !important;
+    max-width: 12rem !important;
+  }
+  .navbar [class*="searchBar"] input,
+  .navbar form[class*="searchBar"] input {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-left: 1.75rem !important;   /* room for the magnifying icon */
+  }
+  .navbar [class*="searchBar"] input::placeholder {
+    color: transparent !important;
+  }
+  .navbar [class*="searchBar"]:focus-within input::placeholder {
+    color: var(--cb-muted) !important;
+  }
+
+  /* Let Docusaurus handle the drawer's internal layout. We only
+     fix the outer height (so the bottom of the drawer isn't
+     clipped on mobile browsers with dynamic viewport). DO NOT
+     add display/overflow/width rules to .navbar-sidebar__items
+     or its children — Docusaurus's two-panel slide (main nav
+     ⇄ doc sidebar) depends on its own layout. */
+  .navbar-sidebar {
+    height: 100vh !important;
+    height: 100dvh !important;
+  }
 }
 
-[data-theme="dark"] .navbar {
-  background-color: rgba(34, 31, 29, 0.9);
-}
-
-.navbar {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.description{
-  margin-bottom: 20px;
-  background-color: rgb(236, 234, 234);
-  border: 2px solid #d8d4d4;
-  color: black;
-  width: fit-content;
-  padding: 20px;
-  border-radius: 5px;
-}
-.cbbaseinfo{
-  margin-bottom: 20px;
-}
-[data-theme='dark'] .description{
-  color: white;
-  background-color: rgb(57, 56, 56);
-  border: 2px solid #545050;
-}
-[data-theme='dark'] .footer {
-  background-color: rgba(34, 31, 29, 0.9);
-}

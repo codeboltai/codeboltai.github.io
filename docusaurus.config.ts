@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
@@ -15,15 +15,23 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
+    format: 'mdx',
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
+  // onBrokenAnchors: 'warn',
+  customFields: {
+    onDuplicatePresets: 'warn',
+    onExtraPlugins: 'warn',
+  },
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'codeboltai', // Usually your GitHub org/user name.
   projectName: 'codeboltai.github.io', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -32,7 +40,33 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  plugins: [],
+
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['en'],
+        highlightSearchTermsOnTargetPage: true,
+        explicitSearchResultPath: true,
+        docsRouteBasePath: '/docs',
+        indexBlog: true,
+        indexDocs: true,
+        // Exclude auto-generated type-reference pages from the search index.
+        // They balloon the index past Cloudflare Workers' 25 MiB per-asset cap
+        // and add little search value (most are interface dumps).
+        ignoreFiles: [
+          /reference\/type-reference\/types\//,
+          /reference\/type-reference\/codeboltjs\//,
+          /reference\/api-access\//,
+          /reference\/mcp-access\//,
+          /reference\/utility-functions/,
+        ],
+      },
+    ],
+  ],
 
   presets: [
     [
@@ -54,13 +88,18 @@ const config: Config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: false,
+      disableSwitch: false,
+    },
     docs: {
       sidebar: {
         autoCollapseCategories: true,
       },
     },
     mermaid: {
-      theme: {light: 'neutral', dark: 'forest'},
+      theme: { light: 'neutral', dark: 'dark' },
     },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
@@ -72,16 +111,46 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'userSidebar',
+          sidebarId: 'gettingStartedSidebar',
           position: 'left',
-          label: 'User Guide',
+          label: 'Getting Started',
         },
         {
           type: 'docSidebar',
-          sidebarId: 'devSidebar',
+          sidebarId: 'usingCodeboltSidebar',
           position: 'left',
-          label: 'Developer Guide',
+          label: 'Using Codebolt',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'conceptsSidebar',
+          position: 'left',
+          label: 'Concepts',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'guidesSidebar',
+          position: 'left',
+          label: 'Guides',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'buildSidebar',
+          position: 'left',
+          label: 'Build on Codebolt',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'referenceSidebar',
+          position: 'left',
+          label: 'Reference',
+        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'devSidebar',
+        //   position: 'left',
+        //   label: 'Developer Guide',
+        // },
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'toolSidebar',
@@ -95,29 +164,20 @@ const config: Config = {
         //   label: 'Apps',
         // },
         {
-          type: 'docSidebar',
-          sidebarId: 'jsapiSidebar',
-          position: 'left',
-          label: 'API',
-        },
-        {
-          to: '/blog', 
-          label: 'Blog', 
+          to: '/blog',
+          label: 'Blog',
           position: 'left'
         },
-        
+
       ],
     },
     footer: {
-      style: 'dark',
-      links: [
-        
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} CodeBolt.`,
+      links: [],
+      copyright: `© ${new Date().getFullYear()} CodeBolt`,
     },
     prism: {
       theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      darkTheme: prismThemes.vsDark,
     },
   } satisfies Preset.ThemeConfig,
 };

@@ -1,7 +1,7 @@
 const path = require('path');
 const { exec } = require('child_process');
 
-const clientLibraryPath = path.resolve(__dirname, '../../codeboltjs');
+const clientLibraryPath = path.resolve(__dirname, '../../../packages/codeboltjs');
 const jsonPath = path.resolve(__dirname, '../temp/out.json');
 const command = `npx typedoc --plugin typedoc-plugin-missing-exports --json ${jsonPath} --pretty`;
 
