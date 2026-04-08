@@ -1,7 +1,5 @@
 # CodeBolt Documentation Website
 
-![Deploy](https://github.com/codeboltai/codeboltai.github.io/actions/workflows/deploy-to-github-pages.yml/badge.svg)
-
 This is the Source Code for Codebolt Documentation Website
 
 ### Installation
