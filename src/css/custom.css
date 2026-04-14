@@ -44,6 +44,7 @@
   --ifm-color-primary-lightest: #fef3c7;
 
   --ifm-background-color: #050505;
+  --ifm-background-surface-color: #050505;
   --ifm-navbar-background-color: rgba(5, 5, 5, 0.8);
   --ifm-footer-background-color: #050505;
   --ifm-menu-color: #a1a1aa;
@@ -63,7 +64,6 @@
 
 html,
 body {
-  height: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -80,6 +80,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--ifm-background-color, #ffffff);
+}
+
+[data-theme='dark'] #__docusaurus {
+  background-color: #050505;
 }
 
 .main-wrapper,

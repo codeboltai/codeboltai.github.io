@@ -1,8 +1,6 @@
 /* ── Page shell ── */
 .page {
   position: relative;
-  min-height: calc(100vh - var(--ifm-navbar-height, 60px));
-  overflow: hidden;
 }
 
 /* Subtle dot-grid background */
