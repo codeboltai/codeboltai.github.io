@@ -79,7 +79,7 @@ Disadvantages:
 
 A common pattern: use Claude for execution, use a different family (OpenAI, Google) for review. Same-family models correlate their mistakes; mixing gives real independence.
 
-See [Plan-Execute-Review](../../04_build-on-codebolt/07_orchestration-design/03_patterns/plan-execute-review.md).
+See [Plan-Execute-Review](../../04_build-on-codebolt/08_orchestration-design/03_patterns/plan-execute-review.md).
 
 ## Troubleshooting
 

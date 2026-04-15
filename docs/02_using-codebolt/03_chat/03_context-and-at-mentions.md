@@ -9,7 +9,7 @@ What the agent sees when you type a message isn't just the message — it's a ca
 
 ## What's automatically in the context
 
-Every turn, the [context assembler](../../04_build-on-codebolt/08_internals/03_subsystems/07_context-assembly.md) pulls from a bunch of sources. The usual set:
+Every turn, the [context assembler](../../04_build-on-codebolt/09_internals/03_subsystems/07_context-assembly.md) pulls from a bunch of sources. The usual set:
 
 | Source | What |
 |---|---|
@@ -99,7 +99,7 @@ then:
 
 This rule fires automatically every time the current task contains "auth", "login", or "session". It guarantees the security docs and the AuthService graph entries are always included for those tasks.
 
-Rules live in `.codebolt/context-rules/` and are project-local. See [Context Assembly internals](../../04_build-on-codebolt/08_internals/03_subsystems/07_context-assembly.md) for the rule engine.
+Rules live in `.codebolt/context-rules/` and are project-local. See [Context Assembly internals](../../04_build-on-codebolt/09_internals/03_subsystems/07_context-assembly.md) for the rule engine.
 
 ## Budget and compression
 
@@ -130,11 +130,11 @@ Some things look tempting but hurt more than they help:
 - **Every file you've edited today**. The assembler is already tracking recent edits.
 - **Long copy-pastes of output** when you could point at the command with `@>last`.
 - **Your entire project readme** when you could point at specific sections.
-- **Sensitive data the LLM shouldn't see**. Use a [redacting hook](../../04_build-on-codebolt/06_hooks-and-capabilities/01_hooks-overview.md) at the workspace level instead of relying on memory.
+- **Sensitive data the LLM shouldn't see**. Use a [redacting hook](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md) at the workspace level instead of relying on memory.
 
 ## See also
 
 - [Chat Overview](./01_overview.md)
 - [Checkpoints and rollback](./04_checkpoints-and-rollback.md)
-- [Context Assembly internals](../../04_build-on-codebolt/08_internals/03_subsystems/07_context-assembly.md)
+- [Context Assembly internals](../../04_build-on-codebolt/09_internals/03_subsystems/07_context-assembly.md)
 - [Processors](../../04_build-on-codebolt/03_processors/01_what-are-processors.md)

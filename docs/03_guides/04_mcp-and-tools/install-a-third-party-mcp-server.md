@@ -153,4 +153,4 @@ Use **Settings → Tools → [server name] → Uninstall** to remove the server 
 - [Tools & MCP Overview](../../02_using-codebolt/05_tools-and-mcp/01_overview.md)
 - [Installing MCP Servers](../../02_using-codebolt/05_tools-and-mcp/02_installing-mcp-servers.md)
 - [Build Your First MCP Server](./build-your-first-mcp-server.md) — if you can't find what you need
-- [Custom Tools & MCP Overview](../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md)
+- [MCP Tools Overview](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md)

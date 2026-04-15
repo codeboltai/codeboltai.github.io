@@ -76,4 +76,4 @@ This strict separation is why you can swap providers, add local inference, or ch
 - [Memory](./04_memory.md) — consumer of embeddings
 - [Context Assembly](./07_context-assembly.md) — the thing that feeds `llmService`
 - [LLM Providers integration](../../../02_using-codebolt/08_integrations/01_llm-providers.md) — user-facing setup
-- [Custom Provider](../../05_custom-providers/01_llm-provider.md) — build your own
+- [Custom Provider](../../06_remote-env-providers/01_llm-provider.md) — build your own

@@ -7,7 +7,7 @@ title: What is an Agent
 
 From a user's point of view, an agent is the "who" that handles your chat. When you type a message, an agent receives it, reads the code, decides what to do, calls tools, and reports back. Different agents are good at different things.
 
-This page is the user's view. If you want to *build* an agent, see [Build on Codebolt → Custom Agents](../../04_build-on-codebolt/02_custom-agents/01_overview.md). If you want to understand how agents work internally, see [Agent Subsystem (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/01_agent-subsystem.md).
+This page is the user's view. If you want to *build* an agent, see [Build on Codebolt → Custom Agents](../../04_build-on-codebolt/02_creating-agents/01_overview.md). If you want to understand how agents work internally, see [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md).
 
 ## Mental model
 
@@ -106,7 +106,7 @@ Not every agent is chat-driven. **Background agents** fire on triggers:
 - **File change** — run when a specific path changes
 - **Webhook** — run when an external system posts
 
-Background agents have a dedicated tab in the UI showing their recent runs. See [Built-in agents](./02_built-in-agents.md) and custom `triggers:` in [agent.yaml](../../04_build-on-codebolt/02_custom-agents/04_agent-anatomy/agent-yaml.md).
+Background agents have a dedicated tab in the UI showing their recent runs. See [Built-in agents](./02_built-in-agents.md) and custom `triggers:` in [agent.yaml](../../04_build-on-codebolt/02_creating-agents/05_agent-anatomy/agent-yaml.md).
 
 ## When an agent fails
 
@@ -126,5 +126,5 @@ See [Debugging an agent](./07_debugging-an-agent.md).
 - [Built-in agents](./02_built-in-agents.md)
 - [The marketplace](./04_the-marketplace.md)
 - [Debugging an agent](./07_debugging-an-agent.md)
-- [Custom Agents (for builders)](../../04_build-on-codebolt/02_custom-agents/01_overview.md)
-- [Agent Subsystem (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/01_agent-subsystem.md)
+- [Custom Agents (for builders)](../../04_build-on-codebolt/02_creating-agents/01_overview.md)
+- [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)

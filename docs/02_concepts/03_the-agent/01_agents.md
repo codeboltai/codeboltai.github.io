@@ -55,5 +55,5 @@ Each turn:
 ## See also
 
 - [Agents in Using Codebolt](../../02_using-codebolt/04_agents/01_what-is-an-agent.md)
-- [Custom Agents](../../04_build-on-codebolt/02_custom-agents/01_overview.md)
-- [Agent patterns](../../04_build-on-codebolt/02_custom-agents/05_patterns/overview.md)
+- [Custom Agents](../../04_build-on-codebolt/02_creating-agents/01_overview.md)
+- [Agent patterns](../../04_build-on-codebolt/02_creating-agents/06_patterns/overview.md)

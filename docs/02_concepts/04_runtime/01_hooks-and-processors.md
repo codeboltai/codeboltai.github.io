@@ -44,6 +44,6 @@ Processors run in a defined order (a pipeline) every time context is assembled f
 
 ## See also
 
-- [Hooks overview (build)](../../04_build-on-codebolt/06_hooks-and-capabilities/01_hooks-overview.md)
+- [Hooks overview (build)](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md)
 - [Processors (build)](../../04_build-on-codebolt/03_processors/01_what-are-processors.md)
 - [Guardrails](../06_quality/01_guardrails.md)

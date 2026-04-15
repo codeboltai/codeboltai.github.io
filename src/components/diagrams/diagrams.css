@@ -655,3 +655,152 @@
 }
 [data-theme='dark'] .cb-stig-wire { stroke: #71717a; }
 .cb-stig-pulse { fill: #0ea5e9; }
+
+/* ── System architecture (Build on Codebolt overview) ───── */
+
+.cb-sys-server-rect {
+  fill: rgba(14, 165, 233, 0.04);
+  stroke: #0ea5e9;
+  stroke-width: 1.25;
+}
+[data-theme='dark'] .cb-sys-server-rect {
+  fill: rgba(14, 165, 233, 0.06);
+  stroke: #38bdf8;
+}
+
+.cb-sys-server-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  fill: #0369a1;
+}
+[data-theme='dark'] .cb-sys-server-title { fill: #7dd3fc; }
+
+.cb-sys-server-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  fill: #737373;
+}
+[data-theme='dark'] .cb-sys-server-sub { fill: #a1a1aa; }
+
+.cb-sys-server-foot {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: #525252;
+}
+[data-theme='dark'] .cb-sys-server-foot { fill: #d4d4d8; }
+
+.cb-sys-server-foot-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.02em;
+  fill: #737373;
+}
+[data-theme='dark'] .cb-sys-server-foot-sub { fill: #a1a1aa; }
+
+.cb-sys-chip-rect {
+  fill: var(--ifm-background-color, #fff);
+  stroke: #3f3f46;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-sys-chip-rect {
+  fill: #050505;
+  stroke: #71717a;
+}
+.cb-sys-chip-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  fill: #18181b;
+}
+[data-theme='dark'] .cb-sys-chip-label { fill: #f4f4f5; }
+
+.cb-sys-surface-rect {
+  fill: rgba(0, 0, 0, 0.02);
+  stroke: #3f3f46;
+  stroke-width: 1;
+  transition: fill 180ms ease, stroke 180ms ease;
+}
+[data-theme='dark'] .cb-sys-surface-rect {
+  fill: rgba(255, 255, 255, 0.025);
+  stroke: #71717a;
+}
+.cb-sys-surface:hover .cb-sys-surface-rect {
+  fill: rgba(14, 165, 233, 0.06);
+  stroke: #0ea5e9;
+}
+
+.cb-sys-surface-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  fill: #18181b;
+}
+[data-theme='dark'] .cb-sys-surface-title { fill: #f4f4f5; }
+
+.cb-sys-surface-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.02em;
+  fill: #737373;
+}
+[data-theme='dark'] .cb-sys-surface-sub { fill: #a1a1aa; }
+
+.cb-sys-line {
+  stroke: #3f3f46;
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-sys-line { stroke: #71717a; }
+.cb-sys-line--legend { stroke-dasharray: 3 3; }
+
+.cb-sys-marker {
+  fill: none;
+  stroke: #3f3f46;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+[data-theme='dark'] .cb-sys-marker { stroke: #71717a; }
+
+.cb-sys-edge-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  fill: #737373;
+}
+[data-theme='dark'] .cb-sys-edge-label { fill: #a1a1aa; }
+
+.cb-sys-dot {
+  fill: #0ea5e9;
+}
+
+.cb-sys-legend-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  fill: #737373;
+}
+[data-theme='dark'] .cb-sys-legend-label { fill: #a1a1aa; }
+
+/* hover a surface → highlight its wire */
+.cb-diagram--system:has(.cb-sys-surface[data-surface='uis']:hover)
+  .cb-sys-wire[data-surface='uis'] .cb-sys-line,
+.cb-diagram--system:has(.cb-sys-surface[data-surface='agents']:hover)
+  .cb-sys-wire[data-surface='agents'] .cb-sys-line,
+.cb-diagram--system:has(.cb-sys-surface[data-surface='plugins']:hover)
+  .cb-sys-wire[data-surface='plugins'] .cb-sys-line,
+.cb-diagram--system:has(.cb-sys-surface[data-surface='providers']:hover)
+  .cb-sys-wire[data-surface='providers'] .cb-sys-line {
+  stroke: #0ea5e9;
+  stroke-width: 1.5;
+}

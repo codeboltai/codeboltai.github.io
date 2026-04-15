@@ -79,10 +79,10 @@ match: { tool: "codebolt_fs.write_file", path_prefix: "infra/" }
 action: deny_outside_hours
 ```
 
-See [Hooks](../../06_hooks-and-capabilities/01_hooks-overview.md) for the full hook lifecycle.
+See [Hooks](../../05_plugins/01_hooks-overview.md) for the full hook lifecycle.
 
 ## See also
 
-- [Build Tools / MCP](../../04_custom-tools-and-mcp/01_overview.md) — how to author your own.
+- [Build Tools / MCP](../../03_agent-extensions/04_mcp-tools/01_overview.md) — how to author your own.
 - [Tool call end-to-end](../04_data-flow-walkthroughs/tool-call-end-to-end.md) — annotated trace.
 - [Guardrails](./09_guardrails-and-eval.md) — why a tool call may be blocked.

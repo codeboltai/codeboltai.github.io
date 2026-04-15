@@ -91,4 +91,4 @@ LLM request with assembled messages
 - [Memory](./04_memory.md)
 - [Knowledge & Vector](./05_knowledge-and-vector.md)
 - [LLM & Inference](./03_llm-and-inference.md)
-- [Processors](../../03_processors/01_what-are-processors.md) — several context concerns are implemented as processors
+- [Processors](../../02_creating-agents/07_processors/01_what-are-processors.md) — several context concerns are implemented as processors

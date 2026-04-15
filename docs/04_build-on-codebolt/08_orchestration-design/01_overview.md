@@ -18,7 +18,7 @@ Designing multi-agent systems in Codebolt. This section is for the person *archi
 
 ## Where this sits in Codebolt
 
-Orchestration is not a separate product — it's a set of features of the [Agent Subsystem](../08_internals/03_subsystems/01_agent-subsystem.md):
+Orchestration is not a separate product — it's a set of features of the [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md):
 
 | Feature | Provides | Pages |
 |---|---|---|
@@ -43,6 +43,6 @@ If none of these apply, use one agent.
 
 ## See also
 
-- [Agent Subsystem](../08_internals/03_subsystems/01_agent-subsystem.md) — the runtime this section builds on
-- [Planning Hierarchy](../08_internals/03_subsystems/08_planning-hierarchy.md) — orchestration often shows up as planned blocks assigned to different agents
+- [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md) — the runtime this section builds on
+- [Planning Hierarchy](../09_internals/03_subsystems/08_planning-hierarchy.md) — orchestration often shows up as planned blocks assigned to different agents
 - [Multi-Agent Usage](../../02_using-codebolt/07_multi-agent-usage/01_overview.md) — running, not designing

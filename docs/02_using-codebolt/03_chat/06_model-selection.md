@@ -115,7 +115,7 @@ See [Local models](../08_integrations/02_local-models.md) for setup.
 Different agents in the same tab can want different models. You can't switch mid-agent-call, but you can:
 
 - **Set a different default per agent** in each agent's manifest.
-- **Use a flow** that routes stages to different models — e.g. flagship for planning, mid-tier for execution, different family for review. See [Pipeline](../../04_build-on-codebolt/07_orchestration-design/03_patterns/pipeline.md).
+- **Use a flow** that routes stages to different models — e.g. flagship for planning, mid-tier for execution, different family for review. See [Pipeline](../../04_build-on-codebolt/08_orchestration-design/03_patterns/pipeline.md).
 - **Override in the tab** when you want to experiment.
 
 A common setup:
@@ -162,11 +162,11 @@ What does vary by model:
 - **Context window size.** Older models have smaller windows, so compression kicks in earlier.
 - **Streaming behaviour.** Some models stream token-by-token, some emit chunks.
 
-None of these are things you manage — they're handled by [`llmService`](../../04_build-on-codebolt/08_internals/03_subsystems/03_llm-and-inference.md).
+None of these are things you manage — they're handled by [`llmService`](../../04_build-on-codebolt/09_internals/03_subsystems/03_llm-and-inference.md).
 
 ## See also
 
 - [Chat Overview](./01_overview.md)
 - [LLM Providers](../08_integrations/01_llm-providers.md)
 - [Local models](../08_integrations/02_local-models.md)
-- [LLM & Inference internals](../../04_build-on-codebolt/08_internals/03_subsystems/03_llm-and-inference.md)
+- [LLM & Inference internals](../../04_build-on-codebolt/09_internals/03_subsystems/03_llm-and-inference.md)

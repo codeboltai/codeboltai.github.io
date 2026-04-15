@@ -3,7 +3,9 @@
     "allow": [
       "Bash(wrangler deployments:*)",
       "Bash(curl -s http://localhost:3000/ -o D:/Codeboltapps/codeboltdocs/.tmp_home.html)",
-      "Bash(curl -s http://localhost:3000/styles.css -o D:/Codeboltapps/codeboltdocs/.tmp_styles.css)"
+      "Bash(curl -s http://localhost:3000/styles.css -o D:/Codeboltapps/codeboltdocs/.tmp_styles.css)",
+      "Bash(git mv:*)",
+      "Bash(npm run *)"
     ]
   },
   "enabledPlugins": {

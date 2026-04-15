@@ -108,9 +108,9 @@ Your workspace has an **agent portfolio** — the curated set of agents actually
 **Settings → Agents → Portfolio** shows:
 - Installed agents.
 - Which are active in this workspace (in the portfolio).
-- A ranking of agents by reputation score (if enabled — see [Stigmergy and Reputation](../../04_build-on-codebolt/07_orchestration-design/05_stigmergy-and-reputation.md)).
+- A ranking of agents by reputation score (if enabled — see [Stigmergy and Reputation](../../04_build-on-codebolt/08_orchestration-design/05_stigmergy-and-reputation.md)).
 
-Teams that self-host often constrain what the portfolio can contain: "only approved agents from our internal registry". See [Self-hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md).
+Teams that self-host often constrain what the portfolio can contain: "only approved agents from our internal registry". See [Self-hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md).
 
 ## Updating
 
@@ -126,7 +126,7 @@ Deprecated versions are still available but marked — you'll see a warning if y
 
 ## Publishing your own
 
-Anyone can publish. See [Build on Codebolt → Publishing](../../04_build-on-codebolt/02_custom-agents/07_publishing.md) for the full workflow.
+Anyone can publish. See [Build on Codebolt → Publishing](../../04_build-on-codebolt/02_creating-agents/10_publishing.md) for the full workflow.
 
 Quick version:
 
@@ -147,7 +147,7 @@ Organizations can host their own marketplace. A private registry:
 - Supports reviewing agents before they become available.
 - Can mirror approved public marketplace entries.
 
-Configure a private registry in **Settings → Registries**. Private registries take precedence over the public marketplace for the same name. See [Self-hosting → Registries](../../04_build-on-codebolt/09_self-hosting/01_overview.md).
+Configure a private registry in **Settings → Registries**. Private registries take precedence over the public marketplace for the same name. See [Self-hosting → Registries](../../04_build-on-codebolt/10_self-hosting/01_overview.md).
 
 ## Removing
 
@@ -171,4 +171,4 @@ To purge everything, use **Settings → Agents → Purge data** — irreversible
 - [Running agents](./03_running-agents.md)
 - [Installing an agent](./05_installing-an-agent.md)
 - [Agent portfolios](./06_agent-portfolios.md)
-- [Publishing (for builders)](../../04_build-on-codebolt/02_custom-agents/07_publishing.md)
+- [Publishing (for builders)](../../04_build-on-codebolt/02_creating-agents/10_publishing.md)

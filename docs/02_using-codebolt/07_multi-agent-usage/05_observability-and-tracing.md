@@ -112,7 +112,7 @@ Prometheus metrics are exposed when enabled. Key dashboards:
 - **Queue depth** — backlog of agent runs waiting to start.
 - **Event log ingest lag** — how far behind ingestion is.
 
-See [Self-hosting → Scaling](../../04_build-on-codebolt/09_self-hosting/05_scaling-and-workers.md).
+See [Self-hosting → Scaling](../../04_build-on-codebolt/10_self-hosting/05_scaling-and-workers.md).
 
 ## Distributed tracing (OpenTelemetry)
 
@@ -177,4 +177,4 @@ Groups failures by error message. Often one root cause dominates.
 - [Multi-Agent Usage Overview](./01_overview.md)
 - [Debugging an agent](../04_agents/07_debugging-an-agent.md)
 - [Query the event log](../../03_guides/07_advanced/query-the-event-log.md)
-- [Persistence & Event Log (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/12_persistence-and-eventlog.md)
+- [Persistence & Event Log (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/12_persistence-and-eventlog.md)

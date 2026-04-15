@@ -99,5 +99,5 @@ remix_of: reviewer@1.2.0
 
 - [What is an agent](./01_what-is-an-agent.md)
 - [Running agents](./03_running-agents.md)
-- [Level 0 — Remix](../../04_build-on-codebolt/02_custom-agents/03_creation-levels/level-0-remix.md)
+- [Level 0 — Remix](../../04_build-on-codebolt/02_creating-agents/03_creation-levels/level-0-remix.md)
 - [Build your first agent](../../03_guides/02_first-steps/build-your-first-agent.md)

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 A **swarm** is a dynamic group of agents cooperating on a task. Unlike a flow (which is a fixed graph), a swarm's shape can change at runtime — agents spawn, communicate, and finish independently.
 
-This page is about *running* swarms. For *designing* them, see [Orchestration Design](../../04_build-on-codebolt/07_orchestration-design/01_overview.md).
+This page is about *running* swarms. For *designing* them, see [Orchestration Design](../../04_build-on-codebolt/08_orchestration-design/01_overview.md).
 
 ## Starting a swarm run
 
@@ -86,7 +86,7 @@ Swarms communicate via:
 
 - **Direct messages** — one agent sends to another via `codebolt_agent.start` or inbox.
 - **Shared state** — KV store, knowledge graph, shared memory.
-- **Stigmergy** — indirect coordination via shared state changes (see [Stigmergy](../../04_build-on-codebolt/07_orchestration-design/05_stigmergy-and-reputation.md)).
+- **Stigmergy** — indirect coordination via shared state changes (see [Stigmergy](../../04_build-on-codebolt/08_orchestration-design/05_stigmergy-and-reputation.md)).
 
 All three produce events on the bus. Watch them with:
 
@@ -162,5 +162,5 @@ Shows total across all descendants. For large swarms, this is where you notice w
 
 - [Multi-Agent Usage Overview](./01_overview.md)
 - [Reading a Flow](./03_reading-a-flow.md)
-- [Orchestration Design](../../04_build-on-codebolt/07_orchestration-design/01_overview.md)
-- [Agent Subsystem (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/01_agent-subsystem.md)
+- [Orchestration Design](../../04_build-on-codebolt/08_orchestration-design/01_overview.md)
+- [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)

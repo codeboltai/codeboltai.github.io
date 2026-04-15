@@ -113,7 +113,7 @@ Capabilities let you treat agent extensions like **packages**: name them, versio
 
 ## See also
 
-- [Hooks and Capabilities (build)](../../04_build-on-codebolt/06_hooks-and-capabilities/04_capabilities-overview.md)
-- [Capability download flow](../../04_build-on-codebolt/06_hooks-and-capabilities/05_capability-download-flow.md)
+- [Capabilities (build)](../../04_build-on-codebolt/03_agent-extensions/02_capabilities/01_overview.md)
+- [Publishing capabilities](../../04_build-on-codebolt/03_agent-extensions/02_capabilities/05_publishing.md)
 - [Tools and MCP](./02_tools-and-mcp.md) — the layer beneath capabilities
 - [Hooks and Processors](../04_runtime/01_hooks-and-processors.md) — point interception, not structured execution

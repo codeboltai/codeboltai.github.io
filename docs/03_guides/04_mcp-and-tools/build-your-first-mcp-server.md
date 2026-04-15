@@ -7,7 +7,7 @@ title: Build Your First MCP Server
 
 A 20-minute walkthrough: scaffold an MCP server, add a real tool, register it with Codebolt, and have an agent use it.
 
-For the shortest-possible quickstart see [Custom Tools & MCP Quickstart](../../04_build-on-codebolt/04_custom-tools-and-mcp/02_quickstart-local-mcp.md). This guide goes deeper — real tool, error handling, testing.
+For the shortest-possible quickstart see [MCP Tools Quickstart](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/02_quickstart-local-mcp.md). This guide goes deeper — real tool, error handling, testing.
 
 ## What we're building
 
@@ -263,14 +263,14 @@ The agent should receive the structured error, explain to the user that Atlantis
 
 ## Next steps
 
-- **Package it** — see [Packaging](../../04_build-on-codebolt/04_custom-tools-and-mcp/07_packaging.md) to publish this to npm and the marketplace.
+- **Package it** — see [Packaging](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/07_packaging.md) to publish this to npm and the marketplace.
 - **Add more tools** — alerts, historical data, etc.
 - **Add caching** — weather doesn't change every second; cache results for a few minutes to avoid rate-limiting the API.
 - **Add authentication** — if your real API needs a key, load it from env: `process.env.WEATHER_API_KEY`.
 
 ## See also
 
-- [Custom Tools & MCP Overview](../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md)
-- [Tool schema](../../04_build-on-codebolt/04_custom-tools-and-mcp/03_tool-schema.md)
-- [Error handling](../../04_build-on-codebolt/04_custom-tools-and-mcp/06_error-handling.md)
-- [Publishing](../../04_build-on-codebolt/02_custom-agents/07_publishing.md)
+- [MCP Tools Overview](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md)
+- [Tool schema](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/03_tool-schema.md)
+- [Error handling](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/06_error-handling.md)
+- [Publishing](../../04_build-on-codebolt/02_creating-agents/10_publishing.md)

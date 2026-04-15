@@ -346,4 +346,4 @@ The same query works through the HTTP API (`POST /api/events/query`) and the SDK
 - [Installing MCP Servers](./02_installing-mcp-servers.md)
 - [Built-in Tools](./04_built-in-tools.md)
 - [CLI reference](../02_surfaces/03_cli/01_overview.md) — exhaustive list of `codebolt tool` commands
-- [MCP & Tools (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/02_mcp-and-tools.md)
+- [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

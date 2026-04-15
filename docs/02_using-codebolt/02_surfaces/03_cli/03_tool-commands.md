@@ -138,4 +138,4 @@ Loads and reconciles the config with what's currently installed.
 - [Tools & MCP Overview](../../05_tools-and-mcp/01_overview.md)
 - [Installing MCP Servers](../../05_tools-and-mcp/02_installing-mcp-servers.md)
 - [Managing MCP Servers](../../05_tools-and-mcp/03_managing-mcp-servers.md)
-- [Custom Tools & MCP (for builders)](../../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md)
+- [MCP Tools (for builders)](../../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md)

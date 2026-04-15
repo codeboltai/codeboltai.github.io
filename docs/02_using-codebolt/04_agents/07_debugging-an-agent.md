@@ -189,5 +189,5 @@ When an agent is misbehaving:
 
 - [What is an agent](./01_what-is-an-agent.md)
 - [Running agents](./03_running-agents.md)
-- [Testing and debugging (for builders)](../../04_build-on-codebolt/02_custom-agents/06_testing-and-debugging.md)
-- [Agent run end-to-end (internals)](../../04_build-on-codebolt/08_internals/04_data-flow-walkthroughs/agent-run-end-to-end.md)
+- [Testing and debugging (for builders)](../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md)
+- [Agent run end-to-end (internals)](../../04_build-on-codebolt/09_internals/04_data-flow-walkthroughs/agent-run-end-to-end.md)

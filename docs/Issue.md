@@ -36,7 +36,7 @@ This file documents all issues found during a cross-reference audit of the docum
 **Status: FIXED**
 
 ### 5. `@codebolt/agent` Package Does Not Exist
-**Files affected:** `03_guides/02_first-steps/build-your-first-agent.md`, `05_multi-agent/*.md`, `04_build-on-codebolt/02_custom-agents/`
+**Files affected:** `03_guides/02_first-steps/build-your-first-agent.md`, `05_multi-agent/*.md`, `04_build-on-codebolt/02_creating-agents/`
 **Claim:** `import { UnifiedAgent } from "@codebolt/agent/patterns"` and `npm install @codebolt/agent`
 **Actual:** No `@codebolt/agent` package exists. Agent development uses markdown agents in `.codebolt/agents/remix/` or the `@codebolt/codeboltjs` SDK.
 **Status: FIXED**

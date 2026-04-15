@@ -7,7 +7,7 @@ title: Build a Code-Review Swarm
 
 A swarm of specialised reviewers checking a diff in parallel, each focused on one concern. Useful when one general reviewer misses too much because "review this diff" is too vague.
 
-**You'll need:** Codebolt with a provider configured, a project open, and a basic understanding of [custom agents](../../04_build-on-codebolt/02_custom-agents/01_overview.md).
+**You'll need:** Codebolt with a provider configured, a project open, and a basic understanding of [custom agents](../../04_build-on-codebolt/02_creating-agents/01_overview.md).
 
 ## What we're building
 
@@ -177,5 +177,5 @@ Not worth it for small, low-risk changes. Use a single generalist there.
 ## See also
 
 - [Code review with an agent](../03_everyday-workflows/code-review-with-an-agent.md) — the single-agent version
-- [Custom Agents Overview](../../04_build-on-codebolt/02_custom-agents/01_overview.md)
-- [Level 0 — Remix](../../04_build-on-codebolt/02_custom-agents/03_creation-levels/level-0-remix.md)
+- [Custom Agents Overview](../../04_build-on-codebolt/02_creating-agents/01_overview.md)
+- [Level 0 — Remix](../../04_build-on-codebolt/02_creating-agents/03_creation-levels/level-0-remix.md)

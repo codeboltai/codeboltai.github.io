@@ -57,6 +57,6 @@ Multi-agent multiplies LLM calls. Budget accordingly. A 5-agent swarm runs 5x th
 
 ## See also
 
-- [Orchestration design](../../04_build-on-codebolt/07_orchestration-design/01_overview.md)
+- [Orchestration design](../../04_build-on-codebolt/08_orchestration-design/01_overview.md)
 - [Multi-agent usage](../../02_using-codebolt/07_multi-agent-usage/01_overview.md)
-- [When multi-agent](../../04_build-on-codebolt/07_orchestration-design/02_when-multi-agent.md)
+- [When multi-agent](../../04_build-on-codebolt/08_orchestration-design/02_when-multi-agent.md)

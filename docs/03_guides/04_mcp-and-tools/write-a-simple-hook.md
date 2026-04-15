@@ -15,7 +15,7 @@ A hook that logs every file write an agent makes to a file under `.codebolt/audi
 
 ## Step 1 — pick a phase
 
-File writes fire the `after_file_write` hook phase. See [Hook Types](../../04_build-on-codebolt/06_hooks-and-capabilities/02_hook-types.md) for the full list.
+File writes fire the `after_file_write` hook phase. See [Hook Types](../../04_build-on-codebolt/05_plugins/02_hook-types.md) for the full list.
 
 ## Step 2 — write the hook
 
@@ -167,7 +167,7 @@ test("logs a write", async () => {
 });
 ```
 
-See [Hook Examples](../../04_build-on-codebolt/06_hooks-and-capabilities/03_hook-examples.md) for more patterns.
+See [Hook Examples](../../04_build-on-codebolt/05_plugins/03_hook-examples.md) for more patterns.
 
 ## Common pitfalls
 
@@ -178,6 +178,6 @@ See [Hook Examples](../../04_build-on-codebolt/06_hooks-and-capabilities/03_hook
 
 ## See also
 
-- [Hooks Overview](../../04_build-on-codebolt/06_hooks-and-capabilities/01_hooks-overview.md)
-- [Hook Types](../../04_build-on-codebolt/06_hooks-and-capabilities/02_hook-types.md)
-- [Hook Examples](../../04_build-on-codebolt/06_hooks-and-capabilities/03_hook-examples.md)
+- [Hooks Overview](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md)
+- [Hook Types](../../04_build-on-codebolt/05_plugins/02_hook-types.md)
+- [Hook Examples](../../04_build-on-codebolt/05_plugins/03_hook-examples.md)

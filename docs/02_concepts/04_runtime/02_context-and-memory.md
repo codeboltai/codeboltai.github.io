@@ -55,6 +55,6 @@ Bad context = bad answers. A confused agent is almost always a context problem (
 
 ## See also
 
-- [Context Assembly subsystem](../../04_build-on-codebolt/08_internals/03_subsystems/07_context-assembly.md)
-- [Memory subsystems](../../04_build-on-codebolt/08_internals/03_subsystems/04_memory.md)
+- [Context Assembly subsystem](../../04_build-on-codebolt/09_internals/03_subsystems/07_context-assembly.md)
+- [Memory subsystems](../../04_build-on-codebolt/09_internals/03_subsystems/04_memory.md)
 - [Chat: context and @-mentions](../../02_using-codebolt/03_chat/03_context-and-at-mentions.md)

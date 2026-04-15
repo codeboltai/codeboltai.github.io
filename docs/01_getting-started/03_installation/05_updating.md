@@ -61,7 +61,7 @@ Server and CLI should be the same version. A mismatch works if they're within on
 
 ## Server updates (self-hosted)
 
-For self-hosted deployments, see [Self-Hosting → Upgrade Guide](../../04_build-on-codebolt/09_self-hosting/08_upgrade-guide.md). Upgrades can involve database migrations and should be done carefully with backups first.
+For self-hosted deployments, see [Self-Hosting → Upgrade Guide](../../04_build-on-codebolt/10_self-hosting/08_upgrade-guide.md). Upgrades can involve database migrations and should be done carefully with backups first.
 
 ## What gets updated
 
@@ -96,7 +96,7 @@ If the new version breaks something:
 2. **Reinstall the previous version** (from releases archive or a saved binary).
 3. **Run the server.** Database migrations only work forward — if a breaking migration ran, you may need to restore from backup.
 
-For this reason, take a backup before upgrading a self-hosted instance. See [Backup and Restore](../../04_build-on-codebolt/09_self-hosting/07_backup-and-restore.md).
+For this reason, take a backup before upgrading a self-hosted instance. See [Backup and Restore](../../04_build-on-codebolt/10_self-hosting/07_backup-and-restore.md).
 
 ## Release notes
 
@@ -114,4 +114,4 @@ Every release ships with notes listing:
 - [Installation Overview](./01_overview.md)
 - [Desktop App](./02_desktop-app.md)
 - [CLI](./03_cli.md)
-- [Self-Hosting → Upgrade Guide](../../04_build-on-codebolt/09_self-hosting/08_upgrade-guide.md)
+- [Self-Hosting → Upgrade Guide](../../04_build-on-codebolt/10_self-hosting/08_upgrade-guide.md)

@@ -124,7 +124,7 @@ codebolt agent trace <run-id> --type llm.chat
 codebolt agent trace <run-id> --json
 ```
 
-See [Testing and debugging](../../../04_build-on-codebolt/02_custom-agents/06_testing-and-debugging.md) for debugging workflows.
+See [Testing and debugging](../../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md) for debugging workflows.
 
 ### `codebolt agent inspect`
 
@@ -134,7 +134,7 @@ Open an interactive REPL into a recorded run.
 codebolt agent inspect <run-id>
 ```
 
-Step through phases, query memory-as-it-was, re-execute a phase with modified inputs, diff assembled contexts. See [Testing and debugging](../../../04_build-on-codebolt/02_custom-agents/06_testing-and-debugging.md).
+Step through phases, query memory-as-it-was, re-execute a phase with modified inputs, diff assembled contexts. See [Testing and debugging](../../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md).
 
 ## Installing and publishing
 
@@ -174,7 +174,7 @@ codebolt agent publish my-agent --registry <url>            # private registry
 codebolt agent publish my-agent --dry-run                   # validate without publishing
 ```
 
-See [Publishing](../../../04_build-on-codebolt/02_custom-agents/07_publishing.md).
+See [Publishing](../../../04_build-on-codebolt/02_creating-agents/10_publishing.md).
 
 ### `codebolt agent lint`
 
@@ -299,4 +299,4 @@ codebolt agent inspect <run-id>
 - [CLI & TUI Overview](./01_overview.md)
 - [Running agents](../../04_agents/03_running-agents.md)
 - [Reference → CLI](../../../05_reference/01_overview.md) — the auto-generated flag reference
-- [Testing and debugging](../../../04_build-on-codebolt/02_custom-agents/06_testing-and-debugging.md)
+- [Testing and debugging](../../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md)

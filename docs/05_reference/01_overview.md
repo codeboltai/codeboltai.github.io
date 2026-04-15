@@ -45,7 +45,7 @@ If you want to understand a subsystem, read [Build on Codebolt → Internals](..
 - [Utility functions reference](./12_utility-functions/index.md).
 
 ### "I'm self-hosting"
-- [Self-hosting guide](../04_build-on-codebolt/09_self-hosting/01_overview.md) for the setup walkthrough.
+- [Self-hosting guide](../04_build-on-codebolt/10_self-hosting/01_overview.md) for the setup walkthrough.
 - [API access reference](./10_api-access/1-index.md) to understand the server's surface area.
 
 ## Auto-generation
@@ -88,4 +88,4 @@ The migration is mechanical — same files, new paths. URL redirects will be in 
 
 - [Build on Codebolt](../04_build-on-codebolt/01_overview.md) — the prose that the reference complements
 - [Architecture Overview](../04_build-on-codebolt/08_internals/01_architecture-overview.md) — the mental model
-- [Custom Agents Quickstart](../04_build-on-codebolt/02_custom-agents/02_quickstart.md) — how to actually use the SDK
+- [Custom Agents Quickstart](../04_build-on-codebolt/02_creating-agents/02_quickstart.md) — how to actually use the SDK

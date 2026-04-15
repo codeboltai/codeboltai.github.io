@@ -131,4 +131,4 @@ AI Requests is a filtered view of the event log where `type == llm.chat`. The ev
 - [Chat Overview](./01_overview.md)
 - [LLM Providers](../08_integrations/01_llm-providers.md)
 - [Query the event log](../../03_guides/07_advanced/query-the-event-log.md)
-- [LLM & Inference (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/03_llm-and-inference.md)
+- [LLM & Inference (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/03_llm-and-inference.md)

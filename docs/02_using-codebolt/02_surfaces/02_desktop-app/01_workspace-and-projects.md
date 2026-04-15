@@ -113,5 +113,5 @@ Cross-project orchestration lives in the roadmap, not shipped.
 
 - [Panels and layout](./02_panels-and-layout.md)
 - [Settings and profiles](./03_settings-and-profiles.md)
-- [Project & Workspace internals](../../../04_build-on-codebolt/08_internals/03_subsystems/10_project-and-workspace.md)
+- [Project & Workspace internals](../../../04_build-on-codebolt/09_internals/03_subsystems/10_project-and-workspace.md)
 - [Checkpoints](../../03_chat/04_checkpoints-and-rollback.md)

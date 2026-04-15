@@ -170,4 +170,4 @@ Just run the installer again. If you preserved the data directory, everything's 
 - [Installation Overview](./01_overview.md)
 - [Desktop App](./02_desktop-app.md)
 - [CLI](./03_cli.md)
-- [Self-Hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md)
+- [Self-Hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md)

@@ -69,7 +69,7 @@ See [Tabs and history](./02_tabs-and-history.md).
 
 ## The context window
 
-The chat doesn't dump your entire conversation into the LLM every turn. The [context assembler](../../04_build-on-codebolt/08_internals/03_subsystems/07_context-assembly.md) picks what goes in, based on:
+The chat doesn't dump your entire conversation into the LLM every turn. The [context assembler](../../04_build-on-codebolt/09_internals/03_subsystems/07_context-assembly.md) picks what goes in, based on:
 
 - Recent turns (most recent N).
 - Persistent memory relevant to the current task.
@@ -149,4 +149,4 @@ See the full list in Settings → Keyboard Shortcuts.
 - [Checkpoints and rollback](./04_checkpoints-and-rollback.md)
 - [Inline edit and Ctrl+K](./05_inline-edit-and-ctrl-k.md)
 - [Model selection](./06_model-selection.md)
-- [Chat message end-to-end (internals)](../../04_build-on-codebolt/08_internals/04_data-flow-walkthroughs/chat-message-end-to-end.md)
+- [Chat message end-to-end (internals)](../../04_build-on-codebolt/09_internals/04_data-flow-walkthroughs/chat-message-end-to-end.md)

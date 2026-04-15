@@ -113,5 +113,5 @@ You can have a local agent running commands in a Docker environment, a remote ag
 ## See also
 
 - [Workspace and Projects](./01_workspace-and-projects.md)
-- [Project & Workspace (internals)](../../../04_build-on-codebolt/08_internals/03_subsystems/10_project-and-workspace.md)
+- [Project & Workspace (internals)](../../../04_build-on-codebolt/09_internals/03_subsystems/10_project-and-workspace.md)
 - [Remote execution](../../../04_build-on-codebolt/10_remote-execution.md)

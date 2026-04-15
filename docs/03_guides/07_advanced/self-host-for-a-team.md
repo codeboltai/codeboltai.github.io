@@ -5,7 +5,7 @@ title: Self-Host for a Team
 
 # Self-Host for a Team
 
-A practical walkthrough: set up a Codebolt server for a team of 5-20 people from zero to working in a couple of hours. For the reference docs, see [Self-Hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md).
+A practical walkthrough: set up a Codebolt server for a team of 5-20 people from zero to working in a couple of hours. For the reference docs, see [Self-Hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md).
 
 **You'll need:** a Linux server (Ubuntu 22.04 or similar), a domain name, SSH access, sudo, and either an existing Postgres or willingness to install one.
 
@@ -209,7 +209,7 @@ First team members should include at least two admins (bus factor).
 As an admin, set up team-wide defaults:
 
 - **Providers** — configure one or two LLM providers centrally so users don't each paste their own keys. See [LLM Providers](../../02_using-codebolt/08_integrations/01_llm-providers.md).
-- **Guardrails** — workspace-level rules that apply to everyone. See [Guardrails & Eval](../../04_build-on-codebolt/08_internals/03_subsystems/09_guardrails-and-eval.md).
+- **Guardrails** — workspace-level rules that apply to everyone. See [Guardrails & Eval](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md).
 - **Portfolio** — curated set of agents available to everyone. See [Agent Portfolios](../../02_using-codebolt/04_agents/06_agent-portfolios.md).
 - **Review policies** — default behaviour for merge requests. See [Review & Merge](../../02_using-codebolt/07_multi-agent-usage/04_review-and-merge.md).
 
@@ -229,7 +229,7 @@ rsync -a /var/lib/codebolt/kg/ "$DEST/kg/"
 
 Schedule with cron (daily). Verify restore at least monthly on a separate machine.
 
-See [Backup and Restore](../../04_build-on-codebolt/09_self-hosting/07_backup-and-restore.md) for the full version.
+See [Backup and Restore](../../04_build-on-codebolt/10_self-hosting/07_backup-and-restore.md) for the full version.
 
 ## Step 13 — monitoring
 
@@ -259,12 +259,12 @@ Point your monitoring (Prometheus, Datadog, whatever) at `:9091/metrics`. Key da
 - **Database growth** — event log gets large. Enable retention cleanup.
 - **User onboarding friction** — OIDC group membership lag. Document the lookup path.
 
-All of these have solutions in the full [Self-Hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md) docs.
+All of these have solutions in the full [Self-Hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md) docs.
 
 ## See also
 
-- [Self-Hosting Overview](../../04_build-on-codebolt/09_self-hosting/01_overview.md)
-- [Running the server](../../04_build-on-codebolt/09_self-hosting/02_running-the-server.md)
-- [Security hardening](../../04_build-on-codebolt/09_self-hosting/06_security-hardening.md)
-- [Backup and restore](../../04_build-on-codebolt/09_self-hosting/07_backup-and-restore.md)
-- [Upgrade guide](../../04_build-on-codebolt/09_self-hosting/08_upgrade-guide.md)
+- [Self-Hosting Overview](../../04_build-on-codebolt/10_self-hosting/01_overview.md)
+- [Running the server](../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md)
+- [Security hardening](../../04_build-on-codebolt/10_self-hosting/06_security-hardening.md)
+- [Backup and restore](../../04_build-on-codebolt/10_self-hosting/07_backup-and-restore.md)
+- [Upgrade guide](../../04_build-on-codebolt/10_self-hosting/08_upgrade-guide.md)

@@ -5,7 +5,7 @@ title: Tools & MCP Overview
 
 # Tools & MCP Overview
 
-Tools are what agents *do*. Every file read, every file write, every shell command, every web request — all go through the tool layer. This section is the user's view: what tools are, how to install more, how to manage them. If you want to *build* a tool, see [Build on Codebolt → Custom Tools & MCP](../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md).
+Tools are what agents *do*. Every file read, every file write, every shell command, every web request — all go through the tool layer. This section is the user's view: what tools are, how to install more, how to manage them. If you want to *build* a tool, see [Build on Codebolt → MCP Tools](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md).
 
 ## The three kinds of tool
 
@@ -77,7 +77,7 @@ The server is started automatically when the workspace opens.
 
 When you install a new MCP server (or ship a capability that provides tools):
 
-1. The server process starts, supervised by [`PluginProcessManager`](../../04_build-on-codebolt/08_internals/03_subsystems/02_mcp-and-tools.md).
+1. The server process starts, supervised by [`PluginProcessManager`](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md).
 2. Codebolt handshakes and asks "what tools do you provide?".
 3. The provided tools are registered in your workspace's tool namespace.
 4. Agents in that workspace see the new tools — if their `tools.allow` list permits them.
@@ -120,7 +120,7 @@ Tools can be dangerous. Guardrails are the built-in mechanism for limiting them:
 - **Per-agent allowlists** — "this reviewer agent cannot use write tools".
 - **Per-tool hooks** — "log every call to `codebolt_git.push` to the SIEM".
 
-See [Guardrails (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/09_guardrails-and-eval.md) and [Hooks](../../04_build-on-codebolt/06_hooks-and-capabilities/01_hooks-overview.md).
+See [Guardrails (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md) and [Hooks](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md).
 
 ## Private MCP servers for teams
 
@@ -136,5 +136,5 @@ Pick #2 when the server is project-specific (e.g. a custom tool for interacting 
 - [Installing MCP servers](./02_installing-mcp-servers.md)
 - [Managing MCP servers](./03_managing-mcp-servers.md)
 - [Built-in tools](./04_built-in-tools.md)
-- [Custom Tools & MCP (for builders)](../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md)
-- [MCP & Tools (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/02_mcp-and-tools.md)
+- [MCP Tools (for builders)](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md)
+- [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

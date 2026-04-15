@@ -88,4 +88,4 @@ If you don't use Ctrl+K and prefer to assign that shortcut elsewhere: **Settings
 
 - [Chat Overview](./01_overview.md)
 - [Context and @-mentions](./03_context-and-at-mentions.md)
-- [Custom Agents Quickstart](../../04_build-on-codebolt/02_custom-agents/02_quickstart.md) — you can build custom inline-edit agents
+- [Custom Agents Quickstart](../../04_build-on-codebolt/02_creating-agents/02_quickstart.md) — you can build custom inline-edit agents

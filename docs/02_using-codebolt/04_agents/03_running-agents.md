@@ -87,7 +87,7 @@ const result = await run.result();
 
 ## Agent flows
 
-When you want a fixed pipeline instead of a chat loop, run a [flow](../../04_build-on-codebolt/07_orchestration-design/04_agent-flows.md). The flow runtime reads a declarative graph (nodes = agents, edges = data flow) and executes it; each node is still a normal agent run, the flow is just wiring.
+When you want a fixed pipeline instead of a chat loop, run a [flow](../../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md). The flow runtime reads a declarative graph (nodes = agents, edges = data flow) and executes it; each node is still a normal agent run, the flow is just wiring.
 
 <Tabs groupId="surface">
 <TabItem value="cli" label="CLI" default>
@@ -217,11 +217,11 @@ This is different from stopping and starting a new turn — the queued message s
 ## Running multiple agents at once
 
 - **Different tabs** — independent, parallel. Each has its own agent.
-- **Child agents** — one agent spawns another via `codebolt_agent.start`. The child runs as a nested run. See [Agent run end-to-end](../../04_build-on-codebolt/08_internals/04_data-flow-walkthroughs/agent-run-end-to-end.md).
+- **Child agents** — one agent spawns another via `codebolt_agent.start`. The child runs as a nested run. See [Agent run end-to-end](../../04_build-on-codebolt/09_internals/04_data-flow-walkthroughs/agent-run-end-to-end.md).
 - **Flow** — a declared multi-agent pipeline, graph-based.
 - **Swarm** — a dynamic group of cooperating agents. See [Running a swarm](../07_multi-agent-usage/02_running-a-swarm.md).
 
-All of these are bounded by server-wide limits: max concurrent agent processes, max spawn rate, etc. See [Self-hosting → Scaling](../../04_build-on-codebolt/09_self-hosting/01_overview.md) if you hit them.
+All of these are bounded by server-wide limits: max concurrent agent processes, max spawn rate, etc. See [Self-hosting → Scaling](../../04_build-on-codebolt/10_self-hosting/01_overview.md) if you hit them.
 
 ## Agent history
 
@@ -268,4 +268,4 @@ Hitting any of these stops the run with terminal state `killed` and reason `budg
 - [What is an agent](./01_what-is-an-agent.md)
 - [Debugging an agent](./07_debugging-an-agent.md)
 - [CLI → Agent commands](../02_surfaces/03_cli/02_agent-commands.md)
-- [Agent Subsystem (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/01_agent-subsystem.md)
+- [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)

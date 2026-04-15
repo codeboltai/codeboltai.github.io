@@ -180,7 +180,7 @@ sudo systemctl enable --now codebolt
 sudo systemctl status codebolt
 ```
 
-This is the pattern for team self-hosted instances. See [Self-hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md) for the full guide.
+This is the pattern for team self-hosted instances. See [Self-hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md) for the full guide.
 
 ## Upgrading the CLI
 
@@ -229,4 +229,4 @@ rmdir /s %APPDATA%\codebolt   # Windows
 - [Installation Overview](./01_overview.md)
 - [Desktop App install](./02_desktop-app.md)
 - [CLI & TUI Overview](../../02_using-codebolt/02_surfaces/03_cli/01_overview.md)
-- [Self-hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md)
+- [Self-hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md)

@@ -134,4 +134,4 @@ Signs you need more resources:
 - [Installation Overview](./01_overview.md)
 - [Desktop App install](./02_desktop-app.md)
 - [Local models](../../02_using-codebolt/08_integrations/02_local-models.md)
-- [Self-hosting → Scaling](../../04_build-on-codebolt/09_self-hosting/01_overview.md)
+- [Self-hosting → Scaling](../../04_build-on-codebolt/10_self-hosting/01_overview.md)

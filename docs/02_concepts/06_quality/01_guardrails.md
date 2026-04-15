@@ -138,5 +138,5 @@ Guardrails are the entire purpose of the [**guardrails plane**](../02_foundation
 
 - [Evals and Optimization](./02_evals-and-optimization.md) — the offline counterpart
 - [Hooks and Processors](../04_runtime/01_hooks-and-processors.md) — the underlying mechanism
-- [Guardrails and Eval subsystem (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/09_guardrails-and-eval.md)
-- [Hooks overview (build)](../../04_build-on-codebolt/06_hooks-and-capabilities/01_hooks-overview.md)
+- [Guardrails and Eval subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md)
+- [Hooks overview (build)](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md)

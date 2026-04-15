@@ -32,7 +32,7 @@ Local:
 BYO:
 
 - **Custom HTTP endpoints** — any OpenAI-compatible API
-- **Custom providers** — see [Build on Codebolt → Custom LLM Provider](../../04_build-on-codebolt/05_custom-providers/01_llm-provider.md)
+- **Custom providers** — see [Build on Codebolt → Custom LLM Provider](../../04_build-on-codebolt/06_remote-env-providers/01_llm-provider.md)
 
 See [Local models](./02_local-models.md) for local setup.
 
@@ -170,7 +170,7 @@ For headless / CI environments where no keychain exists, provide the master key 
 export CODEBOLT_MASTER_KEY=...
 ```
 
-See [Self-hosting → Security hardening](../../04_build-on-codebolt/09_self-hosting/01_overview.md) for the full key management story.
+See [Self-hosting → Security hardening](../../04_build-on-codebolt/10_self-hosting/01_overview.md) for the full key management story.
 
 ## Per-scope configuration
 
@@ -253,5 +253,5 @@ Agents bound to the removed provider fall back to their next-best option, or fai
 
 - [Local models](./02_local-models.md)
 - [Model selection](../03_chat/06_model-selection.md)
-- [Custom LLM Provider (for builders)](../../04_build-on-codebolt/05_custom-providers/01_llm-provider.md)
-- [LLM & Inference (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/03_llm-and-inference.md)
+- [Custom LLM Provider (for builders)](../../04_build-on-codebolt/06_remote-env-providers/01_llm-provider.md)
+- [LLM & Inference (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/03_llm-and-inference.md)

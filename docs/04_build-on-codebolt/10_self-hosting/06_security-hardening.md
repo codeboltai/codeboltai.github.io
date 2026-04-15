@@ -117,6 +117,6 @@ An agent loop without budget limits can burn money fast:
 ## See also
 
 - [Self-Hosting Overview](./01_overview.md)
-- [Guardrails & Eval (internals)](../08_internals/03_subsystems/09_guardrails-and-eval.md)
-- [Hooks](../06_hooks-and-capabilities/01_hooks-overview.md) — implementing custom security hooks
+- [Guardrails & Eval (internals)](../09_internals/03_subsystems/09_guardrails-and-eval.md)
+- [Hooks](../05_plugins/01_hooks-overview.md) — implementing custom security hooks
 - [Backup and Restore](./07_backup-and-restore.md)

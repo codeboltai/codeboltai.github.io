@@ -83,7 +83,7 @@ Every tool has a description the LLM reads to decide when to call it. You can se
 codebolt tool describe codebolt_fs.read_file
 ```
 
-For custom agents, you can override these descriptions to steer behaviour — see [Unified Agent → Overriding tool descriptions](../../04_build-on-codebolt/02_custom-agents/05_patterns/unified-agent.md#overriding-tool-descriptions).
+For custom agents, you can override these descriptions to steer behaviour — see [Unified Agent → Overriding tool descriptions](../../04_build-on-codebolt/02_creating-agents/06_patterns/unified-agent.md#overriding-tool-descriptions).
 
 ## Allowlisting
 
@@ -110,7 +110,7 @@ Even when an agent's allowlist permits a tool, guardrails can block specific cal
 - No `codebolt_git.push` to protected branches.
 - No writes outside the workspace root.
 
-See [Guardrails & Eval (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/09_guardrails-and-eval.md).
+See [Guardrails & Eval (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md).
 
 ## Extending the built-ins
 
@@ -120,10 +120,10 @@ You can't add to the built-in set without modifying the server, but you can:
 - **Install a capability bundle** that bundles tools with prompts.
 - **Write a hook** that transparently modifies built-in tool behaviour.
 
-See [Custom Tools & MCP](../../04_build-on-codebolt/04_custom-tools-and-mcp/01_overview.md).
+See [MCP Tools](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md).
 
 ## See also
 
 - [Tools & MCP Overview](./01_overview.md)
 - [Reference → Built-in Tools](../../05_reference/01_overview.md) — full schemas
-- [MCP & Tools (internals)](../../04_build-on-codebolt/08_internals/03_subsystems/02_mcp-and-tools.md)
+- [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

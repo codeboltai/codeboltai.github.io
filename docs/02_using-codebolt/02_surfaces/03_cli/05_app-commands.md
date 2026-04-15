@@ -146,5 +146,5 @@ codebolt admin rotate-master-key
 ## See also
 
 - [CLI Overview](./01_overview.md)
-- [Self-Hosting → Running the server](../../../04_build-on-codebolt/09_self-hosting/02_running-the-server.md)
+- [Self-Hosting → Running the server](../../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md)
 - [Install troubleshooting](../../../01_getting-started/03_installation/07_install-troubleshooting.md)

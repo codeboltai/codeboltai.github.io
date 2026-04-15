@@ -87,4 +87,4 @@ From the reference deployment (100+ agents):
 - [Multi-Agent Patterns](../07_multi-agent/01_multi-agent-patterns.md) — the patterns that generate disputes in the first place
 - [Evals and Optimization](../06_quality/02_evals-and-optimization.md) — where reputation weights come from
 - [Debate pattern (guide)](../../03_guides/05_multi-agent/design-a-debate-pattern.md) — hands-on deliberation
-- [Orchestration design](../../04_build-on-codebolt/07_orchestration-design/01_overview.md)
+- [Orchestration design](../../04_build-on-codebolt/08_orchestration-design/01_overview.md)

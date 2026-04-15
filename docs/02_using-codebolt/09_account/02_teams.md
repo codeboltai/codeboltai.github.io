@@ -152,4 +152,4 @@ For OIDC-managed teams, removing a member from the OIDC group is usually suffici
 
 - [Sign in](./01_sign-in.md)
 - [Usage and Billing](./03_usage-and-billing.md)
-- [Self-Hosting](../../04_build-on-codebolt/09_self-hosting/01_overview.md)
+- [Self-Hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md)

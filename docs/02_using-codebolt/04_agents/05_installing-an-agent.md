@@ -233,4 +233,4 @@ Filesystem permission issue. Check ownership of `~/.codebolt/agents/` (or `.code
 
 - [The Marketplace](./04_the-marketplace.md)
 - [Agent Portfolios](./06_agent-portfolios.md)
-- [Publishing (for builders)](../../04_build-on-codebolt/02_custom-agents/07_publishing.md)
+- [Publishing (for builders)](../../04_build-on-codebolt/02_creating-agents/10_publishing.md)

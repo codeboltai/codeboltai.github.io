@@ -21,7 +21,7 @@ For daemonised operation:
 codebolt app start --headless --daemon
 ```
 
-Runs detached, survives terminal close. Use with `systemd` / `launchd` for a proper background service — see [Self-hosting → Running the server](../../04_build-on-codebolt/09_self-hosting/02_running-the-server.md).
+Runs detached, survives terminal close. Use with `systemd` / `launchd` for a proper background service — see [Self-hosting → Running the server](../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md).
 
 ## Typical headless workflow
 
@@ -129,7 +129,7 @@ WantedBy=multi-user.target
 sudo systemctl enable --now codebolt
 ```
 
-For self-hosted team use, see [Self-hosting → Running the server](../../04_build-on-codebolt/09_self-hosting/02_running-the-server.md) for the production-grade version.
+For self-hosted team use, see [Self-hosting → Running the server](../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md) for the production-grade version.
 
 ## Passing credentials
 
@@ -181,5 +181,5 @@ The `trap` ensures the server stops cleanly even if the script fails.
 
 - [CLI Overview](./01_overview.md)
 - [TUI Mode](./04_tui.md)
-- [Self-Hosting → Running the server](../../04_build-on-codebolt/09_self-hosting/02_running-the-server.md)
+- [Self-Hosting → Running the server](../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md)
 - [Code review with an agent](../../03_guides/03_everyday-workflows/code-review-with-an-agent.md) — CI-integrated example
