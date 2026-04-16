@@ -44,4 +44,4 @@ If the sequence is deterministic, use an action block. If it needs reasoning, us
 
 - [Skills](../03_skills/01_overview.md)
 - [Subagents](../08_subagents.md)
-- [Orchestration Design](../../08_orchestration-design/01_overview.md)
+- [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md)

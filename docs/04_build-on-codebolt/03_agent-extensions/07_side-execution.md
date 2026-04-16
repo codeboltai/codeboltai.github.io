@@ -94,5 +94,5 @@ Most of the time you use built-in task types. If you need a custom one:
 ## See also
 
 - [Subagents](./08_subagents.md) — when you need the result synchronously
-- [Orchestration Design](../08_orchestration-design/01_overview.md) — flows that spawn many side tasks
+- [Multi-Agent Orchestration](../08_multi-agent-orchestration/01_overview.md) — flows that spawn many side tasks
 - [Event Log](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — where side-task events live

@@ -125,7 +125,7 @@ When reputation tracking is enabled, each agent accumulates a score based on its
 
 Reputation surfaces in the portfolio as a numeric score, and in pickers as an ordering hint. Agents with low reputation sink to the bottom.
 
-See [Stigmergy and Reputation](../../04_build-on-codebolt/08_orchestration-design/05_stigmergy-and-reputation.md) for the mechanism.
+See [Stigmergy and Reputation](../../04_build-on-codebolt/08_multi-agent-orchestration/05_stigmergy-and-reputation.md) for the mechanism.
 
 Turn it off in **Settings → Agents → Reputation tracking** if you don't want it.
 
@@ -153,4 +153,4 @@ Great for onboarding a new team member: export your carefully-curated portfolio,
 - [What is an agent](./01_what-is-an-agent.md)
 - [The Marketplace](./04_the-marketplace.md)
 - [Installing an Agent](./05_installing-an-agent.md)
-- [Stigmergy and Reputation](../../04_build-on-codebolt/08_orchestration-design/05_stigmergy-and-reputation.md)
+- [Stigmergy and Reputation](../../04_build-on-codebolt/08_multi-agent-orchestration/05_stigmergy-and-reputation.md)

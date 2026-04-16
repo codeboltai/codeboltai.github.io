@@ -163,4 +163,4 @@ Treat the reviewer as a tool you iterate on. The first version won't be great; t
 - [Build your first agent](../02_first-steps/build-your-first-agent.md)
 - [Build a plan-execute-review flow](../05_multi-agent/build-a-plan-execute-review-flow.md)
 - [Running agents](../../02_using-codebolt/04_agents/03_running-agents.md)
-- [Review and merge design](../../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md)
+- [Review and merge design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md)

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 title: Publishing
 ---
 
@@ -180,5 +180,6 @@ Published agents run on other people's machines with their credentials. Treat th
 
 - [agent.yaml](./05_agent-anatomy/agent-yaml.md) — where metadata and limits live
 - [Testing and debugging](./09_testing-and-debugging.md) — the tests you should have before publishing
+- [Auto-Optimize Agents](./10_auto-optimize-agents.md) — improve quality before publishing
 - [Marketplace (user-facing)](../../../02_using-codebolt/04_agents/04_the-marketplace.md)
 - [Self-hosting → Registries](../10_self-hosting/01_overview.md)

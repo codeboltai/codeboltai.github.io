@@ -115,7 +115,7 @@ See [Local models](../08_integrations/02_local-models.md) for setup.
 Different agents in the same tab can want different models. You can't switch mid-agent-call, but you can:
 
 - **Set a different default per agent** in each agent's manifest.
-- **Use a flow** that routes stages to different models — e.g. flagship for planning, mid-tier for execution, different family for review. See [Pipeline](../../04_build-on-codebolt/08_orchestration-design/03_patterns/pipeline.md).
+- **Use a flow** that routes stages to different models — e.g. flagship for planning, mid-tier for execution, different family for review. See [Pipeline](../../04_build-on-codebolt/08_multi-agent-orchestration/03_patterns/pipeline.md).
 - **Override in the tab** when you want to experiment.
 
 A common setup:

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: Eval & Optimization Overview
+title: Evaluation & Optimization Overview
 ---
 
-# Eval & Optimization
+# Evaluation & Optimization
 
 Agents are programs. Like any program, you get better results by measuring them and iterating. Codebolt ships a developer-facing eval and optimization system for exactly that.
 

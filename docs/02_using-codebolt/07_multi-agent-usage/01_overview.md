@@ -5,7 +5,7 @@ title: Multi-Agent Usage Overview
 
 # Multi-Agent Usage
 
-This section covers **running** multi-agent work — swarms, flows, review/merge — as a user. If you want to *design* multi-agent patterns, that's in [Build on Codebolt → Orchestration Design](../../04_build-on-codebolt/08_orchestration-design/01_overview.md).
+This section covers **running** multi-agent work — swarms, flows, review/merge — as a user. If you want to *design* multi-agent patterns, that's in [Build on Codebolt → Multi-Agent Orchestration](../../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md).
 
 ## What counts as multi-agent
 
@@ -130,7 +130,7 @@ Shows every node, its timing, its input/output, its causal parents. Useful for "
 
 ## Review and merge
 
-Multi-agent work often ends in a change that needs review. The [review/merge design](../../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md) lets you mix LLM reviewers with human reviewers.
+Multi-agent work often ends in a change that needs review. The [review/merge design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md) lets you mix LLM reviewers with human reviewers.
 
 From the user's point of view:
 
@@ -162,7 +162,7 @@ Signs:
 
 When in doubt, simplify. Multi-agent is an optimisation, not a default.
 
-See [When to use multi-agent](../../04_build-on-codebolt/08_orchestration-design/02_when-multi-agent.md) for the honest version.
+See [When to use multi-agent](../../04_build-on-codebolt/08_multi-agent-orchestration/02_when-multi-agent.md) for the honest version.
 
 ## See also
 
@@ -170,4 +170,4 @@ See [When to use multi-agent](../../04_build-on-codebolt/08_orchestration-design
 - [Reading a flow](./03_reading-a-flow.md)
 - [Review and merge](./04_review-and-merge.md)
 - [Observability and tracing](./05_observability-and-tracing.md)
-- [Orchestration Design (for builders)](../../04_build-on-codebolt/08_orchestration-design/01_overview.md)
+- [Multi-Agent Orchestration (for builders)](../../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md)

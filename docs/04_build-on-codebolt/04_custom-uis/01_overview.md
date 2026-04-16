@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-title: Custom UIs Overview
+title: Custom Interfaces Overview
 ---
 
-# Custom UIs
+# Custom Interfaces
 
 Build your own interface on top of Codebolt: a chat panel, a CLI, an IDE extension, a web dashboard, a mobile companion, or a product-specific front-end.
 

@@ -26,13 +26,13 @@ Owns the OS processes that run agents. Each agent runs isolated so a crash, hang
 The "think" half of an agent step: assembles context, calls the LLM, parses tool calls. Phases are persisted via `agentExecutionPhaseDataService` so every reasoning step is queryable later.
 
 ### Agent flows (`agentFlowService`, `agentFlowRuntimeService`, `agentFlowPluginService`)
-A graph runtime: nodes are agents or tools, edges are message channels. Used when you want a fixed pipeline (e.g. plan → code → review → test) instead of one agent improvising the whole job. See [Agent Flows](../../08_orchestration-design/04_agent-flows.md).
+A graph runtime: nodes are agents or tools, edges are message channels. Used when you want a fixed pipeline (e.g. plan → code → review → test) instead of one agent improvising the whole job. See [Agent Flows](../../08_multi-agent-orchestration/04_agent-flows.md).
 
 ### Swarms (`swarmManager`, `swarmDataService`, `swarmValidation`)
-Dynamic groups of cooperating agents — used for emergent multi-agent patterns (debate, map-reduce, exploration). Swarm membership and communication topology can change at runtime. See [Swarms](../../08_orchestration-design/01_overview.md).
+Dynamic groups of cooperating agents — used for emergent multi-agent patterns (debate, map-reduce, exploration). Swarm membership and communication topology can change at runtime. See [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md).
 
 ### Roles & teams (`roleManager`, `teamManager`, `coordinationService`)
-A higher-level vocabulary on top of swarms: assign agents to roles ("planner", "coder", "reviewer"), group them into teams, and let `coordinationService` pick who handles a given message. See [Roles and Teams](../../08_orchestration-design/01_overview.md).
+A higher-level vocabulary on top of swarms: assign agents to roles ("planner", "coder", "reviewer"), group them into teams, and let `coordinationService` pick who handles a given message. See [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md).
 
 ### Portfolios (`agentPortfolioService`)
 Groups of agents that an organisation has installed and curated for its workflows. The marketplace is the *catalog*; a portfolio is the *selection*.
@@ -64,5 +64,5 @@ Durable queue for agent-bound events: incoming user turns, tool results, peer-ag
 ## See also
 
 - [Build a custom agent](../../02_creating-agents/01_overview.md) — the developer-facing how‑to.
-- [Multi-Agent Orchestration](../../08_orchestration-design/01_overview.md) — when you need more than one agent.
+- [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md) — when you need more than one agent.
 - [Agent run end-to-end](../04_data-flow-walkthroughs/agent-run-end-to-end.md) — annotated trace of a full run.

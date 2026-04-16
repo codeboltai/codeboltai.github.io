@@ -112,7 +112,7 @@ outputs:
   plan: { type: object }
 ```
 
-Note that this agent has **read tools only** and declares a structured output — it's designed to be the "plan" stage of a [plan-execute-review](../08_orchestration-design/03_patterns/plan-execute-review.md) pipeline, not a standalone chat agent.
+Note that this agent has **read tools only** and declares a structured output — it's designed to be the "plan" stage of a [plan-execute-review](../08_multi-agent-orchestration/03_patterns/plan-execute-review.md) pipeline, not a standalone chat agent.
 
 ### Step 3 — the handler
 
@@ -154,7 +154,7 @@ You should see the agent start, query the codemap, call the LLM, and return a JS
 
 ### Step 5 — use it from a flow
 
-Now that the agent has a structured output, you can use it as a node in an [agent flow](../08_orchestration-design/04_agent-flows.md):
+Now that the agent has a structured output, you can use it as a node in an [agent flow](../08_multi-agent-orchestration/04_agent-flows.md):
 
 ```yaml
 nodes:

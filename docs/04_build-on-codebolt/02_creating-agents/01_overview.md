@@ -77,7 +77,13 @@ Agents are programs; test them like programs.
 - **Replay** — any production run can be replayed against a new version of your agent to see if the behaviour changes. Uses the event log.
 - **Tracing** — every phase is in the event log with full inputs and outputs. The UI shows it as a tree.
 
-For systematic improvement across many runs, see [Eval & Optimization](../07_eval-and-optimization/01_overview.md).
+For systematic improvement across many runs, see [Evaluation & Optimization](../07_eval-and-optimization/01_overview.md).
+
+## Optimization
+
+Testing tells you whether the agent works. Optimization tells you whether it is getting better.
+
+After your agent is stable enough to test and replay, move to [Auto-Optimize Agents](./10_auto-optimize-agents.md). That page is the agent-authoring bridge into the broader [Evaluation & Optimization](../07_eval-and-optimization/01_overview.md) system.
 
 ## Publishing
 
@@ -91,5 +97,6 @@ When you're ready, your agent can be:
 
 - [Quickstart](./02_quickstart.md) — walk through level 0 and level 1 in ~15 min
 - [Agent Extensions](../03_agent-extensions/01_overview.md) — what any agent can consume
+- [Auto-Optimize Agents](./10_auto-optimize-agents.md) — improve quality systematically
 - [Agent Subsystem internals](../09_internals/03_subsystems/01_agent-subsystem.md) — what happens under the hood
-- [Orchestration Design](../08_orchestration-design/01_overview.md) — multi-agent patterns
+- [Multi-Agent Orchestration](../08_multi-agent-orchestration/01_overview.md) — multi-agent patterns

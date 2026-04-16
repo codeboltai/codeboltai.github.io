@@ -113,6 +113,6 @@ and optional gateway metadata such as:
 
 ## See also
 
-- [Custom UIs](../04_custom-uis/01_overview.md)
+- [Custom Interfaces](../04_custom-uis/01_overview.md)
 - [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)
 - [Agent Extensions](../03_agent-extensions/01_overview.md)

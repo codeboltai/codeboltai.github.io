@@ -87,7 +87,7 @@ const result = await run.result();
 
 ## Agent flows
 
-When you want a fixed pipeline instead of a chat loop, run a [flow](../../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md). The flow runtime reads a declarative graph (nodes = agents, edges = data flow) and executes it; each node is still a normal agent run, the flow is just wiring.
+When you want a fixed pipeline instead of a chat loop, run a [flow](../../04_build-on-codebolt/08_multi-agent-orchestration/04_agent-flows.md). The flow runtime reads a declarative graph (nodes = agents, edges = data flow) and executes it; each node is still a normal agent run, the flow is just wiring.
 
 <Tabs groupId="surface">
 <TabItem value="cli" label="CLI" default>

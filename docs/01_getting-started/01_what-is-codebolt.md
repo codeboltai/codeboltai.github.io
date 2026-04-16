@@ -25,7 +25,7 @@ A lot of "AI coding tools" are an autocomplete plus a chat box. Codebolt is a di
 
 4. **Guardrails as a sidecar.** Rule-based and LLM-based checks run before every tool call. See [Guardrails](../04_build-on-codebolt/08_internals/03_subsystems/09_guardrails-and-eval.md).
 
-5. **Multi-agent is first-class.** Swarms, agent flows, roles, teams, plan-execute-review, debate, stigmergy — all supported, with a graph runtime and a full event log. See [Orchestration Design](../04_build-on-codebolt/08_orchestration-design/01_overview.md).
+5. **Multi-agent is first-class.** Swarms, agent flows, roles, teams, plan-execute-review, debate, stigmergy — all supported, with a graph runtime and a full event log. See [Multi-Agent Orchestration](../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md).
 
 6. **Everything is replayable.** The event log is the authoritative causal record. You can replay any run, audit any decision, query the history. See [Persistence & Event Log](../04_build-on-codebolt/08_internals/03_subsystems/12_persistence-and-eventlog.md).
 
@@ -37,7 +37,7 @@ Quick sampling, from easiest to most ambitious:
 - **Task delegation.** Hand an agent a concrete task ("add a rate limiter to this endpoint, write tests"), walk away, come back to a reviewable diff.
 - **Custom agents.** Build an agent specialised for your codebase — your coding conventions, your internal APIs, your review standards. See [Build Agents](../04_build-on-codebolt/02_creating-agents/01_overview.md).
 - **Custom tools.** Write an MCP server that gives agents access to your internal systems. See [MCP Tools](../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md).
-- **Multi-agent workflows.** Set up a plan-execute-review flow for high-risk changes, or a map-reduce for embarrassingly parallel work. See [Orchestration Design](../04_build-on-codebolt/08_orchestration-design/01_overview.md).
+- **Multi-agent workflows.** Set up a plan-execute-review flow for high-risk changes, or a map-reduce for embarrassingly parallel work. See [Multi-Agent Orchestration](../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md).
 - **Self-hosting for a team.** Run the server yourself, with shared memory, guardrails, and audit trails across your organisation. See [Self-Hosting](../04_build-on-codebolt/10_self-hosting/01_overview.md).
 
 ## What it is NOT

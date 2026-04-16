@@ -29,7 +29,7 @@ Go to **[Guides & Tutorials](../03_guides/01_overview.md)**. Every guide has one
 
 ## I want to build on Codebolt
 
-Go to **[Build on Codebolt](../04_build-on-codebolt/01_overview.md)**. This is the extension surface: custom agents, agent extensions, plugins, custom UIs, remote providers, orchestration design, server internals, self-hosting.
+Go to **[Build on Codebolt](../04_build-on-codebolt/01_overview.md)**. This is the extension surface: custom agents, agent extensions, plugins, custom interfaces, remote providers, orchestration design, server internals, self-hosting.
 
 **Suggested reading path by goal:**
 
@@ -39,7 +39,7 @@ Go to **[Build on Codebolt](../04_build-on-codebolt/01_overview.md)**. This is t
 | Give agents access to my internal APIs | [MCP Tools → Overview](../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md) |
 | Connect a new LLM provider | [Remote Environment Providers → LLM Provider](../04_build-on-codebolt/05_plugins/06_llm-provider.md) |
 | Extend the application without building a new agent | [Plugins → Overview](../04_build-on-codebolt/05_plugins/01_overview.md) |
-| Design a multi-agent workflow | [Orchestration Design → Overview](../04_build-on-codebolt/08_orchestration-design/01_overview.md) |
+| Design a multi-agent workflow | [Multi-Agent Orchestration → Overview](../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md) |
 | Understand how the server actually works | [Internals → Architecture Overview](../04_build-on-codebolt/09_internals/01_architecture-overview.md) |
 | Self-host for my team | [Self-Hosting → Overview](../04_build-on-codebolt/10_self-hosting/01_overview.md) |
 
@@ -66,11 +66,11 @@ From there, pick subsystems as they become relevant.
 
 ## I want to be opinionated about multi-agent
 
-Start with **[When to use multi-agent](../04_build-on-codebolt/08_orchestration-design/02_when-multi-agent.md)** — it will likely talk you *out* of multi-agent for your first project, which is the right answer most of the time. Then:
+Start with **[When to use multi-agent](../04_build-on-codebolt/08_multi-agent-orchestration/02_when-multi-agent.md)** — it will likely talk you *out* of multi-agent for your first project, which is the right answer most of the time. Then:
 
-- [Plan-Execute-Review](../04_build-on-codebolt/08_orchestration-design/03_patterns/plan-execute-review.md) — the one pattern that covers most real cases.
-- [Agent Flows](../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md) — how to freeze a pattern into a reusable graph.
-- [Review & Merge Design](../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md) — human-in-the-loop without making humans the bottleneck.
+- [Plan-Execute-Review](../04_build-on-codebolt/08_multi-agent-orchestration/03_patterns/plan-execute-review.md) — the one pattern that covers most real cases.
+- [Agent Flows](../04_build-on-codebolt/08_multi-agent-orchestration/04_agent-flows.md) — how to freeze a pattern into a reusable graph.
+- [Review & Merge Design](../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md) — human-in-the-loop without making humans the bottleneck.
 
 ## Still not sure?
 

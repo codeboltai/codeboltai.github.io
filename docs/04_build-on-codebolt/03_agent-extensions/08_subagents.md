@@ -66,9 +66,9 @@ Each runs in its own process, supervised by [`AgentProcessManager`](../09_intern
 
 ## Patterns
 
-- **Manager + workers.** A parent manages several worker subagents, each specialised. See [Manager-Worker pattern](../08_orchestration-design/03_patterns/manager-worker.md).
+- **Manager + workers.** A parent manages several worker subagents, each specialised. See [Manager-Worker pattern](../08_multi-agent-orchestration/03_patterns/manager-worker.md).
 - **Plan + execute + review.** Decomposition across three different subagents.
-- **Debate.** Multiple subagents produce competing proposals, parent arbitrates. See [Debate pattern](../08_orchestration-design/03_patterns/debate.md).
+- **Debate.** Multiple subagents produce competing proposals, parent arbitrates. See [Debate pattern](../08_multi-agent-orchestration/03_patterns/debate.md).
 
 ## Authoring
 
@@ -77,5 +77,5 @@ A subagent is just an agent. Any agent you build using [Creating Agents](../02_c
 ## See also
 
 - [Side Execution](./07_side-execution.md) — non-blocking alternative
-- [Orchestration Design](../08_orchestration-design/01_overview.md) — multi-agent patterns
+- [Multi-Agent Orchestration](../08_multi-agent-orchestration/01_overview.md) — multi-agent patterns
 - [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md) — how process management works

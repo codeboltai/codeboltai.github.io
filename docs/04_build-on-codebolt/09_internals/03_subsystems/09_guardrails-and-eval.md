@@ -70,7 +70,7 @@ Two adjacent services:
 The human-in-the-loop side. For agents that open merge requests instead of committing directly, this subsystem:
 - Tracks review state per MR.
 - Invokes LLM reviewers before humans touch it.
-- Lets multiple agents review in a debate pattern (see [Review and Merge Design](../../08_orchestration-design/07_review-and-merge-design.md)).
+- Lets multiple agents review in a debate pattern (see [Review and Merge Design](../../08_multi-agent-orchestration/07_review-and-merge-design.md)).
 
 ## See also
 

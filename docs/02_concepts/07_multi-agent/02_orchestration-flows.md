@@ -77,5 +77,5 @@ Three agents, two edges, one output. The runtime knows planner must finish befor
 ## See also
 
 - [Multi-agent patterns](../07_multi-agent/01_multi-agent-patterns.md)
-- [Agent flows (build)](../../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md)
+- [Agent flows (build)](../../04_build-on-codebolt/08_multi-agent-orchestration/04_agent-flows.md)
 - [Reading a flow (using)](../../02_using-codebolt/07_multi-agent-usage/03_reading-a-flow.md)

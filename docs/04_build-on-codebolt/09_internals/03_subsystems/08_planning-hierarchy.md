@@ -85,4 +85,4 @@ This is what keeps long-running multi-agent work from collapsing every time one 
 
 - [Agent Subsystem](./01_agent-subsystem.md)
 - [Guardrails & Eval](./09_guardrails-and-eval.md) — a guardrail failure often triggers replan
-- [Orchestration Design](../../08_orchestration-design/01_overview.md)
+- [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md)

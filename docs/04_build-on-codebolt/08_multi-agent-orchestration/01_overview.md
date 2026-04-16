@@ -1,24 +1,29 @@
 ---
 sidebar_position: 1
-title: Orchestration Design
+title: Multi-Agent Orchestration
 ---
 
-# Orchestration Design
+# Multi-Agent Orchestration
 
-Designing multi-agent systems in Codebolt. This section is for the person *architecting* how agents cooperate, not for the person who wants to *run* an already-designed swarm (for that, see [Multi-Agent Usage](../../02_using-codebolt/07_multi-agent-usage/01_overview.md)).
+Designing multi-agent coordination systems in Codebolt. This section is about how agents cooperate inside one Codebolt system: swarms, flows, shared state, review loops, and orchestration patterns.
+
+If you want to *run* an already-designed swarm, see [Multi-Agent Usage](../../02_using-codebolt/07_multi-agent-usage/01_overview.md). This section is for the person designing the system underneath.
 
 ## What this section covers
 
-1. **[When multi-agent](./02_when-multi-agent.md)** — an honest answer to "do I actually need more than one agent?" (often: no).
-2. **[Patterns](./03_patterns/manager-worker.md)** — the small number of orchestration patterns that cover almost every real use case.
-3. **[Agent flows](./04_agent-flows.md)** — the graph runtime for fixed pipelines.
-4. **[Stigmergy and reputation](./05_stigmergy-and-reputation.md)** — emergent coordination through shared state.
-5. **[Drift detection](./06_drift-detection.md)** — keeping long-running swarms on-task.
-6. **[Review & merge design](./07_review-and-merge-design.md)** — human-in-the-loop patterns.
+1. **[Multi-Agent Orchestration Management](./02_multi-agent-orchestration-management.md)** — swarms, flows, roles, shared state, and how agents access orchestration primitives.
+2. **[When multi-agent](./02_when-multi-agent.md)** — an honest answer to "do I actually need more than one agent?" (often: no).
+3. **[Patterns](./03_patterns/manager-worker.md)** — the small number of orchestration patterns that cover almost every real use case.
+4. **[Agent flows](./04_agent-flows.md)** — the graph runtime for fixed pipelines.
+5. **[Stigmergy and reputation](./05_stigmergy-and-reputation.md)** — emergent coordination through shared state.
+6. **[Drift detection](./06_drift-detection.md)** — keeping long-running swarms on-task.
+7. **[Review & merge design](./07_review-and-merge-design.md)** — human-in-the-loop patterns.
 
 ## Where this sits in Codebolt
 
-Orchestration is not a separate product — it's a set of features of the [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md):
+This section lives primarily in the [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md) and the orchestration-facing parts of `@codebolt/codeboltjs`.
+
+The coordination side looks like this:
 
 | Feature | Provides | Pages |
 |---|---|---|
@@ -43,6 +48,8 @@ If none of these apply, use one agent.
 
 ## See also
 
+- [Multi-Agent Orchestration Management](./02_multi-agent-orchestration-management.md)
+- [Multi-Environment Orchestration](../08a_multi-environment-orchestration/01_overview.md)
 - [Agent Subsystem](../09_internals/03_subsystems/01_agent-subsystem.md) — the runtime this section builds on
 - [Planning Hierarchy](../09_internals/03_subsystems/08_planning-hierarchy.md) — orchestration often shows up as planned blocks assigned to different agents
 - [Multi-Agent Usage](../../02_using-codebolt/07_multi-agent-usage/01_overview.md) — running, not designing

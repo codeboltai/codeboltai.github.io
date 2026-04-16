@@ -108,7 +108,7 @@ Your workspace has an **agent portfolio** — the curated set of agents actually
 **Settings → Agents → Portfolio** shows:
 - Installed agents.
 - Which are active in this workspace (in the portfolio).
-- A ranking of agents by reputation score (if enabled — see [Stigmergy and Reputation](../../04_build-on-codebolt/08_orchestration-design/05_stigmergy-and-reputation.md)).
+- A ranking of agents by reputation score (if enabled — see [Stigmergy and Reputation](../../04_build-on-codebolt/08_multi-agent-orchestration/05_stigmergy-and-reputation.md)).
 
 Teams that self-host often constrain what the portfolio can contain: "only approved agents from our internal registry". See [Self-hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md).
 

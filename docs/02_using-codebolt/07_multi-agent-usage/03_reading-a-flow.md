@@ -79,7 +79,7 @@ Clicking a node opens:
 
 ## Understanding flow structure
 
-The flow definition lives in YAML (see [Agent Flows](../../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md)). Use `codebolt flow show <flow-name>` (CLI) or **Flows panel → Definition** (desktop) to see the YAML — useful for understanding "why did the flow route to node X?" by checking the edge conditions.
+The flow definition lives in YAML (see [Agent Flows](../../04_build-on-codebolt/08_multi-agent-orchestration/04_agent-flows.md)). Use `codebolt flow show <flow-name>` (CLI) or **Flows panel → Definition** (desktop) to see the YAML — useful for understanding "why did the flow route to node X?" by checking the edge conditions.
 
 ## Common "why is my flow doing X" questions
 
@@ -133,5 +133,5 @@ JSON for programmatic analysis; DOT for rendering the graph with Graphviz.
 
 - [Multi-Agent Usage Overview](./01_overview.md)
 - [Running a Swarm](./02_running-a-swarm.md)
-- [Agent Flows](../../04_build-on-codebolt/08_orchestration-design/04_agent-flows.md)
+- [Agent Flows](../../04_build-on-codebolt/08_multi-agent-orchestration/04_agent-flows.md)
 - [Build a plan-execute-review flow](../../03_guides/05_multi-agent/build-a-plan-execute-review-flow.md)

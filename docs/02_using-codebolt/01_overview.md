@@ -56,7 +56,7 @@ Not everyone wants a desktop app. The CLI provides the same surface over a termi
 
 ### Multi-agent usage
 
-Running swarms and flows. The *design* side lives under [Build on Codebolt](../04_build-on-codebolt/08_orchestration-design/01_overview.md); the *running* side is here:
+Running swarms and flows. The *design* side lives under [Build on Codebolt](../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md); the *running* side is here:
 
 - [Running a swarm](./07_multi-agent-usage/02_running-a-swarm.md)
 - [Reading a flow](./07_multi-agent-usage/03_reading-a-flow.md)

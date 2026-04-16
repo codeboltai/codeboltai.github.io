@@ -182,6 +182,7 @@ Commit the trace files to your repo. They're small and they serve as both tests 
 ## See also
 
 - [Lifecycle](./05_agent-anatomy/lifecycle.md) — what each stage looks like in a trace
+- [Auto-Optimize Agents](./10_auto-optimize-agents.md) — the next step after testing
 - [Publishing](./10_publishing.md) — don't publish without tests
 - [Event Log internals](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — where trace data comes from
 - [Guide: debug a hung agent](../../../03_guides/03_everyday-workflows/debug-a-hung-agent.md)

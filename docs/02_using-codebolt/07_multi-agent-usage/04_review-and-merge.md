@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 The human-in-the-loop side of multi-agent work. When agents produce changes that need approval before they land, they go through the review/merge system.
 
-For the design side ("how do I structure review policies?"), see [Review & Merge Design](../../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md).
+For the design side ("how do I structure review policies?"), see [Review & Merge Design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md).
 
 ## The merge request inbox
 
@@ -117,7 +117,7 @@ policies:
 
 First matching rule wins. Rules can dispatch on path, size, agent, time of day, or anything in the change metadata.
 
-See [Review & Merge Design](../../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md) for designing these policies.
+See [Review & Merge Design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md) for designing these policies.
 
 ## LLM-first review
 
@@ -150,5 +150,5 @@ Pick one and configure the policy to match. Running both in parallel creates dou
 ## See also
 
 - [Multi-Agent Usage Overview](./01_overview.md)
-- [Review & Merge Design](../../04_build-on-codebolt/08_orchestration-design/07_review-and-merge-design.md)
+- [Review & Merge Design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md)
 - [Guardrails & Eval (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md)

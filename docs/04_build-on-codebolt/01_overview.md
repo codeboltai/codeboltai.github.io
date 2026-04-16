@@ -9,13 +9,15 @@ import SystemArchitecture from '@site/src/components/diagrams/SystemArchitecture
 
 This section is for developers extending Codebolt. If you want to *use* Codebolt, start at [Using Codebolt](../02_using-codebolt/01_overview.md). If you want to follow a specific how-to, try [Guides](../03_guides/01_overview.md). Everything here is for people writing code that plugs into the server.
 
+If you are new to the builder-facing architecture, read [Architecture for Builders](./02_architecture-for-builders.md) first. It explains how the server, clients, agents, plugins, and agent extensions fit together.
+
 ## The system at a glance
 
 The **Codebolt server** is the execution engine. It owns files, memory, sub-agents, tool execution, the event log, guardrails — everything stateful. Around it, four external surfaces let you build on top without forking the server. Inside it, a handful of internal extension points let you reshape the agent loop without rewriting it.
 
 <SystemArchitecture />
 
-- **Custom UIs** — build your own chat panel, CLI, or editor extension using the [`clientsdk`](./04_custom-uis/01_overview.md), a wrapper over the server's WebSocket protocol and HTTP routes.
+- **Custom Interfaces** — build your own chat panel, CLI, or editor extension using the [`clientsdk`](./04_custom-uis/01_overview.md), a wrapper over the server's WebSocket protocol and HTTP routes.
 - **Custom Agents** — write agents with [`codeboltjs`](./02_creating-agents/01_overview.md), or bring your own framework (Vercel AI SDK, LangChain) via the [adapter layer](./02_creating-agents/08_framework-adapters.md). Agents drive the server over WebSocket.
 - **Plugins** — extend the application itself with the [`pluginSdk`](./05_plugins/01_overview.md): gateway integrations, execution plugins, UI extensions, hooks, and custom LLM providers. Plugins live alongside the server and talk to it over the plugin bus.
 - **Remote Environment Providers** — federate across machines. A [remote environment provider](./06_remote-env-providers/01_llm-provider.md) is typically another Codebolt server instance (e.g. `e2b`, a remote sandbox, or a peer workstation) that the local server proxies work to.
@@ -28,13 +30,15 @@ Codebolt exposes these extension points. Agent customization now splits into two
 
 | Extension point | What it is | Start here |
 |---|---|---|
+| **Architecture for Builders** | The server-centered mental model and SDK split | [Architecture for Builders](./02_architecture-for-builders.md) |
 | **Creating Agents** | Write or wrap agents that show up in the picker | [Creating Agents](./02_creating-agents/01_overview.md) |
 | **Agent Extensions** | Shared primitives agents consume: skills, capabilities, MCP tools, and blocks | [Agent Extensions](./03_agent-extensions/01_overview.md) |
-| **Custom UIs** | Build your own interface on top of the server | [Custom UIs](./04_custom-uis/01_overview.md) |
+| **Custom Interfaces** | Build your own interface on top of the server | [Custom Interfaces](./04_custom-uis/01_overview.md) |
 | **Plugins** | Extend the application runtime — gateways, execution plugins, UI panels, hooks, providers | [Plugins](./05_plugins/01_overview.md) |
 | **Remote Environment Providers** | LLM, embedding, or remote execution backends | [Remote Environment Providers](./05_plugins/06_llm-provider.md) |
-| **Eval & Optimization** | Measure, refine, and tune agents | [Eval & Optimization](./07_eval-and-optimization/01_overview.md) |
-| **Orchestration** | Multi-agent design — swarms, flows, patterns. | [Orchestration Design](./08_orchestration-design/01_overview.md) |
+| **Evaluation & Optimization** | Measure, refine, and tune agents | [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md) |
+| **Multi-Agent Orchestration** | Multi-agent coordination design — swarms, flows, roles, and review patterns. | [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md) |
+| **Multi-Environment Orchestration** | Provider-driven execution across remote or alternate environments. | [Multi-Environment Orchestration](./08a_multi-environment-orchestration/01_overview.md) |
 | **Internals** | How the server works — for devs who need to extend intelligently. | [Internals](./09_internals/01_architecture-overview.md) |
 
 Plus [Self-Hosting](./10_self-hosting/01_overview.md) for teams running the server themselves and [Remote Execution](./11_remote-execution.md) for distributed agent runs.
@@ -50,9 +54,10 @@ A decision guide:
 - **I want to build agents using Vercel AI SDK or LangChain.** → [Framework Adapters](./02_creating-agents/08_framework-adapters.md).
 - **I want a new LLM provider or a local inference backend.** → [LLM Provider](./06_remote-env-providers/01_llm-provider.md).
 - **I want to intercept or modify application behaviour project-wide** (gateways, hooks, execution routing, provider registration, embedded panels). → [Plugins](./05_plugins/01_overview.md).
-- **I want to build my own UI on top of Codebolt.** → [Custom UIs](./04_custom-uis/01_overview.md).
-- **I want to measure and tune my agent systematically.** → [Eval & Optimization](./07_eval-and-optimization/01_overview.md).
-- **I want several agents to cooperate on a task.** → [Orchestration Design](./08_orchestration-design/01_overview.md). Read [When to use multi-agent](./08_orchestration-design/02_when-multi-agent.md) first.
+- **I want to build my own UI on top of Codebolt.** → [Custom Interfaces](./04_custom-uis/01_overview.md).
+- **I want to measure and tune my agent systematically.** → [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md).
+- **I want several agents to cooperate on a task.** → [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md). Read [When to use multi-agent](./08_multi-agent-orchestration/02_when-multi-agent.md) first.
+- **I want runs to cross into remote or alternate environments.** → [Multi-Environment Orchestration](./08a_multi-environment-orchestration/01_overview.md).
 - **I need to run the server myself.** → [Self-Hosting](./10_self-hosting/01_overview.md).
 - **I want to understand the whole system.** → [Internals → Architecture Overview](./09_internals/01_architecture-overview.md). Then pick subsystems as you need them.
 
@@ -85,8 +90,10 @@ These aren't rules, just things to keep in mind as you write.
 
 ## See also
 
+- [Architecture for Builders](./02_architecture-for-builders.md) — the builder-facing system map
 - [Architecture Overview](./09_internals/01_architecture-overview.md) — the mental model of the server
 - [Creating Agents](./02_creating-agents/01_overview.md) — build or wrap agents
 - [Agent Extensions](./03_agent-extensions/01_overview.md) — shared capabilities agents consume
 - [Agent Extensions → MCP Tools](./03_agent-extensions/04_mcp-tools/01_overview.md)
-- [Orchestration Design](./08_orchestration-design/01_overview.md)
+- [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md)
+- [Multi-Environment Orchestration](./08a_multi-environment-orchestration/01_overview.md)
