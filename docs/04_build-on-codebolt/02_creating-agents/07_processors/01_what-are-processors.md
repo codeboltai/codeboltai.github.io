@@ -103,7 +103,7 @@ Three similar-looking extension points, used for different things:
 | Mechanism | Runs at | Scope | Good for |
 |---|---|---|---|
 | **Processors** | Fixed slots in the agent loop | The loop state (messages, tool calls, responses) | Modifying what the agent sees/emits |
-| **[Hooks](../../../05_plugins/01_hooks-overview.md)** | Events on the application bus | Events (not tied to a specific agent loop) | Cross-cutting concerns: logging, auditing, policy enforcement |
+| **[Hooks](../../../05_plugins/01_overview.md)** | Events on the application bus | Events (not tied to a specific agent loop) | Cross-cutting concerns: logging, auditing, policy enforcement |
 | **[Tools](../../../03_agent-extensions/04_mcp-tools/01_overview.md)** | When the LLM calls them | A named capability | New things the agent can do |
 
 Rule of thumb: if you want the agent to *see* something different, use a processor. If you want to *react* to something happening, use a hook. If you want to give the agent a *new capability*, build a tool.

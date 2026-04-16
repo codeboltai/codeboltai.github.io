@@ -79,7 +79,7 @@ match: { tool: "codebolt_fs.write_file", path_prefix: "infra/" }
 action: deny_outside_hours
 ```
 
-See [Hooks](../../05_plugins/01_hooks-overview.md) for the full hook lifecycle.
+See [Hooks](../../05_plugins/01_overview.md) for the full hook lifecycle.
 
 ## See also
 

@@ -187,7 +187,7 @@ export class BudgetEnforcer implements MessageModifier {
 
 ## What NOT to do in a processor
 
-- **Expensive I/O on every call.** Processors run on the critical path of every turn. Cache, batch, or use a [hook](../../../05_plugins/01_hooks-overview.md) instead.
+- **Expensive I/O on every call.** Processors run on the critical path of every turn. Cache, batch, or use a [hook](../../../05_plugins/01_overview.md) instead.
 - **Mutating the input.** Always return a new array/object. Mutation breaks replay.
 - **Side effects** like writing files, calling APIs, or emitting metrics. Use hooks for observational side effects.
 - **State between calls.** Processors should be stateless. If you need state, put it in `ctx.state`.
@@ -240,4 +240,4 @@ If you want to share a processor across agents or with your team, package it:
 - [What are processors](./01_what-are-processors.md)
 - [Processor types](./02_processor-types.md)
 - [Built-in processors](./03_built-in-processors.md)
-- [Hooks](../../../05_plugins/01_hooks-overview.md) — when a hook fits better
+- [Hooks](../../../05_plugins/01_overview.md) — when a hook fits better

@@ -108,7 +108,7 @@ class MetricsModifier implements MessageModifier {
 }
 ```
 
-These are fine — the framework runs them for side effects. But if you're only observing, consider using a [hook](../../../05_plugins/01_hooks-overview.md) instead — hooks are cheaper and don't sit on the critical path.
+These are fine — the framework runs them for side effects. But if you're only observing, consider using a [hook](../../../05_plugins/01_overview.md) instead — hooks are cheaper and don't sit on the critical path.
 
 ## Control flow
 

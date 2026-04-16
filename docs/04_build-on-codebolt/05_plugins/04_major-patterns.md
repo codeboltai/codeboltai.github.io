@@ -151,6 +151,8 @@ The current built-in plugin manifests show the main runtime categories:
 
 ## See also
 
-- [Major plugin functionalities](./03_hook-examples.md)
-- [Packaging and publishing plugins](./05_capability-download-flow.md)
+- [Detailed LLM Provider guide](./06_llm-provider.md)
+- [Detailed Remote Execution Provider guide](./08_remote-execution-provider.md)
+- [Major plugin functionalities](./03_functionalities.md)
+- [Packaging and publishing plugins](./05_packaging-and-publishing.md)
 - [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)

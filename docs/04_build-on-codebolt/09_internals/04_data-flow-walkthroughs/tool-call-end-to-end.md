@@ -90,7 +90,7 @@ Before the result goes back to the agent, `after_tool_call` hooks fire. Hooks ca
 - **Transform** it (e.g. redact secrets, truncate long outputs).
 - **Reject** it (rare — usually used for "this file contains secrets, don't let the LLM see it").
 
-See [Hooks](../../05_plugins/01_hooks-overview.md) for the full hook lifecycle.
+See [Hooks](../../05_plugins/01_overview.md) for the full hook lifecycle.
 
 ## Step 7 — result shape
 
@@ -143,4 +143,4 @@ The `ToolResult` is handed back to the agent loop. The loop appends it to the wo
 - [Agent run end-to-end](./agent-run-end-to-end.md)
 - [MCP & Tools Subsystem](../03_subsystems/02_mcp-and-tools.md)
 - [Guardrails & Eval](../03_subsystems/09_guardrails-and-eval.md)
-- [Hooks](../../05_plugins/01_hooks-overview.md)
+- [Hooks](../../05_plugins/01_overview.md)

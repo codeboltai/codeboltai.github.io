@@ -135,6 +135,6 @@ From the agent's point of view, none of this is visible — it just sees tools s
 
 - [MCP & Tools internals](../../09_internals/03_subsystems/02_mcp-and-tools.md) — how the three kinds merge into one namespace
 - [Tool call end-to-end](../../09_internals/04_data-flow-walkthroughs/tool-call-end-to-end.md) — the full trace of what happens when an agent calls a tool
-- [Hooks](../../05_plugins/01_hooks-overview.md) — an even lighter-weight way to intervene
+- [Hooks](../../05_plugins/01_overview.md) — an even lighter-weight way to intervene
 - [Guide: build your first MCP server](../../03_guides/04_mcp-and-tools/build-your-first-mcp-server.md)
 - [Reference: built-in tools](../../05_reference/01_overview.md)

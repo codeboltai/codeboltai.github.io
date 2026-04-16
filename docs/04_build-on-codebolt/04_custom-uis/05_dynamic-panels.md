@@ -79,5 +79,5 @@ Use a **separate custom UI** when:
 ## See also
 
 - [Client SDK](./02_client-sdk.md)
-- [Plugins](../05_plugins/01_hooks-overview.md)
+- [Plugins](../05_plugins/01_overview.md)
 - [Internals → Communication](../09_internals/03_subsystems/11_communication.md)

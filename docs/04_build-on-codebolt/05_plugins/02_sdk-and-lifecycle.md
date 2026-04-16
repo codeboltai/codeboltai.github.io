@@ -159,6 +159,6 @@ The built-in examples mostly use `startup`.
 
 ## See also
 
-- [Plugins Overview](./01_hooks-overview.md)
-- [Major functionalities available to plugins](./03_hook-examples.md)
-- [Packaging and publishing plugins](./05_capability-download-flow.md)
+- [Plugins Overview](./01_overview.md)
+- [Major functionalities available to plugins](./03_functionalities.md)
+- [Packaging and publishing plugins](./05_packaging-and-publishing.md)

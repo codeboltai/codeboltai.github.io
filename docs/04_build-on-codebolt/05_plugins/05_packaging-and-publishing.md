@@ -131,6 +131,6 @@ These show the real manifest fields currently used by the system.
 
 ## See also
 
-- [Plugins Overview](./01_hooks-overview.md)
-- [Plugin SDK and lifecycle](./02_hook-types.md)
-- [Gateway, execution, and LLM providers](./04_capabilities-overview.md)
+- [Plugins Overview](./01_overview.md)
+- [Plugin SDK and lifecycle](./02_sdk-and-lifecycle.md)
+- [Gateway, execution, and LLM providers](./04_major-patterns.md)

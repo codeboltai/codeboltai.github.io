@@ -23,7 +23,7 @@ The test: *can you change this without rewriting the agent?* If yes, it belongs 
 
 ## Why "extensions" and not "plugins"
 
-Extensions run *inside the agent loop* — they're pulled in when an agent needs them. Plugins (covered in the top-level [Plugins](../05_plugins/01_hooks-overview.md) section) extend the **application** — they add new server behaviours, UI panels, hooks, providers, etc. You can build a plugin that registers new extensions (e.g. a plugin that publishes a new skill pack); the plugin is the delivery mechanism, the skills are the extensions.
+Extensions run *inside the agent loop* — they're pulled in when an agent needs them. Plugins (covered in the top-level [Plugins](../05_plugins/01_overview.md) section) extend the **application** — they add new server behaviours, UI panels, hooks, providers, etc. You can build a plugin that registers new extensions (e.g. a plugin that publishes a new skill pack); the plugin is the delivery mechanism, the skills are the extensions.
 
 ## A mental model
 
@@ -54,5 +54,5 @@ Read the consuming half first even if you're planning to author. Knowing how age
 ## See also
 
 - [Creating Agents](../02_creating-agents/01_overview.md) — writing the agent that consumes these
-- [Plugins](../05_plugins/01_hooks-overview.md) — packaging and distributing extensions
+- [Plugins](../05_plugins/01_overview.md) — packaging and distributing extensions
 - [MCP Tools](./04_mcp-tools/01_overview.md) — adding and authoring MCP tools

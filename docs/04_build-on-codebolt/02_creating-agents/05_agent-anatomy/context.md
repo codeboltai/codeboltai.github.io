@@ -70,7 +70,7 @@ Deliberate omissions, and the reasons:
 
 - **No `ctx.guardrail.check`.** Guardrails are enforced transparently by `toolService` and the write path. You don't ask for their approval; you try to do a thing and get a structured denial if it's not allowed.
 - **No `ctx.agents.other(name)`.** You can't reach into other agents' state. You can spawn children via `ctx.children` or call them as tools via `codebolt_agent.start`, but you can't mutate each other directly. This is a safety property.
-- **No raw database access.** You go through the services, always. If you think you need raw DB, you're writing the wrong thing — probably a [hook](../../../05_plugins/01_hooks-overview.md) or a [custom processor](../07_processors/04_writing-a-custom-processor.md).
+- **No raw database access.** You go through the services, always. If you think you need raw DB, you're writing the wrong thing — probably a [hook](../../../05_plugins/01_overview.md) or a [custom processor](../07_processors/04_writing-a-custom-processor.md).
 - **No raw event bus subscription.** The framework shows you only the events relevant to your run. Cross-run subscriptions are for hooks.
 
 ## Working state vs memory

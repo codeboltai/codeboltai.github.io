@@ -154,7 +154,7 @@ Almost always a prompt or context difference. The production run has different e
 
 ## Testing hooks and processors separately
 
-If you wrote a custom [hook](../../05_plugins/01_hooks-overview.md) or [processor](./07_processors/04_writing-a-custom-processor.md), test it in isolation before wiring it into an agent:
+If you wrote a custom [hook](../../05_plugins/01_overview.md) or [processor](./07_processors/04_writing-a-custom-processor.md), test it in isolation before wiring it into an agent:
 
 ```ts
 import { MyRedactor } from "./my-redactor";

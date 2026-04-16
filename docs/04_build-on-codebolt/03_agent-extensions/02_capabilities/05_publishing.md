@@ -29,4 +29,4 @@ There is no dedicated `test` command in the CLI files here, so the normal workfl
 
 ## See also
 
-- [Plugins → Packaging and publishing plugins](../../05_plugins/05_capability-download-flow.md)
+- [Plugins → Packaging and publishing plugins](../../05_plugins/05_packaging-and-publishing.md)

@@ -130,7 +130,7 @@ Some things look tempting but hurt more than they help:
 - **Every file you've edited today**. The assembler is already tracking recent edits.
 - **Long copy-pastes of output** when you could point at the command with `@>last`.
 - **Your entire project readme** when you could point at specific sections.
-- **Sensitive data the LLM shouldn't see**. Use a [redacting hook](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md) at the workspace level instead of relying on memory.
+- **Sensitive data the LLM shouldn't see**. Use a [redacting hook](../../04_build-on-codebolt/05_plugins/01_overview.md) at the workspace level instead of relying on memory.
 
 ## See also
 

@@ -120,7 +120,7 @@ Tools can be dangerous. Guardrails are the built-in mechanism for limiting them:
 - **Per-agent allowlists** — "this reviewer agent cannot use write tools".
 - **Per-tool hooks** — "log every call to `codebolt_git.push` to the SIEM".
 
-See [Guardrails (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md) and [Hooks](../../04_build-on-codebolt/05_plugins/01_hooks-overview.md).
+See [Guardrails (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/09_guardrails-and-eval.md) and [Hooks](../../04_build-on-codebolt/05_plugins/01_overview.md).
 
 ## Private MCP servers for teams
 

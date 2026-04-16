@@ -36,5 +36,5 @@ async run(ctx, input) {
 
 - [Skills](../03_skills/01_overview.md)
 - [MCP Tools](../04_mcp-tools/01_overview.md)
-- [Plugins](../../05_plugins/01_hooks-overview.md)
+- [Plugins](../../05_plugins/01_overview.md)
 - [Agent Extensions Overview](../01_overview.md)

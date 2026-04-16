@@ -17,7 +17,7 @@ The **Codebolt server** is the execution engine. It owns files, memory, sub-agen
 
 - **Custom UIs** — build your own chat panel, CLI, or editor extension using the [`clientsdk`](./04_custom-uis/01_overview.md), a wrapper over the server's WebSocket protocol and HTTP routes.
 - **Custom Agents** — write agents with [`codeboltjs`](./02_creating-agents/01_overview.md), or bring your own framework (Vercel AI SDK, LangChain) via the [adapter layer](./02_creating-agents/08_framework-adapters.md). Agents drive the server over WebSocket.
-- **Plugins** — extend the application itself with the [`pluginSdk`](./05_plugins/01_hooks-overview.md): gateway integrations, execution plugins, UI extensions, hooks, and custom LLM providers. Plugins live alongside the server and talk to it over the plugin bus.
+- **Plugins** — extend the application itself with the [`pluginSdk`](./05_plugins/01_overview.md): gateway integrations, execution plugins, UI extensions, hooks, and custom LLM providers. Plugins live alongside the server and talk to it over the plugin bus.
 - **Remote Environment Providers** — federate across machines. A [remote environment provider](./06_remote-env-providers/01_llm-provider.md) is typically another Codebolt server instance (e.g. `e2b`, a remote sandbox, or a peer workstation) that the local server proxies work to.
 
 Inside the server, you can also extend the agent loop *without* rewriting it — [**capabilities**](./03_agent-extensions/02_capabilities/01_overview.md), [**skills**](./03_agent-extensions/03_skills/01_overview.md), [**action blocks**](./03_agent-extensions/05_action-blocks/01_overview.md), [**agent blocks**](./03_agent-extensions/06_agent-blocks.md), and more are all configurable from the same `.codebolt/` project surface. See [Agent Extensions](./03_agent-extensions/01_overview.md).
@@ -31,8 +31,8 @@ Codebolt exposes these extension points. Agent customization now splits into two
 | **Creating Agents** | Write or wrap agents that show up in the picker | [Creating Agents](./02_creating-agents/01_overview.md) |
 | **Agent Extensions** | Shared primitives agents consume: skills, capabilities, MCP tools, and blocks | [Agent Extensions](./03_agent-extensions/01_overview.md) |
 | **Custom UIs** | Build your own interface on top of the server | [Custom UIs](./04_custom-uis/01_overview.md) |
-| **Plugins** | Extend the application runtime — gateways, execution plugins, UI panels, hooks, providers | [Plugins](./05_plugins/01_hooks-overview.md) |
-| **Remote Environment Providers** | LLM, embedding, or remote execution backends | [Remote Environment Providers](./06_remote-env-providers/01_llm-provider.md) |
+| **Plugins** | Extend the application runtime — gateways, execution plugins, UI panels, hooks, providers | [Plugins](./05_plugins/01_overview.md) |
+| **Remote Environment Providers** | LLM, embedding, or remote execution backends | [Remote Environment Providers](./05_plugins/06_llm-provider.md) |
 | **Eval & Optimization** | Measure, refine, and tune agents | [Eval & Optimization](./07_eval-and-optimization/01_overview.md) |
 | **Orchestration** | Multi-agent design — swarms, flows, patterns. | [Orchestration Design](./08_orchestration-design/01_overview.md) |
 | **Internals** | How the server works — for devs who need to extend intelligently. | [Internals](./09_internals/01_architecture-overview.md) |
@@ -49,7 +49,7 @@ A decision guide:
 - **I want to run Claude Code (or similar) as a Codebolt agent.** → [Third-Party Agents](./02_creating-agents/04_third-party-agents.md).
 - **I want to build agents using Vercel AI SDK or LangChain.** → [Framework Adapters](./02_creating-agents/08_framework-adapters.md).
 - **I want a new LLM provider or a local inference backend.** → [LLM Provider](./06_remote-env-providers/01_llm-provider.md).
-- **I want to intercept or modify application behaviour project-wide** (gateways, hooks, execution routing, provider registration, embedded panels). → [Plugins](./05_plugins/01_hooks-overview.md).
+- **I want to intercept or modify application behaviour project-wide** (gateways, hooks, execution routing, provider registration, embedded panels). → [Plugins](./05_plugins/01_overview.md).
 - **I want to build my own UI on top of Codebolt.** → [Custom UIs](./04_custom-uis/01_overview.md).
 - **I want to measure and tune my agent systematically.** → [Eval & Optimization](./07_eval-and-optimization/01_overview.md).
 - **I want several agents to cooperate on a task.** → [Orchestration Design](./08_orchestration-design/01_overview.md). Read [When to use multi-agent](./08_orchestration-design/02_when-multi-agent.md) first.
@@ -63,7 +63,7 @@ Codebolt is designed so you almost never need to modify it to get what you want.
 1. **Configuration.** `.codebolt/` files in your project: rules, context rules, hook definitions, flow graphs. Often enough for real use cases. No code at all.
 2. **Install an MCP server or capability.** Every agent in the project gains new tools / behaviour. See [Agent Extensions](./03_agent-extensions/01_overview.md).
 3. **Remix an existing agent.** Change its prompt, tools, or model without forking its code. See [Level 0 — Remix](./02_creating-agents/03_creation-levels/level-0-remix.md).
-4. **Write a plugin.** Extend one part of the application without forking the server. See [Plugins](./05_plugins/01_hooks-overview.md).
+4. **Write a plugin.** Extend one part of the application without forking the server. See [Plugins](./05_plugins/01_overview.md).
 5. **Build a skill or action block.** Reusable competency any agent can call. See [Skills](./03_agent-extensions/03_skills/01_overview.md).
 6. **Build an MCP server.** Give agents new capabilities. Usually a small standalone program.
 7. **Build a custom agent from the framework.** Full control over the loop but with batteries included. See [Level 1 — Framework](./02_creating-agents/03_creation-levels/level-1-framework.md).

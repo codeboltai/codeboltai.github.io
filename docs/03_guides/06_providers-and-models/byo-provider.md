@@ -57,7 +57,7 @@ Or via the UI: Settings → Providers → My Provider → Models → Add.
 
 If your provider isn't OpenAI-compatible — different wire format, different auth, different tool-call shape — write a custom LLM provider plugin.
 
-Full walkthrough: [Custom LLM Provider](../../04_build-on-codebolt/06_remote-env-providers/01_llm-provider.md).
+Full walkthrough: [Custom LLM Provider](../../04_build-on-codebolt/05_plugins/06_llm-provider.md).
 
 Short version:
 
@@ -129,5 +129,5 @@ Useful when your custom provider is an experimental one you want to test, with a
 ## See also
 
 - [LLM Providers (reference)](../../02_using-codebolt/08_integrations/01_llm-providers.md)
-- [Custom LLM Provider (for builders)](../../04_build-on-codebolt/06_remote-env-providers/01_llm-provider.md)
+- [Custom LLM Provider (for builders)](../../04_build-on-codebolt/05_plugins/06_llm-provider.md)
 - [LLM & Inference (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/03_llm-and-inference.md)

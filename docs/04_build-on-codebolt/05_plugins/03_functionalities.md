@@ -121,5 +121,5 @@ A useful rule is:
 
 ## See also
 
-- [Plugin SDK and lifecycle](./02_hook-types.md)
-- [Gateway, execution, and LLM provider patterns](./04_capabilities-overview.md)
+- [Plugin SDK and lifecycle](./02_sdk-and-lifecycle.md)
+- [Gateway, execution, and LLM provider patterns](./04_major-patterns.md)
