@@ -14,7 +14,4 @@ cbapicategory:
 
 ---
 # Codebolt Utils
-
-> **Note:** This section has been superseded by the [v2 Utility Functions](../12_utility-functions-v2/index.md) documentation. The utility classes described here are planned/aspirational and not yet available in the codebase.
-
 <CBAPICategory />
