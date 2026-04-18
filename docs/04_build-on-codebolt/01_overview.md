@@ -34,14 +34,14 @@ Codebolt exposes these extension points. Agent customization now splits into two
 | **Creating Agents** | Write or wrap agents that show up in the picker | [Creating Agents](./02_creating-agents/01_overview.md) |
 | **Agent Extensions** | Shared primitives agents consume: skills, capabilities, MCP tools, and blocks | [Agent Extensions](./03_agent-extensions/01_overview.md) |
 | **Custom Interfaces** | Build your own interface on top of the server | [Custom Interfaces](./04_custom-uis/01_overview.md) |
-| **Plugins** | Extend the application runtime — gateways, execution plugins, UI panels, hooks, providers | [Plugins](./05_plugins/01_overview.md) |
-| **Remote Environment Providers** | LLM, embedding, or remote execution backends | [Remote Environment Providers](./05_plugins/06_llm-provider.md) |
+| **Plugins** | Plugin SDK reference — hooks, UI extension API, provider interfaces | [Plugins](./05_plugins/01_overview.md) |
+| **Extending Codebolt** | Add to the app itself: custom LLM backends, themes, commands, UI panels | [Extending Codebolt](./06_extending-codebolt/01_overview.md) |
 | **Evaluation & Optimization** | Measure, refine, and tune agents | [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md) |
 | **Multi-Agent Orchestration** | Multi-agent coordination design — swarms, flows, roles, and review patterns. | [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md) |
 | **Multi-Environment Orchestration** | Provider-driven execution across remote or alternate environments. | [Multi-Environment Orchestration](./08a_multi-environment-orchestration/01_overview.md) |
 | **Internals** | How the server works — for devs who need to extend intelligently. | [Internals](./09_internals/01_architecture-overview.md) |
-
-Plus [Self-Hosting](./10_self-hosting/01_overview.md) for teams running the server themselves and [Remote Execution](./11_remote-execution.md) for distributed agent runs.
+| **Building Integrations** | Connect Codebolt to chat apps, CI/CD, project tools, IDEs | [Building Integrations](./10_building-integrations/01_overview.md) |
+| **Agent Infrastructure** | Run the server yourself — deployment, scaling, remote execution | [Agent Infrastructure](./11_agent-infrastructure/01_overview.md) |
 
 ## Which one do I need?
 
@@ -52,13 +52,15 @@ A decision guide:
 - **I want to give agents access to my internal APIs / databases / tools.** → [Agent Extensions → MCP Tools](./03_agent-extensions/04_mcp-tools/01_overview.md). MCP server is usually the right answer.
 - **I want to run Claude Code (or similar) as a Codebolt agent.** → [Third-Party Agents](./02_creating-agents/04_third-party-agents.md).
 - **I want to build agents using Vercel AI SDK or LangChain.** → [Framework Adapters](./02_creating-agents/08_framework-adapters.md).
-- **I want a new LLM provider or a local inference backend.** → [LLM Provider](./06_remote-env-providers/01_llm-provider.md).
-- **I want to intercept or modify application behaviour project-wide** (gateways, hooks, execution routing, provider registration, embedded panels). → [Plugins](./05_plugins/01_overview.md).
+- **I want a new LLM provider or a local inference backend.** → [Extending Codebolt → Custom LLM Providers](./06_extending-codebolt/02_custom-llm-providers.md).
+- **I want to add a theme, custom command, or UI panel to Codebolt.** → [Extending Codebolt](./06_extending-codebolt/01_overview.md).
+- **I want to intercept or modify application behaviour project-wide** (hooks, execution routing, provider registration). → [Plugins](./05_plugins/01_overview.md).
 - **I want to build my own UI on top of Codebolt.** → [Custom Interfaces](./04_custom-uis/01_overview.md).
+- **I want to connect Codebolt to Telegram, Discord, Linear, or CI/CD.** → [Building Integrations](./10_building-integrations/01_overview.md).
 - **I want to measure and tune my agent systematically.** → [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md).
 - **I want several agents to cooperate on a task.** → [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md). Read [When to use multi-agent](./08_multi-agent-orchestration/02_when-multi-agent.md) first.
 - **I want runs to cross into remote or alternate environments.** → [Multi-Environment Orchestration](./08a_multi-environment-orchestration/01_overview.md).
-- **I need to run the server myself.** → [Self-Hosting](./10_self-hosting/01_overview.md).
+- **I need to run the server myself.** → [Agent Infrastructure](./11_agent-infrastructure/01_overview.md).
 - **I want to understand the whole system.** → [Internals → Architecture Overview](./09_internals/01_architecture-overview.md). Then pick subsystems as you need them.
 
 ## The level-zero mindset

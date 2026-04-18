@@ -914,64 +914,89 @@ div[class*="searchResults"] {
 }
 
 /* ═══════════════════════════════════════════
-   8. TABLES — sharp, minimal borders
+   8. TABLES — card style, no cell borders
    ═══════════════════════════════════════════ */
 
 table {
   display: table;
   width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  border-radius: 0;
-  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 2rem 0;
   font-size: 0.875rem;
-  border: 1px solid var(--cb-border);
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f7f7f8;
 }
 
-thead {
-  background-color: var(--cb-surface);
+[data-theme='dark'] table {
+  background-color: #131313;
 }
 
-[data-theme='dark'] thead {
-  background-color: rgba(255, 255, 255, 0.04);
+/* No vertical dividers */
+table, thead, tbody, tfoot, tr, th, td {
+  border-left: none !important;
+  border-right: none !important;
 }
 
-th,
-td {
-  padding: 10px 14px;
-  text-align: left;
-  border-bottom: 1px solid var(--cb-border);
-}
+/* Header */
+thead { background: transparent; }
 
 th {
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.64rem;
   font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-  color: var(--ifm-color-emphasis-800);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cb-muted);
+  border-top: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  white-space: nowrap;
 }
 
 [data-theme='dark'] th {
-  color: #fff;
+  color: #71717a;
+  border-bottom-color: rgba(255, 255, 255, 0.07) !important;
 }
 
-td:first-child,
-td:nth-child(2) {
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.82rem;
-  color: inherit;
+/* Body cells — no borders, spacing does the work */
+td {
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  border: none !important;
+  vertical-align: top;
+  line-height: 1.6;
 }
 
-[data-theme='dark'] td:first-child,
-[data-theme='dark'] td:nth-child(2) {
-  color: var(--ifm-color-primary);
+/* Very faint row separator — barely visible, just a guide */
+tbody tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
 }
 
-tr:last-child td {
-  border-bottom: none;
+[data-theme='dark'] tbody tr:not(:last-child) td {
+  border-bottom-color: rgba(255, 255, 255, 0.04) !important;
 }
 
-tr:hover {
-  background-color: var(--cb-surface);
+/* First column */
+td:first-child {
+  font-weight: 500;
+  color: var(--ifm-heading-color);
+}
+
+[data-theme='dark'] td:first-child {
+  color: #e4e4e7;
+}
+
+/* Hover — row highlight like the reference designs */
+tbody tr:hover td {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme='dark'] tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* ═══════════════════════════════════════════
