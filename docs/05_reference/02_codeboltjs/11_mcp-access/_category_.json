@@ -1,0 +1,11 @@
+{
+  "label": "MCP Access",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/mcp-access/index"
+  }
+}

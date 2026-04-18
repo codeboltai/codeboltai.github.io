@@ -17,6 +17,7 @@
     "write-heading-ids": "npx docusaurus write-heading-ids",
     "typecheck": "tsc",
     "generate-types": "node scripts/generate-type-docs.js --clean",
+    "generate:pseudo-cli-docs": "node scripts/generate-pseudo-cli-docs.js",
     "postgenerate-types": "npm run postprocess-typedoc",
     "generate-types:watch": "node scripts/generate-type-docs.js --watch",
     "postprocess-typedoc": "python scripts/postprocess-typedoc-links.py && python scripts/postprocess-typedoc-breadcrumbs.py"

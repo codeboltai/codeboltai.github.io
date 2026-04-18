@@ -1,0 +1,11 @@
+{
+  "label": "User Message Manager",
+  "position": 28.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/api-access/user-message-manager/index"
+  }
+}

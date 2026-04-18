@@ -1,0 +1,11 @@
+{
+  "label": "Context Rule Engine",
+  "position": 9.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/api-access/contextRuleEngine/index"
+  }
+}
