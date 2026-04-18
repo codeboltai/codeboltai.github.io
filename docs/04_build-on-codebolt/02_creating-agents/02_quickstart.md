@@ -5,7 +5,7 @@ title: Custom Agent Quickstart
 
 # Custom Agent Quickstart
 
-Build and run a minimal custom agent in ~15 minutes. Covers level 0 (remix) and the start of level 1 (framework). For the full surface see [Overview](./01_overview.md) and the [creation levels](./03_creation-levels/level-0-remix.md).
+Build and run a minimal custom agent in ~15 minutes. Covers level 0 (remix), level 1 (framework), and remote agents. For the full surface see [Overview](./01_overview.md) and the [creation levels](./03_creation-levels/level-0-remix.md).
 
 **You'll need:** Codebolt installed, a provider configured, a project open. If any of that isn't true, do [Getting Started → Quickstart](../../../01_getting-started/02_quickstart.md) first.
 
@@ -159,6 +159,44 @@ nodes:
     agent: my-planner
     input: { task: "{{inputs.task}}" }
 ```
+
+## Part 3 — Remote agent
+
+A remote agent lives outside your project — it's a standalone process that connects to Codebolt. Use this when your agent is a separate codebase, runs on a different machine, or is built with a non-Codebolt framework.
+
+There are two execution modes:
+
+### Option A — CodeBolt-executed
+
+Codebolt launches and manages the agent process for you. You provide the absolute path to the agent on disk.
+
+**From the CLI:**
+
+```bash
+codebolt agent create-remote --name my-remote-agent --execution-mode codeboltExecuted --remote-path /absolute/path/to/agent
+```
+
+**From the desktop app:** Open the agent creation panel → select "Create Remote Agent" → enter a name and description → choose "Executed by CodeBolt" → provide the full absolute path to the agent → click Create.
+
+### Option B — Self-executed
+
+You run the agent yourself (from your own terminal, CI, or a remote server). The agent connects to Codebolt using a thread token.
+
+**From the CLI:**
+
+```bash
+codebolt agent create-remote --name my-remote-agent --execution-mode selfExecuted
+```
+
+**From the desktop app:** Open the agent creation panel → select "Create Remote Agent" → enter a name and description → choose "Self-executed" → click Create.
+
+After creation, you'll need to pass the thread token to your agent's environment so it can connect back to Codebolt.
+
+### When to use remote agents
+
+- Your agent is written in a language Codebolt doesn't scaffold (Python, Go, Rust).
+- Your agent runs on a different machine or in the cloud.
+- You want to wrap an existing tool (Claude Code, Codex, etc.) as a Codebolt agent — see [Third-Party Wrapping](./04_third-party-agents.md).
 
 ## Where to go next
 
