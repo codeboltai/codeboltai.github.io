@@ -10,7 +10,12 @@
       "Bash(node generate-docs.js)",
       "Bash(node generate-docs.js --clean)",
       "Bash(node -e \"const d = require\\('./documentationsoul/data/typedoc-data.json'\\); console.log\\('Modules:', d.modules.map\\(m => m.name + '\\(' + m.functions.length + '\\)'\\)\\)\")",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(sed -n '11,16p' \"D:/Codeboltapps/codeboltdocs/docs/05_reference/03_plugin-sdk/02_api-reference/llmProvider/onLoginRequest.md\")",
+      "Bash(sed -n '11,16p' \"D:/Codeboltapps/codeboltdocs/docs/05_reference/03_plugin-sdk/02_api-reference/llmProvider/sendChunk.md\")",
+      "Read(//d/Codeboltapps/codeboltjs/packages/agent/src/**)",
+      "Read(//d/Codeboltapps/codeboltjs/packages/agent/**)",
+      "Bash(powershell -Command \"Remove-Item -Path 'D:\\\\Codeboltapps\\\\codeboltdocs\\\\docs\\\\05_reference\\\\02_codeboltjs\\\\09_type-reference\\\\agent' -Recurse -Force\")"
     ]
   },
   "enabledPlugins": {

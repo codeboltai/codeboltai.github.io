@@ -9,9 +9,10 @@ Dry, complete, mostly auto-generated. This section is for when you need the exac
 
 The reference is organized by **SDK**, since each targets a different developer:
 
-| SDK | Who it's for | Start here |
+| SDK / Package | Who it's for | Start here |
 |---|---|---|
 | **codeboltjs** | Agent authors — writing or extending agents | [codeboltjs Reference](./02_codeboltjs/01_overview.md) |
+| **Agent Framework** | Framework internals — processor pipeline, tool system, multi-agent teams | [Agent Framework Reference](./05_agent-framework/01_overview.md) |
 | **Plugin SDK** | Plugin authors — hooks, UI panels, providers, commands | [Plugin SDK Reference](./03_plugin-sdk/01_overview.md) |
 | **Client SDK** | UI / integration authors — bots, IDE extensions, CI runners | [Client SDK Reference](./04_client-sdk/01_overview.md) |
 
@@ -20,6 +21,9 @@ The reference is organized by **SDK**, since each targets a different developer:
 **"I'm building an agent"**
 → [codeboltjs → API Access](./02_codeboltjs/10_api-access/1-index.md) for every `ctx.*` method.
 → [codeboltjs → Type Reference](./02_codeboltjs/09_type-reference/index.md) for TypeScript types.
+
+**"I need the agent loop internals — processors, tools, team coordination"**
+→ [Agent Framework Reference](./05_agent-framework/01_overview.md).
 
 **"I'm building a plugin"**
 → [Plugin SDK Reference](./03_plugin-sdk/01_overview.md).

@@ -9,7 +9,7 @@
  * Usage:
  *   node generate-module-docs.js
  *   node generate-module-docs.js --clean
- *   node generate-module-docs.js --module agents
+ *   node generate-module-docs.js --module=agents
  */
 
 const fs   = require('fs');
@@ -19,81 +19,75 @@ const SCRIPT_DIR = __dirname;
 const DOCS_ROOT  = path.resolve(SCRIPT_DIR, '../..');
 const DATA_FILE  = path.resolve(SCRIPT_DIR, 'data/typedoc-data.json');
 const OUT_DIR    = path.resolve(DOCS_ROOT, 'docs/05_reference/04_client-sdk/02_api-reference');
+const IMPORT     = `import { CodeBoltClient } from '@codebolt/clientsdk';\n\nconst client = new CodeBoltClient();`;
+
+const clean_flag    = process.argv.includes('--clean');
+const module_filter = (process.argv.find(a => a.startsWith('--module=')) || '').split('=')[1] || null;
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
-const clean_flag    = process.argv.includes('--clean');
-const module_filter = (() => {
-  const a = process.argv.find(a => a.startsWith('--module='));
-  return a ? a.split('=')[1] : null;
-})();
+function escapeMdx(text) {
+  if (!text) return '';
+  return text.split(/(`[^`]*`)/g).map((part, i) => {
+    if (i % 2 === 1) return part;
+    return part.replace(/(?<!\\)\{/g, '\\{').replace(/(?<!\\)\}/g, '\\}');
+  }).join('');
+}
 
 function escapeYaml(s) {
   if (!s) return '""';
-  if (s.includes(':') || s.includes('"') || s.includes("'") || s.includes('\n')) {
-    return `"${s.replace(/"/g, '\\"')}"`;
-  }
-  return s;
+  s = String(s).replace(/\n/g, ' ').trim();
+  return (s.includes(':') || s.includes('"') || s.includes("'"))
+    ? `"${s.replace(/"/g, '\\"')}"`
+    : s || '""';
 }
 
 function paramTable(params) {
-  if (!params?.length) return '_None_';
-  const rows = params.map(p => {
-    const opt = p.isOptional ? ' _(optional)_' : '';
-    const def = p.defaultValue ? ` Default: \`${p.defaultValue}\`` : '';
-    const desc = (p.description || '').replace(/\|/g, '\\|');
-    return `| \`${p.name}\` | \`${p.typeName}\`${opt} | ${desc}${def} |`;
+  if (!params?.length) return '_No parameters._';
+  const header = '| Parameter | Type | Required | Description |';
+  const sep    = '|---|---|---|---|';
+  const rows   = params.map(p => {
+    const req  = p.isOptional ? 'No' : 'Yes';
+    const def  = p.defaultValue ? ` _(default: \`${p.defaultValue}\`)_` : '';
+    const desc = escapeMdx((p.description || '').replace(/\|/g, '\\|')) + def;
+    return `| \`${p.name}\` | \`${p.typeName}\` | ${req} | ${desc} |`;
   });
-  return ['| Parameter | Type | Description |', '|---|---|---|', ...rows].join('\n');
+  return [header, sep, ...rows].join('\n');
 }
 
-function buildExampleCall(moduleName, funcName, params) {
-  const args = (params || []).map(p => {
-    if (p.isOptional) return;
-    switch (p.typeName) {
-      case 'string': return `'${p.name}'`;
-      case 'number': return '0';
-      case 'boolean': return 'true';
-      default: return `/* ${p.typeName} */`;
-    }
-  }).filter(Boolean).join(', ');
-  return `await client.${moduleName}.${funcName}(${args});`;
+function exampleCall(module, name, params) {
+  const args = (params || [])
+    .filter(p => !p.isOptional)
+    .map(p => {
+      if (p.typeName === 'string')  return `'${p.name}'`;
+      if (p.typeName === 'number')  return '0';
+      if (p.typeName === 'boolean') return 'true';
+      return `/* ${p.typeName} */`;
+    }).join(', ');
+  return `const result = await client.${module}.${name}(${args});`;
 }
 
-// ─── method page ─────────────────────────────────────────────────────────────
+function sig(module, name, params, ret) {
+  const p = (params || []).map(p => `${p.name}${p.isOptional ? '?' : ''}: ${p.typeName}`).join(', ');
+  return `client.${module}.${name}(${p}): ${ret}`;
+}
+
+// ─── individual method page ───────────────────────────────────────────────────
 
 function methodPage(func, moduleName) {
   const { name, description, parameters, returns } = func;
-  const paramsStr = (parameters || [])
-    .map(p => `${p.name}${p.isOptional ? '?' : ''}: ${p.typeName}`)
-    .join(', ');
-  const sig = `client.${moduleName}.${name}(${paramsStr}): ${returns.signatureTypeName}`;
 
   return `---
-name: ${name}
-cbbaseinfo:
-  description: ${escapeYaml(description || `Call ${name} on the Client SDK ${moduleName} module.`)}
-cbparameters:
-  parameters:
-${(parameters || []).map(p => `    - name: ${p.name}
-      typeName: ${p.typeName}
-      description: ${escapeYaml(p.description || '')}
-      isOptional: ${p.isOptional}`).join('\n') || '    []'}
-  returns:
-    signatureTypeName: "${returns.signatureTypeName}"
-    description: ${escapeYaml(returns.description || '')}
-data:
-  name: ${name}
-  category: ${moduleName}
-  link: ${name}.md
+title: ${name}
 ---
-# ${name}
+
+# \`${name}\`
 
 \`\`\`typescript
-${sig}
+${sig(moduleName, name, parameters, returns.signatureTypeName)}
 \`\`\`
 
-${description || ''}
+${escapeMdx(description || '')}
 
 ## Parameters
 
@@ -101,16 +95,15 @@ ${paramTable(parameters)}
 
 ## Returns
 
-**\`${returns.signatureTypeName}\`**${returns.description ? ' — ' + returns.description : ''}
+\`${returns.signatureTypeName}\`${returns.description ? ' — ' + returns.description : ''}
 
 ## Example
 
 \`\`\`typescript
-import { CodeBoltClient } from '@codebolt/clientsdk';
+${IMPORT}
 
-const client = new CodeBoltClient();
-
-${buildExampleCall(moduleName, name, parameters)}
+${exampleCall(moduleName, name, parameters)}
+console.log(result);
 \`\`\`
 `;
 }
@@ -121,39 +114,74 @@ function moduleIndex(mod) {
   const { name, description, functions, apiClass } = mod;
   const title = name.charAt(0).toUpperCase() + name.slice(1) + ' API';
 
-  const categoryItems = (functions || []).map(f => `  - name: ${f.name}
-    link: /docs/reference/client-sdk/api-reference/${name}/${f.name}
-    description: ${escapeYaml(f.description || f.name)}`).join('\n');
+  // Quick reference table
+  const tableRows = (functions || []).map(f =>
+    `| [\`${f.name}\`](./${f.name}) | ${(f.description || '').split('\n')[0].replace(/\|/g, '\\|')} |`
+  );
+  const quickRef = [
+    '| Method | Description |',
+    '|---|---|',
+    ...tableRows,
+  ].join('\n');
+
+  // Full inline method sections
+  const methodSections = (functions || []).map(f => {
+    const desc = escapeMdx(f.description || '');
+    return `---
+
+### \`${f.name}\`
+
+\`\`\`typescript
+${sig(name, f.name, f.parameters, f.returns.signatureTypeName)}
+\`\`\`
+
+${desc}
+
+${paramTable(f.parameters)}
+
+**Returns:** \`${f.returns.signatureTypeName}\`${f.returns.description ? ' — ' + f.returns.description : ''}
+
+[Full reference →](./${f.name})
+`;
+  }).join('\n');
 
   return `---
-cbapicategory:
-${categoryItems}
+title: ${title}
 ---
+
 # ${title}
 
-${description || `The \`${name}\` module of the Client SDK${apiClass ? ` (\`${apiClass}\`)` : ''}.`}
+${description || `The \`${name}\` module of the \`@codebolt/clientsdk\`${apiClass ? ` (\`${apiClass}\`)` : ''}.`}
 
-<CBAPICategory />
+\`\`\`typescript
+${IMPORT}
+\`\`\`
+
+## Quick Reference
+
+${quickRef}
 
 ## Methods
 
-${(functions || []).map(f => `- [\`${f.name}()\`](./${f.name}) — ${f.description || ''}`).join('\n')}
+${methodSections}
 `;
 }
 
 // ─── top-level api-reference index ───────────────────────────────────────────
 
 function apiReferenceIndex(modules) {
-  const rows = modules.map(m =>
-    `| [${m.name}](./${m.name}/) | ${m.functions.length} | ${m.description || ''} |`
-  );
+  const rows = modules.map(m => {
+    const label = m.name.charAt(0).toUpperCase() + m.name.slice(1);
+    return `| [${label}](./${m.name}/) | ${m.apiClass || ''} | ${m.functions.length} | ${(m.description || '').split('\n')[0]} |`;
+  });
   return `---
 title: API Reference
 sidebar_position: 1
 ---
+
 # Client SDK — API Reference
 
-All HTTP API modules exposed by \`@codebolt/clientsdk\` via \`CodeBoltClient\`.
+All modules exposed by \`@codebolt/clientsdk\` via \`CodeBoltClient\`.
 
 \`\`\`typescript
 import { CodeBoltClient } from '@codebolt/clientsdk';
@@ -163,8 +191,8 @@ const client = new CodeBoltClient({ baseUrl: 'http://localhost:3000' });
 
 ## Modules
 
-| Module | Methods | Description |
-|---|---|---|
+| Module | Class | Methods | Description |
+|---|---|---|---|
 ${rows.join('\n')}
 `;
 }
@@ -173,8 +201,7 @@ ${rows.join('\n')}
 
 function main() {
   if (!fs.existsSync(DATA_FILE)) {
-    console.error(`JSON data not found: ${DATA_FILE}`);
-    console.error('Run: node json-export.js first');
+    console.error(`Data not found: ${DATA_FILE}\nRun: node json-export.js first`);
     process.exit(1);
   }
 
@@ -186,40 +213,34 @@ function main() {
     if (!modules.length) { console.error(`Module '${module_filter}' not found`); process.exit(1); }
   }
 
-  if (clean_flag) {
-    if (fs.existsSync(OUT_DIR)) {
-      console.log(`Cleaning: ${OUT_DIR}`);
-      fs.rmSync(OUT_DIR, { recursive: true, force: true });
-    }
+  if (clean_flag && fs.existsSync(OUT_DIR)) {
+    console.log(`Cleaning: ${OUT_DIR}`);
+    fs.rmSync(OUT_DIR, { recursive: true, force: true });
   }
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  // Top-level index + category
   fs.writeFileSync(path.join(OUT_DIR, 'index.md'), apiReferenceIndex(modules));
-  fs.writeFileSync(path.join(OUT_DIR, '_category_.json'), JSON.stringify({
-    label: 'API Reference', position: 2, collapsible: true, collapsed: false,
-  }, null, 2));
+  fs.writeFileSync(path.join(OUT_DIR, '_category_.json'), JSON.stringify(
+    { label: 'API Reference', position: 2, collapsible: true, collapsed: false }, null, 2
+  ));
 
   let totalMethods = 0;
 
   for (let i = 0; i < modules.length; i++) {
-    const mod = modules[i];
-    const modDir = path.join(OUT_DIR, mod.name);
-    fs.mkdirSync(modDir, { recursive: true });
+    const mod  = modules[i];
+    const mDir = path.join(OUT_DIR, mod.name);
+    fs.mkdirSync(mDir, { recursive: true });
 
-    // _category_.json
     const label = mod.name.charAt(0).toUpperCase() + mod.name.slice(1);
-    fs.writeFileSync(path.join(modDir, '_category_.json'), JSON.stringify(
+    fs.writeFileSync(path.join(mDir, '_category_.json'), JSON.stringify(
       { label, position: i + 1, collapsible: true, collapsed: true }, null, 2
     ));
 
-    // module index
-    fs.writeFileSync(path.join(modDir, 'index.md'), moduleIndex(mod));
+    fs.writeFileSync(path.join(mDir, 'index.md'), moduleIndex(mod));
 
-    // per-method pages
     for (const func of mod.functions || []) {
-      fs.writeFileSync(path.join(modDir, `${func.name}.md`), methodPage(func, mod.name));
+      fs.writeFileSync(path.join(mDir, `${func.name}.md`), methodPage(func, mod.name));
       totalMethods++;
     }
 

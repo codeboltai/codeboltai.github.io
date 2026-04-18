@@ -13,6 +13,7 @@ The `codeboltjs` SDK is what agent authors use to write agents. It provides the 
 |---|---|
 | [Direct API Access](./10_api-access/1-index.md) | Every `ctx.*` method — `fs`, `git`, `browser`, `memory`, `llm`, and 60+ more |
 | [MCP Access](./11_mcp-access/1-index.md) | The same APIs exposed as MCP tools for non-codeboltjs agents |
+| [Pseudo CLI](./pseudo_cli/index.md) | Command-shaped SDK access for intercepted `execute_command` calls routed through the pseudo CLI registry |
 | [Type Reference](./09_type-reference/index.md) | Full TypeScript types — agent framework, codeboltjs classes, providers |
 | [Utility Functions](./12_utility-functions-v2/index.md) | `promptBuilder`, `llmOutputHandler`, `followupQuestionBuilder` |
 
