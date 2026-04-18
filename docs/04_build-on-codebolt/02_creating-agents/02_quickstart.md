@@ -68,7 +68,7 @@ If none of those apply, stay at level 0.
 
 ## Part 2 — Framework agent (level 1)
 
-A minimal level-1 agent is ~30 lines of TypeScript. Here's the shape.
+When you need more than a prompt override — custom tool logic, structured output, or a non-standard loop — create a framework agent using the agent template.
 
 ### Step 1 — scaffold
 
@@ -76,89 +76,26 @@ A minimal level-1 agent is ~30 lines of TypeScript. Here's the shape.
 codebolt agent create --framework --name my-planner
 ```
 
-This creates:
+The `--framework` flag tells the CLI to use the agent framework template from the Codebolt registry. It downloads the template and scaffolds a project with `codeboltagent.yaml` (manifest), `index.ts` (handler entry point), `package.json`, and `tsconfig.json`.
 
-```
-.codebolt/agents/my-planner/
-  agent.yaml          ← manifest
-  index.ts            ← handler entry point
-  package.json        ← dependencies
-  tsconfig.json
-```
-
-### Step 2 — the manifest
-
-`agent.yaml`:
-
-```yaml
-name: my-planner
-version: 0.1.0
-description: Produces a structured plan for a given task.
-framework: true
-entrypoint: index.ts
-default_model: claude-opus-4-6
-tools:
-  allow:
-    - codebolt_fs.read_file
-    - codebolt_fs.search
-    - codebolt_code.*
-    - codebolt_codebase.*
-inputs:
-  task: { type: string, required: true }
-outputs:
-  plan: { type: object }
-```
-
-Note that this agent has **read tools only** and declares a structured output — it's designed to be the "plan" stage of a [plan-execute-review](../08_multi-agent-orchestration/03_patterns/plan-execute-review.md) pipeline, not a standalone chat agent.
-
-### Step 3 — the handler
-
-`index.ts`:
-
-```ts
-import { createCodeboltAgent } from "@codebolt/agent";
-
-export default createCodeboltAgent({
-  name: "my-planner",
-  async run(ctx, input) {
-    const { task } = input;
-
-    const codemap = await ctx.tools.call("codebolt_codebase.get_codemap", {});
-    const response = await ctx.llm.chat({
-      messages: [
-        { role: "system", content: "You produce structured JSON plans." },
-        { role: "user", content: `Task: ${task}\n\nCodemap:\n${codemap.content}\n\nProduce a plan.` },
-      ],
-      response_format: "json",
-    });
-
-    return { plan: JSON.parse(response.content) };
-  },
-});
-```
-
-`createCodeboltAgent` is the [Unified Agent](./06_patterns/unified-agent.md) pattern — it handles the loop, the context, the heartbeats, everything. You provide the `run` handler.
-
-### Step 4 — install and test
+You can also pass `--description` and `--path` to customise:
 
 ```bash
-cd .codebolt/agents/my-planner
+codebolt agent create --framework --name my-planner --description "Produces a structured plan" --path ./my-planner
+```
+
+### Step 2 — customise the manifest and handler
+
+Open the scaffolded `codeboltagent.yaml` to configure your agent's name, description, allowed tools, and model. Then edit `index.ts` to implement your agent's logic — this is where you handle incoming tasks, call LLMs, execute tools, and return results.
+
+### Step 3 — install and test
+
+```bash
+cd my-planner
 npm install
-codebolt agent test my-planner --input '{"task": "add a /health endpoint"}'
 ```
 
-You should see the agent start, query the codemap, call the LLM, and return a JSON plan.
-
-### Step 5 — use it from a flow
-
-Now that the agent has a structured output, you can use it as a node in an [agent flow](../08_multi-agent-orchestration/04_agent-flows.md):
-
-```yaml
-nodes:
-  - id: plan
-    agent: my-planner
-    input: { task: "{{inputs.task}}" }
-```
+Once installed, select your agent from the desktop app's agent dropdown and send it a task to verify it works.
 
 ## Part 3 — Remote agent
 
