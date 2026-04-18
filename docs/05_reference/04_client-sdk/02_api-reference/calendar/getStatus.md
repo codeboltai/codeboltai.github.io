@@ -1,22 +1,8 @@
 ---
-name: getStatus
-cbbaseinfo:
-  description: "Retrieves the calendar service status.
-
-Returns health and configuration information about the calendar
-subsystem, including whether triggers are active."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<CalendarStatus>"
-    description: A promise that resolves to the CalendarStatus object
-data:
-  name: getStatus
-  category: calendar
-  link: getStatus.md
+title: getStatus
 ---
-# getStatus
+
+# `getStatus`
 
 ```typescript
 client.calendar.getStatus(): Promise<CalendarStatus>
@@ -29,11 +15,11 @@ subsystem, including whether triggers are active.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<CalendarStatus>`** — A promise that resolves to the CalendarStatus object
+`Promise<CalendarStatus>` — A promise that resolves to the CalendarStatus object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.calendar.getStatus();
+const result = await client.calendar.getStatus();
+console.log(result);
 ```

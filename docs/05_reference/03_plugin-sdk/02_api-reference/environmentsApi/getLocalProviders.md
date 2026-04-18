@@ -1,19 +1,8 @@
 ---
-name: getLocalProviders
-cbbaseinfo:
-  description: Call getLocalProviders on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ProviderData[]>"
-    description: ""
-data:
-  name: getLocalProviders
-  category: environmentsApi
-  link: getLocalProviders.md
+title: getLocalProviders
 ---
-# getLocalProviders
+
+# `getLocalProviders`
 
 ```typescript
 plugin.environmentsApi.getLocalProviders(): Promise<ProviderData[]>
@@ -23,16 +12,17 @@ plugin.environmentsApi.getLocalProviders(): Promise<ProviderData[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ProviderData[]>`**
+`Promise<ProviderData[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.getLocalProviders();
+const result = await plugin.environmentsApi.getLocalProviders();
+console.log(result);
 ```

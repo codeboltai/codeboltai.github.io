@@ -1,22 +1,8 @@
 ---
-name: bulkCreate
-cbbaseinfo:
-  description: Bulk create activities
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateTaskActivityRequest[]
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskActivity[]>"
-    description: ""
-data:
-  name: bulkCreate
-  category: taskActivity
-  link: bulkCreate.md
+title: bulkCreate
 ---
-# bulkCreate
+
+# `bulkCreate`
 
 ```typescript
 client.taskActivity.bulkCreate(data: CreateTaskActivityRequest[]): Promise<TaskActivity[]>
@@ -26,13 +12,13 @@ Bulk create activities
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateTaskActivityRequest[]` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateTaskActivityRequest[]` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskActivity[]>`**
+`Promise<TaskActivity[]>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.bulkCreate(/* CreateTaskActivityRequest[] */);
+const result = await client.taskActivity.bulkCreate(/* CreateTaskActivityRequest[] */);
+console.log(result);
 ```

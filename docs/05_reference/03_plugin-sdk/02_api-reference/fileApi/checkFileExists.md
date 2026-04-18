@@ -1,22 +1,8 @@
 ---
-name: checkFileExists
-cbbaseinfo:
-  description: Call checkFileExists on the Plugin SDK fileApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CheckFileExistsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CheckFileExistsResponse>"
-    description: ""
-data:
-  name: checkFileExists
-  category: fileApi
-  link: checkFileExists.md
+title: checkFileExists
 ---
-# checkFileExists
+
+# `checkFileExists`
 
 ```typescript
 plugin.fileApi.checkFileExists(data: CheckFileExistsRequest): Promise<CheckFileExistsResponse>
@@ -26,18 +12,19 @@ plugin.fileApi.checkFileExists(data: CheckFileExistsRequest): Promise<CheckFileE
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CheckFileExistsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CheckFileExistsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<CheckFileExistsResponse>`**
+`Promise<CheckFileExistsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileApi.checkFileExists(/* CheckFileExistsRequest */);
+const result = await plugin.fileApi.checkFileExists(/* CheckFileExistsRequest */);
+console.log(result);
 ```

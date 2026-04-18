@@ -1,22 +1,8 @@
 ---
-name: listBids
-cbbaseinfo:
-  description: Call listBids on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobBidListResponse>"
-    description: ""
-data:
-  name: listBids
-  category: job
-  link: listBids.md
+title: listBids
 ---
-# listBids
+
+# `listBids`
 
 ```typescript
 plugin.job.listBids(jobId: string): Promise<JobBidListResponse>
@@ -26,18 +12,19 @@ plugin.job.listBids(jobId: string): Promise<JobBidListResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobBidListResponse>`**
+`Promise<JobBidListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.listBids('jobId');
+const result = await plugin.job.listBids('jobId');
+console.log(result);
 ```

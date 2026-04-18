@@ -1,19 +1,8 @@
 ---
-name: lsp
-cbbaseinfo:
-  description: Call lsp on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: lsp
-  category: sockets
-  link: lsp.md
+title: lsp
 ---
-# lsp
+
+# `lsp`
 
 ```typescript
 client.sockets.lsp(): void
@@ -23,11 +12,11 @@ client.sockets.lsp(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.lsp();
+const result = await client.sockets.lsp();
+console.log(result);
 ```

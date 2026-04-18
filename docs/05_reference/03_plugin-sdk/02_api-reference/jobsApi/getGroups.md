@@ -1,19 +1,8 @@
 ---
-name: getGroups
-cbbaseinfo:
-  description: Call getGroups on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<JobGroup[]>"
-    description: ""
-data:
-  name: getGroups
-  category: jobsApi
-  link: getGroups.md
+title: getGroups
 ---
-# getGroups
+
+# `getGroups`
 
 ```typescript
 plugin.jobsApi.getGroups(): Promise<JobGroup[]>
@@ -23,16 +12,17 @@ plugin.jobsApi.getGroups(): Promise<JobGroup[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<JobGroup[]>`**
+`Promise<JobGroup[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getGroups();
+const result = await plugin.jobsApi.getGroups();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: deleteInstalledProvider
-cbbaseinfo:
-  description: Call deleteInstalledProvider on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: deleteInstalledProvider
-  category: environmentsApi
-  link: deleteInstalledProvider.md
+title: deleteInstalledProvider
 ---
-# deleteInstalledProvider
+
+# `deleteInstalledProvider`
 
 ```typescript
 plugin.environmentsApi.deleteInstalledProvider(id: string): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.environmentsApi.deleteInstalledProvider(id: string): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.deleteInstalledProvider('id');
+const result = await plugin.environmentsApi.deleteInstalledProvider('id');
+console.log(result);
 ```

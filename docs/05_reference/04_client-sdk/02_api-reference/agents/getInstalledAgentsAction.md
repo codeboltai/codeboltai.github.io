@@ -1,22 +1,8 @@
 ---
-name: getInstalledAgentsAction
-cbbaseinfo:
-  description: "Retrieves action configurations for all installed agents.
-
-Returns the action capability definitions for each installed agent,
-describing what actions they can perform."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<AgentConfig[]>"
-    description: A promise that resolves to an array of AgentConfig objects
-data:
-  name: getInstalledAgentsAction
-  category: agents
-  link: getInstalledAgentsAction.md
+title: getInstalledAgentsAction
 ---
-# getInstalledAgentsAction
+
+# `getInstalledAgentsAction`
 
 ```typescript
 client.agents.getInstalledAgentsAction(): Promise<AgentConfig[]>
@@ -29,11 +15,11 @@ describing what actions they can perform.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<AgentConfig[]>`** — A promise that resolves to an array of AgentConfig objects
+`Promise<AgentConfig[]>` — A promise that resolves to an array of AgentConfig objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getInstalledAgentsAction();
+const result = await client.agents.getInstalledAgentsAction();
+console.log(result);
 ```

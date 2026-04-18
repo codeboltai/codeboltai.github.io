@@ -1,35 +1,66 @@
 ---
-cbapicategory:
-  - name: getEditorConfig
-    link: /docs/reference/client-sdk/api-reference/editorApi/getEditorConfig
-    description: "Retrieves the current editor configuration.
-
-Returns settings that control editor behavior such as theme, font size,
-tab width, and other preferences. Useful for synchronizing editor state
-across components or persisting user preferences."
-  - name: getTree
-    link: /docs/reference/client-sdk/api-reference/editorApi/getTree
-    description: "Retrieves the hierarchical file tree for a workspace project.
-
-Returns a nested tree structure representing all files and directories
-within the specified project. Useful for rendering file explorers or
-programmatically traversing project contents."
+title: EditorApi API
 ---
+
 # EditorApi API
 
 Editor API
 
-<CBAPICategory />
+```typescript
+import { CodeBoltClient } from '@codebolt/clientsdk';
+
+const client = new CodeBoltClient();
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`getEditorConfig`](./getEditorConfig) | Retrieves the current editor configuration. |
+| [`getTree`](./getTree) | Retrieves the hierarchical file tree for a workspace project. |
 
 ## Methods
 
-- [`getEditorConfig()`](./getEditorConfig) — Retrieves the current editor configuration.
+---
+
+### `getEditorConfig`
+
+```typescript
+client.editorApi.getEditorConfig(): Promise<EditorConfig>
+```
+
+Retrieves the current editor configuration.
 
 Returns settings that control editor behavior such as theme, font size,
 tab width, and other preferences. Useful for synchronizing editor state
 across components or persisting user preferences.
-- [`getTree()`](./getTree) — Retrieves the hierarchical file tree for a workspace project.
+
+_No parameters._
+
+**Returns:** `Promise<EditorConfig>` — A promise that resolves to the current
+
+[Full reference →](./getEditorConfig)
+
+---
+
+### `getTree`
+
+```typescript
+client.editorApi.getTree(workspaceId: string, projectName: string): Promise<EditorTreeNode>
+```
+
+Retrieves the hierarchical file tree for a workspace project.
 
 Returns a nested tree structure representing all files and directories
 within the specified project. Useful for rendering file explorers or
 programmatically traversing project contents.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `workspaceId` | `string` | Yes | The unique identifier of the workspace containing the project |
+| `projectName` | `string` | Yes | The name of the project whose file tree to retrieve |
+
+**Returns:** `Promise<EditorTreeNode>` — A promise that resolves to the root  with nested children
+
+[Full reference →](./getTree)
+

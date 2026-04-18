@@ -1,22 +1,8 @@
 ---
-name: getAvailableAll
-cbbaseinfo:
-  description: "Retrieves all available MCP servers including both marketplace and community servers.
-
-Returns the full unfiltered catalog of MCP servers from all sources. This includes
-official, community-contributed, and locally developed servers."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<McpAvailableServer[]>"
-    description: A promise that resolves to an array of all available MCP servers
-data:
-  name: getAvailableAll
-  category: mcp
-  link: getAvailableAll.md
+title: getAvailableAll
 ---
-# getAvailableAll
+
+# `getAvailableAll`
 
 ```typescript
 client.mcp.getAvailableAll(): Promise<McpAvailableServer[]>
@@ -29,11 +15,11 @@ official, community-contributed, and locally developed servers.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<McpAvailableServer[]>`** — A promise that resolves to an array of all available MCP servers
+`Promise<McpAvailableServer[]>` — A promise that resolves to an array of all available MCP servers
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mcp.getAvailableAll();
+const result = await client.mcp.getAvailableAll();
+console.log(result);
 ```

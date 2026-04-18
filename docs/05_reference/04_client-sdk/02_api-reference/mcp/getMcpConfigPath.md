@@ -1,22 +1,8 @@
 ---
-name: getMcpConfigPath
-cbbaseinfo:
-  description: "Retrieves the filesystem path to the MCP configuration file.
-
-Returns the absolute path where the MCP configuration is stored on disk. Useful for
-manual editing or backup of MCP server configurations."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<McpConfigPath>"
-    description: A promise that resolves to the MCP configuration file path
-data:
-  name: getMcpConfigPath
-  category: mcp
-  link: getMcpConfigPath.md
+title: getMcpConfigPath
 ---
-# getMcpConfigPath
+
+# `getMcpConfigPath`
 
 ```typescript
 client.mcp.getMcpConfigPath(): Promise<McpConfigPath>
@@ -29,11 +15,11 @@ manual editing or backup of MCP server configurations.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<McpConfigPath>`** — A promise that resolves to the MCP configuration file path
+`Promise<McpConfigPath>` — A promise that resolves to the MCP configuration file path
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mcp.getMcpConfigPath();
+const result = await client.mcp.getMcpConfigPath();
+console.log(result);
 ```

@@ -1,26 +1,8 @@
 ---
-name: initialize
-cbbaseinfo:
-  description: "Initializes the hooks subsystem.
-
-Sets up the hooks infrastructure, loading any persisted hooks and
-preparing event listeners. Should be called once during application
-bootstrap before registering or triggering hooks."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: InitializeHooksRequest
-      description: Optional initialization configuration
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when initialization is complete
-data:
-  name: initialize
-  category: hooks
-  link: initialize.md
+title: initialize
 ---
-# initialize
+
+# `initialize`
 
 ```typescript
 client.hooks.initialize(data?: InitializeHooksRequest): Promise<unknown>
@@ -34,13 +16,13 @@ bootstrap before registering or triggering hooks.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `InitializeHooksRequest` _(optional)_ | Optional initialization configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `InitializeHooksRequest` | No | Optional initialization configuration |
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when initialization is complete
+`Promise<unknown>` — A promise that resolves when initialization is complete
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.hooks.initialize();
+const result = await client.hooks.initialize();
+console.log(result);
 ```

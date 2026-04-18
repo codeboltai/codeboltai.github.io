@@ -1,19 +1,8 @@
 ---
-name: terminal
-cbbaseinfo:
-  description: Call terminal on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: terminal
-  category: notify
-  link: terminal.md
+title: terminal
 ---
-# terminal
+
+# `terminal`
 
 ```typescript
 plugin.notify.terminal(): void
@@ -23,16 +12,17 @@ plugin.notify.terminal(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.terminal();
+const result = await plugin.notify.terminal();
+console.log(result);
 ```

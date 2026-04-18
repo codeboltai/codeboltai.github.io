@@ -1,22 +1,8 @@
 ---
-name: deletePheromoneType
-cbbaseinfo:
-  description: Call deletePheromoneType on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: name
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deletePheromoneType
-  category: jobsApi
-  link: deletePheromoneType.md
+title: deletePheromoneType
 ---
-# deletePheromoneType
+
+# `deletePheromoneType`
 
 ```typescript
 plugin.jobsApi.deletePheromoneType(name: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.jobsApi.deletePheromoneType(name: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `name` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `name` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.deletePheromoneType('name');
+const result = await plugin.jobsApi.deletePheromoneType('name');
+console.log(result);
 ```

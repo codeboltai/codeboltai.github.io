@@ -1,26 +1,8 @@
 ---
-name: writeFile
-cbbaseinfo:
-  description: Call writeFile on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: WriteEnvironmentFileRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: writeFile
-  category: environmentsApi
-  link: writeFile.md
+title: writeFile
 ---
-# writeFile
+
+# `writeFile`
 
 ```typescript
 plugin.environmentsApi.writeFile(id: string, data: WriteEnvironmentFileRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.writeFile(id: string, data: WriteEnvironmentFileRequest):
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `WriteEnvironmentFileRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `WriteEnvironmentFileRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.writeFile('id', /* WriteEnvironmentFileRequest */);
+const result = await plugin.environmentsApi.writeFile('id', /* WriteEnvironmentFileRequest */);
+console.log(result);
 ```

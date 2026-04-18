@@ -1,22 +1,8 @@
 ---
-name: updateCodeboltYaml
-cbbaseinfo:
-  description: Call updateCodeboltYaml on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateCodeboltYamlRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: updateCodeboltYaml
-  category: projectsApi
-  link: updateCodeboltYaml.md
+title: updateCodeboltYaml
 ---
-# updateCodeboltYaml
+
+# `updateCodeboltYaml`
 
 ```typescript
 plugin.projectsApi.updateCodeboltYaml(data: UpdateCodeboltYamlRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.projectsApi.updateCodeboltYaml(data: UpdateCodeboltYamlRequest): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateCodeboltYamlRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateCodeboltYamlRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.updateCodeboltYaml(/* UpdateCodeboltYamlRequest */);
+const result = await plugin.projectsApi.updateCodeboltYaml(/* UpdateCodeboltYamlRequest */);
+console.log(result);
 ```

@@ -1,26 +1,8 @@
 ---
-name: updateJob
-cbbaseinfo:
-  description: Call updateJob on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateJobData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobUpdateResponse>"
-    description: ""
-data:
-  name: updateJob
-  category: job
-  link: updateJob.md
+title: updateJob
 ---
-# updateJob
+
+# `updateJob`
 
 ```typescript
 plugin.job.updateJob(jobId: string, data: UpdateJobData): Promise<JobUpdateResponse>
@@ -30,19 +12,20 @@ plugin.job.updateJob(jobId: string, data: UpdateJobData): Promise<JobUpdateRespo
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `data` | `UpdateJobData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `data` | `UpdateJobData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobUpdateResponse>`**
+`Promise<JobUpdateResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.updateJob('jobId', /* UpdateJobData */);
+const result = await plugin.job.updateJob('jobId', /* UpdateJobData */);
+console.log(result);
 ```

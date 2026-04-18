@@ -1,19 +1,8 @@
 ---
-name: listLabels
-cbbaseinfo:
-  description: Call listLabels on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<JobLabelsResponse>"
-    description: ""
-data:
-  name: listLabels
-  category: job
-  link: listLabels.md
+title: listLabels
 ---
-# listLabels
+
+# `listLabels`
 
 ```typescript
 plugin.job.listLabels(): Promise<JobLabelsResponse>
@@ -23,16 +12,17 @@ plugin.job.listLabels(): Promise<JobLabelsResponse>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<JobLabelsResponse>`**
+`Promise<JobLabelsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.listLabels();
+const result = await plugin.job.listLabels();
+console.log(result);
 ```

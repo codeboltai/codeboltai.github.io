@@ -1,22 +1,8 @@
 ---
-name: completeTriggered
-cbbaseinfo:
-  description: Call completeTriggered on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CompleteTriggeredRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: completeTriggered
-  category: calendarApi
-  link: completeTriggered.md
+title: completeTriggered
 ---
-# completeTriggered
+
+# `completeTriggered`
 
 ```typescript
 plugin.calendarApi.completeTriggered(data: CompleteTriggeredRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.calendarApi.completeTriggered(data: CompleteTriggeredRequest): Promise<vo
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CompleteTriggeredRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CompleteTriggeredRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.completeTriggered(/* CompleteTriggeredRequest */);
+const result = await plugin.calendarApi.completeTriggered(/* CompleteTriggeredRequest */);
+console.log(result);
 ```

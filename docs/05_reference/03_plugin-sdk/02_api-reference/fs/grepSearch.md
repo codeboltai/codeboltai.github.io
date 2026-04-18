@@ -1,38 +1,8 @@
 ---
-name: grepSearch
-cbbaseinfo:
-  description: grepSearch
-cbparameters:
-  parameters:
-    - name: path
-      typeName: string
-      description: The path to search within.
-      isOptional: false
-    - name: query
-      typeName: string
-      description: The query to search for.
-      isOptional: false
-    - name: includePattern
-      typeName: string
-      description: Pattern of files to include.
-      isOptional: true
-    - name: excludePattern
-      typeName: string
-      description: Pattern of files to exclude.
-      isOptional: true
-    - name: caseSensitive
-      typeName: boolean
-      description: Whether the search is case sensitive.
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<GrepSearchResponse>"
-    description: A promise that resolves with the search results.
-data:
-  name: grepSearch
-  category: fs
-  link: grepSearch.md
+title: grepSearch
 ---
-# grepSearch
+
+# `grepSearch`
 
 ```typescript
 plugin.fs.grepSearch(path: string, query: string, includePattern?: string, excludePattern?: string, caseSensitive: boolean): Promise<GrepSearchResponse>
@@ -42,22 +12,23 @@ grepSearch
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `path` | `string` | The path to search within. |
-| `query` | `string` | The query to search for. |
-| `includePattern` | `string` _(optional)_ | Pattern of files to include. |
-| `excludePattern` | `string` _(optional)_ | Pattern of files to exclude. |
-| `caseSensitive` | `boolean` | Whether the search is case sensitive. Default: `true` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `path` | `string` | Yes | The path to search within. |
+| `query` | `string` | Yes | The query to search for. |
+| `includePattern` | `string` | No | Pattern of files to include. |
+| `excludePattern` | `string` | No | Pattern of files to exclude. |
+| `caseSensitive` | `boolean` | Yes | Whether the search is case sensitive. _(default: `true`)_ |
 
 ## Returns
 
-**`Promise<GrepSearchResponse>`** — A promise that resolves with the search results.
+`Promise<GrepSearchResponse>` — A promise that resolves with the search results.
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fs.grepSearch('path', 'query', true);
+const result = await plugin.fs.grepSearch('path', 'query', true);
+console.log(result);
 ```

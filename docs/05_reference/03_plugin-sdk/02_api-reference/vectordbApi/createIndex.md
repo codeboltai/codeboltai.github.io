@@ -1,22 +1,8 @@
 ---
-name: createIndex
-cbbaseinfo:
-  description: Call createIndex on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateVectorIndexRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: createIndex
-  category: vectordbApi
-  link: createIndex.md
+title: createIndex
 ---
-# createIndex
+
+# `createIndex`
 
 ```typescript
 plugin.vectordbApi.createIndex(data: CreateVectorIndexRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.vectordbApi.createIndex(data: CreateVectorIndexRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateVectorIndexRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateVectorIndexRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.createIndex(/* CreateVectorIndexRequest */);
+const result = await plugin.vectordbApi.createIndex(/* CreateVectorIndexRequest */);
+console.log(result);
 ```

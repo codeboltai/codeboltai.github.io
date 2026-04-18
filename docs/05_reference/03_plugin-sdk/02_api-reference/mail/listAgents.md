@@ -1,19 +1,8 @@
 ---
-name: listAgents
-cbbaseinfo:
-  description: Call listAgents on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<IListAgentsResponse>"
-    description: ""
-data:
-  name: listAgents
-  category: mail
-  link: listAgents.md
+title: listAgents
 ---
-# listAgents
+
+# `listAgents`
 
 ```typescript
 plugin.mail.listAgents(): Promise<IListAgentsResponse>
@@ -23,16 +12,17 @@ plugin.mail.listAgents(): Promise<IListAgentsResponse>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<IListAgentsResponse>`**
+`Promise<IListAgentsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.listAgents();
+const result = await plugin.mail.listAgents();
+console.log(result);
 ```

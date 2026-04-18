@@ -1,19 +1,8 @@
 ---
-name: getEditorFileStatus
-cbbaseinfo:
-  description: Call getEditorFileStatus on the Plugin SDK project module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: getEditorFileStatus
-  category: project
-  link: getEditorFileStatus.md
+title: getEditorFileStatus
 ---
-# getEditorFileStatus
+
+# `getEditorFileStatus`
 
 ```typescript
 plugin.project.getEditorFileStatus(): Promise<any>
@@ -23,16 +12,17 @@ plugin.project.getEditorFileStatus(): Promise<any>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.project.getEditorFileStatus();
+const result = await plugin.project.getEditorFileStatus();
+console.log(result);
 ```

@@ -1,26 +1,8 @@
 ---
-name: createMessage
-cbbaseinfo:
-  description: "Creates a new inbox message.
-
-Posts a message to the inbox that will appear as a notification for
-the user. Use this to communicate important information, requests
-for input, or status updates from agents."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateInboxMessageRequest
-      description: Message creation payload including title, body, and priority
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<InboxMessage>"
-    description: A promise that resolves to the newly created
-data:
-  name: createMessage
-  category: inbox
-  link: createMessage.md
+title: createMessage
 ---
-# createMessage
+
+# `createMessage`
 
 ```typescript
 client.inbox.createMessage(data: CreateInboxMessageRequest): Promise<InboxMessage>
@@ -34,13 +16,13 @@ for input, or status updates from agents.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateInboxMessageRequest` | Message creation payload including title, body, and priority |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateInboxMessageRequest` | Yes | Message creation payload including title, body, and priority |
 
 ## Returns
 
-**`Promise<InboxMessage>`** — A promise that resolves to the newly created
+`Promise<InboxMessage>` — A promise that resolves to the newly created
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.inbox.createMessage(/* CreateInboxMessageRequest */);
+const result = await client.inbox.createMessage(/* CreateInboxMessageRequest */);
+console.log(result);
 ```

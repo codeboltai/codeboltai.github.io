@@ -1,25 +1,8 @@
 ---
-name: getRemixAgent
-cbbaseinfo:
-  description: "Retrieves a specific remix agent by name.
-
-Returns the full definition of a remix agent, including its
-base agent reference and customizations."
-cbparameters:
-  parameters:
-    - name: name
-      typeName: string
-      description: The name of the remix agent to retrieve
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<RemixAgent>"
-    description: A promise that resolves to the RemixAgent object
-data:
-  name: getRemixAgent
-  category: agents
-  link: getRemixAgent.md
+title: getRemixAgent
 ---
-# getRemixAgent
+
+# `getRemixAgent`
 
 ```typescript
 client.agents.getRemixAgent(name: string): Promise<RemixAgent>
@@ -32,13 +15,13 @@ base agent reference and customizations.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `name` | `string` | The name of the remix agent to retrieve |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `name` | `string` | Yes | The name of the remix agent to retrieve |
 
 ## Returns
 
-**`Promise<RemixAgent>`** — A promise that resolves to the RemixAgent object
+`Promise<RemixAgent>` — A promise that resolves to the RemixAgent object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getRemixAgent('name');
+const result = await client.agents.getRemixAgent('name');
+console.log(result);
 ```

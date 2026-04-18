@@ -1,30 +1,8 @@
 ---
-name: addDisputeComment
-cbbaseinfo:
-  description: Add a comment to a dispute
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: disputeId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddDisputeCommentRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addDisputeComment
-  category: updateRequests
-  link: addDisputeComment.md
+title: addDisputeComment
 ---
-# addDisputeComment
+
+# `addDisputeComment`
 
 ```typescript
 client.updateRequests.addDisputeComment(id: string, disputeId: string, data: AddDisputeCommentRequest): Promise<unknown>
@@ -34,15 +12,15 @@ Add a comment to a dispute
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `disputeId` | `string` |  |
-| `data` | `AddDisputeCommentRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `disputeId` | `string` | Yes |  |
+| `data` | `AddDisputeCommentRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -51,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.addDisputeComment('id', 'disputeId', /* AddDisputeCommentRequest */);
+const result = await client.updateRequests.addDisputeComment('id', 'disputeId', /* AddDisputeCommentRequest */);
+console.log(result);
 ```

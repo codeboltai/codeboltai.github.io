@@ -1,22 +1,8 @@
 ---
-name: getRunningInstances
-cbbaseinfo:
-  description: "Retrieves all currently running environment instances.
-
-Returns only instances that are in an active/running state, which is
-useful for monitoring dashboards and health checks."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<EnvironmentDebugInstance[]>"
-    description: A promise that resolves to an array of running  objects
-data:
-  name: getRunningInstances
-  category: environmentDebugApi
-  link: getRunningInstances.md
+title: getRunningInstances
 ---
-# getRunningInstances
+
+# `getRunningInstances`
 
 ```typescript
 client.environmentDebugApi.getRunningInstances(): Promise<EnvironmentDebugInstance[]>
@@ -29,11 +15,11 @@ useful for monitoring dashboards and health checks.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<EnvironmentDebugInstance[]>`** — A promise that resolves to an array of running  objects
+`Promise<EnvironmentDebugInstance[]>` — A promise that resolves to an array of running  objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.environmentDebugApi.getRunningInstances();
+const result = await client.environmentDebugApi.getRunningInstances();
+console.log(result);
 ```

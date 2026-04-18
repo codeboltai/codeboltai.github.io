@@ -1,26 +1,8 @@
 ---
-name: deleteDocuments
-cbbaseinfo:
-  description: Call deleteDocuments on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: DeleteVectorDocumentsRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: deleteDocuments
-  category: vectordbApi
-  link: deleteDocuments.md
+title: deleteDocuments
 ---
-# deleteDocuments
+
+# `deleteDocuments`
 
 ```typescript
 plugin.vectordbApi.deleteDocuments(id: string, data?: DeleteVectorDocumentsRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.vectordbApi.deleteDocuments(id: string, data?: DeleteVectorDocumentsReque
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `DeleteVectorDocumentsRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `DeleteVectorDocumentsRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.deleteDocuments('id');
+const result = await plugin.vectordbApi.deleteDocuments('id');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getAgent
-cbbaseinfo:
-  description: Call getAgent on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IGetAgentParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IGetAgentResponse>"
-    description: ""
-data:
-  name: getAgent
-  category: mail
-  link: getAgent.md
+title: getAgent
 ---
-# getAgent
+
+# `getAgent`
 
 ```typescript
 plugin.mail.getAgent(params: IGetAgentParams): Promise<IGetAgentResponse>
@@ -26,18 +12,19 @@ plugin.mail.getAgent(params: IGetAgentParams): Promise<IGetAgentResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IGetAgentParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IGetAgentParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IGetAgentResponse>`**
+`Promise<IGetAgentResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.getAgent(/* IGetAgentParams */);
+const result = await plugin.mail.getAgent(/* IGetAgentParams */);
+console.log(result);
 ```

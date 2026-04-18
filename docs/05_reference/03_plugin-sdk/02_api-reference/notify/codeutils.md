@@ -1,19 +1,8 @@
 ---
-name: codeutils
-cbbaseinfo:
-  description: Call codeutils on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: codeutils
-  category: notify
-  link: codeutils.md
+title: codeutils
 ---
-# codeutils
+
+# `codeutils`
 
 ```typescript
 plugin.notify.codeutils(): void
@@ -23,16 +12,17 @@ plugin.notify.codeutils(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.codeutils();
+const result = await plugin.notify.codeutils();
+console.log(result);
 ```

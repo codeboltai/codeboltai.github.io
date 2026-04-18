@@ -1,20 +1,8 @@
 ---
-name: stopProcess
-cbbaseinfo:
-  description: "Stops the ongoing process.
-Sends a specific message to the server to stop the process."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: stopProcess
-  category: chat
-  link: stopProcess.md
+title: stopProcess
 ---
-# stopProcess
+
+# `stopProcess`
 
 ```typescript
 plugin.chat.stopProcess(): void
@@ -25,16 +13,17 @@ Sends a specific message to the server to stop the process.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chat.stopProcess();
+const result = await plugin.chat.stopProcess();
+console.log(result);
 ```

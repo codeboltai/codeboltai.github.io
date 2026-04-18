@@ -1,25 +1,8 @@
 ---
-name: updateThreadStatus
-cbbaseinfo:
-  description: "Updates the status of a chat thread.
-
-Changes the thread's status (e.g., active, paused, completed),
-which affects how it is displayed and processed."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateChatThreadStatusRequest
-      description: The status update payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the status has been updated
-data:
-  name: updateThreadStatus
-  category: chatApi
-  link: updateThreadStatus.md
+title: updateThreadStatus
 ---
-# updateThreadStatus
+
+# `updateThreadStatus`
 
 ```typescript
 plugin.chatApi.updateThreadStatus(data: UpdateChatThreadStatusRequest): Promise<void>
@@ -32,18 +15,19 @@ which affects how it is displayed and processed.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateChatThreadStatusRequest` | The status update payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateChatThreadStatusRequest` | Yes | The status update payload |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the status has been updated
+`Promise<void>` — A promise that resolves when the status has been updated
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chatApi.updateThreadStatus(/* UpdateChatThreadStatusRequest */);
+const result = await plugin.chatApi.updateThreadStatus(/* UpdateChatThreadStatusRequest */);
+console.log(result);
 ```

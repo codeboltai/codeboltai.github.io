@@ -1,22 +1,8 @@
 ---
-name: openFolder
-cbbaseinfo:
-  description: Call openFolder on the Plugin SDK systemApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: OpenFolderRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<OpenFolderResponse>"
-    description: ""
-data:
-  name: openFolder
-  category: systemApi
-  link: openFolder.md
+title: openFolder
 ---
-# openFolder
+
+# `openFolder`
 
 ```typescript
 plugin.systemApi.openFolder(data: OpenFolderRequest): Promise<OpenFolderResponse>
@@ -26,18 +12,19 @@ plugin.systemApi.openFolder(data: OpenFolderRequest): Promise<OpenFolderResponse
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `OpenFolderRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `OpenFolderRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<OpenFolderResponse>`**
+`Promise<OpenFolderResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.systemApi.openFolder(/* OpenFolderRequest */);
+const result = await plugin.systemApi.openFolder(/* OpenFolderRequest */);
+console.log(result);
 ```

@@ -1,24 +1,8 @@
 ---
-name: onMessageToChannel
-cbbaseinfo:
-  description: "Register a callback for proactive messages from the application.
-When the server wants to send a notification/message to a platform user,
-it pushes a gateway.messageToChannel event which triggers this callback."
-cbparameters:
-  parameters:
-    - name: callback
-      typeName: Function
-      description: Called with targetId, text, and optional metadata
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: onMessageToChannel
-  category: gateway
-  link: onMessageToChannel.md
+title: onMessageToChannel
 ---
-# onMessageToChannel
+
+# `onMessageToChannel`
 
 ```typescript
 plugin.gateway.onMessageToChannel(callback: Function): void
@@ -30,18 +14,19 @@ it pushes a gateway.messageToChannel event which triggers this callback.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `callback` | `Function` | Called with targetId, text, and optional metadata |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `callback` | `Function` | Yes | Called with targetId, text, and optional metadata |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gateway.onMessageToChannel(/* Function */);
+const result = await plugin.gateway.onMessageToChannel(/* Function */);
+console.log(result);
 ```

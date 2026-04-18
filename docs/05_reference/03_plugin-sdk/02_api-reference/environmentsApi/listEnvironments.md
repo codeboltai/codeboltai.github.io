@@ -1,22 +1,8 @@
 ---
-name: listEnvironments
-cbbaseinfo:
-  description: Call listEnvironments on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<Environment[]>"
-    description: ""
-data:
-  name: listEnvironments
-  category: environmentsApi
-  link: listEnvironments.md
+title: listEnvironments
 ---
-# listEnvironments
+
+# `listEnvironments`
 
 ```typescript
 plugin.environmentsApi.listEnvironments(params?: Record<string, unknown>): Promise<Environment[]>
@@ -26,18 +12,19 @@ plugin.environmentsApi.listEnvironments(params?: Record<string, unknown>): Promi
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<Environment[]>`**
+`Promise<Environment[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.listEnvironments();
+const result = await plugin.environmentsApi.listEnvironments();
+console.log(result);
 ```

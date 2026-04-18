@@ -1,22 +1,8 @@
 ---
-name: status
-cbbaseinfo:
-  description: Call status on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitStatusRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<GitStatus>"
-    description: ""
-data:
-  name: status
-  category: gitApi
-  link: status.md
+title: status
 ---
-# status
+
+# `status`
 
 ```typescript
 plugin.gitApi.status(data?: GitStatusRequest): Promise<GitStatus>
@@ -26,18 +12,19 @@ plugin.gitApi.status(data?: GitStatusRequest): Promise<GitStatus>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitStatusRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitStatusRequest` | No |  |
 
 ## Returns
 
-**`Promise<GitStatus>`**
+`Promise<GitStatus>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.status();
+const result = await plugin.gitApi.status();
+console.log(result);
 ```

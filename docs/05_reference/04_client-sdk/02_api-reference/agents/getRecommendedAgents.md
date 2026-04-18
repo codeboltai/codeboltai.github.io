@@ -1,22 +1,8 @@
 ---
-name: getRecommendedAgents
-cbbaseinfo:
-  description: "Retrieves recommended agents based on the current context.
-
-Returns agents that are suggested based on the current project type,
-user preferences, or usage patterns."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Agent[]>"
-    description: A promise that resolves to an array of recommended Agent objects
-data:
-  name: getRecommendedAgents
-  category: agents
-  link: getRecommendedAgents.md
+title: getRecommendedAgents
 ---
-# getRecommendedAgents
+
+# `getRecommendedAgents`
 
 ```typescript
 client.agents.getRecommendedAgents(): Promise<Agent[]>
@@ -29,11 +15,11 @@ user preferences, or usage patterns.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Agent[]>`** — A promise that resolves to an array of recommended Agent objects
+`Promise<Agent[]>` — A promise that resolves to an array of recommended Agent objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getRecommendedAgents();
+const result = await client.agents.getRecommendedAgents();
+console.log(result);
 ```

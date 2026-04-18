@@ -1,26 +1,8 @@
 ---
-name: addPheromone
-cbbaseinfo:
-  description: Call addPheromone on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: PheromoneDepositRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Pheromone>"
-    description: ""
-data:
-  name: addPheromone
-  category: jobsApi
-  link: addPheromone.md
+title: addPheromone
 ---
-# addPheromone
+
+# `addPheromone`
 
 ```typescript
 plugin.jobsApi.addPheromone(id: string, data: PheromoneDepositRequest): Promise<Pheromone>
@@ -30,19 +12,20 @@ plugin.jobsApi.addPheromone(id: string, data: PheromoneDepositRequest): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `PheromoneDepositRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `PheromoneDepositRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Pheromone>`**
+`Promise<Pheromone>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.addPheromone('id', /* PheromoneDepositRequest */);
+const result = await plugin.jobsApi.addPheromone('id', /* PheromoneDepositRequest */);
+console.log(result);
 ```

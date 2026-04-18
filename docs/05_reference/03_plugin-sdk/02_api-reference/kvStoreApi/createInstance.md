@@ -1,22 +1,8 @@
 ---
-name: createInstance
-cbbaseinfo:
-  description: Call createInstance on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateKvStoreInstanceRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KvStoreInstance>"
-    description: ""
-data:
-  name: createInstance
-  category: kvStoreApi
-  link: createInstance.md
+title: createInstance
 ---
-# createInstance
+
+# `createInstance`
 
 ```typescript
 plugin.kvStoreApi.createInstance(data: CreateKvStoreInstanceRequest): Promise<KvStoreInstance>
@@ -26,18 +12,19 @@ plugin.kvStoreApi.createInstance(data: CreateKvStoreInstanceRequest): Promise<Kv
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateKvStoreInstanceRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateKvStoreInstanceRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KvStoreInstance>`**
+`Promise<KvStoreInstance>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.createInstance(/* CreateKvStoreInstanceRequest */);
+const result = await plugin.kvStoreApi.createInstance(/* CreateKvStoreInstanceRequest */);
+console.log(result);
 ```

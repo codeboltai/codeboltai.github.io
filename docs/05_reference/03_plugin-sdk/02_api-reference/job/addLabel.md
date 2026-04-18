@@ -1,22 +1,8 @@
 ---
-name: addLabel
-cbbaseinfo:
-  description: Call addLabel on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: label
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobLabelsResponse>"
-    description: ""
-data:
-  name: addLabel
-  category: job
-  link: addLabel.md
+title: addLabel
 ---
-# addLabel
+
+# `addLabel`
 
 ```typescript
 plugin.job.addLabel(label: string): Promise<JobLabelsResponse>
@@ -26,18 +12,19 @@ plugin.job.addLabel(label: string): Promise<JobLabelsResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `label` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `label` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobLabelsResponse>`**
+`Promise<JobLabelsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addLabel('label');
+const result = await plugin.job.addLabel('label');
+console.log(result);
 ```

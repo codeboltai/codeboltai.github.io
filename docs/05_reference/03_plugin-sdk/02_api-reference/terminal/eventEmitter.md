@@ -1,19 +1,8 @@
 ---
-name: eventEmitter
-cbbaseinfo:
-  description: Call eventEmitter on the Plugin SDK terminal module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: eventEmitter
-  category: terminal
-  link: eventEmitter.md
+title: eventEmitter
 ---
-# eventEmitter
+
+# `eventEmitter`
 
 ```typescript
 plugin.terminal.eventEmitter(): void
@@ -23,16 +12,17 @@ plugin.terminal.eventEmitter(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.terminal.eventEmitter();
+const result = await plugin.terminal.eventEmitter();
+console.log(result);
 ```

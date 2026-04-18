@@ -1,24 +1,8 @@
 ---
-name: onLoginRequest
-cbbaseinfo:
-  description: "Subscribe to incoming login requests (triggered by the UI login button).
-The plugin should run its authentication flow (e.g. OAuth) and then
-call sendReply(requestId, { authenticated: true }) or sendError()."
-cbparameters:
-  parameters:
-    - name: callback
-      typeName: Function
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: onLoginRequest
-  category: llmProvider
-  link: onLoginRequest.md
+title: onLoginRequest
 ---
-# onLoginRequest
+
+# `onLoginRequest`
 
 ```typescript
 plugin.llmProvider.onLoginRequest(callback: Function): void
@@ -26,22 +10,23 @@ plugin.llmProvider.onLoginRequest(callback: Function): void
 
 Subscribe to incoming login requests (triggered by the UI login button).
 The plugin should run its authentication flow (e.g. OAuth) and then
-call sendReply(requestId, { authenticated: true }) or sendError().
+call sendReply(requestId, \{ authenticated: true \}) or sendError().
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `callback` | `Function` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `callback` | `Function` | Yes |  |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.llmProvider.onLoginRequest(/* Function */);
+const result = await plugin.llmProvider.onLoginRequest(/* Function */);
+console.log(result);
 ```

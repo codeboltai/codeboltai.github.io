@@ -1,22 +1,8 @@
 ---
-name: runCommand
-cbbaseinfo:
-  description: Call runCommand on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: RunCommandRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: runCommand
-  category: projectsApi
-  link: runCommand.md
+title: runCommand
 ---
-# runCommand
+
+# `runCommand`
 
 ```typescript
 plugin.projectsApi.runCommand(data: RunCommandRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.projectsApi.runCommand(data: RunCommandRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `RunCommandRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `RunCommandRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.runCommand(/* RunCommandRequest */);
+const result = await plugin.projectsApi.runCommand(/* RunCommandRequest */);
+console.log(result);
 ```

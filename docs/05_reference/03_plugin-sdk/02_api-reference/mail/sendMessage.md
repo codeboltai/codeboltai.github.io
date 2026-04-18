@@ -1,22 +1,8 @@
 ---
-name: sendMessage
-cbbaseinfo:
-  description: Call sendMessage on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: ISendMessageParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ISendMessageResponse>"
-    description: ""
-data:
-  name: sendMessage
-  category: mail
-  link: sendMessage.md
+title: sendMessage
 ---
-# sendMessage
+
+# `sendMessage`
 
 ```typescript
 plugin.mail.sendMessage(params: ISendMessageParams): Promise<ISendMessageResponse>
@@ -26,18 +12,19 @@ plugin.mail.sendMessage(params: ISendMessageParams): Promise<ISendMessageRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `ISendMessageParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `ISendMessageParams` | Yes |  |
 
 ## Returns
 
-**`Promise<ISendMessageResponse>`**
+`Promise<ISendMessageResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.sendMessage(/* ISendMessageParams */);
+const result = await plugin.mail.sendMessage(/* ISendMessageParams */);
+console.log(result);
 ```

@@ -1,23 +1,8 @@
 ---
-name: getGraph
-cbbaseinfo:
-  description: "Retrieves the complete thread graph structure.
-
-Returns all threads as nodes in a graph representation, showing relationships
-and connections between threads. This is useful for visualizing thread
-hierarchies and dependencies."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ThreadGraphNode[]>"
-    description: A promise that resolves to an array of ThreadGraphNode objects
-data:
-  name: getGraph
-  category: threads
-  link: getGraph.md
+title: getGraph
 ---
-# getGraph
+
+# `getGraph`
 
 ```typescript
 client.threads.getGraph(): Promise<ThreadGraphNode[]>
@@ -31,11 +16,11 @@ hierarchies and dependencies.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ThreadGraphNode[]>`** — A promise that resolves to an array of ThreadGraphNode objects
+`Promise<ThreadGraphNode[]>` — A promise that resolves to an array of ThreadGraphNode objects
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threads.getGraph();
+const result = await client.threads.getGraph();
+console.log(result);
 ```

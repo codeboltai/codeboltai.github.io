@@ -1,22 +1,8 @@
 ---
-name: graph
-cbbaseinfo:
-  description: Call graph on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitGraphRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<GitCommit[]>"
-    description: ""
-data:
-  name: graph
-  category: gitApi
-  link: graph.md
+title: graph
 ---
-# graph
+
+# `graph`
 
 ```typescript
 plugin.gitApi.graph(data?: GitGraphRequest): Promise<GitCommit[]>
@@ -26,18 +12,19 @@ plugin.gitApi.graph(data?: GitGraphRequest): Promise<GitCommit[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitGraphRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitGraphRequest` | No |  |
 
 ## Returns
 
-**`Promise<GitCommit[]>`**
+`Promise<GitCommit[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.graph();
+const result = await plugin.gitApi.graph();
+console.log(result);
 ```

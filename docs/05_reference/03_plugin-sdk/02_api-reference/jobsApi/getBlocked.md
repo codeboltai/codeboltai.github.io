@@ -1,19 +1,8 @@
 ---
-name: getBlocked
-cbbaseinfo:
-  description: Call getBlocked on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Job[]>"
-    description: ""
-data:
-  name: getBlocked
-  category: jobsApi
-  link: getBlocked.md
+title: getBlocked
 ---
-# getBlocked
+
+# `getBlocked`
 
 ```typescript
 plugin.jobsApi.getBlocked(): Promise<Job[]>
@@ -23,16 +12,17 @@ plugin.jobsApi.getBlocked(): Promise<Job[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Job[]>`**
+`Promise<Job[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getBlocked();
+const result = await plugin.jobsApi.getBlocked();
+console.log(result);
 ```

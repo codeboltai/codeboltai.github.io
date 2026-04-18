@@ -1,26 +1,8 @@
 ---
-name: updateInstalledProvider
-cbbaseinfo:
-  description: Call updateInstalledProvider on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateInstalledProviderRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<InstalledProvider>"
-    description: ""
-data:
-  name: updateInstalledProvider
-  category: environmentsApi
-  link: updateInstalledProvider.md
+title: updateInstalledProvider
 ---
-# updateInstalledProvider
+
+# `updateInstalledProvider`
 
 ```typescript
 plugin.environmentsApi.updateInstalledProvider(id: string, data: UpdateInstalledProviderRequest): Promise<InstalledProvider>
@@ -30,19 +12,20 @@ plugin.environmentsApi.updateInstalledProvider(id: string, data: UpdateInstalled
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateInstalledProviderRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateInstalledProviderRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<InstalledProvider>`**
+`Promise<InstalledProvider>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.updateInstalledProvider('id', /* UpdateInstalledProviderRequest */);
+const result = await plugin.environmentsApi.updateInstalledProvider('id', /* UpdateInstalledProviderRequest */);
+console.log(result);
 ```

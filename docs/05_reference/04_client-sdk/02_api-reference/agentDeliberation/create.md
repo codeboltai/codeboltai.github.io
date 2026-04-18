@@ -1,25 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: "Creates a new deliberation.
-
-Initiates a deliberation session where multiple agents can propose
-solutions and vote on the best approach."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateDeliberationRequest
-      description: The deliberation creation payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Deliberation>"
-    description: A promise that resolves to the newly created Deliberation
-data:
-  name: create
-  category: agentDeliberation
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 client.agentDeliberation.create(data: CreateDeliberationRequest): Promise<Deliberation>
@@ -32,13 +15,13 @@ solutions and vote on the best approach.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateDeliberationRequest` | The deliberation creation payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateDeliberationRequest` | Yes | The deliberation creation payload |
 
 ## Returns
 
-**`Promise<Deliberation>`** — A promise that resolves to the newly created Deliberation
+`Promise<Deliberation>` — A promise that resolves to the newly created Deliberation
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agentDeliberation.create(/* CreateDeliberationRequest */);
+const result = await client.agentDeliberation.create(/* CreateDeliberationRequest */);
+console.log(result);
 ```

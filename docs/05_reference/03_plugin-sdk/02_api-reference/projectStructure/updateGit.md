@@ -1,26 +1,8 @@
 ---
-name: updateGit
-cbbaseinfo:
-  description: Update git information
-cbparameters:
-  parameters:
-    - name: gitInfo
-      typeName: GitInfo
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructureUpdateResponse>"
-    description: ""
-data:
-  name: updateGit
-  category: projectStructure
-  link: updateGit.md
+title: updateGit
 ---
-# updateGit
+
+# `updateGit`
 
 ```typescript
 plugin.projectStructure.updateGit(gitInfo: GitInfo, workspacePath?: string): Promise<ProjectStructureUpdateResponse>
@@ -30,19 +12,20 @@ Update git information
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `gitInfo` | `GitInfo` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `gitInfo` | `GitInfo` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructureUpdateResponse>`**
+`Promise<ProjectStructureUpdateResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.updateGit(/* GitInfo */);
+const result = await plugin.projectStructure.updateGit(/* GitInfo */);
+console.log(result);
 ```

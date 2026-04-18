@@ -1,26 +1,8 @@
 ---
-name: acceptSplitProposal
-cbbaseinfo:
-  description: Call acceptSplitProposal on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: proposalId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobSplitAcceptResponse>"
-    description: ""
-data:
-  name: acceptSplitProposal
-  category: job
-  link: acceptSplitProposal.md
+title: acceptSplitProposal
 ---
-# acceptSplitProposal
+
+# `acceptSplitProposal`
 
 ```typescript
 plugin.job.acceptSplitProposal(jobId: string, proposalId: string): Promise<JobSplitAcceptResponse>
@@ -30,19 +12,20 @@ plugin.job.acceptSplitProposal(jobId: string, proposalId: string): Promise<JobSp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `proposalId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `proposalId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobSplitAcceptResponse>`**
+`Promise<JobSplitAcceptResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.acceptSplitProposal('jobId', 'proposalId');
+const result = await plugin.job.acceptSplitProposal('jobId', 'proposalId');
+console.log(result);
 ```

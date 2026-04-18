@@ -1,26 +1,8 @@
 ---
-name: configureMCPServer
-cbbaseinfo:
-  description: Configures a specific toolbox with provided configuration.
-cbparameters:
-  parameters:
-    - name: name
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: config
-      typeName: MCPConfiguration
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ConfigureToolBoxResponse>"
-    description: ""
-data:
-  name: configureMCPServer
-  category: mcp
-  link: configureMCPServer.md
+title: configureMCPServer
 ---
-# configureMCPServer
+
+# `configureMCPServer`
 
 ```typescript
 plugin.mcp.configureMCPServer(name: string, config: MCPConfiguration): Promise<ConfigureToolBoxResponse>
@@ -30,19 +12,20 @@ Configures a specific toolbox with provided configuration.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `name` | `string` |  |
-| `config` | `MCPConfiguration` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `name` | `string` | Yes |  |
+| `config` | `MCPConfiguration` | Yes |  |
 
 ## Returns
 
-**`Promise<ConfigureToolBoxResponse>`**
+`Promise<ConfigureToolBoxResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.configureMCPServer('name', /* MCPConfiguration */);
+const result = await plugin.mcp.configureMCPServer('name', /* MCPConfiguration */);
+console.log(result);
 ```

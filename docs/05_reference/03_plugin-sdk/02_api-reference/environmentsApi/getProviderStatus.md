@@ -1,22 +1,8 @@
 ---
-name: getProviderStatus
-cbbaseinfo:
-  description: Call getProviderStatus on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<EnvironmentProviderStatus>"
-    description: ""
-data:
-  name: getProviderStatus
-  category: environmentsApi
-  link: getProviderStatus.md
+title: getProviderStatus
 ---
-# getProviderStatus
+
+# `getProviderStatus`
 
 ```typescript
 plugin.environmentsApi.getProviderStatus(id: string): Promise<EnvironmentProviderStatus>
@@ -26,18 +12,19 @@ plugin.environmentsApi.getProviderStatus(id: string): Promise<EnvironmentProvide
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<EnvironmentProviderStatus>`**
+`Promise<EnvironmentProviderStatus>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.getProviderStatus('id');
+const result = await plugin.environmentsApi.getProviderStatus('id');
+console.log(result);
 ```

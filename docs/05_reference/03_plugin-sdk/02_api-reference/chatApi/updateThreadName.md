@@ -1,24 +1,8 @@
 ---
-name: updateThreadName
-cbbaseinfo:
-  description: "Updates the display name of a chat thread.
-
-Changes the human-readable name shown in the thread list."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateThreadNameRequest
-      description: The name update payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the name has been updated
-data:
-  name: updateThreadName
-  category: chatApi
-  link: updateThreadName.md
+title: updateThreadName
 ---
-# updateThreadName
+
+# `updateThreadName`
 
 ```typescript
 plugin.chatApi.updateThreadName(data: UpdateThreadNameRequest): Promise<void>
@@ -30,18 +14,19 @@ Changes the human-readable name shown in the thread list.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateThreadNameRequest` | The name update payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateThreadNameRequest` | Yes | The name update payload |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the name has been updated
+`Promise<void>` — A promise that resolves when the name has been updated
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chatApi.updateThreadName(/* UpdateThreadNameRequest */);
+const result = await plugin.chatApi.updateThreadName(/* UpdateThreadNameRequest */);
+console.log(result);
 ```

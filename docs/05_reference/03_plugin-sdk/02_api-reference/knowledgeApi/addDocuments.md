@@ -1,26 +1,8 @@
 ---
-name: addDocuments
-cbbaseinfo:
-  description: Call addDocuments on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddKnowledgeDocumentsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addDocuments
-  category: knowledgeApi
-  link: addDocuments.md
+title: addDocuments
 ---
-# addDocuments
+
+# `addDocuments`
 
 ```typescript
 plugin.knowledgeApi.addDocuments(id: string, data: AddKnowledgeDocumentsRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.knowledgeApi.addDocuments(id: string, data: AddKnowledgeDocumentsRequest)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `AddKnowledgeDocumentsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddKnowledgeDocumentsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.addDocuments('id', /* AddKnowledgeDocumentsRequest */);
+const result = await plugin.knowledgeApi.addDocuments('id', /* AddKnowledgeDocumentsRequest */);
+console.log(result);
 ```

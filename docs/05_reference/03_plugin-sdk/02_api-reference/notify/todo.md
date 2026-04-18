@@ -1,19 +1,8 @@
 ---
-name: todo
-cbbaseinfo:
-  description: Call todo on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: todo
-  category: notify
-  link: todo.md
+title: todo
 ---
-# todo
+
+# `todo`
 
 ```typescript
 plugin.notify.todo(): void
@@ -23,16 +12,17 @@ plugin.notify.todo(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.todo();
+const result = await plugin.notify.todo();
+console.log(result);
 ```

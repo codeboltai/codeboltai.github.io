@@ -1,22 +1,8 @@
 ---
-name: bulkDelete
-cbbaseinfo:
-  description: Bulk delete steps
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BulkDeleteStepsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: bulkDelete
-  category: threadSteps
-  link: bulkDelete.md
+title: bulkDelete
 ---
-# bulkDelete
+
+# `bulkDelete`
 
 ```typescript
 client.threadSteps.bulkDelete(data: BulkDeleteStepsRequest): Promise<void>
@@ -26,13 +12,13 @@ Bulk delete steps
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BulkDeleteStepsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BulkDeleteStepsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.bulkDelete(/* BulkDeleteStepsRequest */);
+const result = await client.threadSteps.bulkDelete(/* BulkDeleteStepsRequest */);
+console.log(result);
 ```

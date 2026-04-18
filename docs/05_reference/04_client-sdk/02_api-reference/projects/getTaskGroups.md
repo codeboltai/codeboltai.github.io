@@ -1,22 +1,8 @@
 ---
-name: getTaskGroups
-cbbaseinfo:
-  description: "Retrieves all task groups defined for the current project.
-
-Task groups organize conversation threads into logical categories for better
-workflow management and navigation."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<TaskGroup[]>"
-    description: A promise that resolves to an array of task groups
-data:
-  name: getTaskGroups
-  category: projects
-  link: getTaskGroups.md
+title: getTaskGroups
 ---
-# getTaskGroups
+
+# `getTaskGroups`
 
 ```typescript
 client.projects.getTaskGroups(): Promise<TaskGroup[]>
@@ -29,11 +15,11 @@ workflow management and navigation.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<TaskGroup[]>`** — A promise that resolves to an array of task groups
+`Promise<TaskGroup[]>` — A promise that resolves to an array of task groups
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projects.getTaskGroups();
+const result = await client.projects.getTaskGroups();
+console.log(result);
 ```

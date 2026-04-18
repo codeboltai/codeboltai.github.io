@@ -1,22 +1,8 @@
 ---
-name: getThreadsInfo
-cbbaseinfo:
-  description: "Retrieves information for all chat threads.
-
-Returns summary information for every thread in the system,
-suitable for populating a thread list or sidebar."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ChatThreadInfo[]>"
-    description: A promise that resolves to an array of ChatThreadInfo objects
-data:
-  name: getThreadsInfo
-  category: chat
-  link: getThreadsInfo.md
+title: getThreadsInfo
 ---
-# getThreadsInfo
+
+# `getThreadsInfo`
 
 ```typescript
 client.chat.getThreadsInfo(): Promise<ChatThreadInfo[]>
@@ -29,11 +15,11 @@ suitable for populating a thread list or sidebar.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ChatThreadInfo[]>`** — A promise that resolves to an array of ChatThreadInfo objects
+`Promise<ChatThreadInfo[]>` — A promise that resolves to an array of ChatThreadInfo objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.chat.getThreadsInfo();
+const result = await client.chat.getThreadsInfo();
+console.log(result);
 ```

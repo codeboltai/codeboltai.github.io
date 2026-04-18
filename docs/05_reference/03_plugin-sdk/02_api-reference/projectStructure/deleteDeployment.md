@@ -1,30 +1,8 @@
 ---
-name: deleteDeployment
-cbbaseinfo:
-  description: Delete a deployment config
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: configId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructureDeleteResponse>"
-    description: ""
-data:
-  name: deleteDeployment
-  category: projectStructure
-  link: deleteDeployment.md
+title: deleteDeployment
 ---
-# deleteDeployment
+
+# `deleteDeployment`
 
 ```typescript
 plugin.projectStructure.deleteDeployment(packageId: string, configId: string, workspacePath?: string): Promise<ProjectStructureDeleteResponse>
@@ -34,20 +12,21 @@ Delete a deployment config
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` |  |
-| `configId` | `string` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes |  |
+| `configId` | `string` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructureDeleteResponse>`**
+`Promise<ProjectStructureDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.deleteDeployment('packageId', 'configId');
+const result = await plugin.projectStructure.deleteDeployment('packageId', 'configId');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: startWork
-cbbaseinfo:
-  description: Start working on a request
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: startWork
-  category: updateRequests
-  link: startWork.md
+title: startWork
 ---
-# startWork
+
+# `startWork`
 
 ```typescript
 client.updateRequests.startWork(id: string): Promise<unknown>
@@ -26,13 +12,13 @@ Start working on a request
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.startWork('id');
+const result = await client.updateRequests.startWork('id');
+console.log(result);
 ```

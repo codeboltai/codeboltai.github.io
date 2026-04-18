@@ -1,19 +1,8 @@
 ---
-name: listInstances
-cbbaseinfo:
-  description: List all event log instances
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<EventLogInstanceListResponse>"
-    description: ""
-data:
-  name: listInstances
-  category: eventLog
-  link: listInstances.md
+title: listInstances
 ---
-# listInstances
+
+# `listInstances`
 
 ```typescript
 plugin.eventLog.listInstances(): Promise<EventLogInstanceListResponse>
@@ -23,16 +12,17 @@ List all event log instances
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<EventLogInstanceListResponse>`**
+`Promise<EventLogInstanceListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.eventLog.listInstances();
+const result = await plugin.eventLog.listInstances();
+console.log(result);
 ```

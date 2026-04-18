@@ -1,30 +1,8 @@
 ---
-name: addTable
-cbbaseinfo:
-  description: Add a database table to a package
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: table
-      typeName: Omit<DatabaseTable, "id">
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructureUpdateResponse>"
-    description: ""
-data:
-  name: addTable
-  category: projectStructure
-  link: addTable.md
+title: addTable
 ---
-# addTable
+
+# `addTable`
 
 ```typescript
 plugin.projectStructure.addTable(packageId: string, table: Omit<DatabaseTable, "id">, workspacePath?: string): Promise<ProjectStructureUpdateResponse>
@@ -34,20 +12,21 @@ Add a database table to a package
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` |  |
-| `table` | `Omit<DatabaseTable, "id">` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes |  |
+| `table` | `Omit<DatabaseTable, "id">` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructureUpdateResponse>`**
+`Promise<ProjectStructureUpdateResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.addTable('packageId', /* Omit<DatabaseTable, "id"> */);
+const result = await plugin.projectStructure.addTable('packageId', /* Omit<DatabaseTable, "id"> */);
+console.log(result);
 ```

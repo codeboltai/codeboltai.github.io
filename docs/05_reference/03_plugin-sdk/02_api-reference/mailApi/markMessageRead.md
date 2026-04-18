@@ -1,22 +1,8 @@
 ---
-name: markMessageRead
-cbbaseinfo:
-  description: Call markMessageRead on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: messageId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: markMessageRead
-  category: mailApi
-  link: markMessageRead.md
+title: markMessageRead
 ---
-# markMessageRead
+
+# `markMessageRead`
 
 ```typescript
 plugin.mailApi.markMessageRead(messageId: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.mailApi.markMessageRead(messageId: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `messageId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `messageId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.markMessageRead('messageId');
+const result = await plugin.mailApi.markMessageRead('messageId');
+console.log(result);
 ```

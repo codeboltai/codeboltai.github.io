@@ -1,22 +1,8 @@
 ---
-name: getStats
-cbbaseinfo:
-  description: Call getStats on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: TodoListParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<TodoStats>"
-    description: ""
-data:
-  name: getStats
-  category: todosApi
-  link: getStats.md
+title: getStats
 ---
-# getStats
+
+# `getStats`
 
 ```typescript
 plugin.todosApi.getStats(params?: TodoListParams): Promise<TodoStats>
@@ -26,18 +12,19 @@ plugin.todosApi.getStats(params?: TodoListParams): Promise<TodoStats>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `TodoListParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `TodoListParams` | No |  |
 
 ## Returns
 
-**`Promise<TodoStats>`**
+`Promise<TodoStats>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.getStats();
+const result = await plugin.todosApi.getStats();
+console.log(result);
 ```

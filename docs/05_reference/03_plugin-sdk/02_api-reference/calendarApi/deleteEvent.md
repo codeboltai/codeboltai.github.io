@@ -1,22 +1,8 @@
 ---
-name: deleteEvent
-cbbaseinfo:
-  description: Call deleteEvent on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deleteEvent
-  category: calendarApi
-  link: deleteEvent.md
+title: deleteEvent
 ---
-# deleteEvent
+
+# `deleteEvent`
 
 ```typescript
 plugin.calendarApi.deleteEvent(id: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.calendarApi.deleteEvent(id: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.deleteEvent('id');
+const result = await plugin.calendarApi.deleteEvent('id');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getLocalAgents
-cbbaseinfo:
-  description: "Retrieves agents installed from local sources.
-
-Returns only agents that were installed from the local filesystem,
-excluding those from the remote registry."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Agent[]>"
-    description: A promise that resolves to an array of locally installed Agent objects
-data:
-  name: getLocalAgents
-  category: agents
-  link: getLocalAgents.md
+title: getLocalAgents
 ---
-# getLocalAgents
+
+# `getLocalAgents`
 
 ```typescript
 client.agents.getLocalAgents(): Promise<Agent[]>
@@ -29,11 +15,11 @@ excluding those from the remote registry.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Agent[]>`** — A promise that resolves to an array of locally installed Agent objects
+`Promise<Agent[]>` — A promise that resolves to an array of locally installed Agent objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getLocalAgents();
+const result = await client.agents.getLocalAgents();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getReservations
-cbbaseinfo:
-  description: Call getReservations on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<MailReservation[]>"
-    description: ""
-data:
-  name: getReservations
-  category: mailApi
-  link: getReservations.md
+title: getReservations
 ---
-# getReservations
+
+# `getReservations`
 
 ```typescript
 plugin.mailApi.getReservations(params?: Record<string, unknown>): Promise<MailReservation[]>
@@ -26,18 +12,19 @@ plugin.mailApi.getReservations(params?: Record<string, unknown>): Promise<MailRe
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<MailReservation[]>`**
+`Promise<MailReservation[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.getReservations();
+const result = await plugin.mailApi.getReservations();
+console.log(result);
 ```

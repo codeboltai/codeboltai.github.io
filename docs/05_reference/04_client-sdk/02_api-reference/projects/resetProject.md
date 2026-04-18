@@ -1,25 +1,8 @@
 ---
-name: resetProject
-cbbaseinfo:
-  description: "Resets a project to its initial state.
-
-Clears the project's chat history, debug sessions, and configuration changes,
-restoring it to a clean state. This is a destructive operation that cannot be undone."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ResetProjectRequest
-      description: The reset request identifying the project and reset scope
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the project has been reset
-data:
-  name: resetProject
-  category: projects
-  link: resetProject.md
+title: resetProject
 ---
-# resetProject
+
+# `resetProject`
 
 ```typescript
 client.projects.resetProject(data: ResetProjectRequest): Promise<void>
@@ -32,13 +15,13 @@ restoring it to a clean state. This is a destructive operation that cannot be un
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ResetProjectRequest` | The reset request identifying the project and reset scope |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ResetProjectRequest` | Yes | The reset request identifying the project and reset scope |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the project has been reset
+`Promise<void>` — A promise that resolves when the project has been reset
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projects.resetProject(/* ResetProjectRequest */);
+const result = await client.projects.resetProject(/* ResetProjectRequest */);
+console.log(result);
 ```

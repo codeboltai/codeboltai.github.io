@@ -1,26 +1,8 @@
 ---
-name: addWatcher
-cbbaseinfo:
-  description: Add a watcher to a request
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddWatcherRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addWatcher
-  category: updateRequests
-  link: addWatcher.md
+title: addWatcher
 ---
-# addWatcher
+
+# `addWatcher`
 
 ```typescript
 client.updateRequests.addWatcher(id: string, data: AddWatcherRequest): Promise<unknown>
@@ -30,14 +12,14 @@ Add a watcher to a request
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `AddWatcherRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddWatcherRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -46,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.addWatcher('id', /* AddWatcherRequest */);
+const result = await client.updateRequests.addWatcher('id', /* AddWatcherRequest */);
+console.log(result);
 ```

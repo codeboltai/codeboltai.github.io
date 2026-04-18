@@ -1,30 +1,8 @@
 ---
-name: askQuestion
-cbbaseinfo:
-  description: Call askQuestion on the Plugin SDK chat module.
-cbparameters:
-  parameters:
-    - name: question
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: buttons
-      typeName: string[]
-      description: ""
-      isOptional: false
-    - name: withFeedback
-      typeName: boolean
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<string>"
-    description: ""
-data:
-  name: askQuestion
-  category: chat
-  link: askQuestion.md
+title: askQuestion
 ---
-# askQuestion
+
+# `askQuestion`
 
 ```typescript
 plugin.chat.askQuestion(question: string, buttons: string[], withFeedback: boolean): Promise<string>
@@ -34,20 +12,21 @@ plugin.chat.askQuestion(question: string, buttons: string[], withFeedback: boole
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `question` | `string` |  |
-| `buttons` | `string[]` |  Default: `[]` |
-| `withFeedback` | `boolean` |  Default: `false` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `question` | `string` | Yes |  |
+| `buttons` | `string[]` | Yes |  _(default: `[]`)_ |
+| `withFeedback` | `boolean` | Yes |  _(default: `false`)_ |
 
 ## Returns
 
-**`Promise<string>`**
+`Promise<string>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chat.askQuestion('question', /* string[] */, true);
+const result = await plugin.chat.askQuestion('question', /* string[] */, true);
+console.log(result);
 ```

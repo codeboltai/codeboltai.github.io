@@ -1,30 +1,8 @@
 ---
-name: configureMcpTool
-cbbaseinfo:
-  description: Configures a specific MCP tool with provided configuration.
-cbparameters:
-  parameters:
-    - name: mcpName
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: toolName
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: config
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ConfigureMCPToolResponse>"
-    description: ""
-data:
-  name: configureMcpTool
-  category: mcp
-  link: configureMcpTool.md
+title: configureMcpTool
 ---
-# configureMcpTool
+
+# `configureMcpTool`
 
 ```typescript
 plugin.mcp.configureMcpTool(mcpName: string, toolName: string, config: Record<string, unknown>): Promise<ConfigureMCPToolResponse>
@@ -34,20 +12,21 @@ Configures a specific MCP tool with provided configuration.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `mcpName` | `string` |  |
-| `toolName` | `string` |  |
-| `config` | `Record<string, unknown>` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `mcpName` | `string` | Yes |  |
+| `toolName` | `string` | Yes |  |
+| `config` | `Record<string, unknown>` | Yes |  |
 
 ## Returns
 
-**`Promise<ConfigureMCPToolResponse>`**
+`Promise<ConfigureMCPToolResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.configureMcpTool('mcpName', 'toolName', /* Record<string, unknown> */);
+const result = await plugin.mcp.configureMcpTool('mcpName', 'toolName', /* Record<string, unknown> */);
+console.log(result);
 ```

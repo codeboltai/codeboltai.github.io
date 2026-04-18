@@ -1,25 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves a specific review-merge request by its ID.
-
-Fetches the full details of a single review-merge request including its current
-status, reviews, pheromones, and linked jobs."
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: The unique identifier of the review-merge request
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ReviewMergeRequest>"
-    description: A promise that resolves to the ReviewMergeRequest object
-data:
-  name: get
-  category: reviewMerge
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.reviewMerge.get(id: string): Promise<ReviewMergeRequest>
@@ -32,13 +15,13 @@ status, reviews, pheromones, and linked jobs.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` | The unique identifier of the review-merge request |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes | The unique identifier of the review-merge request |
 
 ## Returns
 
-**`Promise<ReviewMergeRequest>`** — A promise that resolves to the ReviewMergeRequest object
+`Promise<ReviewMergeRequest>` — A promise that resolves to the ReviewMergeRequest object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.reviewMerge.get('id');
+const result = await client.reviewMerge.get('id');
+console.log(result);
 ```

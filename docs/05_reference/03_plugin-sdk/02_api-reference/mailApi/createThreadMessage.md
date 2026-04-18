@@ -1,26 +1,8 @@
 ---
-name: createThreadMessage
-cbbaseinfo:
-  description: Call createThreadMessage on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: SendMailMessageRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailMessage>"
-    description: ""
-data:
-  name: createThreadMessage
-  category: mailApi
-  link: createThreadMessage.md
+title: createThreadMessage
 ---
-# createThreadMessage
+
+# `createThreadMessage`
 
 ```typescript
 plugin.mailApi.createThreadMessage(threadId: string, data: SendMailMessageRequest): Promise<MailMessage>
@@ -30,19 +12,20 @@ plugin.mailApi.createThreadMessage(threadId: string, data: SendMailMessageReques
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` |  |
-| `data` | `SendMailMessageRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes |  |
+| `data` | `SendMailMessageRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<MailMessage>`**
+`Promise<MailMessage>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.createThreadMessage('threadId', /* SendMailMessageRequest */);
+const result = await plugin.mailApi.createThreadMessage('threadId', /* SendMailMessageRequest */);
+console.log(result);
 ```

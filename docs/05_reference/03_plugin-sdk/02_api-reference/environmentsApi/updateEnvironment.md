@@ -1,26 +1,8 @@
 ---
-name: updateEnvironment
-cbbaseinfo:
-  description: Call updateEnvironment on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateEnvironmentRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Environment>"
-    description: ""
-data:
-  name: updateEnvironment
-  category: environmentsApi
-  link: updateEnvironment.md
+title: updateEnvironment
 ---
-# updateEnvironment
+
+# `updateEnvironment`
 
 ```typescript
 plugin.environmentsApi.updateEnvironment(id: string, data: UpdateEnvironmentRequest): Promise<Environment>
@@ -30,19 +12,20 @@ plugin.environmentsApi.updateEnvironment(id: string, data: UpdateEnvironmentRequ
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateEnvironmentRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateEnvironmentRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Environment>`**
+`Promise<Environment>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.updateEnvironment('id', /* UpdateEnvironmentRequest */);
+const result = await plugin.environmentsApi.updateEnvironment('id', /* UpdateEnvironmentRequest */);
+console.log(result);
 ```

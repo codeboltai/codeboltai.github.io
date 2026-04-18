@@ -1,22 +1,8 @@
 ---
-name: getStats
-cbbaseinfo:
-  description: "Retrieves theme statistics and metrics.
-
-Returns aggregated data about themes including counts, usage statistics,
-and other analytical information useful for monitoring and reporting."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ThemeStats>"
-    description: A promise that resolves to a ThemeStats object containing metrics
-data:
-  name: getStats
-  category: themes
-  link: getStats.md
+title: getStats
 ---
-# getStats
+
+# `getStats`
 
 ```typescript
 client.themes.getStats(): Promise<ThemeStats>
@@ -29,11 +15,11 @@ and other analytical information useful for monitoring and reporting.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ThemeStats>`** — A promise that resolves to a ThemeStats object containing metrics
+`Promise<ThemeStats>` — A promise that resolves to a ThemeStats object containing metrics
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.themes.getStats();
+const result = await client.themes.getStats();
+console.log(result);
 ```

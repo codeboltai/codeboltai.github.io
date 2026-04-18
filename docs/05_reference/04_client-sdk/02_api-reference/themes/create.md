@@ -1,26 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: "Creates a new custom theme.
-
-Registers a new theme with the system using the provided configuration.
-The theme can be customized with specific colors, fonts, and styling
-preferences to match design requirements."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateThemeRequest
-      description: Request containing the new theme configuration
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Theme>"
-    description: A promise that resolves to the created Theme object
-data:
-  name: create
-  category: themes
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 client.themes.create(data: CreateThemeRequest): Promise<Theme>
@@ -34,13 +16,13 @@ preferences to match design requirements.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateThemeRequest` | Request containing the new theme configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateThemeRequest` | Yes | Request containing the new theme configuration |
 
 ## Returns
 
-**`Promise<Theme>`** — A promise that resolves to the created Theme object
+`Promise<Theme>` — A promise that resolves to the created Theme object
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.themes.create(/* CreateThemeRequest */);
+const result = await client.themes.create(/* CreateThemeRequest */);
+console.log(result);
 ```

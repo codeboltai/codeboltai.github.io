@@ -1,19 +1,8 @@
 ---
-name: getLabels
-cbbaseinfo:
-  description: Call getLabels on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<JobLabel[]>"
-    description: ""
-data:
-  name: getLabels
-  category: jobsApi
-  link: getLabels.md
+title: getLabels
 ---
-# getLabels
+
+# `getLabels`
 
 ```typescript
 plugin.jobsApi.getLabels(): Promise<JobLabel[]>
@@ -23,16 +12,17 @@ plugin.jobsApi.getLabels(): Promise<JobLabel[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<JobLabel[]>`**
+`Promise<JobLabel[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getLabels();
+const result = await plugin.jobsApi.getLabels();
+console.log(result);
 ```

@@ -1,26 +1,8 @@
 ---
-name: createCollection
-cbbaseinfo:
-  description: "Creates a new vector collection.
-
-Initializes a new collection with specified configuration including
-dimensionality, embedding model, and metadata settings. Collections
-are used to store and manage vectors for similarity search operations."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateVectorCollectionRequest
-      description: The collection configuration data including name, dimensions, and settings
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollection>"
-    description: A promise that resolves to the created VectorCollection object
-data:
-  name: createCollection
-  category: vectorDb
-  link: createCollection.md
+title: createCollection
 ---
-# createCollection
+
+# `createCollection`
 
 ```typescript
 client.vectorDb.createCollection(data: CreateVectorCollectionRequest): Promise<VectorCollection>
@@ -34,13 +16,13 @@ are used to store and manage vectors for similarity search operations.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateVectorCollectionRequest` | The collection configuration data including name, dimensions, and settings |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateVectorCollectionRequest` | Yes | The collection configuration data including name, dimensions, and settings |
 
 ## Returns
 
-**`Promise<VectorCollection>`** — A promise that resolves to the created VectorCollection object
+`Promise<VectorCollection>` — A promise that resolves to the created VectorCollection object
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.vectorDb.createCollection(/* CreateVectorCollectionRequest */);
+const result = await client.vectorDb.createCollection(/* CreateVectorCollectionRequest */);
+console.log(result);
 ```

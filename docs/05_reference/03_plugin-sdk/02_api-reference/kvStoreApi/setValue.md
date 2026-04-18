@@ -1,22 +1,8 @@
 ---
-name: setValue
-cbbaseinfo:
-  description: Call setValue on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: SetKvValueRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KvValue>"
-    description: ""
-data:
-  name: setValue
-  category: kvStoreApi
-  link: setValue.md
+title: setValue
 ---
-# setValue
+
+# `setValue`
 
 ```typescript
 plugin.kvStoreApi.setValue(data: SetKvValueRequest): Promise<KvValue>
@@ -26,18 +12,19 @@ plugin.kvStoreApi.setValue(data: SetKvValueRequest): Promise<KvValue>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `SetKvValueRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `SetKvValueRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KvValue>`**
+`Promise<KvValue>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.setValue(/* SetKvValueRequest */);
+const result = await plugin.kvStoreApi.setValue(/* SetKvValueRequest */);
+console.log(result);
 ```

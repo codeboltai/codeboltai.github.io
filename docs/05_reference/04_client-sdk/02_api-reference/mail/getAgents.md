@@ -1,22 +1,8 @@
 ---
-name: getAgents
-cbbaseinfo:
-  description: "Lists all registered mail agents in the system.
-
-Returns the complete list of agents that are registered to send and receive mail.
-Each agent has a unique identity and inbox for receiving messages."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<MailAgent[]>"
-    description: A promise that resolves to an array of mail agent registrations
-data:
-  name: getAgents
-  category: mail
-  link: getAgents.md
+title: getAgents
 ---
-# getAgents
+
+# `getAgents`
 
 ```typescript
 client.mail.getAgents(): Promise<MailAgent[]>
@@ -29,11 +15,11 @@ Each agent has a unique identity and inbox for receiving messages.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<MailAgent[]>`** — A promise that resolves to an array of mail agent registrations
+`Promise<MailAgent[]>` — A promise that resolves to an array of mail agent registrations
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mail.getAgents();
+const result = await client.mail.getAgents();
+console.log(result);
 ```

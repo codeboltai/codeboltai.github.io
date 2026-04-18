@@ -1,22 +1,8 @@
 ---
-name: delete
-cbbaseinfo:
-  description: Call delete on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: todoId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: delete
-  category: todosApi
-  link: delete.md
+title: delete
 ---
-# delete
+
+# `delete`
 
 ```typescript
 plugin.todosApi.delete(todoId: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.todosApi.delete(todoId: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `todoId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `todoId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.delete('todoId');
+const result = await plugin.todosApi.delete('todoId');
+console.log(result);
 ```

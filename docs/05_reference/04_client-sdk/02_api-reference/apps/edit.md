@@ -1,25 +1,8 @@
 ---
-name: edit
-cbbaseinfo:
-  description: "Opens an application for editing.
-
-Launches the app's source code or configuration in an editable mode,
-allowing modifications to its behavior."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: EditAppRequest
-      description: The edit configuration
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when the app is ready for editing
-data:
-  name: edit
-  category: apps
-  link: edit.md
+title: edit
 ---
-# edit
+
+# `edit`
 
 ```typescript
 client.apps.edit(data: EditAppRequest): Promise<unknown>
@@ -32,13 +15,13 @@ allowing modifications to its behavior.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `EditAppRequest` | The edit configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `EditAppRequest` | Yes | The edit configuration |
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when the app is ready for editing
+`Promise<unknown>` — A promise that resolves when the app is ready for editing
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.apps.edit(/* EditAppRequest */);
+const result = await client.apps.edit(/* EditAppRequest */);
+console.log(result);
 ```

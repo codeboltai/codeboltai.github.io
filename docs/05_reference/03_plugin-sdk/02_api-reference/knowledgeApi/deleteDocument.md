@@ -1,22 +1,8 @@
 ---
-name: deleteDocument
-cbbaseinfo:
-  description: Call deleteDocument on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: documentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: deleteDocument
-  category: knowledgeApi
-  link: deleteDocument.md
+title: deleteDocument
 ---
-# deleteDocument
+
+# `deleteDocument`
 
 ```typescript
 plugin.knowledgeApi.deleteDocument(documentId: string): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.deleteDocument(documentId: string): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `documentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `documentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.deleteDocument('documentId');
+const result = await plugin.knowledgeApi.deleteDocument('documentId');
+console.log(result);
 ```

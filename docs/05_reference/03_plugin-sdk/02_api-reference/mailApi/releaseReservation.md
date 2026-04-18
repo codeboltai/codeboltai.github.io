@@ -1,22 +1,8 @@
 ---
-name: releaseReservation
-cbbaseinfo:
-  description: Call releaseReservation on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ReleaseReservationRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: releaseReservation
-  category: mailApi
-  link: releaseReservation.md
+title: releaseReservation
 ---
-# releaseReservation
+
+# `releaseReservation`
 
 ```typescript
 plugin.mailApi.releaseReservation(data: ReleaseReservationRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.mailApi.releaseReservation(data: ReleaseReservationRequest): Promise<void
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ReleaseReservationRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ReleaseReservationRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.releaseReservation(/* ReleaseReservationRequest */);
+const result = await plugin.mailApi.releaseReservation(/* ReleaseReservationRequest */);
+console.log(result);
 ```

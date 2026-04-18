@@ -1,19 +1,8 @@
 ---
-name: mcp
-cbbaseinfo:
-  description: Call mcp on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: mcp
-  category: notify
-  link: mcp.md
+title: mcp
 ---
-# mcp
+
+# `mcp`
 
 ```typescript
 plugin.notify.mcp(): void
@@ -23,16 +12,17 @@ plugin.notify.mcp(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.mcp();
+const result = await plugin.notify.mcp();
+console.log(result);
 ```

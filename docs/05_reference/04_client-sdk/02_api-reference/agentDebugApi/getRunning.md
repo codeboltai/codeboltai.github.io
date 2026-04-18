@@ -1,22 +1,8 @@
 ---
-name: getRunning
-cbbaseinfo:
-  description: "Retrieves all currently running agent instances.
-
-A convenience method that returns only instances with an active/running status,
-useful for real-time monitoring dashboards."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<AgentDebugInstance[]>"
-    description: A promise that resolves to an array of running AgentDebugInstance objects
-data:
-  name: getRunning
-  category: agentDebugApi
-  link: getRunning.md
+title: getRunning
 ---
-# getRunning
+
+# `getRunning`
 
 ```typescript
 client.agentDebugApi.getRunning(): Promise<AgentDebugInstance[]>
@@ -29,11 +15,11 @@ useful for real-time monitoring dashboards.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<AgentDebugInstance[]>`** — A promise that resolves to an array of running AgentDebugInstance objects
+`Promise<AgentDebugInstance[]>` — A promise that resolves to an array of running AgentDebugInstance objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agentDebugApi.getRunning();
+const result = await client.agentDebugApi.getRunning();
+console.log(result);
 ```

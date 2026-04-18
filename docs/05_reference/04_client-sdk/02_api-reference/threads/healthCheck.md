@@ -1,23 +1,8 @@
 ---
-name: healthCheck
-cbbaseinfo:
-  description: "Performs a health check on the thread service.
-
-Verifies that the thread service is operational and responding to requests.
-Use this for service monitoring or to check availability before performing
-other thread operations."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: A promise that resolves to an object containing the service status
-data:
-  name: healthCheck
-  category: threads
-  link: healthCheck.md
+title: healthCheck
 ---
-# healthCheck
+
+# `healthCheck`
 
 ```typescript
 client.threads.healthCheck(): Promise<object>
@@ -31,11 +16,11 @@ other thread operations.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<object>`** — A promise that resolves to an object containing the service status
+`Promise<object>` — A promise that resolves to an object containing the service status
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threads.healthCheck();
+const result = await client.threads.healthCheck();
+console.log(result);
 ```

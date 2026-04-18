@@ -1,22 +1,8 @@
 ---
-name: getIndex
-cbbaseinfo:
-  description: Call getIndex on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: CalendarFilterOptions
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<CalendarIndexEntry[]>"
-    description: ""
-data:
-  name: getIndex
-  category: calendarApi
-  link: getIndex.md
+title: getIndex
 ---
-# getIndex
+
+# `getIndex`
 
 ```typescript
 plugin.calendarApi.getIndex(params?: CalendarFilterOptions): Promise<CalendarIndexEntry[]>
@@ -26,18 +12,19 @@ plugin.calendarApi.getIndex(params?: CalendarFilterOptions): Promise<CalendarInd
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `CalendarFilterOptions` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
 
 ## Returns
 
-**`Promise<CalendarIndexEntry[]>`**
+`Promise<CalendarIndexEntry[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.getIndex();
+const result = await plugin.calendarApi.getIndex();
+console.log(result);
 ```

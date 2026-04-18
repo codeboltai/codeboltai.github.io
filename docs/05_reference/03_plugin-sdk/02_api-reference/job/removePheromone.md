@@ -1,30 +1,8 @@
 ---
-name: removePheromone
-cbbaseinfo:
-  description: Call removePheromone on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: type
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: depositedBy
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<JobPheromoneRemoveResponse>"
-    description: ""
-data:
-  name: removePheromone
-  category: job
-  link: removePheromone.md
+title: removePheromone
 ---
-# removePheromone
+
+# `removePheromone`
 
 ```typescript
 plugin.job.removePheromone(jobId: string, type: string, depositedBy?: string): Promise<JobPheromoneRemoveResponse>
@@ -34,20 +12,21 @@ plugin.job.removePheromone(jobId: string, type: string, depositedBy?: string): P
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `type` | `string` |  |
-| `depositedBy` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `type` | `string` | Yes |  |
+| `depositedBy` | `string` | No |  |
 
 ## Returns
 
-**`Promise<JobPheromoneRemoveResponse>`**
+`Promise<JobPheromoneRemoveResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.removePheromone('jobId', 'type');
+const result = await plugin.job.removePheromone('jobId', 'type');
+console.log(result);
 ```

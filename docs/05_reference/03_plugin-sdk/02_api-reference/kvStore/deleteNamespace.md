@@ -1,26 +1,8 @@
 ---
-name: deleteNamespace
-cbbaseinfo:
-  description: Delete an entire namespace from the KV store
-cbparameters:
-  parameters:
-    - name: instanceId
-      typeName: string
-      description: Instance ID
-      isOptional: false
-    - name: namespace
-      typeName: string
-      description: Namespace to delete
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KVDeleteNamespaceResponse>"
-    description: ""
-data:
-  name: deleteNamespace
-  category: kvStore
-  link: deleteNamespace.md
+title: deleteNamespace
 ---
-# deleteNamespace
+
+# `deleteNamespace`
 
 ```typescript
 plugin.kvStore.deleteNamespace(instanceId: string, namespace: string): Promise<KVDeleteNamespaceResponse>
@@ -30,19 +12,20 @@ Delete an entire namespace from the KV store
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `instanceId` | `string` | Instance ID |
-| `namespace` | `string` | Namespace to delete |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes | Instance ID |
+| `namespace` | `string` | Yes | Namespace to delete |
 
 ## Returns
 
-**`Promise<KVDeleteNamespaceResponse>`**
+`Promise<KVDeleteNamespaceResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStore.deleteNamespace('instanceId', 'namespace');
+const result = await plugin.kvStore.deleteNamespace('instanceId', 'namespace');
+console.log(result);
 ```

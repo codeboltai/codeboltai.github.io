@@ -1,22 +1,8 @@
 ---
-name: acknowledge
-cbbaseinfo:
-  description: Call acknowledge on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IAcknowledgeParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IAcknowledgeResponse>"
-    description: ""
-data:
-  name: acknowledge
-  category: mail
-  link: acknowledge.md
+title: acknowledge
 ---
-# acknowledge
+
+# `acknowledge`
 
 ```typescript
 plugin.mail.acknowledge(params: IAcknowledgeParams): Promise<IAcknowledgeResponse>
@@ -26,18 +12,19 @@ plugin.mail.acknowledge(params: IAcknowledgeParams): Promise<IAcknowledgeRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IAcknowledgeParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IAcknowledgeParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IAcknowledgeResponse>`**
+`Promise<IAcknowledgeResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.acknowledge(/* IAcknowledgeParams */);
+const result = await plugin.mail.acknowledge(/* IAcknowledgeParams */);
+console.log(result);
 ```

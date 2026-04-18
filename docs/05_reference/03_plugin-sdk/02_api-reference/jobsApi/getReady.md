@@ -1,19 +1,8 @@
 ---
-name: getReady
-cbbaseinfo:
-  description: Call getReady on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Job[]>"
-    description: ""
-data:
-  name: getReady
-  category: jobsApi
-  link: getReady.md
+title: getReady
 ---
-# getReady
+
+# `getReady`
 
 ```typescript
 plugin.jobsApi.getReady(): Promise<Job[]>
@@ -23,16 +12,17 @@ plugin.jobsApi.getReady(): Promise<Job[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Job[]>`**
+`Promise<Job[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getReady();
+const result = await plugin.jobsApi.getReady();
+console.log(result);
 ```

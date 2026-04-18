@@ -1,28 +1,8 @@
 ---
-name: updatePhase
-cbbaseinfo:
-  description: "Updates an existing roadmap phase.
-
-Modifies the properties of a phase such as its name, description, or ordering."
-cbparameters:
-  parameters:
-    - name: phaseId
-      typeName: string
-      description: The unique identifier of the phase to update
-      isOptional: false
-    - name: data
-      typeName: UpdatePhaseRequest
-      description: The fields to update on the phase
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<RoadmapPhase>"
-    description: A promise that resolves to the updated RoadmapPhase
-data:
-  name: updatePhase
-  category: roadmap
-  link: updatePhase.md
+title: updatePhase
 ---
-# updatePhase
+
+# `updatePhase`
 
 ```typescript
 client.roadmap.updatePhase(phaseId: string, data: UpdatePhaseRequest): Promise<RoadmapPhase>
@@ -34,14 +14,14 @@ Modifies the properties of a phase such as its name, description, or ordering.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `phaseId` | `string` | The unique identifier of the phase to update |
-| `data` | `UpdatePhaseRequest` | The fields to update on the phase |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `phaseId` | `string` | Yes | The unique identifier of the phase to update |
+| `data` | `UpdatePhaseRequest` | Yes | The fields to update on the phase |
 
 ## Returns
 
-**`Promise<RoadmapPhase>`** — A promise that resolves to the updated RoadmapPhase
+`Promise<RoadmapPhase>` — A promise that resolves to the updated RoadmapPhase
 
 ## Example
 
@@ -50,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.roadmap.updatePhase('phaseId', /* UpdatePhaseRequest */);
+const result = await client.roadmap.updatePhase('phaseId', /* UpdatePhaseRequest */);
+console.log(result);
 ```

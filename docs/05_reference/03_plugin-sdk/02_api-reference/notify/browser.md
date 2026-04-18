@@ -1,19 +1,8 @@
 ---
-name: browser
-cbbaseinfo:
-  description: Call browser on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: browser
-  category: notify
-  link: browser.md
+title: browser
 ---
-# browser
+
+# `browser`
 
 ```typescript
 plugin.notify.browser(): void
@@ -23,16 +12,17 @@ plugin.notify.browser(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.browser();
+const result = await plugin.notify.browser();
+console.log(result);
 ```

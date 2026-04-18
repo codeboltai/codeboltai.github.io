@@ -1,22 +1,8 @@
 ---
-name: delete
-cbbaseinfo:
-  description: Delete a hook
-cbparameters:
-  parameters:
-    - name: hookId
-      typeName: string
-      description: Hook ID
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<HookDeleteResponse>"
-    description: ""
-data:
-  name: delete
-  category: hook
-  link: delete.md
+title: delete
 ---
-# delete
+
+# `delete`
 
 ```typescript
 plugin.hook.delete(hookId: string): Promise<HookDeleteResponse>
@@ -26,18 +12,19 @@ Delete a hook
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `hookId` | `string` | Hook ID |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `hookId` | `string` | Yes | Hook ID |
 
 ## Returns
 
-**`Promise<HookDeleteResponse>`**
+`Promise<HookDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.delete('hookId');
+const result = await plugin.hook.delete('hookId');
+console.log(result);
 ```

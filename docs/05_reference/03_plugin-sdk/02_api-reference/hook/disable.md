@@ -1,22 +1,8 @@
 ---
-name: disable
-cbbaseinfo:
-  description: Disable a hook
-cbparameters:
-  parameters:
-    - name: hookId
-      typeName: string
-      description: Hook ID
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<HookResponse>"
-    description: ""
-data:
-  name: disable
-  category: hook
-  link: disable.md
+title: disable
 ---
-# disable
+
+# `disable`
 
 ```typescript
 plugin.hook.disable(hookId: string): Promise<HookResponse>
@@ -26,18 +12,19 @@ Disable a hook
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `hookId` | `string` | Hook ID |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `hookId` | `string` | Yes | Hook ID |
 
 ## Returns
 
-**`Promise<HookResponse>`**
+`Promise<HookResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.disable('hookId');
+const result = await plugin.hook.disable('hookId');
+console.log(result);
 ```

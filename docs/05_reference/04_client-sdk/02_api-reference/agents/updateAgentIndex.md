@@ -1,22 +1,8 @@
 ---
-name: updateAgentIndex
-cbbaseinfo:
-  description: "Updates the agent router index.
-
-Forces a rebuild of the internal routing index that maps tasks to
-appropriate agents. Call this after installing or removing agents."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the index has been updated
-data:
-  name: updateAgentIndex
-  category: agents
-  link: updateAgentIndex.md
+title: updateAgentIndex
 ---
-# updateAgentIndex
+
+# `updateAgentIndex`
 
 ```typescript
 client.agents.updateAgentIndex(): Promise<void>
@@ -29,11 +15,11 @@ appropriate agents. Call this after installing or removing agents.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the index has been updated
+`Promise<void>` — A promise that resolves when the index has been updated
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.updateAgentIndex();
+const result = await client.agents.updateAgentIndex();
+console.log(result);
 ```

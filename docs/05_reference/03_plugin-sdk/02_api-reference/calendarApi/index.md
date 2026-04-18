@@ -1,67 +1,286 @@
 ---
-cbapicategory:
-  - name: completeEvent
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/completeEvent
-    description: completeEvent
-  - name: completeEvents
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/completeEvents
-    description: completeEvents
-  - name: completeTriggered
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/completeTriggered
-    description: completeTriggered
-  - name: createEvent
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/createEvent
-    description: createEvent
-  - name: deleteEvent
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/deleteEvent
-    description: deleteEvent
-  - name: getEvent
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getEvent
-    description: getEvent
-  - name: getIndex
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getIndex
-    description: getIndex
-  - name: getRange
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getRange
-    description: getRange
-  - name: getStatus
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getStatus
-    description: getStatus
-  - name: getTriggered
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getTriggered
-    description: getTriggered
-  - name: getUpcoming
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/getUpcoming
-    description: getUpcoming
-  - name: listEvents
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/listEvents
-    description: listEvents
-  - name: rsvp
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/rsvp
-    description: rsvp
-  - name: updateEvent
-    link: /docs/reference/plugin-sdk/api-reference/calendarApi/updateEvent
-    description: updateEvent
+title: CalendarApi API
 ---
+
 # CalendarApi API
 
-The `calendarApi` module of the Plugin SDK.
+The `calendarApi` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`completeEvent`](./completeEvent) |  |
+| [`completeEvents`](./completeEvents) |  |
+| [`completeTriggered`](./completeTriggered) |  |
+| [`createEvent`](./createEvent) |  |
+| [`deleteEvent`](./deleteEvent) |  |
+| [`getEvent`](./getEvent) |  |
+| [`getIndex`](./getIndex) |  |
+| [`getRange`](./getRange) |  |
+| [`getStatus`](./getStatus) |  |
+| [`getTriggered`](./getTriggered) |  |
+| [`getUpcoming`](./getUpcoming) |  |
+| [`listEvents`](./listEvents) |  |
+| [`rsvp`](./rsvp) |  |
+| [`updateEvent`](./updateEvent) |  |
 
 ## Methods
 
-- [`completeEvent()`](./completeEvent) — 
-- [`completeEvents()`](./completeEvents) — 
-- [`completeTriggered()`](./completeTriggered) — 
-- [`createEvent()`](./createEvent) — 
-- [`deleteEvent()`](./deleteEvent) — 
-- [`getEvent()`](./getEvent) — 
-- [`getIndex()`](./getIndex) — 
-- [`getRange()`](./getRange) — 
-- [`getStatus()`](./getStatus) — 
-- [`getTriggered()`](./getTriggered) — 
-- [`getUpcoming()`](./getUpcoming) — 
-- [`listEvents()`](./listEvents) — 
-- [`rsvp()`](./rsvp) — 
-- [`updateEvent()`](./updateEvent) — 
+---
+
+### `completeEvent`
+
+```typescript
+plugin.calendarApi.completeEvent(id: string, data?: CompleteEventRequest): Promise<void>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `CompleteEventRequest` | No |  |
+
+**Returns:** `Promise<void>`
+
+[Full reference →](./completeEvent)
+
+---
+
+### `completeEvents`
+
+```typescript
+plugin.calendarApi.completeEvents(data: BulkCompleteEventsRequest): Promise<void>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BulkCompleteEventsRequest` | Yes |  |
+
+**Returns:** `Promise<void>`
+
+[Full reference →](./completeEvents)
+
+---
+
+### `completeTriggered`
+
+```typescript
+plugin.calendarApi.completeTriggered(data: CompleteTriggeredRequest): Promise<void>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CompleteTriggeredRequest` | Yes |  |
+
+**Returns:** `Promise<void>`
+
+[Full reference →](./completeTriggered)
+
+---
+
+### `createEvent`
+
+```typescript
+plugin.calendarApi.createEvent(data: CreateCalendarEventRequest): Promise<CalendarEvent>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateCalendarEventRequest` | Yes |  |
+
+**Returns:** `Promise<CalendarEvent>`
+
+[Full reference →](./createEvent)
+
+---
+
+### `deleteEvent`
+
+```typescript
+plugin.calendarApi.deleteEvent(id: string): Promise<void>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<void>`
+
+[Full reference →](./deleteEvent)
+
+---
+
+### `getEvent`
+
+```typescript
+plugin.calendarApi.getEvent(id: string): Promise<CalendarEvent>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<CalendarEvent>`
+
+[Full reference →](./getEvent)
+
+---
+
+### `getIndex`
+
+```typescript
+plugin.calendarApi.getIndex(params?: CalendarFilterOptions): Promise<CalendarIndexEntry[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
+
+**Returns:** `Promise<CalendarIndexEntry[]>`
+
+[Full reference →](./getIndex)
+
+---
+
+### `getRange`
+
+```typescript
+plugin.calendarApi.getRange(params?: CalendarFilterOptions): Promise<CalendarEvent[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
+
+**Returns:** `Promise<CalendarEvent[]>`
+
+[Full reference →](./getRange)
+
+---
+
+### `getStatus`
+
+```typescript
+plugin.calendarApi.getStatus(): Promise<CalendarStatus>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<CalendarStatus>`
+
+[Full reference →](./getStatus)
+
+---
+
+### `getTriggered`
+
+```typescript
+plugin.calendarApi.getTriggered(params?: CalendarFilterOptions): Promise<CalendarEvent[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
+
+**Returns:** `Promise<CalendarEvent[]>`
+
+[Full reference →](./getTriggered)
+
+---
+
+### `getUpcoming`
+
+```typescript
+plugin.calendarApi.getUpcoming(params?: CalendarFilterOptions): Promise<CalendarEvent[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
+
+**Returns:** `Promise<CalendarEvent[]>`
+
+[Full reference →](./getUpcoming)
+
+---
+
+### `listEvents`
+
+```typescript
+plugin.calendarApi.listEvents(params?: CalendarFilterOptions): Promise<CalendarEventSummary[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
+
+**Returns:** `Promise<CalendarEventSummary[]>`
+
+[Full reference →](./listEvents)
+
+---
+
+### `rsvp`
+
+```typescript
+plugin.calendarApi.rsvp(id: string, data: CalendarRSVPRequest): Promise<void>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `CalendarRSVPRequest` | Yes |  |
+
+**Returns:** `Promise<void>`
+
+[Full reference →](./rsvp)
+
+---
+
+### `updateEvent`
+
+```typescript
+plugin.calendarApi.updateEvent(id: string, data: UpdateCalendarEventRequest): Promise<CalendarEvent>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateCalendarEventRequest` | Yes |  |
+
+**Returns:** `Promise<CalendarEvent>`
+
+[Full reference →](./updateEvent)
+

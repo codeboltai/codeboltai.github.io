@@ -1,22 +1,8 @@
 ---
-name: installProvider
-cbbaseinfo:
-  description: Call installProvider on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: InstallProviderRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<InstalledProvider>"
-    description: ""
-data:
-  name: installProvider
-  category: environmentsApi
-  link: installProvider.md
+title: installProvider
 ---
-# installProvider
+
+# `installProvider`
 
 ```typescript
 plugin.environmentsApi.installProvider(data: InstallProviderRequest): Promise<InstalledProvider>
@@ -26,18 +12,19 @@ plugin.environmentsApi.installProvider(data: InstallProviderRequest): Promise<In
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `InstallProviderRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `InstallProviderRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<InstalledProvider>`**
+`Promise<InstalledProvider>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.installProvider(/* InstallProviderRequest */);
+const result = await plugin.environmentsApi.installProvider(/* InstallProviderRequest */);
+console.log(result);
 ```

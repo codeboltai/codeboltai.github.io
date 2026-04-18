@@ -1,19 +1,8 @@
 ---
-name: getStatistics
-cbbaseinfo:
-  description: Get activity statistics overview
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<TaskActivityStatistics>"
-    description: ""
-data:
-  name: getStatistics
-  category: taskActivity
-  link: getStatistics.md
+title: getStatistics
 ---
-# getStatistics
+
+# `getStatistics`
 
 ```typescript
 client.taskActivity.getStatistics(): Promise<TaskActivityStatistics>
@@ -23,11 +12,11 @@ Get activity statistics overview
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<TaskActivityStatistics>`**
+`Promise<TaskActivityStatistics>`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.getStatistics();
+const result = await client.taskActivity.getStatistics();
+console.log(result);
 ```

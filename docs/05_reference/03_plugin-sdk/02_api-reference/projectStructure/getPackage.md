@@ -1,26 +1,8 @@
 ---
-name: getPackage
-cbbaseinfo:
-  description: Get a specific package by ID
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructurePackageResponse>"
-    description: ""
-data:
-  name: getPackage
-  category: projectStructure
-  link: getPackage.md
+title: getPackage
 ---
-# getPackage
+
+# `getPackage`
 
 ```typescript
 plugin.projectStructure.getPackage(packageId: string, workspacePath?: string): Promise<ProjectStructurePackageResponse>
@@ -30,19 +12,20 @@ Get a specific package by ID
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructurePackageResponse>`**
+`Promise<ProjectStructurePackageResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.getPackage('packageId');
+const result = await plugin.projectStructure.getPackage('packageId');
+console.log(result);
 ```

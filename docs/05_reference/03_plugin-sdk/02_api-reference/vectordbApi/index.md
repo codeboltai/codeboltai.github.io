@@ -1,71 +1,313 @@
 ---
-cbapicategory:
-  - name: addChunks
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/addChunks
-    description: addChunks
-  - name: addDocuments
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/addDocuments
-    description: addDocuments
-  - name: createCollection
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/createCollection
-    description: createCollection
-  - name: createIndex
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/createIndex
-    description: createIndex
-  - name: deleteChunk
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/deleteChunk
-    description: deleteChunk
-  - name: deleteCollection
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/deleteCollection
-    description: deleteCollection
-  - name: deleteDocuments
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/deleteDocuments
-    description: deleteDocuments
-  - name: getChunks
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/getChunks
-    description: getChunks
-  - name: getCollection
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/getCollection
-    description: getCollection
-  - name: getDocuments
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/getDocuments
-    description: getDocuments
-  - name: getSettings
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/getSettings
-    description: getSettings
-  - name: listCollections
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/listCollections
-    description: listCollections
-  - name: query
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/query
-    description: query
-  - name: updateCollection
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/updateCollection
-    description: updateCollection
-  - name: updateSettings
-    link: /docs/reference/plugin-sdk/api-reference/vectordbApi/updateSettings
-    description: updateSettings
+title: VectordbApi API
 ---
+
 # VectordbApi API
 
-The `vectordbApi` module of the Plugin SDK.
+The `vectordbApi` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`addChunks`](./addChunks) |  |
+| [`addDocuments`](./addDocuments) |  |
+| [`createCollection`](./createCollection) |  |
+| [`createIndex`](./createIndex) |  |
+| [`deleteChunk`](./deleteChunk) |  |
+| [`deleteCollection`](./deleteCollection) |  |
+| [`deleteDocuments`](./deleteDocuments) |  |
+| [`getChunks`](./getChunks) |  |
+| [`getCollection`](./getCollection) |  |
+| [`getDocuments`](./getDocuments) |  |
+| [`getSettings`](./getSettings) |  |
+| [`listCollections`](./listCollections) |  |
+| [`query`](./query) |  |
+| [`updateCollection`](./updateCollection) |  |
+| [`updateSettings`](./updateSettings) |  |
 
 ## Methods
 
-- [`addChunks()`](./addChunks) — 
-- [`addDocuments()`](./addDocuments) — 
-- [`createCollection()`](./createCollection) — 
-- [`createIndex()`](./createIndex) — 
-- [`deleteChunk()`](./deleteChunk) — 
-- [`deleteCollection()`](./deleteCollection) — 
-- [`deleteDocuments()`](./deleteDocuments) — 
-- [`getChunks()`](./getChunks) — 
-- [`getCollection()`](./getCollection) — 
-- [`getDocuments()`](./getDocuments) — 
-- [`getSettings()`](./getSettings) — 
-- [`listCollections()`](./listCollections) — 
-- [`query()`](./query) — 
-- [`updateCollection()`](./updateCollection) — 
-- [`updateSettings()`](./updateSettings) — 
+---
+
+### `addChunks`
+
+```typescript
+plugin.vectordbApi.addChunks(id: string, data: AddVectorChunksRequest): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddVectorChunksRequest` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./addChunks)
+
+---
+
+### `addDocuments`
+
+```typescript
+plugin.vectordbApi.addDocuments(id: string, data: AddVectorDocumentsRequest): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddVectorDocumentsRequest` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./addDocuments)
+
+---
+
+### `createCollection`
+
+```typescript
+plugin.vectordbApi.createCollection(data: CreateVectorCollectionRequest): Promise<VectorCollection>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateVectorCollectionRequest` | Yes |  |
+
+**Returns:** `Promise<VectorCollection>`
+
+[Full reference →](./createCollection)
+
+---
+
+### `createIndex`
+
+```typescript
+plugin.vectordbApi.createIndex(data: CreateVectorIndexRequest): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateVectorIndexRequest` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./createIndex)
+
+---
+
+### `deleteChunk`
+
+```typescript
+plugin.vectordbApi.deleteChunk(id: string, chunkId: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `chunkId` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteChunk)
+
+---
+
+### `deleteCollection`
+
+```typescript
+plugin.vectordbApi.deleteCollection(id: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteCollection)
+
+---
+
+### `deleteDocuments`
+
+```typescript
+plugin.vectordbApi.deleteDocuments(id: string, data?: DeleteVectorDocumentsRequest): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `DeleteVectorDocumentsRequest` | No |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteDocuments)
+
+---
+
+### `getChunks`
+
+```typescript
+plugin.vectordbApi.getChunks(id: string, params?: Record<string, unknown>): Promise<VectorChunk[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `params` | `Record<string, unknown>` | No |  |
+
+**Returns:** `Promise<VectorChunk[]>`
+
+[Full reference →](./getChunks)
+
+---
+
+### `getCollection`
+
+```typescript
+plugin.vectordbApi.getCollection(id: string): Promise<VectorCollection>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<VectorCollection>`
+
+[Full reference →](./getCollection)
+
+---
+
+### `getDocuments`
+
+```typescript
+plugin.vectordbApi.getDocuments(id: string, params?: Record<string, unknown>): Promise<VectorDocument[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `params` | `Record<string, unknown>` | No |  |
+
+**Returns:** `Promise<VectorDocument[]>`
+
+[Full reference →](./getDocuments)
+
+---
+
+### `getSettings`
+
+```typescript
+plugin.vectordbApi.getSettings(id: string): Promise<VectorCollectionSettings>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<VectorCollectionSettings>`
+
+[Full reference →](./getSettings)
+
+---
+
+### `listCollections`
+
+```typescript
+plugin.vectordbApi.listCollections(params?: Record<string, unknown>): Promise<VectorCollection[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
+
+**Returns:** `Promise<VectorCollection[]>`
+
+[Full reference →](./listCollections)
+
+---
+
+### `query`
+
+```typescript
+plugin.vectordbApi.query(id: string, data: VectorQueryRequest): Promise<VectorSearchResult[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `VectorQueryRequest` | Yes |  |
+
+**Returns:** `Promise<VectorSearchResult[]>`
+
+[Full reference →](./query)
+
+---
+
+### `updateCollection`
+
+```typescript
+plugin.vectordbApi.updateCollection(id: string, data: UpdateVectorCollectionRequest): Promise<VectorCollection>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateVectorCollectionRequest` | Yes |  |
+
+**Returns:** `Promise<VectorCollection>`
+
+[Full reference →](./updateCollection)
+
+---
+
+### `updateSettings`
+
+```typescript
+plugin.vectordbApi.updateSettings(id: string, data: UpdateVectorSettingsRequest): Promise<VectorCollectionSettings>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateVectorSettingsRequest` | Yes |  |
+
+**Returns:** `Promise<VectorCollectionSettings>`
+
+[Full reference →](./updateSettings)
+

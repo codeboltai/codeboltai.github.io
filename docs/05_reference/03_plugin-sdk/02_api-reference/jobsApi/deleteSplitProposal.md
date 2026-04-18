@@ -1,26 +1,8 @@
 ---
-name: deleteSplitProposal
-cbbaseinfo:
-  description: Call deleteSplitProposal on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: proposalId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deleteSplitProposal
-  category: jobsApi
-  link: deleteSplitProposal.md
+title: deleteSplitProposal
 ---
-# deleteSplitProposal
+
+# `deleteSplitProposal`
 
 ```typescript
 plugin.jobsApi.deleteSplitProposal(id: string, proposalId: string): Promise<void>
@@ -30,19 +12,20 @@ plugin.jobsApi.deleteSplitProposal(id: string, proposalId: string): Promise<void
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `proposalId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `proposalId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.deleteSplitProposal('id', 'proposalId');
+const result = await plugin.jobsApi.deleteSplitProposal('id', 'proposalId');
+console.log(result);
 ```

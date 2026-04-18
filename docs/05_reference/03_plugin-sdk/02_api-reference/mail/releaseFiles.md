@@ -1,22 +1,8 @@
 ---
-name: releaseFiles
-cbbaseinfo:
-  description: Call releaseFiles on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IReleaseFilesParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IReleaseFilesResponse>"
-    description: ""
-data:
-  name: releaseFiles
-  category: mail
-  link: releaseFiles.md
+title: releaseFiles
 ---
-# releaseFiles
+
+# `releaseFiles`
 
 ```typescript
 plugin.mail.releaseFiles(params: IReleaseFilesParams): Promise<IReleaseFilesResponse>
@@ -26,18 +12,19 @@ plugin.mail.releaseFiles(params: IReleaseFilesParams): Promise<IReleaseFilesResp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IReleaseFilesParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IReleaseFilesParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IReleaseFilesResponse>`**
+`Promise<IReleaseFilesResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.releaseFiles(/* IReleaseFilesParams */);
+const result = await plugin.mail.releaseFiles(/* IReleaseFilesParams */);
+console.log(result);
 ```

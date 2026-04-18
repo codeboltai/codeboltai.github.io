@@ -1,22 +1,8 @@
 ---
-name: getAppState
-cbbaseinfo:
-  description: "Retrieves the current application state.
-
-Returns the full application state object containing the active
-configuration, user preferences, and runtime status."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<AppState>"
-    description: A promise that resolves to the current AppState object
-data:
-  name: getAppState
-  category: application
-  link: getAppState.md
+title: getAppState
 ---
-# getAppState
+
+# `getAppState`
 
 ```typescript
 client.application.getAppState(): Promise<AppState>
@@ -29,11 +15,11 @@ configuration, user preferences, and runtime status.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<AppState>`** — A promise that resolves to the current AppState object
+`Promise<AppState>` — A promise that resolves to the current AppState object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getAppState();
+const result = await client.application.getAppState();
+console.log(result);
 ```

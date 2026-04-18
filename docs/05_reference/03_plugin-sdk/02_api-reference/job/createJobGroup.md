@@ -1,22 +1,8 @@
 ---
-name: createJobGroup
-cbbaseinfo:
-  description: Call createJobGroup on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateJobGroupData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobGroupCreateResponse>"
-    description: ""
-data:
-  name: createJobGroup
-  category: job
-  link: createJobGroup.md
+title: createJobGroup
 ---
-# createJobGroup
+
+# `createJobGroup`
 
 ```typescript
 plugin.job.createJobGroup(data: CreateJobGroupData): Promise<JobGroupCreateResponse>
@@ -26,18 +12,19 @@ plugin.job.createJobGroup(data: CreateJobGroupData): Promise<JobGroupCreateRespo
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateJobGroupData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateJobGroupData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobGroupCreateResponse>`**
+`Promise<JobGroupCreateResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.createJobGroup(/* CreateJobGroupData */);
+const result = await plugin.job.createJobGroup(/* CreateJobGroupData */);
+console.log(result);
 ```

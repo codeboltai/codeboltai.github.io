@@ -1,19 +1,8 @@
 ---
-name: agent
-cbbaseinfo:
-  description: Call agent on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: agent
-  category: notify
-  link: agent.md
+title: agent
 ---
-# agent
+
+# `agent`
 
 ```typescript
 plugin.notify.agent(): void
@@ -23,16 +12,17 @@ plugin.notify.agent(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.agent();
+const result = await plugin.notify.agent();
+console.log(result);
 ```

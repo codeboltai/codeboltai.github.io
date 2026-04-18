@@ -1,26 +1,8 @@
 ---
-name: removeDependency
-cbbaseinfo:
-  description: Call removeDependency on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: targetId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobDependencyResponse>"
-    description: ""
-data:
-  name: removeDependency
-  category: job
-  link: removeDependency.md
+title: removeDependency
 ---
-# removeDependency
+
+# `removeDependency`
 
 ```typescript
 plugin.job.removeDependency(jobId: string, targetId: string): Promise<JobDependencyResponse>
@@ -30,19 +12,20 @@ plugin.job.removeDependency(jobId: string, targetId: string): Promise<JobDepende
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `targetId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `targetId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobDependencyResponse>`**
+`Promise<JobDependencyResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.removeDependency('jobId', 'targetId');
+const result = await plugin.job.removeDependency('jobId', 'targetId');
+console.log(result);
 ```

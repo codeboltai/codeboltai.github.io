@@ -1,19 +1,8 @@
 ---
-name: relinquish
-cbbaseinfo:
-  description: Release the claim on the execution gateway.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ExecutionGatewayResponse>"
-    description: ""
-data:
-  name: relinquish
-  category: executionGateway
-  link: relinquish.md
+title: relinquish
 ---
-# relinquish
+
+# `relinquish`
 
 ```typescript
 plugin.executionGateway.relinquish(): Promise<ExecutionGatewayResponse>
@@ -23,16 +12,17 @@ Release the claim on the execution gateway.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ExecutionGatewayResponse>`**
+`Promise<ExecutionGatewayResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.executionGateway.relinquish();
+const result = await plugin.executionGateway.relinquish();
+console.log(result);
 ```

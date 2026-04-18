@@ -1,22 +1,8 @@
 ---
-name: listInstances
-cbbaseinfo:
-  description: Call listInstances on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<KvStoreInstance[]>"
-    description: ""
-data:
-  name: listInstances
-  category: kvStoreApi
-  link: listInstances.md
+title: listInstances
 ---
-# listInstances
+
+# `listInstances`
 
 ```typescript
 plugin.kvStoreApi.listInstances(params?: Record<string, unknown>): Promise<KvStoreInstance[]>
@@ -26,18 +12,19 @@ plugin.kvStoreApi.listInstances(params?: Record<string, unknown>): Promise<KvSto
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<KvStoreInstance[]>`**
+`Promise<KvStoreInstance[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.listInstances();
+const result = await plugin.kvStoreApi.listInstances();
+console.log(result);
 ```

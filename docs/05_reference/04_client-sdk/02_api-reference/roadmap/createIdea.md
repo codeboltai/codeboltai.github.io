@@ -1,25 +1,8 @@
 ---
-name: createIdea
-cbbaseinfo:
-  description: "Creates a new idea in the roadmap idea pool.
-
-Adds an idea that can later be reviewed, refined, and potentially promoted
-to a full feature on the roadmap."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateIdeaRequest
-      description: The idea creation payload including title and description
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<RoadmapIdea>"
-    description: A promise that resolves to the newly created RoadmapIdea
-data:
-  name: createIdea
-  category: roadmap
-  link: createIdea.md
+title: createIdea
 ---
-# createIdea
+
+# `createIdea`
 
 ```typescript
 client.roadmap.createIdea(data: CreateIdeaRequest): Promise<RoadmapIdea>
@@ -32,13 +15,13 @@ to a full feature on the roadmap.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateIdeaRequest` | The idea creation payload including title and description |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateIdeaRequest` | Yes | The idea creation payload including title and description |
 
 ## Returns
 
-**`Promise<RoadmapIdea>`** — A promise that resolves to the newly created RoadmapIdea
+`Promise<RoadmapIdea>` — A promise that resolves to the newly created RoadmapIdea
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.roadmap.createIdea(/* CreateIdeaRequest */);
+const result = await client.roadmap.createIdea(/* CreateIdeaRequest */);
+console.log(result);
 ```

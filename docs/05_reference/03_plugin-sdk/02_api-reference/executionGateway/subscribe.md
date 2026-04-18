@@ -1,20 +1,8 @@
 ---
-name: subscribe
-cbbaseinfo:
-  description: "Subscribe to execution notifications.
-Notifications are broadcast whenever the server handles a message locally."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ExecutionGatewayResponse>"
-    description: ""
-data:
-  name: subscribe
-  category: executionGateway
-  link: subscribe.md
+title: subscribe
 ---
-# subscribe
+
+# `subscribe`
 
 ```typescript
 plugin.executionGateway.subscribe(): Promise<ExecutionGatewayResponse>
@@ -25,16 +13,17 @@ Notifications are broadcast whenever the server handles a message locally.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ExecutionGatewayResponse>`**
+`Promise<ExecutionGatewayResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.executionGateway.subscribe();
+const result = await plugin.executionGateway.subscribe();
+console.log(result);
 ```

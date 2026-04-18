@@ -1,19 +1,8 @@
 ---
-name: updateRequest
-cbbaseinfo:
-  description: Call updateRequest on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: updateRequest
-  category: sockets
-  link: updateRequest.md
+title: updateRequest
 ---
-# updateRequest
+
+# `updateRequest`
 
 ```typescript
 client.sockets.updateRequest(): void
@@ -23,11 +12,11 @@ client.sockets.updateRequest(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.updateRequest();
+const result = await client.sockets.updateRequest();
+console.log(result);
 ```

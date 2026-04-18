@@ -1,22 +1,8 @@
 ---
-name: listInstalledProviders
-cbbaseinfo:
-  description: Call listInstalledProviders on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<InstalledProvider[]>"
-    description: ""
-data:
-  name: listInstalledProviders
-  category: environmentsApi
-  link: listInstalledProviders.md
+title: listInstalledProviders
 ---
-# listInstalledProviders
+
+# `listInstalledProviders`
 
 ```typescript
 plugin.environmentsApi.listInstalledProviders(params?: Record<string, unknown>): Promise<InstalledProvider[]>
@@ -26,18 +12,19 @@ plugin.environmentsApi.listInstalledProviders(params?: Record<string, unknown>):
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<InstalledProvider[]>`**
+`Promise<InstalledProvider[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.listInstalledProviders();
+const result = await plugin.environmentsApi.listInstalledProviders();
+console.log(result);
 ```

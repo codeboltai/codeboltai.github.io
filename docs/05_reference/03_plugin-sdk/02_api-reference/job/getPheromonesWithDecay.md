@@ -1,22 +1,8 @@
 ---
-name: getPheromonesWithDecay
-cbbaseinfo:
-  description: Call getPheromonesWithDecay on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobPheromoneListResponse>"
-    description: ""
-data:
-  name: getPheromonesWithDecay
-  category: job
-  link: getPheromonesWithDecay.md
+title: getPheromonesWithDecay
 ---
-# getPheromonesWithDecay
+
+# `getPheromonesWithDecay`
 
 ```typescript
 plugin.job.getPheromonesWithDecay(jobId: string): Promise<JobPheromoneListResponse>
@@ -26,18 +12,19 @@ plugin.job.getPheromonesWithDecay(jobId: string): Promise<JobPheromoneListRespon
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobPheromoneListResponse>`**
+`Promise<JobPheromoneListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.getPheromonesWithDecay('jobId');
+const result = await plugin.job.getPheromonesWithDecay('jobId');
+console.log(result);
 ```

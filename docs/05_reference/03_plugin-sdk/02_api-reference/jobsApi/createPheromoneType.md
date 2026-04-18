@@ -1,22 +1,8 @@
 ---
-name: createPheromoneType
-cbbaseinfo:
-  description: Call createPheromoneType on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreatePheromoneTypeRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<PheromoneType>"
-    description: ""
-data:
-  name: createPheromoneType
-  category: jobsApi
-  link: createPheromoneType.md
+title: createPheromoneType
 ---
-# createPheromoneType
+
+# `createPheromoneType`
 
 ```typescript
 plugin.jobsApi.createPheromoneType(data: CreatePheromoneTypeRequest): Promise<PheromoneType>
@@ -26,18 +12,19 @@ plugin.jobsApi.createPheromoneType(data: CreatePheromoneTypeRequest): Promise<Ph
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreatePheromoneTypeRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreatePheromoneTypeRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<PheromoneType>`**
+`Promise<PheromoneType>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.createPheromoneType(/* CreatePheromoneTypeRequest */);
+const result = await plugin.jobsApi.createPheromoneType(/* CreatePheromoneTypeRequest */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: bulkUpdate
-cbbaseinfo:
-  description: Bulk update steps
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BulkUpdateStepsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: bulkUpdate
-  category: threadSteps
-  link: bulkUpdate.md
+title: bulkUpdate
 ---
-# bulkUpdate
+
+# `bulkUpdate`
 
 ```typescript
 client.threadSteps.bulkUpdate(data: BulkUpdateStepsRequest): Promise<void>
@@ -26,13 +12,13 @@ Bulk update steps
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BulkUpdateStepsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BulkUpdateStepsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.bulkUpdate(/* BulkUpdateStepsRequest */);
+const result = await client.threadSteps.bulkUpdate(/* BulkUpdateStepsRequest */);
+console.log(result);
 ```

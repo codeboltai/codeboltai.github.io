@@ -1,22 +1,8 @@
 ---
-name: checkReservationConflicts
-cbbaseinfo:
-  description: Call checkReservationConflicts on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CheckReservationConflictsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: ""
-data:
-  name: checkReservationConflicts
-  category: mailApi
-  link: checkReservationConflicts.md
+title: checkReservationConflicts
 ---
-# checkReservationConflicts
+
+# `checkReservationConflicts`
 
 ```typescript
 plugin.mailApi.checkReservationConflicts(data: CheckReservationConflictsRequest): Promise<object>
@@ -26,18 +12,19 @@ plugin.mailApi.checkReservationConflicts(data: CheckReservationConflictsRequest)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CheckReservationConflictsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CheckReservationConflictsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<object>`**
+`Promise<object>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.checkReservationConflicts(/* CheckReservationConflictsRequest */);
+const result = await plugin.mailApi.checkReservationConflicts(/* CheckReservationConflictsRequest */);
+console.log(result);
 ```

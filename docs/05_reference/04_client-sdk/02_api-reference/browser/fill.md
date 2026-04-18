@@ -1,25 +1,8 @@
 ---
-name: fill
-cbbaseinfo:
-  description: "Fills a form field in the browser.
-
-Types text into the specified form field, replacing any existing content.
-The field is identified by a CSS selector or other locator strategy."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BrowserFillRequest
-      description: The fill request
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<BrowserActionResult>"
-    description: A promise that resolves to the BrowserActionResult after the fill
-data:
-  name: fill
-  category: browser
-  link: fill.md
+title: fill
 ---
-# fill
+
+# `fill`
 
 ```typescript
 client.browser.fill(data: BrowserFillRequest): Promise<BrowserActionResult>
@@ -32,13 +15,13 @@ The field is identified by a CSS selector or other locator strategy.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BrowserFillRequest` | The fill request |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserFillRequest` | Yes | The fill request |
 
 ## Returns
 
-**`Promise<BrowserActionResult>`** — A promise that resolves to the BrowserActionResult after the fill
+`Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult after the fill
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.browser.fill(/* BrowserFillRequest */);
+const result = await client.browser.fill(/* BrowserFillRequest */);
+console.log(result);
 ```

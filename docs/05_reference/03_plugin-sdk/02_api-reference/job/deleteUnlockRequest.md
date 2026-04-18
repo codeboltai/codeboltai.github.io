@@ -1,26 +1,8 @@
 ---
-name: deleteUnlockRequest
-cbbaseinfo:
-  description: Call deleteUnlockRequest on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: unlockRequestId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobUnlockRequestDeleteResponse>"
-    description: ""
-data:
-  name: deleteUnlockRequest
-  category: job
-  link: deleteUnlockRequest.md
+title: deleteUnlockRequest
 ---
-# deleteUnlockRequest
+
+# `deleteUnlockRequest`
 
 ```typescript
 plugin.job.deleteUnlockRequest(jobId: string, unlockRequestId: string): Promise<JobUnlockRequestDeleteResponse>
@@ -30,19 +12,20 @@ plugin.job.deleteUnlockRequest(jobId: string, unlockRequestId: string): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `unlockRequestId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `unlockRequestId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobUnlockRequestDeleteResponse>`**
+`Promise<JobUnlockRequestDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.deleteUnlockRequest('jobId', 'unlockRequestId');
+const result = await plugin.job.deleteUnlockRequest('jobId', 'unlockRequestId');
+console.log(result);
 ```

@@ -1,24 +1,8 @@
 ---
-name: getThread
-cbbaseinfo:
-  description: "Retrieves a specific memory thread by its unique identifier.
-
-Returns the full thread object including metadata, content references, and status."
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: The unique identifier of the thread to retrieve
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MemoryThread>"
-    description: A promise that resolves to the memory thread details
-data:
-  name: getThread
-  category: memory
-  link: getThread.md
+title: getThread
 ---
-# getThread
+
+# `getThread`
 
 ```typescript
 client.memory.getThread(threadId: string): Promise<MemoryThread>
@@ -30,13 +14,13 @@ Returns the full thread object including metadata, content references, and statu
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` | The unique identifier of the thread to retrieve |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes | The unique identifier of the thread to retrieve |
 
 ## Returns
 
-**`Promise<MemoryThread>`** — A promise that resolves to the memory thread details
+`Promise<MemoryThread>` — A promise that resolves to the memory thread details
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.memory.getThread('threadId');
+const result = await client.memory.getThread('threadId');
+console.log(result);
 ```

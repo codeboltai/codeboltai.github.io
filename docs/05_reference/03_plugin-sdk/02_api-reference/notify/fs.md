@@ -1,19 +1,8 @@
 ---
-name: fs
-cbbaseinfo:
-  description: Call fs on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: fs
-  category: notify
-  link: fs.md
+title: fs
 ---
-# fs
+
+# `fs`
 
 ```typescript
 plugin.notify.fs(): void
@@ -23,16 +12,17 @@ plugin.notify.fs(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.fs();
+const result = await plugin.notify.fs();
+console.log(result);
 ```

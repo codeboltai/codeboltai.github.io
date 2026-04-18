@@ -1,19 +1,8 @@
 ---
-name: environmentDebug
-cbbaseinfo:
-  description: Call environmentDebug on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: environmentDebug
-  category: sockets
-  link: environmentDebug.md
+title: environmentDebug
 ---
-# environmentDebug
+
+# `environmentDebug`
 
 ```typescript
 client.sockets.environmentDebug(): void
@@ -23,11 +12,11 @@ client.sockets.environmentDebug(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.environmentDebug();
+const result = await client.sockets.environmentDebug();
+console.log(result);
 ```

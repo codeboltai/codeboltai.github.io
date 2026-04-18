@@ -1,22 +1,8 @@
 ---
-name: createInDefault
-cbbaseinfo:
-  description: Call createInDefault on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Project>"
-    description: ""
-data:
-  name: createInDefault
-  category: projectsApi
-  link: createInDefault.md
+title: createInDefault
 ---
-# createInDefault
+
+# `createInDefault`
 
 ```typescript
 plugin.projectsApi.createInDefault(data: Record<string, unknown>): Promise<Project>
@@ -26,18 +12,19 @@ plugin.projectsApi.createInDefault(data: Record<string, unknown>): Promise<Proje
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `Record<string, unknown>` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `Record<string, unknown>` | Yes |  |
 
 ## Returns
 
-**`Promise<Project>`**
+`Promise<Project>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.createInDefault(/* Record<string, unknown> */);
+const result = await plugin.projectsApi.createInDefault(/* Record<string, unknown> */);
+console.log(result);
 ```

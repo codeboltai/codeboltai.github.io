@@ -1,22 +1,8 @@
 ---
-name: updatePricingToLocal
-cbbaseinfo:
-  description: "Syncs the latest LLM pricing information to local storage.
-
-Downloads the most up-to-date pricing catalog from the remote source and persists it
-locally. Call this periodically to ensure cost calculations reflect current rates."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when the local pricing data has been updated
-data:
-  name: updatePricingToLocal
-  category: llm
-  link: updatePricingToLocal.md
+title: updatePricingToLocal
 ---
-# updatePricingToLocal
+
+# `updatePricingToLocal`
 
 ```typescript
 client.llm.updatePricingToLocal(): Promise<unknown>
@@ -29,11 +15,11 @@ locally. Call this periodically to ensure cost calculations reflect current rate
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when the local pricing data has been updated
+`Promise<unknown>` — A promise that resolves when the local pricing data has been updated
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.llm.updatePricingToLocal();
+const result = await client.llm.updatePricingToLocal();
+console.log(result);
 ```

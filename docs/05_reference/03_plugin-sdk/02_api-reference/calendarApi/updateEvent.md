@@ -1,26 +1,8 @@
 ---
-name: updateEvent
-cbbaseinfo:
-  description: Call updateEvent on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateCalendarEventRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CalendarEvent>"
-    description: ""
-data:
-  name: updateEvent
-  category: calendarApi
-  link: updateEvent.md
+title: updateEvent
 ---
-# updateEvent
+
+# `updateEvent`
 
 ```typescript
 plugin.calendarApi.updateEvent(id: string, data: UpdateCalendarEventRequest): Promise<CalendarEvent>
@@ -30,19 +12,20 @@ plugin.calendarApi.updateEvent(id: string, data: UpdateCalendarEventRequest): Pr
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateCalendarEventRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateCalendarEventRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<CalendarEvent>`**
+`Promise<CalendarEvent>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.updateEvent('id', /* UpdateCalendarEventRequest */);
+const result = await plugin.calendarApi.updateEvent('id', /* UpdateCalendarEventRequest */);
+console.log(result);
 ```

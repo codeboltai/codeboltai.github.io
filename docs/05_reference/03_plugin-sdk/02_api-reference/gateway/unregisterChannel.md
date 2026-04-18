@@ -1,20 +1,8 @@
 ---
-name: unregisterChannel
-cbbaseinfo:
-  description: "Unregister this plugin's channel from the ChannelStore.
-Should be called during plugin shutdown."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: unregisterChannel
-  category: gateway
-  link: unregisterChannel.md
+title: unregisterChannel
 ---
-# unregisterChannel
+
+# `unregisterChannel`
 
 ```typescript
 plugin.gateway.unregisterChannel(): Promise<void>
@@ -25,16 +13,17 @@ Should be called during plugin shutdown.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gateway.unregisterChannel();
+const result = await plugin.gateway.unregisterChannel();
+console.log(result);
 ```

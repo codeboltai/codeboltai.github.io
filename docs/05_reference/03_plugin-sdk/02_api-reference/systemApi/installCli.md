@@ -1,22 +1,8 @@
 ---
-name: installCli
-cbbaseinfo:
-  description: Call installCli on the Plugin SDK systemApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: InstallCliRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<InstallCliResponse>"
-    description: ""
-data:
-  name: installCli
-  category: systemApi
-  link: installCli.md
+title: installCli
 ---
-# installCli
+
+# `installCli`
 
 ```typescript
 plugin.systemApi.installCli(data?: InstallCliRequest): Promise<InstallCliResponse>
@@ -26,18 +12,19 @@ plugin.systemApi.installCli(data?: InstallCliRequest): Promise<InstallCliRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `InstallCliRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `InstallCliRequest` | No |  |
 
 ## Returns
 
-**`Promise<InstallCliResponse>`**
+`Promise<InstallCliResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.systemApi.installCli();
+const result = await plugin.systemApi.installCli();
+console.log(result);
 ```

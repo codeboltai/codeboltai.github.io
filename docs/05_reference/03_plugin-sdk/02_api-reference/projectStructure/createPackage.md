@@ -1,26 +1,8 @@
 ---
-name: createPackage
-cbbaseinfo:
-  description: Create a new package
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreatePackageData
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructurePackageResponse>"
-    description: ""
-data:
-  name: createPackage
-  category: projectStructure
-  link: createPackage.md
+title: createPackage
 ---
-# createPackage
+
+# `createPackage`
 
 ```typescript
 plugin.projectStructure.createPackage(data: CreatePackageData, workspacePath?: string): Promise<ProjectStructurePackageResponse>
@@ -30,19 +12,20 @@ Create a new package
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreatePackageData` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreatePackageData` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructurePackageResponse>`**
+`Promise<ProjectStructurePackageResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.createPackage(/* CreatePackageData */);
+const result = await plugin.projectStructure.createPackage(/* CreatePackageData */);
+console.log(result);
 ```

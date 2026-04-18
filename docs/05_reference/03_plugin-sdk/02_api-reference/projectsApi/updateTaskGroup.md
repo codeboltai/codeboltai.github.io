@@ -1,26 +1,8 @@
 ---
-name: updateTaskGroup
-cbbaseinfo:
-  description: Call updateTaskGroup on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: groupId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateTaskGroupRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskGroup>"
-    description: ""
-data:
-  name: updateTaskGroup
-  category: projectsApi
-  link: updateTaskGroup.md
+title: updateTaskGroup
 ---
-# updateTaskGroup
+
+# `updateTaskGroup`
 
 ```typescript
 plugin.projectsApi.updateTaskGroup(groupId: string, data: UpdateTaskGroupRequest): Promise<TaskGroup>
@@ -30,19 +12,20 @@ plugin.projectsApi.updateTaskGroup(groupId: string, data: UpdateTaskGroupRequest
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `groupId` | `string` |  |
-| `data` | `UpdateTaskGroupRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `groupId` | `string` | Yes |  |
+| `data` | `UpdateTaskGroupRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskGroup>`**
+`Promise<TaskGroup>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.updateTaskGroup('groupId', /* UpdateTaskGroupRequest */);
+const result = await plugin.projectsApi.updateTaskGroup('groupId', /* UpdateTaskGroupRequest */);
+console.log(result);
 ```

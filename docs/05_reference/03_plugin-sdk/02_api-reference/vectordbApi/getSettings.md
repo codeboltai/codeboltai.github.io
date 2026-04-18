@@ -1,22 +1,8 @@
 ---
-name: getSettings
-cbbaseinfo:
-  description: Call getSettings on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollectionSettings>"
-    description: ""
-data:
-  name: getSettings
-  category: vectordbApi
-  link: getSettings.md
+title: getSettings
 ---
-# getSettings
+
+# `getSettings`
 
 ```typescript
 plugin.vectordbApi.getSettings(id: string): Promise<VectorCollectionSettings>
@@ -26,18 +12,19 @@ plugin.vectordbApi.getSettings(id: string): Promise<VectorCollectionSettings>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorCollectionSettings>`**
+`Promise<VectorCollectionSettings>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.getSettings('id');
+const result = await plugin.vectordbApi.getSettings('id');
+console.log(result);
 ```

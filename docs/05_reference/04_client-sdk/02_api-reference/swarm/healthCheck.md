@@ -1,21 +1,8 @@
 ---
-name: healthCheck
-cbbaseinfo:
-  description: "Health check for swarm service.
-
-Returns service status, useful for monitoring and health dashboards."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: A promise that resolves to service status
-data:
-  name: healthCheck
-  category: swarm
-  link: healthCheck.md
+title: healthCheck
 ---
-# healthCheck
+
+# `healthCheck`
 
 ```typescript
 client.swarm.healthCheck(): Promise<object>
@@ -27,11 +14,11 @@ Returns service status, useful for monitoring and health dashboards.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<object>`** — A promise that resolves to service status
+`Promise<object>` — A promise that resolves to service status
 
 ## Example
 
@@ -40,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.swarm.healthCheck();
+const result = await client.swarm.healthCheck();
+console.log(result);
 ```

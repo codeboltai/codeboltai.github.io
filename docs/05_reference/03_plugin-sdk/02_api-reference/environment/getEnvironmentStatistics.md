@@ -1,19 +1,8 @@
 ---
-name: getEnvironmentStatistics
-cbbaseinfo:
-  description: Call getEnvironmentStatistics on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: getEnvironmentStatistics
-  category: environment
-  link: getEnvironmentStatistics.md
+title: getEnvironmentStatistics
 ---
-# getEnvironmentStatistics
+
+# `getEnvironmentStatistics`
 
 ```typescript
 plugin.environment.getEnvironmentStatistics(): Promise<any>
@@ -23,16 +12,17 @@ plugin.environment.getEnvironmentStatistics(): Promise<any>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.getEnvironmentStatistics();
+const result = await plugin.environment.getEnvironmentStatistics();
+console.log(result);
 ```

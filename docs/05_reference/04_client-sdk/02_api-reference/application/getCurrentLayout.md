@@ -1,22 +1,8 @@
 ---
-name: getCurrentLayout
-cbbaseinfo:
-  description: "Retrieves the current active layout.
-
-Returns the layout configuration that is currently being displayed
-in the application UI."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<CurrentLayout>"
-    description: A promise that resolves to the CurrentLayout object
-data:
-  name: getCurrentLayout
-  category: application
-  link: getCurrentLayout.md
+title: getCurrentLayout
 ---
-# getCurrentLayout
+
+# `getCurrentLayout`
 
 ```typescript
 client.application.getCurrentLayout(): Promise<CurrentLayout>
@@ -29,11 +15,11 @@ in the application UI.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<CurrentLayout>`** — A promise that resolves to the CurrentLayout object
+`Promise<CurrentLayout>` — A promise that resolves to the CurrentLayout object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getCurrentLayout();
+const result = await client.application.getCurrentLayout();
+console.log(result);
 ```

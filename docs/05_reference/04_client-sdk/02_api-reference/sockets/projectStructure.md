@@ -1,19 +1,8 @@
 ---
-name: projectStructure
-cbbaseinfo:
-  description: Call projectStructure on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: projectStructure
-  category: sockets
-  link: projectStructure.md
+title: projectStructure
 ---
-# projectStructure
+
+# `projectStructure`
 
 ```typescript
 client.sockets.projectStructure(): void
@@ -23,11 +12,11 @@ client.sockets.projectStructure(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.projectStructure();
+const result = await client.sockets.projectStructure();
+console.log(result);
 ```

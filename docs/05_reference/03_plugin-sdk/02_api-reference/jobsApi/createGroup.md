@@ -1,22 +1,8 @@
 ---
-name: createGroup
-cbbaseinfo:
-  description: Call createGroup on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateJobGroupRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobGroup>"
-    description: ""
-data:
-  name: createGroup
-  category: jobsApi
-  link: createGroup.md
+title: createGroup
 ---
-# createGroup
+
+# `createGroup`
 
 ```typescript
 plugin.jobsApi.createGroup(data: CreateJobGroupRequest): Promise<JobGroup>
@@ -26,18 +12,19 @@ plugin.jobsApi.createGroup(data: CreateJobGroupRequest): Promise<JobGroup>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateJobGroupRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateJobGroupRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<JobGroup>`**
+`Promise<JobGroup>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.createGroup(/* CreateJobGroupRequest */);
+const result = await plugin.jobsApi.createGroup(/* CreateJobGroupRequest */);
+console.log(result);
 ```

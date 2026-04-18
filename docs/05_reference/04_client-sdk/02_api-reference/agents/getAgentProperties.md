@@ -1,22 +1,8 @@
 ---
-name: getAgentProperties
-cbbaseinfo:
-  description: "Retrieves the global agent properties.
-
-Returns system-wide properties that apply to all agents, such as
-default timeouts, resource limits, and shared configuration."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<AgentProperties>"
-    description: A promise that resolves to the AgentProperties object
-data:
-  name: getAgentProperties
-  category: agents
-  link: getAgentProperties.md
+title: getAgentProperties
 ---
-# getAgentProperties
+
+# `getAgentProperties`
 
 ```typescript
 client.agents.getAgentProperties(): Promise<AgentProperties>
@@ -29,11 +15,11 @@ default timeouts, resource limits, and shared configuration.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<AgentProperties>`** — A promise that resolves to the AgentProperties object
+`Promise<AgentProperties>` — A promise that resolves to the AgentProperties object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getAgentProperties();
+const result = await client.agents.getAgentProperties();
+console.log(result);
 ```

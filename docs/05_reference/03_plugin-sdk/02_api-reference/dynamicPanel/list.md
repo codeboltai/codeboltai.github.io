@@ -1,19 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: Lists all currently active DynamicPanels.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<DynamicPanelListResponse>"
-    description: ""
-data:
-  name: list
-  category: dynamicPanel
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 plugin.dynamicPanel.list(): Promise<DynamicPanelListResponse>
@@ -23,16 +12,17 @@ Lists all currently active DynamicPanels.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<DynamicPanelListResponse>`**
+`Promise<DynamicPanelListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.dynamicPanel.list();
+const result = await plugin.dynamicPanel.list();
+console.log(result);
 ```

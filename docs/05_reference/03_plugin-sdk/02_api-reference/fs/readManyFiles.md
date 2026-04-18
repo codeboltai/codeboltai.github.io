@@ -1,22 +1,8 @@
 ---
-name: readManyFiles
-cbbaseinfo:
-  description: readManyFiles
-cbparameters:
-  parameters:
-    - name: params
-      typeName: object
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ReadManyFilesResponse>"
-    description: A promise that resolves with the read operation result.
-data:
-  name: readManyFiles
-  category: fs
-  link: readManyFiles.md
+title: readManyFiles
 ---
-# readManyFiles
+
+# `readManyFiles`
 
 ```typescript
 plugin.fs.readManyFiles(params: object): Promise<ReadManyFilesResponse>
@@ -26,18 +12,19 @@ readManyFiles
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `object` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `object` | Yes |  |
 
 ## Returns
 
-**`Promise<ReadManyFilesResponse>`** — A promise that resolves with the read operation result.
+`Promise<ReadManyFilesResponse>` — A promise that resolves with the read operation result.
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fs.readManyFiles(/* object */);
+const result = await plugin.fs.readManyFiles(/* object */);
+console.log(result);
 ```

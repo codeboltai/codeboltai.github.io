@@ -1,22 +1,8 @@
 ---
-name: delete
-cbbaseinfo:
-  description: Call delete on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: delete
-  category: jobsApi
-  link: delete.md
+title: delete
 ---
-# delete
+
+# `delete`
 
 ```typescript
 plugin.jobsApi.delete(id: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.jobsApi.delete(id: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.delete('id');
+const result = await plugin.jobsApi.delete('id');
+console.log(result);
 ```

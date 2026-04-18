@@ -1,22 +1,8 @@
 ---
-name: acknowledgeMessage
-cbbaseinfo:
-  description: Call acknowledgeMessage on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: messageId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: acknowledgeMessage
-  category: mailApi
-  link: acknowledgeMessage.md
+title: acknowledgeMessage
 ---
-# acknowledgeMessage
+
+# `acknowledgeMessage`
 
 ```typescript
 plugin.mailApi.acknowledgeMessage(messageId: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.mailApi.acknowledgeMessage(messageId: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `messageId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `messageId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.acknowledgeMessage('messageId');
+const result = await plugin.mailApi.acknowledgeMessage('messageId');
+console.log(result);
 ```

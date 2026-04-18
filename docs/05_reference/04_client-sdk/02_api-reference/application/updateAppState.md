@@ -1,25 +1,8 @@
 ---
-name: updateAppState
-cbbaseinfo:
-  description: "Updates the application state.
-
-Applies changes to the application state, persisting the updated
-configuration across sessions."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateAppStateRequest
-      description: The state update payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the state has been updated
-data:
-  name: updateAppState
-  category: application
-  link: updateAppState.md
+title: updateAppState
 ---
-# updateAppState
+
+# `updateAppState`
 
 ```typescript
 client.application.updateAppState(data: UpdateAppStateRequest): Promise<void>
@@ -32,13 +15,13 @@ configuration across sessions.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateAppStateRequest` | The state update payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateAppStateRequest` | Yes | The state update payload |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the state has been updated
+`Promise<void>` — A promise that resolves when the state has been updated
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.updateAppState(/* UpdateAppStateRequest */);
+const result = await client.application.updateAppState(/* UpdateAppStateRequest */);
+console.log(result);
 ```

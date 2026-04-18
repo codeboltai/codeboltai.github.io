@@ -1,22 +1,8 @@
 ---
-name: getEnvAndServices
-cbbaseinfo:
-  description: "Retrieves environment variables and service configurations.
-
-Returns the environment variables and external service connection
-details configured for the current workspace."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<EnvAndServices>"
-    description: A promise that resolves to the EnvAndServices object
-data:
-  name: getEnvAndServices
-  category: application
-  link: getEnvAndServices.md
+title: getEnvAndServices
 ---
-# getEnvAndServices
+
+# `getEnvAndServices`
 
 ```typescript
 client.application.getEnvAndServices(): Promise<EnvAndServices>
@@ -29,11 +15,11 @@ details configured for the current workspace.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<EnvAndServices>`** — A promise that resolves to the EnvAndServices object
+`Promise<EnvAndServices>` — A promise that resolves to the EnvAndServices object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getEnvAndServices();
+const result = await client.application.getEnvAndServices();
+console.log(result);
 ```

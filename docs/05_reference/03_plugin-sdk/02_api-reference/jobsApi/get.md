@@ -1,22 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: Call get on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Job>"
-    description: ""
-data:
-  name: get
-  category: jobsApi
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 plugin.jobsApi.get(id: string): Promise<Job>
@@ -26,18 +12,19 @@ plugin.jobsApi.get(id: string): Promise<Job>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<Job>`**
+`Promise<Job>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.get('id');
+const result = await plugin.jobsApi.get('id');
+console.log(result);
 ```

@@ -1,27 +1,8 @@
 ---
-name: executeCommandRunUntilInterrupt
-cbbaseinfo:
-  description: "Executes a given command and keeps running until manually interrupted.
-Listens for messages from the WebSocket and resolves the promise when interrupted."
-cbparameters:
-  parameters:
-    - name: command
-      typeName: string
-      description: The command to be executed.
-      isOptional: false
-    - name: executeInMain
-      typeName: boolean
-      description: Whether to execute in main terminal.
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CommandError>"
-    description: A promise that resolves when the command is interrupted.
-data:
-  name: executeCommandRunUntilInterrupt
-  category: terminal
-  link: executeCommandRunUntilInterrupt.md
+title: executeCommandRunUntilInterrupt
 ---
-# executeCommandRunUntilInterrupt
+
+# `executeCommandRunUntilInterrupt`
 
 ```typescript
 plugin.terminal.executeCommandRunUntilInterrupt(command: string, executeInMain: boolean): Promise<CommandError>
@@ -32,19 +13,20 @@ Listens for messages from the WebSocket and resolves the promise when interrupte
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `command` | `string` | The command to be executed. |
-| `executeInMain` | `boolean` | Whether to execute in main terminal. Default: `false` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `command` | `string` | Yes | The command to be executed. |
+| `executeInMain` | `boolean` | Yes | Whether to execute in main terminal. _(default: `false`)_ |
 
 ## Returns
 
-**`Promise<CommandError>`** — A promise that resolves when the command is interrupted.
+`Promise<CommandError>` — A promise that resolves when the command is interrupted.
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.terminal.executeCommandRunUntilInterrupt('command', true);
+const result = await plugin.terminal.executeCommandRunUntilInterrupt('command', true);
+console.log(result);
 ```

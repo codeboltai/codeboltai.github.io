@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Call create on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateJobRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Job>"
-    description: ""
-data:
-  name: create
-  category: jobsApi
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 plugin.jobsApi.create(data: CreateJobRequest): Promise<Job>
@@ -26,18 +12,19 @@ plugin.jobsApi.create(data: CreateJobRequest): Promise<Job>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateJobRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateJobRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Job>`**
+`Promise<Job>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.create(/* CreateJobRequest */);
+const result = await plugin.jobsApi.create(/* CreateJobRequest */);
+console.log(result);
 ```

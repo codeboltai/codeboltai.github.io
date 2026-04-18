@@ -1,22 +1,8 @@
 ---
-name: search
-cbbaseinfo:
-  description: Search for a step by stepId
-cbparameters:
-  parameters:
-    - name: stepId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ThreadStep>"
-    description: ""
-data:
-  name: search
-  category: threadSteps
-  link: search.md
+title: search
 ---
-# search
+
+# `search`
 
 ```typescript
 client.threadSteps.search(stepId: string): Promise<ThreadStep>
@@ -26,13 +12,13 @@ Search for a step by stepId
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `stepId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `stepId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<ThreadStep>`**
+`Promise<ThreadStep>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.search('stepId');
+const result = await client.threadSteps.search('stepId');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getAgentFromLocal
-cbbaseinfo:
-  description: "Retrieves the agent stored in local storage.
-
-Returns the agent configuration that has been persisted locally,
-typically the last-used or default agent for the current workspace."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Agent>"
-    description: A promise that resolves to the locally stored Agent
-data:
-  name: getAgentFromLocal
-  category: agents
-  link: getAgentFromLocal.md
+title: getAgentFromLocal
 ---
-# getAgentFromLocal
+
+# `getAgentFromLocal`
 
 ```typescript
 client.agents.getAgentFromLocal(): Promise<Agent>
@@ -29,11 +15,11 @@ typically the last-used or default agent for the current workspace.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Agent>`** — A promise that resolves to the locally stored Agent
+`Promise<Agent>` — A promise that resolves to the locally stored Agent
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getAgentFromLocal();
+const result = await client.agents.getAgentFromLocal();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: listEvents
-cbbaseinfo:
-  description: Call listEvents on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: CalendarFilterOptions
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<CalendarEventSummary[]>"
-    description: ""
-data:
-  name: listEvents
-  category: calendarApi
-  link: listEvents.md
+title: listEvents
 ---
-# listEvents
+
+# `listEvents`
 
 ```typescript
 plugin.calendarApi.listEvents(params?: CalendarFilterOptions): Promise<CalendarEventSummary[]>
@@ -26,18 +12,19 @@ plugin.calendarApi.listEvents(params?: CalendarFilterOptions): Promise<CalendarE
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `CalendarFilterOptions` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
 
 ## Returns
 
-**`Promise<CalendarEventSummary[]>`**
+`Promise<CalendarEventSummary[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.listEvents();
+const result = await plugin.calendarApi.listEvents();
+console.log(result);
 ```

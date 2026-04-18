@@ -1,22 +1,8 @@
 ---
-name: delete
-cbbaseinfo:
-  description: Delete a step
-cbparameters:
-  parameters:
-    - name: stepId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: delete
-  category: threadSteps
-  link: delete.md
+title: delete
 ---
-# delete
+
+# `delete`
 
 ```typescript
 client.threadSteps.delete(stepId: string): Promise<void>
@@ -26,13 +12,13 @@ Delete a step
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `stepId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `stepId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.delete('stepId');
+const result = await client.threadSteps.delete('stepId');
+console.log(result);
 ```

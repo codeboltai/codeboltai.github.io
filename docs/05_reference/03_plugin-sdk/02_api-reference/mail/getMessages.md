@@ -1,22 +1,8 @@
 ---
-name: getMessages
-cbbaseinfo:
-  description: Call getMessages on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IGetMessagesParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IGetMessagesResponse>"
-    description: ""
-data:
-  name: getMessages
-  category: mail
-  link: getMessages.md
+title: getMessages
 ---
-# getMessages
+
+# `getMessages`
 
 ```typescript
 plugin.mail.getMessages(params: IGetMessagesParams): Promise<IGetMessagesResponse>
@@ -26,18 +12,19 @@ plugin.mail.getMessages(params: IGetMessagesParams): Promise<IGetMessagesRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IGetMessagesParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IGetMessagesParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IGetMessagesResponse>`**
+`Promise<IGetMessagesResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.getMessages(/* IGetMessagesParams */);
+const result = await plugin.mail.getMessages(/* IGetMessagesParams */);
+console.log(result);
 ```

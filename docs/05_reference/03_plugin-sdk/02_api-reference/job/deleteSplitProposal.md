@@ -1,26 +1,8 @@
 ---
-name: deleteSplitProposal
-cbbaseinfo:
-  description: Call deleteSplitProposal on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: proposalId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobSplitDeleteResponse>"
-    description: ""
-data:
-  name: deleteSplitProposal
-  category: job
-  link: deleteSplitProposal.md
+title: deleteSplitProposal
 ---
-# deleteSplitProposal
+
+# `deleteSplitProposal`
 
 ```typescript
 plugin.job.deleteSplitProposal(jobId: string, proposalId: string): Promise<JobSplitDeleteResponse>
@@ -30,19 +12,20 @@ plugin.job.deleteSplitProposal(jobId: string, proposalId: string): Promise<JobSp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `proposalId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `proposalId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobSplitDeleteResponse>`**
+`Promise<JobSplitDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.deleteSplitProposal('jobId', 'proposalId');
+const result = await plugin.job.deleteSplitProposal('jobId', 'proposalId');
+console.log(result);
 ```

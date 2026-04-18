@@ -1,19 +1,8 @@
 ---
-name: runProject
-cbbaseinfo:
-  description: Call runProject on the Plugin SDK project module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: runProject
-  category: project
-  link: runProject.md
+title: runProject
 ---
-# runProject
+
+# `runProject`
 
 ```typescript
 plugin.project.runProject(): void
@@ -23,16 +12,17 @@ plugin.project.runProject(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.project.runProject();
+const result = await plugin.project.runProject();
+console.log(result);
 ```

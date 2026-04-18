@@ -1,22 +1,8 @@
 ---
-name: diff
-cbbaseinfo:
-  description: Get diff between shadow git checkpoints
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ShadowGitDiffRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: diff
-  category: shadowGit
-  link: diff.md
+title: diff
 ---
-# diff
+
+# `diff`
 
 ```typescript
 client.shadowGit.diff(data?: ShadowGitDiffRequest): Promise<unknown>
@@ -26,13 +12,13 @@ Get diff between shadow git checkpoints
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ShadowGitDiffRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ShadowGitDiffRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.shadowGit.diff();
+const result = await client.shadowGit.diff();
+console.log(result);
 ```

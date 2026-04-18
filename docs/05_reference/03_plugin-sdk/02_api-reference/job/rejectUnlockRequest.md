@@ -1,30 +1,8 @@
 ---
-name: rejectUnlockRequest
-cbbaseinfo:
-  description: Call rejectUnlockRequest on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: unlockRequestId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: respondedBy
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobUnlockRequestRejectResponse>"
-    description: ""
-data:
-  name: rejectUnlockRequest
-  category: job
-  link: rejectUnlockRequest.md
+title: rejectUnlockRequest
 ---
-# rejectUnlockRequest
+
+# `rejectUnlockRequest`
 
 ```typescript
 plugin.job.rejectUnlockRequest(jobId: string, unlockRequestId: string, respondedBy: string): Promise<JobUnlockRequestRejectResponse>
@@ -34,20 +12,21 @@ plugin.job.rejectUnlockRequest(jobId: string, unlockRequestId: string, responded
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `unlockRequestId` | `string` |  |
-| `respondedBy` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `unlockRequestId` | `string` | Yes |  |
+| `respondedBy` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobUnlockRequestRejectResponse>`**
+`Promise<JobUnlockRequestRejectResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.rejectUnlockRequest('jobId', 'unlockRequestId', 'respondedBy');
+const result = await plugin.job.rejectUnlockRequest('jobId', 'unlockRequestId', 'respondedBy');
+console.log(result);
 ```

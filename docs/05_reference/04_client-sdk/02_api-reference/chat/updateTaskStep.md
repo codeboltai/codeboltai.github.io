@@ -1,33 +1,8 @@
 ---
-name: updateTaskStep
-cbbaseinfo:
-  description: "Updates a step in a thread via the task endpoint.
-
-Modifies the properties of a thread step, accessed through the
-task management API path."
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: The unique identifier of the thread
-      isOptional: false
-    - name: stepId
-      typeName: string
-      description: The unique identifier of the step to update
-      isOptional: false
-    - name: data
-      typeName: UpdateThreadStepData
-      description: The fields to update on the step
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ChatThreadStep>"
-    description: A promise that resolves to the updated ChatThreadStep
-data:
-  name: updateTaskStep
-  category: chat
-  link: updateTaskStep.md
+title: updateTaskStep
 ---
-# updateTaskStep
+
+# `updateTaskStep`
 
 ```typescript
 client.chat.updateTaskStep(threadId: string, stepId: string, data: UpdateThreadStepData): Promise<ChatThreadStep>
@@ -40,15 +15,15 @@ task management API path.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` | The unique identifier of the thread |
-| `stepId` | `string` | The unique identifier of the step to update |
-| `data` | `UpdateThreadStepData` | The fields to update on the step |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes | The unique identifier of the thread |
+| `stepId` | `string` | Yes | The unique identifier of the step to update |
+| `data` | `UpdateThreadStepData` | Yes | The fields to update on the step |
 
 ## Returns
 
-**`Promise<ChatThreadStep>`** — A promise that resolves to the updated ChatThreadStep
+`Promise<ChatThreadStep>` — A promise that resolves to the updated ChatThreadStep
 
 ## Example
 
@@ -57,5 +32,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.chat.updateTaskStep('threadId', 'stepId', /* UpdateThreadStepData */);
+const result = await client.chat.updateTaskStep('threadId', 'stepId', /* UpdateThreadStepData */);
+console.log(result);
 ```

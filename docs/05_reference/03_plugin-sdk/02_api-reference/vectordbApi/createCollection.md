@@ -1,22 +1,8 @@
 ---
-name: createCollection
-cbbaseinfo:
-  description: Call createCollection on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateVectorCollectionRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollection>"
-    description: ""
-data:
-  name: createCollection
-  category: vectordbApi
-  link: createCollection.md
+title: createCollection
 ---
-# createCollection
+
+# `createCollection`
 
 ```typescript
 plugin.vectordbApi.createCollection(data: CreateVectorCollectionRequest): Promise<VectorCollection>
@@ -26,18 +12,19 @@ plugin.vectordbApi.createCollection(data: CreateVectorCollectionRequest): Promis
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateVectorCollectionRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateVectorCollectionRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorCollection>`**
+`Promise<VectorCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.createCollection(/* CreateVectorCollectionRequest */);
+const result = await plugin.vectordbApi.createCollection(/* CreateVectorCollectionRequest */);
+console.log(result);
 ```

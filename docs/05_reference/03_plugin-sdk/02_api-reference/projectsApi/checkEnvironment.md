@@ -1,22 +1,8 @@
 ---
-name: checkEnvironment
-cbbaseinfo:
-  description: Call checkEnvironment on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CheckEnvironmentRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: checkEnvironment
-  category: projectsApi
-  link: checkEnvironment.md
+title: checkEnvironment
 ---
-# checkEnvironment
+
+# `checkEnvironment`
 
 ```typescript
 plugin.projectsApi.checkEnvironment(data: CheckEnvironmentRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.projectsApi.checkEnvironment(data: CheckEnvironmentRequest): Promise<unkn
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CheckEnvironmentRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CheckEnvironmentRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.checkEnvironment(/* CheckEnvironmentRequest */);
+const result = await plugin.projectsApi.checkEnvironment(/* CheckEnvironmentRequest */);
+console.log(result);
 ```

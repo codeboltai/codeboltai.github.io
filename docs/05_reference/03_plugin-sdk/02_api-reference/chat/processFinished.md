@@ -1,20 +1,8 @@
 ---
-name: processFinished
-cbbaseinfo:
-  description: "Stops the ongoing process.
-Sends a specific message to the server to stop the process."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: processFinished
-  category: chat
-  link: processFinished.md
+title: processFinished
 ---
-# processFinished
+
+# `processFinished`
 
 ```typescript
 plugin.chat.processFinished(): void
@@ -25,16 +13,17 @@ Sends a specific message to the server to stop the process.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chat.processFinished();
+const result = await plugin.chat.processFinished();
+console.log(result);
 ```

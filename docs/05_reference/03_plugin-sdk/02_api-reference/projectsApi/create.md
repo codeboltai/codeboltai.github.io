@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Call create on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Project>"
-    description: ""
-data:
-  name: create
-  category: projectsApi
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 plugin.projectsApi.create(data: Record<string, unknown>): Promise<Project>
@@ -26,18 +12,19 @@ plugin.projectsApi.create(data: Record<string, unknown>): Promise<Project>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `Record<string, unknown>` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `Record<string, unknown>` | Yes |  |
 
 ## Returns
 
-**`Promise<Project>`**
+`Promise<Project>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.create(/* Record<string, unknown> */);
+const result = await plugin.projectsApi.create(/* Record<string, unknown> */);
+console.log(result);
 ```

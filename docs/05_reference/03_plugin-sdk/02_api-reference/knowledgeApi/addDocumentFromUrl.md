@@ -1,26 +1,8 @@
 ---
-name: addDocumentFromUrl
-cbbaseinfo:
-  description: Call addDocumentFromUrl on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddKnowledgeDocumentFromUrlRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addDocumentFromUrl
-  category: knowledgeApi
-  link: addDocumentFromUrl.md
+title: addDocumentFromUrl
 ---
-# addDocumentFromUrl
+
+# `addDocumentFromUrl`
 
 ```typescript
 plugin.knowledgeApi.addDocumentFromUrl(id: string, data: AddKnowledgeDocumentFromUrlRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.knowledgeApi.addDocumentFromUrl(id: string, data: AddKnowledgeDocumentFro
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `AddKnowledgeDocumentFromUrlRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddKnowledgeDocumentFromUrlRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.addDocumentFromUrl('id', /* AddKnowledgeDocumentFromUrlRequest */);
+const result = await plugin.knowledgeApi.addDocumentFromUrl('id', /* AddKnowledgeDocumentFromUrlRequest */);
+console.log(result);
 ```

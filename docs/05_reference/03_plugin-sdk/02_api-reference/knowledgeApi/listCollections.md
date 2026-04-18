@@ -1,22 +1,8 @@
 ---
-name: listCollections
-cbbaseinfo:
-  description: Call listCollections on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<KnowledgeCollection[]>"
-    description: ""
-data:
-  name: listCollections
-  category: knowledgeApi
-  link: listCollections.md
+title: listCollections
 ---
-# listCollections
+
+# `listCollections`
 
 ```typescript
 plugin.knowledgeApi.listCollections(params?: Record<string, unknown>): Promise<KnowledgeCollection[]>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.listCollections(params?: Record<string, unknown>): Promise<K
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<KnowledgeCollection[]>`**
+`Promise<KnowledgeCollection[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.listCollections();
+const result = await plugin.knowledgeApi.listCollections();
+console.log(result);
 ```

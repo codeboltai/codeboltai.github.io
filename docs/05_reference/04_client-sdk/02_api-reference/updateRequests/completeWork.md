@@ -1,26 +1,8 @@
 ---
-name: completeWork
-cbbaseinfo:
-  description: Complete work on a request
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: CompleteWorkRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: completeWork
-  category: updateRequests
-  link: completeWork.md
+title: completeWork
 ---
-# completeWork
+
+# `completeWork`
 
 ```typescript
 client.updateRequests.completeWork(id: string, data?: CompleteWorkRequest): Promise<unknown>
@@ -30,14 +12,14 @@ Complete work on a request
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `CompleteWorkRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `CompleteWorkRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -46,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.completeWork('id');
+const result = await client.updateRequests.completeWork('id');
+console.log(result);
 ```

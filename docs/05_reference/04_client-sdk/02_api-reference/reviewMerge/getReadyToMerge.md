@@ -1,22 +1,8 @@
 ---
-name: getReadyToMerge
-cbbaseinfo:
-  description: "Retrieves all review-merge requests that are approved and ready to merge.
-
-Filters for requests that have passed all review criteria and can be merged immediately.
-Useful for automated merge pipelines or merge-ready dashboards."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ReviewMergeRequest[]>"
-    description: A promise that resolves to an array of merge-ready ReviewMergeRequest objects
-data:
-  name: getReadyToMerge
-  category: reviewMerge
-  link: getReadyToMerge.md
+title: getReadyToMerge
 ---
-# getReadyToMerge
+
+# `getReadyToMerge`
 
 ```typescript
 client.reviewMerge.getReadyToMerge(): Promise<ReviewMergeRequest[]>
@@ -29,11 +15,11 @@ Useful for automated merge pipelines or merge-ready dashboards.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ReviewMergeRequest[]>`** — A promise that resolves to an array of merge-ready ReviewMergeRequest objects
+`Promise<ReviewMergeRequest[]>` — A promise that resolves to an array of merge-ready ReviewMergeRequest objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.reviewMerge.getReadyToMerge();
+const result = await client.reviewMerge.getReadyToMerge();
+console.log(result);
 ```

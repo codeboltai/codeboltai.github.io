@@ -1,19 +1,8 @@
 ---
-name: llm
-cbbaseinfo:
-  description: Call llm on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: llm
-  category: notify
-  link: llm.md
+title: llm
 ---
-# llm
+
+# `llm`
 
 ```typescript
 plugin.notify.llm(): void
@@ -23,16 +12,17 @@ plugin.notify.llm(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.llm();
+const result = await plugin.notify.llm();
+console.log(result);
 ```

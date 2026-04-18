@@ -1,25 +1,8 @@
 ---
-name: getOpenAiFunction
-cbbaseinfo:
-  description: "Retrieves a specific tool formatted as an OpenAI function.
-
-Returns a single tool in OpenAI's functions schema format for targeted
-integration with the legacy function calling API."
-cbparameters:
-  parameters:
-    - name: toolName
-      typeName: string
-      description: The name of the tool to retrieve
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<OpenAiFunction>"
-    description: A promise that resolves to the OpenAiFunction object
-data:
-  name: getOpenAiFunction
-  category: codeboltTools
-  link: getOpenAiFunction.md
+title: getOpenAiFunction
 ---
-# getOpenAiFunction
+
+# `getOpenAiFunction`
 
 ```typescript
 client.codeboltTools.getOpenAiFunction(toolName: string): Promise<OpenAiFunction>
@@ -32,13 +15,13 @@ integration with the legacy function calling API.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `toolName` | `string` | The name of the tool to retrieve |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `toolName` | `string` | Yes | The name of the tool to retrieve |
 
 ## Returns
 
-**`Promise<OpenAiFunction>`** — A promise that resolves to the OpenAiFunction object
+`Promise<OpenAiFunction>` — A promise that resolves to the OpenAiFunction object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.codeboltTools.getOpenAiFunction('toolName');
+const result = await client.codeboltTools.getOpenAiFunction('toolName');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Create a new task activity
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateTaskActivityRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskActivity>"
-    description: ""
-data:
-  name: create
-  category: taskActivity
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 client.taskActivity.create(data: CreateTaskActivityRequest): Promise<TaskActivity>
@@ -26,13 +12,13 @@ Create a new task activity
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateTaskActivityRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateTaskActivityRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskActivity>`**
+`Promise<TaskActivity>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.create(/* CreateTaskActivityRequest */);
+const result = await client.taskActivity.create(/* CreateTaskActivityRequest */);
+console.log(result);
 ```

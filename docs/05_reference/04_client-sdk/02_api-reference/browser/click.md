@@ -1,25 +1,8 @@
 ---
-name: click
-cbbaseinfo:
-  description: "Clicks an element in the browser.
-
-Simulates a mouse click on the specified element, identified by
-a CSS selector or other locator strategy."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BrowserClickRequest
-      description: The click request
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<BrowserActionResult>"
-    description: A promise that resolves to the BrowserActionResult after the click
-data:
-  name: click
-  category: browser
-  link: click.md
+title: click
 ---
-# click
+
+# `click`
 
 ```typescript
 client.browser.click(data: BrowserClickRequest): Promise<BrowserActionResult>
@@ -32,13 +15,13 @@ a CSS selector or other locator strategy.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BrowserClickRequest` | The click request |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserClickRequest` | Yes | The click request |
 
 ## Returns
 
-**`Promise<BrowserActionResult>`** — A promise that resolves to the BrowserActionResult after the click
+`Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult after the click
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.browser.click(/* BrowserClickRequest */);
+const result = await client.browser.click(/* BrowserClickRequest */);
+console.log(result);
 ```

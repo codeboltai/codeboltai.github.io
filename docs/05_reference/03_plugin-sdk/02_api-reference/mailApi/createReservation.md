@@ -1,22 +1,8 @@
 ---
-name: createReservation
-cbbaseinfo:
-  description: Call createReservation on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateReservationRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailReservation>"
-    description: ""
-data:
-  name: createReservation
-  category: mailApi
-  link: createReservation.md
+title: createReservation
 ---
-# createReservation
+
+# `createReservation`
 
 ```typescript
 plugin.mailApi.createReservation(data: CreateReservationRequest): Promise<MailReservation>
@@ -26,18 +12,19 @@ plugin.mailApi.createReservation(data: CreateReservationRequest): Promise<MailRe
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateReservationRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateReservationRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<MailReservation>`**
+`Promise<MailReservation>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.createReservation(/* CreateReservationRequest */);
+const result = await plugin.mailApi.createReservation(/* CreateReservationRequest */);
+console.log(result);
 ```

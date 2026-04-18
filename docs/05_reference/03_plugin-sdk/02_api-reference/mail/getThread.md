@@ -1,22 +1,8 @@
 ---
-name: getThread
-cbbaseinfo:
-  description: Call getThread on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IGetThreadParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IGetThreadResponse>"
-    description: ""
-data:
-  name: getThread
-  category: mail
-  link: getThread.md
+title: getThread
 ---
-# getThread
+
+# `getThread`
 
 ```typescript
 plugin.mail.getThread(params: IGetThreadParams): Promise<IGetThreadResponse>
@@ -26,18 +12,19 @@ plugin.mail.getThread(params: IGetThreadParams): Promise<IGetThreadResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IGetThreadParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IGetThreadParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IGetThreadResponse>`**
+`Promise<IGetThreadResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.getThread(/* IGetThreadParams */);
+const result = await plugin.mail.getThread(/* IGetThreadParams */);
+console.log(result);
 ```

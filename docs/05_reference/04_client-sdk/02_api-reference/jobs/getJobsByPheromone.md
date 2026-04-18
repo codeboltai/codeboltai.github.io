@@ -1,25 +1,8 @@
 ---
-name: getJobsByPheromone
-cbbaseinfo:
-  description: "Retrieves all jobs that have a specific pheromone type attached.
-
-Useful for finding jobs that share a common signal, enabling
-swarm-style discovery of related work items."
-cbparameters:
-  parameters:
-    - name: type
-      typeName: string
-      description: The pheromone type name to filter by
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Job[]>"
-    description: A promise that resolves to an array of  objects carrying the specified pheromone
-data:
-  name: getJobsByPheromone
-  category: jobs
-  link: getJobsByPheromone.md
+title: getJobsByPheromone
 ---
-# getJobsByPheromone
+
+# `getJobsByPheromone`
 
 ```typescript
 client.jobs.getJobsByPheromone(type: string): Promise<Job[]>
@@ -32,13 +15,13 @@ swarm-style discovery of related work items.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `type` | `string` | The pheromone type name to filter by |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `type` | `string` | Yes | The pheromone type name to filter by |
 
 ## Returns
 
-**`Promise<Job[]>`** — A promise that resolves to an array of  objects carrying the specified pheromone
+`Promise<Job[]>` — A promise that resolves to an array of  objects carrying the specified pheromone
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.jobs.getJobsByPheromone('type');
+const result = await client.jobs.getJobsByPheromone('type');
+console.log(result);
 ```

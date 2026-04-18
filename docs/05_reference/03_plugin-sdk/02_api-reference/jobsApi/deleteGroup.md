@@ -1,22 +1,8 @@
 ---
-name: deleteGroup
-cbbaseinfo:
-  description: Call deleteGroup on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deleteGroup
-  category: jobsApi
-  link: deleteGroup.md
+title: deleteGroup
 ---
-# deleteGroup
+
+# `deleteGroup`
 
 ```typescript
 plugin.jobsApi.deleteGroup(id: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.jobsApi.deleteGroup(id: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.deleteGroup('id');
+const result = await plugin.jobsApi.deleteGroup('id');
+console.log(result);
 ```

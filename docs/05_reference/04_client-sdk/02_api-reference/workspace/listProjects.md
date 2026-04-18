@@ -1,22 +1,8 @@
 ---
-name: listProjects
-cbbaseinfo:
-  description: "Lists all projects in the current workspace.
-
-Returns an array of workspace projects with their metadata and status.
-Use this to display available projects or navigate between them."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<WorkspaceProject[]>"
-    description: A promise that resolves to an array of WorkspaceProject objects
-data:
-  name: listProjects
-  category: workspace
-  link: listProjects.md
+title: listProjects
 ---
-# listProjects
+
+# `listProjects`
 
 ```typescript
 client.workspace.listProjects(): Promise<WorkspaceProject[]>
@@ -29,11 +15,11 @@ Use this to display available projects or navigate between them.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<WorkspaceProject[]>`** — A promise that resolves to an array of WorkspaceProject objects
+`Promise<WorkspaceProject[]>` — A promise that resolves to an array of WorkspaceProject objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.workspace.listProjects();
+const result = await client.workspace.listProjects();
+console.log(result);
 ```

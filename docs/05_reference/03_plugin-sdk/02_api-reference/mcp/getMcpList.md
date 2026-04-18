@@ -1,19 +1,8 @@
 ---
-name: getMcpList
-cbbaseinfo:
-  description: Gets the list of available MCP servers.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<GetMcpListResponse>"
-    description: ""
-data:
-  name: getMcpList
-  category: mcp
-  link: getMcpList.md
+title: getMcpList
 ---
-# getMcpList
+
+# `getMcpList`
 
 ```typescript
 plugin.mcp.getMcpList(): Promise<GetMcpListResponse>
@@ -23,16 +12,17 @@ Gets the list of available MCP servers.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<GetMcpListResponse>`**
+`Promise<GetMcpListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.getMcpList();
+const result = await plugin.mcp.getMcpList();
+console.log(result);
 ```

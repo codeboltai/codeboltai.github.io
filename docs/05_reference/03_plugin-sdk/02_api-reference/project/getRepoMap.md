@@ -1,22 +1,8 @@
 ---
-name: getRepoMap
-cbbaseinfo:
-  description: Call getRepoMap on the Plugin SDK project module.
-cbparameters:
-  parameters:
-    - name: message
-      typeName: any
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<GetProjectPathResponse>"
-    description: ""
-data:
-  name: getRepoMap
-  category: project
-  link: getRepoMap.md
+title: getRepoMap
 ---
-# getRepoMap
+
+# `getRepoMap`
 
 ```typescript
 plugin.project.getRepoMap(message: any): Promise<GetProjectPathResponse>
@@ -26,18 +12,19 @@ plugin.project.getRepoMap(message: any): Promise<GetProjectPathResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `message` | `any` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `message` | `any` | Yes |  |
 
 ## Returns
 
-**`Promise<GetProjectPathResponse>`**
+`Promise<GetProjectPathResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.project.getRepoMap(/* any */);
+const result = await plugin.project.getRepoMap(/* any */);
+console.log(result);
 ```

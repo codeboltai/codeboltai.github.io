@@ -1,22 +1,8 @@
 ---
-name: setActive
-cbbaseinfo:
-  description: Call setActive on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: SetActiveProjectRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: setActive
-  category: projectsApi
-  link: setActive.md
+title: setActive
 ---
-# setActive
+
+# `setActive`
 
 ```typescript
 plugin.projectsApi.setActive(data: SetActiveProjectRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.projectsApi.setActive(data: SetActiveProjectRequest): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `SetActiveProjectRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `SetActiveProjectRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.setActive(/* SetActiveProjectRequest */);
+const result = await plugin.projectsApi.setActive(/* SetActiveProjectRequest */);
+console.log(result);
 ```

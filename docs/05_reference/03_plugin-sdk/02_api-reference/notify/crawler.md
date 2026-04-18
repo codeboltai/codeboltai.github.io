@@ -1,19 +1,8 @@
 ---
-name: crawler
-cbbaseinfo:
-  description: Call crawler on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: crawler
-  category: notify
-  link: crawler.md
+title: crawler
 ---
-# crawler
+
+# `crawler`
 
 ```typescript
 plugin.notify.crawler(): void
@@ -23,16 +12,17 @@ plugin.notify.crawler(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.crawler();
+const result = await plugin.notify.crawler();
+console.log(result);
 ```

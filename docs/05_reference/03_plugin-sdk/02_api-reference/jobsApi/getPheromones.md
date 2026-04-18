@@ -1,22 +1,8 @@
 ---
-name: getPheromones
-cbbaseinfo:
-  description: Call getPheromones on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Pheromone[]>"
-    description: ""
-data:
-  name: getPheromones
-  category: jobsApi
-  link: getPheromones.md
+title: getPheromones
 ---
-# getPheromones
+
+# `getPheromones`
 
 ```typescript
 plugin.jobsApi.getPheromones(id: string): Promise<Pheromone[]>
@@ -26,18 +12,19 @@ plugin.jobsApi.getPheromones(id: string): Promise<Pheromone[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<Pheromone[]>`**
+`Promise<Pheromone[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getPheromones('id');
+const result = await plugin.jobsApi.getPheromones('id');
+console.log(result);
 ```

@@ -1,19 +1,8 @@
 ---
-name: getRoot
-cbbaseinfo:
-  description: Call getRoot on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Project>"
-    description: ""
-data:
-  name: getRoot
-  category: projectsApi
-  link: getRoot.md
+title: getRoot
 ---
-# getRoot
+
+# `getRoot`
 
 ```typescript
 plugin.projectsApi.getRoot(): Promise<Project>
@@ -23,16 +12,17 @@ plugin.projectsApi.getRoot(): Promise<Project>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Project>`**
+`Promise<Project>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getRoot();
+const result = await plugin.projectsApi.getRoot();
+console.log(result);
 ```

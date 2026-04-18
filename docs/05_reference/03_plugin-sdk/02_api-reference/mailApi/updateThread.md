@@ -1,26 +1,8 @@
 ---
-name: updateThread
-cbbaseinfo:
-  description: Call updateThread on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateMailThreadRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailThread>"
-    description: ""
-data:
-  name: updateThread
-  category: mailApi
-  link: updateThread.md
+title: updateThread
 ---
-# updateThread
+
+# `updateThread`
 
 ```typescript
 plugin.mailApi.updateThread(threadId: string, data: UpdateMailThreadRequest): Promise<MailThread>
@@ -30,19 +12,20 @@ plugin.mailApi.updateThread(threadId: string, data: UpdateMailThreadRequest): Pr
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` |  |
-| `data` | `UpdateMailThreadRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes |  |
+| `data` | `UpdateMailThreadRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<MailThread>`**
+`Promise<MailThread>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.updateThread('threadId', /* UpdateMailThreadRequest */);
+const result = await plugin.mailApi.updateThread('threadId', /* UpdateMailThreadRequest */);
+console.log(result);
 ```

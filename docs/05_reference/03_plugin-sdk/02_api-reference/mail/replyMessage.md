@@ -1,22 +1,8 @@
 ---
-name: replyMessage
-cbbaseinfo:
-  description: Call replyMessage on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IReplyMessageParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IReplyMessageResponse>"
-    description: ""
-data:
-  name: replyMessage
-  category: mail
-  link: replyMessage.md
+title: replyMessage
 ---
-# replyMessage
+
+# `replyMessage`
 
 ```typescript
 plugin.mail.replyMessage(params: IReplyMessageParams): Promise<IReplyMessageResponse>
@@ -26,18 +12,19 @@ plugin.mail.replyMessage(params: IReplyMessageParams): Promise<IReplyMessageResp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IReplyMessageParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IReplyMessageParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IReplyMessageResponse>`**
+`Promise<IReplyMessageResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.replyMessage(/* IReplyMessageParams */);
+const result = await plugin.mail.replyMessage(/* IReplyMessageParams */);
+console.log(result);
 ```

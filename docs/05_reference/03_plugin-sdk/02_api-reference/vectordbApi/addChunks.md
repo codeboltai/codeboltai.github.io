@@ -1,26 +1,8 @@
 ---
-name: addChunks
-cbbaseinfo:
-  description: Call addChunks on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddVectorChunksRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addChunks
-  category: vectordbApi
-  link: addChunks.md
+title: addChunks
 ---
-# addChunks
+
+# `addChunks`
 
 ```typescript
 plugin.vectordbApi.addChunks(id: string, data: AddVectorChunksRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.vectordbApi.addChunks(id: string, data: AddVectorChunksRequest): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `AddVectorChunksRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddVectorChunksRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.addChunks('id', /* AddVectorChunksRequest */);
+const result = await plugin.vectordbApi.addChunks('id', /* AddVectorChunksRequest */);
+console.log(result);
 ```

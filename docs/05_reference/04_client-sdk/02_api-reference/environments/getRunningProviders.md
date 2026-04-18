@@ -1,22 +1,8 @@
 ---
-name: getRunningProviders
-cbbaseinfo:
-  description: "Retrieves all currently running environment providers.
-
-Returns only providers that are actively running and available to serve
-environment requests."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<InstalledProvider[]>"
-    description: A promise that resolves to an array of running  objects
-data:
-  name: getRunningProviders
-  category: environments
-  link: getRunningProviders.md
+title: getRunningProviders
 ---
-# getRunningProviders
+
+# `getRunningProviders`
 
 ```typescript
 client.environments.getRunningProviders(): Promise<InstalledProvider[]>
@@ -29,11 +15,11 @@ environment requests.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<InstalledProvider[]>`** — A promise that resolves to an array of running  objects
+`Promise<InstalledProvider[]>` — A promise that resolves to an array of running  objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.environments.getRunningProviders();
+const result = await client.environments.getRunningProviders();
+console.log(result);
 ```

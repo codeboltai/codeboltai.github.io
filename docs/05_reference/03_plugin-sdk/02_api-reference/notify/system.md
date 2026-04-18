@@ -1,19 +1,8 @@
 ---
-name: system
-cbbaseinfo:
-  description: Call system on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: system
-  category: notify
-  link: system.md
+title: system
 ---
-# system
+
+# `system`
 
 ```typescript
 plugin.notify.system(): void
@@ -23,16 +12,17 @@ plugin.notify.system(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.system();
+const result = await plugin.notify.system();
+console.log(result);
 ```

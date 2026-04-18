@@ -1,22 +1,8 @@
 ---
-name: getInstance
-cbbaseinfo:
-  description: Call getInstance on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KvStoreInstance>"
-    description: ""
-data:
-  name: getInstance
-  category: kvStoreApi
-  link: getInstance.md
+title: getInstance
 ---
-# getInstance
+
+# `getInstance`
 
 ```typescript
 plugin.kvStoreApi.getInstance(id: string): Promise<KvStoreInstance>
@@ -26,18 +12,19 @@ plugin.kvStoreApi.getInstance(id: string): Promise<KvStoreInstance>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<KvStoreInstance>`**
+`Promise<KvStoreInstance>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.getInstance('id');
+const result = await plugin.kvStoreApi.getInstance('id');
+console.log(result);
 ```

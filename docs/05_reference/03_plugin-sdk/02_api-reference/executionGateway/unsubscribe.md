@@ -1,19 +1,8 @@
 ---
-name: unsubscribe
-cbbaseinfo:
-  description: Unsubscribe from execution notifications.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ExecutionGatewayResponse>"
-    description: ""
-data:
-  name: unsubscribe
-  category: executionGateway
-  link: unsubscribe.md
+title: unsubscribe
 ---
-# unsubscribe
+
+# `unsubscribe`
 
 ```typescript
 plugin.executionGateway.unsubscribe(): Promise<ExecutionGatewayResponse>
@@ -23,16 +12,17 @@ Unsubscribe from execution notifications.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ExecutionGatewayResponse>`**
+`Promise<ExecutionGatewayResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.executionGateway.unsubscribe();
+const result = await plugin.executionGateway.unsubscribe();
+console.log(result);
 ```

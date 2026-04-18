@@ -1,22 +1,8 @@
 ---
-name: getThreadList
-cbbaseinfo:
-  description: Retrieves a list of threads with optional filtering.
-cbparameters:
-  parameters:
-    - name: options
-      typeName: object
-      description: Optional filters for threads
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: A promise that resolves with the thread list response
-data:
-  name: getThreadList
-  category: thread
-  link: getThreadList.md
+title: getThreadList
 ---
-# getThreadList
+
+# `getThreadList`
 
 ```typescript
 plugin.thread.getThreadList(options: object): Promise<object>
@@ -26,18 +12,19 @@ Retrieves a list of threads with optional filtering.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `options` | `object` | Optional filters for threads Default: `{}` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `options` | `object` | Yes | Optional filters for threads _(default: `{}`)_ |
 
 ## Returns
 
-**`Promise<object>`** — A promise that resolves with the thread list response
+`Promise<object>` — A promise that resolves with the thread list response
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.thread.getThreadList(/* object */);
+const result = await plugin.thread.getThreadList(/* object */);
+console.log(result);
 ```

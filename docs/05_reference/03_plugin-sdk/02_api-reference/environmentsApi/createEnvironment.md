@@ -1,22 +1,8 @@
 ---
-name: createEnvironment
-cbbaseinfo:
-  description: Call createEnvironment on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateEnvironmentRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Environment>"
-    description: ""
-data:
-  name: createEnvironment
-  category: environmentsApi
-  link: createEnvironment.md
+title: createEnvironment
 ---
-# createEnvironment
+
+# `createEnvironment`
 
 ```typescript
 plugin.environmentsApi.createEnvironment(data: CreateEnvironmentRequest): Promise<Environment>
@@ -26,18 +12,19 @@ plugin.environmentsApi.createEnvironment(data: CreateEnvironmentRequest): Promis
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateEnvironmentRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateEnvironmentRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Environment>`**
+`Promise<Environment>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.createEnvironment(/* CreateEnvironmentRequest */);
+const result = await plugin.environmentsApi.createEnvironment(/* CreateEnvironmentRequest */);
+console.log(result);
 ```

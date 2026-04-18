@@ -1,22 +1,8 @@
 ---
-name: addEnvAndServices
-cbbaseinfo:
-  description: "Triggers the addition of environment variables and services.
-
-Initiates the process of detecting and adding environment variables
-and service configurations to the current workspace."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the operation is complete
-data:
-  name: addEnvAndServices
-  category: application
-  link: addEnvAndServices.md
+title: addEnvAndServices
 ---
-# addEnvAndServices
+
+# `addEnvAndServices`
 
 ```typescript
 client.application.addEnvAndServices(): Promise<void>
@@ -29,11 +15,11 @@ and service configurations to the current workspace.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the operation is complete
+`Promise<void>` — A promise that resolves when the operation is complete
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.addEnvAndServices();
+const result = await client.application.addEnvAndServices();
+console.log(result);
 ```

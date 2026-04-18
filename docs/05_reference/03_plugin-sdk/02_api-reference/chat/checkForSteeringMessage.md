@@ -1,19 +1,8 @@
 ---
-name: checkForSteeringMessage
-cbbaseinfo:
-  description: Checks if any steering message has been received.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "SteeringMessage | null"
-    description: The message data if available, or null
-data:
-  name: checkForSteeringMessage
-  category: chat
-  link: checkForSteeringMessage.md
+title: checkForSteeringMessage
 ---
-# checkForSteeringMessage
+
+# `checkForSteeringMessage`
 
 ```typescript
 plugin.chat.checkForSteeringMessage(): SteeringMessage | null
@@ -23,16 +12,17 @@ Checks if any steering message has been received.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`SteeringMessage | null`** — The message data if available, or null
+`SteeringMessage | null` — The message data if available, or null
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chat.checkForSteeringMessage();
+const result = await plugin.chat.checkForSteeringMessage();
+console.log(result);
 ```

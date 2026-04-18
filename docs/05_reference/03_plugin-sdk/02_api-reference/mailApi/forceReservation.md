@@ -1,22 +1,8 @@
 ---
-name: forceReservation
-cbbaseinfo:
-  description: Call forceReservation on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ForceReservationRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: forceReservation
-  category: mailApi
-  link: forceReservation.md
+title: forceReservation
 ---
-# forceReservation
+
+# `forceReservation`
 
 ```typescript
 plugin.mailApi.forceReservation(data: ForceReservationRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.mailApi.forceReservation(data: ForceReservationRequest): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ForceReservationRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ForceReservationRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.forceReservation(/* ForceReservationRequest */);
+const result = await plugin.mailApi.forceReservation(/* ForceReservationRequest */);
+console.log(result);
 ```

@@ -1,25 +1,8 @@
 ---
-name: getAll
-cbbaseinfo:
-  description: "Retrieves all deliberations.
-
-Returns every deliberation in the system, optionally filtered by
-the provided query parameters."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: Optional query or filter parameters
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<Deliberation[]>"
-    description: A promise that resolves to an array of Deliberation objects
-data:
-  name: getAll
-  category: agentDeliberation
-  link: getAll.md
+title: getAll
 ---
-# getAll
+
+# `getAll`
 
 ```typescript
 client.agentDeliberation.getAll(params?: Record<string, unknown>): Promise<Deliberation[]>
@@ -32,13 +15,13 @@ the provided query parameters.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ | Optional query or filter parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No | Optional query or filter parameters |
 
 ## Returns
 
-**`Promise<Deliberation[]>`** — A promise that resolves to an array of Deliberation objects
+`Promise<Deliberation[]>` — A promise that resolves to an array of Deliberation objects
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agentDeliberation.getAll();
+const result = await client.agentDeliberation.getAll();
+console.log(result);
 ```

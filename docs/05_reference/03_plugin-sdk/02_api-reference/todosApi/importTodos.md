@@ -1,22 +1,8 @@
 ---
-name: importTodos
-cbbaseinfo:
-  description: Call importTodos on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ImportTodosRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TodoItem[]>"
-    description: ""
-data:
-  name: importTodos
-  category: todosApi
-  link: importTodos.md
+title: importTodos
 ---
-# importTodos
+
+# `importTodos`
 
 ```typescript
 plugin.todosApi.importTodos(data: ImportTodosRequest): Promise<TodoItem[]>
@@ -26,18 +12,19 @@ plugin.todosApi.importTodos(data: ImportTodosRequest): Promise<TodoItem[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ImportTodosRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ImportTodosRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TodoItem[]>`**
+`Promise<TodoItem[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.importTodos(/* ImportTodosRequest */);
+const result = await plugin.todosApi.importTodos(/* ImportTodosRequest */);
+console.log(result);
 ```

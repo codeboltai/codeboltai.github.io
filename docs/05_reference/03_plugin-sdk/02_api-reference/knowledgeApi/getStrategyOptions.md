@@ -1,22 +1,8 @@
 ---
-name: getStrategyOptions
-cbbaseinfo:
-  description: Call getStrategyOptions on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: strategy
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeStrategyOptions>"
-    description: ""
-data:
-  name: getStrategyOptions
-  category: knowledgeApi
-  link: getStrategyOptions.md
+title: getStrategyOptions
 ---
-# getStrategyOptions
+
+# `getStrategyOptions`
 
 ```typescript
 plugin.knowledgeApi.getStrategyOptions(strategy: string): Promise<KnowledgeStrategyOptions>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.getStrategyOptions(strategy: string): Promise<KnowledgeStrat
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `strategy` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `strategy` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeStrategyOptions>`**
+`Promise<KnowledgeStrategyOptions>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.getStrategyOptions('strategy');
+const result = await plugin.knowledgeApi.getStrategyOptions('strategy');
+console.log(result);
 ```

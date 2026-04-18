@@ -1,19 +1,8 @@
 ---
-name: getAllMcpTools
-cbbaseinfo:
-  description: Gets all tools from all enabled MCP servers.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<GetAllMCPToolsResponse>"
-    description: ""
-data:
-  name: getAllMcpTools
-  category: mcp
-  link: getAllMcpTools.md
+title: getAllMcpTools
 ---
-# getAllMcpTools
+
+# `getAllMcpTools`
 
 ```typescript
 plugin.mcp.getAllMcpTools(): Promise<GetAllMCPToolsResponse>
@@ -23,16 +12,17 @@ Gets all tools from all enabled MCP servers.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<GetAllMCPToolsResponse>`**
+`Promise<GetAllMCPToolsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.getAllMcpTools();
+const result = await plugin.mcp.getAllMcpTools();
+console.log(result);
 ```

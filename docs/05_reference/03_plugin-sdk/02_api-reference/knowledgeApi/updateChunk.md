@@ -1,26 +1,8 @@
 ---
-name: updateChunk
-cbbaseinfo:
-  description: Call updateChunk on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: chunkId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateKnowledgeChunkRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: updateChunk
-  category: knowledgeApi
-  link: updateChunk.md
+title: updateChunk
 ---
-# updateChunk
+
+# `updateChunk`
 
 ```typescript
 plugin.knowledgeApi.updateChunk(chunkId: string, data: UpdateKnowledgeChunkRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.knowledgeApi.updateChunk(chunkId: string, data: UpdateKnowledgeChunkReque
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `chunkId` | `string` |  |
-| `data` | `UpdateKnowledgeChunkRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `chunkId` | `string` | Yes |  |
+| `data` | `UpdateKnowledgeChunkRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.updateChunk('chunkId', /* UpdateKnowledgeChunkRequest */);
+const result = await plugin.knowledgeApi.updateChunk('chunkId', /* UpdateKnowledgeChunkRequest */);
+console.log(result);
 ```

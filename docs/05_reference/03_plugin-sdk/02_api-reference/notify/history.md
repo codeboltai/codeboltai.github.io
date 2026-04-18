@@ -1,19 +1,8 @@
 ---
-name: history
-cbbaseinfo:
-  description: Call history on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: history
-  category: notify
-  link: history.md
+title: history
 ---
-# history
+
+# `history`
 
 ```typescript
 plugin.notify.history(): void
@@ -23,16 +12,17 @@ plugin.notify.history(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.history();
+const result = await plugin.notify.history();
+console.log(result);
 ```

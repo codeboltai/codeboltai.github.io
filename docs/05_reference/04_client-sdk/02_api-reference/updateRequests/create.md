@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Create a new update request
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateUpdateRequestRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<UpdateRequest>"
-    description: ""
-data:
-  name: create
-  category: updateRequests
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 client.updateRequests.create(data: CreateUpdateRequestRequest): Promise<UpdateRequest>
@@ -26,13 +12,13 @@ Create a new update request
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateUpdateRequestRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateUpdateRequestRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<UpdateRequest>`**
+`Promise<UpdateRequest>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.create(/* CreateUpdateRequestRequest */);
+const result = await client.updateRequests.create(/* CreateUpdateRequestRequest */);
+console.log(result);
 ```

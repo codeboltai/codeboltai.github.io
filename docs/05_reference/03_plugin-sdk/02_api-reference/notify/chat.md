@@ -1,19 +1,8 @@
 ---
-name: chat
-cbbaseinfo:
-  description: Call chat on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: chat
-  category: notify
-  link: chat.md
+title: chat
 ---
-# chat
+
+# `chat`
 
 ```typescript
 plugin.notify.chat(): void
@@ -23,16 +12,17 @@ plugin.notify.chat(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.chat();
+const result = await plugin.notify.chat();
+console.log(result);
 ```

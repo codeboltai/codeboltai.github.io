@@ -1,23 +1,8 @@
 ---
-name: checkCli
-cbbaseinfo:
-  description: "Checks the current CLI installation status.
-
-Returns information about whether the CLI tool is installed, which
-version is present, and if it's properly configured. Use this to
-verify CLI availability before attempting to use it."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<CliStatus>"
-    description: A promise that resolves to CLI status information
-data:
-  name: checkCli
-  category: system
-  link: checkCli.md
+title: checkCli
 ---
-# checkCli
+
+# `checkCli`
 
 ```typescript
 client.system.checkCli(): Promise<CliStatus>
@@ -31,11 +16,11 @@ verify CLI availability before attempting to use it.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<CliStatus>`** — A promise that resolves to CLI status information
+`Promise<CliStatus>` — A promise that resolves to CLI status information
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.system.checkCli();
+const result = await client.system.checkCli();
+console.log(result);
 ```

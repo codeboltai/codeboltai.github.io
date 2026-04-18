@@ -1,22 +1,8 @@
 ---
-name: getAgentInbox
-cbbaseinfo:
-  description: Call getAgentInbox on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: agentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailMessage[]>"
-    description: ""
-data:
-  name: getAgentInbox
-  category: mailApi
-  link: getAgentInbox.md
+title: getAgentInbox
 ---
-# getAgentInbox
+
+# `getAgentInbox`
 
 ```typescript
 plugin.mailApi.getAgentInbox(agentId: string): Promise<MailMessage[]>
@@ -26,18 +12,19 @@ plugin.mailApi.getAgentInbox(agentId: string): Promise<MailMessage[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `agentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `agentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<MailMessage[]>`**
+`Promise<MailMessage[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.getAgentInbox('agentId');
+const result = await plugin.mailApi.getAgentInbox('agentId');
+console.log(result);
 ```

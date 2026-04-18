@@ -1,26 +1,8 @@
 ---
-name: addBlocker
-cbbaseinfo:
-  description: Call addBlocker on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: blocker
-      typeName: AddBlockerData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobBlockerAddResponse>"
-    description: ""
-data:
-  name: addBlocker
-  category: job
-  link: addBlocker.md
+title: addBlocker
 ---
-# addBlocker
+
+# `addBlocker`
 
 ```typescript
 plugin.job.addBlocker(jobId: string, blocker: AddBlockerData): Promise<JobBlockerAddResponse>
@@ -30,19 +12,20 @@ plugin.job.addBlocker(jobId: string, blocker: AddBlockerData): Promise<JobBlocke
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `blocker` | `AddBlockerData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `blocker` | `AddBlockerData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobBlockerAddResponse>`**
+`Promise<JobBlockerAddResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addBlocker('jobId', /* AddBlockerData */);
+const result = await plugin.job.addBlocker('jobId', /* AddBlockerData */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getAllWithUniqueId
-cbbaseinfo:
-  description: Call getAllWithUniqueId on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GetAllProjectsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Project[]>"
-    description: ""
-data:
-  name: getAllWithUniqueId
-  category: projectsApi
-  link: getAllWithUniqueId.md
+title: getAllWithUniqueId
 ---
-# getAllWithUniqueId
+
+# `getAllWithUniqueId`
 
 ```typescript
 plugin.projectsApi.getAllWithUniqueId(data: GetAllProjectsRequest): Promise<Project[]>
@@ -26,18 +12,19 @@ plugin.projectsApi.getAllWithUniqueId(data: GetAllProjectsRequest): Promise<Proj
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GetAllProjectsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GetAllProjectsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Project[]>`**
+`Promise<Project[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getAllWithUniqueId(/* GetAllProjectsRequest */);
+const result = await plugin.projectsApi.getAllWithUniqueId(/* GetAllProjectsRequest */);
+console.log(result);
 ```

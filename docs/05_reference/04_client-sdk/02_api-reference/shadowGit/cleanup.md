@@ -1,22 +1,8 @@
 ---
-name: cleanup
-cbbaseinfo:
-  description: Clean up shadow git data
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ShadowGitCleanupRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: cleanup
-  category: shadowGit
-  link: cleanup.md
+title: cleanup
 ---
-# cleanup
+
+# `cleanup`
 
 ```typescript
 client.shadowGit.cleanup(data?: ShadowGitCleanupRequest): Promise<unknown>
@@ -26,13 +12,13 @@ Clean up shadow git data
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ShadowGitCleanupRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ShadowGitCleanupRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.shadowGit.cleanup();
+const result = await client.shadowGit.cleanup();
+console.log(result);
 ```

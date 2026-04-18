@@ -1,22 +1,8 @@
 ---
-name: getPinnedAgent
-cbbaseinfo:
-  description: "Retrieves the currently pinned agent.
-
-Returns the agent that is currently pinned to the UI, or null if
-no agent is pinned."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PinnedAgent | null>"
-    description: A promise that resolves to the PinnedAgent or null
-data:
-  name: getPinnedAgent
-  category: application
-  link: getPinnedAgent.md
+title: getPinnedAgent
 ---
-# getPinnedAgent
+
+# `getPinnedAgent`
 
 ```typescript
 client.application.getPinnedAgent(): Promise<PinnedAgent | null>
@@ -29,11 +15,11 @@ no agent is pinned.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PinnedAgent | null>`** — A promise that resolves to the PinnedAgent or null
+`Promise<PinnedAgent | null>` — A promise that resolves to the PinnedAgent or null
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getPinnedAgent();
+const result = await client.application.getPinnedAgent();
+console.log(result);
 ```

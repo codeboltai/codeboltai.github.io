@@ -1,22 +1,8 @@
 ---
-name: getTriggered
-cbbaseinfo:
-  description: Call getTriggered on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: CalendarFilterOptions
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<CalendarEvent[]>"
-    description: ""
-data:
-  name: getTriggered
-  category: calendarApi
-  link: getTriggered.md
+title: getTriggered
 ---
-# getTriggered
+
+# `getTriggered`
 
 ```typescript
 plugin.calendarApi.getTriggered(params?: CalendarFilterOptions): Promise<CalendarEvent[]>
@@ -26,18 +12,19 @@ plugin.calendarApi.getTriggered(params?: CalendarFilterOptions): Promise<Calenda
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `CalendarFilterOptions` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CalendarFilterOptions` | No |  |
 
 ## Returns
 
-**`Promise<CalendarEvent[]>`**
+`Promise<CalendarEvent[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.getTriggered();
+const result = await plugin.calendarApi.getTriggered();
+console.log(result);
 ```

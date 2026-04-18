@@ -1,22 +1,8 @@
 ---
-name: listThreads
-cbbaseinfo:
-  description: Call listThreads on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IListThreadsParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IListThreadsResponse>"
-    description: ""
-data:
-  name: listThreads
-  category: mail
-  link: listThreads.md
+title: listThreads
 ---
-# listThreads
+
+# `listThreads`
 
 ```typescript
 plugin.mail.listThreads(params: IListThreadsParams): Promise<IListThreadsResponse>
@@ -26,18 +12,19 @@ plugin.mail.listThreads(params: IListThreadsParams): Promise<IListThreadsRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IListThreadsParams` |  Default: `{}` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IListThreadsParams` | Yes |  _(default: `{}`)_ |
 
 ## Returns
 
-**`Promise<IListThreadsResponse>`**
+`Promise<IListThreadsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.listThreads(/* IListThreadsParams */);
+const result = await plugin.mail.listThreads(/* IListThreadsParams */);
+console.log(result);
 ```

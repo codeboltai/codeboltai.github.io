@@ -1,22 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: "Lists all models that have been downloaded to the local machine.
-
-Returns metadata for models currently stored on disk, regardless of whether they are
-currently loaded into memory for inference."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<LocalModel[]>"
-    description: A promise that resolves to an array of downloaded local models
-data:
-  name: list
-  category: localModels
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 client.localModels.list(): Promise<LocalModel[]>
@@ -29,11 +15,11 @@ currently loaded into memory for inference.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<LocalModel[]>`** — A promise that resolves to an array of downloaded local models
+`Promise<LocalModel[]>` — A promise that resolves to an array of downloaded local models
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.localModels.list();
+const result = await client.localModels.list();
+console.log(result);
 ```

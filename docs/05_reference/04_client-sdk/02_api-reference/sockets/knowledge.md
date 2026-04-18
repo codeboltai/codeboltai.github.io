@@ -1,19 +1,8 @@
 ---
-name: knowledge
-cbbaseinfo:
-  description: Call knowledge on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: knowledge
-  category: sockets
-  link: knowledge.md
+title: knowledge
 ---
-# knowledge
+
+# `knowledge`
 
 ```typescript
 client.sockets.knowledge(): void
@@ -23,11 +12,11 @@ client.sockets.knowledge(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.knowledge();
+const result = await client.sockets.knowledge();
+console.log(result);
 ```

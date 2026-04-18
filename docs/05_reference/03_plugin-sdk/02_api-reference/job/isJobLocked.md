@@ -1,22 +1,8 @@
 ---
-name: isJobLocked
-cbbaseinfo:
-  description: Call isJobLocked on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobLockCheckResponse>"
-    description: ""
-data:
-  name: isJobLocked
-  category: job
-  link: isJobLocked.md
+title: isJobLocked
 ---
-# isJobLocked
+
+# `isJobLocked`
 
 ```typescript
 plugin.job.isJobLocked(jobId: string): Promise<JobLockCheckResponse>
@@ -26,18 +12,19 @@ plugin.job.isJobLocked(jobId: string): Promise<JobLockCheckResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobLockCheckResponse>`**
+`Promise<JobLockCheckResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.isJobLocked('jobId');
+const result = await plugin.job.isJobLocked('jobId');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getEvent
-cbbaseinfo:
-  description: Call getEvent on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CalendarEvent>"
-    description: ""
-data:
-  name: getEvent
-  category: calendarApi
-  link: getEvent.md
+title: getEvent
 ---
-# getEvent
+
+# `getEvent`
 
 ```typescript
 plugin.calendarApi.getEvent(id: string): Promise<CalendarEvent>
@@ -26,18 +12,19 @@ plugin.calendarApi.getEvent(id: string): Promise<CalendarEvent>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<CalendarEvent>`**
+`Promise<CalendarEvent>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.getEvent('id');
+const result = await plugin.calendarApi.getEvent('id');
+console.log(result);
 ```

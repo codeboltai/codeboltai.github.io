@@ -1,22 +1,8 @@
 ---
-name: getReadyJobs
-cbbaseinfo:
-  description: Call getReadyJobs on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: filters
-      typeName: JobListFilters
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobReadyBlockedResponse>"
-    description: ""
-data:
-  name: getReadyJobs
-  category: job
-  link: getReadyJobs.md
+title: getReadyJobs
 ---
-# getReadyJobs
+
+# `getReadyJobs`
 
 ```typescript
 plugin.job.getReadyJobs(filters: JobListFilters): Promise<JobReadyBlockedResponse>
@@ -26,18 +12,19 @@ plugin.job.getReadyJobs(filters: JobListFilters): Promise<JobReadyBlockedRespons
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `filters` | `JobListFilters` |  Default: `{}` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `filters` | `JobListFilters` | Yes |  _(default: `{}`)_ |
 
 ## Returns
 
-**`Promise<JobReadyBlockedResponse>`**
+`Promise<JobReadyBlockedResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.getReadyJobs(/* JobListFilters */);
+const result = await plugin.job.getReadyJobs(/* JobListFilters */);
+console.log(result);
 ```

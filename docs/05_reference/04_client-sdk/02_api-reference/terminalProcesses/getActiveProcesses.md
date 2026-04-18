@@ -1,23 +1,8 @@
 ---
-name: getActiveProcesses
-cbbaseinfo:
-  description: "Retrieves all currently active terminal processes.
-
-Returns terminal processes that are currently running, including
-their process IDs, commands, and status information. Use this to
-monitor what shell operations are in progress."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<TerminalProcess[]>"
-    description: A promise that resolves to an array of active TerminalProcess objects
-data:
-  name: getActiveProcesses
-  category: terminalProcesses
-  link: getActiveProcesses.md
+title: getActiveProcesses
 ---
-# getActiveProcesses
+
+# `getActiveProcesses`
 
 ```typescript
 client.terminalProcesses.getActiveProcesses(): Promise<TerminalProcess[]>
@@ -31,11 +16,11 @@ monitor what shell operations are in progress.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<TerminalProcess[]>`** — A promise that resolves to an array of active TerminalProcess objects
+`Promise<TerminalProcess[]>` — A promise that resolves to an array of active TerminalProcess objects
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.terminalProcesses.getActiveProcesses();
+const result = await client.terminalProcesses.getActiveProcesses();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: syncThreads
-cbbaseinfo:
-  description: "Synchronizes threads from the thread store to the chat manager.
-
-Ensures that the in-memory chat manager is up-to-date with the
-persisted thread store, resolving any inconsistencies."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when synchronization is complete
-data:
-  name: syncThreads
-  category: chat
-  link: syncThreads.md
+title: syncThreads
 ---
-# syncThreads
+
+# `syncThreads`
 
 ```typescript
 client.chat.syncThreads(): Promise<void>
@@ -29,11 +15,11 @@ persisted thread store, resolving any inconsistencies.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when synchronization is complete
+`Promise<void>` — A promise that resolves when synchronization is complete
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.chat.syncThreads();
+const result = await client.chat.syncThreads();
+console.log(result);
 ```

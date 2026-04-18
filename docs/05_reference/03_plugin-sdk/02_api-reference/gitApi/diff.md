@@ -1,22 +1,8 @@
 ---
-name: diff
-cbbaseinfo:
-  description: Call diff on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitDiffRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<GitDiff[]>"
-    description: ""
-data:
-  name: diff
-  category: gitApi
-  link: diff.md
+title: diff
 ---
-# diff
+
+# `diff`
 
 ```typescript
 plugin.gitApi.diff(data?: GitDiffRequest): Promise<GitDiff[]>
@@ -26,18 +12,19 @@ plugin.gitApi.diff(data?: GitDiffRequest): Promise<GitDiff[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitDiffRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitDiffRequest` | No |  |
 
 ## Returns
 
-**`Promise<GitDiff[]>`**
+`Promise<GitDiff[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.diff();
+const result = await plugin.gitApi.diff();
+console.log(result);
 ```

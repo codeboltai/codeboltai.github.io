@@ -1,22 +1,8 @@
 ---
-name: createCollection
-cbbaseinfo:
-  description: Call createCollection on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateKnowledgeCollectionRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeCollection>"
-    description: ""
-data:
-  name: createCollection
-  category: knowledgeApi
-  link: createCollection.md
+title: createCollection
 ---
-# createCollection
+
+# `createCollection`
 
 ```typescript
 plugin.knowledgeApi.createCollection(data: CreateKnowledgeCollectionRequest): Promise<KnowledgeCollection>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.createCollection(data: CreateKnowledgeCollectionRequest): Pr
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateKnowledgeCollectionRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateKnowledgeCollectionRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeCollection>`**
+`Promise<KnowledgeCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.createCollection(/* CreateKnowledgeCollectionRequest */);
+const result = await plugin.knowledgeApi.createCollection(/* CreateKnowledgeCollectionRequest */);
+console.log(result);
 ```

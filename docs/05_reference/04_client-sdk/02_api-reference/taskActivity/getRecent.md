@@ -1,19 +1,8 @@
 ---
-name: getRecent
-cbbaseinfo:
-  description: Get recent activities
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<TaskActivity[]>"
-    description: ""
-data:
-  name: getRecent
-  category: taskActivity
-  link: getRecent.md
+title: getRecent
 ---
-# getRecent
+
+# `getRecent`
 
 ```typescript
 client.taskActivity.getRecent(): Promise<TaskActivity[]>
@@ -23,11 +12,11 @@ Get recent activities
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<TaskActivity[]>`**
+`Promise<TaskActivity[]>`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.getRecent();
+const result = await client.taskActivity.getRecent();
+console.log(result);
 ```

@@ -1,19 +1,8 @@
 ---
-name: getProjectPath
-cbbaseinfo:
-  description: Retrieves the path of the current project.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<GetProjectPathResponse>"
-    description: A promise that resolves with the project path response.
-data:
-  name: getProjectPath
-  category: project
-  link: getProjectPath.md
+title: getProjectPath
 ---
-# getProjectPath
+
+# `getProjectPath`
 
 ```typescript
 plugin.project.getProjectPath(): Promise<GetProjectPathResponse>
@@ -23,16 +12,17 @@ Retrieves the path of the current project.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<GetProjectPathResponse>`** — A promise that resolves with the project path response.
+`Promise<GetProjectPathResponse>` — A promise that resolves with the project path response.
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.project.getProjectPath();
+const result = await plugin.project.getProjectPath();
+console.log(result);
 ```

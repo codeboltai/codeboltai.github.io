@@ -1,51 +1,215 @@
 ---
-cbapicategory:
-  - name: createInstance
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/createInstance
-    description: createInstance
-  - name: deleteInstance
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/deleteInstance
-    description: deleteInstance
-  - name: deleteNamespace
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/deleteNamespace
-    description: deleteNamespace
-  - name: deleteValue
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/deleteValue
-    description: deleteValue
-  - name: getInstance
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/getInstance
-    description: getInstance
-  - name: getValue
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/getValue
-    description: getValue
-  - name: listInstances
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/listInstances
-    description: listInstances
-  - name: query
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/query
-    description: query
-  - name: setValue
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/setValue
-    description: setValue
-  - name: updateInstance
-    link: /docs/reference/plugin-sdk/api-reference/kvStoreApi/updateInstance
-    description: updateInstance
+title: KvStoreApi API
 ---
+
 # KvStoreApi API
 
-The `kvStoreApi` module of the Plugin SDK.
+The `kvStoreApi` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`createInstance`](./createInstance) |  |
+| [`deleteInstance`](./deleteInstance) |  |
+| [`deleteNamespace`](./deleteNamespace) |  |
+| [`deleteValue`](./deleteValue) |  |
+| [`getInstance`](./getInstance) |  |
+| [`getValue`](./getValue) |  |
+| [`listInstances`](./listInstances) |  |
+| [`query`](./query) |  |
+| [`setValue`](./setValue) |  |
+| [`updateInstance`](./updateInstance) |  |
 
 ## Methods
 
-- [`createInstance()`](./createInstance) — 
-- [`deleteInstance()`](./deleteInstance) — 
-- [`deleteNamespace()`](./deleteNamespace) — 
-- [`deleteValue()`](./deleteValue) — 
-- [`getInstance()`](./getInstance) — 
-- [`getValue()`](./getValue) — 
-- [`listInstances()`](./listInstances) — 
-- [`query()`](./query) — 
-- [`setValue()`](./setValue) — 
-- [`updateInstance()`](./updateInstance) — 
+---
+
+### `createInstance`
+
+```typescript
+plugin.kvStoreApi.createInstance(data: CreateKvStoreInstanceRequest): Promise<KvStoreInstance>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateKvStoreInstanceRequest` | Yes |  |
+
+**Returns:** `Promise<KvStoreInstance>`
+
+[Full reference →](./createInstance)
+
+---
+
+### `deleteInstance`
+
+```typescript
+plugin.kvStoreApi.deleteInstance(id: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteInstance)
+
+---
+
+### `deleteNamespace`
+
+```typescript
+plugin.kvStoreApi.deleteNamespace(instanceId: string, namespace: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes |  |
+| `namespace` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteNamespace)
+
+---
+
+### `deleteValue`
+
+```typescript
+plugin.kvStoreApi.deleteValue(instanceId: string, namespace: string, key: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes |  |
+| `namespace` | `string` | Yes |  |
+| `key` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./deleteValue)
+
+---
+
+### `getInstance`
+
+```typescript
+plugin.kvStoreApi.getInstance(id: string): Promise<KvStoreInstance>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<KvStoreInstance>`
+
+[Full reference →](./getInstance)
+
+---
+
+### `getValue`
+
+```typescript
+plugin.kvStoreApi.getValue(instanceId: string, namespace: string, key: string): Promise<KvValue>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes |  |
+| `namespace` | `string` | Yes |  |
+| `key` | `string` | Yes |  |
+
+**Returns:** `Promise<KvValue>`
+
+[Full reference →](./getValue)
+
+---
+
+### `listInstances`
+
+```typescript
+plugin.kvStoreApi.listInstances(params?: Record<string, unknown>): Promise<KvStoreInstance[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
+
+**Returns:** `Promise<KvStoreInstance[]>`
+
+[Full reference →](./listInstances)
+
+---
+
+### `query`
+
+```typescript
+plugin.kvStoreApi.query(data: KvQueryRequest): Promise<KvValue[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `KvQueryRequest` | Yes |  |
+
+**Returns:** `Promise<KvValue[]>`
+
+[Full reference →](./query)
+
+---
+
+### `setValue`
+
+```typescript
+plugin.kvStoreApi.setValue(data: SetKvValueRequest): Promise<KvValue>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `SetKvValueRequest` | Yes |  |
+
+**Returns:** `Promise<KvValue>`
+
+[Full reference →](./setValue)
+
+---
+
+### `updateInstance`
+
+```typescript
+plugin.kvStoreApi.updateInstance(id: string, data: UpdateKvStoreInstanceRequest): Promise<KvStoreInstance>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateKvStoreInstanceRequest` | Yes |  |
+
+**Returns:** `Promise<KvStoreInstance>`
+
+[Full reference →](./updateInstance)
+

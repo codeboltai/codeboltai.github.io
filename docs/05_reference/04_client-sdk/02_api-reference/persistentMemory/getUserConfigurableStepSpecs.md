@@ -1,22 +1,8 @@
 ---
-name: getUserConfigurableStepSpecs
-cbbaseinfo:
-  description: "Retrieves step specifications that are user-configurable.
-
-Returns a subset of step specifications that expose user-facing configuration options,
-filtering out internal-only or system-managed steps."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PersistentMemoryStepSpec[]>"
-    description: A promise that resolves to an array of user-configurable step specifications
-data:
-  name: getUserConfigurableStepSpecs
-  category: persistentMemory
-  link: getUserConfigurableStepSpecs.md
+title: getUserConfigurableStepSpecs
 ---
-# getUserConfigurableStepSpecs
+
+# `getUserConfigurableStepSpecs`
 
 ```typescript
 client.persistentMemory.getUserConfigurableStepSpecs(): Promise<PersistentMemoryStepSpec[]>
@@ -29,11 +15,11 @@ filtering out internal-only or system-managed steps.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PersistentMemoryStepSpec[]>`** — A promise that resolves to an array of user-configurable step specifications
+`Promise<PersistentMemoryStepSpec[]>` — A promise that resolves to an array of user-configurable step specifications
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.persistentMemory.getUserConfigurableStepSpecs();
+const result = await client.persistentMemory.getUserConfigurableStepSpecs();
+console.log(result);
 ```

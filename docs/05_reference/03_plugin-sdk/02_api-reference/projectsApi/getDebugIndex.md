@@ -1,19 +1,8 @@
 ---
-name: getDebugIndex
-cbbaseinfo:
-  description: Call getDebugIndex on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: getDebugIndex
-  category: projectsApi
-  link: getDebugIndex.md
+title: getDebugIndex
 ---
-# getDebugIndex
+
+# `getDebugIndex`
 
 ```typescript
 plugin.projectsApi.getDebugIndex(): Promise<unknown>
@@ -23,16 +12,17 @@ plugin.projectsApi.getDebugIndex(): Promise<unknown>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getDebugIndex();
+const result = await plugin.projectsApi.getDebugIndex();
+console.log(result);
 ```

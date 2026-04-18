@@ -1,24 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves a specific hook by its ID.
-
-Returns the full configuration and state of a single hook."
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: The unique identifier of the hook
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Hook>"
-    description: A promise that resolves to the
-data:
-  name: get
-  category: hooks
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.hooks.get(id: string): Promise<Hook>
@@ -30,13 +14,13 @@ Returns the full configuration and state of a single hook.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` | The unique identifier of the hook |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes | The unique identifier of the hook |
 
 ## Returns
 
-**`Promise<Hook>`** — A promise that resolves to the
+`Promise<Hook>` — A promise that resolves to the
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.hooks.get('id');
+const result = await client.hooks.get('id');
+console.log(result);
 ```

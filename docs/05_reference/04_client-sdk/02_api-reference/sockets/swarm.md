@@ -1,19 +1,8 @@
 ---
-name: swarm
-cbbaseinfo:
-  description: Call swarm on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: swarm
-  category: sockets
-  link: swarm.md
+title: swarm
 ---
-# swarm
+
+# `swarm`
 
 ```typescript
 client.sockets.swarm(): void
@@ -23,11 +12,11 @@ client.sockets.swarm(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.swarm();
+const result = await client.sockets.swarm();
+console.log(result);
 ```

@@ -1,34 +1,8 @@
 ---
-name: startAgentInEnvironment
-cbbaseinfo:
-  description: Call startAgentInEnvironment on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    - name: environmentId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: task
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: agentId
-      typeName: string
-      description: ""
-      isOptional: true
-    - name: threadId
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: startAgentInEnvironment
-  category: environment
-  link: startAgentInEnvironment.md
+title: startAgentInEnvironment
 ---
-# startAgentInEnvironment
+
+# `startAgentInEnvironment`
 
 ```typescript
 plugin.environment.startAgentInEnvironment(environmentId: string, task: string, agentId?: string, threadId?: string): Promise<any>
@@ -38,21 +12,22 @@ plugin.environment.startAgentInEnvironment(environmentId: string, task: string, 
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `environmentId` | `string` |  |
-| `task` | `string` |  |
-| `agentId` | `string` _(optional)_ |  |
-| `threadId` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+| `task` | `string` | Yes |  |
+| `agentId` | `string` | No |  |
+| `threadId` | `string` | No |  |
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.startAgentInEnvironment('environmentId', 'task');
+const result = await plugin.environment.startAgentInEnvironment('environmentId', 'task');
+console.log(result);
 ```

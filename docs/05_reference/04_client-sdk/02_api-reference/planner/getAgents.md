@@ -1,22 +1,8 @@
 ---
-name: getAgents
-cbbaseinfo:
-  description: "Retrieves all agents registered in the planner.
-
-Returns the list of agents that have been assigned tasks or are available for task
-assignment. Each agent includes its current workload and assignment information."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PlannerAgent[]>"
-    description: A promise that resolves to an array of planner agents
-data:
-  name: getAgents
-  category: planner
-  link: getAgents.md
+title: getAgents
 ---
-# getAgents
+
+# `getAgents`
 
 ```typescript
 client.planner.getAgents(): Promise<PlannerAgent[]>
@@ -29,11 +15,11 @@ assignment. Each agent includes its current workload and assignment information.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PlannerAgent[]>`** — A promise that resolves to an array of planner agents
+`Promise<PlannerAgent[]>` — A promise that resolves to an array of planner agents
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.planner.getAgents();
+const result = await client.planner.getAgents();
+console.log(result);
 ```

@@ -1,19 +1,8 @@
 ---
-name: calendar
-cbbaseinfo:
-  description: Call calendar on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: calendar
-  category: sockets
-  link: calendar.md
+title: calendar
 ---
-# calendar
+
+# `calendar`
 
 ```typescript
 client.sockets.calendar(): void
@@ -23,11 +12,11 @@ client.sockets.calendar(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.calendar();
+const result = await client.sockets.calendar();
+console.log(result);
 ```

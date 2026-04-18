@@ -1,22 +1,8 @@
 ---
-name: archiveContextThread
-cbbaseinfo:
-  description: Archives a context thread to remove it from active listings.
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: The unique identifier of the context thread to archive
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when the thread has been archived
-data:
-  name: archiveContextThread
-  category: memory
-  link: archiveContextThread.md
+title: archiveContextThread
 ---
-# archiveContextThread
+
+# `archiveContextThread`
 
 ```typescript
 client.memory.archiveContextThread(threadId: string): Promise<unknown>
@@ -26,13 +12,13 @@ Archives a context thread to remove it from active listings.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` | The unique identifier of the context thread to archive |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes | The unique identifier of the context thread to archive |
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when the thread has been archived
+`Promise<unknown>` — A promise that resolves when the thread has been archived
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.memory.archiveContextThread('threadId');
+const result = await client.memory.archiveContextThread('threadId');
+console.log(result);
 ```

@@ -1,23 +1,8 @@
 ---
-name: getStatistics
-cbbaseinfo:
-  description: "Retrieves aggregate statistics about the job system.
-
-Returns counts and metrics such as total jobs, jobs by status,
-average completion time, and other summary data. Useful for
-dashboards and progress reporting."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<JobStatistics>"
-    description: A promise that resolves to a  summary
-data:
-  name: getStatistics
-  category: jobs
-  link: getStatistics.md
+title: getStatistics
 ---
-# getStatistics
+
+# `getStatistics`
 
 ```typescript
 client.jobs.getStatistics(): Promise<JobStatistics>
@@ -31,11 +16,11 @@ dashboards and progress reporting.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<JobStatistics>`** — A promise that resolves to a  summary
+`Promise<JobStatistics>` — A promise that resolves to a  summary
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.jobs.getStatistics();
+const result = await client.jobs.getStatistics();
+console.log(result);
 ```

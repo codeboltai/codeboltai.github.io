@@ -1,23 +1,8 @@
 ---
-name: deleteCompletedTasks
-cbbaseinfo:
-  description: "Deletes all completed tasks across all projects.
-
-Removes every task with 'completed' status in the entire system.
-This is a global cleanup operation that affects all projects.
-Use with caution as this operation cannot be undone."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when all completed tasks have been deleted
-data:
-  name: deleteCompletedTasks
-  category: tasks
-  link: deleteCompletedTasks.md
+title: deleteCompletedTasks
 ---
-# deleteCompletedTasks
+
+# `deleteCompletedTasks`
 
 ```typescript
 client.tasks.deleteCompletedTasks(): Promise<void>
@@ -31,11 +16,11 @@ Use with caution as this operation cannot be undone.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when all completed tasks have been deleted
+`Promise<void>` — A promise that resolves when all completed tasks have been deleted
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.tasks.deleteCompletedTasks();
+const result = await client.tasks.deleteCompletedTasks();
+console.log(result);
 ```

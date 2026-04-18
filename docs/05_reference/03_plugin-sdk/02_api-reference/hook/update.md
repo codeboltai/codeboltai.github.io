@@ -1,26 +1,8 @@
 ---
-name: update
-cbbaseinfo:
-  description: Update an existing hook
-cbparameters:
-  parameters:
-    - name: hookId
-      typeName: string
-      description: Hook ID
-      isOptional: false
-    - name: config
-      typeName: Partial<HookConfig>
-      description: Updated hook configuration
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<HookResponse>"
-    description: ""
-data:
-  name: update
-  category: hook
-  link: update.md
+title: update
 ---
-# update
+
+# `update`
 
 ```typescript
 plugin.hook.update(hookId: string, config: Partial<HookConfig>): Promise<HookResponse>
@@ -30,19 +12,20 @@ Update an existing hook
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `hookId` | `string` | Hook ID |
-| `config` | `Partial<HookConfig>` | Updated hook configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `hookId` | `string` | Yes | Hook ID |
+| `config` | `Partial<HookConfig>` | Yes | Updated hook configuration |
 
 ## Returns
 
-**`Promise<HookResponse>`**
+`Promise<HookResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.update('hookId', /* Partial<HookConfig> */);
+const result = await plugin.hook.update('hookId', /* Partial<HookConfig> */);
+console.log(result);
 ```

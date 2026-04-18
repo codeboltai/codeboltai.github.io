@@ -1,25 +1,8 @@
 ---
-name: updateConfig
-cbbaseinfo:
-  description: "Updates the project configuration via an alternative endpoint.
-
-Applies configuration changes to the project settings. Functions similarly to
- but uses a different server route."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateProjectConfigRequest
-      description: The configuration fields to update
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the configuration has been saved
-data:
-  name: updateConfig
-  category: projects
-  link: updateConfig.md
+title: updateConfig
 ---
-# updateConfig
+
+# `updateConfig`
 
 ```typescript
 client.projects.updateConfig(data: UpdateProjectConfigRequest): Promise<void>
@@ -32,13 +15,13 @@ Applies configuration changes to the project settings. Functions similarly to
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateProjectConfigRequest` | The configuration fields to update |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateProjectConfigRequest` | Yes | The configuration fields to update |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the configuration has been saved
+`Promise<void>` — A promise that resolves when the configuration has been saved
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projects.updateConfig(/* UpdateProjectConfigRequest */);
+const result = await client.projects.updateConfig(/* UpdateProjectConfigRequest */);
+console.log(result);
 ```

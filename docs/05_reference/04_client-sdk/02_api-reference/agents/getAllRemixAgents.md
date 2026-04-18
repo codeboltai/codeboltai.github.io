@@ -1,21 +1,8 @@
 ---
-name: getAllRemixAgents
-cbbaseinfo:
-  description: "Retrieves all remix agents.
-
-Returns every remix agent that has been created in the system."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<RemixAgent[]>"
-    description: A promise that resolves to an array of RemixAgent objects
-data:
-  name: getAllRemixAgents
-  category: agents
-  link: getAllRemixAgents.md
+title: getAllRemixAgents
 ---
-# getAllRemixAgents
+
+# `getAllRemixAgents`
 
 ```typescript
 client.agents.getAllRemixAgents(): Promise<RemixAgent[]>
@@ -27,11 +14,11 @@ Returns every remix agent that has been created in the system.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<RemixAgent[]>`** — A promise that resolves to an array of RemixAgent objects
+`Promise<RemixAgent[]>` — A promise that resolves to an array of RemixAgent objects
 
 ## Example
 
@@ -40,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getAllRemixAgents();
+const result = await client.agents.getAllRemixAgents();
+console.log(result);
 ```

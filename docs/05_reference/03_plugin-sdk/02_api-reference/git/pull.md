@@ -1,19 +1,8 @@
 ---
-name: pull
-cbbaseinfo:
-  description: Pulls the latest changes from the remote repository to the local repository at the given path.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<GitPullResponse>"
-    description: A promise that resolves with the response from the pull event.
-data:
-  name: pull
-  category: git
-  link: pull.md
+title: pull
 ---
-# pull
+
+# `pull`
 
 ```typescript
 plugin.git.pull(): Promise<GitPullResponse>
@@ -23,16 +12,17 @@ Pulls the latest changes from the remote repository to the local repository at t
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<GitPullResponse>`** — A promise that resolves with the response from the pull event.
+`Promise<GitPullResponse>` — A promise that resolves with the response from the pull event.
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.git.pull();
+const result = await plugin.git.pull();
+console.log(result);
 ```

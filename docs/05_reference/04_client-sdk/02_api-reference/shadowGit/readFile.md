@@ -1,22 +1,8 @@
 ---
-name: readFile
-cbbaseinfo:
-  description: Read a file from a shadow git checkpoint
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ShadowGitReadFileRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: readFile
-  category: shadowGit
-  link: readFile.md
+title: readFile
 ---
-# readFile
+
+# `readFile`
 
 ```typescript
 client.shadowGit.readFile(data: ShadowGitReadFileRequest): Promise<unknown>
@@ -26,13 +12,13 @@ Read a file from a shadow git checkpoint
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ShadowGitReadFileRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ShadowGitReadFileRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.shadowGit.readFile(/* ShadowGitReadFileRequest */);
+const result = await client.shadowGit.readFile(/* ShadowGitReadFileRequest */);
+console.log(result);
 ```

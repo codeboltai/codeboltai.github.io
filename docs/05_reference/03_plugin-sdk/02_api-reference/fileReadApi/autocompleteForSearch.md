@@ -1,22 +1,8 @@
 ---
-name: autocompleteForSearch
-cbbaseinfo:
-  description: Call autocompleteForSearch on the Plugin SDK fileReadApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: FileSearchParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<FileAutocompleteResult[]>"
-    description: ""
-data:
-  name: autocompleteForSearch
-  category: fileReadApi
-  link: autocompleteForSearch.md
+title: autocompleteForSearch
 ---
-# autocompleteForSearch
+
+# `autocompleteForSearch`
 
 ```typescript
 plugin.fileReadApi.autocompleteForSearch(params?: FileSearchParams): Promise<FileAutocompleteResult[]>
@@ -26,18 +12,19 @@ plugin.fileReadApi.autocompleteForSearch(params?: FileSearchParams): Promise<Fil
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `FileSearchParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `FileSearchParams` | No |  |
 
 ## Returns
 
-**`Promise<FileAutocompleteResult[]>`**
+`Promise<FileAutocompleteResult[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileReadApi.autocompleteForSearch();
+const result = await plugin.fileReadApi.autocompleteForSearch();
+console.log(result);
 ```

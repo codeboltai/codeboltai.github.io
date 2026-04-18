@@ -1,22 +1,8 @@
 ---
-name: query
-cbbaseinfo:
-  description: Call query on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: KvQueryRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KvValue[]>"
-    description: ""
-data:
-  name: query
-  category: kvStoreApi
-  link: query.md
+title: query
 ---
-# query
+
+# `query`
 
 ```typescript
 plugin.kvStoreApi.query(data: KvQueryRequest): Promise<KvValue[]>
@@ -26,18 +12,19 @@ plugin.kvStoreApi.query(data: KvQueryRequest): Promise<KvValue[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `KvQueryRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `KvQueryRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KvValue[]>`**
+`Promise<KvValue[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.query(/* KvQueryRequest */);
+const result = await plugin.kvStoreApi.query(/* KvQueryRequest */);
+console.log(result);
 ```

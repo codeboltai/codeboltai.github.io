@@ -1,25 +1,8 @@
 ---
-name: createThread
-cbbaseinfo:
-  description: "Creates a new mail thread for agent-to-agent communication.
-
-Initiates a new conversation thread that messages can be posted to. Threads provide
-a structured way to organize multi-message exchanges between agents on a specific topic."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateMailThreadRequest
-      description: The thread creation payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailThread>"
-    description: A promise that resolves to the newly created mail thread
-data:
-  name: createThread
-  category: mail
-  link: createThread.md
+title: createThread
 ---
-# createThread
+
+# `createThread`
 
 ```typescript
 client.mail.createThread(data: CreateMailThreadRequest): Promise<MailThread>
@@ -32,13 +15,13 @@ a structured way to organize multi-message exchanges between agents on a specifi
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateMailThreadRequest` | The thread creation payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateMailThreadRequest` | Yes | The thread creation payload |
 
 ## Returns
 
-**`Promise<MailThread>`** — A promise that resolves to the newly created mail thread
+`Promise<MailThread>` — A promise that resolves to the newly created mail thread
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mail.createThread(/* CreateMailThreadRequest */);
+const result = await client.mail.createThread(/* CreateMailThreadRequest */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getStatistics
-cbbaseinfo:
-  description: "Retrieves aggregate statistics about review-merge requests.
-
-Returns counts and metrics across all review states, useful for monitoring review
-throughput and identifying bottlenecks in the review process."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ReviewMergeStatistics>"
-    description: A promise that resolves to a ReviewMergeStatistics object with aggregate data
-data:
-  name: getStatistics
-  category: reviewMerge
-  link: getStatistics.md
+title: getStatistics
 ---
-# getStatistics
+
+# `getStatistics`
 
 ```typescript
 client.reviewMerge.getStatistics(): Promise<ReviewMergeStatistics>
@@ -29,11 +15,11 @@ throughput and identifying bottlenecks in the review process.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ReviewMergeStatistics>`** — A promise that resolves to a ReviewMergeStatistics object with aggregate data
+`Promise<ReviewMergeStatistics>` — A promise that resolves to a ReviewMergeStatistics object with aggregate data
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.reviewMerge.getStatistics();
+const result = await client.reviewMerge.getStatistics();
+console.log(result);
 ```

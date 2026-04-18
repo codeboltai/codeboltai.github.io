@@ -1,26 +1,8 @@
 ---
-name: merge
-cbbaseinfo:
-  description: Merge a request into project structure
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: MergeUpdateRequestRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: merge
-  category: updateRequests
-  link: merge.md
+title: merge
 ---
-# merge
+
+# `merge`
 
 ```typescript
 client.updateRequests.merge(id: string, data?: MergeUpdateRequestRequest): Promise<unknown>
@@ -30,14 +12,14 @@ Merge a request into project structure
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `MergeUpdateRequestRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `MergeUpdateRequestRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -46,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.merge('id');
+const result = await client.updateRequests.merge('id');
+console.log(result);
 ```

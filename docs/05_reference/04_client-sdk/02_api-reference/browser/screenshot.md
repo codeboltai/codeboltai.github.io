@@ -1,25 +1,8 @@
 ---
-name: screenshot
-cbbaseinfo:
-  description: "Takes a screenshot of the current browser viewport.
-
-Captures the visible portion of the browser page as an image.
-Useful for visual verification and debugging during automated testing."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BrowserScreenshotRequest
-      description: Optional screenshot configuration
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<BrowserActionResult>"
-    description: A promise that resolves to the BrowserActionResult containing the screenshot data
-data:
-  name: screenshot
-  category: browser
-  link: screenshot.md
+title: screenshot
 ---
-# screenshot
+
+# `screenshot`
 
 ```typescript
 client.browser.screenshot(data?: BrowserScreenshotRequest): Promise<BrowserActionResult>
@@ -32,13 +15,13 @@ Useful for visual verification and debugging during automated testing.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BrowserScreenshotRequest` _(optional)_ | Optional screenshot configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserScreenshotRequest` | No | Optional screenshot configuration |
 
 ## Returns
 
-**`Promise<BrowserActionResult>`** — A promise that resolves to the BrowserActionResult containing the screenshot data
+`Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult containing the screenshot data
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.browser.screenshot();
+const result = await client.browser.screenshot();
+console.log(result);
 ```

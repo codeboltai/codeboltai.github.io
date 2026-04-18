@@ -1,19 +1,8 @@
 ---
-name: getThreadGroupMappings
-cbbaseinfo:
-  description: Call getThreadGroupMappings on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ThreadGroupMapping[]>"
-    description: ""
-data:
-  name: getThreadGroupMappings
-  category: projectsApi
-  link: getThreadGroupMappings.md
+title: getThreadGroupMappings
 ---
-# getThreadGroupMappings
+
+# `getThreadGroupMappings`
 
 ```typescript
 plugin.projectsApi.getThreadGroupMappings(): Promise<ThreadGroupMapping[]>
@@ -23,16 +12,17 @@ plugin.projectsApi.getThreadGroupMappings(): Promise<ThreadGroupMapping[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ThreadGroupMapping[]>`**
+`Promise<ThreadGroupMapping[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getThreadGroupMappings();
+const result = await plugin.projectsApi.getThreadGroupMappings();
+console.log(result);
 ```

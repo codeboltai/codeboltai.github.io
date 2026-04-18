@@ -1,22 +1,8 @@
 ---
-name: summarizeThread
-cbbaseinfo:
-  description: Call summarizeThread on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: ISummarizeThreadParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ISummarizeThreadResponse>"
-    description: ""
-data:
-  name: summarizeThread
-  category: mail
-  link: summarizeThread.md
+title: summarizeThread
 ---
-# summarizeThread
+
+# `summarizeThread`
 
 ```typescript
 plugin.mail.summarizeThread(params: ISummarizeThreadParams): Promise<ISummarizeThreadResponse>
@@ -26,18 +12,19 @@ plugin.mail.summarizeThread(params: ISummarizeThreadParams): Promise<ISummarizeT
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `ISummarizeThreadParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `ISummarizeThreadParams` | Yes |  |
 
 ## Returns
 
-**`Promise<ISummarizeThreadResponse>`**
+`Promise<ISummarizeThreadResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.summarizeThread(/* ISummarizeThreadParams */);
+const result = await plugin.mail.summarizeThread(/* ISummarizeThreadParams */);
+console.log(result);
 ```

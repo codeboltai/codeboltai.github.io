@@ -1,25 +1,8 @@
 ---
-name: deleteSwarm
-cbbaseinfo:
-  description: "Delete a swarm by ID.
-
-Permanently removes a swarm and all its associated resources including
-teams, roles, agents, and configurations. This action cannot be undone."
-cbparameters:
-  parameters:
-    - name: swarmId
-      typeName: string
-      description: The unique identifier of the swarm to delete
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the swarm is deleted
-data:
-  name: deleteSwarm
-  category: swarm
-  link: deleteSwarm.md
+title: deleteSwarm
 ---
-# deleteSwarm
+
+# `deleteSwarm`
 
 ```typescript
 client.swarm.deleteSwarm(swarmId: string): Promise<void>
@@ -32,13 +15,13 @@ teams, roles, agents, and configurations. This action cannot be undone.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `swarmId` | `string` | The unique identifier of the swarm to delete |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `swarmId` | `string` | Yes | The unique identifier of the swarm to delete |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the swarm is deleted
+`Promise<void>` — A promise that resolves when the swarm is deleted
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.swarm.deleteSwarm('swarmId');
+const result = await client.swarm.deleteSwarm('swarmId');
+console.log(result);
 ```

@@ -1,25 +1,8 @@
 ---
-name: cleanup
-cbbaseinfo:
-  description: "Cleans up old agent debug data.
-
-Removes debug records that are older than the specified threshold.
-Use this to free up storage and keep the debug system performant."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: CleanupAgentDebugParams
-      description: Query parameters controlling the cleanup
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when cleanup is complete
-data:
-  name: cleanup
-  category: agentDebugApi
-  link: cleanup.md
+title: cleanup
 ---
-# cleanup
+
+# `cleanup`
 
 ```typescript
 client.agentDebugApi.cleanup(params?: CleanupAgentDebugParams): Promise<unknown>
@@ -32,13 +15,13 @@ Use this to free up storage and keep the debug system performant.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `CleanupAgentDebugParams` _(optional)_ | Query parameters controlling the cleanup |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `CleanupAgentDebugParams` | No | Query parameters controlling the cleanup |
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when cleanup is complete
+`Promise<unknown>` — A promise that resolves when cleanup is complete
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agentDebugApi.cleanup();
+const result = await client.agentDebugApi.cleanup();
+console.log(result);
 ```

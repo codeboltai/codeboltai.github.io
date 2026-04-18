@@ -1,26 +1,8 @@
 ---
-name: query
-cbbaseinfo:
-  description: Call query on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: VectorQueryRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorSearchResult[]>"
-    description: ""
-data:
-  name: query
-  category: vectordbApi
-  link: query.md
+title: query
 ---
-# query
+
+# `query`
 
 ```typescript
 plugin.vectordbApi.query(id: string, data: VectorQueryRequest): Promise<VectorSearchResult[]>
@@ -30,19 +12,20 @@ plugin.vectordbApi.query(id: string, data: VectorQueryRequest): Promise<VectorSe
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `VectorQueryRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `VectorQueryRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorSearchResult[]>`**
+`Promise<VectorSearchResult[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.query('id', /* VectorQueryRequest */);
+const result = await plugin.vectordbApi.query('id', /* VectorQueryRequest */);
+console.log(result);
 ```

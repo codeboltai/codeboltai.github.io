@@ -1,22 +1,8 @@
 ---
-name: init
-cbbaseinfo:
-  description: Call init on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitInitRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: init
-  category: gitApi
-  link: init.md
+title: init
 ---
-# init
+
+# `init`
 
 ```typescript
 plugin.gitApi.init(data?: GitInitRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.gitApi.init(data?: GitInitRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitInitRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitInitRequest` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.init();
+const result = await plugin.gitApi.init();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: updateConfig
-cbbaseinfo:
-  description: Call updateConfig on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateProjectConfigRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: updateConfig
-  category: projectsApi
-  link: updateConfig.md
+title: updateConfig
 ---
-# updateConfig
+
+# `updateConfig`
 
 ```typescript
 plugin.projectsApi.updateConfig(data: UpdateProjectConfigRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.projectsApi.updateConfig(data: UpdateProjectConfigRequest): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateProjectConfigRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateProjectConfigRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.updateConfig(/* UpdateProjectConfigRequest */);
+const result = await plugin.projectsApi.updateConfig(/* UpdateProjectConfigRequest */);
+console.log(result);
 ```

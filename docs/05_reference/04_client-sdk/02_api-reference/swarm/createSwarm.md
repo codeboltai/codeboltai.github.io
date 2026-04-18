@@ -1,26 +1,8 @@
 ---
-name: createSwarm
-cbbaseinfo:
-  description: "Create a new swarm.
-
-Initializes a new swarm with the specified configuration. Swarms
-are the top-level organizational unit for multi-agent coordination,
-containing teams, roles, and agents that work together on tasks."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateSwarmRequest
-      description: The swarm configuration and metadata
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<SwarmData>"
-    description: A promise that resolves to the created SwarmData object
-data:
-  name: createSwarm
-  category: swarm
-  link: createSwarm.md
+title: createSwarm
 ---
-# createSwarm
+
+# `createSwarm`
 
 ```typescript
 client.swarm.createSwarm(data: CreateSwarmRequest): Promise<SwarmData>
@@ -34,13 +16,13 @@ containing teams, roles, and agents that work together on tasks.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateSwarmRequest` | The swarm configuration and metadata |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateSwarmRequest` | Yes | The swarm configuration and metadata |
 
 ## Returns
 
-**`Promise<SwarmData>`** — A promise that resolves to the created SwarmData object
+`Promise<SwarmData>` — A promise that resolves to the created SwarmData object
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.swarm.createSwarm(/* CreateSwarmRequest */);
+const result = await client.swarm.createSwarm(/* CreateSwarmRequest */);
+console.log(result);
 ```

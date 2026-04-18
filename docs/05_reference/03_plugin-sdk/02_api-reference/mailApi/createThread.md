@@ -1,22 +1,8 @@
 ---
-name: createThread
-cbbaseinfo:
-  description: Call createThread on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateMailThreadRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<MailThread>"
-    description: ""
-data:
-  name: createThread
-  category: mailApi
-  link: createThread.md
+title: createThread
 ---
-# createThread
+
+# `createThread`
 
 ```typescript
 plugin.mailApi.createThread(data: CreateMailThreadRequest): Promise<MailThread>
@@ -26,18 +12,19 @@ plugin.mailApi.createThread(data: CreateMailThreadRequest): Promise<MailThread>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateMailThreadRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateMailThreadRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<MailThread>`**
+`Promise<MailThread>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.createThread(/* CreateMailThreadRequest */);
+const result = await plugin.mailApi.createThread(/* CreateMailThreadRequest */);
+console.log(result);
 ```

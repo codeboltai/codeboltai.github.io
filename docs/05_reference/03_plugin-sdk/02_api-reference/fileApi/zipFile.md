@@ -1,22 +1,8 @@
 ---
-name: zipFile
-cbbaseinfo:
-  description: Call zipFile on the Plugin SDK fileApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ZipFileRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: zipFile
-  category: fileApi
-  link: zipFile.md
+title: zipFile
 ---
-# zipFile
+
+# `zipFile`
 
 ```typescript
 plugin.fileApi.zipFile(data: ZipFileRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.fileApi.zipFile(data: ZipFileRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ZipFileRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ZipFileRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileApi.zipFile(/* ZipFileRequest */);
+const result = await plugin.fileApi.zipFile(/* ZipFileRequest */);
+console.log(result);
 ```

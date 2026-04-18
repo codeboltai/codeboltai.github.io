@@ -1,19 +1,8 @@
 ---
-name: main
-cbbaseinfo:
-  description: Call main on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: main
-  category: sockets
-  link: main.md
+title: main
 ---
-# main
+
+# `main`
 
 ```typescript
 client.sockets.main(): void
@@ -23,11 +12,11 @@ client.sockets.main(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.main();
+const result = await client.sockets.main();
+console.log(result);
 ```

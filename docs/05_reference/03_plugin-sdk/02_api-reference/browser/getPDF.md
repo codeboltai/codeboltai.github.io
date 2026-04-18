@@ -1,22 +1,8 @@
 ---
-name: getPDF
-cbbaseinfo:
-  description: Retrieves the PDF content of the current page.
-cbparameters:
-  parameters:
-    - name: options
-      typeName: BrowserOperationOptions
-      description: Optional browser operation options
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: getPDF
-  category: browser
-  link: getPDF.md
+title: getPDF
 ---
-# getPDF
+
+# `getPDF`
 
 ```typescript
 plugin.browser.getPDF(options?: BrowserOperationOptions): Promise<void>
@@ -26,18 +12,19 @@ Retrieves the PDF content of the current page.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `options` | `BrowserOperationOptions` _(optional)_ | Optional browser operation options |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `options` | `BrowserOperationOptions` | No | Optional browser operation options |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.browser.getPDF();
+const result = await plugin.browser.getPDF();
+console.log(result);
 ```

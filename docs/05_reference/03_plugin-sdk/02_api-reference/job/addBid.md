@@ -1,26 +1,8 @@
 ---
-name: addBid
-cbbaseinfo:
-  description: Call addBid on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: bid
-      typeName: AddBidData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobBidAddResponse>"
-    description: ""
-data:
-  name: addBid
-  category: job
-  link: addBid.md
+title: addBid
 ---
-# addBid
+
+# `addBid`
 
 ```typescript
 plugin.job.addBid(jobId: string, bid: AddBidData): Promise<JobBidAddResponse>
@@ -30,19 +12,20 @@ plugin.job.addBid(jobId: string, bid: AddBidData): Promise<JobBidAddResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `bid` | `AddBidData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `bid` | `AddBidData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobBidAddResponse>`**
+`Promise<JobBidAddResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addBid('jobId', /* AddBidData */);
+const result = await plugin.job.addBid('jobId', /* AddBidData */);
+console.log(result);
 ```

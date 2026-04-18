@@ -1,23 +1,8 @@
 ---
-name: getThreads
-cbbaseinfo:
-  description: "Retrieves all todo threads.
-
-Returns all thread objects that organize todos into logical groups.
-Threads can represent projects, features, or any other categorization
-scheme. Use this to get an overview of all todo collections."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<TodoList[]>"
-    description: A promise that resolves to an array of TodoList thread objects
-data:
-  name: getThreads
-  category: todos
-  link: getThreads.md
+title: getThreads
 ---
-# getThreads
+
+# `getThreads`
 
 ```typescript
 client.todos.getThreads(): Promise<TodoList[]>
@@ -31,11 +16,11 @@ scheme. Use this to get an overview of all todo collections.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<TodoList[]>`** — A promise that resolves to an array of TodoList thread objects
+`Promise<TodoList[]>` — A promise that resolves to an array of TodoList thread objects
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.todos.getThreads();
+const result = await client.todos.getThreads();
+console.log(result);
 ```

@@ -1,26 +1,8 @@
 ---
-name: stopProvider
-cbbaseinfo:
-  description: Call stopProvider on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: stopProvider
-  category: environmentsApi
-  link: stopProvider.md
+title: stopProvider
 ---
-# stopProvider
+
+# `stopProvider`
 
 ```typescript
 plugin.environmentsApi.stopProvider(id: string, data?: Record<string, unknown>): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.stopProvider(id: string, data?: Record<string, unknown>):
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.stopProvider('id');
+const result = await plugin.environmentsApi.stopProvider('id');
+console.log(result);
 ```

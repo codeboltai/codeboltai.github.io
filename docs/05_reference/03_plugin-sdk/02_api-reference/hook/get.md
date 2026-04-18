@@ -1,22 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: Get a hook by ID
-cbparameters:
-  parameters:
-    - name: hookId
-      typeName: string
-      description: Hook ID
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<HookResponse>"
-    description: ""
-data:
-  name: get
-  category: hook
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 plugin.hook.get(hookId: string): Promise<HookResponse>
@@ -26,18 +12,19 @@ Get a hook by ID
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `hookId` | `string` | Hook ID |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `hookId` | `string` | Yes | Hook ID |
 
 ## Returns
 
-**`Promise<HookResponse>`**
+`Promise<HookResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.get('hookId');
+const result = await plugin.hook.get('hookId');
+console.log(result);
 ```

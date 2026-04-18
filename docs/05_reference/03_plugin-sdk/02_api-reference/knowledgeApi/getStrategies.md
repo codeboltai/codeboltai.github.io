@@ -1,19 +1,8 @@
 ---
-name: getStrategies
-cbbaseinfo:
-  description: Call getStrategies on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<KnowledgeStrategy[]>"
-    description: ""
-data:
-  name: getStrategies
-  category: knowledgeApi
-  link: getStrategies.md
+title: getStrategies
 ---
-# getStrategies
+
+# `getStrategies`
 
 ```typescript
 plugin.knowledgeApi.getStrategies(): Promise<KnowledgeStrategy[]>
@@ -23,16 +12,17 @@ plugin.knowledgeApi.getStrategies(): Promise<KnowledgeStrategy[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<KnowledgeStrategy[]>`**
+`Promise<KnowledgeStrategy[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.getStrategies();
+const result = await plugin.knowledgeApi.getStrategies();
+console.log(result);
 ```

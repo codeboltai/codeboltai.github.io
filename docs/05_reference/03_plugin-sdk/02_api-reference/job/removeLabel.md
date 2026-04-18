@@ -1,22 +1,8 @@
 ---
-name: removeLabel
-cbbaseinfo:
-  description: Call removeLabel on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: label
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobLabelsResponse>"
-    description: ""
-data:
-  name: removeLabel
-  category: job
-  link: removeLabel.md
+title: removeLabel
 ---
-# removeLabel
+
+# `removeLabel`
 
 ```typescript
 plugin.job.removeLabel(label: string): Promise<JobLabelsResponse>
@@ -26,18 +12,19 @@ plugin.job.removeLabel(label: string): Promise<JobLabelsResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `label` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `label` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobLabelsResponse>`**
+`Promise<JobLabelsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.removeLabel('label');
+const result = await plugin.job.removeLabel('label');
+console.log(result);
 ```

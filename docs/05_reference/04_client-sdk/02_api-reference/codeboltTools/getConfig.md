@@ -1,23 +1,8 @@
 ---
-name: getConfig
-cbbaseinfo:
-  description: "Retrieves the current tools configuration.
-
-Returns system-wide settings that control tool behavior, availability,
-permissions, and other configuration options. Useful for understanding
-the current tool setup."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<CodeboltToolsConfig>"
-    description: A promise that resolves to the CodeboltToolsConfig object
-data:
-  name: getConfig
-  category: codeboltTools
-  link: getConfig.md
+title: getConfig
 ---
-# getConfig
+
+# `getConfig`
 
 ```typescript
 client.codeboltTools.getConfig(): Promise<CodeboltToolsConfig>
@@ -31,11 +16,11 @@ the current tool setup.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<CodeboltToolsConfig>`** — A promise that resolves to the CodeboltToolsConfig object
+`Promise<CodeboltToolsConfig>` — A promise that resolves to the CodeboltToolsConfig object
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.codeboltTools.getConfig();
+const result = await client.codeboltTools.getConfig();
+console.log(result);
 ```

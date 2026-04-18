@@ -1,26 +1,8 @@
 ---
-name: updateInstance
-cbbaseinfo:
-  description: Update an event log instance
-cbparameters:
-  parameters:
-    - name: instanceId
-      typeName: string
-      description: Instance ID
-      isOptional: false
-    - name: updates
-      typeName: UpdateEventLogInstanceParams
-      description: Update parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<EventLogInstanceResponse>"
-    description: ""
-data:
-  name: updateInstance
-  category: eventLog
-  link: updateInstance.md
+title: updateInstance
 ---
-# updateInstance
+
+# `updateInstance`
 
 ```typescript
 plugin.eventLog.updateInstance(instanceId: string, updates: UpdateEventLogInstanceParams): Promise<EventLogInstanceResponse>
@@ -30,19 +12,20 @@ Update an event log instance
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `instanceId` | `string` | Instance ID |
-| `updates` | `UpdateEventLogInstanceParams` | Update parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes | Instance ID |
+| `updates` | `UpdateEventLogInstanceParams` | Yes | Update parameters |
 
 ## Returns
 
-**`Promise<EventLogInstanceResponse>`**
+`Promise<EventLogInstanceResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.eventLog.updateInstance('instanceId', /* UpdateEventLogInstanceParams */);
+const result = await plugin.eventLog.updateInstance('instanceId', /* UpdateEventLogInstanceParams */);
+console.log(result);
 ```

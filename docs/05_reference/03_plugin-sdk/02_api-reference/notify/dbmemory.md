@@ -1,19 +1,8 @@
 ---
-name: dbmemory
-cbbaseinfo:
-  description: Call dbmemory on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: dbmemory
-  category: notify
-  link: dbmemory.md
+title: dbmemory
 ---
-# dbmemory
+
+# `dbmemory`
 
 ```typescript
 plugin.notify.dbmemory(): void
@@ -23,16 +12,17 @@ plugin.notify.dbmemory(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.dbmemory();
+const result = await plugin.notify.dbmemory();
+console.log(result);
 ```

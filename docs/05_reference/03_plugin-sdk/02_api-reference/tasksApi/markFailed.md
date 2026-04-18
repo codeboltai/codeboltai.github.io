@@ -1,26 +1,8 @@
 ---
-name: markFailed
-cbbaseinfo:
-  description: "Marks a task as failed.
-
-Updates the task's status to indicate that the task could not be
-completed successfully. This is typically called when errors occur or
-when task objectives cannot be achieved. Returns the updated task object."
-cbparameters:
-  parameters:
-    - name: taskId
-      typeName: string
-      description: The unique identifier of the task to mark as failed
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Task>"
-    description: A promise that resolves to the updated Task object with failed status
-data:
-  name: markFailed
-  category: tasksApi
-  link: markFailed.md
+title: markFailed
 ---
-# markFailed
+
+# `markFailed`
 
 ```typescript
 plugin.tasksApi.markFailed(taskId: string): Promise<Task>
@@ -34,18 +16,19 @@ when task objectives cannot be achieved. Returns the updated task object.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `taskId` | `string` | The unique identifier of the task to mark as failed |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `taskId` | `string` | Yes | The unique identifier of the task to mark as failed |
 
 ## Returns
 
-**`Promise<Task>`** — A promise that resolves to the updated Task object with failed status
+`Promise<Task>` — A promise that resolves to the updated Task object with failed status
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.tasksApi.markFailed('taskId');
+const result = await plugin.tasksApi.markFailed('taskId');
+console.log(result);
 ```

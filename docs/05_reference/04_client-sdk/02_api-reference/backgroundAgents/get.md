@@ -1,25 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves a specific background agent instance by ID.
-
-Returns the full details of a single background agent including
-its configuration, status, and runtime metrics."
-cbparameters:
-  parameters:
-    - name: instanceId
-      typeName: string
-      description: The unique identifier of the background agent instance
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<BackgroundAgentInstance>"
-    description: A promise that resolves to the BackgroundAgentInstance object
-data:
-  name: get
-  category: backgroundAgents
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.backgroundAgents.get(instanceId: string): Promise<BackgroundAgentInstance>
@@ -32,13 +15,13 @@ its configuration, status, and runtime metrics.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `instanceId` | `string` | The unique identifier of the background agent instance |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes | The unique identifier of the background agent instance |
 
 ## Returns
 
-**`Promise<BackgroundAgentInstance>`** — A promise that resolves to the BackgroundAgentInstance object
+`Promise<BackgroundAgentInstance>` — A promise that resolves to the BackgroundAgentInstance object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.backgroundAgents.get('instanceId');
+const result = await client.backgroundAgents.get('instanceId');
+console.log(result);
 ```

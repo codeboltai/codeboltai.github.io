@@ -1,19 +1,8 @@
 ---
-name: roadmap
-cbbaseinfo:
-  description: Call roadmap on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: roadmap
-  category: sockets
-  link: roadmap.md
+title: roadmap
 ---
-# roadmap
+
+# `roadmap`
 
 ```typescript
 client.sockets.roadmap(): void
@@ -23,11 +12,11 @@ client.sockets.roadmap(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.roadmap();
+const result = await client.sockets.roadmap();
+console.log(result);
 ```

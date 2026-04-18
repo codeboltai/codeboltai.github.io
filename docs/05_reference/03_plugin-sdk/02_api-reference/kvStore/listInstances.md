@@ -1,19 +1,8 @@
 ---
-name: listInstances
-cbbaseinfo:
-  description: List all KV store instances
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<KVInstanceListResponse>"
-    description: ""
-data:
-  name: listInstances
-  category: kvStore
-  link: listInstances.md
+title: listInstances
 ---
-# listInstances
+
+# `listInstances`
 
 ```typescript
 plugin.kvStore.listInstances(): Promise<KVInstanceListResponse>
@@ -23,16 +12,17 @@ List all KV store instances
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<KVInstanceListResponse>`**
+`Promise<KVInstanceListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStore.listInstances();
+const result = await plugin.kvStore.listInstances();
+console.log(result);
 ```

@@ -1,23 +1,8 @@
 ---
-name: healthCheck
-cbbaseinfo:
-  description: "Performs a health check on the task service.
-
-Verifies that the task management service is operational and responding.
-Use this to monitor service availability or for health monitoring in
-production environments."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: A promise that resolves to an object containing the service status
-data:
-  name: healthCheck
-  category: tasks
-  link: healthCheck.md
+title: healthCheck
 ---
-# healthCheck
+
+# `healthCheck`
 
 ```typescript
 client.tasks.healthCheck(): Promise<object>
@@ -31,11 +16,11 @@ production environments.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<object>`** — A promise that resolves to an object containing the service status
+`Promise<object>` — A promise that resolves to an object containing the service status
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.tasks.healthCheck();
+const result = await client.tasks.healthCheck();
+console.log(result);
 ```

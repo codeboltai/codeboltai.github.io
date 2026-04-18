@@ -1,25 +1,8 @@
 ---
-name: getStrategyOptions
-cbbaseinfo:
-  description: "Retrieves the configurable options for a specific chunking strategy.
-
-Returns the parameter schema for the strategy, including defaults
-and valid ranges. Use this to build dynamic configuration UIs."
-cbparameters:
-  parameters:
-    - name: strategy
-      typeName: string
-      description: The name of the chunking strategy
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeStrategyOptions>"
-    description: A promise that resolves to the  for the strategy
-data:
-  name: getStrategyOptions
-  category: knowledge
-  link: getStrategyOptions.md
+title: getStrategyOptions
 ---
-# getStrategyOptions
+
+# `getStrategyOptions`
 
 ```typescript
 client.knowledge.getStrategyOptions(strategy: string): Promise<KnowledgeStrategyOptions>
@@ -32,13 +15,13 @@ and valid ranges. Use this to build dynamic configuration UIs.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `strategy` | `string` | The name of the chunking strategy |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `strategy` | `string` | Yes | The name of the chunking strategy |
 
 ## Returns
 
-**`Promise<KnowledgeStrategyOptions>`** — A promise that resolves to the  for the strategy
+`Promise<KnowledgeStrategyOptions>` — A promise that resolves to the  for the strategy
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.knowledge.getStrategyOptions('strategy');
+const result = await client.knowledge.getStrategyOptions('strategy');
+console.log(result);
 ```

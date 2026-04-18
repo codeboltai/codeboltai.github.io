@@ -1,22 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: List all update requests
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<UpdateRequest[]>"
-    description: ""
-data:
-  name: list
-  category: updateRequests
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 client.updateRequests.list(params?: Record<string, unknown>): Promise<UpdateRequest[]>
@@ -26,13 +12,13 @@ List all update requests
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<UpdateRequest[]>`**
+`Promise<UpdateRequest[]>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.list();
+const result = await client.updateRequests.list();
+console.log(result);
 ```

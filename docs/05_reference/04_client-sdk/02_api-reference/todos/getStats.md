@@ -1,26 +1,8 @@
 ---
-name: getStats
-cbbaseinfo:
-  description: "Retrieves todo statistics, optionally filtered by thread.
-
-Returns aggregated statistics about todos including counts by status,
-priority distribution, and completion rates. When a threadId is provided,
-statistics are scoped to that specific thread only."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: TodoListParams
-      description: Optional query parameters for filtering statistics
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<TodoStats>"
-    description: A promise that resolves to TodoStats object with metrics
-data:
-  name: getStats
-  category: todos
-  link: getStats.md
+title: getStats
 ---
-# getStats
+
+# `getStats`
 
 ```typescript
 client.todos.getStats(params?: TodoListParams): Promise<TodoStats>
@@ -34,13 +16,13 @@ statistics are scoped to that specific thread only.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `TodoListParams` _(optional)_ | Optional query parameters for filtering statistics |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `TodoListParams` | No | Optional query parameters for filtering statistics |
 
 ## Returns
 
-**`Promise<TodoStats>`** — A promise that resolves to TodoStats object with metrics
+`Promise<TodoStats>` — A promise that resolves to TodoStats object with metrics
 
 ## Example
 
@@ -49,5 +31,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.todos.getStats();
+const result = await client.todos.getStats();
+console.log(result);
 ```

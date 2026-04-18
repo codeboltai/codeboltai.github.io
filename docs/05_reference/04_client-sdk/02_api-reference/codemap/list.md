@@ -1,24 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: "Lists all codemaps.
-
-Returns every codemap that has been generated in the current workspace."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: Optional query parameters for filtering or pagination
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<Codemap[]>"
-    description: A promise that resolves to an array of  objects
-data:
-  name: list
-  category: codemap
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 client.codemap.list(params?: Record<string, unknown>): Promise<Codemap[]>
@@ -30,13 +14,13 @@ Returns every codemap that has been generated in the current workspace.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ | Optional query parameters for filtering or pagination |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No | Optional query parameters for filtering or pagination |
 
 ## Returns
 
-**`Promise<Codemap[]>`** — A promise that resolves to an array of  objects
+`Promise<Codemap[]>` — A promise that resolves to an array of  objects
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.codemap.list();
+const result = await client.codemap.list();
+console.log(result);
 ```

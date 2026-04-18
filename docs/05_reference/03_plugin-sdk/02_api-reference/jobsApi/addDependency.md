@@ -1,26 +1,8 @@
 ---
-name: addDependency
-cbbaseinfo:
-  description: Call addDependency on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AddDependencyRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: addDependency
-  category: jobsApi
-  link: addDependency.md
+title: addDependency
 ---
-# addDependency
+
+# `addDependency`
 
 ```typescript
 plugin.jobsApi.addDependency(id: string, data: AddDependencyRequest): Promise<void>
@@ -30,19 +12,20 @@ plugin.jobsApi.addDependency(id: string, data: AddDependencyRequest): Promise<vo
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `AddDependencyRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `AddDependencyRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.addDependency('id', /* AddDependencyRequest */);
+const result = await plugin.jobsApi.addDependency('id', /* AddDependencyRequest */);
+console.log(result);
 ```

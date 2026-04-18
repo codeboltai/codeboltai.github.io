@@ -1,22 +1,8 @@
 ---
-name: getConfiguredMcps
-cbbaseinfo:
-  description: "Retrieves all MCP servers that have been configured in the workspace.
-
-Returns only servers that have been explicitly set up (installed and configured),
-as opposed to all available servers in the catalog."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<McpServer[]>"
-    description: A promise that resolves to an array of configured MCP servers
-data:
-  name: getConfiguredMcps
-  category: mcp
-  link: getConfiguredMcps.md
+title: getConfiguredMcps
 ---
-# getConfiguredMcps
+
+# `getConfiguredMcps`
 
 ```typescript
 client.mcp.getConfiguredMcps(): Promise<McpServer[]>
@@ -29,11 +15,11 @@ as opposed to all available servers in the catalog.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<McpServer[]>`** — A promise that resolves to an array of configured MCP servers
+`Promise<McpServer[]>` — A promise that resolves to an array of configured MCP servers
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mcp.getConfiguredMcps();
+const result = await client.mcp.getConfiguredMcps();
+console.log(result);
 ```

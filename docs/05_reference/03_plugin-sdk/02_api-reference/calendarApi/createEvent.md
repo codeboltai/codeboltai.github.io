@@ -1,22 +1,8 @@
 ---
-name: createEvent
-cbbaseinfo:
-  description: Call createEvent on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateCalendarEventRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CalendarEvent>"
-    description: ""
-data:
-  name: createEvent
-  category: calendarApi
-  link: createEvent.md
+title: createEvent
 ---
-# createEvent
+
+# `createEvent`
 
 ```typescript
 plugin.calendarApi.createEvent(data: CreateCalendarEventRequest): Promise<CalendarEvent>
@@ -26,18 +12,19 @@ plugin.calendarApi.createEvent(data: CreateCalendarEventRequest): Promise<Calend
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateCalendarEventRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateCalendarEventRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<CalendarEvent>`**
+`Promise<CalendarEvent>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.createEvent(/* CreateCalendarEventRequest */);
+const result = await plugin.calendarApi.createEvent(/* CreateCalendarEventRequest */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getDocument
-cbbaseinfo:
-  description: Call getDocument on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: documentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeDocument>"
-    description: ""
-data:
-  name: getDocument
-  category: knowledgeApi
-  link: getDocument.md
+title: getDocument
 ---
-# getDocument
+
+# `getDocument`
 
 ```typescript
 plugin.knowledgeApi.getDocument(documentId: string): Promise<KnowledgeDocument>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.getDocument(documentId: string): Promise<KnowledgeDocument>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `documentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `documentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeDocument>`**
+`Promise<KnowledgeDocument>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.getDocument('documentId');
+const result = await plugin.knowledgeApi.getDocument('documentId');
+console.log(result);
 ```

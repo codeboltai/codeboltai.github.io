@@ -1,22 +1,8 @@
 ---
-name: createThread
-cbbaseinfo:
-  description: Call createThread on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: ICreateThreadParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ICreateThreadResponse>"
-    description: ""
-data:
-  name: createThread
-  category: mail
-  link: createThread.md
+title: createThread
 ---
-# createThread
+
+# `createThread`
 
 ```typescript
 plugin.mail.createThread(params: ICreateThreadParams): Promise<ICreateThreadResponse>
@@ -26,18 +12,19 @@ plugin.mail.createThread(params: ICreateThreadParams): Promise<ICreateThreadResp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `ICreateThreadParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `ICreateThreadParams` | Yes |  |
 
 ## Returns
 
-**`Promise<ICreateThreadResponse>`**
+`Promise<ICreateThreadResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.createThread(/* ICreateThreadParams */);
+const result = await plugin.mail.createThread(/* ICreateThreadParams */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: archiveThread
-cbbaseinfo:
-  description: Call archiveThread on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IArchiveThreadParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IArchiveThreadResponse>"
-    description: ""
-data:
-  name: archiveThread
-  category: mail
-  link: archiveThread.md
+title: archiveThread
 ---
-# archiveThread
+
+# `archiveThread`
 
 ```typescript
 plugin.mail.archiveThread(params: IArchiveThreadParams): Promise<IArchiveThreadResponse>
@@ -26,18 +12,19 @@ plugin.mail.archiveThread(params: IArchiveThreadParams): Promise<IArchiveThreadR
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IArchiveThreadParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IArchiveThreadParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IArchiveThreadResponse>`**
+`Promise<IArchiveThreadResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.archiveThread(/* IArchiveThreadParams */);
+const result = await plugin.mail.archiveThread(/* IArchiveThreadParams */);
+console.log(result);
 ```

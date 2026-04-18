@@ -1,26 +1,8 @@
 ---
-name: getChunks
-cbbaseinfo:
-  description: Call getChunks on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: params
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<VectorChunk[]>"
-    description: ""
-data:
-  name: getChunks
-  category: vectordbApi
-  link: getChunks.md
+title: getChunks
 ---
-# getChunks
+
+# `getChunks`
 
 ```typescript
 plugin.vectordbApi.getChunks(id: string, params?: Record<string, unknown>): Promise<VectorChunk[]>
@@ -30,19 +12,20 @@ plugin.vectordbApi.getChunks(id: string, params?: Record<string, unknown>): Prom
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `params` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `params` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<VectorChunk[]>`**
+`Promise<VectorChunk[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.getChunks('id');
+const result = await plugin.vectordbApi.getChunks('id');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: createThread
-cbbaseinfo:
-  description: Call createThread on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateTodoThreadRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TodoList>"
-    description: ""
-data:
-  name: createThread
-  category: todosApi
-  link: createThread.md
+title: createThread
 ---
-# createThread
+
+# `createThread`
 
 ```typescript
 plugin.todosApi.createThread(data: CreateTodoThreadRequest): Promise<TodoList>
@@ -26,18 +12,19 @@ plugin.todosApi.createThread(data: CreateTodoThreadRequest): Promise<TodoList>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateTodoThreadRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateTodoThreadRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TodoList>`**
+`Promise<TodoList>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.createThread(/* CreateTodoThreadRequest */);
+const result = await plugin.todosApi.createThread(/* CreateTodoThreadRequest */);
+console.log(result);
 ```

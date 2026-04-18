@@ -1,22 +1,8 @@
 ---
-name: createLabel
-cbbaseinfo:
-  description: Call createLabel on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateLabelRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobLabel>"
-    description: ""
-data:
-  name: createLabel
-  category: jobsApi
-  link: createLabel.md
+title: createLabel
 ---
-# createLabel
+
+# `createLabel`
 
 ```typescript
 plugin.jobsApi.createLabel(data: CreateLabelRequest): Promise<JobLabel>
@@ -26,18 +12,19 @@ plugin.jobsApi.createLabel(data: CreateLabelRequest): Promise<JobLabel>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateLabelRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateLabelRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<JobLabel>`**
+`Promise<JobLabel>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.createLabel(/* CreateLabelRequest */);
+const result = await plugin.jobsApi.createLabel(/* CreateLabelRequest */);
+console.log(result);
 ```

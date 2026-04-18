@@ -1,22 +1,8 @@
 ---
-name: listReservations
-cbbaseinfo:
-  description: Call listReservations on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IListReservationsParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IListReservationsResponse>"
-    description: ""
-data:
-  name: listReservations
-  category: mail
-  link: listReservations.md
+title: listReservations
 ---
-# listReservations
+
+# `listReservations`
 
 ```typescript
 plugin.mail.listReservations(params: IListReservationsParams): Promise<IListReservationsResponse>
@@ -26,18 +12,19 @@ plugin.mail.listReservations(params: IListReservationsParams): Promise<IListRese
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IListReservationsParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IListReservationsParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IListReservationsResponse>`**
+`Promise<IListReservationsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.listReservations(/* IListReservationsParams */);
+const result = await plugin.mail.listReservations(/* IListReservationsParams */);
+console.log(result);
 ```

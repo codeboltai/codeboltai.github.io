@@ -1,19 +1,8 @@
 ---
-name: kvStore
-cbbaseinfo:
-  description: Call kvStore on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: kvStore
-  category: sockets
-  link: kvStore.md
+title: kvStore
 ---
-# kvStore
+
+# `kvStore`
 
 ```typescript
 client.sockets.kvStore(): void
@@ -23,11 +12,11 @@ client.sockets.kvStore(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.kvStore();
+const result = await client.sockets.kvStore();
+console.log(result);
 ```

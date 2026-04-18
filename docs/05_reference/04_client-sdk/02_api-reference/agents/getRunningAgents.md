@@ -1,21 +1,8 @@
 ---
-name: getRunningAgents
-cbbaseinfo:
-  description: "Retrieves all currently running agents.
-
-Returns a list of agents that are actively executing in the runtime."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Agent[]>"
-    description: A promise that resolves to an array of running Agent objects
-data:
-  name: getRunningAgents
-  category: agents
-  link: getRunningAgents.md
+title: getRunningAgents
 ---
-# getRunningAgents
+
+# `getRunningAgents`
 
 ```typescript
 client.agents.getRunningAgents(): Promise<Agent[]>
@@ -27,11 +14,11 @@ Returns a list of agents that are actively executing in the runtime.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Agent[]>`** — A promise that resolves to an array of running Agent objects
+`Promise<Agent[]>` — A promise that resolves to an array of running Agent objects
 
 ## Example
 
@@ -40,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getRunningAgents();
+const result = await client.agents.getRunningAgents();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getThreadsForGroup
-cbbaseinfo:
-  description: Call getThreadsForGroup on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: groupId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<string[]>"
-    description: ""
-data:
-  name: getThreadsForGroup
-  category: projectsApi
-  link: getThreadsForGroup.md
+title: getThreadsForGroup
 ---
-# getThreadsForGroup
+
+# `getThreadsForGroup`
 
 ```typescript
 plugin.projectsApi.getThreadsForGroup(groupId: string): Promise<string[]>
@@ -26,18 +12,19 @@ plugin.projectsApi.getThreadsForGroup(groupId: string): Promise<string[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `groupId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `groupId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<string[]>`**
+`Promise<string[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getThreadsForGroup('groupId');
+const result = await plugin.projectsApi.getThreadsForGroup('groupId');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getCollection
-cbbaseinfo:
-  description: Call getCollection on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeCollection>"
-    description: ""
-data:
-  name: getCollection
-  category: knowledgeApi
-  link: getCollection.md
+title: getCollection
 ---
-# getCollection
+
+# `getCollection`
 
 ```typescript
 plugin.knowledgeApi.getCollection(id: string): Promise<KnowledgeCollection>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.getCollection(id: string): Promise<KnowledgeCollection>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeCollection>`**
+`Promise<KnowledgeCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.getCollection('id');
+const result = await plugin.knowledgeApi.getCollection('id');
+console.log(result);
 ```

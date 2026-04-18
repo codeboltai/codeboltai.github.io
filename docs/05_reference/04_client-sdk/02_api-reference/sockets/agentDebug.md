@@ -1,19 +1,8 @@
 ---
-name: agentDebug
-cbbaseinfo:
-  description: Call agentDebug on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: agentDebug
-  category: sockets
-  link: agentDebug.md
+title: agentDebug
 ---
-# agentDebug
+
+# `agentDebug`
 
 ```typescript
 client.sockets.agentDebug(): void
@@ -23,11 +12,11 @@ client.sockets.agentDebug(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.agentDebug();
+const result = await client.sockets.agentDebug();
+console.log(result);
 ```

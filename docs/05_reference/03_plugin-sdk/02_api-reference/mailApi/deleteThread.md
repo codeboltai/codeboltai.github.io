@@ -1,22 +1,8 @@
 ---
-name: deleteThread
-cbbaseinfo:
-  description: Call deleteThread on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deleteThread
-  category: mailApi
-  link: deleteThread.md
+title: deleteThread
 ---
-# deleteThread
+
+# `deleteThread`
 
 ```typescript
 plugin.mailApi.deleteThread(threadId: string): Promise<void>
@@ -26,18 +12,19 @@ plugin.mailApi.deleteThread(threadId: string): Promise<void>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.deleteThread('threadId');
+const result = await plugin.mailApi.deleteThread('threadId');
+console.log(result);
 ```

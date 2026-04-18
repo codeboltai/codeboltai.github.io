@@ -1,19 +1,8 @@
 ---
-name: codebolt
-cbbaseinfo:
-  description: Call codebolt on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: codebolt
-  category: sockets
-  link: codebolt.md
+title: codebolt
 ---
-# codebolt
+
+# `codebolt`
 
 ```typescript
 client.sockets.codebolt(): void
@@ -23,11 +12,11 @@ client.sockets.codebolt(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.codebolt();
+const result = await client.sockets.codebolt();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: addPheromoneType
-cbbaseinfo:
-  description: Call addPheromoneType on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: AddPheromoneTypeData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobPheromoneTypeResponse>"
-    description: ""
-data:
-  name: addPheromoneType
-  category: job
-  link: addPheromoneType.md
+title: addPheromoneType
 ---
-# addPheromoneType
+
+# `addPheromoneType`
 
 ```typescript
 plugin.job.addPheromoneType(data: AddPheromoneTypeData): Promise<JobPheromoneTypeResponse>
@@ -26,18 +12,19 @@ plugin.job.addPheromoneType(data: AddPheromoneTypeData): Promise<JobPheromoneTyp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `AddPheromoneTypeData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `AddPheromoneTypeData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobPheromoneTypeResponse>`**
+`Promise<JobPheromoneTypeResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addPheromoneType(/* AddPheromoneTypeData */);
+const result = await plugin.job.addPheromoneType(/* AddPheromoneTypeData */);
+console.log(result);
 ```

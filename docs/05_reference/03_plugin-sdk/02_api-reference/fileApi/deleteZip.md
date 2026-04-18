@@ -1,22 +1,8 @@
 ---
-name: deleteZip
-cbbaseinfo:
-  description: Call deleteZip on the Plugin SDK fileApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: DeleteZipRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: deleteZip
-  category: fileApi
-  link: deleteZip.md
+title: deleteZip
 ---
-# deleteZip
+
+# `deleteZip`
 
 ```typescript
 plugin.fileApi.deleteZip(data: DeleteZipRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.fileApi.deleteZip(data: DeleteZipRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `DeleteZipRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `DeleteZipRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileApi.deleteZip(/* DeleteZipRequest */);
+const result = await plugin.fileApi.deleteZip(/* DeleteZipRequest */);
+console.log(result);
 ```

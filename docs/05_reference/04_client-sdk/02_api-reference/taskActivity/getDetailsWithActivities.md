@@ -1,22 +1,8 @@
 ---
-name: getDetailsWithActivities
-cbbaseinfo:
-  description: Get task details with activities
-cbparameters:
-  parameters:
-    - name: taskId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskDetailsWithActivities>"
-    description: ""
-data:
-  name: getDetailsWithActivities
-  category: taskActivity
-  link: getDetailsWithActivities.md
+title: getDetailsWithActivities
 ---
-# getDetailsWithActivities
+
+# `getDetailsWithActivities`
 
 ```typescript
 client.taskActivity.getDetailsWithActivities(taskId: string): Promise<TaskDetailsWithActivities>
@@ -26,13 +12,13 @@ Get task details with activities
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `taskId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `taskId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskDetailsWithActivities>`**
+`Promise<TaskDetailsWithActivities>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.getDetailsWithActivities('taskId');
+const result = await client.taskActivity.getDetailsWithActivities('taskId');
+console.log(result);
 ```

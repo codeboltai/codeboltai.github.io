@@ -1,22 +1,8 @@
 ---
-name: getTasks
-cbbaseinfo:
-  description: "Retrieves all chat tasks.
-
-Returns the list of tasks that have been created through the
-chat system."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<unknown[]>"
-    description: A promise that resolves to an array of task objects
-data:
-  name: getTasks
-  category: chatApi
-  link: getTasks.md
+title: getTasks
 ---
-# getTasks
+
+# `getTasks`
 
 ```typescript
 plugin.chatApi.getTasks(): Promise<unknown[]>
@@ -29,16 +15,17 @@ chat system.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<unknown[]>`** — A promise that resolves to an array of task objects
+`Promise<unknown[]>` — A promise that resolves to an array of task objects
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chatApi.getTasks();
+const result = await plugin.chatApi.getTasks();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: listEvents
-cbbaseinfo:
-  description: List calendar events with optional filters
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IListEventsParams
-      description: Optional filter parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IListEventsResponse>"
-    description: Promise resolving to list of events
-data:
-  name: listEvents
-  category: calendar
-  link: listEvents.md
+title: listEvents
 ---
-# listEvents
+
+# `listEvents`
 
 ```typescript
 plugin.calendar.listEvents(params: IListEventsParams): Promise<IListEventsResponse>
@@ -26,18 +12,19 @@ List calendar events with optional filters
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IListEventsParams` | Optional filter parameters Default: `{}` |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IListEventsParams` | Yes | Optional filter parameters _(default: `{}`)_ |
 
 ## Returns
 
-**`Promise<IListEventsResponse>`** — Promise resolving to list of events
+`Promise<IListEventsResponse>` — Promise resolving to list of events
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendar.listEvents(/* IListEventsParams */);
+const result = await plugin.calendar.listEvents(/* IListEventsParams */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: completeEvents
-cbbaseinfo:
-  description: Call completeEvents on the Plugin SDK calendarApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BulkCompleteEventsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: completeEvents
-  category: calendarApi
-  link: completeEvents.md
+title: completeEvents
 ---
-# completeEvents
+
+# `completeEvents`
 
 ```typescript
 plugin.calendarApi.completeEvents(data: BulkCompleteEventsRequest): Promise<void>
@@ -26,18 +12,19 @@ plugin.calendarApi.completeEvents(data: BulkCompleteEventsRequest): Promise<void
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BulkCompleteEventsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BulkCompleteEventsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.calendarApi.completeEvents(/* BulkCompleteEventsRequest */);
+const result = await plugin.calendarApi.completeEvents(/* BulkCompleteEventsRequest */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getAppStateLayout
-cbbaseinfo:
-  description: "Retrieves the application state layout.
-
-Returns the full layout configuration for the application, including
-all mode-specific layout definitions."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<AppStateLayout>"
-    description: A promise that resolves to the AppStateLayout object
-data:
-  name: getAppStateLayout
-  category: application
-  link: getAppStateLayout.md
+title: getAppStateLayout
 ---
-# getAppStateLayout
+
+# `getAppStateLayout`
 
 ```typescript
 client.application.getAppStateLayout(): Promise<AppStateLayout>
@@ -29,11 +15,11 @@ all mode-specific layout definitions.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<AppStateLayout>`** — A promise that resolves to the AppStateLayout object
+`Promise<AppStateLayout>` — A promise that resolves to the AppStateLayout object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getAppStateLayout();
+const result = await client.application.getAppStateLayout();
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: findOrCreateThread
-cbbaseinfo:
-  description: Call findOrCreateThread on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IFindOrCreateThreadParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IFindOrCreateThreadResponse>"
-    description: ""
-data:
-  name: findOrCreateThread
-  category: mail
-  link: findOrCreateThread.md
+title: findOrCreateThread
 ---
-# findOrCreateThread
+
+# `findOrCreateThread`
 
 ```typescript
 plugin.mail.findOrCreateThread(params: IFindOrCreateThreadParams): Promise<IFindOrCreateThreadResponse>
@@ -26,18 +12,19 @@ plugin.mail.findOrCreateThread(params: IFindOrCreateThreadParams): Promise<IFind
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IFindOrCreateThreadParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IFindOrCreateThreadParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IFindOrCreateThreadResponse>`**
+`Promise<IFindOrCreateThreadResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.findOrCreateThread(/* IFindOrCreateThreadParams */);
+const result = await plugin.mail.findOrCreateThread(/* IFindOrCreateThreadParams */);
+console.log(result);
 ```

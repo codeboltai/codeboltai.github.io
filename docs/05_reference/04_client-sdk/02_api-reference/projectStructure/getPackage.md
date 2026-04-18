@@ -1,24 +1,8 @@
 ---
-name: getPackage
-cbbaseinfo:
-  description: "Retrieves a single package by its unique identifier.
-
-Returns the full package definition including all its sections and items."
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: The unique identifier of the package to retrieve
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<PackageDefinition>"
-    description: A promise that resolves to the package definition
-data:
-  name: getPackage
-  category: projectStructure
-  link: getPackage.md
+title: getPackage
 ---
-# getPackage
+
+# `getPackage`
 
 ```typescript
 client.projectStructure.getPackage(packageId: string): Promise<PackageDefinition>
@@ -30,13 +14,13 @@ Returns the full package definition including all its sections and items.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` | The unique identifier of the package to retrieve |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes | The unique identifier of the package to retrieve |
 
 ## Returns
 
-**`Promise<PackageDefinition>`** — A promise that resolves to the package definition
+`Promise<PackageDefinition>` — A promise that resolves to the package definition
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projectStructure.getPackage('packageId');
+const result = await client.projectStructure.getPackage('packageId');
+console.log(result);
 ```

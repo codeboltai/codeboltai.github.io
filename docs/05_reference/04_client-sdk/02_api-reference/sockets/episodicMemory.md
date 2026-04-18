@@ -1,19 +1,8 @@
 ---
-name: episodicMemory
-cbbaseinfo:
-  description: Call episodicMemory on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: episodicMemory
-  category: sockets
-  link: episodicMemory.md
+title: episodicMemory
 ---
-# episodicMemory
+
+# `episodicMemory`
 
 ```typescript
 client.sockets.episodicMemory(): void
@@ -23,11 +12,11 @@ client.sockets.episodicMemory(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.episodicMemory();
+const result = await client.sockets.episodicMemory();
+console.log(result);
 ```

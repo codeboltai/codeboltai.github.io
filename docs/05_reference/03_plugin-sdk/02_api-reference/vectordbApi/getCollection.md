@@ -1,22 +1,8 @@
 ---
-name: getCollection
-cbbaseinfo:
-  description: Call getCollection on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollection>"
-    description: ""
-data:
-  name: getCollection
-  category: vectordbApi
-  link: getCollection.md
+title: getCollection
 ---
-# getCollection
+
+# `getCollection`
 
 ```typescript
 plugin.vectordbApi.getCollection(id: string): Promise<VectorCollection>
@@ -26,18 +12,19 @@ plugin.vectordbApi.getCollection(id: string): Promise<VectorCollection>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorCollection>`**
+`Promise<VectorCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.getCollection('id');
+const result = await plugin.vectordbApi.getCollection('id');
+console.log(result);
 ```

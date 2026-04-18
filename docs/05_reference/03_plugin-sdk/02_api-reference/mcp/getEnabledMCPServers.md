@@ -1,19 +1,8 @@
 ---
-name: getEnabledMCPServers
-cbbaseinfo:
-  description: Gets the list of currently enabled toolboxes.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<GetEnabledToolBoxesResponse>"
-    description: ""
-data:
-  name: getEnabledMCPServers
-  category: mcp
-  link: getEnabledMCPServers.md
+title: getEnabledMCPServers
 ---
-# getEnabledMCPServers
+
+# `getEnabledMCPServers`
 
 ```typescript
 plugin.mcp.getEnabledMCPServers(): Promise<GetEnabledToolBoxesResponse>
@@ -23,16 +12,17 @@ Gets the list of currently enabled toolboxes.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<GetEnabledToolBoxesResponse>`**
+`Promise<GetEnabledToolBoxesResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.getEnabledMCPServers();
+const result = await plugin.mcp.getEnabledMCPServers();
+console.log(result);
 ```

@@ -2,9 +2,10 @@
 title: API Reference
 sidebar_position: 1
 ---
+
 # Plugin SDK — API Reference
 
-All HTTP API modules exposed by `@codebolt/plugin-sdk` via the `plugin` singleton.
+All modules exposed by `@codebolt/plugin-sdk` via the `plugin` singleton.
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
@@ -14,50 +15,50 @@ import plugin from '@codebolt/plugin-sdk';
 
 | Module | Methods | Description |
 |---|---|---|
-| [browser](./browser/) | 24 methods |  |
-| [calendar](./calendar/) | 13 methods |  |
-| [calendarApi](./calendarApi/) | 14 methods |  |
-| [cbstate](./cbstate/) | 5 methods |  |
-| [chat](./chat/) | 12 methods |  |
-| [chatApi](./chatApi/) | 38 methods |  |
-| [codebaseSearch](./codebaseSearch/) | 2 methods |  |
-| [codemap](./codemap/) | 7 methods |  |
-| [debug](./debug/) | 2 methods |  |
-| [dynamicPanel](./dynamicPanel/) | 7 methods |  |
-| [environment](./environment/) | 14 methods |  |
-| [environmentsApi](./environmentsApi/) | 26 methods |  |
-| [eventLog](./eventLog/) | 9 methods |  |
-| [executionGateway](./executionGateway/) | 9 methods |  |
-| [fileApi](./fileApi/) | 4 methods |  |
-| [fileReadApi](./fileReadApi/) | 6 methods |  |
-| [fs](./fs/) | 15 methods |  |
-| [gateway](./gateway/) | 7 methods |  |
-| [git](./git/) | 11 methods |  |
-| [gitApi](./gitApi/) | 16 methods |  |
-| [hook](./hook/) | 8 methods |  |
-| [hooksApi](./hooksApi/) | 8 methods |  |
-| [job](./job/) | 41 methods |  |
-| [jobsApi](./jobsApi/) | 29 methods |  |
-| [knowledgeApi](./knowledgeApi/) | 16 methods |  |
-| [kvStore](./kvStore/) | 12 methods |  |
-| [kvStoreApi](./kvStoreApi/) | 10 methods |  |
-| [llm](./llm/) | 2 methods |  |
-| [llmProvider](./llmProvider/) | 8 methods |  |
-| [mail](./mail/) | 23 methods |  |
-| [mailApi](./mailApi/) | 22 methods |  |
-| [mcp](./mcp/) | 13 methods |  |
-| [memory](./memory/) | 2 methods |  |
-| [notify](./notify/) | 15 methods |  |
-| [project](./project/) | 5 methods |  |
-| [projectsApi](./projectsApi/) | 29 methods |  |
-| [projectStructure](./projectStructure/) | 29 methods |  |
-| [systemApi](./systemApi/) | 3 methods |  |
-| [task](./task/) | 9 methods |  |
-| [tasksApi](./tasksApi/) | 19 methods |  |
-| [terminal](./terminal/) | 6 methods |  |
-| [thread](./thread/) | 12 methods |  |
-| [threadsApi](./threadsApi/) | 25 methods |  |
-| [todo](./todo/) | 6 methods |  |
-| [todosApi](./todosApi/) | 14 methods |  |
-| [vectordb](./vectordb/) | 4 methods |  |
-| [vectordbApi](./vectordbApi/) | 15 methods |  |
+| [Browser](./browser/) | 24 |  |
+| [Calendar](./calendar/) | 13 |  |
+| [CalendarApi](./calendarApi/) | 14 |  |
+| [Cbstate](./cbstate/) | 5 |  |
+| [Chat](./chat/) | 12 |  |
+| [ChatApi](./chatApi/) | 38 |  |
+| [CodebaseSearch](./codebaseSearch/) | 2 |  |
+| [Codemap](./codemap/) | 7 |  |
+| [Debug](./debug/) | 2 |  |
+| [DynamicPanel](./dynamicPanel/) | 7 |  |
+| [Environment](./environment/) | 14 |  |
+| [EnvironmentsApi](./environmentsApi/) | 26 |  |
+| [EventLog](./eventLog/) | 9 |  |
+| [ExecutionGateway](./executionGateway/) | 9 |  |
+| [FileApi](./fileApi/) | 4 |  |
+| [FileReadApi](./fileReadApi/) | 6 |  |
+| [Fs](./fs/) | 15 |  |
+| [Gateway](./gateway/) | 7 |  |
+| [Git](./git/) | 11 |  |
+| [GitApi](./gitApi/) | 16 |  |
+| [Hook](./hook/) | 8 |  |
+| [HooksApi](./hooksApi/) | 8 |  |
+| [Job](./job/) | 41 |  |
+| [JobsApi](./jobsApi/) | 29 |  |
+| [KnowledgeApi](./knowledgeApi/) | 16 |  |
+| [KvStore](./kvStore/) | 12 |  |
+| [KvStoreApi](./kvStoreApi/) | 10 |  |
+| [Llm](./llm/) | 2 |  |
+| [LlmProvider](./llmProvider/) | 8 |  |
+| [Mail](./mail/) | 23 |  |
+| [MailApi](./mailApi/) | 22 |  |
+| [Mcp](./mcp/) | 13 |  |
+| [Memory](./memory/) | 2 |  |
+| [Notify](./notify/) | 15 |  |
+| [Project](./project/) | 5 |  |
+| [ProjectsApi](./projectsApi/) | 29 |  |
+| [ProjectStructure](./projectStructure/) | 29 |  |
+| [SystemApi](./systemApi/) | 3 |  |
+| [Task](./task/) | 9 |  |
+| [TasksApi](./tasksApi/) | 19 |  |
+| [Terminal](./terminal/) | 6 |  |
+| [Thread](./thread/) | 12 |  |
+| [ThreadsApi](./threadsApi/) | 25 |  |
+| [Todo](./todo/) | 6 |  |
+| [TodosApi](./todosApi/) | 14 |  |
+| [Vectordb](./vectordb/) | 4 |  |
+| [VectordbApi](./vectordbApi/) | 15 |  |

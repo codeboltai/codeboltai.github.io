@@ -1,21 +1,43 @@
 ---
-cbapicategory:
-  - name: send
-    link: /docs/reference/client-sdk/api-reference/controllk/send
-    description: "Sends a command to the controllk endpoint.
-
-Dispatches a structured command for the CodeBolt runtime to execute.
-Commands are defined by their type and associated payload."
+title: Controllk API
 ---
+
 # Controllk API
 
 Controllk API
 
-<CBAPICategory />
+```typescript
+import { CodeBoltClient } from '@codebolt/clientsdk';
+
+const client = new CodeBoltClient();
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`send`](./send) | Sends a command to the controllk endpoint. |
 
 ## Methods
 
-- [`send()`](./send) — Sends a command to the controllk endpoint.
+---
+
+### `send`
+
+```typescript
+client.controllk.send(data: ControllkCommand): Promise<unknown>
+```
+
+Sends a command to the controllk endpoint.
 
 Dispatches a structured command for the CodeBolt runtime to execute.
 Commands are defined by their type and associated payload.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ControllkCommand` | Yes | The command to send, including its type and payload |
+
+**Returns:** `Promise<unknown>` — A promise that resolves with the command execution result
+
+[Full reference →](./send)
+

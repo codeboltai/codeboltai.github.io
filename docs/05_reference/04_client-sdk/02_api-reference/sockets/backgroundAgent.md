@@ -1,19 +1,8 @@
 ---
-name: backgroundAgent
-cbbaseinfo:
-  description: Call backgroundAgent on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: backgroundAgent
-  category: sockets
-  link: backgroundAgent.md
+title: backgroundAgent
 ---
-# backgroundAgent
+
+# `backgroundAgent`
 
 ```typescript
 client.sockets.backgroundAgent(): void
@@ -23,11 +12,11 @@ client.sockets.backgroundAgent(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.backgroundAgent();
+const result = await client.sockets.backgroundAgent();
+console.log(result);
 ```

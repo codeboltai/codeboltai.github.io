@@ -1,26 +1,8 @@
 ---
-name: updateCollection
-cbbaseinfo:
-  description: Call updateCollection on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateVectorCollectionRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollection>"
-    description: ""
-data:
-  name: updateCollection
-  category: vectordbApi
-  link: updateCollection.md
+title: updateCollection
 ---
-# updateCollection
+
+# `updateCollection`
 
 ```typescript
 plugin.vectordbApi.updateCollection(id: string, data: UpdateVectorCollectionRequest): Promise<VectorCollection>
@@ -30,19 +12,20 @@ plugin.vectordbApi.updateCollection(id: string, data: UpdateVectorCollectionRequ
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateVectorCollectionRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateVectorCollectionRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorCollection>`**
+`Promise<VectorCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.updateCollection('id', /* UpdateVectorCollectionRequest */);
+const result = await plugin.vectordbApi.updateCollection('id', /* UpdateVectorCollectionRequest */);
+console.log(result);
 ```

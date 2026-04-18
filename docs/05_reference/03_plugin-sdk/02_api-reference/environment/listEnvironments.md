@@ -1,19 +1,8 @@
 ---
-name: listEnvironments
-cbbaseinfo:
-  description: Call listEnvironments on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: listEnvironments
-  category: environment
-  link: listEnvironments.md
+title: listEnvironments
 ---
-# listEnvironments
+
+# `listEnvironments`
 
 ```typescript
 plugin.environment.listEnvironments(): Promise<any>
@@ -23,16 +12,17 @@ plugin.environment.listEnvironments(): Promise<any>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.listEnvironments();
+const result = await plugin.environment.listEnvironments();
+console.log(result);
 ```

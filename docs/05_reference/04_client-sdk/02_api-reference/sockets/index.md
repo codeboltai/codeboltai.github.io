@@ -1,143 +1,582 @@
 ---
-cbapicategory:
-  - name: agentDebug
-    link: /docs/reference/client-sdk/api-reference/sockets/agentDebug
-    description: agentDebug
-  - name: agentPortfolio
-    link: /docs/reference/client-sdk/api-reference/sockets/agentPortfolio
-    description: agentPortfolio
-  - name: aiTerminal
-    link: /docs/reference/client-sdk/api-reference/sockets/aiTerminal
-    description: aiTerminal
-  - name: backgroundAgent
-    link: /docs/reference/client-sdk/api-reference/sockets/backgroundAgent
-    description: backgroundAgent
-  - name: browser
-    link: /docs/reference/client-sdk/api-reference/sockets/browser
-    description: browser
-  - name: calendar
-    link: /docs/reference/client-sdk/api-reference/sockets/calendar
-    description: calendar
-  - name: capability
-    link: /docs/reference/client-sdk/api-reference/sockets/capability
-    description: capability
-  - name: chat
-    link: /docs/reference/client-sdk/api-reference/sockets/chat
-    description: chat
-  - name: codebolt
-    link: /docs/reference/client-sdk/api-reference/sockets/codebolt
-    description: codebolt
-  - name: contextAssembly
-    link: /docs/reference/client-sdk/api-reference/sockets/contextAssembly
-    description: contextAssembly
-  - name: debug
-    link: /docs/reference/client-sdk/api-reference/sockets/debug
-    description: debug
-  - name: editor
-    link: /docs/reference/client-sdk/api-reference/sockets/editor
-    description: editor
-  - name: environmentDebug
-    link: /docs/reference/client-sdk/api-reference/sockets/environmentDebug
-    description: environmentDebug
-  - name: episodicMemory
-    link: /docs/reference/client-sdk/api-reference/sockets/episodicMemory
-    description: episodicMemory
-  - name: eventLog
-    link: /docs/reference/client-sdk/api-reference/sockets/eventLog
-    description: eventLog
-  - name: fileUpdateIntent
-    link: /docs/reference/client-sdk/api-reference/sockets/fileUpdateIntent
-    description: fileUpdateIntent
-  - name: iconView
-    link: /docs/reference/client-sdk/api-reference/sockets/iconView
-    description: iconView
-  - name: jobs
-    link: /docs/reference/client-sdk/api-reference/sockets/jobs
-    description: jobs
-  - name: knowledge
-    link: /docs/reference/client-sdk/api-reference/sockets/knowledge
-    description: knowledge
-  - name: kvStore
-    link: /docs/reference/client-sdk/api-reference/sockets/kvStore
-    description: kvStore
-  - name: localModel
-    link: /docs/reference/client-sdk/api-reference/sockets/localModel
-    description: localModel
-  - name: lsp
-    link: /docs/reference/client-sdk/api-reference/sockets/lsp
-    description: lsp
-  - name: main
-    link: /docs/reference/client-sdk/api-reference/sockets/main
-    description: main
-  - name: orchestrator
-    link: /docs/reference/client-sdk/api-reference/sockets/orchestrator
-    description: orchestrator
-  - name: persistentMemory
-    link: /docs/reference/client-sdk/api-reference/sockets/persistentMemory
-    description: persistentMemory
-  - name: projectStructure
-    link: /docs/reference/client-sdk/api-reference/sockets/projectStructure
-    description: projectStructure
-  - name: reviewMerge
-    link: /docs/reference/client-sdk/api-reference/sockets/reviewMerge
-    description: reviewMerge
-  - name: roadmap
-    link: /docs/reference/client-sdk/api-reference/sockets/roadmap
-    description: roadmap
-  - name: shell
-    link: /docs/reference/client-sdk/api-reference/sockets/shell
-    description: shell
-  - name: swarm
-    link: /docs/reference/client-sdk/api-reference/sockets/swarm
-    description: swarm
-  - name: systemAlert
-    link: /docs/reference/client-sdk/api-reference/sockets/systemAlert
-    description: systemAlert
-  - name: tasks
-    link: /docs/reference/client-sdk/api-reference/sockets/tasks
-    description: tasks
-  - name: updateRequest
-    link: /docs/reference/client-sdk/api-reference/sockets/updateRequest
-    description: updateRequest
+title: Sockets API
 ---
+
 # Sockets API
 
 Socket namespace providing lazy access to all WebSocket connections
 
-<CBAPICategory />
+```typescript
+import { CodeBoltClient } from '@codebolt/clientsdk';
+
+const client = new CodeBoltClient();
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`agentDebug`](./agentDebug) |  |
+| [`agentPortfolio`](./agentPortfolio) |  |
+| [`aiTerminal`](./aiTerminal) |  |
+| [`backgroundAgent`](./backgroundAgent) |  |
+| [`browser`](./browser) |  |
+| [`calendar`](./calendar) |  |
+| [`capability`](./capability) |  |
+| [`chat`](./chat) |  |
+| [`codebolt`](./codebolt) |  |
+| [`contextAssembly`](./contextAssembly) |  |
+| [`debug`](./debug) |  |
+| [`editor`](./editor) |  |
+| [`environmentDebug`](./environmentDebug) |  |
+| [`episodicMemory`](./episodicMemory) |  |
+| [`eventLog`](./eventLog) |  |
+| [`fileUpdateIntent`](./fileUpdateIntent) |  |
+| [`iconView`](./iconView) |  |
+| [`jobs`](./jobs) |  |
+| [`knowledge`](./knowledge) |  |
+| [`kvStore`](./kvStore) |  |
+| [`localModel`](./localModel) |  |
+| [`lsp`](./lsp) |  |
+| [`main`](./main) |  |
+| [`orchestrator`](./orchestrator) |  |
+| [`persistentMemory`](./persistentMemory) |  |
+| [`projectStructure`](./projectStructure) |  |
+| [`reviewMerge`](./reviewMerge) |  |
+| [`roadmap`](./roadmap) |  |
+| [`shell`](./shell) |  |
+| [`swarm`](./swarm) |  |
+| [`systemAlert`](./systemAlert) |  |
+| [`tasks`](./tasks) |  |
+| [`updateRequest`](./updateRequest) |  |
 
 ## Methods
 
-- [`agentDebug()`](./agentDebug) — 
-- [`agentPortfolio()`](./agentPortfolio) — 
-- [`aiTerminal()`](./aiTerminal) — 
-- [`backgroundAgent()`](./backgroundAgent) — 
-- [`browser()`](./browser) — 
-- [`calendar()`](./calendar) — 
-- [`capability()`](./capability) — 
-- [`chat()`](./chat) — 
-- [`codebolt()`](./codebolt) — 
-- [`contextAssembly()`](./contextAssembly) — 
-- [`debug()`](./debug) — 
-- [`editor()`](./editor) — 
-- [`environmentDebug()`](./environmentDebug) — 
-- [`episodicMemory()`](./episodicMemory) — 
-- [`eventLog()`](./eventLog) — 
-- [`fileUpdateIntent()`](./fileUpdateIntent) — 
-- [`iconView()`](./iconView) — 
-- [`jobs()`](./jobs) — 
-- [`knowledge()`](./knowledge) — 
-- [`kvStore()`](./kvStore) — 
-- [`localModel()`](./localModel) — 
-- [`lsp()`](./lsp) — 
-- [`main()`](./main) — 
-- [`orchestrator()`](./orchestrator) — 
-- [`persistentMemory()`](./persistentMemory) — 
-- [`projectStructure()`](./projectStructure) — 
-- [`reviewMerge()`](./reviewMerge) — 
-- [`roadmap()`](./roadmap) — 
-- [`shell()`](./shell) — 
-- [`swarm()`](./swarm) — 
-- [`systemAlert()`](./systemAlert) — 
-- [`tasks()`](./tasks) — 
-- [`updateRequest()`](./updateRequest) — 
+---
+
+### `agentDebug`
+
+```typescript
+client.sockets.agentDebug(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./agentDebug)
+
+---
+
+### `agentPortfolio`
+
+```typescript
+client.sockets.agentPortfolio(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./agentPortfolio)
+
+---
+
+### `aiTerminal`
+
+```typescript
+client.sockets.aiTerminal(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./aiTerminal)
+
+---
+
+### `backgroundAgent`
+
+```typescript
+client.sockets.backgroundAgent(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./backgroundAgent)
+
+---
+
+### `browser`
+
+```typescript
+client.sockets.browser(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./browser)
+
+---
+
+### `calendar`
+
+```typescript
+client.sockets.calendar(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./calendar)
+
+---
+
+### `capability`
+
+```typescript
+client.sockets.capability(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./capability)
+
+---
+
+### `chat`
+
+```typescript
+client.sockets.chat(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./chat)
+
+---
+
+### `codebolt`
+
+```typescript
+client.sockets.codebolt(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./codebolt)
+
+---
+
+### `contextAssembly`
+
+```typescript
+client.sockets.contextAssembly(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./contextAssembly)
+
+---
+
+### `debug`
+
+```typescript
+client.sockets.debug(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./debug)
+
+---
+
+### `editor`
+
+```typescript
+client.sockets.editor(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./editor)
+
+---
+
+### `environmentDebug`
+
+```typescript
+client.sockets.environmentDebug(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./environmentDebug)
+
+---
+
+### `episodicMemory`
+
+```typescript
+client.sockets.episodicMemory(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./episodicMemory)
+
+---
+
+### `eventLog`
+
+```typescript
+client.sockets.eventLog(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./eventLog)
+
+---
+
+### `fileUpdateIntent`
+
+```typescript
+client.sockets.fileUpdateIntent(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./fileUpdateIntent)
+
+---
+
+### `iconView`
+
+```typescript
+client.sockets.iconView(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./iconView)
+
+---
+
+### `jobs`
+
+```typescript
+client.sockets.jobs(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./jobs)
+
+---
+
+### `knowledge`
+
+```typescript
+client.sockets.knowledge(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./knowledge)
+
+---
+
+### `kvStore`
+
+```typescript
+client.sockets.kvStore(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./kvStore)
+
+---
+
+### `localModel`
+
+```typescript
+client.sockets.localModel(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./localModel)
+
+---
+
+### `lsp`
+
+```typescript
+client.sockets.lsp(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./lsp)
+
+---
+
+### `main`
+
+```typescript
+client.sockets.main(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./main)
+
+---
+
+### `orchestrator`
+
+```typescript
+client.sockets.orchestrator(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./orchestrator)
+
+---
+
+### `persistentMemory`
+
+```typescript
+client.sockets.persistentMemory(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./persistentMemory)
+
+---
+
+### `projectStructure`
+
+```typescript
+client.sockets.projectStructure(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./projectStructure)
+
+---
+
+### `reviewMerge`
+
+```typescript
+client.sockets.reviewMerge(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./reviewMerge)
+
+---
+
+### `roadmap`
+
+```typescript
+client.sockets.roadmap(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./roadmap)
+
+---
+
+### `shell`
+
+```typescript
+client.sockets.shell(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./shell)
+
+---
+
+### `swarm`
+
+```typescript
+client.sockets.swarm(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./swarm)
+
+---
+
+### `systemAlert`
+
+```typescript
+client.sockets.systemAlert(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./systemAlert)
+
+---
+
+### `tasks`
+
+```typescript
+client.sockets.tasks(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./tasks)
+
+---
+
+### `updateRequest`
+
+```typescript
+client.sockets.updateRequest(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./updateRequest)
+

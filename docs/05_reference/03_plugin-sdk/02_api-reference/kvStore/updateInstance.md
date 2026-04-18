@@ -1,26 +1,8 @@
 ---
-name: updateInstance
-cbbaseinfo:
-  description: Update a KV store instance
-cbparameters:
-  parameters:
-    - name: instanceId
-      typeName: string
-      description: Instance ID
-      isOptional: false
-    - name: updates
-      typeName: UpdateKVInstanceParams
-      description: Update parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KVInstanceResponse>"
-    description: ""
-data:
-  name: updateInstance
-  category: kvStore
-  link: updateInstance.md
+title: updateInstance
 ---
-# updateInstance
+
+# `updateInstance`
 
 ```typescript
 plugin.kvStore.updateInstance(instanceId: string, updates: UpdateKVInstanceParams): Promise<KVInstanceResponse>
@@ -30,19 +12,20 @@ Update a KV store instance
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `instanceId` | `string` | Instance ID |
-| `updates` | `UpdateKVInstanceParams` | Update parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes | Instance ID |
+| `updates` | `UpdateKVInstanceParams` | Yes | Update parameters |
 
 ## Returns
 
-**`Promise<KVInstanceResponse>`**
+`Promise<KVInstanceResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStore.updateInstance('instanceId', /* UpdateKVInstanceParams */);
+const result = await plugin.kvStore.updateInstance('instanceId', /* UpdateKVInstanceParams */);
+console.log(result);
 ```

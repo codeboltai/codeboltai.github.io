@@ -1,25 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves a specific file update intent by its ID.
-
-Returns detailed information about a single intent including its
-current status, files, agent, and metadata."
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: The unique identifier of the intent
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<FileUpdateIntent>"
-    description: A promise that resolves to the FileUpdateIntent object
-data:
-  name: get
-  category: fileUpdateIntents
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.fileUpdateIntents.get(id: string): Promise<FileUpdateIntent>
@@ -32,13 +15,13 @@ current status, files, agent, and metadata.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` | The unique identifier of the intent |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes | The unique identifier of the intent |
 
 ## Returns
 
-**`Promise<FileUpdateIntent>`** — A promise that resolves to the FileUpdateIntent object
+`Promise<FileUpdateIntent>` — A promise that resolves to the FileUpdateIntent object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.fileUpdateIntents.get('id');
+const result = await client.fileUpdateIntents.get('id');
+console.log(result);
 ```

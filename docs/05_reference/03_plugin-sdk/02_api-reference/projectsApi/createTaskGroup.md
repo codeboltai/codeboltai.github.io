@@ -1,22 +1,8 @@
 ---
-name: createTaskGroup
-cbbaseinfo:
-  description: Call createTaskGroup on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateTaskGroupRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskGroup>"
-    description: ""
-data:
-  name: createTaskGroup
-  category: projectsApi
-  link: createTaskGroup.md
+title: createTaskGroup
 ---
-# createTaskGroup
+
+# `createTaskGroup`
 
 ```typescript
 plugin.projectsApi.createTaskGroup(data: CreateTaskGroupRequest): Promise<TaskGroup>
@@ -26,18 +12,19 @@ plugin.projectsApi.createTaskGroup(data: CreateTaskGroupRequest): Promise<TaskGr
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateTaskGroupRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateTaskGroupRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskGroup>`**
+`Promise<TaskGroup>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.createTaskGroup(/* CreateTaskGroupRequest */);
+const result = await plugin.projectsApi.createTaskGroup(/* CreateTaskGroupRequest */);
+console.log(result);
 ```

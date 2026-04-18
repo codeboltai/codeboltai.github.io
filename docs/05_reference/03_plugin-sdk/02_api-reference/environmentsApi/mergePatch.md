@@ -1,26 +1,8 @@
 ---
-name: mergePatch
-cbbaseinfo:
-  description: Call mergePatch on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: MergePatchRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: mergePatch
-  category: environmentsApi
-  link: mergePatch.md
+title: mergePatch
 ---
-# mergePatch
+
+# `mergePatch`
 
 ```typescript
 plugin.environmentsApi.mergePatch(id: string, data: MergePatchRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.mergePatch(id: string, data: MergePatchRequest): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `MergePatchRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `MergePatchRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.mergePatch('id', /* MergePatchRequest */);
+const result = await plugin.environmentsApi.mergePatch('id', /* MergePatchRequest */);
+console.log(result);
 ```

@@ -1,25 +1,8 @@
 ---
-name: assemble
-cbbaseinfo:
-  description: "Assembles context from multiple sources.
-
-Gathers and merges data from configured context sources (memory types,
-rules, files) into a single unified context object for agent consumption."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ContextAssembleRequest
-      description: The assembly request specifying sources and parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ContextAssembleResult>"
-    description: A promise that resolves to the assembled
-data:
-  name: assemble
-  category: contextAssembly
-  link: assemble.md
+title: assemble
 ---
-# assemble
+
+# `assemble`
 
 ```typescript
 client.contextAssembly.assemble(data: ContextAssembleRequest): Promise<ContextAssembleResult>
@@ -32,13 +15,13 @@ rules, files) into a single unified context object for agent consumption.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ContextAssembleRequest` | The assembly request specifying sources and parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ContextAssembleRequest` | Yes | The assembly request specifying sources and parameters |
 
 ## Returns
 
-**`Promise<ContextAssembleResult>`** — A promise that resolves to the assembled
+`Promise<ContextAssembleResult>` — A promise that resolves to the assembled
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.contextAssembly.assemble(/* ContextAssembleRequest */);
+const result = await client.contextAssembly.assemble(/* ContextAssembleRequest */);
+console.log(result);
 ```

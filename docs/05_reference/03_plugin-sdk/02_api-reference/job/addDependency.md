@@ -1,30 +1,8 @@
 ---
-name: addDependency
-cbbaseinfo:
-  description: Call addDependency on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: targetId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: type
-      typeName: DependencyType
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<JobDependencyResponse>"
-    description: ""
-data:
-  name: addDependency
-  category: job
-  link: addDependency.md
+title: addDependency
 ---
-# addDependency
+
+# `addDependency`
 
 ```typescript
 plugin.job.addDependency(jobId: string, targetId: string, type?: DependencyType): Promise<JobDependencyResponse>
@@ -34,20 +12,21 @@ plugin.job.addDependency(jobId: string, targetId: string, type?: DependencyType)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `targetId` | `string` |  |
-| `type` | `DependencyType` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `targetId` | `string` | Yes |  |
+| `type` | `DependencyType` | No |  |
 
 ## Returns
 
-**`Promise<JobDependencyResponse>`**
+`Promise<JobDependencyResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addDependency('jobId', 'targetId');
+const result = await plugin.job.addDependency('jobId', 'targetId');
+console.log(result);
 ```

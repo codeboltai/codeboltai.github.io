@@ -1,30 +1,8 @@
 ---
-name: lockJob
-cbbaseinfo:
-  description: Call lockJob on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: agentId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: agentName
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<JobLockAcquireResponse>"
-    description: ""
-data:
-  name: lockJob
-  category: job
-  link: lockJob.md
+title: lockJob
 ---
-# lockJob
+
+# `lockJob`
 
 ```typescript
 plugin.job.lockJob(jobId: string, agentId: string, agentName?: string): Promise<JobLockAcquireResponse>
@@ -34,20 +12,21 @@ plugin.job.lockJob(jobId: string, agentId: string, agentName?: string): Promise<
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `agentId` | `string` |  |
-| `agentName` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `agentId` | `string` | Yes |  |
+| `agentName` | `string` | No |  |
 
 ## Returns
 
-**`Promise<JobLockAcquireResponse>`**
+`Promise<JobLockAcquireResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.lockJob('jobId', 'agentId');
+const result = await plugin.job.lockJob('jobId', 'agentId');
+console.log(result);
 ```

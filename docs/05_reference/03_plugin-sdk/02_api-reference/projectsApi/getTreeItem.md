@@ -1,22 +1,8 @@
 ---
-name: getTreeItem
-cbbaseinfo:
-  description: Call getTreeItem on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: itemId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TreeItem>"
-    description: ""
-data:
-  name: getTreeItem
-  category: projectsApi
-  link: getTreeItem.md
+title: getTreeItem
 ---
-# getTreeItem
+
+# `getTreeItem`
 
 ```typescript
 plugin.projectsApi.getTreeItem(itemId: string): Promise<TreeItem>
@@ -26,18 +12,19 @@ plugin.projectsApi.getTreeItem(itemId: string): Promise<TreeItem>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `itemId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `itemId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<TreeItem>`**
+`Promise<TreeItem>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getTreeItem('itemId');
+const result = await plugin.projectsApi.getTreeItem('itemId');
+console.log(result);
 ```

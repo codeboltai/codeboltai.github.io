@@ -1,22 +1,8 @@
 ---
-name: checkProjectName
-cbbaseinfo:
-  description: Call checkProjectName on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CheckProjectNameRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<object>"
-    description: ""
-data:
-  name: checkProjectName
-  category: projectsApi
-  link: checkProjectName.md
+title: checkProjectName
 ---
-# checkProjectName
+
+# `checkProjectName`
 
 ```typescript
 plugin.projectsApi.checkProjectName(data: CheckProjectNameRequest): Promise<object>
@@ -26,18 +12,19 @@ plugin.projectsApi.checkProjectName(data: CheckProjectNameRequest): Promise<obje
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CheckProjectNameRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CheckProjectNameRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<object>`**
+`Promise<object>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.checkProjectName(/* CheckProjectNameRequest */);
+const result = await plugin.projectsApi.checkProjectName(/* CheckProjectNameRequest */);
+console.log(result);
 ```

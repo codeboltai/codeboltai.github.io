@@ -1,22 +1,8 @@
 ---
-name: appendEvents
-cbbaseinfo:
-  description: Append multiple events to the log
-cbparameters:
-  parameters:
-    - name: params
-      typeName: AppendEventsParams
-      description: Events parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<EventLogAppendMultipleResponse>"
-    description: ""
-data:
-  name: appendEvents
-  category: eventLog
-  link: appendEvents.md
+title: appendEvents
 ---
-# appendEvents
+
+# `appendEvents`
 
 ```typescript
 plugin.eventLog.appendEvents(params: AppendEventsParams): Promise<EventLogAppendMultipleResponse>
@@ -26,18 +12,19 @@ Append multiple events to the log
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `AppendEventsParams` | Events parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `AppendEventsParams` | Yes | Events parameters |
 
 ## Returns
 
-**`Promise<EventLogAppendMultipleResponse>`**
+`Promise<EventLogAppendMultipleResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.eventLog.appendEvents(/* AppendEventsParams */);
+const result = await plugin.eventLog.appendEvents(/* AppendEventsParams */);
+console.log(result);
 ```

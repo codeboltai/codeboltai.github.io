@@ -1,22 +1,8 @@
 ---
-name: updateThreadStatus
-cbbaseinfo:
-  description: Call updateThreadStatus on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IUpdateThreadStatusParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IUpdateThreadStatusResponse>"
-    description: ""
-data:
-  name: updateThreadStatus
-  category: mail
-  link: updateThreadStatus.md
+title: updateThreadStatus
 ---
-# updateThreadStatus
+
+# `updateThreadStatus`
 
 ```typescript
 plugin.mail.updateThreadStatus(params: IUpdateThreadStatusParams): Promise<IUpdateThreadStatusResponse>
@@ -26,18 +12,19 @@ plugin.mail.updateThreadStatus(params: IUpdateThreadStatusParams): Promise<IUpda
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IUpdateThreadStatusParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IUpdateThreadStatusParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IUpdateThreadStatusResponse>`**
+`Promise<IUpdateThreadStatusResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.updateThreadStatus(/* IUpdateThreadStatusParams */);
+const result = await plugin.mail.updateThreadStatus(/* IUpdateThreadStatusParams */);
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: deleteJob
-cbbaseinfo:
-  description: Call deleteJob on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobDeleteResponse>"
-    description: ""
-data:
-  name: deleteJob
-  category: job
-  link: deleteJob.md
+title: deleteJob
 ---
-# deleteJob
+
+# `deleteJob`
 
 ```typescript
 plugin.job.deleteJob(jobId: string): Promise<JobDeleteResponse>
@@ -26,18 +12,19 @@ plugin.job.deleteJob(jobId: string): Promise<JobDeleteResponse>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobDeleteResponse>`**
+`Promise<JobDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.deleteJob('jobId');
+const result = await plugin.job.deleteJob('jobId');
+console.log(result);
 ```

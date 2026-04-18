@@ -1,26 +1,8 @@
 ---
-name: fail
-cbbaseinfo:
-  description: Mark a step as failed
-cbparameters:
-  parameters:
-    - name: stepId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: FailStepRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ThreadStep>"
-    description: ""
-data:
-  name: fail
-  category: threadSteps
-  link: fail.md
+title: fail
 ---
-# fail
+
+# `fail`
 
 ```typescript
 client.threadSteps.fail(stepId: string, data?: FailStepRequest): Promise<ThreadStep>
@@ -30,14 +12,14 @@ Mark a step as failed
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `stepId` | `string` |  |
-| `data` | `FailStepRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `stepId` | `string` | Yes |  |
+| `data` | `FailStepRequest` | No |  |
 
 ## Returns
 
-**`Promise<ThreadStep>`**
+`Promise<ThreadStep>`
 
 ## Example
 
@@ -46,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.fail('stepId');
+const result = await client.threadSteps.fail('stepId');
+console.log(result);
 ```

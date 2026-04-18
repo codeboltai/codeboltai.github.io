@@ -1,22 +1,8 @@
 ---
-name: getPackages
-cbbaseinfo:
-  description: "Retrieves all package definitions in the workspace.
-
-Returns the list of logical packages that make up the project, each containing
-its sections, items, and metadata."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PackageDefinition[]>"
-    description: A promise that resolves to an array of package definitions
-data:
-  name: getPackages
-  category: projectStructure
-  link: getPackages.md
+title: getPackages
 ---
-# getPackages
+
+# `getPackages`
 
 ```typescript
 client.projectStructure.getPackages(): Promise<PackageDefinition[]>
@@ -29,11 +15,11 @@ its sections, items, and metadata.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PackageDefinition[]>`** — A promise that resolves to an array of package definitions
+`Promise<PackageDefinition[]>` — A promise that resolves to an array of package definitions
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projectStructure.getPackages();
+const result = await client.projectStructure.getPackages();
+console.log(result);
 ```

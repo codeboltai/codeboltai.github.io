@@ -1,25 +1,8 @@
 ---
-name: listInstances
-cbbaseinfo:
-  description: "Lists all event log instances.
-
-Returns every event log instance in the system. Use optional parameters
-to filter or paginate the results."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: Optional query parameters for filtering or pagination
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<EventLogInstance[]>"
-    description: A promise that resolves to an array of  objects
-data:
-  name: listInstances
-  category: eventLog
-  link: listInstances.md
+title: listInstances
 ---
-# listInstances
+
+# `listInstances`
 
 ```typescript
 client.eventLog.listInstances(params?: Record<string, unknown>): Promise<EventLogInstance[]>
@@ -32,13 +15,13 @@ to filter or paginate the results.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ | Optional query parameters for filtering or pagination |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No | Optional query parameters for filtering or pagination |
 
 ## Returns
 
-**`Promise<EventLogInstance[]>`** — A promise that resolves to an array of  objects
+`Promise<EventLogInstance[]>` — A promise that resolves to an array of  objects
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.eventLog.listInstances();
+const result = await client.eventLog.listInstances();
+console.log(result);
 ```

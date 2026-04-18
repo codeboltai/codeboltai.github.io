@@ -1,34 +1,8 @@
 ---
-name: updateDeployment
-cbbaseinfo:
-  description: Update a deployment config
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: configId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: updates
-      typeName: Partial<DeploymentConfig>
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructureUpdateResponse>"
-    description: ""
-data:
-  name: updateDeployment
-  category: projectStructure
-  link: updateDeployment.md
+title: updateDeployment
 ---
-# updateDeployment
+
+# `updateDeployment`
 
 ```typescript
 plugin.projectStructure.updateDeployment(packageId: string, configId: string, updates: Partial<DeploymentConfig>, workspacePath?: string): Promise<ProjectStructureUpdateResponse>
@@ -38,21 +12,22 @@ Update a deployment config
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` |  |
-| `configId` | `string` |  |
-| `updates` | `Partial<DeploymentConfig>` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes |  |
+| `configId` | `string` | Yes |  |
+| `updates` | `Partial<DeploymentConfig>` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructureUpdateResponse>`**
+`Promise<ProjectStructureUpdateResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.updateDeployment('packageId', 'configId', /* Partial<DeploymentConfig> */);
+const result = await plugin.projectStructure.updateDeployment('packageId', 'configId', /* Partial<DeploymentConfig> */);
+console.log(result);
 ```

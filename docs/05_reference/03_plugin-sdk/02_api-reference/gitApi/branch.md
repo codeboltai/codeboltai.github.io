@@ -1,22 +1,8 @@
 ---
-name: branch
-cbbaseinfo:
-  description: Call branch on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitBranchRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<GitBranch[]>"
-    description: ""
-data:
-  name: branch
-  category: gitApi
-  link: branch.md
+title: branch
 ---
-# branch
+
+# `branch`
 
 ```typescript
 plugin.gitApi.branch(data?: GitBranchRequest): Promise<GitBranch[]>
@@ -26,18 +12,19 @@ plugin.gitApi.branch(data?: GitBranchRequest): Promise<GitBranch[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitBranchRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitBranchRequest` | No |  |
 
 ## Returns
 
-**`Promise<GitBranch[]>`**
+`Promise<GitBranch[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.branch();
+const result = await plugin.gitApi.branch();
+console.log(result);
 ```

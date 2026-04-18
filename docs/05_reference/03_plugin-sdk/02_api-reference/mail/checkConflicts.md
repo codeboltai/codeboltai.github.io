@@ -1,22 +1,8 @@
 ---
-name: checkConflicts
-cbbaseinfo:
-  description: Call checkConflicts on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: ICheckConflictsParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ICheckConflictsResponse>"
-    description: ""
-data:
-  name: checkConflicts
-  category: mail
-  link: checkConflicts.md
+title: checkConflicts
 ---
-# checkConflicts
+
+# `checkConflicts`
 
 ```typescript
 plugin.mail.checkConflicts(params: ICheckConflictsParams): Promise<ICheckConflictsResponse>
@@ -26,18 +12,19 @@ plugin.mail.checkConflicts(params: ICheckConflictsParams): Promise<ICheckConflic
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `ICheckConflictsParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `ICheckConflictsParams` | Yes |  |
 
 ## Returns
 
-**`Promise<ICheckConflictsResponse>`**
+`Promise<ICheckConflictsResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.checkConflicts(/* ICheckConflictsParams */);
+const result = await plugin.mail.checkConflicts(/* ICheckConflictsParams */);
+console.log(result);
 ```

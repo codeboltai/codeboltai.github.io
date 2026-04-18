@@ -1,26 +1,8 @@
 ---
-name: removeBlocker
-cbbaseinfo:
-  description: Call removeBlocker on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: blockerId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobBlockerRemoveResponse>"
-    description: ""
-data:
-  name: removeBlocker
-  category: job
-  link: removeBlocker.md
+title: removeBlocker
 ---
-# removeBlocker
+
+# `removeBlocker`
 
 ```typescript
 plugin.job.removeBlocker(jobId: string, blockerId: string): Promise<JobBlockerRemoveResponse>
@@ -30,19 +12,20 @@ plugin.job.removeBlocker(jobId: string, blockerId: string): Promise<JobBlockerRe
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `blockerId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `blockerId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobBlockerRemoveResponse>`**
+`Promise<JobBlockerRemoveResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.removeBlocker('jobId', 'blockerId');
+const result = await plugin.job.removeBlocker('jobId', 'blockerId');
+console.log(result);
 ```

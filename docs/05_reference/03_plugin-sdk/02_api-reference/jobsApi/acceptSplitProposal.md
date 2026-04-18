@@ -1,30 +1,8 @@
 ---
-name: acceptSplitProposal
-cbbaseinfo:
-  description: Call acceptSplitProposal on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: proposalId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: AcceptSplitProposalRequest
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<Job[]>"
-    description: ""
-data:
-  name: acceptSplitProposal
-  category: jobsApi
-  link: acceptSplitProposal.md
+title: acceptSplitProposal
 ---
-# acceptSplitProposal
+
+# `acceptSplitProposal`
 
 ```typescript
 plugin.jobsApi.acceptSplitProposal(id: string, proposalId: string, data?: AcceptSplitProposalRequest): Promise<Job[]>
@@ -34,20 +12,21 @@ plugin.jobsApi.acceptSplitProposal(id: string, proposalId: string, data?: Accept
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `proposalId` | `string` |  |
-| `data` | `AcceptSplitProposalRequest` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `proposalId` | `string` | Yes |  |
+| `data` | `AcceptSplitProposalRequest` | No |  |
 
 ## Returns
 
-**`Promise<Job[]>`**
+`Promise<Job[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.acceptSplitProposal('id', 'proposalId');
+const result = await plugin.jobsApi.acceptSplitProposal('id', 'proposalId');
+console.log(result);
 ```

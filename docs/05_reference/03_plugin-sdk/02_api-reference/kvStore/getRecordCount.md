@@ -1,26 +1,8 @@
 ---
-name: getRecordCount
-cbbaseinfo:
-  description: Get record count for an instance or namespace
-cbparameters:
-  parameters:
-    - name: instanceId
-      typeName: string
-      description: Instance ID
-      isOptional: false
-    - name: namespace
-      typeName: string
-      description: Optional namespace filter
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<KVRecordCountResponse>"
-    description: ""
-data:
-  name: getRecordCount
-  category: kvStore
-  link: getRecordCount.md
+title: getRecordCount
 ---
-# getRecordCount
+
+# `getRecordCount`
 
 ```typescript
 plugin.kvStore.getRecordCount(instanceId: string, namespace?: string): Promise<KVRecordCountResponse>
@@ -30,19 +12,20 @@ Get record count for an instance or namespace
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `instanceId` | `string` | Instance ID |
-| `namespace` | `string` _(optional)_ | Optional namespace filter |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `instanceId` | `string` | Yes | Instance ID |
+| `namespace` | `string` | No | Optional namespace filter |
 
 ## Returns
 
-**`Promise<KVRecordCountResponse>`**
+`Promise<KVRecordCountResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStore.getRecordCount('instanceId');
+const result = await plugin.kvStore.getRecordCount('instanceId');
+console.log(result);
 ```

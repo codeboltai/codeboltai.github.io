@@ -1,19 +1,8 @@
 ---
-name: getAgents
-cbbaseinfo:
-  description: Call getAgents on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<MailAgent[]>"
-    description: ""
-data:
-  name: getAgents
-  category: mailApi
-  link: getAgents.md
+title: getAgents
 ---
-# getAgents
+
+# `getAgents`
 
 ```typescript
 plugin.mailApi.getAgents(): Promise<MailAgent[]>
@@ -23,16 +12,17 @@ plugin.mailApi.getAgents(): Promise<MailAgent[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<MailAgent[]>`**
+`Promise<MailAgent[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.getAgents();
+const result = await plugin.mailApi.getAgents();
+console.log(result);
 ```

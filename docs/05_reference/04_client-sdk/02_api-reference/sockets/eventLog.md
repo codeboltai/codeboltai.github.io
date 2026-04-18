@@ -1,19 +1,8 @@
 ---
-name: eventLog
-cbbaseinfo:
-  description: Call eventLog on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: eventLog
-  category: sockets
-  link: eventLog.md
+title: eventLog
 ---
-# eventLog
+
+# `eventLog`
 
 ```typescript
 client.sockets.eventLog(): void
@@ -23,11 +12,11 @@ client.sockets.eventLog(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.eventLog();
+const result = await client.sockets.eventLog();
+console.log(result);
 ```

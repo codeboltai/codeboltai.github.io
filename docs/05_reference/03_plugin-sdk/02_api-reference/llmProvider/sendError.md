@@ -1,26 +1,8 @@
 ---
-name: sendError
-cbbaseinfo:
-  description: Send an error for a completion or stream request.
-cbparameters:
-  parameters:
-    - name: requestId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: error
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: sendError
-  category: llmProvider
-  link: sendError.md
+title: sendError
 ---
-# sendError
+
+# `sendError`
 
 ```typescript
 plugin.llmProvider.sendError(requestId: string, error: string): void
@@ -30,19 +12,20 @@ Send an error for a completion or stream request.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `requestId` | `string` |  |
-| `error` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `requestId` | `string` | Yes |  |
+| `error` | `string` | Yes |  |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.llmProvider.sendError('requestId', 'error');
+const result = await plugin.llmProvider.sendError('requestId', 'error');
+console.log(result);
 ```

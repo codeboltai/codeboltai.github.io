@@ -1,19 +1,8 @@
 ---
-name: getPheromoneTypes
-cbbaseinfo:
-  description: Call getPheromoneTypes on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PheromoneType[]>"
-    description: ""
-data:
-  name: getPheromoneTypes
-  category: jobsApi
-  link: getPheromoneTypes.md
+title: getPheromoneTypes
 ---
-# getPheromoneTypes
+
+# `getPheromoneTypes`
 
 ```typescript
 plugin.jobsApi.getPheromoneTypes(): Promise<PheromoneType[]>
@@ -23,16 +12,17 @@ plugin.jobsApi.getPheromoneTypes(): Promise<PheromoneType[]>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PheromoneType[]>`**
+`Promise<PheromoneType[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.getPheromoneTypes();
+const result = await plugin.jobsApi.getPheromoneTypes();
+console.log(result);
 ```

@@ -1,25 +1,8 @@
 ---
-name: updateAgent
-cbbaseinfo:
-  description: "Updates an installed agent to a newer version.
-
-Applies updates to an already-installed agent, pulling the latest
-version from the registry or local source."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: UpdateAgentRequest
-      description: The update configuration
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Agent>"
-    description: A promise that resolves to the updated Agent
-data:
-  name: updateAgent
-  category: agents
-  link: updateAgent.md
+title: updateAgent
 ---
-# updateAgent
+
+# `updateAgent`
 
 ```typescript
 client.agents.updateAgent(data: UpdateAgentRequest): Promise<Agent>
@@ -32,13 +15,13 @@ version from the registry or local source.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `UpdateAgentRequest` | The update configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `UpdateAgentRequest` | Yes | The update configuration |
 
 ## Returns
 
-**`Promise<Agent>`** — A promise that resolves to the updated Agent
+`Promise<Agent>` — A promise that resolves to the updated Agent
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.updateAgent(/* UpdateAgentRequest */);
+const result = await client.agents.updateAgent(/* UpdateAgentRequest */);
+console.log(result);
 ```

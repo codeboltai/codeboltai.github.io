@@ -1,23 +1,74 @@
 ---
-cbapicategory:
-  - name: checkCli
-    link: /docs/reference/plugin-sdk/api-reference/systemApi/checkCli
-    description: checkCli
-  - name: installCli
-    link: /docs/reference/plugin-sdk/api-reference/systemApi/installCli
-    description: installCli
-  - name: openFolder
-    link: /docs/reference/plugin-sdk/api-reference/systemApi/openFolder
-    description: openFolder
+title: SystemApi API
 ---
+
 # SystemApi API
 
-The `systemApi` module of the Plugin SDK.
+The `systemApi` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`checkCli`](./checkCli) |  |
+| [`installCli`](./installCli) |  |
+| [`openFolder`](./openFolder) |  |
 
 ## Methods
 
-- [`checkCli()`](./checkCli) — 
-- [`installCli()`](./installCli) — 
-- [`openFolder()`](./openFolder) — 
+---
+
+### `checkCli`
+
+```typescript
+plugin.systemApi.checkCli(): Promise<CliStatus>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<CliStatus>`
+
+[Full reference →](./checkCli)
+
+---
+
+### `installCli`
+
+```typescript
+plugin.systemApi.installCli(data?: InstallCliRequest): Promise<InstallCliResponse>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `InstallCliRequest` | No |  |
+
+**Returns:** `Promise<InstallCliResponse>`
+
+[Full reference →](./installCli)
+
+---
+
+### `openFolder`
+
+```typescript
+plugin.systemApi.openFolder(data: OpenFolderRequest): Promise<OpenFolderResponse>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `OpenFolderRequest` | Yes |  |
+
+**Returns:** `Promise<OpenFolderResponse>`
+
+[Full reference →](./openFolder)
+

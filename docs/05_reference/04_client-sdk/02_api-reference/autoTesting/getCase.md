@@ -1,25 +1,8 @@
 ---
-name: getCase
-cbbaseinfo:
-  description: "Retrieves a specific test case by ID.
-
-Returns the full test case definition including its steps,
-expected results, and metadata."
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: The unique identifier of the test case
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TestCase>"
-    description: A promise that resolves to the TestCase object
-data:
-  name: getCase
-  category: autoTesting
-  link: getCase.md
+title: getCase
 ---
-# getCase
+
+# `getCase`
 
 ```typescript
 client.autoTesting.getCase(id: string): Promise<TestCase>
@@ -32,13 +15,13 @@ expected results, and metadata.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` | The unique identifier of the test case |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes | The unique identifier of the test case |
 
 ## Returns
 
-**`Promise<TestCase>`** — A promise that resolves to the TestCase object
+`Promise<TestCase>` — A promise that resolves to the TestCase object
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.autoTesting.getCase('id');
+const result = await client.autoTesting.getCase('id');
+console.log(result);
 ```

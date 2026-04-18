@@ -1,26 +1,8 @@
 ---
-name: addUnlockRequest
-cbbaseinfo:
-  description: Call addUnlockRequest on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: request
-      typeName: AddUnlockRequestData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobUnlockRequestAddResponse>"
-    description: ""
-data:
-  name: addUnlockRequest
-  category: job
-  link: addUnlockRequest.md
+title: addUnlockRequest
 ---
-# addUnlockRequest
+
+# `addUnlockRequest`
 
 ```typescript
 plugin.job.addUnlockRequest(jobId: string, request: AddUnlockRequestData): Promise<JobUnlockRequestAddResponse>
@@ -30,19 +12,20 @@ plugin.job.addUnlockRequest(jobId: string, request: AddUnlockRequestData): Promi
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `request` | `AddUnlockRequestData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `request` | `AddUnlockRequestData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobUnlockRequestAddResponse>`**
+`Promise<JobUnlockRequestAddResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addUnlockRequest('jobId', /* AddUnlockRequestData */);
+const result = await plugin.job.addUnlockRequest('jobId', /* AddUnlockRequestData */);
+console.log(result);
 ```

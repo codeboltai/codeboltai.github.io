@@ -1,19 +1,8 @@
 ---
-name: getRunningProviders
-cbbaseinfo:
-  description: Call getRunningProviders on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: getRunningProviders
-  category: environment
-  link: getRunningProviders.md
+title: getRunningProviders
 ---
-# getRunningProviders
+
+# `getRunningProviders`
 
 ```typescript
 plugin.environment.getRunningProviders(): Promise<any>
@@ -23,16 +12,17 @@ plugin.environment.getRunningProviders(): Promise<any>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.getRunningProviders();
+const result = await plugin.environment.getRunningProviders();
+console.log(result);
 ```

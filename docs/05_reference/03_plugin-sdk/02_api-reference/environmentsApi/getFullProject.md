@@ -1,22 +1,8 @@
 ---
-name: getFullProject
-cbbaseinfo:
-  description: Call getFullProject on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: getFullProject
-  category: environmentsApi
-  link: getFullProject.md
+title: getFullProject
 ---
-# getFullProject
+
+# `getFullProject`
 
 ```typescript
 plugin.environmentsApi.getFullProject(id: string): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.environmentsApi.getFullProject(id: string): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.getFullProject('id');
+const result = await plugin.environmentsApi.getFullProject('id');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: getMentionedMCPServers
-cbbaseinfo:
-  description: Gets toolboxes mentioned in a user message.
-cbparameters:
-  parameters:
-    - name: userMessage
-      typeName: MCPUserMessage
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<GetAvailableToolBoxesResponse>"
-    description: ""
-data:
-  name: getMentionedMCPServers
-  category: mcp
-  link: getMentionedMCPServers.md
+title: getMentionedMCPServers
 ---
-# getMentionedMCPServers
+
+# `getMentionedMCPServers`
 
 ```typescript
 plugin.mcp.getMentionedMCPServers(userMessage: MCPUserMessage): Promise<GetAvailableToolBoxesResponse>
@@ -26,18 +12,19 @@ Gets toolboxes mentioned in a user message.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `userMessage` | `MCPUserMessage` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `userMessage` | `MCPUserMessage` | Yes |  |
 
 ## Returns
 
-**`Promise<GetAvailableToolBoxesResponse>`**
+`Promise<GetAvailableToolBoxesResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mcp.getMentionedMCPServers(/* MCPUserMessage */);
+const result = await plugin.mcp.getMentionedMCPServers(/* MCPUserMessage */);
+console.log(result);
 ```

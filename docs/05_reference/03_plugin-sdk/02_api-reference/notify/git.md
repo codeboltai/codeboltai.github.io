@@ -1,19 +1,8 @@
 ---
-name: git
-cbbaseinfo:
-  description: Call git on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: git
-  category: notify
-  link: git.md
+title: git
 ---
-# git
+
+# `git`
 
 ```typescript
 plugin.notify.git(): void
@@ -23,16 +12,17 @@ plugin.notify.git(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.git();
+const result = await plugin.notify.git();
+console.log(result);
 ```

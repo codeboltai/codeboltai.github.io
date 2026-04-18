@@ -1,22 +1,8 @@
 ---
-name: offReply
-cbbaseinfo:
-  description: Remove a previously registered reply callback.
-cbparameters:
-  parameters:
-    - name: callback
-      typeName: Function
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: offReply
-  category: gateway
-  link: offReply.md
+title: offReply
 ---
-# offReply
+
+# `offReply`
 
 ```typescript
 plugin.gateway.offReply(callback: Function): void
@@ -26,18 +12,19 @@ Remove a previously registered reply callback.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `callback` | `Function` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `callback` | `Function` | Yes |  |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gateway.offReply(/* Function */);
+const result = await plugin.gateway.offReply(/* Function */);
+console.log(result);
 ```

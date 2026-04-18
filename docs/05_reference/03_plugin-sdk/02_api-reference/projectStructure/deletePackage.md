@@ -1,26 +1,8 @@
 ---
-name: deletePackage
-cbbaseinfo:
-  description: Delete a package
-cbparameters:
-  parameters:
-    - name: packageId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: workspacePath
-      typeName: string
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ProjectStructureDeleteResponse>"
-    description: ""
-data:
-  name: deletePackage
-  category: projectStructure
-  link: deletePackage.md
+title: deletePackage
 ---
-# deletePackage
+
+# `deletePackage`
 
 ```typescript
 plugin.projectStructure.deletePackage(packageId: string, workspacePath?: string): Promise<ProjectStructureDeleteResponse>
@@ -30,19 +12,20 @@ Delete a package
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `packageId` | `string` |  |
-| `workspacePath` | `string` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `packageId` | `string` | Yes |  |
+| `workspacePath` | `string` | No |  |
 
 ## Returns
 
-**`Promise<ProjectStructureDeleteResponse>`**
+`Promise<ProjectStructureDeleteResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectStructure.deletePackage('packageId');
+const result = await plugin.projectStructure.deletePackage('packageId');
+console.log(result);
 ```

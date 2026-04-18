@@ -1,26 +1,8 @@
 ---
-name: getDependencies
-cbbaseinfo:
-  description: "Retrieves all threads that the specified thread depends on.
-
-Returns threads that are prerequisites or dependencies of the given thread.
-This is useful for understanding execution order requirements and managing
-complex thread relationships."
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: The unique identifier of the thread
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Thread[]>"
-    description: A promise that resolves to an array of dependent Thread objects
-data:
-  name: getDependencies
-  category: threadsApi
-  link: getDependencies.md
+title: getDependencies
 ---
-# getDependencies
+
+# `getDependencies`
 
 ```typescript
 plugin.threadsApi.getDependencies(threadId: string): Promise<Thread[]>
@@ -34,18 +16,19 @@ complex thread relationships.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` | The unique identifier of the thread |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes | The unique identifier of the thread |
 
 ## Returns
 
-**`Promise<Thread[]>`** — A promise that resolves to an array of dependent Thread objects
+`Promise<Thread[]>` — A promise that resolves to an array of dependent Thread objects
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.threadsApi.getDependencies('threadId');
+const result = await plugin.threadsApi.getDependencies('threadId');
+console.log(result);
 ```

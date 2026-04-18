@@ -1,25 +1,8 @@
 ---
-name: search
-cbbaseinfo:
-  description: "Searches the codebase index.
-
-Performs a structured search over the indexed codebase, returning
-matching files and code snippets ranked by relevance."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CodebaseSearchRequest
-      description: The search query and filter parameters
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CodebaseSearchResult[]>"
-    description: A promise that resolves to an array of  objects
-data:
-  name: search
-  category: codebaseIndex
-  link: search.md
+title: search
 ---
-# search
+
+# `search`
 
 ```typescript
 client.codebaseIndex.search(data: CodebaseSearchRequest): Promise<CodebaseSearchResult[]>
@@ -32,13 +15,13 @@ matching files and code snippets ranked by relevance.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CodebaseSearchRequest` | The search query and filter parameters |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CodebaseSearchRequest` | Yes | The search query and filter parameters |
 
 ## Returns
 
-**`Promise<CodebaseSearchResult[]>`** — A promise that resolves to an array of  objects
+`Promise<CodebaseSearchResult[]>` — A promise that resolves to an array of  objects
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.codebaseIndex.search(/* CodebaseSearchRequest */);
+const result = await client.codebaseIndex.search(/* CodebaseSearchRequest */);
+console.log(result);
 ```

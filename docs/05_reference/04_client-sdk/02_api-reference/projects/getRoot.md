@@ -1,22 +1,8 @@
 ---
-name: getRoot
-cbbaseinfo:
-  description: "Retrieves the root project information for the current workspace.
-
-Returns the top-level project metadata including name, path, status, and configuration
-references. This is typically the entry point for inspecting the active project."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Project>"
-    description: A promise that resolves to the root project details
-data:
-  name: getRoot
-  category: projects
-  link: getRoot.md
+title: getRoot
 ---
-# getRoot
+
+# `getRoot`
 
 ```typescript
 client.projects.getRoot(): Promise<Project>
@@ -29,11 +15,11 @@ references. This is typically the entry point for inspecting the active project.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Project>`** — A promise that resolves to the root project details
+`Promise<Project>` — A promise that resolves to the root project details
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.projects.getRoot();
+const result = await client.projects.getRoot();
+console.log(result);
 ```

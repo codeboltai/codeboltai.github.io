@@ -1,26 +1,8 @@
 ---
-name: unlockJob
-cbbaseinfo:
-  description: Call unlockJob on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: agentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobLockReleaseResponse>"
-    description: ""
-data:
-  name: unlockJob
-  category: job
-  link: unlockJob.md
+title: unlockJob
 ---
-# unlockJob
+
+# `unlockJob`
 
 ```typescript
 plugin.job.unlockJob(jobId: string, agentId: string): Promise<JobLockReleaseResponse>
@@ -30,19 +12,20 @@ plugin.job.unlockJob(jobId: string, agentId: string): Promise<JobLockReleaseResp
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `agentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `agentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobLockReleaseResponse>`**
+`Promise<JobLockReleaseResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.unlockJob('jobId', 'agentId');
+const result = await plugin.job.unlockJob('jobId', 'agentId');
+console.log(result);
 ```

@@ -1,67 +1,282 @@
 ---
-cbapicategory:
-  - name: createEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/createEnvironment
-    description: createEnvironment
-  - name: deleteEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/deleteEnvironment
-    description: deleteEnvironment
-  - name: getEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/getEnvironment
-    description: getEnvironment
-  - name: getEnvironmentStatistics
-    link: /docs/reference/plugin-sdk/api-reference/environment/getEnvironmentStatistics
-    description: getEnvironmentStatistics
-  - name: getEnvironmentStatus
-    link: /docs/reference/plugin-sdk/api-reference/environment/getEnvironmentStatus
-    description: getEnvironmentStatus
-  - name: getLocalProviders
-    link: /docs/reference/plugin-sdk/api-reference/environment/getLocalProviders
-    description: getLocalProviders
-  - name: getRunningProviders
-    link: /docs/reference/plugin-sdk/api-reference/environment/getRunningProviders
-    description: getRunningProviders
-  - name: listEnvironments
-    link: /docs/reference/plugin-sdk/api-reference/environment/listEnvironments
-    description: listEnvironments
-  - name: restartEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/restartEnvironment
-    description: restartEnvironment
-  - name: sendMessageToEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/sendMessageToEnvironment
-    description: sendMessageToEnvironment
-  - name: startAgentInEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/startAgentInEnvironment
-    description: startAgentInEnvironment
-  - name: startEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/startEnvironment
-    description: startEnvironment
-  - name: stopEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/stopEnvironment
-    description: stopEnvironment
-  - name: updateEnvironment
-    link: /docs/reference/plugin-sdk/api-reference/environment/updateEnvironment
-    description: updateEnvironment
+title: Environment API
 ---
+
 # Environment API
 
-The `environment` module of the Plugin SDK.
+The `environment` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`createEnvironment`](./createEnvironment) |  |
+| [`deleteEnvironment`](./deleteEnvironment) |  |
+| [`getEnvironment`](./getEnvironment) |  |
+| [`getEnvironmentStatistics`](./getEnvironmentStatistics) |  |
+| [`getEnvironmentStatus`](./getEnvironmentStatus) |  |
+| [`getLocalProviders`](./getLocalProviders) |  |
+| [`getRunningProviders`](./getRunningProviders) |  |
+| [`listEnvironments`](./listEnvironments) |  |
+| [`restartEnvironment`](./restartEnvironment) |  |
+| [`sendMessageToEnvironment`](./sendMessageToEnvironment) |  |
+| [`startAgentInEnvironment`](./startAgentInEnvironment) |  |
+| [`startEnvironment`](./startEnvironment) |  |
+| [`stopEnvironment`](./stopEnvironment) |  |
+| [`updateEnvironment`](./updateEnvironment) |  |
 
 ## Methods
 
-- [`createEnvironment()`](./createEnvironment) — 
-- [`deleteEnvironment()`](./deleteEnvironment) — 
-- [`getEnvironment()`](./getEnvironment) — 
-- [`getEnvironmentStatistics()`](./getEnvironmentStatistics) — 
-- [`getEnvironmentStatus()`](./getEnvironmentStatus) — 
-- [`getLocalProviders()`](./getLocalProviders) — 
-- [`getRunningProviders()`](./getRunningProviders) — 
-- [`listEnvironments()`](./listEnvironments) — 
-- [`restartEnvironment()`](./restartEnvironment) — 
-- [`sendMessageToEnvironment()`](./sendMessageToEnvironment) — 
-- [`startAgentInEnvironment()`](./startAgentInEnvironment) — 
-- [`startEnvironment()`](./startEnvironment) — 
-- [`stopEnvironment()`](./stopEnvironment) — 
-- [`updateEnvironment()`](./updateEnvironment) — 
+---
+
+### `createEnvironment`
+
+```typescript
+plugin.environment.createEnvironment(environmentData: object): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentData` | `object` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./createEnvironment)
+
+---
+
+### `deleteEnvironment`
+
+```typescript
+plugin.environment.deleteEnvironment(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./deleteEnvironment)
+
+---
+
+### `getEnvironment`
+
+```typescript
+plugin.environment.getEnvironment(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./getEnvironment)
+
+---
+
+### `getEnvironmentStatistics`
+
+```typescript
+plugin.environment.getEnvironmentStatistics(): Promise<any>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./getEnvironmentStatistics)
+
+---
+
+### `getEnvironmentStatus`
+
+```typescript
+plugin.environment.getEnvironmentStatus(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./getEnvironmentStatus)
+
+---
+
+### `getLocalProviders`
+
+```typescript
+plugin.environment.getLocalProviders(): Promise<any>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./getLocalProviders)
+
+---
+
+### `getRunningProviders`
+
+```typescript
+plugin.environment.getRunningProviders(): Promise<any>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./getRunningProviders)
+
+---
+
+### `listEnvironments`
+
+```typescript
+plugin.environment.listEnvironments(): Promise<any>
+```
+
+
+
+_No parameters._
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./listEnvironments)
+
+---
+
+### `restartEnvironment`
+
+```typescript
+plugin.environment.restartEnvironment(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./restartEnvironment)
+
+---
+
+### `sendMessageToEnvironment`
+
+```typescript
+plugin.environment.sendMessageToEnvironment(environmentId: string, message: any): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+| `message` | `any` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./sendMessageToEnvironment)
+
+---
+
+### `startAgentInEnvironment`
+
+```typescript
+plugin.environment.startAgentInEnvironment(environmentId: string, task: string, agentId?: string, threadId?: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+| `task` | `string` | Yes |  |
+| `agentId` | `string` | No |  |
+| `threadId` | `string` | No |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./startAgentInEnvironment)
+
+---
+
+### `startEnvironment`
+
+```typescript
+plugin.environment.startEnvironment(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./startEnvironment)
+
+---
+
+### `stopEnvironment`
+
+```typescript
+plugin.environment.stopEnvironment(environmentId: string): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./stopEnvironment)
+
+---
+
+### `updateEnvironment`
+
+```typescript
+plugin.environment.updateEnvironment(environmentId: string, updateData: any): Promise<any>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+| `updateData` | `any` | Yes |  |
+
+**Returns:** `Promise<any>`
+
+[Full reference →](./updateEnvironment)
+

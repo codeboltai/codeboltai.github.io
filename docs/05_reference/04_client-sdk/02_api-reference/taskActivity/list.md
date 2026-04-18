@@ -1,22 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: List all task activities
-cbparameters:
-  parameters:
-    - name: params
-      typeName: TaskActivityListParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<TaskActivity[]>"
-    description: ""
-data:
-  name: list
-  category: taskActivity
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 client.taskActivity.list(params?: TaskActivityListParams): Promise<TaskActivity[]>
@@ -26,13 +12,13 @@ List all task activities
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `TaskActivityListParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `TaskActivityListParams` | No |  |
 
 ## Returns
 
-**`Promise<TaskActivity[]>`**
+`Promise<TaskActivity[]>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.list();
+const result = await client.taskActivity.list();
+console.log(result);
 ```

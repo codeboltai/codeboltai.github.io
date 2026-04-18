@@ -1,22 +1,8 @@
 ---
-name: createPrestart
-cbbaseinfo:
-  description: Create a prestart activity
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreatePrestartActivityRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskActivity>"
-    description: ""
-data:
-  name: createPrestart
-  category: taskActivity
-  link: createPrestart.md
+title: createPrestart
 ---
-# createPrestart
+
+# `createPrestart`
 
 ```typescript
 client.taskActivity.createPrestart(data: CreatePrestartActivityRequest): Promise<TaskActivity>
@@ -26,13 +12,13 @@ Create a prestart activity
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreatePrestartActivityRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreatePrestartActivityRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskActivity>`**
+`Promise<TaskActivity>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.createPrestart(/* CreatePrestartActivityRequest */);
+const result = await client.taskActivity.createPrestart(/* CreatePrestartActivityRequest */);
+console.log(result);
 ```

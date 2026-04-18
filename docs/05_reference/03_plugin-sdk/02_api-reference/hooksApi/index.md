@@ -1,43 +1,172 @@
 ---
-cbapicategory:
-  - name: create
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/create
-    description: create
-  - name: delete
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/delete
-    description: delete
-  - name: disable
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/disable
-    description: disable
-  - name: enable
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/enable
-    description: enable
-  - name: get
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/get
-    description: get
-  - name: initialize
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/initialize
-    description: initialize
-  - name: list
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/list
-    description: list
-  - name: update
-    link: /docs/reference/plugin-sdk/api-reference/hooksApi/update
-    description: update
+title: HooksApi API
 ---
+
 # HooksApi API
 
-The `hooksApi` module of the Plugin SDK.
+The `hooksApi` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`create`](./create) |  |
+| [`delete`](./delete) |  |
+| [`disable`](./disable) |  |
+| [`enable`](./enable) |  |
+| [`get`](./get) |  |
+| [`initialize`](./initialize) |  |
+| [`list`](./list) |  |
+| [`update`](./update) |  |
 
 ## Methods
 
-- [`create()`](./create) — 
-- [`delete()`](./delete) — 
-- [`disable()`](./disable) — 
-- [`enable()`](./enable) — 
-- [`get()`](./get) — 
-- [`initialize()`](./initialize) — 
-- [`list()`](./list) — 
-- [`update()`](./update) — 
+---
+
+### `create`
+
+```typescript
+plugin.hooksApi.create(data: CreateHookRequest): Promise<Hook>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateHookRequest` | Yes |  |
+
+**Returns:** `Promise<Hook>`
+
+[Full reference →](./create)
+
+---
+
+### `delete`
+
+```typescript
+plugin.hooksApi.delete(id: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./delete)
+
+---
+
+### `disable`
+
+```typescript
+plugin.hooksApi.disable(id: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./disable)
+
+---
+
+### `enable`
+
+```typescript
+plugin.hooksApi.enable(id: string): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./enable)
+
+---
+
+### `get`
+
+```typescript
+plugin.hooksApi.get(id: string): Promise<Hook>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+
+**Returns:** `Promise<Hook>`
+
+[Full reference →](./get)
+
+---
+
+### `initialize`
+
+```typescript
+plugin.hooksApi.initialize(data?: InitializeHooksRequest): Promise<unknown>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `InitializeHooksRequest` | No |  |
+
+**Returns:** `Promise<unknown>`
+
+[Full reference →](./initialize)
+
+---
+
+### `list`
+
+```typescript
+plugin.hooksApi.list(params?: Record<string, unknown>): Promise<Hook[]>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No |  |
+
+**Returns:** `Promise<Hook[]>`
+
+[Full reference →](./list)
+
+---
+
+### `update`
+
+```typescript
+plugin.hooksApi.update(id: string, data: UpdateHookRequest): Promise<Hook>
+```
+
+
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateHookRequest` | Yes |  |
+
+**Returns:** `Promise<Hook>`
+
+[Full reference →](./update)
+

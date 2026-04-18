@@ -1,19 +1,8 @@
 ---
-name: shell
-cbbaseinfo:
-  description: Call shell on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: shell
-  category: sockets
-  link: shell.md
+title: shell
 ---
-# shell
+
+# `shell`
 
 ```typescript
 client.sockets.shell(): void
@@ -23,11 +12,11 @@ client.sockets.shell(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.shell();
+const result = await client.sockets.shell();
+console.log(result);
 ```

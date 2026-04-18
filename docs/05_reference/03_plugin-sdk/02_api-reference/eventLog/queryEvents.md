@@ -1,22 +1,8 @@
 ---
-name: queryEvents
-cbbaseinfo:
-  description: Query events using DSL
-cbparameters:
-  parameters:
-    - name: query
-      typeName: EventLogDSL
-      description: Query DSL object
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<EventLogQueryResponse>"
-    description: ""
-data:
-  name: queryEvents
-  category: eventLog
-  link: queryEvents.md
+title: queryEvents
 ---
-# queryEvents
+
+# `queryEvents`
 
 ```typescript
 plugin.eventLog.queryEvents(query: EventLogDSL): Promise<EventLogQueryResponse>
@@ -26,18 +12,19 @@ Query events using DSL
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `query` | `EventLogDSL` | Query DSL object |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `query` | `EventLogDSL` | Yes | Query DSL object |
 
 ## Returns
 
-**`Promise<EventLogQueryResponse>`**
+`Promise<EventLogQueryResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.eventLog.queryEvents(/* EventLogDSL */);
+const result = await plugin.eventLog.queryEvents(/* EventLogDSL */);
+console.log(result);
 ```

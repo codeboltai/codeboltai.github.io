@@ -1,23 +1,8 @@
 ---
-name: onNotification
-cbbaseinfo:
-  description: "Register a callback for execution notifications.
-These are broadcast after any locally-executed agent action."
-cbparameters:
-  parameters:
-    - name: callback
-      typeName: Function
-      description: Called with each ExecutionNotification
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: onNotification
-  category: executionGateway
-  link: onNotification.md
+title: onNotification
 ---
-# onNotification
+
+# `onNotification`
 
 ```typescript
 plugin.executionGateway.onNotification(callback: Function): void
@@ -28,18 +13,19 @@ These are broadcast after any locally-executed agent action.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `callback` | `Function` | Called with each ExecutionNotification |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `callback` | `Function` | Yes | Called with each ExecutionNotification |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.executionGateway.onNotification(/* Function */);
+const result = await plugin.executionGateway.onNotification(/* Function */);
+console.log(result);
 ```

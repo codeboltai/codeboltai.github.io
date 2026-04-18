@@ -1,22 +1,8 @@
 ---
-name: bulkCreate
-cbbaseinfo:
-  description: Call bulkCreate on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: BulkCreateTodosRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TodoItem[]>"
-    description: ""
-data:
-  name: bulkCreate
-  category: todosApi
-  link: bulkCreate.md
+title: bulkCreate
 ---
-# bulkCreate
+
+# `bulkCreate`
 
 ```typescript
 plugin.todosApi.bulkCreate(data: BulkCreateTodosRequest): Promise<TodoItem[]>
@@ -26,18 +12,19 @@ plugin.todosApi.bulkCreate(data: BulkCreateTodosRequest): Promise<TodoItem[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `BulkCreateTodosRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BulkCreateTodosRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<TodoItem[]>`**
+`Promise<TodoItem[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.bulkCreate(/* BulkCreateTodosRequest */);
+const result = await plugin.todosApi.bulkCreate(/* BulkCreateTodosRequest */);
+console.log(result);
 ```

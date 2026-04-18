@@ -1,22 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves the planner overview with aggregated status information.
-
-Returns a high-level summary of the planner state including total tasks, completion
-statistics, and agent utilization. Use this for dashboard views and progress monitoring."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<PlannerOverview>"
-    description: A promise that resolves to the planner overview data
-data:
-  name: get
-  category: planner
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.planner.get(): Promise<PlannerOverview>
@@ -29,11 +15,11 @@ statistics, and agent utilization. Use this for dashboard views and progress mon
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<PlannerOverview>`** — A promise that resolves to the planner overview data
+`Promise<PlannerOverview>` — A promise that resolves to the planner overview data
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.planner.get();
+const result = await client.planner.get();
+console.log(result);
 ```

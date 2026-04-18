@@ -1,22 +1,8 @@
 ---
-name: getThreads
-cbbaseinfo:
-  description: Call getThreads on the Plugin SDK mailApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: MailThreadListParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<MailThread[]>"
-    description: ""
-data:
-  name: getThreads
-  category: mailApi
-  link: getThreads.md
+title: getThreads
 ---
-# getThreads
+
+# `getThreads`
 
 ```typescript
 plugin.mailApi.getThreads(params?: MailThreadListParams): Promise<MailThread[]>
@@ -26,18 +12,19 @@ plugin.mailApi.getThreads(params?: MailThreadListParams): Promise<MailThread[]>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `MailThreadListParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `MailThreadListParams` | No |  |
 
 ## Returns
 
-**`Promise<MailThread[]>`**
+`Promise<MailThread[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mailApi.getThreads();
+const result = await plugin.mailApi.getThreads();
+console.log(result);
 ```

@@ -1,24 +1,8 @@
 ---
-name: getPhase
-cbbaseinfo:
-  description: "Retrieves a specific roadmap phase by its ID.
-
-Fetches the full details of a single phase including its metadata and associated features."
-cbparameters:
-  parameters:
-    - name: phaseId
-      typeName: string
-      description: The unique identifier of the phase
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<RoadmapPhase>"
-    description: A promise that resolves to the RoadmapPhase object
-data:
-  name: getPhase
-  category: roadmap
-  link: getPhase.md
+title: getPhase
 ---
-# getPhase
+
+# `getPhase`
 
 ```typescript
 client.roadmap.getPhase(phaseId: string): Promise<RoadmapPhase>
@@ -30,13 +14,13 @@ Fetches the full details of a single phase including its metadata and associated
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `phaseId` | `string` | The unique identifier of the phase |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `phaseId` | `string` | Yes | The unique identifier of the phase |
 
 ## Returns
 
-**`Promise<RoadmapPhase>`** — A promise that resolves to the RoadmapPhase object
+`Promise<RoadmapPhase>` — A promise that resolves to the RoadmapPhase object
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.roadmap.getPhase('phaseId');
+const result = await client.roadmap.getPhase('phaseId');
+console.log(result);
 ```

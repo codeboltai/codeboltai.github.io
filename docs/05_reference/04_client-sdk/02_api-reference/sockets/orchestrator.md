@@ -1,19 +1,8 @@
 ---
-name: orchestrator
-cbbaseinfo:
-  description: Call orchestrator on the Client SDK sockets module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: orchestrator
-  category: sockets
-  link: orchestrator.md
+title: orchestrator
 ---
-# orchestrator
+
+# `orchestrator`
 
 ```typescript
 client.sockets.orchestrator(): void
@@ -23,11 +12,11 @@ client.sockets.orchestrator(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.sockets.orchestrator();
+const result = await client.sockets.orchestrator();
+console.log(result);
 ```

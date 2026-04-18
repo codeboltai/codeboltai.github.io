@@ -1,26 +1,8 @@
 ---
-name: stopEnvironment
-cbbaseinfo:
-  description: Call stopEnvironment on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: Record<string, unknown>
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: stopEnvironment
-  category: environmentsApi
-  link: stopEnvironment.md
+title: stopEnvironment
 ---
-# stopEnvironment
+
+# `stopEnvironment`
 
 ```typescript
 plugin.environmentsApi.stopEnvironment(id: string, data?: Record<string, unknown>): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.stopEnvironment(id: string, data?: Record<string, unknown
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `Record<string, unknown>` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `Record<string, unknown>` | No |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.stopEnvironment('id');
+const result = await plugin.environmentsApi.stopEnvironment('id');
+console.log(result);
 ```

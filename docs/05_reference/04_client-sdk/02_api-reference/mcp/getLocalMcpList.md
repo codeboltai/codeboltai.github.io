@@ -1,22 +1,8 @@
 ---
-name: getLocalMcpList
-cbbaseinfo:
-  description: "Retrieves the list of locally defined MCP servers.
-
-Returns MCP servers that are defined in the local workspace configuration rather than
-installed from the marketplace. These are typically custom or development servers."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<McpServer[]>"
-    description: A promise that resolves to an array of local MCP servers
-data:
-  name: getLocalMcpList
-  category: mcp
-  link: getLocalMcpList.md
+title: getLocalMcpList
 ---
-# getLocalMcpList
+
+# `getLocalMcpList`
 
 ```typescript
 client.mcp.getLocalMcpList(): Promise<McpServer[]>
@@ -29,11 +15,11 @@ installed from the marketplace. These are typically custom or development server
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<McpServer[]>`** — A promise that resolves to an array of local MCP servers
+`Promise<McpServer[]>` — A promise that resolves to an array of local MCP servers
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.mcp.getLocalMcpList();
+const result = await client.mcp.getLocalMcpList();
+console.log(result);
 ```

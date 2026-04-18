@@ -1,22 +1,8 @@
 ---
-name: getReady
-cbbaseinfo:
-  description: "Retrieves all jobs that are ready to execute.
-
-Returns jobs whose dependencies have all been satisfied, meaning
-they can be picked up by agents immediately."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Job[]>"
-    description: A promise that resolves to an array of ready  objects
-data:
-  name: getReady
-  category: jobs
-  link: getReady.md
+title: getReady
 ---
-# getReady
+
+# `getReady`
 
 ```typescript
 client.jobs.getReady(): Promise<Job[]>
@@ -29,11 +15,11 @@ they can be picked up by agents immediately.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Job[]>`** — A promise that resolves to an array of ready  objects
+`Promise<Job[]>` — A promise that resolves to an array of ready  objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.jobs.getReady();
+const result = await client.jobs.getReady();
+console.log(result);
 ```

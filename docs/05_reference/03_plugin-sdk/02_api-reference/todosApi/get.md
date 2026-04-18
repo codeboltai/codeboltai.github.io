@@ -1,22 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: Call get on the Plugin SDK todosApi module.
-cbparameters:
-  parameters:
-    - name: todoId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TodoItem>"
-    description: ""
-data:
-  name: get
-  category: todosApi
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 plugin.todosApi.get(todoId: string): Promise<TodoItem>
@@ -26,18 +12,19 @@ plugin.todosApi.get(todoId: string): Promise<TodoItem>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `todoId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `todoId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<TodoItem>`**
+`Promise<TodoItem>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.todosApi.get('todoId');
+const result = await plugin.todosApi.get('todoId');
+console.log(result);
 ```

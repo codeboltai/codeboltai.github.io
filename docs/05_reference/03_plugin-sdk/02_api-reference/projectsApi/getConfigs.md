@@ -1,19 +1,8 @@
 ---
-name: getConfigs
-cbbaseinfo:
-  description: Call getConfigs on the Plugin SDK projectsApi module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<ProjectConfig>"
-    description: ""
-data:
-  name: getConfigs
-  category: projectsApi
-  link: getConfigs.md
+title: getConfigs
 ---
-# getConfigs
+
+# `getConfigs`
 
 ```typescript
 plugin.projectsApi.getConfigs(): Promise<ProjectConfig>
@@ -23,16 +12,17 @@ plugin.projectsApi.getConfigs(): Promise<ProjectConfig>
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<ProjectConfig>`**
+`Promise<ProjectConfig>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.projectsApi.getConfigs();
+const result = await plugin.projectsApi.getConfigs();
+console.log(result);
 ```

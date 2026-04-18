@@ -1,26 +1,8 @@
 ---
-name: updateInstance
-cbbaseinfo:
-  description: Call updateInstance on the Plugin SDK kvStoreApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateKvStoreInstanceRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KvStoreInstance>"
-    description: ""
-data:
-  name: updateInstance
-  category: kvStoreApi
-  link: updateInstance.md
+title: updateInstance
 ---
-# updateInstance
+
+# `updateInstance`
 
 ```typescript
 plugin.kvStoreApi.updateInstance(id: string, data: UpdateKvStoreInstanceRequest): Promise<KvStoreInstance>
@@ -30,19 +12,20 @@ plugin.kvStoreApi.updateInstance(id: string, data: UpdateKvStoreInstanceRequest)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateKvStoreInstanceRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateKvStoreInstanceRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KvStoreInstance>`**
+`Promise<KvStoreInstance>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.kvStoreApi.updateInstance('id', /* UpdateKvStoreInstanceRequest */);
+const result = await plugin.kvStoreApi.updateInstance('id', /* UpdateKvStoreInstanceRequest */);
+console.log(result);
 ```

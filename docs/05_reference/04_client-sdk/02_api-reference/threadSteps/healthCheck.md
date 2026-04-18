@@ -1,19 +1,8 @@
 ---
-name: healthCheck
-cbbaseinfo:
-  description: Health check for thread step service
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<HealthCheckResponse>"
-    description: ""
-data:
-  name: healthCheck
-  category: threadSteps
-  link: healthCheck.md
+title: healthCheck
 ---
-# healthCheck
+
+# `healthCheck`
 
 ```typescript
 client.threadSteps.healthCheck(): Promise<HealthCheckResponse>
@@ -23,11 +12,11 @@ Health check for thread step service
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<HealthCheckResponse>`**
+`Promise<HealthCheckResponse>`
 
 ## Example
 
@@ -36,5 +25,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.healthCheck();
+const result = await client.threadSteps.healthCheck();
+console.log(result);
 ```

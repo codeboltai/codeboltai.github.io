@@ -1,19 +1,8 @@
 ---
-name: search
-cbbaseinfo:
-  description: Call search on the Plugin SDK notify module.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: search
-  category: notify
-  link: search.md
+title: search
 ---
-# search
+
+# `search`
 
 ```typescript
 plugin.notify.search(): void
@@ -23,16 +12,17 @@ plugin.notify.search(): void
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.notify.search();
+const result = await plugin.notify.search();
+console.log(result);
 ```

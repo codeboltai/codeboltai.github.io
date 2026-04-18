@@ -1,25 +1,8 @@
 ---
-name: deleteInstalledProvider
-cbbaseinfo:
-  description: "Deletes an installed environment provider.
-
-Removes the provider registration. Environments already created by this
-provider are not automatically deleted."
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: The unique identifier of the installed provider to delete
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: A promise that resolves when deletion is complete
-data:
-  name: deleteInstalledProvider
-  category: environments
-  link: deleteInstalledProvider.md
+title: deleteInstalledProvider
 ---
-# deleteInstalledProvider
+
+# `deleteInstalledProvider`
 
 ```typescript
 client.environments.deleteInstalledProvider(id: string): Promise<unknown>
@@ -32,13 +15,13 @@ provider are not automatically deleted.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` | The unique identifier of the installed provider to delete |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes | The unique identifier of the installed provider to delete |
 
 ## Returns
 
-**`Promise<unknown>`** — A promise that resolves when deletion is complete
+`Promise<unknown>` — A promise that resolves when deletion is complete
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.environments.deleteInstalledProvider('id');
+const result = await client.environments.deleteInstalledProvider('id');
+console.log(result);
 ```

@@ -1,22 +1,8 @@
 ---
-name: download
-cbbaseinfo:
-  description: Call download on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitDownloadRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: download
-  category: gitApi
-  link: download.md
+title: download
 ---
-# download
+
+# `download`
 
 ```typescript
 plugin.gitApi.download(data: GitDownloadRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.gitApi.download(data: GitDownloadRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitDownloadRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitDownloadRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.download(/* GitDownloadRequest */);
+const result = await plugin.gitApi.download(/* GitDownloadRequest */);
+console.log(result);
 ```

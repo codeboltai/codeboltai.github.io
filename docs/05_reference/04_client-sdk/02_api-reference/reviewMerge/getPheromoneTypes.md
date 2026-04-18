@@ -1,22 +1,8 @@
 ---
-name: getPheromoneTypes
-cbbaseinfo:
-  description: "Retrieves the list of available pheromone types.
-
-Pheromones are tags or signals that can be attached to review requests to communicate
-metadata to other agents. This returns the set of recognized pheromone type strings."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<string[]>"
-    description: A promise that resolves to an array of pheromone type name strings
-data:
-  name: getPheromoneTypes
-  category: reviewMerge
-  link: getPheromoneTypes.md
+title: getPheromoneTypes
 ---
-# getPheromoneTypes
+
+# `getPheromoneTypes`
 
 ```typescript
 client.reviewMerge.getPheromoneTypes(): Promise<string[]>
@@ -29,11 +15,11 @@ metadata to other agents. This returns the set of recognized pheromone type stri
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<string[]>`** — A promise that resolves to an array of pheromone type name strings
+`Promise<string[]>` — A promise that resolves to an array of pheromone type name strings
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.reviewMerge.getPheromoneTypes();
+const result = await client.reviewMerge.getPheromoneTypes();
+console.log(result);
 ```

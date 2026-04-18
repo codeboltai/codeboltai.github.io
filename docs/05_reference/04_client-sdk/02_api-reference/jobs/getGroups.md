@@ -1,22 +1,8 @@
 ---
-name: getGroups
-cbbaseinfo:
-  description: "Lists all job groups.
-
-Job groups organize related jobs into logical collections, making
-it easier to manage large numbers of jobs."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<JobGroup[]>"
-    description: A promise that resolves to an array of  objects
-data:
-  name: getGroups
-  category: jobs
-  link: getGroups.md
+title: getGroups
 ---
-# getGroups
+
+# `getGroups`
 
 ```typescript
 client.jobs.getGroups(): Promise<JobGroup[]>
@@ -29,11 +15,11 @@ it easier to manage large numbers of jobs.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<JobGroup[]>`** — A promise that resolves to an array of  objects
+`Promise<JobGroup[]>` — A promise that resolves to an array of  objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.jobs.getGroups();
+const result = await client.jobs.getGroups();
+console.log(result);
 ```

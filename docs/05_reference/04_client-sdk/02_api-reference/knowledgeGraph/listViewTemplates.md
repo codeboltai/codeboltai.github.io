@@ -1,24 +1,8 @@
 ---
-name: listViewTemplates
-cbbaseinfo:
-  description: "Lists all knowledge graph view templates.
-
-Returns every view template with their query definitions and metadata."
-cbparameters:
-  parameters:
-    - name: params
-      typeName: Record<string, unknown>
-      description: Optional query parameters for filtering or pagination
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<KGViewTemplate[]>"
-    description: A promise that resolves to an array of  objects
-data:
-  name: listViewTemplates
-  category: knowledgeGraph
-  link: listViewTemplates.md
+title: listViewTemplates
 ---
-# listViewTemplates
+
+# `listViewTemplates`
 
 ```typescript
 client.knowledgeGraph.listViewTemplates(params?: Record<string, unknown>): Promise<KGViewTemplate[]>
@@ -30,13 +14,13 @@ Returns every view template with their query definitions and metadata.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `Record<string, unknown>` _(optional)_ | Optional query parameters for filtering or pagination |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `Record<string, unknown>` | No | Optional query parameters for filtering or pagination |
 
 ## Returns
 
-**`Promise<KGViewTemplate[]>`** — A promise that resolves to an array of  objects
+`Promise<KGViewTemplate[]>` — A promise that resolves to an array of  objects
 
 ## Example
 
@@ -45,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.knowledgeGraph.listViewTemplates();
+const result = await client.knowledgeGraph.listViewTemplates();
+console.log(result);
 ```

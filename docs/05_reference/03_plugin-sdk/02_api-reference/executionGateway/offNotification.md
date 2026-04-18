@@ -1,22 +1,8 @@
 ---
-name: offNotification
-cbbaseinfo:
-  description: Remove a previously registered notification callback.
-cbparameters:
-  parameters:
-    - name: callback
-      typeName: Function
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "void"
-    description: ""
-data:
-  name: offNotification
-  category: executionGateway
-  link: offNotification.md
+title: offNotification
 ---
-# offNotification
+
+# `offNotification`
 
 ```typescript
 plugin.executionGateway.offNotification(callback: Function): void
@@ -26,18 +12,19 @@ Remove a previously registered notification callback.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `callback` | `Function` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `callback` | `Function` | Yes |  |
 
 ## Returns
 
-**`void`**
+`void`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.executionGateway.offNotification(/* Function */);
+const result = await plugin.executionGateway.offNotification(/* Function */);
+console.log(result);
 ```

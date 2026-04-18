@@ -1,22 +1,8 @@
 ---
-name: revertUntracked
-cbbaseinfo:
-  description: Call revertUntracked on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitRevertRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: revertUntracked
-  category: gitApi
-  link: revertUntracked.md
+title: revertUntracked
 ---
-# revertUntracked
+
+# `revertUntracked`
 
 ```typescript
 plugin.gitApi.revertUntracked(data: GitRevertRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.gitApi.revertUntracked(data: GitRevertRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitRevertRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitRevertRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.revertUntracked(/* GitRevertRequest */);
+const result = await plugin.gitApi.revertUntracked(/* GitRevertRequest */);
+console.log(result);
 ```

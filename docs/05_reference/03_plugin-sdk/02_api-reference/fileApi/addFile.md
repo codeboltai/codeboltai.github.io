@@ -1,22 +1,8 @@
 ---
-name: addFile
-cbbaseinfo:
-  description: Call addFile on the Plugin SDK fileApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: AddFileRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: addFile
-  category: fileApi
-  link: addFile.md
+title: addFile
 ---
-# addFile
+
+# `addFile`
 
 ```typescript
 plugin.fileApi.addFile(data: AddFileRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.fileApi.addFile(data: AddFileRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `AddFileRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `AddFileRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileApi.addFile(/* AddFileRequest */);
+const result = await plugin.fileApi.addFile(/* AddFileRequest */);
+console.log(result);
 ```

@@ -1,25 +1,8 @@
 ---
-name: createEvent
-cbbaseinfo:
-  description: "Creates a new calendar event.
-
-Schedules a new event that can trigger agent actions or serve as
-a coordination point for workflows."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateCalendarEventRequest
-      description: The event creation payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<CalendarEvent>"
-    description: A promise that resolves to the newly created CalendarEvent
-data:
-  name: createEvent
-  category: calendar
-  link: createEvent.md
+title: createEvent
 ---
-# createEvent
+
+# `createEvent`
 
 ```typescript
 client.calendar.createEvent(data: CreateCalendarEventRequest): Promise<CalendarEvent>
@@ -32,13 +15,13 @@ a coordination point for workflows.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateCalendarEventRequest` | The event creation payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateCalendarEventRequest` | Yes | The event creation payload |
 
 ## Returns
 
-**`Promise<CalendarEvent>`** — A promise that resolves to the newly created CalendarEvent
+`Promise<CalendarEvent>` — A promise that resolves to the newly created CalendarEvent
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.calendar.createEvent(/* CreateCalendarEventRequest */);
+const result = await client.calendar.createEvent(/* CreateCalendarEventRequest */);
+console.log(result);
 ```

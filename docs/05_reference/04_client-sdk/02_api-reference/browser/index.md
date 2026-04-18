@@ -1,63 +1,132 @@
 ---
-cbapicategory:
-  - name: click
-    link: /docs/reference/client-sdk/api-reference/browser/click
-    description: "Clicks an element in the browser.
-
-Simulates a mouse click on the specified element, identified by
-a CSS selector or other locator strategy."
-  - name: fill
-    link: /docs/reference/client-sdk/api-reference/browser/fill
-    description: "Fills a form field in the browser.
-
-Types text into the specified form field, replacing any existing content.
-The field is identified by a CSS selector or other locator strategy."
-  - name: navigate
-    link: /docs/reference/client-sdk/api-reference/browser/navigate
-    description: "Navigates the browser to a URL.
-
-Loads the specified URL in the browser, waiting for the page to
-reach a ready state before resolving."
-  - name: screenshot
-    link: /docs/reference/client-sdk/api-reference/browser/screenshot
-    description: "Takes a screenshot of the current browser viewport.
-
-Captures the visible portion of the browser page as an image.
-Useful for visual verification and debugging during automated testing."
-  - name: sendAction
-    link: /docs/reference/client-sdk/api-reference/browser/sendAction
-    description: "Sends a generic browser action.
-
-Executes an arbitrary browser action command. Use this for actions
-that don't have a dedicated convenience method, or for sending
-complex multi-step actions."
+title: Browser API
 ---
+
 # Browser API
 
 Browser API - browser automation
 
-<CBAPICategory />
+```typescript
+import { CodeBoltClient } from '@codebolt/clientsdk';
+
+const client = new CodeBoltClient();
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`click`](./click) | Clicks an element in the browser. |
+| [`fill`](./fill) | Fills a form field in the browser. |
+| [`navigate`](./navigate) | Navigates the browser to a URL. |
+| [`screenshot`](./screenshot) | Takes a screenshot of the current browser viewport. |
+| [`sendAction`](./sendAction) | Sends a generic browser action. |
 
 ## Methods
 
-- [`click()`](./click) — Clicks an element in the browser.
+---
+
+### `click`
+
+```typescript
+client.browser.click(data: BrowserClickRequest): Promise<BrowserActionResult>
+```
+
+Clicks an element in the browser.
 
 Simulates a mouse click on the specified element, identified by
 a CSS selector or other locator strategy.
-- [`fill()`](./fill) — Fills a form field in the browser.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserClickRequest` | Yes | The click request |
+
+**Returns:** `Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult after the click
+
+[Full reference →](./click)
+
+---
+
+### `fill`
+
+```typescript
+client.browser.fill(data: BrowserFillRequest): Promise<BrowserActionResult>
+```
+
+Fills a form field in the browser.
 
 Types text into the specified form field, replacing any existing content.
 The field is identified by a CSS selector or other locator strategy.
-- [`navigate()`](./navigate) — Navigates the browser to a URL.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserFillRequest` | Yes | The fill request |
+
+**Returns:** `Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult after the fill
+
+[Full reference →](./fill)
+
+---
+
+### `navigate`
+
+```typescript
+client.browser.navigate(data: BrowserNavigateRequest): Promise<BrowserActionResult>
+```
+
+Navigates the browser to a URL.
 
 Loads the specified URL in the browser, waiting for the page to
 reach a ready state before resolving.
-- [`screenshot()`](./screenshot) — Takes a screenshot of the current browser viewport.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserNavigateRequest` | Yes | The navigation request |
+
+**Returns:** `Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult after navigation completes
+
+[Full reference →](./navigate)
+
+---
+
+### `screenshot`
+
+```typescript
+client.browser.screenshot(data?: BrowserScreenshotRequest): Promise<BrowserActionResult>
+```
+
+Takes a screenshot of the current browser viewport.
 
 Captures the visible portion of the browser page as an image.
 Useful for visual verification and debugging during automated testing.
-- [`sendAction()`](./sendAction) — Sends a generic browser action.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserScreenshotRequest` | No | Optional screenshot configuration |
+
+**Returns:** `Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult containing the screenshot data
+
+[Full reference →](./screenshot)
+
+---
+
+### `sendAction`
+
+```typescript
+client.browser.sendAction(data: BrowserSendActionRequest): Promise<BrowserActionResult>
+```
+
+Sends a generic browser action.
 
 Executes an arbitrary browser action command. Use this for actions
 that don't have a dedicated convenience method, or for sending
 complex multi-step actions.
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `BrowserSendActionRequest` | Yes | The browser action payload describing the action to perform |
+
+**Returns:** `Promise<BrowserActionResult>` — A promise that resolves to the BrowserActionResult with the action outcome
+
+[Full reference →](./sendAction)
+

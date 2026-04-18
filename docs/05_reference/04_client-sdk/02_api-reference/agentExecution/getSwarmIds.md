@@ -1,22 +1,8 @@
 ---
-name: getSwarmIds
-cbbaseinfo:
-  description: "Retrieves all known swarm IDs from execution history.
-
-Returns a list of unique swarm identifiers that appear in the execution
-records, useful for populating filter dropdowns or discovering swarms."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<string[]>"
-    description: A promise that resolves to an array of swarm ID strings
-data:
-  name: getSwarmIds
-  category: agentExecution
-  link: getSwarmIds.md
+title: getSwarmIds
 ---
-# getSwarmIds
+
+# `getSwarmIds`
 
 ```typescript
 client.agentExecution.getSwarmIds(): Promise<string[]>
@@ -29,11 +15,11 @@ records, useful for populating filter dropdowns or discovering swarms.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<string[]>`** — A promise that resolves to an array of swarm ID strings
+`Promise<string[]>` — A promise that resolves to an array of swarm ID strings
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agentExecution.getSwarmIds();
+const result = await client.agentExecution.getSwarmIds();
+console.log(result);
 ```

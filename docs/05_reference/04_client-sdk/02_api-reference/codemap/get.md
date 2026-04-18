@@ -1,25 +1,8 @@
 ---
-name: get
-cbbaseinfo:
-  description: "Retrieves a specific codemap by its ID.
-
-Returns the full structural representation including all symbols,
-relationships, and metadata."
-cbparameters:
-  parameters:
-    - name: codemapId
-      typeName: string
-      description: The unique identifier of the codemap
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Codemap>"
-    description: A promise that resolves to the
-data:
-  name: get
-  category: codemap
-  link: get.md
+title: get
 ---
-# get
+
+# `get`
 
 ```typescript
 client.codemap.get(codemapId: string): Promise<Codemap>
@@ -32,13 +15,13 @@ relationships, and metadata.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `codemapId` | `string` | The unique identifier of the codemap |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `codemapId` | `string` | Yes | The unique identifier of the codemap |
 
 ## Returns
 
-**`Promise<Codemap>`** — A promise that resolves to the
+`Promise<Codemap>` — A promise that resolves to the
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.codemap.get('codemapId');
+const result = await client.codemap.get('codemapId');
+console.log(result);
 ```

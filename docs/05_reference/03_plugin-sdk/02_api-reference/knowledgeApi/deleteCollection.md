@@ -1,22 +1,8 @@
 ---
-name: deleteCollection
-cbbaseinfo:
-  description: Call deleteCollection on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: deleteCollection
-  category: knowledgeApi
-  link: deleteCollection.md
+title: deleteCollection
 ---
-# deleteCollection
+
+# `deleteCollection`
 
 ```typescript
 plugin.knowledgeApi.deleteCollection(id: string): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.knowledgeApi.deleteCollection(id: string): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.deleteCollection('id');
+const result = await plugin.knowledgeApi.deleteCollection('id');
+console.log(result);
 ```

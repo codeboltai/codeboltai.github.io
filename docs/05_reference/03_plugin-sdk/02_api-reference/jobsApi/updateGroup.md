@@ -1,26 +1,8 @@
 ---
-name: updateGroup
-cbbaseinfo:
-  description: Call updateGroup on the Plugin SDK jobsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateJobGroupRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobGroup>"
-    description: ""
-data:
-  name: updateGroup
-  category: jobsApi
-  link: updateGroup.md
+title: updateGroup
 ---
-# updateGroup
+
+# `updateGroup`
 
 ```typescript
 plugin.jobsApi.updateGroup(id: string, data: UpdateJobGroupRequest): Promise<JobGroup>
@@ -30,19 +12,20 @@ plugin.jobsApi.updateGroup(id: string, data: UpdateJobGroupRequest): Promise<Job
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateJobGroupRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateJobGroupRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<JobGroup>`**
+`Promise<JobGroup>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.jobsApi.updateGroup('id', /* UpdateJobGroupRequest */);
+const result = await plugin.jobsApi.updateGroup('id', /* UpdateJobGroupRequest */);
+console.log(result);
 ```

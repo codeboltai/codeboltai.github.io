@@ -1,26 +1,8 @@
 ---
-name: updateSettings
-cbbaseinfo:
-  description: Call updateSettings on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateKnowledgeSettingsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeCollectionSettings>"
-    description: ""
-data:
-  name: updateSettings
-  category: knowledgeApi
-  link: updateSettings.md
+title: updateSettings
 ---
-# updateSettings
+
+# `updateSettings`
 
 ```typescript
 plugin.knowledgeApi.updateSettings(id: string, data: UpdateKnowledgeSettingsRequest): Promise<KnowledgeCollectionSettings>
@@ -30,19 +12,20 @@ plugin.knowledgeApi.updateSettings(id: string, data: UpdateKnowledgeSettingsRequ
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateKnowledgeSettingsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateKnowledgeSettingsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeCollectionSettings>`**
+`Promise<KnowledgeCollectionSettings>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.updateSettings('id', /* UpdateKnowledgeSettingsRequest */);
+const result = await plugin.knowledgeApi.updateSettings('id', /* UpdateKnowledgeSettingsRequest */);
+console.log(result);
 ```

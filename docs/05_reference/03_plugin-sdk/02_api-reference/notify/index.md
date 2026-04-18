@@ -1,71 +1,274 @@
 ---
-cbapicategory:
-  - name: agent
-    link: /docs/reference/plugin-sdk/api-reference/notify/agent
-    description: agent
-  - name: browser
-    link: /docs/reference/plugin-sdk/api-reference/notify/browser
-    description: browser
-  - name: chat
-    link: /docs/reference/plugin-sdk/api-reference/notify/chat
-    description: chat
-  - name: codeutils
-    link: /docs/reference/plugin-sdk/api-reference/notify/codeutils
-    description: codeutils
-  - name: crawler
-    link: /docs/reference/plugin-sdk/api-reference/notify/crawler
-    description: crawler
-  - name: dbmemory
-    link: /docs/reference/plugin-sdk/api-reference/notify/dbmemory
-    description: dbmemory
-  - name: fs
-    link: /docs/reference/plugin-sdk/api-reference/notify/fs
-    description: fs
-  - name: git
-    link: /docs/reference/plugin-sdk/api-reference/notify/git
-    description: git
-  - name: history
-    link: /docs/reference/plugin-sdk/api-reference/notify/history
-    description: history
-  - name: llm
-    link: /docs/reference/plugin-sdk/api-reference/notify/llm
-    description: llm
-  - name: mcp
-    link: /docs/reference/plugin-sdk/api-reference/notify/mcp
-    description: mcp
-  - name: search
-    link: /docs/reference/plugin-sdk/api-reference/notify/search
-    description: search
-  - name: system
-    link: /docs/reference/plugin-sdk/api-reference/notify/system
-    description: system
-  - name: terminal
-    link: /docs/reference/plugin-sdk/api-reference/notify/terminal
-    description: terminal
-  - name: todo
-    link: /docs/reference/plugin-sdk/api-reference/notify/todo
-    description: todo
+title: Notify API
 ---
+
 # Notify API
 
-The `notify` module of the Plugin SDK.
+The `notify` module of the `@codebolt/plugin-sdk`.
 
-<CBAPICategory />
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+```
+
+## Quick Reference
+
+| Method | Description |
+|---|---|
+| [`agent`](./agent) |  |
+| [`browser`](./browser) |  |
+| [`chat`](./chat) |  |
+| [`codeutils`](./codeutils) |  |
+| [`crawler`](./crawler) |  |
+| [`dbmemory`](./dbmemory) |  |
+| [`fs`](./fs) |  |
+| [`git`](./git) |  |
+| [`history`](./history) |  |
+| [`llm`](./llm) |  |
+| [`mcp`](./mcp) |  |
+| [`search`](./search) |  |
+| [`system`](./system) |  |
+| [`terminal`](./terminal) |  |
+| [`todo`](./todo) |  |
 
 ## Methods
 
-- [`agent()`](./agent) — 
-- [`browser()`](./browser) — 
-- [`chat()`](./chat) — 
-- [`codeutils()`](./codeutils) — 
-- [`crawler()`](./crawler) — 
-- [`dbmemory()`](./dbmemory) — 
-- [`fs()`](./fs) — 
-- [`git()`](./git) — 
-- [`history()`](./history) — 
-- [`llm()`](./llm) — 
-- [`mcp()`](./mcp) — 
-- [`search()`](./search) — 
-- [`system()`](./system) — 
-- [`terminal()`](./terminal) — 
-- [`todo()`](./todo) — 
+---
+
+### `agent`
+
+```typescript
+plugin.notify.agent(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./agent)
+
+---
+
+### `browser`
+
+```typescript
+plugin.notify.browser(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./browser)
+
+---
+
+### `chat`
+
+```typescript
+plugin.notify.chat(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./chat)
+
+---
+
+### `codeutils`
+
+```typescript
+plugin.notify.codeutils(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./codeutils)
+
+---
+
+### `crawler`
+
+```typescript
+plugin.notify.crawler(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./crawler)
+
+---
+
+### `dbmemory`
+
+```typescript
+plugin.notify.dbmemory(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./dbmemory)
+
+---
+
+### `fs`
+
+```typescript
+plugin.notify.fs(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./fs)
+
+---
+
+### `git`
+
+```typescript
+plugin.notify.git(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./git)
+
+---
+
+### `history`
+
+```typescript
+plugin.notify.history(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./history)
+
+---
+
+### `llm`
+
+```typescript
+plugin.notify.llm(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./llm)
+
+---
+
+### `mcp`
+
+```typescript
+plugin.notify.mcp(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./mcp)
+
+---
+
+### `search`
+
+```typescript
+plugin.notify.search(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./search)
+
+---
+
+### `system`
+
+```typescript
+plugin.notify.system(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./system)
+
+---
+
+### `terminal`
+
+```typescript
+plugin.notify.terminal(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./terminal)
+
+---
+
+### `todo`
+
+```typescript
+plugin.notify.todo(): void
+```
+
+
+
+_No parameters._
+
+**Returns:** `void`
+
+[Full reference →](./todo)
+

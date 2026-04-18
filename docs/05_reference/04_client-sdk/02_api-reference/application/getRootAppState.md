@@ -1,22 +1,8 @@
 ---
-name: getRootAppState
-cbbaseinfo:
-  description: "Retrieves the root application state.
-
-Returns the top-level state object that encompasses all workspace
-and global application settings."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<RootAppState>"
-    description: A promise that resolves to the RootAppState object
-data:
-  name: getRootAppState
-  category: application
-  link: getRootAppState.md
+title: getRootAppState
 ---
-# getRootAppState
+
+# `getRootAppState`
 
 ```typescript
 client.application.getRootAppState(): Promise<RootAppState>
@@ -29,11 +15,11 @@ and global application settings.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<RootAppState>`** — A promise that resolves to the RootAppState object
+`Promise<RootAppState>` — A promise that resolves to the RootAppState object
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.application.getRootAppState();
+const result = await client.application.getRootAppState();
+console.log(result);
 ```

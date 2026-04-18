@@ -1,22 +1,8 @@
 ---
-name: getFeaturedAgents
-cbbaseinfo:
-  description: "Retrieves featured agents from the agent registry.
-
-Returns a curated list of agents that are highlighted or promoted
-in the CodeBolt marketplace."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<Agent[]>"
-    description: A promise that resolves to an array of featured Agent objects
-data:
-  name: getFeaturedAgents
-  category: agents
-  link: getFeaturedAgents.md
+title: getFeaturedAgents
 ---
-# getFeaturedAgents
+
+# `getFeaturedAgents`
 
 ```typescript
 client.agents.getFeaturedAgents(): Promise<Agent[]>
@@ -29,11 +15,11 @@ in the CodeBolt marketplace.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<Agent[]>`** — A promise that resolves to an array of featured Agent objects
+`Promise<Agent[]>` — A promise that resolves to an array of featured Agent objects
 
 ## Example
 
@@ -42,5 +28,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.agents.getFeaturedAgents();
+const result = await client.agents.getFeaturedAgents();
+console.log(result);
 ```

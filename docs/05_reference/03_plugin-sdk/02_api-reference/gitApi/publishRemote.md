@@ -1,22 +1,8 @@
 ---
-name: publishRemote
-cbbaseinfo:
-  description: Call publishRemote on the Plugin SDK gitApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: GitPublishRemoteRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: publishRemote
-  category: gitApi
-  link: publishRemote.md
+title: publishRemote
 ---
-# publishRemote
+
+# `publishRemote`
 
 ```typescript
 plugin.gitApi.publishRemote(data: GitPublishRemoteRequest): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.gitApi.publishRemote(data: GitPublishRemoteRequest): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `GitPublishRemoteRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `GitPublishRemoteRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.gitApi.publishRemote(/* GitPublishRemoteRequest */);
+const result = await plugin.gitApi.publishRemote(/* GitPublishRemoteRequest */);
+console.log(result);
 ```

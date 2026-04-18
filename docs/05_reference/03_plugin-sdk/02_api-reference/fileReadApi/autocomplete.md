@@ -1,22 +1,8 @@
 ---
-name: autocomplete
-cbbaseinfo:
-  description: Call autocomplete on the Plugin SDK fileReadApi module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: FileAutocompleteParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<FileAutocompleteResult[]>"
-    description: ""
-data:
-  name: autocomplete
-  category: fileReadApi
-  link: autocomplete.md
+title: autocomplete
 ---
-# autocomplete
+
+# `autocomplete`
 
 ```typescript
 plugin.fileReadApi.autocomplete(params?: FileAutocompleteParams): Promise<FileAutocompleteResult[]>
@@ -26,18 +12,19 @@ plugin.fileReadApi.autocomplete(params?: FileAutocompleteParams): Promise<FileAu
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `FileAutocompleteParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `FileAutocompleteParams` | No |  |
 
 ## Returns
 
-**`Promise<FileAutocompleteResult[]>`**
+`Promise<FileAutocompleteResult[]>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.fileReadApi.autocomplete();
+const result = await plugin.fileReadApi.autocomplete();
+console.log(result);
 ```

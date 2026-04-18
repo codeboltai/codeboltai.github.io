@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Create a new hook
-cbparameters:
-  parameters:
-    - name: config
-      typeName: HookConfig
-      description: Hook configuration
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<HookResponse>"
-    description: ""
-data:
-  name: create
-  category: hook
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 plugin.hook.create(config: HookConfig): Promise<HookResponse>
@@ -26,18 +12,19 @@ Create a new hook
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `config` | `HookConfig` | Hook configuration |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `config` | `HookConfig` | Yes | Hook configuration |
 
 ## Returns
 
-**`Promise<HookResponse>`**
+`Promise<HookResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.create(/* HookConfig */);
+const result = await plugin.hook.create(/* HookConfig */);
+console.log(result);
 ```

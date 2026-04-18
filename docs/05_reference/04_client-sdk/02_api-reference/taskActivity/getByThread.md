@@ -1,22 +1,8 @@
 ---
-name: getByThread
-cbbaseinfo:
-  description: Get activities by thread ID
-cbparameters:
-  parameters:
-    - name: threadId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TaskActivity[]>"
-    description: ""
-data:
-  name: getByThread
-  category: taskActivity
-  link: getByThread.md
+title: getByThread
 ---
-# getByThread
+
+# `getByThread`
 
 ```typescript
 client.taskActivity.getByThread(threadId: string): Promise<TaskActivity[]>
@@ -26,13 +12,13 @@ Get activities by thread ID
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `threadId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `threadId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<TaskActivity[]>`**
+`Promise<TaskActivity[]>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.getByThread('threadId');
+const result = await client.taskActivity.getByThread('threadId');
+console.log(result);
 ```

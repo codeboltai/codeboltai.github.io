@@ -1,23 +1,8 @@
 ---
-name: getInstalled
-cbbaseinfo:
-  description: "Retrieves the list of language servers currently installed in the workspace.
-
-Returns metadata for each installed language server including its name, supported
-languages, and current status. Use this to check which LSP capabilities are available
-before performing language-specific operations."
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<LanguageServer[]>"
-    description: A promise that resolves to an array of installed language server configurations
-data:
-  name: getInstalled
-  category: languageServer
-  link: getInstalled.md
+title: getInstalled
 ---
-# getInstalled
+
+# `getInstalled`
 
 ```typescript
 client.languageServer.getInstalled(): Promise<LanguageServer[]>
@@ -31,11 +16,11 @@ before performing language-specific operations.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<LanguageServer[]>`** — A promise that resolves to an array of installed language server configurations
+`Promise<LanguageServer[]>` — A promise that resolves to an array of installed language server configurations
 
 ## Example
 
@@ -44,5 +29,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.languageServer.getInstalled();
+const result = await client.languageServer.getInstalled();
+console.log(result);
 ```

@@ -1,19 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: List all hooks
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<HookListResponse>"
-    description: ""
-data:
-  name: list
-  category: hook
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 plugin.hook.list(): Promise<HookListResponse>
@@ -23,16 +12,17 @@ List all hooks
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<HookListResponse>`**
+`Promise<HookListResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hook.list();
+const result = await plugin.hook.list();
+console.log(result);
 ```

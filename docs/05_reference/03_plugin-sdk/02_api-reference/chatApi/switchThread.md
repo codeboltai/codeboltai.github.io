@@ -1,25 +1,8 @@
 ---
-name: switchThread
-cbbaseinfo:
-  description: "Switches to a different chat thread.
-
-Changes the active conversation context to the specified thread,
-triggering any associated UI updates."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: ThreadIdRequest
-      description: The thread identifier to switch to
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: A promise that resolves when the switch is complete
-data:
-  name: switchThread
-  category: chatApi
-  link: switchThread.md
+title: switchThread
 ---
-# switchThread
+
+# `switchThread`
 
 ```typescript
 plugin.chatApi.switchThread(data: ThreadIdRequest): Promise<void>
@@ -32,18 +15,19 @@ triggering any associated UI updates.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `ThreadIdRequest` | The thread identifier to switch to |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `ThreadIdRequest` | Yes | The thread identifier to switch to |
 
 ## Returns
 
-**`Promise<void>`** — A promise that resolves when the switch is complete
+`Promise<void>` — A promise that resolves when the switch is complete
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chatApi.switchThread(/* ThreadIdRequest */);
+const result = await plugin.chatApi.switchThread(/* ThreadIdRequest */);
+console.log(result);
 ```

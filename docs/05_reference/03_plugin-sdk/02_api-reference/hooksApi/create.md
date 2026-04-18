@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Call create on the Plugin SDK hooksApi module.
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateHookRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<Hook>"
-    description: ""
-data:
-  name: create
-  category: hooksApi
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 plugin.hooksApi.create(data: CreateHookRequest): Promise<Hook>
@@ -26,18 +12,19 @@ plugin.hooksApi.create(data: CreateHookRequest): Promise<Hook>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateHookRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateHookRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<Hook>`**
+`Promise<Hook>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hooksApi.create(/* CreateHookRequest */);
+const result = await plugin.hooksApi.create(/* CreateHookRequest */);
+console.log(result);
 ```

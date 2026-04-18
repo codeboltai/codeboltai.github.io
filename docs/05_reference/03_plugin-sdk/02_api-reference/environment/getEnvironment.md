@@ -1,22 +1,8 @@
 ---
-name: getEnvironment
-cbbaseinfo:
-  description: Call getEnvironment on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    - name: environmentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: getEnvironment
-  category: environment
-  link: getEnvironment.md
+title: getEnvironment
 ---
-# getEnvironment
+
+# `getEnvironment`
 
 ```typescript
 plugin.environment.getEnvironment(environmentId: string): Promise<any>
@@ -26,18 +12,19 @@ plugin.environment.getEnvironment(environmentId: string): Promise<any>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `environmentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.getEnvironment('environmentId');
+const result = await plugin.environment.getEnvironment('environmentId');
+console.log(result);
 ```

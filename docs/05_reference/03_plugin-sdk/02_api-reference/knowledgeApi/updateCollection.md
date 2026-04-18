@@ -1,26 +1,8 @@
 ---
-name: updateCollection
-cbbaseinfo:
-  description: Call updateCollection on the Plugin SDK knowledgeApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateKnowledgeCollectionRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<KnowledgeCollection>"
-    description: ""
-data:
-  name: updateCollection
-  category: knowledgeApi
-  link: updateCollection.md
+title: updateCollection
 ---
-# updateCollection
+
+# `updateCollection`
 
 ```typescript
 plugin.knowledgeApi.updateCollection(id: string, data: UpdateKnowledgeCollectionRequest): Promise<KnowledgeCollection>
@@ -30,19 +12,20 @@ plugin.knowledgeApi.updateCollection(id: string, data: UpdateKnowledgeCollection
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateKnowledgeCollectionRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateKnowledgeCollectionRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<KnowledgeCollection>`**
+`Promise<KnowledgeCollection>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.knowledgeApi.updateCollection('id', /* UpdateKnowledgeCollectionRequest */);
+const result = await plugin.knowledgeApi.updateCollection('id', /* UpdateKnowledgeCollectionRequest */);
+console.log(result);
 ```

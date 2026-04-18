@@ -1,26 +1,8 @@
 ---
-name: getDiffFiles
-cbbaseinfo:
-  description: Call getDiffFiles on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: GetDiffFilesRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: getDiffFiles
-  category: environmentsApi
-  link: getDiffFiles.md
+title: getDiffFiles
 ---
-# getDiffFiles
+
+# `getDiffFiles`
 
 ```typescript
 plugin.environmentsApi.getDiffFiles(id: string, data: GetDiffFilesRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.getDiffFiles(id: string, data: GetDiffFilesRequest): Prom
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `GetDiffFilesRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `GetDiffFilesRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.getDiffFiles('id', /* GetDiffFilesRequest */);
+const result = await plugin.environmentsApi.getDiffFiles('id', /* GetDiffFilesRequest */);
+console.log(result);
 ```

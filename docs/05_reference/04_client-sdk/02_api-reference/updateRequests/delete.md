@@ -1,22 +1,8 @@
 ---
-name: delete
-cbbaseinfo:
-  description: Delete an update request
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: delete
-  category: updateRequests
-  link: delete.md
+title: delete
 ---
-# delete
+
+# `delete`
 
 ```typescript
 client.updateRequests.delete(id: string): Promise<unknown>
@@ -26,13 +12,13 @@ Delete an update request
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.updateRequests.delete('id');
+const result = await client.updateRequests.delete('id');
+console.log(result);
 ```

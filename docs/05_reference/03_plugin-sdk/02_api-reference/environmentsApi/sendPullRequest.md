@@ -1,26 +1,8 @@
 ---
-name: sendPullRequest
-cbbaseinfo:
-  description: Call sendPullRequest on the Plugin SDK environmentsApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: SendPullRequestRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: sendPullRequest
-  category: environmentsApi
-  link: sendPullRequest.md
+title: sendPullRequest
 ---
-# sendPullRequest
+
+# `sendPullRequest`
 
 ```typescript
 plugin.environmentsApi.sendPullRequest(id: string, data: SendPullRequestRequest): Promise<unknown>
@@ -30,19 +12,20 @@ plugin.environmentsApi.sendPullRequest(id: string, data: SendPullRequestRequest)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `SendPullRequestRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `SendPullRequestRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environmentsApi.sendPullRequest('id', /* SendPullRequestRequest */);
+const result = await plugin.environmentsApi.sendPullRequest('id', /* SendPullRequestRequest */);
+console.log(result);
 ```

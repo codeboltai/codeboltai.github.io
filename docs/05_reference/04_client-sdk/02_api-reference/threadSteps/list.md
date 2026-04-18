@@ -1,22 +1,8 @@
 ---
-name: list
-cbbaseinfo:
-  description: List all steps
-cbparameters:
-  parameters:
-    - name: params
-      typeName: StepListParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<ThreadStep[]>"
-    description: ""
-data:
-  name: list
-  category: threadSteps
-  link: list.md
+title: list
 ---
-# list
+
+# `list`
 
 ```typescript
 client.threadSteps.list(params?: StepListParams): Promise<ThreadStep[]>
@@ -26,13 +12,13 @@ List all steps
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `StepListParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `StepListParams` | No |  |
 
 ## Returns
 
-**`Promise<ThreadStep[]>`**
+`Promise<ThreadStep[]>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.list();
+const result = await client.threadSteps.list();
+console.log(result);
 ```

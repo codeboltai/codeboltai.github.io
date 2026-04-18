@@ -1,19 +1,8 @@
 ---
-name: onSteeringMessageReceived
-cbbaseinfo:
-  description: Waits for a steering message.
-cbparameters:
-  parameters:
-    []
-  returns:
-    signatureTypeName: "Promise<SteeringMessage | null>"
-    description: A promise that resolves with the message data
-data:
-  name: onSteeringMessageReceived
-  category: chat
-  link: onSteeringMessageReceived.md
+title: onSteeringMessageReceived
 ---
-# onSteeringMessageReceived
+
+# `onSteeringMessageReceived`
 
 ```typescript
 plugin.chat.onSteeringMessageReceived(): Promise<SteeringMessage | null>
@@ -23,16 +12,17 @@ Waits for a steering message.
 
 ## Parameters
 
-_None_
+_No parameters._
 
 ## Returns
 
-**`Promise<SteeringMessage | null>`** — A promise that resolves with the message data
+`Promise<SteeringMessage | null>` — A promise that resolves with the message data
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.chat.onSteeringMessageReceived();
+const result = await plugin.chat.onSteeringMessageReceived();
+console.log(result);
 ```

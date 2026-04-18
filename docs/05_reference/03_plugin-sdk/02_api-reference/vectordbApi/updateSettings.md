@@ -1,26 +1,8 @@
 ---
-name: updateSettings
-cbbaseinfo:
-  description: Call updateSettings on the Plugin SDK vectordbApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: data
-      typeName: UpdateVectorSettingsRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<VectorCollectionSettings>"
-    description: ""
-data:
-  name: updateSettings
-  category: vectordbApi
-  link: updateSettings.md
+title: updateSettings
 ---
-# updateSettings
+
+# `updateSettings`
 
 ```typescript
 plugin.vectordbApi.updateSettings(id: string, data: UpdateVectorSettingsRequest): Promise<VectorCollectionSettings>
@@ -30,19 +12,20 @@ plugin.vectordbApi.updateSettings(id: string, data: UpdateVectorSettingsRequest)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
-| `data` | `UpdateVectorSettingsRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
+| `data` | `UpdateVectorSettingsRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<VectorCollectionSettings>`**
+`Promise<VectorCollectionSettings>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.vectordbApi.updateSettings('id', /* UpdateVectorSettingsRequest */);
+const result = await plugin.vectordbApi.updateSettings('id', /* UpdateVectorSettingsRequest */);
+console.log(result);
 ```

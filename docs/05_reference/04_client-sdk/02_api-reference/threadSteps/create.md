@@ -1,22 +1,8 @@
 ---
-name: create
-cbbaseinfo:
-  description: Create a new step
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateStepRequest
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<ThreadStep>"
-    description: ""
-data:
-  name: create
-  category: threadSteps
-  link: create.md
+title: create
 ---
-# create
+
+# `create`
 
 ```typescript
 client.threadSteps.create(data: CreateStepRequest): Promise<ThreadStep>
@@ -26,13 +12,13 @@ Create a new step
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateStepRequest` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateStepRequest` | Yes |  |
 
 ## Returns
 
-**`Promise<ThreadStep>`**
+`Promise<ThreadStep>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.threadSteps.create(/* CreateStepRequest */);
+const result = await client.threadSteps.create(/* CreateStepRequest */);
+console.log(result);
 ```

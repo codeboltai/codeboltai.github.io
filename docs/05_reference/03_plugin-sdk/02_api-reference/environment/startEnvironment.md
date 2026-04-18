@@ -1,22 +1,8 @@
 ---
-name: startEnvironment
-cbbaseinfo:
-  description: Call startEnvironment on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    - name: environmentId
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: startEnvironment
-  category: environment
-  link: startEnvironment.md
+title: startEnvironment
 ---
-# startEnvironment
+
+# `startEnvironment`
 
 ```typescript
 plugin.environment.startEnvironment(environmentId: string): Promise<any>
@@ -26,18 +12,19 @@ plugin.environment.startEnvironment(environmentId: string): Promise<any>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `environmentId` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.startEnvironment('environmentId');
+const result = await plugin.environment.startEnvironment('environmentId');
+console.log(result);
 ```

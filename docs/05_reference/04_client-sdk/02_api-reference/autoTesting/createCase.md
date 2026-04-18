@@ -1,25 +1,8 @@
 ---
-name: createCase
-cbbaseinfo:
-  description: "Creates a new test case.
-
-Defines an individual test scenario with steps, expected outcomes,
-and validation criteria."
-cbparameters:
-  parameters:
-    - name: data
-      typeName: CreateTestCaseRequest
-      description: The test case creation payload
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<TestCase>"
-    description: A promise that resolves to the newly created TestCase
-data:
-  name: createCase
-  category: autoTesting
-  link: createCase.md
+title: createCase
 ---
-# createCase
+
+# `createCase`
 
 ```typescript
 client.autoTesting.createCase(data: CreateTestCaseRequest): Promise<TestCase>
@@ -32,13 +15,13 @@ and validation criteria.
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `data` | `CreateTestCaseRequest` | The test case creation payload |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `data` | `CreateTestCaseRequest` | Yes | The test case creation payload |
 
 ## Returns
 
-**`Promise<TestCase>`** — A promise that resolves to the newly created TestCase
+`Promise<TestCase>` — A promise that resolves to the newly created TestCase
 
 ## Example
 
@@ -47,5 +30,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.autoTesting.createCase(/* CreateTestCaseRequest */);
+const result = await client.autoTesting.createCase(/* CreateTestCaseRequest */);
+console.log(result);
 ```

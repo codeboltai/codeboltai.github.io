@@ -1,26 +1,8 @@
 ---
-name: addSplitProposal
-cbbaseinfo:
-  description: Call addSplitProposal on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: proposal
-      typeName: AddSplitProposalData
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobSplitProposeResponse>"
-    description: ""
-data:
-  name: addSplitProposal
-  category: job
-  link: addSplitProposal.md
+title: addSplitProposal
 ---
-# addSplitProposal
+
+# `addSplitProposal`
 
 ```typescript
 plugin.job.addSplitProposal(jobId: string, proposal: AddSplitProposalData): Promise<JobSplitProposeResponse>
@@ -30,19 +12,20 @@ plugin.job.addSplitProposal(jobId: string, proposal: AddSplitProposalData): Prom
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `proposal` | `AddSplitProposalData` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `proposal` | `AddSplitProposalData` | Yes |  |
 
 ## Returns
 
-**`Promise<JobSplitProposeResponse>`**
+`Promise<JobSplitProposeResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.addSplitProposal('jobId', /* AddSplitProposalData */);
+const result = await plugin.job.addSplitProposal('jobId', /* AddSplitProposalData */);
+console.log(result);
 ```

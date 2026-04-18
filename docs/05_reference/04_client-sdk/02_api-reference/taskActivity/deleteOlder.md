@@ -1,22 +1,8 @@
 ---
-name: deleteOlder
-cbbaseinfo:
-  description: Delete older activities (cleanup)
-cbparameters:
-  parameters:
-    - name: params
-      typeName: TaskActivityCleanupParams
-      description: ""
-      isOptional: true
-  returns:
-    signatureTypeName: "Promise<void>"
-    description: ""
-data:
-  name: deleteOlder
-  category: taskActivity
-  link: deleteOlder.md
+title: deleteOlder
 ---
-# deleteOlder
+
+# `deleteOlder`
 
 ```typescript
 client.taskActivity.deleteOlder(params?: TaskActivityCleanupParams): Promise<void>
@@ -26,13 +12,13 @@ Delete older activities (cleanup)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `TaskActivityCleanupParams` _(optional)_ |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `TaskActivityCleanupParams` | No |  |
 
 ## Returns
 
-**`Promise<void>`**
+`Promise<void>`
 
 ## Example
 
@@ -41,5 +27,6 @@ import { CodeBoltClient } from '@codebolt/clientsdk';
 
 const client = new CodeBoltClient();
 
-await client.taskActivity.deleteOlder();
+const result = await client.taskActivity.deleteOlder();
+console.log(result);
 ```

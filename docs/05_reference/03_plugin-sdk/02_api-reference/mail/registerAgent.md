@@ -1,22 +1,8 @@
 ---
-name: registerAgent
-cbbaseinfo:
-  description: Call registerAgent on the Plugin SDK mail module.
-cbparameters:
-  parameters:
-    - name: params
-      typeName: IRegisterAgentParams
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<IRegisterAgentResponse>"
-    description: ""
-data:
-  name: registerAgent
-  category: mail
-  link: registerAgent.md
+title: registerAgent
 ---
-# registerAgent
+
+# `registerAgent`
 
 ```typescript
 plugin.mail.registerAgent(params: IRegisterAgentParams): Promise<IRegisterAgentResponse>
@@ -26,18 +12,19 @@ plugin.mail.registerAgent(params: IRegisterAgentParams): Promise<IRegisterAgentR
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `params` | `IRegisterAgentParams` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `params` | `IRegisterAgentParams` | Yes |  |
 
 ## Returns
 
-**`Promise<IRegisterAgentResponse>`**
+`Promise<IRegisterAgentResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.mail.registerAgent(/* IRegisterAgentParams */);
+const result = await plugin.mail.registerAgent(/* IRegisterAgentParams */);
+console.log(result);
 ```

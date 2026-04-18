@@ -1,26 +1,8 @@
 ---
-name: sendMessageToEnvironment
-cbbaseinfo:
-  description: Call sendMessageToEnvironment on the Plugin SDK environment module.
-cbparameters:
-  parameters:
-    - name: environmentId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: message
-      typeName: any
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<any>"
-    description: ""
-data:
-  name: sendMessageToEnvironment
-  category: environment
-  link: sendMessageToEnvironment.md
+title: sendMessageToEnvironment
 ---
-# sendMessageToEnvironment
+
+# `sendMessageToEnvironment`
 
 ```typescript
 plugin.environment.sendMessageToEnvironment(environmentId: string, message: any): Promise<any>
@@ -30,19 +12,20 @@ plugin.environment.sendMessageToEnvironment(environmentId: string, message: any)
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `environmentId` | `string` |  |
-| `message` | `any` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `environmentId` | `string` | Yes |  |
+| `message` | `any` | Yes |  |
 
 ## Returns
 
-**`Promise<any>`**
+`Promise<any>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.environment.sendMessageToEnvironment('environmentId', /* any */);
+const result = await plugin.environment.sendMessageToEnvironment('environmentId', /* any */);
+console.log(result);
 ```

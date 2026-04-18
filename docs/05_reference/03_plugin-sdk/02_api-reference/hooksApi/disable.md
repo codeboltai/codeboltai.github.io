@@ -1,22 +1,8 @@
 ---
-name: disable
-cbbaseinfo:
-  description: Call disable on the Plugin SDK hooksApi module.
-cbparameters:
-  parameters:
-    - name: id
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<unknown>"
-    description: ""
-data:
-  name: disable
-  category: hooksApi
-  link: disable.md
+title: disable
 ---
-# disable
+
+# `disable`
 
 ```typescript
 plugin.hooksApi.disable(id: string): Promise<unknown>
@@ -26,18 +12,19 @@ plugin.hooksApi.disable(id: string): Promise<unknown>
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `id` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `id` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<unknown>`**
+`Promise<unknown>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.hooksApi.disable('id');
+const result = await plugin.hooksApi.disable('id');
+console.log(result);
 ```

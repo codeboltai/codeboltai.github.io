@@ -1,30 +1,8 @@
 ---
-name: resolveBlocker
-cbbaseinfo:
-  description: Call resolveBlocker on the Plugin SDK job module.
-cbparameters:
-  parameters:
-    - name: jobId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: blockerId
-      typeName: string
-      description: ""
-      isOptional: false
-    - name: resolvedBy
-      typeName: string
-      description: ""
-      isOptional: false
-  returns:
-    signatureTypeName: "Promise<JobBlockerResolveResponse>"
-    description: ""
-data:
-  name: resolveBlocker
-  category: job
-  link: resolveBlocker.md
+title: resolveBlocker
 ---
-# resolveBlocker
+
+# `resolveBlocker`
 
 ```typescript
 plugin.job.resolveBlocker(jobId: string, blockerId: string, resolvedBy: string): Promise<JobBlockerResolveResponse>
@@ -34,20 +12,21 @@ plugin.job.resolveBlocker(jobId: string, blockerId: string, resolvedBy: string):
 
 ## Parameters
 
-| Parameter | Type | Description |
-|---|---|---|
-| `jobId` | `string` |  |
-| `blockerId` | `string` |  |
-| `resolvedBy` | `string` |  |
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| `jobId` | `string` | Yes |  |
+| `blockerId` | `string` | Yes |  |
+| `resolvedBy` | `string` | Yes |  |
 
 ## Returns
 
-**`Promise<JobBlockerResolveResponse>`**
+`Promise<JobBlockerResolveResponse>`
 
 ## Example
 
 ```typescript
 import plugin from '@codebolt/plugin-sdk';
 
-await plugin.job.resolveBlocker('jobId', 'blockerId', 'resolvedBy');
+const result = await plugin.job.resolveBlocker('jobId', 'blockerId', 'resolvedBy');
+console.log(result);
 ```
