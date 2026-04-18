@@ -7,14 +7,15 @@ title: Overview
 
 The `codeboltjs` SDK is what agent authors use to write agents. It provides all `ctx.*` API methods, tool utilities, MCP bridging, and the type system. The entire Codebolt editor is controllable through it — filesystem, git, browser, terminal, LLM, memory, and 60+ more modules.
 
-## Two access patterns
+## Three access patterns
 
-Every capability is available in two forms depending on who is consuming it:
+Every capability is available in three forms depending on who is consuming it:
 
 | Pattern | How | Use when |
 |---|---|---|
-| **Direct API** | `import codebolt from '@codebolt/codeboltjs'` | You're writing a codeboltjs agent in TypeScript |
-| **MCP** | Tool calls over Model Context Protocol | Your agent is model-native and not using codeboltjs directly |
+| **API Format** | `import codebolt from '@codebolt/codeboltjs'` | You're writing a codeboltjs agent in TypeScript |
+| **Tool Format** | Tool calls over Model Context Protocol | Your agent is model-native and not using codeboltjs directly |
+| **CLI Format** | `execute_command` strings intercepted by the pseudo CLI registry | Your agent issues shell-style commands that the SDK routes to modules |
 
 ## What's in this section
 

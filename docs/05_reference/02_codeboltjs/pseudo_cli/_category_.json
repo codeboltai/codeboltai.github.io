@@ -1,6 +1,6 @@
 {
-  "label": "Pseudo CLI",
-  "position": 11.5,
+  "label": "Cli Format",
+  "position": 4,
   "collapsible": true,
   "collapsed": false,
   "className": "red"
