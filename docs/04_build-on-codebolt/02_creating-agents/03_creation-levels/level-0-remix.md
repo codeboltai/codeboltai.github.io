@@ -27,34 +27,31 @@ You **cannot** change the loop structure, add new phases, or change what the age
 
 ## The manifest
 
+Remix agents are stored as markdown files with YAML frontmatter in `.codebolt/agents/remix/`:
+
 ```yaml
-# .codebolt/agents/my-reviewer/agent.yaml
+# .codebolt/agents/remix/my-reviewer.md
+---
 name: my-reviewer
-version: 0.1.0
 description: A stricter code reviewer with write tools disabled.
-remix_of: generalist
-remix:
-  system_prompt: |
-    You are a code reviewer. Your job is to find bugs that will
-    cause incorrect behaviour at runtime. Do not comment on style.
-    Do not comment on performance unless it's algorithmic.
+remixedFromId: c4d3fdb9-cf9e-4f82-8a1d-0160bbfc9ae9
+remixedFromTitle: Act
+model: claude-sonnet-4-6
+tools:
+  - codebolt_fs.read_file
+  - codebolt_fs.search
+  - codebolt_codebase.*
+  - codebolt_code.analyze_code
+version: 1.0.0
+type: remix
+---
 
-  model: claude-sonnet-4-6
-
-  tools:
-    allow:
-      - codebolt_fs.read_file
-      - codebolt_fs.search
-      - codebolt_codebase.*
-      - codebolt_code.analyze_code
-    deny:
-      - codebolt_fs.write_file
-      - codebolt_fs.edit_file
-
-  limits:
-    max_tool_calls: 50
-    max_tokens: 100000
+You are a code reviewer. Your job is to find bugs that will
+cause incorrect behaviour at runtime. Do not comment on style.
+Do not comment on performance unless it's algorithmic.
 ```
+
+The YAML frontmatter holds configuration. The markdown body (after `---`) holds the custom instructions.
 
 ## How remix resolves at runtime
 

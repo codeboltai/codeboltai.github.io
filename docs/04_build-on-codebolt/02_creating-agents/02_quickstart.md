@@ -13,7 +13,7 @@ Build and run a minimal custom agent in ~15 minutes. Covers level 0 (remix) and 
 
 The cheapest thing that counts as a custom agent: take an existing one and change its prompt.
 
-### Step 1 — scaffold
+### Step 1 — create the remix
 
 From a terminal in your project:
 
@@ -23,45 +23,37 @@ codebolt agent create --remix
 
 This starts an interactive flow:
 
-1. **Pick an agent** — you'll see a list of all installed agents. Select the one you want to remix (e.g. `generalist`).
+1. **Pick an agent** — you'll see a list of available agents. Select the one you want to remix (e.g. `Act`).
 2. **Name your remix** — enter a name (e.g. `my-reviewer`).
+3. **Description** — add a short description (optional).
+4. **Custom instructions** — enter any custom instructions for the agent (optional). For example: `You are a code reviewer focused on finding subtle bugs. Never suggest stylistic changes. Only flag things that could cause incorrect behaviour at runtime.`
 
-The command creates `.codebolt/agents/my-reviewer/agent.yaml` with a copy of the selected agent's manifest plus a `remix:` block where you override fields.
-
-### Step 2 — customise
-
-Open `.codebolt/agents/my-reviewer/agent.yaml` and edit the remix block:
+The command creates a markdown file at `.codebolt/agents/remix/my-reviewer.md` with YAML frontmatter:
 
 ```yaml
+---
 name: my-reviewer
-remix_of: generalist
-remix:
-  system_prompt: |
-    You are a code reviewer focused on finding subtle bugs.
-    Never suggest stylistic changes. Only flag things that
-    could cause incorrect behaviour at runtime.
-  tools:
-    allow:
-      - codebolt_fs.read_file
-      - codebolt_fs.search
-      - codebolt_code.analyze_code
-    deny:
-      - codebolt_fs.write_file
-  model: claude-sonnet-4-6
+description: A focused code reviewer
+remixedFromId: c4d3fdb9-cf9e-4f82-8a1d-0160bbfc9ae9
+remixedFromTitle: Act
+version: 1.0.0
+type: remix
+createdAt: '2026-04-18T12:00:00.000Z'
+updatedAt: '2026-04-18T12:00:00.000Z'
+---
+
+You are a code reviewer focused on finding subtle bugs.
+Never suggest stylistic changes. Only flag things that
+could cause incorrect behaviour at runtime.
 ```
 
-Three things just happened:
-- The agent has a new system prompt.
-- It can only read, not write (important for a reviewer).
-- It uses a specific model rather than the project default.
+### Step 2 — customise further (optional)
+
+Open `.codebolt/agents/remix/my-reviewer.md` and edit directly. You can add fields like `model`, `provider`, `tools`, or update the custom instructions (the markdown body after `---`).
 
 ### Step 3 — run it
 
-```bash
-codebolt agent start my-reviewer --task "review the changes in src/auth/"
-```
-
-Or from the desktop app: new chat tab → pick `my-reviewer` from the agent dropdown → send a message.
+From the desktop app: new chat tab → pick `my-reviewer` from the agent dropdown → send a message.
 
 That's a custom agent. No code written. For many use cases, this is all you need.
 
