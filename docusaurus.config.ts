@@ -64,11 +64,11 @@ const config: Config = {
         // They balloon the index past Cloudflare Workers' 25 MiB per-asset cap
         // and add little search value (most are interface dumps).
         ignoreFiles: [
-          /reference\/type-reference\/types\//,
-          /reference\/type-reference\/codeboltjs\//,
-          /reference\/api-access\//,
-          /reference\/mcp-access\//,
-          /reference\/utility-functions/,
+          /reference\/codeboltjs\/type-reference\/types\//,
+          /reference\/codeboltjs\/type-reference\/codeboltjs\//,
+          /reference\/codeboltjs\/api-access\//,
+          /reference\/codeboltjs\/mcp-access\//,
+          /reference\/codeboltjs\/utility-functions/,
         ],
       },
     ],

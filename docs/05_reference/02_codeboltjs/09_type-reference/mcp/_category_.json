@@ -1,0 +1,8 @@
+{
+  "label": "MCP",
+  "position": 4,
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/type-reference/mcp/index"
+  }
+}

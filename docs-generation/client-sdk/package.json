@@ -1,0 +1,17 @@
+{
+  "name": "client-sdk-docs-generator",
+  "version": "1.0.0",
+  "description": "Generates TypeDoc reference docs for @codebolt/client-sdk",
+  "scripts": {
+    "generate": "node generate-docs.js",
+    "generate:clean": "node generate-docs.js --clean",
+    "json-export": "node json-export.js",
+    "module-docs": "node generate-module-docs.js",
+    "module-docs:clean": "node generate-module-docs.js --clean",
+    "all": "node generate-docs.js --clean && node json-export.js && node generate-module-docs.js --clean"
+  },
+  "devDependencies": {
+    "typedoc": "0.28.16",
+    "typedoc-plugin-markdown": "4.9.0"
+  }
+}

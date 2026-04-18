@@ -5,7 +5,12 @@
       "Bash(curl -s http://localhost:3000/ -o D:/Codeboltapps/codeboltdocs/.tmp_home.html)",
       "Bash(curl -s http://localhost:3000/styles.css -o D:/Codeboltapps/codeboltdocs/.tmp_styles.css)",
       "Bash(git mv:*)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(node generate-docs.js)",
+      "Bash(node generate-docs.js --clean)",
+      "Bash(node -e \"const d = require\\('./documentationsoul/data/typedoc-data.json'\\); console.log\\('Modules:', d.modules.map\\(m => m.name + '\\(' + m.functions.length + '\\)'\\)\\)\")",
+      "Bash(node *)"
     ]
   },
   "enabledPlugins": {

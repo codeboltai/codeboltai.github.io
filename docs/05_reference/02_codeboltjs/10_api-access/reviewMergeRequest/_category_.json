@@ -1,0 +1,10 @@
+{
+  "label": "Review Merge Request",
+  "position": 16,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/api-access/reviewMergeRequest/index"
+  }
+}

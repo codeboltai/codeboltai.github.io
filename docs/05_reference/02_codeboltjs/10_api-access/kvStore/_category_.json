@@ -1,0 +1,11 @@
+{
+  "label": "KV Store",
+  "position": 17.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/api-access/kvStore/index"
+  }
+}

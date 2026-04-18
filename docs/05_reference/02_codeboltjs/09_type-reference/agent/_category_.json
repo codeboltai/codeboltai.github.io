@@ -1,0 +1,8 @@
+{
+  "label": "Agent",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/type-reference/agent/index"
+  }
+}

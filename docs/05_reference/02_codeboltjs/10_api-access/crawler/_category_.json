@@ -1,0 +1,11 @@
+{
+  "label": "Crawler",
+  "position": 10.5,
+  "collapsible": true,
+  "collapsed": true,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/api-access/crawler/index"
+  }
+}

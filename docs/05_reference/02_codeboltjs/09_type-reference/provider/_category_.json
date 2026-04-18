@@ -1,0 +1,8 @@
+{
+  "label": "Provider",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "reference/codeboltjs/type-reference/provider/index"
+  }
+}
