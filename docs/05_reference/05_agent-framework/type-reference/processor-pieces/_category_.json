@@ -1,0 +1,10 @@
+{
+  "label": "Processor Pieces",
+  "position": 1,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "reference/agent-framework/type-reference/processor-pieces/index"
+  }
+}

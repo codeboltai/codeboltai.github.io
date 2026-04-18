@@ -15,7 +15,8 @@
       "Bash(sed -n '11,16p' \"D:/Codeboltapps/codeboltdocs/docs/05_reference/03_plugin-sdk/02_api-reference/llmProvider/sendChunk.md\")",
       "Read(//d/Codeboltapps/codeboltjs/packages/agent/src/**)",
       "Read(//d/Codeboltapps/codeboltjs/packages/agent/**)",
-      "Bash(powershell -Command \"Remove-Item -Path 'D:\\\\Codeboltapps\\\\codeboltdocs\\\\docs\\\\05_reference\\\\02_codeboltjs\\\\09_type-reference\\\\agent' -Recurse -Force\")"
+      "Bash(powershell -Command \"Remove-Item -Path 'D:\\\\Codeboltapps\\\\codeboltdocs\\\\docs\\\\05_reference\\\\02_codeboltjs\\\\09_type-reference\\\\agent' -Recurse -Force\")",
+      "Bash(xargs grep *)"
     ]
   },
   "enabledPlugins": {

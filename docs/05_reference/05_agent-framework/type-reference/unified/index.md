@@ -1,5 +1,5 @@
 ---
-title: index
+title: Unified Agent
 ---
 
 [**@codebolt/agent**](./index.md)

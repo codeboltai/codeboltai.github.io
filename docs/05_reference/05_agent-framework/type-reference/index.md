@@ -1,12 +1,8 @@
 ---
-title: index
+title: Overview
 ---
 
-**@codebolt/agent**
-
-***
-
-# @codebolt/agent
+# @codebolt/agent — Type Reference
 
 ## Modules
 
