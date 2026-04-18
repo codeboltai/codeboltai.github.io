@@ -35,6 +35,46 @@ Plus one sideways path: **[Framework Adapters](./08_framework-adapters.md)** let
 
 **The most important thing to know:** level 0 and level 1 cover the vast majority of real use cases. Level 2 is for people building infrastructure on top of Codebolt. Level 3 is for people writing Codebolt agents in Go, Rust, or Python. Don't start higher than you need.
 
+## Hello World agent
+
+The simplest possible agent — listens for a user message and replies with "Hello World":
+
+```bash
+codebolt agent create --framework --name hello-world
+```
+
+Open `.codebolt/agents/hello-world/index.ts` and replace its contents with:
+
+```ts
+import codebolt from "@codebolt/codeboltjs";
+
+codebolt.waitForConnection().then(() => {
+  codebolt.chat.sendMessage("Hello World");
+});
+```
+
+Install and run:
+
+```bash
+cd .codebolt/agents/hello-world
+npm install
+codebolt agent start hello-world
+```
+
+Send any message from the chat — you'll see "Hello World" in reply. To echo back the user's input:
+
+```ts
+import codebolt from "@codebolt/codeboltjs";
+import { userMessageUtilities } from "@codebolt/codeboltjs";
+
+codebolt.waitForConnection().then(() => {
+  const userText = userMessageUtilities.getText();
+  codebolt.chat.sendMessage(`Hello World! You said: ${userText}`);
+});
+```
+
+This is a level 2 (codeboltjs) agent. For most use cases, start with level 0 or level 1 instead — see the table above.
+
 ## The framework (level 1) in one paragraph
 
 At level 1 you write a small TypeScript file that:

@@ -18,10 +18,15 @@ The cheapest thing that counts as a custom agent: take an existing one and chang
 From a terminal in your project:
 
 ```bash
-codebolt agent create --remix generalist --name my-reviewer
+codebolt agent create --remix
 ```
 
-This creates `.codebolt/agents/my-reviewer/agent.yaml` with a copy of the default generalist's manifest plus a `remix:` block where you override fields.
+This starts an interactive flow:
+
+1. **Pick an agent** — you'll see a list of all installed agents. Select the one you want to remix (e.g. `generalist`).
+2. **Name your remix** — enter a name (e.g. `my-reviewer`).
+
+The command creates `.codebolt/agents/my-reviewer/agent.yaml` with a copy of the selected agent's manifest plus a `remix:` block where you override fields.
 
 ### Step 2 — customise
 

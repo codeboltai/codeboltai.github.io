@@ -85,10 +85,10 @@ Prints the full resolved manifest including defaults.
 ## Scaffolding
 
 ```bash
-codebolt agent create --remix generalist --name my-reviewer
+codebolt agent create --remix
 ```
 
-Creates `.codebolt/agents/my-reviewer/agent.yaml` with the remix block pre-populated as an empty override. Edit it and you're done.
+This starts an interactive flow: select the agent to remix, enter a name, description, and custom instructions. Creates a `.codebolt/agents/remix/<name>.md` file with the remix config. Edit it to customise further.
 
 ## Testing a remix
 

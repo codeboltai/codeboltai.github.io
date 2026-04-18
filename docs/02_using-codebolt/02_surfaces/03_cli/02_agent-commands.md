@@ -159,7 +159,7 @@ codebolt agent uninstall <name>
 Scaffold a new agent.
 
 ```bash
-codebolt agent create --remix generalist --name my-reviewer
+codebolt agent create --remix                               # interactive: select agent, enter name
 codebolt agent create --framework --name my-planner
 codebolt agent create --framework --pattern unified --name my-agent
 ```

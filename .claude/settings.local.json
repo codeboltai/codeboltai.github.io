@@ -5,7 +5,9 @@
       "Bash(curl -s http://localhost:3000/ -o D:/Codeboltapps/codeboltdocs/.tmp_home.html)",
       "Bash(curl -s http://localhost:3000/styles.css -o D:/Codeboltapps/codeboltdocs/.tmp_styles.css)",
       "Bash(git mv:*)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/client-sdk -name *.ts -type f)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/cli -type d -name template*)"
     ]
   },
   "enabledPlugins": {
