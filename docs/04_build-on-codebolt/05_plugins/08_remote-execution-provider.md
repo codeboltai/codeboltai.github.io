@@ -267,6 +267,6 @@ plugin.executionGateway.sendReply(request.requestId, { error: 'reason' }, false)
 
 ## See Also
 
-- [Plugins Overview](./01_overview.md)
+- [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)
 - [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
 - [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)

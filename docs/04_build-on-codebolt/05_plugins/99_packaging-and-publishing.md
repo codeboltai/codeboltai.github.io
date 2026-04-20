@@ -5,129 +5,54 @@ title: Packaging and Publishing Plugins
 
 # Packaging and Publishing Plugins
 
-Plugins are normal npm packages with a `package.json`, a compiled entry point, and a `codebolt.plugin` manifest block.
+When your plugin is ready to share, follow this checklist and publish it to the CodeBolt registry.
 
-## Create a Plugin
+## Pre-publish Checklist
 
-### Via CLI
+- [ ] `package.json` includes a valid `codebolt.plugin` block
+- [ ] `main` field points to the compiled entry file (`dist/index.js`)
+- [ ] Plugin builds successfully (`npm run build`)
+- [ ] Plugin starts cleanly and handles `onStart()` without crashing
+- [ ] `onStop()` performs proper cleanup (unregister providers, close connections)
+- [ ] Required credentials or environment setup is documented
+- [ ] If using UI panels, the HTML file exists at the declared `ui.path`
 
-```bash
-codebolt plugin create --name my-plugin --path ./plugins
-```
+### By plugin type
 
-Supported options:
+**LLM Provider plugins:**
+- Document `providerId` and supported models
+- Document config fields users need to fill in (API key, base URL, etc.)
+- Handle both `onCompletionRequest` and `onStreamRequest`
 
-| Option | Description |
-|--------|-------------|
-| `--name` | Plugin name |
-| `--path` | Target directory |
-| `--project` | Associate with project |
-| `--template` | Template to scaffold from |
-| `--id` | Unique plugin ID |
-| `--description` | Plugin description |
-| `--skip-install` | Skip npm install |
+**Channel plugins:**
+- Document the external platform setup (bot tokens, webhook URLs)
+- Use `kvStore` for configuration persistence (not filesystem)
+- Provide a UI panel for connection configuration
+- Document supported thread strategies
 
-### Manual Setup
-
-```
-my-plugin/
-├── package.json
-├── tsconfig.json
-├── src/
-│   └── index.ts
-├── ui/                       # Optional: UI panel
-│   └── default/
-│       └── index.html
-└── dist/
-    └── index.js              # Compiled entry point
-```
-
-## Package Structure
-
-### Minimal `package.json`
-
-```json
-{
-  "name": "my-plugin",
-  "version": "1.0.0",
-  "description": "My CodeBolt plugin",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch"
-  },
-  "codebolt": {
-    "plugin": {
-      "type": "channel",
-      "triggers": [
-        { "type": "manual" }
-      ],
-      "ui": {
-        "path": "./ui/default/index.html"
-      }
-    }
-  },
-  "dependencies": {
-    "@codebolt/plugin-sdk": "*"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.0"
-  }
-}
-```
-
-### Minimal `tsconfig.json`
-
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true
-  },
-  "include": ["src/**/*"]
-}
-```
-
-For ES modules, set `"type": "module"` in `package.json` and use `"module": "ESNext"` in tsconfig. The server auto-detects ESM and adds `--experimental-specifier-resolution=node`.
+**Execution plugins:**
+- Document what types of requests are intercepted
+- Document the response shape returned via `sendReply`
+- Explain the remote environment setup
 
 ## Local Development Loop
 
-1. **Scaffold** the plugin with `codebolt plugin create` or manual setup
-2. **Implement** `src/index.ts` using `plugin.onStart()` and SDK modules
-3. **Build** the plugin: `npm run build`
-4. **Install** to a plugin directory:
+1. **Build** — `npm run build`
+2. **Install** to a plugin directory:
    ```bash
    # Per-project (for testing)
-   cp -r my-plugin/ /path/to/project/.codeboltPlugins/my-plugin/
+   cp -r my-plugin/ <project>/.codeboltPlugins/my-plugin/
 
    # Or global
    cp -r my-plugin/ ~/.codebolt/plugins/my-plugin/
    ```
-5. **Reload** in Plugins panel (click Reload button) or restart CodeBolt
-6. **Start** the plugin (click Play button or set startup trigger)
-7. **Debug** via the Plugin Debug panel (stdout/stderr streaming)
+3. **Reload** in Plugins panel (click Reload), then Start
+4. **Iterate** — run `npx tsc --watch`, stop/restart from Plugins panel after each rebuild
 
-### Hot reload during development
-
-For faster iteration:
-```bash
-# Terminal 1: watch & rebuild
-cd my-plugin && npm run dev
-
-# The plugin directory is scanned live — after rebuild,
-# stop and restart the plugin from the Plugins panel
-```
-
-## Publish a Plugin
+## Publish
 
 ```bash
-codebolt plugin publish --path ./plugins/my-plugin
+codebolt plugin publish --path ./my-plugin
 ```
 
 List published plugins:
@@ -136,61 +61,16 @@ List published plugins:
 codebolt plugin list
 ```
 
-## Pre-publish Checklist
-
-- `package.json` includes a valid `codebolt.plugin` block
-- `main` field points to the compiled runtime entry file
-- Plugin builds successfully (`npm run build`)
-- Plugin starts cleanly and handles `onStart()` without crashing
-- `onStop()` performs proper cleanup (unregister providers, close connections)
-- Required environment variables or credentials are documented
-- If using UI panels, the HTML file exists at the declared `ui.path`
-
-## Packaging by Plugin Type
-
-### LLM Provider Plugins
-
-- Document `providerId` and supported models
-- Document config fields users need to fill in
-- If using OAuth: document the auth flow and where tokens are stored
-- Handle both `onCompletionRequest` and `onStreamRequest`
-- Handle `onLoginRequest` if `requiresKey: false` (OAuth-based)
-
-### Channel Plugins
-
-- Document the external platform setup (bot tokens, webhook URLs)
-- Use `kvStore` for configuration persistence (not filesystem)
-- Provide a UI panel (`ui.path`) for connection configuration
-- Use `manual` trigger (users configure before starting)
-- Handle reconnection gracefully on plugin restart
-- Document supported thread strategies
-
-### Execution Plugins
-
-- Document what types of requests are intercepted
-- Document the response shape returned via `sendReply`
-- Explain the remote environment setup
-- If using narrative module, document workspace sync behavior
-- Use `startup` trigger for always-on execution proxying
-
-### UI Panel Plugins
-
-- Keep panel HTML self-contained or use relative asset paths
-- Use `window.codeboltPlugin.sendMessage()` / `onMessage()` for communication
-- Document what messages the panel sends/receives
-
 ## Common Mistakes
 
 | Mistake | Fix |
-|---------|-----|
-| Using `@codebolt/client-sdk` instead of `@codebolt/plugin-sdk` | Client SDK is for standalone UIs, plugin SDK is for server extensions |
-| Forgetting to build `dist/index.js` | Always run `npm run build` before loading |
-| Omitting `codebolt.plugin` in package.json | Server won't recognize as a plugin |
+|---|---|
+| Missing `codebolt.plugin` in package.json | Server won't recognize as a plugin |
+| Forgetting to build `dist/index.js` | Always `npm run build` before loading |
 | Storing config in filesystem | Use `plugin.kvStore` for persistence |
 | Not handling `onStop()` cleanup | Leads to dangling connections, leaked subscriptions |
-| Wrong response shape from execution plugin | Match expected `sendReply` format |
-| Not normalizing provider IDs | Provider IDs are auto-normalized (lowercase, no spaces) |
 | Using `startup` trigger for channel plugins that need config | Use `manual` — auto-load saved config in `onStart` |
+| Using `@codebolt/client-sdk` instead of `@codebolt/plugin-sdk` | Client SDK is for standalone UIs, plugin SDK is for server extensions |
 
 ## See Also
 

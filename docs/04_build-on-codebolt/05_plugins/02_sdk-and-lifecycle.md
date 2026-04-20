@@ -259,6 +259,6 @@ plugin.dynamicPanel.offMessage(panelId)
 
 ## See Also
 
-- [Plugins Overview](./01_overview.md)
+- [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)
 - [Major Functionalities Available to Plugins](./03_functionalities.md)
 - [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)
