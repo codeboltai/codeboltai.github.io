@@ -19,6 +19,14 @@ An agent is a program the server spawns when there's work to do. It:
 
 Every agent runs in its own process, supervised by [`AgentProcessManager`](../09_internals/03_subsystems/01_agent-subsystem.md). This isolation means your agent can crash, hang, or leak memory without affecting anything else.
 
+## Agent lifecycle
+
+import AgentLifecycle from '@site/src/components/diagrams/AgentLifecycle';
+
+<AgentLifecycle />
+
+For the full breakdown of each stage, see [Lifecycle](./05_agent-anatomy/lifecycle.md).
+
 ## Five creation paths
 
 There are five ways to bring an agent into Codebolt, from lowest to highest authorship cost:
