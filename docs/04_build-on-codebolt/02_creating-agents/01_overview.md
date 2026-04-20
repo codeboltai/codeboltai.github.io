@@ -27,6 +27,14 @@ import AgentLifecycle from '@site/src/components/diagrams/AgentLifecycle';
 
 For the full breakdown of each stage, see [Lifecycle](./05_agent-anatomy/lifecycle.md).
 
+## How a run works end-to-end
+
+import AgentSequence from '@site/src/components/diagrams/AgentSequence';
+
+<AgentSequence />
+
+The **Server** is the execution hub. When the agent process connects, the server auto-pushes the user message immediately — the agent never polls for it. Every LLM call is proxied through `llmService` to the **LLM Provider**; every tool call runs on the server via `executeToolService`. After each operation, `sendResponseAndNotify` fires both at once: the result goes to the **Agent** over WebSocket, and a broadcast goes to the **Client** UI — so tool activity and streaming output appear in the chat panel in real time.
+
 ## Five creation paths
 
 There are five ways to bring an agent into Codebolt, from lowest to highest authorship cost:

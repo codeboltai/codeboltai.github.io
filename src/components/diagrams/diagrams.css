@@ -933,3 +933,169 @@
   fill: #52534e;
 }
 [data-theme='dark'] .cb-lc-outcome-sub { fill: #a0a09a; }
+
+/* ── Agent Sequence ──────────────────────── */
+
+.cb-diagram--sequence {
+  background: #f5f4ed;
+  border-color: rgba(11,13,11,0.12);
+}
+[data-theme='dark'] .cb-diagram--sequence {
+  background: #141412;
+  border-color: rgba(240,239,232,0.10);
+}
+
+.cb-seq-lifeline {
+  stroke: rgba(11,13,11,0.22);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+[data-theme='dark'] .cb-seq-lifeline { stroke: rgba(240,239,232,0.18); }
+
+.cb-seq-activation {
+  fill: rgba(11,13,11,0.05);
+  stroke: #52534e;
+  stroke-width: 0.8;
+}
+[data-theme='dark'] .cb-seq-activation {
+  fill: rgba(240,239,232,0.06);
+  stroke: #a0a09a;
+}
+
+/* actor box variants */
+.cb-seq-actor--normal {
+  fill: rgba(11,13,11,0.03);
+  stroke: rgba(11,13,11,0.28);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-seq-actor--normal {
+  fill: rgba(240,239,232,0.03);
+  stroke: rgba(240,239,232,0.22);
+}
+.cb-seq-actor--ext {
+  fill: rgba(82,83,78,0.10);
+  stroke: #65655c;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-seq-actor--ext {
+  fill: rgba(150,150,140,0.08);
+  stroke: #a0a09a;
+}
+.cb-seq-actor--server {
+  fill: #ffffff;
+  stroke: #0b0d0b;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-seq-actor--server {
+  fill: #1e1c1a;
+  stroke: #f0efe8;
+}
+.cb-seq-actor--focal {
+  fill: rgba(247,89,31,0.08);
+  stroke: #f7591f;
+  stroke-width: 1;
+}
+
+/* actor badges */
+.cb-seq-badge-rect {
+  fill: transparent;
+  stroke: rgba(11,13,11,0.26);
+  stroke-width: 0.8;
+}
+[data-theme='dark'] .cb-seq-badge-rect { stroke: rgba(240,239,232,0.20); }
+.cb-seq-badge-rect--ext  { stroke: rgba(101,101,92,0.40); }
+.cb-seq-badge-rect--focal { stroke: rgba(247,89,31,0.50); }
+
+.cb-seq-badge-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  fill: #65655c;
+}
+[data-theme='dark'] .cb-seq-badge-text { fill: #a0a09a; }
+.cb-seq-badge-text--focal { fill: #f7591f; }
+
+.cb-seq-actor-name {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-seq-actor-name { fill: #f0efe8; }
+
+.cb-seq-actor-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 9px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-seq-actor-sub { fill: #a0a09a; }
+
+/* message edges */
+.cb-seq-edge {
+  stroke: #52534e;
+  stroke-width: 1.2;
+}
+[data-theme='dark'] .cb-seq-edge { stroke: #a0a09a; }
+
+.cb-seq-edge--return {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 4;
+}
+[data-theme='dark'] .cb-seq-edge--return { stroke: #a0a09a; }
+
+.cb-seq-edge--accent {
+  stroke: #f7591f;
+  stroke-width: 1.4;
+}
+
+.cb-seq-edge--notify {
+  stroke: #0ea5e9;
+  stroke-width: 1.1;
+  stroke-dasharray: 4 3;
+}
+[data-theme='dark'] .cb-seq-edge--notify { stroke: #38bdf8; }
+
+/* labels */
+.cb-seq-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-seq-label { fill: #a0a09a; }
+
+.cb-seq-label--accent { fill: #f7591f; }
+.cb-seq-label--notify { fill: #0ea5e9; }
+[data-theme='dark'] .cb-seq-label--notify { fill: #38bdf8; }
+
+.cb-seq-label-bg { fill: #f5f4ed; }
+[data-theme='dark'] .cb-seq-label-bg { fill: #141412; }
+
+.cb-seq-loop-band-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  fill: rgba(247,89,31,0.55);
+}
+[data-theme='dark'] .cb-seq-loop-band-label { fill: rgba(247,89,31,0.45); }
+
+.cb-seq-legend-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-seq-legend-label { fill: #a0a09a; }
+
+.cb-seq-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-seq-eyebrow { fill: #a0a09a; }
