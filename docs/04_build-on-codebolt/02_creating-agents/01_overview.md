@@ -39,49 +39,53 @@ There are five ways to bring an agent into Codebolt, from lowest to highest auth
 | **[Level 3 — Raw WebSocket](./03_creation-levels/level-3-raw-websocket.md)** | The wire protocol directly | Languages the SDK doesn't cover |
 | **[Third-Party Wrapping](./04_third-party-agents.md)** | An adapter around an existing external agent | Running Claude Code / Codex / Cursor etc. as a Codebolt agent |
 
-Plus one sideways path: **[Framework Adapters](./08_framework-adapters.md)** let you author at level 1 but using Vercel AI SDK, LangChain, or similar frameworks instead of the native Codebolt framework.
-
 **The most important thing to know:** level 0 and level 1 cover the vast majority of real use cases. Level 2 is for people building infrastructure on top of Codebolt. Level 3 is for people writing Codebolt agents in Go, Rust, or Python. Don't start higher than you need.
 
 ## Hello World agent
 
-The simplest possible agent — listens for a user message and replies with "Hello World":
+The simplest possible agent — listens for a user message and replies:
 
 ```bash
 codebolt agent create --framework --name hello-world
 ```
 
-Open `.codebolt/agents/hello-world/index.ts` and replace its contents with:
+Open `hello-world/src/index.ts` and replace its contents with:
 
 ```ts
-import codebolt from "@codebolt/codeboltjs";
+import codebolt from '@codebolt/codeboltjs';
 
-codebolt.waitForConnection().then(() => {
-  codebolt.chat.sendMessage("Hello World");
+codebolt.onMessage(async (reqMessage) => {
+  codebolt.chat.sendMessage(`Hello World! You said: ${reqMessage.userMessage}`);
 });
 ```
 
-Install and run:
+Build and run:
 
 ```bash
-cd .codebolt/agents/hello-world
+cd hello-world
 npm install
-codebolt agent start hello-world
+npm run build
 ```
 
-Send any message from the chat — you'll see "Hello World" in reply. To echo back the user's input:
+Send any message from the chat — you'll see the echo in reply.
+
+`codebolt.onMessage()` is the standard entry point for all agents. It registers a handler that fires when the user sends a message. The WebSocket connection is handled automatically — you don't need to call any connection method yourself.
+
+For a real agent with LLM loop, use level 1 with `CodeboltAgent`:
 
 ```ts
-import codebolt from "@codebolt/codeboltjs";
-import { userMessageUtilities } from "@codebolt/codeboltjs";
+import codebolt from '@codebolt/codeboltjs';
+import { CodeboltAgent } from '@codebolt/agent/unified';
 
-codebolt.waitForConnection().then(() => {
-  const userText = userMessageUtilities.getText();
-  codebolt.chat.sendMessage(`Hello World! You said: ${userText}`);
+const agent = new CodeboltAgent({
+  instructions: 'You are a helpful coding assistant.',
+});
+
+codebolt.onMessage(async (reqMessage) => {
+  const result = await agent.processMessage(reqMessage);
+  return result.finalMessage;
 });
 ```
-
-This is a level 2 (codeboltjs) agent. For most use cases, start with level 0 or level 1 instead — see the table above.
 
 ## The framework (level 1) in one paragraph
 
@@ -89,7 +93,7 @@ At level 1 you write a small TypeScript file that:
 
 - Declares a `codeboltagent.yaml` with metadata (name, description, default model, allowed tools).
 - Exports a handler that receives a typed input and returns a typed output.
-- Optionally imports **patterns** (Unified, Composable, Builder, Processor — see [Patterns](./06_patterns/overview.md)) to structure the handler without writing boilerplate.
+- Optionally uses `CodeboltAgent` or `Agent` from `@codebolt/agent/unified` (see [Patterns](./06_patterns/overview.md)) to get the full agent loop without writing boilerplate.
 - Optionally registers **processors** that modify the prompt assembly, tool calling, or response handling (see [Processors](./07_processors/01_what-are-processors.md)).
 
 The framework handles: the agent loop, context assembly, tool validation, memory writes, event log integration, heartbeats. You handle: what makes your agent different from the default.
@@ -100,12 +104,12 @@ Then your agent consumes [Agent Extensions](../03_agent-extensions/01_overview.m
 
 You don't write the agent loop from scratch at level 1. You pick a pattern:
 
-- **[Unified Agent](./06_patterns/unified-agent.md)** — the recommended default. One config, one handler, sensible defaults. Start here.
-- **[Composable](./06_patterns/composable-pattern.md)** — build the agent out of small reusable pieces (agent, tools, orchestrator, workflow).
-- **[Builder](./06_patterns/builder-pattern.md)** — explicit builder objects for initial prompt, LLM output handling, followup prompt. Used when you need fine control over each phase.
-- **[Processor](./06_patterns/processor-pattern.md)** — decompose by loop phase (message modifier, LLM agent step, tool executor). The lowest-level of the four.
+- **[CodeboltAgent](./06_patterns/unified-agent.md)** — the recommended default. Batteries-included with a default message modifier pipeline, compaction, and tool management. Start here.
+- **[Processor Pattern](./06_patterns/processor-pattern.md)** — customize the pipeline by plugging processors from `@codebolt/agent/processor-pieces` into CodeboltAgent's five slots.
+- **[Agent](./06_patterns/overview.md)** — the bare class with no default modifiers. Use when you need full control over which processors run.
+- **Building blocks** — `InitialPromptGenerator`, `AgentStep`, `ResponseExecutor` can be used directly when you need a custom loop shape.
 
-Pick Unified unless you have a specific reason not to.
+Pick `CodeboltAgent` unless you have a specific reason not to.
 
 ## The anatomy of an agent
 
@@ -121,25 +125,16 @@ These are the same for every agent regardless of level. The levels differ in *ho
 
 Agents are programs; test them like programs.
 
-- **Unit tests** — the framework exposes testing helpers. See [Testing and debugging](./09_testing-and-debugging.md).
-- **Replay** — any production run can be replayed against a new version of your agent to see if the behaviour changes. Uses the event log.
-- **Tracing** — every phase is in the event log with full inputs and outputs. The UI shows it as a tree.
-
-For systematic improvement across many runs, see [Evaluation & Optimization](../07_eval-and-optimization/01_overview.md).
-
-## Optimization
-
-Testing tells you whether the agent works. Optimization tells you whether it is getting better.
-
-After your agent is stable enough to test and replay, move to [Auto-Optimize Agents](./10_auto-optimize-agents.md). That page is the agent-authoring bridge into the broader [Evaluation & Optimization](../07_eval-and-optimization/01_overview.md) system.
+- **Agent Debug Panel** — real-time logs for all running agents, with full history. See [Testing and debugging](./09_testing-and-debugging.md).
+- **Unit tests** — processors and tools are plain objects with a `modify` or `execute` method. Test them directly.
+- **Console logging** — everything your agent writes to stdout/stderr is captured and shown in the debug panel.
 
 ## Publishing
 
 When you're ready, your agent can be:
 
-- **Private to your project** — just a file in `.codebolt/agents/`. No publishing needed.
-- **Shared within your org** — pushed to a private registry.
-- **Public on the marketplace** — `codebolt agent publish`. See [Publishing](./10_publishing.md).
+- **Private to your project** — lives in `.codebolt/agents/`. No publishing needed.
+- **Published to the CodeBolt registry** — `codebolt agent publish`. See [Publishing](./10_publishing.md).
 
 ## See also
 

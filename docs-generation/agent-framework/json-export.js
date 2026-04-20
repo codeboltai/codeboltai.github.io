@@ -15,7 +15,7 @@ const path = require('path');
 
 const SCRIPT_DIR = __dirname;
 const DOCS_ROOT  = path.resolve(SCRIPT_DIR, '../..');
-const AGENT_PKG  = path.resolve(DOCS_ROOT, '../codeboltjs/packages/agent');
+const AGENT_PKG  = path.resolve(DOCS_ROOT, '../CodeBolt/packages/agent');
 const TEMP_JSON  = path.resolve(SCRIPT_DIR, 'data/typedoc-raw.json');
 const OUT_JSON   = path.resolve(SCRIPT_DIR, 'data/typedoc-data.json');
 

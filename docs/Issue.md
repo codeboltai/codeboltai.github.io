@@ -35,11 +35,11 @@ This file documents all issues found during a cross-reference audit of the docum
 **Actual:** The correct filename is `codeboltagent.yaml` (from `packages/server/src/types/extension.ts` line 16)
 **Status: FIXED**
 
-### 5. `@codebolt/agent` Package Does Not Exist
+### 5. `@codebolt/agent` Package — Partially Resolved
 **Files affected:** `03_guides/02_first-steps/build-your-first-agent.md`, `05_multi-agent/*.md`, `04_build-on-codebolt/02_creating-agents/`
 **Claim:** `import { UnifiedAgent } from "@codebolt/agent/patterns"` and `npm install @codebolt/agent`
-**Actual:** No `@codebolt/agent` package exists. Agent development uses markdown agents in `.codebolt/agents/remix/` or the `@codebolt/codeboltjs` SDK.
-**Status: FIXED**
+**Actual:** `@codebolt/agent` now exists in the main CodeBolt monorepo (`packages/agent`), exposing `@codebolt/agent/unified` and `@codebolt/agent/processor-pieces`. The planned pattern classes (`UnifiedAgent` config, `AgentBuilder`, `ComposableAgent`, `ProcessorAgent`) from `@codebolt/agent/patterns`, `@codebolt/agent/builder`, `@codebolt/agent/composable`, and `@codebolt/agent/processor` do not exist yet.
+**Status: PARTIALLY FIXED** — working exports documented, planned patterns noted as planned
 
 ### 6. Flow System Does Not Exist
 **Files affected:** `03_guides/05_multi-agent/build-a-code-review-swarm.md`, `build-a-plan-execute-review-flow.md`, `design-a-debate-pattern.md`

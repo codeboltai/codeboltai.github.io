@@ -19,10 +19,11 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Paths relative to this script's location (documentation/publicDocs/scripts/)
+// Paths relative to this script's location
 const SCRIPT_DIR = __dirname;
 const PUBLIC_DOCS_DIR = path.resolve(SCRIPT_DIR, '..');
 const MONOREPO_ROOT = path.resolve(PUBLIC_DOCS_DIR, '../..');
+const CODEBOLT_ROOT = path.resolve(PUBLIC_DOCS_DIR, '../CodeBolt');
 
 // Configuration
 const CONFIG = {
@@ -50,11 +51,11 @@ const CONFIG = {
             position: 2,
             description: 'Agent utilities for building and managing AI agents',
             entryPoints: [
-                path.resolve(MONOREPO_ROOT, 'packages/agent/src/unified/index.ts'),
-                path.resolve(MONOREPO_ROOT, 'packages/agent/src/processor-pieces/index.ts'),
+                path.resolve(CODEBOLT_ROOT, 'packages/agent/src/unified/index.ts'),
+                path.resolve(CODEBOLT_ROOT, 'packages/agent/src/processor-pieces/index.ts'),
             ],
-            tsconfig: path.resolve(MONOREPO_ROOT, 'packages/agent/tsconfig.json'),
-            cwd: path.resolve(MONOREPO_ROOT, 'packages/agent'),
+            tsconfig: path.resolve(CODEBOLT_ROOT, 'packages/agent/tsconfig.json'),
+            cwd: path.resolve(CODEBOLT_ROOT, 'packages/agent'),
         },
         {
             name: '@codebolt/provider',

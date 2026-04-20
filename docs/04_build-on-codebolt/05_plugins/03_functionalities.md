@@ -5,121 +5,220 @@ title: Major Plugin Functionalities
 
 # Major Plugin Functionalities
 
-Plugins have access to a large part of the Codebolt runtime through [`PluginClient`](D:/Codeboltapps/CodeBolt/packages/pluginSdk/src/core/PluginClient.ts). This page groups the major areas a plugin can work with.
+Plugins have access to a large part of the CodeBolt runtime through `PluginClient`. This page groups the major areas a plugin can work with.
 
-## Files, terminal, git, and project context
+## Files, Terminal, Git, and Project Context
 
-Plugins can work with the local workspace and execution environment using modules such as:
+Plugins can work with the local workspace and execution environment:
 
-- `plugin.fs`
-- `plugin.terminal`
-- `plugin.git`
-- `plugin.project`
-- `plugin.projectStructure`
-- `plugin.codebaseSearch`
-- `plugin.codemap`
-- `plugin.environment`
+```ts
+// File operations
+const content = await plugin.fs.readFile('/path/to/file');
+await plugin.fs.writeFile('/path/to/file', newContent);
+const files = await plugin.fs.listFiles('/path/to/dir');
 
-This lets a plugin inspect files, run commands, search the repo, understand project structure, and coordinate with environments.
+// Terminal execution
+const result = await plugin.terminal.executeCommand('npm test');
 
-## Chat, tasks, threads, and jobs
+// Git operations
+const status = await plugin.git.status();
+const log = await plugin.git.log();
 
-Plugins can participate in the live application flow using:
+// Project info
+const structure = await plugin.projectStructure.getTree();
+const searchResults = await plugin.codebaseSearch.search('functionName');
+```
 
-- `plugin.chat`
-- `plugin.task`
-- `plugin.thread`
-- `plugin.todo`
-- `plugin.job`
-- `plugin.chatApi`
-- `plugin.tasksApi`
-- `plugin.threadsApi`
-- `plugin.jobsApi`
+**Modules:** `plugin.fs`, `plugin.terminal`, `plugin.git`, `plugin.project`, `plugin.projectStructure`, `plugin.codebaseSearch`, `plugin.codemap`, `plugin.environment`
 
-This is useful when a plugin needs to create or observe work in the same runtime the app and agents already use.
+## Chat, Tasks, Threads, and Jobs
 
-## Knowledge, memory, and state
+Plugins can participate in the live application flow:
 
-Plugins can read and write application state through:
+```ts
+// Send a chat message
+await plugin.chat.sendMessage({ content: 'Hello from plugin', threadId: '...' });
 
-- `plugin.knowledge`
-- `plugin.vectordb`
-- `plugin.kvStore`
-- `plugin.memory`
-- `plugin.cbstate`
-- `plugin.knowledgeApi`
-- `plugin.kvStoreApi`
-- `plugin.vectordbApi`
+// Create and manage tasks
+await plugin.tasksApi.create({ title: 'Process data', status: 'open' });
 
-That makes plugins suitable for integrations that need persistence, retrieval, or background memory storage.
+// Work with threads
+const threads = await plugin.threadsApi.list();
 
-## Dynamic UI inside the app
+// Monitor jobs
+plugin.sockets.jobs.on('update', (job) => {
+  console.log('Job progress:', job.progress);
+});
+```
 
-Plugins can render custom surfaces inside existing Codebolt UIs using:
+**Modules:** `plugin.chat`, `plugin.task`, `plugin.thread`, `plugin.todo`, `plugin.job`, `plugin.chatApi`, `plugin.tasksApi`, `plugin.threadsApi`, `plugin.jobsApi`
 
-- `plugin.dynamicPanel.open()`
-- `plugin.dynamicPanel.update()`
-- `plugin.dynamicPanel.close()`
-- `plugin.dynamicPanel.send()`
-- `plugin.dynamicPanel.list()`
-- `plugin.dynamicPanel.onMessage()`
+## Knowledge, Memory, and State
 
-Use this when your plugin needs an in-app panel rather than a separate standalone frontend. For the UI side of that model, see [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md).
+Plugins can read and write application state for persistence and retrieval:
 
-## Browser, calendar, mail, and external app-facing services
+```ts
+// Key-value store (recommended for plugin config)
+await plugin.kvStore.set('config', JSON.stringify(myConfig), {
+  instanceId: 'my-plugin',
+  namespace: 'config'
+});
+const config = await plugin.kvStore.get('config', {
+  instanceId: 'my-plugin',
+  namespace: 'config'
+});
 
-The plugin SDK exposes modules for application-level service integrations:
+// Vector database for semantic search
+await plugin.vectordb.upsert({ id: 'doc1', content: '...', embedding: [...] });
 
-- `plugin.browser`
-- `plugin.calendar`
-- `plugin.mail`
-- `plugin.eventLog`
-- `plugin.notify`
+// Knowledge base
+await plugin.knowledgeApi.add({ title: 'doc', content: '...' });
 
-These are useful when building integrations that react to communication, scheduling, browser state, or application events.
+// Application state
+const state = await plugin.cbstate.get('key');
+```
 
-## MCP and hook management
+**Modules:** `plugin.knowledge`, `plugin.vectordb`, `plugin.kvStore`, `plugin.memory`, `plugin.cbstate`, `plugin.knowledgeApi`, `plugin.kvStoreApi`, `plugin.vectordbApi`
 
-Plugins can also work with extension infrastructure itself:
+## Dynamic UI Inside the App
 
-- `plugin.mcp` for listing, configuring, and executing MCP tools and servers through the server
-- `plugin.hook` and `plugin.hooksApi` for managing hooks through the application
+Plugins can render custom panels inside the existing CodeBolt UI:
 
-This is part of why plugins sit at the application layer rather than only the agent layer.
+```ts
+// Open a panel with HTML content
+const html = '<div id="app"><h1>My Plugin UI</h1><button id="btn">Click</button></div>';
+await plugin.dynamicPanel.open('my-panel', 'Plugin Dashboard', html);
 
-## Real-time subscriptions
+// Send data to the panel
+await plugin.dynamicPanel.send('my-panel', { status: 'connected', data: [...] });
 
-Under `plugin.sockets`, plugins can subscribe to push-based channels such as:
+// Receive messages from the panel
+plugin.dynamicPanel.onMessage('my-panel', (data) => {
+  if (data.type === 'buttonClicked') {
+    // handle UI action
+  }
+});
 
-- chat events
-- jobs and tasks
-- knowledge events
-- event logs
-- project structure updates
-- editor and LSP channels
-- system alerts
+// Update panel content
+await plugin.dynamicPanel.update('my-panel', newHtml);
+
+// Close panel
+await plugin.dynamicPanel.close('my-panel');
+```
+
+**Real-world example:** The Telegram channel plugin uses a dynamic panel for connection configuration — users enter their bot token, select thread strategy, and connect/disconnect via the UI.
+
+For the UI side of this model, see [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md).
+
+## Browser, Calendar, Mail, and Notifications
+
+Application-level service integrations:
+
+```ts
+// Notifications
+plugin.notify.info('Plugin connected');
+plugin.notify.error('Connection failed');
+plugin.notify.warn('Rate limit approaching');
+
+// Calendar
+const events = await plugin.calendarApi.list();
+
+// Mail
+await plugin.mailApi.send({ to: '...', subject: '...', body: '...' });
+
+// Event logging
+await plugin.eventLog.log({ type: 'plugin.action', data: {...} });
+```
+
+**Modules:** `plugin.browser`, `plugin.calendar`, `plugin.mail`, `plugin.eventLog`, `plugin.notify`
+
+## MCP and Hook Management
+
+Plugins can work with extension infrastructure:
+
+```ts
+// List available MCP tools
+const tools = await plugin.mcp.listTools();
+
+// Execute an MCP tool
+const result = await plugin.mcp.executeTool('tool-name', { param: 'value' });
+
+// Manage hooks
+const hooks = await plugin.hooksApi.list();
+```
+
+**Modules:** `plugin.mcp`, `plugin.hook`, `plugin.hooksApi`
+
+## Workspace Sync (Narrative)
+
+For remote execution plugins that need to sync workspace state:
+
+```ts
+// Export workspace as a bundle
+const bundle = await plugin.narrative.exportUnifiedBundle({
+  outputPath: '/tmp/workspace.tar.gz',
+  includeGit: true
+});
+
+// Import a bundle into workspace
+await plugin.narrative.importUnifiedBundle({
+  bundlePath: '/tmp/workspace.tar.gz'
+});
+
+// Create/restore snapshots
+await plugin.narrative.createSnapshot({ snapshotId: 'before-test' });
+await plugin.narrative.checkoutSnapshot({ snapshotId: 'before-test' });
+```
+
+## Real-time Subscriptions
+
+Under `plugin.sockets`, plugins subscribe to push-based channels for live event streams:
+
+```ts
+// Chat events
+plugin.sockets.chat.on('message', (msg) => { /* ... */ });
+
+// Task updates
+plugin.sockets.tasks.on('update', (task) => { /* ... */ });
+
+// Job progress
+plugin.sockets.jobs.on('progress', (job) => { /* ... */ });
+
+// File tree changes
+plugin.sockets.projectStructure.on('change', (event) => { /* ... */ });
+
+// System alerts
+plugin.sockets.systemAlert.on('alert', (alert) => { /* ... */ });
+
+// Editor events
+plugin.sockets.editor.on('change', (event) => { /* ... */ });
+```
 
 Use socket subscriptions when your plugin needs to stay attached to a live stream of app events.
 
-## Practical examples from the repo
+## Practical Examples from Built-in Plugins
 
-The current built-in plugins show how these capabilities are used in practice:
+| Plugin | What it uses |
+|--------|-------------|
+| `telegram-channel` | `gateway`, `dynamicPanel`, `kvStore` (config), `onReply` |
+| `slack-channel` | `gateway`, `dynamicPanel`, `kvStore` (config), `onReply` |
+| `codex-plugin` | `llmProvider` (register, completion, streaming, login) |
+| `anthropic-plugin` | `llmProvider` (register, completion, streaming, login) |
+| `remote-execution-plugin` | `executionGateway` (claim, onRequest), `narrative` (workspace sync) |
+| `cloud-plugin` | `gateway`, `executionGateway` (subscribe, notifications) |
 
-- [`cloud-plugin`](D:/Codeboltapps/CodeBolt/packages/plugins/cloud-plugin) subscribes to execution notifications and forwards chat and execution events to a cloud connection.
-- [`remote-execution-plugin`](D:/Codeboltapps/CodeBolt/packages/plugins/remote-execution-plugin) claims the execution gateway and forwards requests to a remote provider.
-- [`custom-llm-plugin`](D:/Codeboltapps/CodeBolt/packages/plugins/custom-llm-plugin) registers a custom LLM provider and answers completion requests.
+## Choosing the Right Surface
 
-## Choosing the right surface
+| Need | Use |
+|------|-----|
+| Runtime operations tied to server message bus | WebSocket modules (`plugin.fs`, `plugin.git`, etc.) |
+| CRUD-style app operations | HTTP APIs (`plugin.tasksApi`, `plugin.projectsApi`, etc.) |
+| Live event subscriptions | Sockets (`plugin.sockets.chat`, etc.) |
+| Custom UI inside the app | Dynamic panels (`plugin.dynamicPanel`) |
+| Extend core behavior | Gateway / Execution / LLM Provider modules |
+| Persistent configuration | `plugin.kvStore` |
 
-A useful rule is:
+## See Also
 
-- use a **module** when you want runtime operations tied closely to the server message bus
-- use an **HTTP API** when you want CRUD-style app operations
-- use **sockets** when you want live subscriptions
-- use **dynamic panels** when you need UI inside the existing app
-- use **gateway / execution / llm provider modules** when you are extending core application behavior
-
-## See also
-
-- [Plugin SDK and lifecycle](./02_sdk-and-lifecycle.md)
-- [Gateway, execution, and LLM provider patterns](./04_major-patterns.md)
+- [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
+- [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)

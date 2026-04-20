@@ -5,154 +5,145 @@ title: Level 3 — Raw WebSocket
 
 # Level 3 — Raw WebSocket
 
-Speak the Codebolt wire protocol directly. For when you're building an agent in a language where `codeboltjs` doesn't exist — Go, Rust, Python, Elixir, anything.
+Speak to Codebolt over WebSocket without `@codebolt/codeboltjs`. This is the escape hatch when your agent must run outside the JS SDK.
 
 ## When level 3 is the right choice
 
-Exactly one reason: **you need your agent in a non-JS language**. Any of these:
+- You need your agent in Go, Rust, Python, Elixir, or another non-JS runtime.
+- You are wrapping an existing service or binary instead of writing a Node agent.
+- You accept owning the transport layer yourself.
 
-- You want to run a Go agent because it's fast and cheap.
-- You want a Rust agent for low-latency workloads.
-- You already have Python code that does the work, and you want to wrap it as an agent.
-- Your team writes everything in one language that isn't JavaScript.
+If JavaScript is acceptable, stop at [level 2](./level-2-codeboltjs.md). If the standard loop is acceptable, stop at [level 1](./level-1-framework.md).
 
-That's the only justified reason. Everything else — ergonomics, typing, replay, the loop — is easier at [level 2](./level-2-codeboltjs.md) or [level 1](./level-1-framework.md).
+## What level 3 actually means
 
-## What you need to implement
+At level 3 you implement the client transport yourself. Your process is responsible for:
 
-At level 3 you're writing a client for the Codebolt agent protocol. Your agent process:
+1. Reading the connection details Codebolt injects when it starts the agent.
+2. Opening a WebSocket connection back to the server.
+3. Registering or otherwise identifying itself on that socket.
+4. Receiving work messages, doing the work, and sending responses back.
 
-1. Reads `CODEBOLT_SERVER_URL` and `RUN_ID` from its environment.
-2. Opens a WebSocket connection to the server.
-3. Performs the protocol handshake.
-4. Receives the run input.
-5. Runs its loop, sending messages for LLM calls, tool calls, memory writes, etc., and receiving responses.
-6. Sends a final output and disconnects cleanly.
+The current repo implementations do **not** match the old `llm.chat.request` / `tools.call` envelope that earlier drafts of this page described. The shipped transport today is connection-oriented and registration-oriented.
 
-The protocol is documented at [Reference → Protocols → WebSocket](../../../../05_reference/01_overview.md). The short version: it's JSON messages over a WebSocket, with a stable envelope format.
+Level 3 is a transport choice, not a placement choice. A raw-WebSocket agent can still be launched locally by Codebolt from a `remotePath`, or it can be run elsewhere in `selfExecuted` mode. That depends on how you register the agent, not on whether you use the SDK.
 
-## Message envelope
+## What the current transport looks like
 
-Every message has this shape:
+From the code in `remoteexecutor/updatedAgentServer`, provider clients, and transport tests:
+
+- Clients connect to a WebSocket endpoint at `/codebolt`.
+- Spawned agents/providers are given identifiers such as `agentId`, `parentId`, `threadId`, `connectionId`, and `SOCKET_PORT`.
+- Some flows also use `CODEBOLT_SERVER_URL`; many local flows default to `localhost`.
+- Registration messages such as `register` and acknowledgements such as `registered` are part of the current transport.
+- Some server paths auto-register a connection from URL/query parameters during connection establishment.
+
+Representative shapes from the repo today:
+
+```text
+ws://localhost:${SOCKET_PORT}/codebolt?agentId=${agentId}&parentId=${parentId}
+```
 
 ```json
 {
-  "id": "msg_abc123",
-  "type": "llm.chat.request",
-  "run_id": "run_xyz",
-  "correlation_id": "msg_def456",
-  "payload": { ... }
+  "type": "register",
+  "clientType": "agent",
+  "agentId": "my-agent"
 }
 ```
-
-Types are namespaced: `llm.*`, `tools.*`, `memory.*`, `context.*`, `events.*`, `input.*`, `output.*`.
-
-Requests get responses with the same `correlation_id`:
 
 ```json
 {
-  "id": "msg_ghi789",
-  "type": "llm.chat.response",
-  "run_id": "run_xyz",
-  "correlation_id": "msg_abc123",
-  "payload": { ... }
+  "type": "registered",
+  "connectionId": "my-agent",
+  "connectionType": "agent"
 }
 ```
 
-See [Reference → Protocols → WebSocket → message envelope](../../../../05_reference/01_overview.md) for the full spec.
+Treat those as current implementation patterns, not a frozen public protocol spec. Different clients in the repo add different query params and message fields.
 
-## Minimal loop (pseudocode in any language)
+## Minimal flow
 
-```
-connect to ws://$CODEBOLT_SERVER_URL/agent
-send: { type: "handshake", run_id: $RUN_ID }
-receive: { type: "handshake.ack" }
+A raw level-3 agent usually does something like this:
 
-send: { type: "input.get", run_id }
-receive: { type: "input.response", payload: { task } }
+```text
+read env:
+  agentId
+  parentId
+  threadId
+  SOCKET_PORT
+  CODEBOLT_SERVER_URL (if provided)
 
-history = []
-while true:
-    send: { type: "events.emit", payload: { event: "phase.started", phase: "deliberate" } }
+connect to:
+  ws://<server>:<port>/codebolt?agentId=<agentId>&parentId=<parentId>
 
-    send: { type: "context.assemble", payload: { task, history, budget: { tokens: 60000 } } }
-    receive: { type: "context.response", payload: { messages, tools } }
+send a register message if your host expects it
+wait until the socket is registered/ready
 
-    send: { type: "llm.chat.request", payload: { messages, tools } }
-    receive: { type: "llm.chat.response", payload: { content, tool_calls } }
+loop:
+  receive a request frame from the server or parent client
+  run your own LLM/tool/file logic
+  send the response frame back with the routing metadata the server expects
 
-    history.append({ role: "assistant", ... })
-
-    if tool_calls is empty:
-        send: { type: "output.set", payload: { result: content } }
-        send: { type: "events.emit", payload: { event: "run.completed" } }
-        break
-
-    for each call in tool_calls:
-        send: { type: "tools.call", payload: { tool, args } }
-        receive: { type: "tools.response", payload: { ok, content } }
-        history.append({ role: "tool", ... })
-
-    send: { type: "events.emit", payload: { event: "phase.heartbeat" } }
-
-close connection
+close cleanly
 ```
 
-The pattern is identical to [level 2](./level-2-codeboltjs.md); you're just writing the client by hand.
+Unlike [level 2](./level-2-codeboltjs.md), there is no SDK normalizing any of this for you.
 
-## Manifest
+## Folder structure
 
-```yaml
-name: my-go-agent
-version: 0.1.0
-framework: false
-entrypoint: bin/agent
-runtime: binary          # tells the server not to try to spawn with node
-default_model: claude-sonnet-4-6
+A typical raw agent keeps transport code separate from business logic:
+
+```text
+my-raw-agent/
+├── codeboltagent.yaml
+├── src/
+│   ├── main.<lang>
+│   ├── websocket_client.<lang>
+│   └── message_types.<lang>
+└── bin/
+    └── agent
 ```
 
-The `runtime: binary` entry means the server just executes the entrypoint as a subprocess with the environment variables set.
+Notes:
 
-## Reference clients
+- `main.<lang>` reads env vars and owns the agent loop.
+- `websocket_client.<lang>` handles connect, register, send, receive, and reconnect behavior.
+- `message_types.<lang>` mirrors the message shapes your client supports.
+- `bin/agent` is your compiled or packaged executable if your language needs one.
 
-Rather than hand-rolling everything, look at the existing clients for scaffolding:
+## Reference implementations
 
-- `packages/cli` — TypeScript client, same protocol
-- `packages/gotuijspackage` / `packages/gotui` — Go client scaffolding
-- The `codeboltjs` source — the canonical implementation
+Start from existing transport code instead of inventing a new client from scratch:
 
-If a reference client exists in your target language, start there. Don't reimplement the protocol from scratch.
+- `codeboltjs/providers/remoteserverprovider`
+- `codeboltjs/providers/dockerprovider`
+- `codeboltjs/remoteexecutor/updatedAgentServer`
+- `codeboltjs/tui/gotui`
+- `codeboltjs/tui/inkbasedtui`
 
-## What you lose (all of it)
+These are the best references for current connection URLs, registration behavior, and message routing.
 
-At level 3 you're responsible for:
+## What you lose
 
-- Everything level 2 makes you responsible for, plus:
-- The connection handshake and reconnect logic.
-- The message correlation layer.
-- Serializing and deserializing messages.
-- Handling protocol version mismatches.
-- Heartbeating at the WebSocket level (on top of the agent-loop level).
-- Graceful shutdown and cleanup.
+At level 3 you own everything below the agent logic:
 
-**If your language has a working level-3 client library, use it.** Don't write your own protocol parser unless you're prepared to maintain it across Codebolt server upgrades.
+- Socket lifecycle, reconnects, and timeouts.
+- Registration and readiness handling.
+- Message parsing, validation, and routing.
+- Correlation of requests and responses.
+- Compatibility with transport changes across server versions.
+
+If you can use `@codebolt/codeboltjs`, do that instead.
 
 ## What you gain
 
-- Your agent runs in your preferred language.
-- It integrates with your existing non-JS codebase naturally.
-- You can optimize for size, latency, or memory in ways a JS agent can't.
-
-## Testing
-
-No built-in test framework at this level. Recommendations:
-
-- **Record a real run** and replay its messages against your agent in unit tests.
-- **Mock the server** with a small WebSocket responder — there are language-specific helpers for this pattern.
-- **End-to-end test** against a real server in a CI environment. Slower but catches protocol drift.
+- Your agent can run in any runtime that can speak WebSocket.
+- You can reuse an existing non-JS codebase directly.
+- You control the transport, packaging, and runtime behavior end to end.
 
 ## See also
 
-- [Level 2 — codeboltjs](./level-2-codeboltjs.md) — same thing but in JS with a real SDK
-- [WebSocket protocol reference](../../../../05_reference/01_overview.md)
-- [Communication Subsystem internals](../../../09_internals/03_subsystems/11_communication.md) — the server side of the protocol
+- [Level 2 — codeboltjs](./level-2-codeboltjs.md)
+- [Communication Subsystem internals](../../09_internals/03_subsystems/11_communication.md)
+- [Remote Execution](../../11_agent-infrastructure/09_remote-execution.md)

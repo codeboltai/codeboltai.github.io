@@ -5,113 +5,112 @@ title: What are Processors
 
 # What are Processors
 
-Processors are reusable pieces that plug into the agent loop at well-defined points. They let you modify how the prompt is assembled, how tool calls are validated, how responses are handled, how history is compressed — without rewriting the loop itself.
+Processors are typed hook points inside the `@codebolt/agent` loop. They let you change prompt assembly, LLM preparation, post-response handling, or tool execution without rewriting the whole agent.
 
-If a custom agent is a whole program, a processor is a function you drop into an existing program at a specific slot.
+In the current framework, the reusable built-ins live in `@codebolt/agent/processor-pieces`, and `CodeboltAgent` consumes them through its `processors` config.
 
-## When to use a processor
+## Where processors run
 
-- **You want to tweak one thing** about how agents behave, and you want it to apply to every agent (or a class of agents) without forking each one.
-- **You want to reuse behaviour across agents** — e.g. "always redact customer emails from LLM prompts" should apply everywhere, not be re-implemented per agent.
-- **You want the behaviour to compose cleanly** — multiple processors can stack in a well-defined order.
+`CodeboltAgent` runs processors in this order:
 
-If you need to change how an agent *thinks*, write a custom agent. If you need to change what an agent *sees* or *emits* at one point in its loop, write a processor.
+1. `messageModifiers`
+2. `preInferenceProcessors`
+3. `postInferenceProcessors`
+4. `preToolCallProcessors`
+5. `postToolCallProcessors`
 
-## The slots
+Those are the real slot names in the shipped code. They map to the three runtime stages:
 
-Processors plug into the loop at specific phases. The main families:
+- `InitialPromptGenerator` runs `messageModifiers`
+- `AgentStep` runs `preInferenceProcessors` and `postInferenceProcessors`
+- `ResponseExecutor` runs `preToolCallProcessors` and `postToolCallProcessors`
 
-### Message modifiers
-Run before the LLM call. Can add, remove, or rewrite messages. Examples (all built-in and covered in [Reference → Processor Reference](../../../../05_reference/01_overview.md)):
+## What processors operate on
 
-| Modifier | What it does |
-|---|---|
-| `CoreSystemPromptModifier` | Injects the core system prompt |
-| `ChatHistoryMessageModifier` | Manages the chat history window |
-| `ChatCompressionModifier` | Compresses old turns when budget is tight |
-| `ConversationCompactorModifier` | Aggressive compaction for long conversations |
-| `AtFileProcessorModifier` | Resolves `@file` references into file contents |
-| `ArgumentProcessorModifier` | Substitutes CLI-style arguments |
-| `DirectoryContextModifier` | Adds directory listing context |
-| `EnvironmentContextModifier` | Injects env info (cwd, git branch, etc.) |
-| `IdeContextModifier` | Injects IDE state (open file, selection) |
-| `MemoryImportModifier` | Imports memory references into the prompt |
-| `ShellProcessorModifier` | Handles shell-command-style prompts |
-| `ChatRecordingModifier` | Records the final message list for replay |
-| `LoopDetectionModifier` | Detects and breaks repetitive loops |
+Processors do **not** receive a generic `ctx` object or a raw `Message[]`.
 
-### Tool modifiers
-Run around tool calls. Can inject tools, validate parameters, or transform arguments:
+The current framework passes typed loop objects instead:
 
-| Modifier | What it does |
-|---|---|
-| `ToolInjectionModifier` | Adds tools to the agent's allowlist contextually |
-| `ToolParameterModifier` | Rewrites tool arguments before execution |
-| `ToolValidationModifier` | Validates tool calls against extra rules |
+- `FlatUserMessage` for the original request
+- `ProcessedMessage` for the working prompt/transcript
+- `LLMCompletion` for the raw model response
+- `ToolResult[]` for executed tools
 
-### Response modifiers
-Run after the LLM returns, before the agent acts on it. Useful for redaction, format normalisation, or safety checks.
+That matters because most built-ins work by returning a new `ProcessedMessage`, often with extra `metadata`.
 
-## How they compose
+## When to use one
 
-A processor is a function of the loop state at its phase. Multiple processors at the same phase run in sequence, each seeing the output of the previous one.
+Use a processor when you want to change one phase of the loop:
 
-```
-before LLM call:
-  assembled messages
-    → CoreSystemPromptModifier
-    → DirectoryContextModifier
-    → AtFileProcessorModifier
-    → ChatCompressionModifier      (if over budget)
-    → LoopDetectionModifier
-    → final messages to llmService
-```
+- add extra prompt context
+- rewrite or annotate the prompt before inference
+- inspect the model response and inject follow-up guidance
+- validate or rewrite tool-call flow
+- compact or summarize the transcript between turns
 
-Order matters. The framework picks a default order for built-in processors; custom processors are inserted at declared positions.
+If you need a new capability, build a tool. If you need a different loop, write a custom agent.
 
-## Writing your own
-
-You write a processor by implementing a typed interface for the slot you're targeting. See [Writing a custom processor](./04_writing-a-custom-processor.md) for the full walkthrough.
-
-A minimal message modifier (pseudo-code):
+## The real `processors` shape
 
 ```ts
-export class RedactEmailsModifier implements MessageModifier {
-  async modify(messages: Message[]): Promise<Message[]> {
-    return messages.map(m => ({
-      ...m,
-      content: m.content.replace(/[\w.]+@[\w.]+/g, "[redacted]"),
-    }));
-  }
-}
+import { CodeboltAgent } from "@codebolt/agent/unified";
+import {
+  AtFileProcessorModifier,
+  ConversationCompactorModifier,
+  DirectoryContextModifier,
+  LoopDetectionModifier,
+} from "@codebolt/agent/processor-pieces";
+
+const agent = new CodeboltAgent({
+  instructions: "Help with repository maintenance.",
+  processors: {
+    messageModifiers: [
+      new DirectoryContextModifier(),
+      new AtFileProcessorModifier({ enableRecursiveSearch: true }),
+    ],
+    postInferenceProcessors: [
+      new LoopDetectionModifier({ maxSimilarMessages: 3 }),
+    ],
+    postToolCallProcessors: [
+      new ConversationCompactorModifier({ compactStrategy: "smart" }),
+    ],
+  },
+});
 ```
 
-Drop it into your agent config:
+Two important details from the current implementation:
 
-```yaml
-processors:
-  message_modifiers:
-    - RedactEmailsModifier
-```
+- `processors.messageModifiers` **replaces** the default `CodeboltAgent` message pipeline.
+- The other processor arrays default to empty, so adding to them is additive.
 
-Now every LLM call from that agent goes through it.
+## Defaults vs opt-in processors
 
-## Processors vs hooks vs tools
+Only `messageModifiers` have built-in defaults in `CodeboltAgent`. The default order is:
 
-Three similar-looking extension points, used for different things:
+1. `ChatHistoryMessageModifier`
+2. `EnvironmentContextModifier`
+3. `DirectoryContextModifier`
+4. `IdeContextModifier`
+5. `CoreSystemPromptModifier`
+6. `ToolInjectionModifier`
+7. `AtFileProcessorModifier`
 
-| Mechanism | Runs at | Scope | Good for |
-|---|---|---|---|
-| **Processors** | Fixed slots in the agent loop | The loop state (messages, tool calls, responses) | Modifying what the agent sees/emits |
-| **[Hooks](../../../05_plugins/01_overview.md)** | Events on the application bus | Events (not tied to a specific agent loop) | Cross-cutting concerns: logging, auditing, policy enforcement |
-| **[Tools](../../../03_agent-extensions/04_mcp-tools/01_overview.md)** | When the LLM calls them | A named capability | New things the agent can do |
+Everything else in `processor-pieces` is opt-in.
 
-Rule of thumb: if you want the agent to *see* something different, use a processor. If you want to *react* to something happening, use a hook. If you want to give the agent a *new capability*, build a tool.
+## What processors are not
+
+Processors are not:
+
+- global application hooks
+- generic event listeners
+- new tools
+- arbitrary middleware with custom `halt` or `deny` return shapes
+
+Those older abstractions do not match the current package.
 
 ## See also
 
-- [Processor types](./02_processor-types.md) — the full list
+- [Processor types](./02_processor-types.md)
 - [Built-in processors](./03_built-in-processors.md)
 - [Writing a custom processor](./04_writing-a-custom-processor.md)
-- [Processor Reference](../../../../05_reference/01_overview.md) — auto-generated class docs
-- [Context Assembly internals](../../../09_internals/03_subsystems/07_context-assembly.md) — where many processors run
+- [Level 1 — Framework](../03_creation-levels/level-1-framework.md)

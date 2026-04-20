@@ -5,235 +5,577 @@ title: Level 1 — Framework
 
 # Level 1 — Framework
 
-> **Note:** The `@codebolt/agent` package and the framework patterns described on this page
-> (`createCodeboltAgent`, `UnifiedAgent`, etc.) represent planned functionality that has not
-> been implemented yet. The actual agent SDK today is `@codebolt/codeboltjs` (a singleton
-> `codebolt` with modules like `codebolt.llm`, `codebolt.fs`, `codebolt.git`, `codebolt.mcp`,
-> `codebolt.chat`, `codebolt.cbstate`). For building agents today, use Markdown agents in
-> `.codebolt/agents/remix/` or the `@codebolt/codeboltjs` SDK directly (level 2).
+Write a code-based agent on top of `@codebolt/agent`. In practice, level 1 today means the unified API in `@codebolt/agent/unified` plus reusable modifiers and processors from `@codebolt/agent/processor-pieces`.
 
-Write a custom agent with a small amount of TypeScript, using the Codebolt agent framework. This is where most real custom agents live. The framework handles the loop, context assembly, heartbeats, memory writes, and the event log — you write the part that makes your agent different.
+This is the default choice for real custom agents. You write TypeScript and customize the prompt and processor pipeline, while the framework handles the prompt -> LLM -> tool execution -> follow-up loop.
 
 ## When level 1 is the right choice
 
-- You need custom code in the handler — conditional logic, external API calls, domain-specific transformations.
-- You need structured typed inputs and outputs (not just free-form chat).
-- You want to use this agent as a node in a flow, or as a callable from other agents.
-- You want to compose processors in a specific order.
-- [Level 0](./level-0-remix.md) isn't expressive enough.
+- You need custom code, not just a prompt remix.
+- You want to add, remove, or reorder context modifiers and processors.
+- You need loop detection, compaction, or tool-call hooks.
+- You want a normal Codebolt agent loop without hand-writing the whole thing.
+- [Level 0](./level-0-remix.md) is too limited, but [level 2](./level-2-codeboltjs.md) would be unnecessary control.
 
-If you're just tweaking prompts and tools, **stay at level 0** — it's easier and inherits upstream improvements automatically.
+If you need complete ownership of the loop and runtime wiring, skip to [level 2](./level-2-codeboltjs.md).
 
-## What the framework gives you
+## What the framework actually gives you
 
-When you `import { createCodeboltAgent } from "@codebolt/agent"` (planned — see note above) you get:
+At the high level, `CodeboltAgent.processMessage()` does four things:
 
-| Provided | Meaning |
-|---|---|
-| **Agent loop** | Deliberate → execute → reflect, with phase tracking |
-| **Context assembly** | Default [contextAssembly](../../../09_internals/03_subsystems/07_context-assembly.md) wiring, configurable |
-| **Tool calling** | Typed access to the [tool service](../../../09_internals/03_subsystems/02_mcp-and-tools.md) |
-| **LLM client** | Typed access to [llmService](../../../09_internals/03_subsystems/03_llm-and-inference.md) |
-| **Memory access** | Typed access to [memory layers](../../../09_internals/03_subsystems/04_memory.md) |
-| **Heartbeats** | Automatic — framework emits them; `HeartbeatManager` handles killing stalled runs |
-| **Event log integration** | Every phase is recorded automatically |
-| **Error handling** | Structured errors with run-level context |
-| **Replay support** | Runs are fully replayable by default |
+1. Builds the initial prompt with `InitialPromptGenerator`.
+2. Runs an LLM step with `AgentStep`.
+3. Executes tool calls and builds the next prompt with `ResponseExecutor`.
+4. Repeats until the run completes or `maxTurns` is hit.
 
-You don't build any of these. You use them.
+Optional runtime features in the current implementation:
 
-## The handler
+- Default message modifiers if you do not provide your own.
+- Tool refresh before each turn.
+- Loop detection via `LoopDetectionService`.
+- Conversation compaction and recovery via `compaction`.
 
-The minimal handler shape:
+This is a concrete runtime API, not a planned one. You do not `export default createCodeboltAgent(...)` as the agent contract. The normal pattern is to register a `codebolt.onMessage(...)` handler and call `processMessage(...)` inside it.
+
+## The normal entry point
+
+A level-1 agent usually registers `codebolt.onMessage(...)` and delegates to `CodeboltAgent`. That is the pattern used by real agents such as `act-updated`.
 
 ```ts
-import { createCodeboltAgent } from "@codebolt/agent"; // planned — see note above
+import codebolt from '@codebolt/codeboltjs';
+import { CodeboltAgent } from '@codebolt/agent/unified';
+import { FlatUserMessage } from '@codebolt/types/sdk';
 
-export default createCodeboltAgent({
-  name: "my-agent",
+const agent = new CodeboltAgent({
+  instructions: 'You are a helpful coding assistant.',
+  enableLogging: true,
+});
 
-  async run(ctx, input) {
-    // your logic here
-    return output;
+codebolt.onMessage(async (reqMessage: FlatUserMessage) => {
+  const result = await agent.processMessage(reqMessage);
+
+  if (!result.success) {
+    throw new Error(result.error ?? 'Agent failed');
+  }
+
+  return result.finalMessage;
+});
+```
+
+The package also exports `createCodeboltAgent(...)`, but it is only a thin convenience wrapper around `new CodeboltAgent(...)`. For anything non-trivial, the class is the clearer surface.
+
+If you do not supply custom `messageModifiers`, `CodeboltAgent` installs a default stack:
+
+- `ChatHistoryMessageModifier`
+- `EnvironmentContextModifier`
+- `DirectoryContextModifier`
+- `IdeContextModifier`
+- `CoreSystemPromptModifier`
+- `ToolInjectionModifier`
+- `AtFileProcessorModifier`
+
+## Customizing the pipeline
+
+`CodeboltAgent` configuration is centered on `instructions` plus optional `context`, `allowedTools`, `enableLogging`, `maxTurns`, `compaction`, `loopDetectionService`, and `processors`.
+
+The real extension points live in `processors`:
+
+- `messageModifiers`
+- `preInferenceProcessors`
+- `postInferenceProcessors`
+- `preToolCallProcessors`
+- `postToolCallProcessors`
+
+A trimmed version of the `act-updated` agent looks like this:
+
+```ts
+import {
+  CodeboltAgent,
+  LoopDetectionService,
+} from '@codebolt/agent/unified';
+import {
+  EnvironmentContextModifier,
+  CoreSystemPromptModifier,
+  DirectoryContextModifier,
+  IdeContextModifier,
+  AtFileProcessorModifier,
+  ToolInjectionModifier,
+  ChatHistoryMessageModifier,
+} from '@codebolt/agent/processor-pieces';
+
+const loopDetectionService = new LoopDetectionService({ debug: true });
+
+const agent = new CodeboltAgent({
+  instructions: systemPrompt,
+  enableLogging: true,
+  loopDetectionService,
+  maxTurns: 30,
+  compaction: {
+    enableLogging: true,
+    autoCompactEnabled: true,
+    contextCollapseEnabled: false,
+  },
+  processors: {
+    messageModifiers: [
+      new ChatHistoryMessageModifier({ enableChatHistory: true }),
+      new EnvironmentContextModifier({ enableFullContext: false }),
+      new DirectoryContextModifier(),
+      new IdeContextModifier({
+        includeActiveFile: true,
+        includeOpenFiles: true,
+        includeCursorPosition: true,
+        includeSelectedText: true,
+      }),
+      new CoreSystemPromptModifier({ customSystemPrompt: systemPrompt }),
+      new ToolInjectionModifier({ includeToolDescriptions: true }),
+      new AtFileProcessorModifier({ enableRecursiveSearch: true }),
+      externalEventProcessor,
+    ],
+    postToolCallProcessors: [externalEventPostToolProcessor],
   },
 });
 ```
 
-The `ctx` parameter gives you access to all the framework-provided services:
+This is the core level-1 pattern: keep the framework loop, but swap in your own prompt assembly and processing hooks. In `act-updated`, custom processors inject external steering and queued events between turns.
+
+## When `CodeboltAgent` is not enough
+
+You can drop one layer lower without leaving level 1. The framework exposes its building blocks directly:
+
+- `InitialPromptGenerator`
+- `AgentStep`
+- `ResponseExecutor`
+
+Use them when you need to change the turn logic but still want framework components instead of raw `@codebolt/codeboltjs`.
 
 ```ts
-ctx.llm.chat({ messages, tools, model })       // → LLM call
-ctx.tools.call({ tool, args })                  // → tool execution
-ctx.memory.episodic.append({ ... })             // → memory write
-ctx.memory.persistent.query({ ... })            // → memory read
-ctx.state.get() / ctx.state.set(...)            // → per-run working state
-ctx.context.assemble(opts)                      // → explicit context build
-ctx.log.info(...) / ctx.log.warn(...)           // → structured logging
-ctx.children.start({ agent, input })            // → spawn a child agent run
-```
-
-Everything is typed. If you pass an invalid tool name or malformed arguments, TypeScript catches it at compile time rather than at runtime.
-
-## Two shapes of handler
-
-The framework supports two styles:
-
-### Single-pass (stateless)
-One invocation of `run()` handles the whole task from input to output. Good for agents that don't need a chat loop:
-
-```ts
-import { createCodeboltAgent } from "@codebolt/agent"; // planned — not yet available
-
-export default createCodeboltAgent({
-  name: "summarizer",
-  async run(ctx, input: { file: string }) {
-    const content = await ctx.tools.call("codebolt_fs.read_file", { path: input.file });
-    const response = await ctx.llm.chat({
-      messages: [
-        { role: "system", content: "Summarise the given code file in 3 sentences." },
-        { role: "user", content: content.content },
-      ],
-    });
-    return { summary: response.content };
-  },
+const prompt = await promptGenerator.processMessage(reqMessage);
+const stepResult = await agentStep.executeStep(reqMessage, prompt);
+const execution = await responseExecutor.executeResponse({
+  initialUserMessage: reqMessage,
+  actualMessageSentToLLM: stepResult.actualMessageSentToLLM,
+  rawLLMOutput: stepResult.rawLLMResponse,
+  nextMessage: stepResult.nextMessage,
 });
 ```
 
-Returns when done. No loop.
+If you need to own the entire loop, event wiring, or low-level SDK interaction yourself, move to [level 2](./level-2-codeboltjs.md).
 
-### Conversational (stateful)
-The framework runs the handler in a loop, passing the conversation state each time, until the handler signals completion. Good for chat-shaped agents:
+## Carrying context across calls
+
+`processMessage()` returns the processed conversation context, so you can continue a run in a later call:
 
 ```ts
-createCodeboltAgent({
-  name: "chat-agent",
-  mode: "conversational",
-  async turn(ctx, message, history) {
-    const response = await ctx.llm.chat({
-      messages: [...history, { role: "user", content: message }],
-      tools: ctx.tools.available(),
-    });
+const firstResult = await agent.processMessage(reqMessage);
 
-    if (response.tool_calls) {
-      const results = await Promise.all(
-        response.tool_calls.map(call => ctx.tools.call(call))
-      );
-      return { type: "continue", tool_results: results };
+const followUpAgent = new CodeboltAgent({
+  instructions: systemPrompt,
+  context: firstResult.context ?? undefined,
+});
+
+const secondResult = await followUpAgent.processMessage(
+  'Continue from the previous result.'
+);
+```
+
+## Processing external events
+
+While an agent is running, external events can arrive — steering instructions from the user, inter-agent messages, or background agent completions. Use `codebolt.agentEventQueue` to poll for these and inject them into the prompt so the LLM sees them on the next turn.
+
+### The event queue
+
+```ts
+const eventQueue = codebolt.agentEventQueue;
+
+// Returns pending events and clears them from the queue
+const events = eventQueue.getPendingExternalEvents();
+```
+
+### Event types
+
+| Event type | Source | What it means |
+|---|---|---|
+| `agentQueueEvent` with `payload.type === 'steering'` | User sent a message while the agent is working | Redirect the agent's current approach |
+| `agentQueueEvent` (other) | Another agent sent a message | Inter-agent communication |
+| `backgroundAgentCompletion` | A background agent finished | Notify the LLM about completed background work |
+
+### Injecting events as a message modifier
+
+Create a custom processor that polls the queue and pushes events into the prompt's message array:
+
+```ts
+import { ProcessedMessage } from '@codebolt/types/agent';
+import { FlatUserMessage } from '@codebolt/types/sdk';
+
+const eventQueue = codebolt.agentEventQueue;
+
+function processExternalEvent(event: any, prompt: ProcessedMessage): ProcessedMessage {
+  if (!event || !prompt?.message?.messages) return prompt;
+
+  const eventType = event.type || event.eventType;
+  const eventData = event.data || event;
+
+  if (eventType === 'agentQueueEvent') {
+    const payload = eventData?.payload || {};
+
+    // Steering: user sent a follow-up while the agent is working
+    if (payload.type === 'steering') {
+      const instruction = payload.instruction || payload.content || JSON.stringify(payload);
+      prompt.message.messages.push({
+        role: 'user' as const,
+        content: `<steering_message>
+<instruction>${instruction}</instruction>
+<context>The user has sent a steering message while you are working. Adjust your approach accordingly.</context>
+</steering_message>`,
+      });
+      return prompt;
     }
 
-    return { type: "done", response: response.content };
-  },
-});
+    // Inter-agent message
+    const content = payload.content || JSON.stringify(payload);
+    prompt.message.messages.push({
+      role: 'user' as const,
+      content: `<agent_event>
+<source>${eventData.sourceAgentId || 'system'}</source>
+<content>${content}</content>
+</agent_event>`,
+    });
+    return prompt;
+  }
+
+  if (eventType === 'backgroundAgentCompletion') {
+    prompt.message.messages.push({
+      role: 'assistant' as const,
+      content: `Background agent completed:\n${JSON.stringify(eventData, null, 2)}`,
+    });
+    return prompt;
+  }
+
+  return prompt;
+}
 ```
 
-The framework wraps this in the [agent loop](../05_agent-anatomy/lifecycle.md), handles retries, and records every phase.
+### Wiring into CodeboltAgent
 
-## Using a pattern
-
-For anything beyond the trivial, use one of the [agent patterns](../06_patterns/overview.md) instead of writing the loop yourself:
+Register the processor in two slots so events are picked up both during initial prompt assembly and after tool calls:
 
 ```ts
-import { UnifiedAgent } from "@codebolt/agent/patterns"; // planned — not yet available
-
-export default new UnifiedAgent({
-  name: "my-agent",
-  systemPrompt: "...",
-  tools: ["codebolt_fs.*", "codebolt_git.*"],
-  processors: {
-    messageModifiers: [new DirectoryContextModifier(), new AtFileProcessorModifier()],
-    toolValidation: [new MyCustomValidator()],
+// As a message modifier — runs during prompt assembly
+const externalEventProcessor = {
+  async modify(_originalRequest: FlatUserMessage, createdMessage: ProcessedMessage) {
+    let prompt = createdMessage;
+    for (const event of eventQueue.getPendingExternalEvents()) {
+      prompt = processExternalEvent(event, prompt);
+    }
+    return prompt;
   },
-  // no handler — the pattern provides it
+};
+
+// As a post-tool-call processor — runs after each tool execution
+const externalEventPostToolProcessor = {
+  async modify({ nextPrompt }: { nextPrompt: ProcessedMessage }) {
+    let prompt = nextPrompt;
+    for (const event of eventQueue.getPendingExternalEvents()) {
+      prompt = processExternalEvent(event, prompt);
+    }
+    return { nextPrompt: prompt, shouldExit: false };
+  },
+};
+
+const agent = new CodeboltAgent({
+  instructions: systemPrompt,
+  processors: {
+    messageModifiers: [
+      // ... your other modifiers ...
+      externalEventProcessor,       // Add at the end of message modifiers
+    ],
+    postToolCallProcessors: [
+      externalEventPostToolProcessor, // Check for events after every tool call
+    ],
+  },
 });
 ```
 
-[Unified Agent](../06_patterns/unified-agent.md) is the recommended default. It packages the common agent shape with sensible defaults and still lets you customize every phase.
+This gives the agent two chances to see external events per turn: once when the prompt is assembled and once after each tool call completes.
 
-## Declaring the manifest
+## Creating custom tools
 
-Your `codeboltagent.yaml` references the framework entry point:
+Use the `Tool` class or `createTool` helper to define tools with Zod schema validation:
+
+```ts
+import { Tool, createTool } from '@codebolt/agent/unified';
+import { z } from 'zod';
+
+const myTool = createTool({
+  id: 'analyze-file',
+  description: 'Analyze a file and return a summary',
+  inputSchema: z.object({
+    filePath: z.string().describe('Path to the file'),
+    detailed: z.boolean().optional().describe('Include detailed analysis'),
+  }),
+  outputSchema: z.object({
+    summary: z.string(),
+    lineCount: z.number(),
+  }),
+  execute: async ({ input }) => {
+    // Your tool logic here
+    return { summary: 'File analysis complete', lineCount: 42 };
+  },
+});
+```
+
+The `Tool` class:
+- Validates inputs against `inputSchema` (Zod) before execution
+- Validates outputs against `outputSchema` (Zod) if provided
+- Converts to OpenAI function format via `toOpenAITool()`
+- Returns `{ success: boolean, result?, error? }` from `execute()`
+
+## Building blocks API
+
+When `CodeboltAgent`'s loop doesn't fit your needs, use the building blocks directly:
+
+### InitialPromptGenerator
+
+Runs message modifiers to build the initial prompt:
+
+```ts
+import { InitialPromptGenerator } from '@codebolt/agent/unified';
+
+const promptGenerator = new InitialPromptGenerator({
+  processors: myMessageModifiers,     // MessageModifier[]
+  baseSystemPrompt: 'You are ...',
+  enableLogging: true,
+});
+
+const prompt = await promptGenerator.processMessage(reqMessage);
+```
+
+### AgentStep
+
+Executes one LLM call with pre/post-inference processors:
+
+```ts
+import { AgentStep } from '@codebolt/agent/unified';
+
+const agentStep = new AgentStep({
+  preInferenceProcessors: [],
+  postInferenceProcessors: [],
+});
+
+const stepResult = await agentStep.executeStep(reqMessage, prompt);
+// stepResult.rawLLMResponse — the LLM's raw response
+// stepResult.nextMessage — the prompt with LLM response appended
+// stepResult.actualMessageSentToLLM — what was actually sent to the LLM
+```
+
+### ResponseExecutor
+
+Handles tool execution with pre/post-tool-call processors:
+
+```ts
+import { ResponseExecutor } from '@codebolt/agent/unified';
+
+const responseExecutor = new ResponseExecutor({
+  preToolCallProcessors: [],
+  postToolCallProcessors: [],
+  loopDetectionService: myLoopDetection, // optional
+});
+
+const execution = await responseExecutor.executeResponse({
+  initialUserMessage: reqMessage,
+  actualMessageSentToLLM: stepResult.actualMessageSentToLLM,
+  rawLLMOutput: stepResult.rawLLMResponse,
+  nextMessage: stepResult.nextMessage,
+});
+// execution.completed — true if LLM produced a final answer
+// execution.nextMessage — updated prompt for next turn
+// execution.finalMessage — the agent's text response (if completed)
+```
+
+### LoopDetectionService
+
+Detects repeated tool calls:
+
+```ts
+import { LoopDetectionService } from '@codebolt/agent/unified';
+
+const loopDetection = new LoopDetectionService({
+  toolCallLoopThreshold: 5,  // trigger after 5 identical calls (default)
+  debug: true,                // log detection events
+});
+
+// Check inside your loop:
+const loopEvent = loopDetection.checkToolCallLoop(toolName, toolArgs);
+if (loopEvent) {
+  console.warn('Loop detected:', loopEvent);
+}
+
+// Reset between runs:
+loopDetection.reset();
+```
+
+## codeboltagent.yaml reference
+
+The manifest describes your agent to the UI and routing system:
 
 ```yaml
-name: my-agent
-version: 0.1.0
-description: What this agent does, in one sentence.
-framework: true
-entrypoint: index.ts
-default_model: claude-sonnet-4-6
+# Required
+title: My Agent
+version: 1.0.0
+unique_id: my-agent
+description: What this agent does in one line.
 
-inputs:
-  task: { type: string, required: true }
+# Optional identity
+initial_message: Hi! I'm ready to help.
+tags: [coding, typescript]
+longDescription: |
+  A longer description shown on the agent detail page.
+avatarSrc: https://example.com/icon.png
+avatarFallback: MA
+author: your-name
+supportRemix: true
 
-outputs:
-  result: { type: object }
+# Agent routing — tells Codebolt when to suggest this agent
+metadata:
+  agent_routing:
+    worksonblankcode: true
+    worksonexistingcode: true
+    supportedlanguages: [javascript, typescript, python]
+    supportedframeworks: [react, node, express]
+    supportRemix: true
 
-tools:
-  allow:
-    - codebolt_fs.*
-    - codebolt_codebase.*
+  # Default LLM configuration
+  defaultagentllm:
+    strict: true
+    modelorder:
+      - claude-sonnet-4-20250514
+      - gpt-4-turbo
 
-limits:
-  max_tool_calls: 100
-  max_tokens: 200000
-  max_wall_time_seconds: 600
+  # Specialized LLM roles (optional)
+  llm_role:
+    - name: documentationllm
+      description: LLM for documentation tasks.
+      strict: true
+      modelorder: [gpt-4-turbo, gpt-3.5-turbo]
+    - name: testingllm
+      description: LLM for testing tasks.
+      strict: true
+      modelorder: [gpt-4-turbo]
+
+# Actions — buttons shown in the agent UI
+actions:
+  - name: Execute
+    description: Run the task.
+    actionPrompt: Let's build this
+  - name: Plan
+    actionPrompt: /plan
+
+# Pre-completion verification (optional)
+verification:
+  enabled: true
+  checks:
+    lint: true
+    test: true
+    build: true
+    typecheck: true
+  timeout: 60000
+  skipOnNoConfig: true
+  skipForNonCodeTasks: true
+  maxRetries: -1  # -1 = keep retrying until fixed
 ```
 
-Key fields specific to level 1:
+## Project layout
 
-- `framework: true` — tells the server this is a framework agent, not a remix.
-- `entrypoint` — path to the file that `export default`s the handler or pattern.
-- `inputs` / `outputs` — typed contract if this agent is called as a flow node.
-
-## Installing dependencies
-
-A level-1 agent is a normal Node package:
-
-```bash
-cd .codebolt/agents/my-agent
-npm install
+```text
+my-agent/
+├── codeboltagent.yaml
+├── package.json
+├── tsconfig.json
+├── webpack.config.js
+├── src/
+│   └── index.ts
+└── dist/
+    ├── index.js
+    └── codeboltagent.yaml   # copied by webpack
 ```
 
-The agent's dependencies are isolated to its own directory. Multiple agents can use different versions of the same library without conflict because each agent runs in its own process.
+## Build with webpack
 
-## Running
+Most agents use webpack to bundle into a single `dist/index.js`. Key requirements:
 
-> **Note:** The CLI subcommands below (`codebolt agent test`, `codebolt agent start`, etc.) represent planned functionality. The actual Codebolt CLI uses flag-based commands, not subcommands.
+- **Target `node`** — agents run in Node.js
+- **Copy `codeboltagent.yaml` to `dist/`** — Codebolt reads it from the dist folder
+- **Externalize `@codebolt` packages** — they're provided at runtime
 
-```bash
-codebolt agent test my-agent --input '{"task": "..."}'
-codebolt agent start my-agent --task "..."
+```js
+// webpack.config.js
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+
+module.exports = {
+  target: 'node',
+  mode: 'production',
+  entry: './src/index.ts',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [{ test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }],
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: 'codeboltagent.yaml', to: 'codeboltagent.yaml' }],
+    }),
+  ],
+  // Don't bundle Node built-ins
+  externals: {
+    '@codebolt/codeboltjs': 'commonjs @codebolt/codeboltjs',
+    '@codebolt/agent': 'commonjs @codebolt/agent',
+  },
+};
 ```
 
-Or from the desktop app / chat — a level-1 agent appears in the agent picker alongside the built-ins.
+### package.json scripts
 
-## Debugging
-
-The framework wires replay, tracing, and structured logging automatically:
-
-> **Note:** The CLI subcommands below (`agent test`, `agent trace`, `agent replay`, `agent inspect`) are planned and not yet available. The current CLI is flag-based.
-
-```bash
-codebolt agent trace <run_id>       # planned: full phase-by-phase trace
-codebolt agent replay <run_id>      # planned: re-run with the recorded inputs
-codebolt agent inspect <run_id>     # planned: interactive REPL into a recorded run
+```json
+{
+  "scripts": {
+    "build": "npx webpack",
+    "dev": "npx tsx src/index.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@codebolt/codeboltjs": "^5.1.32",
+    "@codebolt/agent": "^6.0.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.4.5",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
 ```
-
-See [Testing and debugging](../09_testing-and-debugging.md) for the full surface.
 
 ## When to graduate to level 2
 
-Clear signs you need [level 2](./level-2-codeboltjs.md):
+Move to [level 2](./level-2-codeboltjs.md) when:
 
-- You need the loop to have a non-standard shape the patterns don't support.
-- You want to call `codeboltjs` APIs the framework doesn't expose.
-- You're building infrastructure (a test runner, a debugger, an IDE adapter) rather than an agent.
+- You need a fully custom agent loop.
+- You need raw `@codebolt/codeboltjs` APIs the framework does not wrap.
+- You are building infrastructure or orchestration primitives rather than a normal chat agent.
 
-For everything else, level 1 is the right place to live.
+For most code-based agents, level 1 is the right level.
 
 ## See also
 
-- [Level 0 — Remix](./level-0-remix.md) — simpler
-- [Level 2 — codeboltjs](./level-2-codeboltjs.md) — lower-level
+- [Level 0 — Remix](./level-0-remix.md)
+- [Level 2 — codeboltjs](./level-2-codeboltjs.md)
 - [Patterns overview](../06_patterns/overview.md)
-- [codeboltagent.yaml reference](../05_agent-anatomy/agent-yaml.md)
-- [Custom Agents Quickstart](../02_quickstart.md)
+- [Processors](../07_processors/01_what-are-processors.md)

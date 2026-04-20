@@ -43,7 +43,7 @@ It's possible to get these wrong, and the failures are subtle. If you're not sur
 const codebolt = require('@codebolt/codeboltjs').default;
 
 // LLM access
-const response = await codebolt.llm.chat({ messages, tools });
+const { completion } = await codebolt.llm.inference({ messages, full: true, tools: availableTools });
 
 // File system
 const content = await codebolt.fs.readFile(path);
@@ -52,10 +52,10 @@ const content = await codebolt.fs.readFile(path);
 const status = await codebolt.git.git_status();
 
 // MCP / tool access
-const result = await codebolt.mcp.call({ tool, args });
+const [didUserReject, result] = await codebolt.mcp.executeTool('codebolt', 'read_file', args);
 
 // Chat operations
-await codebolt.chat.send(message);
+await codebolt.chat.sendMessage(message, {});
 
 // State management
 await codebolt.cbstate.set(key, value);
@@ -67,51 +67,69 @@ See [Reference → SDKs → codeboltjs](../../../../05_reference/01_overview.md)
 ## A minimal level-2 agent
 
 ```ts
-// index.ts
-const codebolt = require('@codebolt/codeboltjs').default;
+import codebolt from '@codebolt/codeboltjs';
+import { FlatUserMessage } from '@codebolt/types/sdk';
 
-async function main() {
-  await codebolt.connect();
+const systemPrompt = 'You are a helpful coding assistant.';
 
-  const input = { task: process.env.TASK || "default task" };
-  const history: any[] = [];
+codebolt.onMessage(async (reqMessage: FlatUserMessage) => {
+  const toolsResponse: any = await codebolt.mcp.listMcpFromServers(['codebolt']);
+  const availableTools = toolsResponse?.data?.tools || toolsResponse?.data || [];
+
+  const conversationMessages: any[] = [
+    { role: 'system', content: systemPrompt },
+    { role: 'user', content: reqMessage.userMessage ?? '' },
+  ];
 
   while (true) {
-    const response = await codebolt.llm.chat({
-      messages: [
-        { role: "system", content: "You are a helpful coding assistant." },
-        ...history,
-        { role: "user", content: input.task },
-      ],
+    const { completion } = await codebolt.llm.inference({
+      messages: conversationMessages,
+      full: true,
+      tools: availableTools,
     });
 
-    history.push({ role: "assistant", content: response.content, tool_calls: response.tool_calls });
-
-    if (!response.tool_calls || response.tool_calls.length === 0) {
-      console.log(response.content);
-      break;
+    const assistantMessage = completion?.choices?.[0]?.message;
+    if (!assistantMessage) {
+      throw new Error('LLM did not return a message.');
     }
 
-    for (const call of response.tool_calls) {
-      try {
-        const result = await codebolt.mcp.call(call);
-        history.push({ role: "tool", tool_call_id: call.id, content: result.content });
-      } catch (err) {
-        history.push({ role: "tool", tool_call_id: call.id, content: `Error: ${err.message}` });
-      }
+    conversationMessages.push(assistantMessage);
+
+    if (!assistantMessage.tool_calls?.length) {
+      const finalReply = assistantMessage.content ?? '';
+      codebolt.chat.sendMessage(finalReply, {});
+      return finalReply;
+    }
+
+    for (const toolCall of assistantMessage.tool_calls) {
+      const toolArguments = JSON.parse(toolCall.function.arguments || '{}');
+      const [didUserReject, toolResult] = await codebolt.mcp.executeTool(
+        'codebolt',
+        toolCall.function.name,
+        toolArguments
+      );
+
+      conversationMessages.push({
+        role: 'tool',
+        tool_call_id: toolCall.id,
+        content: didUserReject
+          ? 'User rejected the tool execution.'
+          : JSON.stringify(toolResult),
+      });
     }
   }
-
-  await codebolt.disconnect();
-}
-
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
 });
 ```
 
-Notice what's missing: guardrail checks (those are enforced server-side, so they still happen, but you don't see them directly). What's present: explicit loop structure, direct SDK calls.
+This is deliberately lower-level than level 1:
+
+- You build the message list yourself.
+- You decide which tools to expose to the model.
+- You call `codebolt.llm.inference(...)` yourself.
+- You inspect `tool_calls` yourself.
+- You execute tools and append tool results back into the transcript yourself.
+
+The example above assumes built-in `codebolt` tools for simplicity. Once you need multiple tool servers, custom routing, retries, or compaction, you're rebuilding framework behavior by hand.
 
 ## Manifest
 
@@ -126,6 +144,27 @@ default_model: claude-sonnet-4-6
 ```
 
 `framework: false` tells the server not to wrap your handler — it just spawns your entrypoint as a process with environment variables (including `RUN_ID`), and waits for it to connect via the client SDK.
+
+## Folder structure
+
+A typical level-2 agent looks like this:
+
+```text
+my-raw-agent/
+├── codeboltagent.yaml
+├── package.json
+├── tsconfig.json
+├── src/
+│   └── index.ts
+└── dist/
+    └── index.js
+```
+
+Notes:
+
+- `src/index.ts` contains your custom loop built directly on `@codebolt/codeboltjs`.
+- `dist/index.js` is the compiled output referenced by `entrypoint`.
+- If you bundle with webpack or another tool, you may also have files like `webpack.config.js` or `process-polyfill.js`.
 
 ## Dependencies
 

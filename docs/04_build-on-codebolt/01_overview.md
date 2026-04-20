@@ -18,7 +18,7 @@ The **Codebolt server** is the execution engine. It owns files, memory, sub-agen
 <SystemArchitecture />
 
 - **Custom Interfaces** — build your own chat panel, CLI, or editor extension using the [`clientsdk`](./04_custom-uis/01_overview.md), a wrapper over the server's WebSocket protocol and HTTP routes.
-- **Custom Agents** — write agents with [`codeboltjs`](./02_creating-agents/01_overview.md), or bring your own framework (Vercel AI SDK, LangChain) via the [adapter layer](./02_creating-agents/08_framework-adapters.md). Agents drive the server over WebSocket.
+- **Custom Agents** — write agents with [`codeboltjs`](./02_creating-agents/01_overview.md) or the [`@codebolt/agent`](./02_creating-agents/06_patterns/overview.md) framework. Agents drive the server over WebSocket.
 - **Plugins** — extend the application itself with the [`pluginSdk`](./05_plugins/01_overview.md): gateway integrations, execution plugins, UI extensions, hooks, and custom LLM providers. Plugins live alongside the server and talk to it over the plugin bus.
 - **Remote Environment Providers** — federate across machines. A [remote environment provider](./06_remote-env-providers/01_llm-provider.md) is typically another Codebolt server instance (e.g. `e2b`, a remote sandbox, or a peer workstation) that the local server proxies work to.
 
@@ -51,7 +51,7 @@ A decision guide:
 - **I want my agents to gain a capability without rewriting them.** → [Agent Extensions](./03_agent-extensions/01_overview.md). Capabilities, skills, MCP tools, action blocks.
 - **I want to give agents access to my internal APIs / databases / tools.** → [Agent Extensions → MCP Tools](./03_agent-extensions/04_mcp-tools/01_overview.md). MCP server is usually the right answer.
 - **I want to run Claude Code (or similar) as a Codebolt agent.** → [Third-Party Agents](./02_creating-agents/04_third-party-agents.md).
-- **I want to build agents using Vercel AI SDK or LangChain.** → [Framework Adapters](./02_creating-agents/08_framework-adapters.md).
+- **I want to build agents using an external framework.** → Use the framework as a library inside a [Level 1 agent](./02_creating-agents/03_creation-levels/level-1-framework.md) handler.
 - **I want a new LLM provider or a local inference backend.** → [Extending Codebolt → Custom LLM Providers](./06_extending-codebolt/02_custom-llm-providers.md).
 - **I want to add a theme, custom command, or UI panel to Codebolt.** → [Extending Codebolt](./06_extending-codebolt/01_overview.md).
 - **I want to intercept or modify application behaviour project-wide** (hooks, execution routing, provider registration). → [Plugins](./05_plugins/01_overview.md).

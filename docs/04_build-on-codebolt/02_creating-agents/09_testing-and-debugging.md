@@ -5,184 +5,214 @@ title: Testing & Debugging
 
 # Testing and Debugging Agents
 
-Agents are programs. Test them like programs. The framework makes three kinds of testing easy: **unit**, **replay**, and **trace**. All three should be part of your workflow for any agent that matters.
+Codebolt captures all agent stdout/stderr in real-time, stores it as NDJSON, and streams it to the Agent Debug Panel. This page covers how to use that system effectively and how to write testable agent code.
 
-## Unit tests
+## Agent Debug Panel
 
-For anything you can isolate from the agent loop — a utility function, a parsing helper, a custom processor — standard unit tests work. Use your language's normal testing framework.
+The built-in debug panel shows every agent session — running and historical.
+
+### What's captured
+
+Every agent process spawned by Codebolt is automatically tracked:
+
+- **stdout and stderr** — every line is persisted and streamed in real-time
+- **Session metadata** — agent name, type, thread, parent/child relationships, start/end time, exit code
+- **Agent hierarchy** — child agents and sub-agents are linked to their parent
+
+### Storage
+
+Debug data lives in `.codebolt/agentdebug/` inside your project:
+
+| File | Content |
+|---|---|
+| `index.json` | Index of all sessions with quick-lookup metadata |
+| `{instanceId}.meta.json` | Full metadata per session (status, duration, exit code, agent type) |
+| `{instanceId}.log` | NDJSON log file — one `{"ts", "type", "msg"}` entry per line |
+
+### Agent types
+
+The debug system categorizes agents automatically:
+
+| Type | Meaning |
+|---|---|
+| `individual` | Standalone agent, no parent |
+| `child` | Direct child of another agent |
+| `subagent` | Managed by an orchestrator |
+| `swarm` | Part of a swarm group |
+| `orchestrator` | The orchestrator itself |
+
+### REST API for debug data
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/agent-debug/instances` | GET | All sessions |
+| `/agent-debug/instances/filtered?status=running&agentType=child` | GET | Filtered sessions |
+| `/agent-debug/running` | GET | Currently running sessions |
+| `/agent-debug/by-thread/:threadId` | GET | Sessions for a thread (includes child agents) |
+| `/agent-debug/instances/:id` | GET | Session metadata + child agents + log file path |
+| `/agent-debug/instances/:id/logs?offset=0&limit=500` | GET | Paginated log entries |
+| `/agent-debug/instances/:id/raw-logs` | GET | Raw NDJSON entries |
+| `/agent-debug/cleanup?daysOld=30` | DELETE | Remove old debug data |
+| `/agent-debug/rebuild-index` | POST | Rebuild index from meta files |
+
+### WebSocket for real-time streaming
+
+Connect to `ws://localhost:{socketPort}/agent-debug` for live updates:
+
+| Message type | Direction | Description |
+|---|---|---|
+| `agent-debug:initial` | server → client | All instances sent on connect |
+| `agent-debug:session-started` | server → client | New agent session started |
+| `agent-debug:session-ended` | server → client | Agent session ended (with status, duration) |
+| `agent-debug:log` | server → client | Log line from an agent (real-time) |
+
+## Debugging level-1 framework agents
+
+### Use console.log
+
+Everything your agent writes to stdout/stderr appears in the debug panel:
 
 ```ts
-// my-agent/index.test.ts
-import { extractTickets } from "./index";
+codebolt.onMessage(async (reqMessage) => {
+  console.log('[my-agent] Received:', reqMessage.userMessage?.substring(0, 100));
 
-test("extractTickets parses a description", () => {
-  expect(extractTickets("Fixes ABC-123, ABC-456")).toEqual(["ABC-123", "ABC-456"]);
+  const agent = new CodeboltAgent({
+    instructions: systemPrompt,
+    enableLogging: true,  // Logs internal events (compaction, tool refresh, errors)
+  });
+
+  const result = await agent.processMessage(reqMessage);
+  console.log('[my-agent] Done:', result.success ? 'success' : result.error);
 });
 ```
 
-Nothing Codebolt-specific here.
+### enableLogging
 
-## Testing the agent loop
+With `enableLogging: true` (the default), `CodeboltAgent` logs:
+- Compaction decisions and token savings
+- Tool refresh results
+- Error recovery attempts
+- Execution failures
 
-For the loop itself — "given this input, my agent should do X" — the framework provides a test runner:
+### Prefix your logs
 
-```bash
-codebolt agent test my-agent --input '{"task": "..."}'
-```
+Use a consistent prefix like `[my-agent]` so you can quickly identify your agent's logs when multiple agents run simultaneously.
 
-This:
-1. Spawns the agent in a sandboxed environment.
-2. Feeds it the input.
-3. Records every phase, every tool call, every LLM call.
-4. Prints the full trace.
-5. Does **not** commit any file changes — writes go to a throwaway shadow git branch.
+## Unit testing processors
 
-Use this for smoke testing after changes. It's not deterministic (LLM calls vary), but it catches gross failures fast.
-
-## Replay tests
-
-This is the important one. Replay is how you catch regressions in an LLM-based system without depending on LLM determinism.
-
-### The pattern
-
-1. **Record** a real run that did the right thing:
-
-```bash
-codebolt agent record my-agent --task "..." --output trace.json
-```
-
-`trace.json` contains the full sequence of events, including LLM responses and tool results.
-
-2. **Replay** the recorded trace against your agent:
-
-```bash
-codebolt agent replay trace.json
-```
-
-Replay mode swaps out the LLM and tool services for mocks that return the *recorded* responses. Your agent runs against fixed inputs and should produce a deterministic output path.
-
-3. **Compare** what your agent did on replay to what it did on the original record. If the two diverge, something changed in your agent's logic — usually the thing you just edited.
-
-### What replay catches
-
-- **Logic changes** — you refactored a handler and broke the branch for one input shape.
-- **Processor regressions** — you added a new message modifier and it removed important context.
-- **Tool wiring bugs** — you renamed a tool and forgot to update a caller.
-
-### What replay doesn't catch
-
-- **Prompt regressions** — the LLM response was recorded, so you're not testing the actual prompt. For that, see golden prompts below.
-- **Real-world changes** — the codebase moved; the recorded answers are now stale.
-
-### Golden prompts
-
-To test prompt changes, separate the prompt assembly from the LLM call and snapshot the assembled messages:
+Custom processors are plain objects with a `modify` method. Test them without running the agent loop:
 
 ```ts
-test("system prompt contains workspace name", async () => {
-  const messages = await agent.assemblePrompt({ task: "test" });
-  expect(messages[0].content).toContain("workspace: test-project");
+import { ProcessedMessage } from '@codebolt/types/agent';
+
+// Your custom processor
+const myRedactor = {
+  async modify(_req: any, message: ProcessedMessage): Promise<ProcessedMessage> {
+    const content = message.message.messages?.at(-1)?.content;
+    if (typeof content === 'string') {
+      message.message.messages[message.message.messages.length - 1].content =
+        content.replace(/[\w.]+@[\w.]+/g, '[redacted]');
+    }
+    return message;
+  },
+};
+
+// Test it directly
+test('redactor removes emails', async () => {
+  const message: ProcessedMessage = {
+    message: {
+      messages: [{ role: 'user', content: 'my email is alice@example.com' }],
+      model: 'test',
+    },
+  } as any;
+
+  const result = await myRedactor.modify({}, message);
+  expect(result.message.messages[0].content).toBe('my email is [redacted]');
 });
 ```
 
-Snapshot-testing the assembled messages catches accidental prompt changes and makes every prompt change a reviewable diff.
+## Unit testing external event processors
 
-## Tracing
+The external event processor pattern from [Level 1 — Framework](./03_creation-levels/level-1-framework.md#processing-external-events) is also testable in isolation:
 
-When a run fails or misbehaves in production, you don't need a debugger — the event log already has everything.
+```ts
+test('steering event is injected into prompt', () => {
+  const prompt: ProcessedMessage = {
+    message: { messages: [{ role: 'system', content: 'You are an assistant.' }] },
+  } as any;
 
-```bash
-codebolt agent trace <run_id>
+  const event = {
+    type: 'agentQueueEvent',
+    data: { payload: { type: 'steering', instruction: 'Focus on tests only' } },
+  };
+
+  const result = processExternalEvent(event, prompt);
+  const lastMessage = result.message.messages.at(-1);
+  expect(lastMessage?.content).toContain('Focus on tests only');
+});
 ```
 
-Prints a hierarchical view of the run:
-
-```
-run_xyz  (completed, 14 phases, 47s)
-├── phase 1: deliberate (2.3s)
-│   ├── context.assemble (180ms)
-│   └── llm.chat → 2 tool_calls (1.8s)
-├── phase 2: execute (1.1s)
-│   ├── tool: codebolt_fs.read_file → ok (120ms)
-│   └── tool: codebolt_fs.search → ok (950ms)
-├── phase 3: deliberate (1.8s)
-│   └── llm.chat → 1 tool_call (1.7s)
-...
-```
-
-Options:
-
-- `--json` — machine-readable output for scripting.
-- `--phase N` — zoom into one phase and see its full inputs / outputs.
-- `--since <timestamp>` — only events after a given point.
-- `--type llm.chat` — filter to one event type.
-
-## Inspect mode
-
-For deeper interactive debugging:
-
-```bash
-codebolt agent inspect <run_id>
-```
-
-Opens an interactive REPL where you can:
-
-- Step through phases.
-- Re-execute a single phase with modified inputs (doesn't commit).
-- Query memory as it was at a point in the run.
-- Inspect the assembled context for any LLM call.
-- Diff the assembled context at phase N vs phase N+1 to see what changed.
-
-This is the debugger for multi-step runs. Use it when trace output isn't enough.
-
-## Common failure patterns and how to catch them
+## Common failure patterns
 
 ### "Agent keeps calling the same tool in a loop"
-`LoopDetectionModifier` should catch this automatically. If it's not catching your specific loop, tune its threshold. Symptom in trace: identical `llm.chat → tool_call` sequences repeating.
 
-### "Agent ignores a tool you added"
-The LLM isn't picking your tool. Usually the tool's description is too generic. Override it via `toolDescriptions` in Unified Agent (see [Unified Agent](./06_patterns/unified-agent.md)). Symptom: tool is in the allowlist but never appears in `llm.chat.response.tool_calls`.
+Check the debug panel for repeated identical log entries.
 
-### "Agent makes up tool calls that don't exist"
-The LLM hallucinating tool names. Usually means the allowlist is too big and the LLM is confusing tool names. Tighten the allowlist. Symptom: `tools.call` returns `tool_not_found`.
+- Add `LoopDetectionService` to your agent config.
+- The tool may be returning a confusing result. Log the tool result to see what the LLM is seeing.
+- Add a system prompt instruction: "if a tool returns an error, do not retry the same call."
 
-### "Agent just stops"
-Usually a heartbeat timeout or a silent error. Check the terminal state of the run — if it's `killed` with reason `heartbeat_timeout`, a tool call or handler took too long. If it's `failed` with no reason, check `run_ended` event for the exception.
+### "Agent ignores a user instruction"
+
+The instruction was likely compressed away or buried.
+
+- Check if `ChatCompressionModifier` is active and summarized away the message.
+- Pin instructions with `@`-mentions.
+- Reduce context volume to prevent dilution.
+
+### "Agent runs for a long time doing nothing"
+
+Check the last log entry in the debug panel.
+
+- **Hanging tool call** — a tool is taking too long.
+- **Slow LLM** — provider latency. Check provider health.
+- **Large context assembly** — big projects take longer for directory scanning.
+
+### "Agent calls a tool that doesn't exist"
+
+The LLM is hallucinating tool names.
+
+- Too many tools confuse the LLM. Tighten `allowedTools`.
+- Tool descriptions are too similar. Override with `ToolInjectionModifier`.
+
+### "Agent is too expensive"
+
+Usually too much context being assembled.
+
+- Add `ConversationCompactorModifier` to compress between turns.
+- Reduce `maxTurns`.
+- Use `ChatCompressionModifier` to summarize older history.
 
 ### "Tests pass locally, production fails"
-Almost always a prompt or context difference. The production run has different environment context, different codemap, different memory state. Compare the assembled messages at phase 1 between the two runs using `inspect`.
 
-## Testing hooks and processors separately
+Almost always a context difference — different environment, different directory structure, different memory state. Compare the logs from both environments.
 
-If you wrote a custom [hook](../../05_plugins/01_overview.md) or [processor](./07_processors/04_writing-a-custom-processor.md), test it in isolation before wiring it into an agent:
+## Stale session cleanup
 
-```ts
-import { MyRedactor } from "./my-redactor";
+If Codebolt crashes while agents are running, those sessions are marked `cancelled` on next startup. Old debug data (30+ days) can be cleaned up via:
 
-test("redactor removes emails", async () => {
-  const modifier = new MyRedactor();
-  const messages = [{ role: "user", content: "my email is alice@example.com" }];
-  const result = await modifier.modify(messages);
-  expect(result[0].content).toBe("my email is [redacted]");
-});
+```
+DELETE /agent-debug/cleanup?daysOld=30
 ```
 
-Pattern: processors and hooks are just functions. Test them as functions.
+If the index gets corrupted, rebuild it from the meta files:
 
-## CI integration
-
-For agents that matter, set up CI to run:
-
-1. **Unit tests** — fast, always run.
-2. **Replay tests** against a committed set of `trace.json` files — medium speed, run on every PR.
-3. **Smoke tests** — one `codebolt agent test` run against a real provider, maybe nightly. Catches real-world drift.
-
-Commit the trace files to your repo. They're small and they serve as both tests and examples of intended behaviour.
+```
+POST /agent-debug/rebuild-index
+```
 
 ## See also
 
-- [Lifecycle](./05_agent-anatomy/lifecycle.md) — what each stage looks like in a trace
-- [Auto-Optimize Agents](./10_auto-optimize-agents.md) — the next step after testing
-- [Publishing](./10_publishing.md) — don't publish without tests
-- [Event Log internals](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — where trace data comes from
-- [Guide: debug a hung agent](../../../03_guides/03_everyday-workflows/debug-a-hung-agent.md)
+- [Debugging an Agent (user guide)](../../02_using-codebolt/04_agents/07_debugging-an-agent.md)
+- [Level 1 — Framework](./03_creation-levels/level-1-framework.md)
+- [Writing a Custom Processor](./07_processors/04_writing-a-custom-processor.md)

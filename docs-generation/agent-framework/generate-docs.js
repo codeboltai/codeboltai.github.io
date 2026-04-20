@@ -15,7 +15,7 @@ const path = require('path');
 
 const SCRIPT_DIR = __dirname;
 const DOCS_ROOT  = path.resolve(SCRIPT_DIR, '../..');
-const AGENT_PKG  = path.resolve(DOCS_ROOT, '../codeboltjs/packages/agent');
+const AGENT_PKG  = path.resolve(DOCS_ROOT, '../CodeBolt/packages/agent');
 const OUT_DIR    = path.resolve(DOCS_ROOT, 'docs/05_reference/05_agent-framework/type-reference');
 
 const toFwd = p => p.split(path.sep).join('/');
@@ -158,14 +158,14 @@ function main() {
   if (clean_flag) clean();
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  // NOTE: The @codebolt/agent package requires the codeboltjs monorepo workspace
-  // deps to be installed (pnpm install from D:/Codeboltapps/codeboltjs) before
+  // NOTE: The @codebolt/agent package requires the CodeBolt monorepo workspace
+  // deps to be installed (npm install from the CodeBolt root) before
   // TypeDoc can resolve @codebolt/types imports.
   try {
     execSync(buildCommand(), { stdio: 'inherit', cwd: AGENT_PKG });
   } catch (err) {
     console.error('TypeDoc failed:', err.message);
-    console.error('Tip: Run `pnpm install` in D:/Codeboltapps/codeboltjs first.');
+    console.error('Tip: Run `npm install` in the CodeBolt monorepo root first.');
     process.exit(1);
   }
 

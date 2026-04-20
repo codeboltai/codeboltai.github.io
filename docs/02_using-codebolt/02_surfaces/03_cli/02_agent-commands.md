@@ -160,8 +160,8 @@ Scaffold a new agent.
 
 ```bash
 codebolt agent create --remix                               # interactive: select agent, enter name
-codebolt agent create --framework --name my-planner
-codebolt agent create --framework --pattern unified --name my-agent
+codebolt agent create --framework --name my-planner         # scaffold from agent template
+codebolt agent create --framework --name my-agent --description "My agent"
 ```
 
 ### `codebolt agent publish`
