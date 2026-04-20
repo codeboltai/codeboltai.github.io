@@ -298,43 +298,270 @@ const agent = new CodeboltAgent({
 
 This gives the agent two chances to see external events per turn: once when the prompt is assembled and once after each tool call completes.
 
-## Project layout
+## Creating custom tools
 
-A typical level-1 agent looks like this:
+Use the `Tool` class or `createTool` helper to define tools with Zod schema validation:
+
+```ts
+import { Tool, createTool } from '@codebolt/agent/unified';
+import { z } from 'zod';
+
+const myTool = createTool({
+  id: 'analyze-file',
+  description: 'Analyze a file and return a summary',
+  inputSchema: z.object({
+    filePath: z.string().describe('Path to the file'),
+    detailed: z.boolean().optional().describe('Include detailed analysis'),
+  }),
+  outputSchema: z.object({
+    summary: z.string(),
+    lineCount: z.number(),
+  }),
+  execute: async ({ input }) => {
+    // Your tool logic here
+    return { summary: 'File analysis complete', lineCount: 42 };
+  },
+});
+```
+
+The `Tool` class:
+- Validates inputs against `inputSchema` (Zod) before execution
+- Validates outputs against `outputSchema` (Zod) if provided
+- Converts to OpenAI function format via `toOpenAITool()`
+- Returns `{ success: boolean, result?, error? }` from `execute()`
+
+## Building blocks API
+
+When `CodeboltAgent`'s loop doesn't fit your needs, use the building blocks directly:
+
+### InitialPromptGenerator
+
+Runs message modifiers to build the initial prompt:
+
+```ts
+import { InitialPromptGenerator } from '@codebolt/agent/unified';
+
+const promptGenerator = new InitialPromptGenerator({
+  processors: myMessageModifiers,     // MessageModifier[]
+  baseSystemPrompt: 'You are ...',
+  enableLogging: true,
+});
+
+const prompt = await promptGenerator.processMessage(reqMessage);
+```
+
+### AgentStep
+
+Executes one LLM call with pre/post-inference processors:
+
+```ts
+import { AgentStep } from '@codebolt/agent/unified';
+
+const agentStep = new AgentStep({
+  preInferenceProcessors: [],
+  postInferenceProcessors: [],
+});
+
+const stepResult = await agentStep.executeStep(reqMessage, prompt);
+// stepResult.rawLLMResponse — the LLM's raw response
+// stepResult.nextMessage — the prompt with LLM response appended
+// stepResult.actualMessageSentToLLM — what was actually sent to the LLM
+```
+
+### ResponseExecutor
+
+Handles tool execution with pre/post-tool-call processors:
+
+```ts
+import { ResponseExecutor } from '@codebolt/agent/unified';
+
+const responseExecutor = new ResponseExecutor({
+  preToolCallProcessors: [],
+  postToolCallProcessors: [],
+  loopDetectionService: myLoopDetection, // optional
+});
+
+const execution = await responseExecutor.executeResponse({
+  initialUserMessage: reqMessage,
+  actualMessageSentToLLM: stepResult.actualMessageSentToLLM,
+  rawLLMOutput: stepResult.rawLLMResponse,
+  nextMessage: stepResult.nextMessage,
+});
+// execution.completed — true if LLM produced a final answer
+// execution.nextMessage — updated prompt for next turn
+// execution.finalMessage — the agent's text response (if completed)
+```
+
+### LoopDetectionService
+
+Detects repeated tool calls:
+
+```ts
+import { LoopDetectionService } from '@codebolt/agent/unified';
+
+const loopDetection = new LoopDetectionService({
+  toolCallLoopThreshold: 5,  // trigger after 5 identical calls (default)
+  debug: true,                // log detection events
+});
+
+// Check inside your loop:
+const loopEvent = loopDetection.checkToolCallLoop(toolName, toolArgs);
+if (loopEvent) {
+  console.warn('Loop detected:', loopEvent);
+}
+
+// Reset between runs:
+loopDetection.reset();
+```
+
+## codeboltagent.yaml reference
+
+The manifest describes your agent to the UI and routing system:
+
+```yaml
+# Required
+title: My Agent
+version: 1.0.0
+unique_id: my-agent
+description: What this agent does in one line.
+
+# Optional identity
+initial_message: Hi! I'm ready to help.
+tags: [coding, typescript]
+longDescription: |
+  A longer description shown on the agent detail page.
+avatarSrc: https://example.com/icon.png
+avatarFallback: MA
+author: your-name
+supportRemix: true
+
+# Agent routing — tells Codebolt when to suggest this agent
+metadata:
+  agent_routing:
+    worksonblankcode: true
+    worksonexistingcode: true
+    supportedlanguages: [javascript, typescript, python]
+    supportedframeworks: [react, node, express]
+    supportRemix: true
+
+  # Default LLM configuration
+  defaultagentllm:
+    strict: true
+    modelorder:
+      - claude-sonnet-4-20250514
+      - gpt-4-turbo
+
+  # Specialized LLM roles (optional)
+  llm_role:
+    - name: documentationllm
+      description: LLM for documentation tasks.
+      strict: true
+      modelorder: [gpt-4-turbo, gpt-3.5-turbo]
+    - name: testingllm
+      description: LLM for testing tasks.
+      strict: true
+      modelorder: [gpt-4-turbo]
+
+# Actions — buttons shown in the agent UI
+actions:
+  - name: Execute
+    description: Run the task.
+    actionPrompt: Let's build this
+  - name: Plan
+    actionPrompt: /plan
+
+# Pre-completion verification (optional)
+verification:
+  enabled: true
+  checks:
+    lint: true
+    test: true
+    build: true
+    typecheck: true
+  timeout: 60000
+  skipOnNoConfig: true
+  skipForNonCodeTasks: true
+  maxRetries: -1  # -1 = keep retrying until fixed
+```
+
+## Project layout
 
 ```text
 my-agent/
 ├── codeboltagent.yaml
 ├── package.json
+├── tsconfig.json
+├── webpack.config.js
 ├── src/
 │   └── index.ts
-├── webpack.config.js
 └── dist/
-    └── index.js
+    ├── index.js
+    └── codeboltagent.yaml   # copied by webpack
 ```
 
-Notes:
+## Build with webpack
 
-- `codeboltagent.yaml` describes the agent in the UI and routing layer.
-- `src/index.ts` usually registers `codebolt.onMessage(...)`.
-- Many agents bundle to `dist/index.js`; `act-updated` also copies `codeboltagent.yaml` into `dist/` as part of its webpack build.
+Most agents use webpack to bundle into a single `dist/index.js`. Key requirements:
 
-## Build
+- **Target `node`** — agents run in Node.js
+- **Copy `codeboltagent.yaml` to `dist/`** — Codebolt reads it from the dist folder
+- **Externalize `@codebolt` packages** — they're provided at runtime
 
-Level-1 agents are regular Node and TypeScript packages. A common workflow is:
+```js
+// webpack.config.js
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
-```bash
-npm install
-npm run build
+module.exports = {
+  target: 'node',
+  mode: 'production',
+  entry: './src/index.ts',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [{ test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/ }],
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: 'codeboltagent.yaml', to: 'codeboltagent.yaml' }],
+    }),
+  ],
+  // Don't bundle Node built-ins
+  externals: {
+    '@codebolt/codeboltjs': 'commonjs @codebolt/codeboltjs',
+    '@codebolt/agent': 'commonjs @codebolt/agent',
+  },
+};
 ```
 
-In development, many agents also provide a `dev` script such as:
+### package.json scripts
 
-```bash
-npx tsx src/index.ts
+```json
+{
+  "scripts": {
+    "build": "npx webpack",
+    "dev": "npx tsx src/index.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@codebolt/codeboltjs": "^5.1.32",
+    "@codebolt/agent": "^6.0.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "ts-loader": "^9.5.0",
+    "typescript": "^5.4.5",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
 ```
-
-The exact build tool is up to the agent. The framework contract lives in your imports and `codebolt.onMessage(...)` handler, not in a special manifest flag.
 
 ## When to graduate to level 2
 
@@ -352,4 +579,3 @@ For most code-based agents, level 1 is the right level.
 - [Level 2 — codeboltjs](./level-2-codeboltjs.md)
 - [Patterns overview](../06_patterns/overview.md)
 - [Processors](../07_processors/01_what-are-processors.md)
-- [Custom Agents Quickstart](../02_quickstart.md)
