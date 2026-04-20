@@ -3,191 +3,191 @@ sidebar_position: 7
 title: Debugging an Agent
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Debugging an Agent
 
-Agents are programs. When they misbehave, the tools for debugging them are **trace**, **inspect**, and **replay** — plus common patterns for recognising what's gone wrong.
+Where you see agent logs depends on how the agent runs:
 
-## The main tools
+| Agent type | Where to check logs |
+|---|---|
+| **Regular agents** (started from chat or CLI) | **Agent Debug Panel** in the Codebolt application |
+| **Self-executed remote agents** | Your own terminal where you started the process |
 
-### Trace — full phase-by-phase record of a run
+Regular agents are spawned by Codebolt's `AgentProcessManager` — their stdout/stderr is captured automatically and shown in the Agent Debug Panel. Self-executed remote agents run in your own terminal, so their logs appear there instead.
 
-<Tabs groupId="surface">
-<TabItem value="desktop" label="Desktop" default>
+## Agent Debug Panel
 
-Agents panel → click a run → **Trace** tab. Tree of phases with timing, inputs, outputs, tool calls, LLM calls. Click any phase to expand its full payload.
+Open the Agent Debug Panel from the sidebar in the Codebolt application. It has two panes:
 
-</TabItem>
-<TabItem value="cli" label="CLI">
+- **Left pane** — instance list, grouped by Running and History. Shows agent name, type badge, start time, and log count.
+- **Right pane** — terminal-style log viewer for the selected instance, with real-time streaming.
+
+### What you see for each instance
+
+| Field | Description |
+|---|---|
+| Agent name | The agent's display name from `codeboltagent.yaml` |
+| Type | `individual`, `child`, `subagent`, `swarm`, or `orchestrator` |
+| Status | `running`, `completed`, `failed`, or `cancelled` |
+| Duration | How long the session ran |
+| Log count | Total stdout + stderr messages captured |
+| Child agents | Sub-agents spawned by this agent (shown nested) |
+
+### Filtering
+
+Filter the instance list by:
+- **Status** — running, completed, failed
+- **Agent type** — individual, child, subagent, swarm, orchestrator
+- **Thread** — filter by conversation thread
+- **Swarm** — filter by swarm group
+
+## How agent logs work
+
+### Storage
+
+All debug data is stored in your project at `.codebolt/agentdebug/`:
+
+```
+.codebolt/agentdebug/
+├── index.json                          # Index of all debug sessions
+├── {instanceId}.meta.json              # Metadata for each session
+└── {instanceId}.log                    # NDJSON log file (one JSON entry per line)
+```
+
+Log entries are stored as NDJSON:
+```json
+{"ts": "2025-01-15T10:30:00.000Z", "type": "stdout", "msg": "Agent processing message..."}
+{"ts": "2025-01-15T10:30:01.000Z", "type": "stderr", "msg": "Warning: token limit approaching"}
+```
+
+### Real-time streaming
+
+Logs stream to the UI via WebSocket at `/agent-debug`. When you select an instance in the panel, you see:
+- Historical logs loaded from the NDJSON file (with pagination)
+- New logs appended in real-time as the agent runs
+
+### Session lifecycle
+
+1. **Session starts** when `AgentProcessManager` spawns an agent process. A meta file and empty log file are created.
+2. **Logs stream** as the agent writes to stdout/stderr. Each line is persisted to the NDJSON file and broadcast to connected UI clients.
+3. **Session ends** when the process exits. Status is set to `completed` (exit code 0) or `failed` (non-zero). Duration is calculated.
+4. **Stale cleanup** — if the app crashes while agents are running, those sessions are marked `cancelled` on next startup.
+
+## REST API
+
+Access debug data programmatically:
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/agent-debug/instances` | GET | All debug sessions |
+| `/agent-debug/instances/filtered?status=running` | GET | Filter by status, agentType, threadId, swarmId |
+| `/agent-debug/running` | GET | Currently running sessions |
+| `/agent-debug/by-thread/:threadId` | GET | Sessions for a thread (includes child agents) |
+| `/agent-debug/instances/:id` | GET | Single session metadata + child agents |
+| `/agent-debug/instances/:id/logs?offset=0&limit=500` | GET | Paginated logs |
+| `/agent-debug/instances/:id/raw-logs` | GET | Raw NDJSON entries |
+| `/agent-debug/cleanup?daysOld=30` | DELETE | Remove old debug data |
+
+## Debugging custom agents
+
+### Level 1 (framework) agents
+
+Use `console.log` / `console.error` in your agent code. Everything written to stdout/stderr is captured by the debug system:
+
+```ts
+codebolt.onMessage(async (reqMessage) => {
+  console.log('[my-agent] Received message:', reqMessage.userMessage?.substring(0, 100));
+
+  const agent = new CodeboltAgent({
+    instructions: systemPrompt,
+    enableLogging: true,  // Framework logs internal events
+  });
+
+  const result = await agent.processMessage(reqMessage);
+  console.log('[my-agent] Result:', result.success ? 'success' : result.error);
+});
+```
+
+`enableLogging: true` (the default) makes `CodeboltAgent` log internal events like compaction, tool refresh, and errors to the console — all captured in the debug panel.
+
+### Level 2 (codeboltjs) agents
+
+Same approach — `console.log` and `console.error` are captured. Use stderr for warnings and errors so they appear as a different type in the log viewer.
+
+### Third-party agents
+
+Third-party agent wrappers capture the vendor CLI's stdout/stderr. All output from Claude Code, Codex, Gemini, etc. appears in the debug panel.
+
+### Self-executed remote agents
+
+Self-executed remote agents are **not** spawned by Codebolt — you start them yourself in your own terminal. Because of this, their stdout/stderr goes to your terminal, not to the Agent Debug Panel.
+
+When you create a self-executed remote agent, Codebolt shows you the environment variables to set before running:
 
 ```bash
-codebolt agent trace <run_id>
-codebolt agent trace <run_id> --phase 3
-codebolt agent trace <run_id> --type llm.chat
-codebolt agent trace <run_id> --type tool.call
-codebolt agent trace <run_id> --tail 20
+# On macOS/Linux
+export threadToken=<token>
+export agentId=<agent-id>
+
+# On Windows
+set threadToken=<token>
+set agentId=<agent-id>
 ```
 
-</TabItem>
-<TabItem value="api" label="HTTP API">
+Set these in your terminal, then start your agent process. All logs will appear in that terminal. The agent communicates with Codebolt via WebSocket using the thread token, but the debug output stays local to your terminal.
 
-```http
-GET /api/runs/:runId/trace
-GET /api/runs/:runId/trace?type=llm.chat
-GET /api/runs/:runId/trace?phase=3
-```
-
-</TabItem>
-</Tabs>
-
-### Inspect — interactive REPL into a recorded run
-
-<Tabs groupId="surface">
-<TabItem value="cli" label="CLI" default>
-
-```bash
-codebolt agent inspect <run_id>
-```
-
-Step through phases, re-execute one with modified inputs, query memory-as-it-was, diff assembled contexts. The deepest debugging view available.
-
-</TabItem>
-<TabItem value="desktop" label="Desktop">
-
-In the trace view, click **Inspect this phase** on any phase. Opens an inspector pane on the right with the same step / re-execute / query controls as the CLI inspector.
-
-</TabItem>
-</Tabs>
-
-### Replay — re-run a recorded trace against the current agent
-
-<Tabs groupId="surface">
-<TabItem value="cli" label="CLI" default>
-
-```bash
-codebolt agent record my-agent --task "..." > trace.json
-# edit the agent
-codebolt agent replay trace.json
-```
-
-Shows divergences between the recorded behaviour and the current agent's behaviour.
-
-</TabItem>
-<TabItem value="desktop" label="Desktop">
-
-Agents panel → run → **Record** to capture, **Replay against current version** to compare. Divergences appear as a diff in the trace tree.
-
-</TabItem>
-</Tabs>
-
-Useful for catching regressions after editing an agent.
+For agents started by Codebolt (including `codeboltExecuted` remote agents), logs go to the Agent Debug Panel as usual.
 
 ## Common failure patterns
 
 ### "Agent keeps calling the same tool in a loop"
 
-Check the trace for repeated `tool_call → tool_result → tool_call` sequences with the same args.
+Look at the log output for repeated tool calls with the same arguments.
 
-- `LoopDetectionModifier` should catch this. If it isn't, tune the threshold or add the modifier explicitly.
-- Usually the tool is returning a confusing result the agent misinterprets as "try again". Look at the tool result — does it clearly communicate success/failure?
-- Sometimes the LLM is genuinely stuck. A system prompt nudge like "if a tool returns an error, do not retry the same call" helps.
+- Add `LoopDetectionService` to your agent config.
+- Check if the tool is returning a confusing result the agent misinterprets as "try again".
+- Add a system prompt instruction: "if a tool returns an error, do not retry the same call."
 
-### "Agent ignores an instruction from the user"
+### "Agent ignores a user instruction"
 
-Check the assembled context for the turn that ignored it (`trace --phase N`).
+The instruction may have been compressed away or buried under too much context.
 
-- Was the instruction compressed away? (ChatCompressionModifier will mark compressed turns.)
-- Is it present but buried under noise? Too much context can dilute the instruction.
-- Pin the instruction with an `@`-mention to force it into context.
-- Add a context rule for important instructions.
+- Check if `ChatCompressionModifier` is active — it may have summarized away the instruction.
+- Pin important instructions with `@`-mentions to force them into context.
+- Reduce the amount of context being assembled.
 
-### "Agent calls a tool that doesn't exist"
+### "Agent runs for a long time doing nothing"
 
-The LLM is hallucinating a tool name. Check the agent's `tools.allow`:
+Check the debug panel for the last log entry.
 
-- Too many tools → the LLM is confusing similar names. Tighten the allowlist.
-- Tool description is too similar to another → clarify descriptions.
-- The agent hasn't been given the tool schema properly → look for processor bugs.
-
-### "Tool call rejected by guardrail"
-
-Check the trace for a `guardrail.denied` event.
-
-- The denial reason explains why. Often a path restriction, a writable-ness check, or a specific tool block.
-- The agent is expected to handle denials — it should explain to the user rather than retry. If it keeps retrying, the system prompt needs an instruction like "if a guardrail denies an action, report it and do not retry".
-
-### "Agent runs for a long time doing nothing visible"
-
-In-flight for a while with no phase transitions.
-
-- **Heartbeat-timeout risk.** Check if a tool call is hanging. `codebolt agent trace <run_id> --tail` to see the last activity.
-- **Slow LLM.** The provider is slow; check provider health in Settings.
-- **Long context assembly.** For huge projects, assembly can take seconds. Not a bug, just slow.
+- **Tool call hanging** — a tool is taking too long to respond.
+- **Slow LLM** — the provider is slow; check provider health.
+- **Long context assembly** — large projects take longer for directory and environment context.
 
 ### "Agent makes the wrong tool call"
 
-Check the LLM response that produced it (`trace --type llm.chat --phase N`).
+Usually a problem with the tool descriptions the LLM sees.
 
-- Look at the tools list in the request. Was the right tool available?
-- Look at the system prompt. Was the right tool described clearly?
-- Often the fix is in `toolDescriptions` — steer the LLM with a more explicit description.
-
-### "Agent says it did X but didn't"
-
-This is the "LLM lies about its output" failure. Check the trace:
-
-- Did the tool call actually happen? Look for the tool_call event.
-- Did the tool return success? Look for the tool_result event.
-- If yes on both: the agent is confused about what "done" means. Tighten the system prompt on what success looks like.
-
-### "Agent output is structurally wrong"
-
-The agent returned a shape that doesn't match its declared `outputs` schema.
-
-- If using a typed output, the framework rejects and fails the run. Fix by either: relaxing the schema or making the system prompt more specific about the output shape.
+- Check if the right tool is in the `allowedTools` list.
+- Override tool descriptions with more explicit instructions.
+- Too many similar tools confuse the LLM — tighten the allowlist.
 
 ### "Agent is too expensive"
 
-Cost is in the trace. Usually one of:
+Usually caused by too much context being assembled.
 
-- Too much context being assembled. Check the message sizes in `trace --type llm.chat`.
-- Too many iterations. The agent is looping unnecessarily.
-- Wrong model. Flagship models are 10-20x more expensive than mid-tier.
-
-Most cost wins come from trimming context rather than switching models.
-
-## Debugging custom agents
-
-For level-1 framework agents, add logging inside your handler:
-
-```ts
-async run(ctx, input) {
-  ctx.log.info("run starting", { input });
-  // ...
-  ctx.log.debug("about to call LLM", { messageCount: messages.length });
-  // ...
-}
-```
-
-These show up in the trace. Use `trace --log-level debug` to see debug-level entries.
-
-For level-2/3 agents, log to stderr (never stdout — that's the protocol channel). Logs appear in `codebolt app logs --agent <run_id>`.
+- Add `ConversationCompactorModifier` to compress the transcript between turns.
+- Reduce `maxTurns` to prevent runaway loops.
+- Use `ChatCompressionModifier` to summarize older history.
 
 ## The debug mindset
 
-When an agent is misbehaving:
-
-1. **Read the trace first.** The full trace is the ground truth. Don't guess what happened; look.
-2. **Find the first phase that went wrong.** Not the last failing phase, the first odd decision. Fixes upstream prevent downstream breakage.
-3. **Check what context the LLM actually saw.** Most "why did the agent do X" answers live in the assembled messages.
-4. **Reproduce with replay.** Once you have a recorded failure, you can iterate on fixes without waiting for real LLM calls.
-5. **Pin the fix with a test.** Add the recorded trace as a regression test so the same failure doesn't recur.
+1. **Check the debug panel first.** The logs are ground truth — don't guess.
+2. **Find the first thing that went wrong.** Not the last error, but the first odd decision.
+3. **Check what the LLM actually saw.** With `enableLogging: true`, the framework logs the prompt assembly steps.
+4. **Use filters.** Filter by thread or agent type to focus on the relevant sessions.
+5. **Check child agents.** If a parent agent delegated to sub-agents, check their logs too — the debug panel shows the hierarchy.
 
 ## See also
 
 - [What is an agent](./01_what-is-an-agent.md)
 - [Running agents](./03_running-agents.md)
-- [Testing and debugging (for builders)](../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md)
-- [Agent run end-to-end (internals)](../../04_build-on-codebolt/09_internals/04_data-flow-walkthroughs/agent-run-end-to-end.md)

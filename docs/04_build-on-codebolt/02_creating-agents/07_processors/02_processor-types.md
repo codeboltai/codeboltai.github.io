@@ -5,132 +5,166 @@ title: Processor Types
 
 # Processor Types
 
-Processors fit into four slot families. Each family runs at a different point in the agent loop and has a different interface.
+The current framework has **five** processor families, not four. Each family has a different signature and runs at a different point in the loop.
 
 ## Family 1 — Message Modifiers
 
-Run **before the LLM call**. Receive the assembled message list, return a modified list. Used for prompt assembly, context injection, compression, redaction.
+Run during prompt assembly in `InitialPromptGenerator`.
 
 ```ts
 interface MessageModifier {
-  modify(messages: Message[], ctx: Context): Promise<Message[]>;
+  modify(
+    originalRequest: FlatUserMessage,
+    createdMessage: ProcessedMessage
+  ): Promise<ProcessedMessage>;
 }
 ```
 
-Built-ins (see [Built-in Processors](./03_built-in-processors.md)):
+Use these for:
 
-- `CoreSystemPromptModifier` — injects the core system prompt
-- `EnvironmentContextModifier` — adds cwd, git branch, time
-- `IdeContextModifier` — adds open file, selection, cursor
-- `DirectoryContextModifier` — adds directory listing
-- `AtFileProcessorModifier` — resolves `@file` references to contents
-- `ArgumentProcessorModifier` — substitutes `{arg}`-style placeholders
-- `MemoryImportModifier` — pulls in `@memory:` references
-- `ChatHistoryMessageModifier` — manages the history window
-- `ChatCompressionModifier` — compresses older turns when over budget
-- `ConversationCompactorModifier` — aggressive compaction
-- `ShellProcessorModifier` — handles `$(cmd)` shell substitution
-- `LoopDetectionModifier` — detects and breaks repetitive loops
-- `ChatRecordingModifier` — records final messages for replay
+- adding environment or directory context
+- injecting tools
+- resolving `@file` mentions
+- adding memory or context-assembly output
 
-## Family 2 — Tool Modifiers
+Important:
 
-Run **around tool calls**. Can inject available tools, rewrite arguments, or validate calls against extra rules.
+- In `CodeboltAgent`, supplying `processors.messageModifiers` replaces the default message-modifier set.
+
+## Family 2 — Pre-Inference Processors
+
+Run in `AgentStep` after prompt assembly and before `codebolt.llm.inference(...)`.
 
 ```ts
-interface ToolInjectionModifier {
-  inject(availableTools: Tool[], ctx: Context): Promise<Tool[]>;
-}
-
-interface ToolParameterModifier {
-  modify(call: ToolCall, ctx: Context): Promise<ToolCall>;
-}
-
-interface ToolValidationModifier {
-  validate(call: ToolCall, ctx: Context): Promise<ValidationResult>;
+interface PreInferenceProcessor {
+  modify(
+    originalRequest: FlatUserMessage,
+    createdMessage: ProcessedMessage
+  ): Promise<ProcessedMessage>;
 }
 ```
 
-Built-ins:
+Use these for:
 
-- `ToolInjectionModifier` — contextually expands the tool allowlist
-- `ToolParameterModifier` — rewrites arguments before execution
-- `ToolValidationModifier` — checks calls against custom rules
+- last-minute redaction
+- prompt compression
+- final prompt normalization before inference
 
-## Family 3 — LLM Step Processors
+## Family 3 — Post-Inference Processors
 
-Wrap **the LLM call itself**. Run before, after, or both.
+Run in `AgentStep` after the LLM response has been appended to the transcript, but before tool execution.
 
 ```ts
-interface LLMAgentStep {
-  before?(request: LLMRequest, ctx: Context): Promise<LLMRequest>;
-  after?(response: LLMResponse, ctx: Context): Promise<LLMResponse>;
+interface PostInferenceProcessor {
+  modify(
+    llmMessageSent: ProcessedMessage,
+    llmResponseMessage: LLMCompletion,
+    nextPrompt: ProcessedMessage
+  ): Promise<ProcessedMessage>;
 }
 ```
 
-Used for: streaming transforms, response validation, model fallback, usage logging.
+Use these for:
 
-## Family 4 — Response Modifiers
+- response inspection
+- loop warnings
+- transcript annotations before tool handling
 
-Run **after the LLM responds**, before the agent acts on it. Used for redaction, normalization, safety checks.
+## Family 4 — Pre-Tool Call Processors
+
+Run in `ResponseExecutor` before tools are executed.
 
 ```ts
-interface ResponseModifier {
-  modify(response: LLMResponse, ctx: Context): Promise<LLMResponse>;
+interface PreToolCallProcessor {
+  modify(input: {
+    llmMessageSent: ProcessedMessage;
+    rawLLMResponseMessage: LLMCompletion;
+    nextPrompt: ProcessedMessage;
+  }): Promise<{
+    nextPrompt: ProcessedMessage;
+    shouldExit?: boolean;
+  }>;
 }
 ```
 
-## Ordering within a family
+Use these for:
 
-Within a family, processors run in a declared order. The framework picks defaults for built-ins; custom processors are inserted at a declared position:
+- validating tool-call flow
+- intercepting tool execution
+- stopping execution before tools run
 
-```yaml
-processors:
-  message_modifiers:
-    - CoreSystemPromptModifier                    # position 1
-    - DirectoryContextModifier                    # position 2
-    - { name: MyRedactor, after: AtFileProcessorModifier }  # explicit
-    - ChatCompressionModifier                     # position 3
-```
+Important:
 
-Order matters: a redactor that runs before `AtFileProcessorModifier` won't see resolved file contents.
+- This is the first family that can short-circuit the loop with `shouldExit: true`.
 
-## Reading vs modifying
+## Family 5 — Post-Tool Call Processors
 
-Some processors observe without modifying:
+Run in `ResponseExecutor` after tool results have been appended to the prompt.
 
 ```ts
-class MetricsModifier implements MessageModifier {
-  async modify(messages, ctx) {
-    ctx.metrics.incr("messages.assembled", messages.length);
-    return messages;  // unchanged
-  }
+interface PostToolCallProcessor {
+  modify(input: {
+    llmMessageSent: ProcessedMessage;
+    rawLLMResponseMessage: LLMCompletion;
+    nextPrompt: ProcessedMessage;
+    toolResults?: ToolResult[];
+    tokenLimit?: number;
+    maxOutputTokens?: number;
+  }): Promise<{
+    nextPrompt: ProcessedMessage;
+    shouldExit: boolean;
+  }>;
 }
 ```
 
-These are fine — the framework runs them for side effects. But if you're only observing, consider using a [hook](../../../05_plugins/01_overview.md) instead — hooks are cheaper and don't sit on the critical path.
+Use these for:
 
-## Control flow
+- transcript compaction
+- processing shell-style placeholders from tool results
+- deciding whether the loop should continue
 
-A processor can return more than just the modified value. For message modifiers:
+## Ordering
 
-```ts
-return { messages: newMessages, halt: true, reason: "budget exceeded" };
-```
-
-Returning `halt: true` stops the pipeline. Useful for emergency stops (budget exceeded, guardrail failure).
-
-For tool modifiers:
+Within each family, processors run in the array order you provide:
 
 ```ts
-return { call, deny: true, reason: "path outside workspace" };
+processors: {
+  messageModifiers: [
+    new DirectoryContextModifier(),
+    new AtFileProcessorModifier(),
+  ],
+  postInferenceProcessors: [
+    new LoopDetectionModifier(),
+  ],
+}
 ```
 
-Denying a tool call surfaces a structured denial to the agent.
+There is no shipped `before` / `after` insertion syntax in the current framework.
+
+## Which families can stop the loop
+
+Only tool-call processors can return `shouldExit`:
+
+- `preToolCallProcessors`
+- `postToolCallProcessors`
+
+Message, pre-inference, and post-inference processors always return a `ProcessedMessage`.
+
+## Public imports
+
+Use:
+
+- `@codebolt/agent/processor-pieces` for shipped processor classes
+- `@codebolt/types/agent` for processor interfaces and `ProcessedMessage`
+- `@codebolt/types/sdk` for `FlatUserMessage` and `LLMCompletion`
+
+One minor oddity in the current export surface:
+
+- `LoopDetectionModifier` belongs to the **post-inference** family
+- but it is re-exported through the `processor-pieces` barrel alongside message modifiers
 
 ## See also
 
 - [What are processors](./01_what-are-processors.md)
 - [Built-in processors](./03_built-in-processors.md)
 - [Writing a custom processor](./04_writing-a-custom-processor.md)
-- [Reference → Processor classes](../../../../05_reference/01_overview.md)

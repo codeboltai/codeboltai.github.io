@@ -1,167 +1,184 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 title: Processor Pattern
 ---
 
 # Processor Pattern
 
-> **Note:** The `@codebolt/agent/processor` package and processor classes (`ProcessorAgent`,
-> `MessageModifier`, `LLMAgentStep`, `ToolExecutor`, `ResponseHandler`) described below represent planned
-> functionality. They do not exist in the current codebase. For building agents
-> infrastructure today, use Markdown agents definitions or `.codebolt/agents/remix/` or the `@codebolt/codeboltjs` SDK.
+Customize the agent loop by plugging processors into `CodeboltAgent`'s five pipeline slots. Every shipped processor lives in `@codebolt/agent/processor-pieces` — import the ones you need, wire them into the `processors` config, and the framework runs them at the right point in the loop.
 
-The lowest-level pattern. Decompose the agent loop into individual
+## The five slots
 
-## When to pick Processor
+```
+┌─ messageModifiers ──────────────────────────┐
+│  Shape the prompt before inference           │
+└───────────────────────────────────────��──────┘
+        │
+┌─ preInferenceProcessors ────────────────────┐
+│  Last-minute prompt changes before LLM call  │
+└──────────────────────────────────────────────┘
+        │
+        ▼  LLM inference
+        │
+┌─ postInferenceProcessors ───────────────────┐
+│  Inspect/annotate the LLM response           │
+└──────────────────────────────────────────────┘
+        │
+┌─ preToolCallProcessors ─────────────────────┐
+│  Validate or intercept tool calls            │
+└──────────────────────────────────────────────┘
+        │
+        ▼  Tool execution
+        │
+┌─ postToolCallProcessors ────────────────────┐
+│  Compact, process results, decide next step  │
+└──────────────────────────────────────────────┘
+```
 
-- **You're generating agents from config**, not writing them by hand — the Processor shape is dataflow-friendly.
-- **You need fine-grained swapping** of individual slots (message assembly, LLM call, tool execution, response handling).
-- **You're building tooling around agents** rather than building an agent itself.
+## Minimal example
 
-For handwritten custom agents, [Unified Agent](./unified-agent.md) or [Builder](./builder-pattern.md) is almost always a better fit. Processor is verbose.
-
-## The main slots
+Use `CodeboltAgent` defaults for message assembly but add compression, loop detection, and compaction:
 
 ```ts
+import { CodeboltAgent } from '@codebolt/agent/unified';
 import {
-  ProcessorAgent,
-  MessageModifier,
-  LLMAgentStep,
-  ToolExecutor,
-  ResponseHandler,
-} from "@codebolt/agent/processor";
-```
+  ChatCompressionModifier,
+  LoopDetectionModifier,
+  ConversationCompactorModifier,
+} from '@codebolt/agent/processor-pieces';
 
-| Slot | Runs when | Multiple allowed |
-|---|---|---|
-| **MessageModifier** | Before LLM call, to shape the prompt | Yes — chained in order |
-| **LLMAgentStep** | The LLM call itself | Exactly one |
-| **ToolExecutor** | When the LLM returns tool calls | Yes — per tool family |
-| **ResponseHandler** | After LLM / tool results | Yes — chained in order |
-
-## A minimal processor agent
-
-```ts
-export default new ProcessorAgent({
-  name: "summariser",
-  steps: [
-    new MessageModifier({
-      phase: "before_llm",
-      modify: async (messages, ctx) => [
-        { role: "system", content: "Summarise in 3 sentences." },
-        ...messages,
-      ],
-    }),
-    new LLMAgentStep({
-      model: "claude-sonnet-4-6",
-      maxTokens: 500,
-    }),
-    new ResponseHandler({
-      handle: async (response) => ({ summary: response.content }),
-    }),
-  ],
+const agent = new CodeboltAgent({
+  instructions: 'Work carefully through larger coding tasks.',
+  processors: {
+    preInferenceProcessors: [
+      new ChatCompressionModifier({ contextPercentageThreshold: 0.7 }),
+    ],
+    postInferenceProcessors: [
+      new LoopDetectionModifier({ maxSimilarMessages: 3 }),
+    ],
+    postToolCallProcessors: [
+      new ConversationCompactorModifier({ compactStrategy: 'smart' }),
+    ],
+  },
 });
 ```
 
-Three slots, three objects. The agent runs them in order.
+Because `messageModifiers` is not set here, `CodeboltAgent` keeps its full default pipeline. The other three slots are additive — they default to empty, so you're only adding behaviour.
 
-## Chaining message modifiers
+## Replacing the default message pipeline
 
-Multiple modifiers run in sequence:
+When you set `processors.messageModifiers`, you replace the entire default pipeline. Include everything you need:
 
 ```ts
-new ProcessorAgent({
-  steps: [
-    new MessageModifier({ modify: addSystemPrompt }),
-    new MessageModifier({ modify: injectCodemap }),
-    new MessageModifier({ modify: compressHistory }),
-    new MessageModifier({ modify: redactSecrets }),   // last — after everything else
-    new LLMAgentStep({ /* ... */ }),
-    // ...
-  ],
+import { CodeboltAgent } from '@codebolt/agent/unified';
+import {
+  ChatHistoryMessageModifier,
+  EnvironmentContextModifier,
+  DirectoryContextModifier,
+  IdeContextModifier,
+  CoreSystemPromptModifier,
+  ToolInjectionModifier,
+  AtFileProcessorModifier,
+  ContextAssemblyModifier,
+} from '@codebolt/agent/processor-pieces';
+
+const agent = new CodeboltAgent({
+  instructions: 'A memory-aware assistant.',
+  processors: {
+    messageModifiers: [
+      new ChatHistoryMessageModifier({ enableChatHistory: true }),
+      new EnvironmentContextModifier({ enableFullContext: false }),
+      new DirectoryContextModifier(),
+      new IdeContextModifier({
+        includeActiveFile: true,
+        includeOpenFiles: true,
+        includeCursorPosition: true,
+        includeSelectedText: true,
+      }),
+      new CoreSystemPromptModifier({ customSystemPrompt: 'You are a memory-aware assistant.' }),
+      new ToolInjectionModifier({ includeToolDescriptions: true }),
+      new AtFileProcessorModifier({ enableRecursiveSearch: true }),
+      // Added: context assembly for memory integration
+      new ContextAssemblyModifier({
+        scope: 'workspace',
+        includeMemory: true,
+      }),
+    ],
+  },
 });
 ```
 
-Each modifier sees the output of the previous one. Ordering matters.
+## All shipped processors
 
-## Relationship to the Processors system
+### Message modifiers
 
-The modifiers used here are the same ones in [Processors](../07_processors/01_what-are-processors.md). A processor pattern agent is essentially a hand-assembled loop of those modifiers.
+| Class | What it does |
+|---|---|
+| `ChatHistoryMessageModifier` | Prepends prior thread history; injects synthetic tool-response messages for unresolved tool calls |
+| `EnvironmentContextModifier` | Adds date, platform, workspace path, directory listing |
+| `DirectoryContextModifier` | Adds workspace file tree honoring `.gitignore` |
+| `IdeContextModifier` | Adds active file, open files, cursor position, selected text |
+| `CoreSystemPromptModifier` | Sets the system prompt |
+| `ToolInjectionModifier` | Fetches and injects tools from Codebolt and MCP servers |
+| `AtFileProcessorModifier` | Resolves `@file` mentions and appends file contents |
+| `ArgumentProcessorModifier` | Appends invocation metadata from `createdMessage.metadata.invocation` |
+| `MemoryImportModifier` | Replaces `@path` file references with file contents |
+| `ChatRecordingModifier` | Records prompts to `.chat-recordings` in jsonl or markdown |
+| `ContextAssemblyModifier` | Calls `codebolt.contextAssembly.getContext()` and injects memory context |
+| `RuleBasedContextModifier` | Evaluates context rules, fetches only included/forced memories |
+| `MemoryTypeContextModifier` | Fetches specific memory types by name |
 
-If you only need to add a processor to an existing agent, use Unified Agent's `processors.messageModifiers` field — don't switch to the Processor pattern just to add one modifier.
+### Pre-inference processors
 
-## Custom slots
+| Class | What it does |
+|---|---|
+| `ChatCompressionModifier` | Summarizes older history when the prompt crosses a token threshold |
 
-For behaviour that doesn't fit the standard slots, implement a custom step:
+### Post-inference processors
+
+| Class | What it does |
+|---|---|
+| `LoopDetectionModifier` | Tracks message similarity; injects a system warning when repetition is detected |
+
+### Pre-tool-call processors
+
+| Class | What it does |
+|---|---|
+| `ToolValidationModifier` | Records validation metadata (core logic is TODO) |
+| `ToolParameterModifier` | Records parameter metadata (core logic is TODO) |
+
+### Post-tool-call processors
+
+| Class | What it does |
+|---|---|
+| `ShellProcessorModifier` | Replaces `{{args}}` placeholders and optionally executes `!{...}` shell injections (disabled by default) |
+| `ConversationCompactorModifier` | Truncates oversized tool output, deduplicates file reads, compresses history using `simple`, `smart`, or `summarize` strategies |
+
+## Ordering
+
+Within each slot, processors run in array order:
 
 ```ts
-class GuardCheck extends AgentStep {
-  async run(ctx, state) {
-    if (state.toolCalls.some(c => c.tool.startsWith("dangerous_"))) {
-      return { halt: true, reason: "dangerous tool call detected" };
-    }
-    return { continue: true };
-  }
+processors: {
+  messageModifiers: [
+    new DirectoryContextModifier(),    // runs first
+    new AtFileProcessorModifier(),     // runs second
+  ],
 }
-
-new ProcessorAgent({
-  steps: [
-    new MessageModifier({ /* ... */ }),
-    new LLMAgentStep({ /* ... */ }),
-    new GuardCheck(),                // inserted between LLM and tool execution
-    new ToolExecutor({ /* ... */ }),
-  ],
-});
 ```
 
-Each step returns a control signal (`continue`, `halt`, `retry`) that the agent honours.
+## Which slots can stop the loop
 
-## Building agents from config
+Only tool-call processors can return `shouldExit: true`:
+- `preToolCallProcessors`
+- `postToolCallProcessors`
 
-The main use case — generate agents programmatically:
-
-```ts
-function buildAgentFromConfig(cfg) {
-  const steps = [];
-
-  if (cfg.useRedaction) {
-    steps.push(new MessageModifier({ modify: redactByRules(cfg.redactionRules) }));
-  }
-  if (cfg.includeCodemap) {
-    steps.push(new MessageModifier({ modify: injectCodemap }));
-  }
-
-  steps.push(new LLMAgentStep({ model: cfg.model }));
-
-  if (cfg.toolFamilies) {
-    steps.push(new ToolExecutor({ families: cfg.toolFamilies }));
-  }
-
-  return new ProcessorAgent({ name: cfg.name, steps });
-}
-```
-
-Not something you'd write by hand per agent, but perfect for a config-driven agent factory.
-
-## Testing
-
-Each step is an object with a single method. Test them independently:
-
-```ts
-test("redactor removes emails", async () => {
-  const mod = new MessageModifier({ modify: redactEmails });
-  const result = await mod.modify([{ role: "user", content: "alice@example.com" }], mockCtx);
-  expect(result[0].content).toBe("[redacted]");
-});
-```
-
-## When you're writing too much Processor code
-
-If you're hand-writing many steps per agent, you've picked the wrong pattern — use Unified or Builder. Processor shines when agents are generated or assembled mechanically.
+Message, pre-inference, and post-inference processors always return a `ProcessedMessage` and cannot halt the loop.
 
 ## See also
 
 - [Patterns Overview](./overview.md)
-- [Unified Agent](./unified-agent.md)
-- [Builder Pattern](./builder-pattern.md)
-- [Processors subsystem](../07_processors/01_what-are-processors.md)
+- [CodeboltAgent](./unified-agent.md)
+- [What are Processors](../07_processors/01_what-are-processors.md)
+- [Built-in Processors](../07_processors/03_built-in-processors.md) — detailed descriptions of each processor
+- [Writing a Custom Processor](../07_processors/04_writing-a-custom-processor.md)

@@ -14,7 +14,7 @@ Agent blocks let you share phases or mini-pipelines across multiple agents witho
 - Multiple agents perform the same phase (e.g. "build context the same way"). Factor it as a block and share.
 - You want to publish a standardised reflection/summarisation step across your team's agents.
 - You're composing an agent from pre-built phases rather than writing one from scratch.
-- You're building agents from configuration ([Processor pattern](../02_creating-agents/06_patterns/processor-pattern.md)) and want named building blocks rather than raw processors.
+- You're building agents from configuration and want named building blocks rather than raw processors.
 
 ## Agent block vs. processor vs. skill
 

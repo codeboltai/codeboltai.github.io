@@ -31,8 +31,6 @@ There are five ways to bring an agent into Codebolt, from lowest to highest auth
 | **[Level 3 — Raw WebSocket](./03_creation-levels/level-3-raw-websocket.md)** | The wire protocol directly | Languages the SDK doesn't cover |
 | **[Third-Party Wrapping](./04_third-party-agents.md)** | An adapter around an existing external agent | Running Claude Code / Codex / Cursor etc. as a Codebolt agent |
 
-Plus one sideways path: **[Framework Adapters](./08_framework-adapters.md)** let you author at level 1 but using Vercel AI SDK, LangChain, or similar frameworks instead of the native Codebolt framework.
-
 **The most important thing to know:** level 0 and level 1 cover the vast majority of real use cases. Level 2 is for people building infrastructure on top of Codebolt. Level 3 is for people writing Codebolt agents in Go, Rust, or Python. Don't start higher than you need.
 
 ## Hello World agent
@@ -92,12 +90,12 @@ Then your agent consumes [Agent Extensions](../03_agent-extensions/01_overview.m
 
 You don't write the agent loop from scratch at level 1. You pick a pattern:
 
-- **[Unified Agent](./06_patterns/unified-agent.md)** — the recommended default. One config, one handler, sensible defaults. Start here.
-- **[Composable](./06_patterns/composable-pattern.md)** — build the agent out of small reusable pieces (agent, tools, orchestrator, workflow).
-- **[Builder](./06_patterns/builder-pattern.md)** — explicit builder objects for initial prompt, LLM output handling, followup prompt. Used when you need fine control over each phase.
-- **[Processor](./06_patterns/processor-pattern.md)** — decompose by loop phase (message modifier, LLM agent step, tool executor). The lowest-level of the four.
+- **[CodeboltAgent](./06_patterns/unified-agent.md)** — the recommended default. Batteries-included with a default message modifier pipeline, compaction, and tool management. Start here.
+- **[Processor Pattern](./06_patterns/processor-pattern.md)** — customize the pipeline by plugging processors from `@codebolt/agent/processor-pieces` into CodeboltAgent's five slots.
+- **[Agent](./06_patterns/overview.md)** — the bare class with no default modifiers. Use when you need full control over which processors run.
+- **Building blocks** — `InitialPromptGenerator`, `AgentStep`, `ResponseExecutor` can be used directly when you need a custom loop shape.
 
-Pick Unified unless you have a specific reason not to.
+Pick `CodeboltAgent` unless you have a specific reason not to.
 
 ## The anatomy of an agent
 

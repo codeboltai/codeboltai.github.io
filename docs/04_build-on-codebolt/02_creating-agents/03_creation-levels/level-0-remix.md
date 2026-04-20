@@ -87,24 +87,6 @@ codebolt agent create --remix
 
 This starts an interactive flow: select the agent to remix, enter a name, description, and custom instructions. Creates a `.codebolt/agents/remix/<name>.md` file with the remix config. Edit it to customise further.
 
-## Testing a remix
-
-```bash
-codebolt agent test my-reviewer --task "review src/auth/session.ts"
-```
-
-Runs the agent once with the given task and prints the full phase trace. Does not commit any changes (uses a sandboxed shadow git branch that's thrown away after).
-
-For deterministic regression testing, record a run and replay it:
-
-```bash
-codebolt agent record my-reviewer --task "..." > trace.json
-# later, after changing the prompt:
-codebolt agent replay trace.json
-```
-
-If the behaviour diverges, you'll see a structured diff.
-
 ## Remix patterns that work well
 
 ### Constrained variant

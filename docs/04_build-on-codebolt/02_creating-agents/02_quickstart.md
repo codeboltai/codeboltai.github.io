@@ -99,13 +99,24 @@ Once installed, select your agent from the desktop app's agent dropdown and send
 
 ## Part 3 — Remote agent
 
-A remote agent lives outside your project — it's a standalone process that connects to Codebolt. Use this when your agent is a separate codebase, runs on a different machine, or is built with a non-Codebolt framework.
+A remote agent in Codebolt is an agent registered by reference. Codebolt keeps a small local manifest for it, but the actual agent code lives somewhere else or is started somewhere else.
+
+That does **not** automatically mean another machine. In the common `codeboltExecuted` path, Codebolt still starts the agent as a local child process from the `remotePath` you provide. Another machine only enters the picture when you use `selfExecuted` and run the process yourself, or when your Codebolt server is itself running elsewhere.
+
+When you create one from the desktop app, Codebolt does **not** copy the remote code into your project. It creates a small local manifest at `.codebolt/agents/<name>/codeboltagent.yaml` with `type: remoteAgent`, the selected `executionMode`, and, for CodeBolt-executed agents, the `remotePath`.
 
 There are two execution modes:
 
+### Remote agent vs remote execution
+
+- `remoteAgent` is an agent-registration mode in the app.
+- `codeboltExecuted` means Codebolt launches the process from an external filesystem path.
+- `selfExecuted` means Codebolt does not launch the process and waits for some outside process to connect back.
+- True cross-machine execution is a separate infrastructure topic. See [Remote Execution](../11_agent-infrastructure/09_remote-execution.md).
+
 ### Option A — CodeBolt-executed
 
-Codebolt launches and manages the agent process for you. You provide the absolute path to the agent on disk.
+Codebolt launches and manages the agent process for you. You provide the **full absolute path** to the agent on disk.
 
 **From the CLI:**
 
@@ -113,11 +124,19 @@ Codebolt launches and manages the agent process for you. You provide the absolut
 codebolt agent create-remote --name my-remote-agent --execution-mode codeboltExecuted --remote-path /absolute/path/to/agent
 ```
 
-**From the desktop app:** Open the agent creation panel → select "Create Remote Agent" → enter a name and description → choose "Executed by CodeBolt" → provide the full absolute path to the agent → click Create.
+**From the desktop app:** Open the agent creation panel → select `Create Remote Agent` → enter a name and description → choose `Executed by CodeBolt` → provide the full absolute path of the remote agent → click `Create Remote Agent`.
+
+How it works at runtime:
+
+- The UI requires `remotePath` before the create button is enabled.
+- Codebolt stores that path in the remote agent manifest it creates under `.codebolt/agents/<name>/`.
+- When you run the agent, Codebolt passes that path into the server process manager and starts a child process from that directory.
+- If your desktop app/server is running locally, that process runs on the same machine.
+- If the remote agent folder has a `package.json` with a `main` field, Codebolt uses that as the entrypoint. Otherwise it falls back to the default entrypoint resolution.
 
 ### Option B — Self-executed
 
-You run the agent yourself (from your own terminal, CI, or a remote server). The agent connects to Codebolt using a thread token.
+You run the agent yourself from your own terminal, CI job, container, or another machine. Codebolt does not spawn a process for this mode. It waits for your external agent to connect back.
 
 **From the CLI:**
 
@@ -125,14 +144,36 @@ You run the agent yourself (from your own terminal, CI, or a remote server). The
 codebolt agent create-remote --name my-remote-agent --execution-mode selfExecuted
 ```
 
-**From the desktop app:** Open the agent creation panel → select "Create Remote Agent" → enter a name and description → choose "Self-executed" → click Create.
+**From the desktop app:** Open the agent creation panel → select `Create Remote Agent` → enter a name and description → choose `Self-executed` → click `Create Remote Agent`.
 
-After creation, you'll need to pass the thread token to your agent's environment so it can connect back to Codebolt.
+How it works at runtime:
+
+- No `remotePath` is required in the creation form.
+- When you use the agent in a thread, Codebolt generates a thread token for that thread.
+- In the desktop app, selecting a self-executed remote agent shows a help icon near the model selector. That popover displays the current thread token and lets you copy it.
+- If there is no active thread yet, the UI shows `Start a chat to generate a token`.
+- When Codebolt attempts to start the self-executed agent, it does not launch a child process. Instead it waits for an external connection and emits a command snippet that sets both `threadToken` and `agentId`.
+- This mode can still run on the same machine. "Self-executed" only means Codebolt did not start it for you.
+
+If your external process uses `@codebolt/codeboltjs`, those environment variables are what let it connect back to the `/codebolt` WebSocket endpoint.
+
+### What the desktop flow stores
+
+The `Create Remote Agent` flow creates a local manifest record, not a new agent codebase. The stored manifest includes:
+
+- `type: remoteAgent`
+- `isRemoteAgent: true`
+- `executionMode: selfExecuted | codeboltExecuted`
+- `remotePath` for CodeBolt-executed agents
+
+That is why the same remote agent can appear in the normal agent picker even though its code lives elsewhere.
 
 ### When to use remote agents
 
+- Your agent already lives in another folder and you want Codebolt to reference it instead of copying it into the project.
 - Your agent is written in a language Codebolt doesn't scaffold (Python, Go, Rust).
-- Your agent runs on a different machine or in the cloud.
+- You want Codebolt to launch an external codebase from an absolute path.
+- You want to run the process yourself from another terminal, CI job, container, or another machine.
 - You want to wrap an existing tool (Claude Code, Codex, etc.) as a Codebolt agent — see [Third-Party Wrapping](./04_third-party-agents.md).
 
 ## Where to go next

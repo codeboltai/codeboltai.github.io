@@ -1,217 +1,138 @@
 ---
-sidebar_position: 5
-title: Unified Agent
+sidebar_position: 2
+title: CodeboltAgent
 ---
 
-# Unified Agent
+# CodeboltAgent
 
-> **Note:** The `@codebolt/agent` package and `UnifiedAgent` class described below represent planned
-> functionality. They do not exist yet. For building agents today, use Markdown agents in
-> `.codebolt/agents/remix/` or the `@codebolt/codeboltjs` SDK.
+Use `CodeboltAgent` when you don't need to change any logic in the agentic loop. You provide `instructions`, call `processMessage`, and the framework handles everything — context assembly, LLM calls, tool execution, compaction, and error recovery.
 
-The default pattern and the one most custom agents should use. You declare a config, the pattern provides a working agent. Simple cases need nothing else; complex cases can override any piece.
+If you need to customize the loop — add processors, swap modifiers, inject pre/post hooks — use the [Processor Pattern](./processor-pattern.md) instead.
 
-## The shape
+Source: `packages/agent/src/unified/agent/codeboltAgent.ts`
+
+## Quick start
 
 ```ts
-import { UnifiedAgent } from "@codebolt/agent/patterns"; // planned — not yet available
+import codebolt from '@codebolt/codeboltjs';
+import { CodeboltAgent } from '@codebolt/agent/unified';
+import { FlatUserMessage } from '@codebolt/types/sdk';
 
-export default new UnifiedAgent({
-  name: "my-agent",
-  systemPrompt: "...",
-  tools: ["codebolt_fs.*"],
+const agent = new CodeboltAgent({
+  instructions: 'You are a helpful coding assistant.',
 });
-```
 
-Three required fields. That's an agent. The pattern wires:
+codebolt.onMessage(async (reqMessage: FlatUserMessage) => {
+  const result = await agent.processMessage(reqMessage);
 
-- A standard deliberate → execute → reflect loop.
-- Default context assembly with sensible processors.
-- Typed tool calling through `toolService`.
-- Memory writes at phase boundaries.
-- Heartbeats, event log, lifecycle — all automatic.
-
-## Full configuration
-
-```ts
-new UnifiedAgent({
-  // Identity
-  name: "my-agent",
-  description: "One-line description.",
-
-  // LLM
-  model: "claude-sonnet-4-6",
-  temperature: 0.2,
-  maxTokens: 8000,
-
-  // Prompting
-  systemPrompt: "You are ...",
-  systemPromptBuilder: async (ctx) => `You are ... working in ${ctx.workspace.name}`,
-    // use this when the system prompt depends on runtime info
-
-  // Tools
-  tools: ["codebolt_fs.*", "codebolt_git.read_*"],   // allowlist, globs ok
-  toolsDeny: ["codebolt_fs.write_file"],             // optional
-  toolDescriptions: {                                // override a tool's description
-    "codebolt_fs.read_file": "Read a file. Use for < 1000 lines; for larger files use codebolt_fs.read_many_files.",
-  },
-
-  // Context assembly
-  context: {
-    rules: true,          // use contextRuleEngine
-    memory: {
-      episodic: true,
-      persistent: true,
-      vectorTopK: 5,
-    },
-    codemap: true,
-    environment: true,    // inject cwd, git branch, etc.
-    openFiles: true,
-  },
-
-  // Processors (advanced — usually you don't touch these)
-  processors: {
-    messageModifiers: [new DirectoryContextModifier(), new AtFileProcessorModifier()],
-    toolValidators: [new MyCustomValidator()],
-    responseHandlers: [],
-  },
-
-  // Input / output schema
-  inputs: {
-    task: { type: "string", required: true },
-  },
-  outputs: {
-    result: { type: "object" },
-  },
-
-  // Limits
-  limits: {
-    maxToolCalls: 100,
-    maxTokens: 200000,
-    maxWallTimeSeconds: 600,
-  },
-
-  // Hooks into the loop
-  onPhaseStart: async (phase, ctx) => { /* ... */ },
-  onPhaseEnd: async (phase, ctx, result) => { /* ... */ },
-  onToolCall: async (call, ctx) => { /* observe or modify */ },
-  onToolResult: async (result, call, ctx) => { /* observe or modify */ },
-  onComplete: async (output, ctx) => { /* final cleanup */ },
-
-  // Custom handler (escape hatch)
-  handler: async (ctx, input) => {
-    // if you need a totally custom loop for this agent
-  },
-});
-```
-
-## The happy path
-
-The minimal config does the right thing for most cases. You only reach for more fields when:
-
-- You want to **override a tool's description** to steer LLM choice.
-- You want to **skip default processors** that don't apply (e.g. `DirectoryContextModifier` for an agent that doesn't work with files).
-- You want to **hook into specific phases** for logging, metrics, or tweaks.
-- You need a **completely custom handler** — at which point you might be better off with the [Builder](./builder-pattern.md) pattern.
-
-## What the defaults actually do
-
-When you leave a field unset, Unified Agent uses these defaults:
-
-| Field | Default |
-|---|---|
-| `model` | The agent's `default_model` from `codeboltagent.yaml`, falling back to the project default |
-| `temperature` | 0.2 |
-| `context.memory.episodic` | true |
-| `context.memory.persistent` | true |
-| `context.memory.vectorTopK` | 5 |
-| `context.codemap` | true |
-| `processors.messageModifiers` | The standard set (see below) |
-| `limits` | Inherited from `codeboltagent.yaml`, falling back to project defaults |
-
-The standard message modifier set, in order:
-
-1. `CoreSystemPromptModifier`
-2. `EnvironmentContextModifier`
-3. `IdeContextModifier`
-4. `DirectoryContextModifier`
-5. `MemoryImportModifier`
-6. `AtFileProcessorModifier`
-7. `ChatHistoryMessageModifier`
-8. `ChatCompressionModifier` (fires only if over budget)
-9. `LoopDetectionModifier`
-10. `ChatRecordingModifier`
-
-You can replace this list entirely via `processors.messageModifiers`, or **append** to it via `processors.additionalMessageModifiers`. Usually append — replacing loses you the standard context assembly.
-
-## Overriding tool descriptions
-
-One of the most useful levers and also the most overlooked. The LLM picks which tool to call based on the tool's description. Codebolt ships generic descriptions for built-in tools, and they're often good enough — but for your specific use case you may want to be more directive:
-
-```ts
-toolDescriptions: {
-  "codebolt_fs.read_file": "Read a specific file whose path you already know. Do NOT use this to search — use codebolt_fs.search_files for that.",
-  "codebolt_fs.search_files": "Search the project for text. Use this before read_file when you don't know which file to read.",
-}
-```
-
-This guidance only applies to your agent, not to others using the same tools. Cheap to add, often a big quality improvement.
-
-## Phase hooks
-
-All phase hooks are optional. Use them for observation and light modification:
-
-```ts
-onToolCall: async (call, ctx) => {
-  ctx.log.info(`about to call ${call.tool}`, { args: call.args });
-  return call;  // return it unchanged, or return a modified version
-},
-
-onToolResult: async (result, call, ctx) => {
-  if (!result.ok) {
-    ctx.log.warn(`tool failed`, { tool: call.tool, reason: result.reason });
+  if (!result.success) {
+    throw new Error(result.error ?? 'Agent failed');
   }
-  return result;
-},
-```
 
-**Don't put heavy logic in phase hooks.** They run on the critical path of every step. If you need heavy logic, spawn a child agent or emit an event and handle it out-of-band.
-
-## The custom handler escape hatch
-
-If Unified Agent's loop shape doesn't match your needs, you can provide a custom handler:
-
-```ts
-new UnifiedAgent({
-  name: "weird-agent",
-  tools: ["codebolt_fs.*"],
-  handler: async (ctx, input) => {
-    // totally custom loop
-  },
+  return result.finalMessage;
 });
 ```
 
-At this point you've lost most of the pattern's value — you're just using it for manifest integration. Consider switching to the [Builder](./builder-pattern.md) pattern instead, which is designed for that use case.
+## processMessage
 
-## Testing
-
-```bash
-# planned — not yet available:
-codebolt agent test my-agent --input '{"task": "..."}'
+```ts
+const result = await agent.processMessage(message);
+const result = await agent.processMessage(message, context);
 ```
 
-Unified Agent records every phase for replay. You can replay any recorded run against a modified agent to see if the behaviour changed:
+| Parameter | Type | Description |
+|---|---|---|
+| `message` | `string \| FlatUserMessage` | The user message. A plain string is auto-wrapped into a `FlatUserMessage` |
+| `context` | `ProcessedMessage` (optional) | Continue from a previous conversation state — skips initial prompt generation |
 
-```bash
-# planned — not yet available:
-codebolt agent replay <run_id>
+### Return value
+
+| Field | Type | Description |
+|---|---|---|
+| `success` | `boolean` | Whether the run completed without errors |
+| `result` | `ProcessedMessage \| null` | The final conversation state |
+| `context` | `ProcessedMessage \| null` | Same as `result` — pass to a follow-up call to continue |
+| `finalMessage` | `string \| undefined` | The agent's final text response |
+| `error` | `string \| undefined` | Error message (only when `success` is `false`) |
+
+## Continuing a conversation
+
+```ts
+const firstResult = await agent.processMessage(reqMessage);
+
+const secondResult = await agent.processMessage(
+  'Continue from the previous result.',
+  firstResult.context,
+);
 ```
 
-See [Testing and debugging](../09_testing-and-debugging.md).
+Or create a new agent with the context:
+
+```ts
+const followUpAgent = new CodeboltAgent({
+  instructions: 'Continue the previous task.',
+  context: firstResult.context ?? undefined,
+});
+
+const secondResult = await followUpAgent.processMessage('What was the outcome?');
+```
+
+## Configuration
+
+| Field | Type | Default | Description |
+|---|---|---|---|
+| `instructions` | `string` | `'Based on User Message send reply'` | System prompt |
+| `enableLogging` | `boolean` | `true` | Log execution events to console |
+| `maxTurns` | `number` | `25` | Maximum LLM turns before the agent throws |
+| `allowedTools` | `string[]` | all tools | Restrict available tools by name |
+| `context` | `ProcessedMessage` | — | Resume from a previous conversation |
+| `loopDetectionService` | `LoopDetectionService` | — | Detect and break infinite loops |
+| `compaction` | `CompactionOrchestratorOptions` | `{}` | Conversation compaction settings |
+
+Need to customize the pipeline? See [Processor Pattern](./processor-pattern.md).
+
+## What it does under the hood
+
+Each turn:
+
+1. **Compaction** — compresses the conversation if it's getting long.
+2. **Tool refresh** — re-fetches available tools from MCP servers.
+3. **LLM call** — sends the prompt, gets back text or tool calls.
+4. **Tool execution** — runs any tool calls the LLM requested.
+5. **Check** — if the LLM produced a final answer, return. Otherwise, next turn.
+
+If the LLM hits a token limit, the agent automatically tries reactive compaction and retries.
+
+## Default message modifiers
+
+When you don't customize `processors.messageModifiers`, these run automatically:
+
+1. `ChatHistoryMessageModifier` — prior thread history
+2. `EnvironmentContextModifier` — date, platform, workspace path
+3. `DirectoryContextModifier` — workspace file tree
+4. `IdeContextModifier` — active file, open files, cursor, selection
+5. `CoreSystemPromptModifier` — your `instructions`
+6. `ToolInjectionModifier` — available tools from Codebolt + MCP servers
+7. `AtFileProcessorModifier` — resolves @file mentions
+
+To customize the pipeline, see [Processor Pattern](./processor-pattern.md).
+
+## createCodeboltAgent helper
+
+Maps `systemPrompt` to `instructions`:
+
+```ts
+import { createCodeboltAgent } from '@codebolt/agent/unified';
+
+const agent = createCodeboltAgent({
+  systemPrompt: 'You are a helpful assistant.',
+  maxTurns: 20,
+});
+```
 
 ## See also
 
-- [Patterns overview](./overview.md)
-- [Level 1 — Framework](../03_creation-levels/level-1-framework.md)
-- [Processors](../07_processors/01_what-are-processors.md) — the modifiers Unified Agent wires up
-- [Context Assembly internals](../../../09_internals/03_subsystems/07_context-assembly.md)
+- [Patterns Overview](./overview.md)
+- [Processor Pattern](./processor-pattern.md) — customizing the pipeline
+- [Level 1 — Framework](../03_creation-levels/level-1-framework.md) — project layout and build
+- [Built-in Processors](../07_processors/03_built-in-processors.md) — all shipped processors
