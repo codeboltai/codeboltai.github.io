@@ -3,6 +3,8 @@ sidebar_position: 7
 title: Dynamic Panels
 ---
 
+import DynamicPanelArchitecture from '@site/src/components/diagrams/DynamicPanelArchitecture';
+
 # Dynamic Panels
 
 Not every custom UI needs to be a separate application. Codebolt can render runtime UI panels *inside the existing app* through the dynamic panel system.
@@ -11,27 +13,7 @@ Dynamic panels are driven by **agents** or **plugins** — they open a panel, se
 
 ## How It Works
 
-```
-┌─────────────────────────────────────────────┐
-│  Codebolt App                               │
-│  ┌─────────────┐  ┌──────────────────────┐  │
-│  │   Chat      │  │  Dynamic Panel       │  │
-│  │   Panel     │  │  (your HTML/JS)      │  │
-│  │             │  │                      │  │
-│  │             │  │  ← messages →        │  │
-│  └─────────────┘  └──────────┬───────────┘  │
-│                              │              │
-└──────────────────────────────┼──────────────┘
-                               │
-                    Socket.IO events
-                               │
-                    ┌──────────┴───────────┐
-                    │  Server              │
-                    │  DynamicPanelService  │
-                    │         ↕            │
-                    │  Agent / Plugin      │
-                    └──────────────────────┘
-```
+<DynamicPanelArchitecture />
 
 1. An **agent or plugin** opens a panel with HTML content.
 2. The **server** registers the panel and emits a Socket.IO event to the UI.

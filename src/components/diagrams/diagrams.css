@@ -1128,3 +1128,302 @@
   fill: rgba(82,83,78,0.45);
 }
 [data-theme='dark'] .cb-arch-dir-label { fill: rgba(160,160,154,0.45); }
+
+/* ── Custom UI architecture ───────────────── */
+
+.cb-diagram--customui {
+  background: #f5f4ed;
+  border-color: rgba(11,13,11,0.12);
+}
+[data-theme='dark'] .cb-diagram--customui {
+  background: #141412;
+  border-color: rgba(240,239,232,0.10);
+}
+
+.cb-cui-arrowhead {
+  fill: none;
+  stroke: #52534e;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+[data-theme='dark'] .cb-cui-arrowhead { stroke: #a0a09a; }
+
+.cb-cui-eyebrow,
+.cb-cui-caption,
+.cb-cui-wire-label,
+.cb-cui-badge,
+.cb-cui-foot,
+.cb-cui-surface-sub,
+.cb-cui-module-label,
+.cb-cui-sub,
+.cb-cui-server-sub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cb-cui-eyebrow {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-cui-eyebrow { fill: #a0a09a; }
+
+.cb-cui-app-rect,
+.cb-cui-surface-rect,
+.cb-cui-chip-rect,
+.cb-cui-module-rect {
+  fill: rgba(255,255,255,0.8);
+  stroke: rgba(11,13,11,0.18);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-cui-app-rect,
+[data-theme='dark'] .cb-cui-surface-rect,
+[data-theme='dark'] .cb-cui-chip-rect,
+[data-theme='dark'] .cb-cui-module-rect {
+  fill: rgba(30,28,26,0.92);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-cui-sdk-rect {
+  fill: rgba(14,165,233,0.06);
+  stroke: #0ea5e9;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-cui-sdk-rect {
+  fill: rgba(14,165,233,0.08);
+  stroke: #38bdf8;
+}
+
+.cb-cui-server-rect {
+  fill: rgba(11,13,11,0.05);
+  stroke: rgba(11,13,11,0.26);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-cui-server-rect {
+  fill: rgba(240,239,232,0.04);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-cui-badge-rect {
+  fill: transparent;
+  stroke: rgba(11,13,11,0.28);
+  stroke-width: 0.8;
+}
+[data-theme='dark'] .cb-cui-badge-rect { stroke: rgba(240,239,232,0.22); }
+
+.cb-cui-title,
+.cb-cui-server-title,
+.cb-cui-surface-title,
+.cb-cui-chip-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-cui-title,
+[data-theme='dark'] .cb-cui-server-title,
+[data-theme='dark'] .cb-cui-surface-title,
+[data-theme='dark'] .cb-cui-chip-title { fill: #f0efe8; }
+
+.cb-cui-title,
+.cb-cui-server-title {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.cb-cui-surface-title,
+.cb-cui-chip-title {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.cb-cui-sub,
+.cb-cui-server-sub,
+.cb-cui-surface-sub,
+.cb-cui-chip-sub,
+.cb-cui-foot,
+.cb-cui-wire-label,
+.cb-cui-caption,
+.cb-cui-badge,
+.cb-cui-module-label {
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-cui-sub,
+[data-theme='dark'] .cb-cui-server-sub,
+[data-theme='dark'] .cb-cui-surface-sub,
+[data-theme='dark'] .cb-cui-chip-sub,
+[data-theme='dark'] .cb-cui-foot,
+[data-theme='dark'] .cb-cui-wire-label,
+[data-theme='dark'] .cb-cui-caption,
+[data-theme='dark'] .cb-cui-badge,
+[data-theme='dark'] .cb-cui-module-label { fill: #a0a09a; }
+
+.cb-cui-chip-sub,
+.cb-cui-foot,
+.cb-cui-caption {
+  letter-spacing: 0.03em;
+}
+
+.cb-cui-badge,
+.cb-cui-wire-label {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.cb-cui-module-label {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.cb-cui-wire {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-cui-wire { stroke: #a0a09a; }
+
+.cb-cui-wire--accent {
+  stroke: #0ea5e9;
+}
+[data-theme='dark'] .cb-cui-wire--accent { stroke: #38bdf8; }
+
+.cb-cui-dot {
+  fill: #0ea5e9;
+}
+
+/* ── Dynamic panel architecture ──────────── */
+
+.cb-diagram--dynamicpanel {
+  background: #f5f4ed;
+  border-color: rgba(11,13,11,0.12);
+}
+[data-theme='dark'] .cb-diagram--dynamicpanel {
+  background: #141412;
+  border-color: rgba(240,239,232,0.10);
+}
+
+.cb-dp-arrowhead {
+  fill: none;
+  stroke: #52534e;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+[data-theme='dark'] .cb-dp-arrowhead { stroke: #a0a09a; }
+
+.cb-dp-eyebrow,
+.cb-dp-title,
+.cb-dp-sub,
+.cb-dp-pane-title,
+.cb-dp-pane-sub,
+.cb-dp-chip-title,
+.cb-dp-chip-sub,
+.cb-dp-wire-label,
+.cb-dp-origin-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cb-dp-eyebrow {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-dp-eyebrow { fill: #a0a09a; }
+
+.cb-dp-app-rect,
+.cb-dp-pane-rect,
+.cb-dp-chip-rect,
+.cb-dp-origin-rect {
+  fill: rgba(255,255,255,0.8);
+  stroke: rgba(11,13,11,0.18);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-dp-app-rect,
+[data-theme='dark'] .cb-dp-pane-rect,
+[data-theme='dark'] .cb-dp-chip-rect,
+[data-theme='dark'] .cb-dp-origin-rect {
+  fill: rgba(30,28,26,0.92);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-dp-panel-rect {
+  fill: rgba(14,165,233,0.06);
+  stroke: #0ea5e9;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-dp-panel-rect {
+  fill: rgba(14,165,233,0.08);
+  stroke: #38bdf8;
+}
+
+.cb-dp-server-rect {
+  fill: rgba(11,13,11,0.05);
+  stroke: rgba(11,13,11,0.26);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-dp-server-rect {
+  fill: rgba(240,239,232,0.04);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-dp-title,
+.cb-dp-pane-title,
+.cb-dp-chip-title,
+.cb-dp-origin-label {
+  font-weight: 600;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-dp-title,
+[data-theme='dark'] .cb-dp-pane-title,
+[data-theme='dark'] .cb-dp-chip-title,
+[data-theme='dark'] .cb-dp-origin-label { fill: #f0efe8; }
+
+.cb-dp-title,
+.cb-dp-pane-title {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.cb-dp-chip-title {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.cb-dp-sub,
+.cb-dp-pane-sub,
+.cb-dp-chip-sub,
+.cb-dp-wire-label {
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-dp-sub,
+[data-theme='dark'] .cb-dp-pane-sub,
+[data-theme='dark'] .cb-dp-chip-sub,
+[data-theme='dark'] .cb-dp-wire-label { fill: #a0a09a; }
+
+.cb-dp-wire-label {
+  font-weight: 500;
+  letter-spacing: 0.07em;
+}
+
+.cb-dp-wire {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-dp-wire { stroke: #a0a09a; }
+
+.cb-dp-wire--accent,
+.cb-dp-wire--internal {
+  stroke: #0ea5e9;
+}
+[data-theme='dark'] .cb-dp-wire--accent,
+[data-theme='dark'] .cb-dp-wire--internal { stroke: #38bdf8; }
+
+.cb-dp-dot {
+  fill: #0ea5e9;
+}

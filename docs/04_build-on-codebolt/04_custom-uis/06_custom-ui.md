@@ -3,6 +3,8 @@ sidebar_position: 5
 title: Custom UI
 ---
 
+import CustomUIArchitecture from '@site/src/components/diagrams/CustomUIArchitecture';
+
 # Custom UI
 
 A custom UI is a standalone application that connects to the Codebolt server over HTTP and WebSocket. You own the entire user experience — layout, branding, routing, and device. It runs *outside* the existing Codebolt app.
@@ -11,23 +13,9 @@ This is different from a [Dynamic Panel](./05_dynamic-panels.md), which injects 
 
 ## Architecture
 
-```
-┌─────────────────────────┐
-│   Your Custom UI        │
-│   (React, Vue, CLI,     │
-│    mobile, etc.)         │
-└────────┬────────────────┘
-         │
-    @codebolt/client-sdk
-    (HTTP + WebSocket)
-         │
-┌────────┴────────────────┐
-│   Codebolt Server       │
-│   codebolt --server     │
-└─────────────────────────┘
-```
+<CustomUIArchitecture />
 
-1. Start the Codebolt server with `codebolt --server` (default: `localhost:12345`).
+1. Start the Codebolt server with `codebolt --server` (by default the CLI listens on `localhost:2719`).
 2. Your app connects via the [Client SDK](./02_client-sdk.md).
 3. The SDK provides **72 HTTP API modules** for request/response calls and **34 WebSocket modules** for real-time events.
 4. All modules are lazily initialized — unused modules cost nothing.
@@ -47,7 +35,7 @@ import { CodeBoltClient, ConnectionPreset } from '@codebolt/client-sdk';
 
 const codebolt = new CodeBoltClient({
   host: 'localhost',
-  port: 12345,
+  port: 2719,
   defaultPreset: ConnectionPreset.STANDARD,
 });
 ```
