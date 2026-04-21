@@ -112,8 +112,8 @@ codebolt.sockets.tasks.on('taskUpdated', (data) => {
 });
 
 // Agent coordination
-codebolt.sockets.swarm.on('agent_status', (data) => {
-  console.log('Agent status:', data);
+codebolt.sockets.swarm.on('agent:status-changed', (data) => {
+  console.log('Agent status changed:', data);
 });
 
 // System alerts

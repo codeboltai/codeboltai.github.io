@@ -74,7 +74,6 @@ const client = new CodeBoltClient({ baseUrl: 'http://localhost:3000' });
 | [ReviewMerge](./reviewMerge/) | ReviewMergeApi | 27 | Review Merge API |
 | [Roadmap](./roadmap/) | RoadmapApi | 20 | Roadmap API |
 | [ShadowGit](./shadowGit/) | ShadowGitApi | 7 | Shadow Git API |
-| [Sockets](./sockets/) | CodeBoltSockets | 33 | Socket namespace providing lazy access to all WebSocket connections |
 | [Specs](./specs/) | SpecsApi | 5 | Specs API |
 | [Swarm](./swarm/) | SwarmApi | 49 | Swarm API |
 | [System](./system/) | SystemApi | 3 | System API |

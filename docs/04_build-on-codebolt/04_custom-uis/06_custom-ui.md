@@ -28,7 +28,7 @@ This is different from a [Dynamic Panel](./05_dynamic-panels.md), which injects 
 ```
 
 1. Start the Codebolt server with `codebolt --server` (default: `localhost:12345`).
-2. Your app connects via the [Client SDK](./02_client-sdk.md).
+2. Your app connects via the [Client SDK](../../05_reference/04_client-sdk/01_overview.md).
 3. The SDK provides **72 HTTP API modules** for request/response calls and **34 WebSocket modules** for real-time events.
 4. All modules are lazily initialized — unused modules cost nothing.
 
@@ -74,7 +74,7 @@ const agents = await codebolt.agents.getInstalledAgents();
 const project = await codebolt.projects.getRoot();
 ```
 
-See the full module list in the [Client SDK Reference](./02_client-sdk.md#http-api-modules).
+See the full module list in the [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md).
 
 ### WebSocket Events
 
@@ -91,8 +91,8 @@ codebolt.sockets.tasks.on('taskUpdated', (data) => {
 });
 
 // Agent coordination
-codebolt.sockets.swarm.on('agent_status', (data) => {
-  console.log('Agent status:', data);
+codebolt.sockets.swarm.on('agent:status-changed', (data) => {
+  console.log('Agent status changed:', data);
 });
 
 // System alerts
@@ -106,7 +106,7 @@ const unsub = codebolt.onAllEvents((event) => {
 });
 ```
 
-See the full module list in the [Client SDK Reference](./02_client-sdk.md#websocket-modules).
+See the full module list in the [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md).
 
 ### Connection Presets
 
@@ -171,7 +171,7 @@ await codebolt.disconnectAll();
 ## See Also
 
 - [Build Your First Custom UI](./07_build-your-first-custom-ui.md) — step-by-step tutorial
-- [Client SDK Reference](./02_client-sdk.md) — full API reference
+- [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md) — full API reference
 - [Existing UIs](./03_existing-uis.md) — reference implementations to study or fork
 - [Chat Widget](./04_chat-widget.md) — drop-in React chat components
 - [Dynamic Panels](./05_dynamic-panels.md) — UI inside the existing app
