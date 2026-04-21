@@ -1,119 +1,112 @@
 ---
 sidebar_position: 5
-title: Metrics and Scoring
+title: Running Evals and Results
 ---
 
-# Metrics and Scoring
+# Running Evals and Results
 
-What you measure determines what you optimize. Pick the wrong metric, optimize for it, and you'll get an agent that scores well but feels worse. This page surveys the built-in metrics and how to combine them.
+Create runs to execute subjects against experiments, view results in real time, and compare subjects on a leaderboard.
 
-## The three axes that matter
+## Creating a Run
 
-Almost every real metric lives on one of three axes:
+1. Open the **Eval Panel** and switch to the **Runs** tab.
+2. Click **New Run**.
+3. Select the **subject type** (agent, skill, action-block, capability, MCP).
+4. Pick one or more **subjects** from the available list.
+5. Choose a **task** (single experiment) or **suite** (all tasks in the suite).
+6. Click **Create** — the run is created in `pending` state.
 
-| Axis | Questions it answers |
+## Starting a Run
+
+Click **Start** on a pending run. The server:
+
+1. Transitions the run to `running`.
+2. For each (subject, task) pair:
+   - Resolves the environment (local, remote, or provider).
+   - Resolves the instruction (text, script, or hybrid).
+   - Executes the subject — creates a thread, sends the instruction, waits for completion.
+   - Extracts the subject's output (last agent message).
+   - Runs all evaluators against the output.
+   - Computes the weighted score.
+   - If optimization is enabled and the score is below target, enters the optimization loop.
+3. Computes aggregate scores per subject.
+4. Marks the run as `completed`.
+
+## Real-Time Updates
+
+Results update in real time via WebSocket events:
+
+| Event | When |
 |---|---|
-| **Correctness** | Does the agent actually do the task? |
-| **Efficiency** | How many tokens, tools, seconds did it spend? |
-| **Behaviour** | *How* did it do the task — right tools, right sequence, no drift? |
+| `eval.run.result.updated` | After each result completes or changes |
+| `eval.run.optimization.updated` | After each optimization iteration |
+| `eval.run.completed` | When the entire run finishes |
 
-Any single metric answers one of these. A real assessment uses a composite across all three.
+The UI merges these updates live — you can watch scores and optimization progress as they happen.
 
-## Built-in metrics
+## Run Results
 
-### Correctness
+Each (subject, task) result contains:
 
-| Metric | What it measures | Produced by |
+| Field | Description |
+|---|---|
+| `status` | pending, running, completed, failed, skipped |
+| `output` | The subject's output text |
+| `score` | Weighted average of evaluator scores (0-100) |
+| `evaluatorResults` | Individual evaluator scores and reasoning |
+| `durationMs` | How long execution took |
+| `threadId` | Link to the chat thread |
+| `optimization` | Iteration history (if optimization was enabled) |
+
+## Leaderboard
+
+After a run completes, the leaderboard ranks subjects by their average score across all tasks:
+
+| Rank | Subject | Score |
 |---|---|---|
-| `assertion_pass_rate` | % of assertions that passed | `assertion`-kind fixtures |
-| `exact_match_rate` | % of outputs matching the reference byte-equal | `exact_match`-kind fixtures |
-| `reference_similarity` | Similarity score vs. reference answer | `reference_answer`-kind fixtures |
-| `rubric_score` | LLM-judge score on a written rubric | `rubric`-kind fixtures |
+| 1 | Agent A | 92 |
+| 2 | Agent C | 85 |
+| 3 | Agent B | 71 |
 
-### Efficiency
+Access via the UI or API: `GET /evals/runs/:id/leaderboard`.
 
-| Metric | What it measures |
+## Subject Profile
+
+View a single subject's scores across all tasks in a run:
+
+| Task | Score | Status |
+|---|---|---|
+| Sort array | 100 | completed |
+| Parse JSON | 75 | completed |
+| Write tests | 60 | completed |
+
+Access via: `GET /evals/runs/:id/profile/:subjectId`.
+
+## Run States
+
+| State | Meaning |
 |---|---|
-| `total_tokens` | Sum of input + output tokens across LLM calls |
-| `total_cost_usd` | Token-based cost at the current provider pricing |
-| `wall_time_seconds` | Real time from start to end |
-| `llm_calls` | Number of distinct LLM invocations |
-| `tool_calls` | Number of tool invocations |
-| `turns_to_completion` | Loop iterations before termination |
+| `pending` | Created but not started |
+| `running` | Execution in progress |
+| `completed` | All results finished |
+| `failed` | Run failed with an error |
+| `cancelled` | User cancelled the run |
 
-### Behaviour
+## REST API
 
-| Metric | What it measures |
-|---|---|
-| `tool_choice_accuracy` | Was the right tool chosen for each subtask? (rubric- or pattern-based) |
-| `tool_sequence_validity` | Did the agent call tools in a sensible order? |
-| `drift_rate` | How often did the agent go off-task? (rubric or heuristic) |
-| `retry_rate` | How often was a tool call retried after failure? |
-| `premature_termination_rate` | How often did the agent stop before the task was actually done? |
-| `hallucination_rate` | Fraction of claims not supported by context (rubric-based) |
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/evals/runs` | List runs (filter by suiteId, taskId, status) |
+| `POST` | `/evals/runs` | Create a run |
+| `GET` | `/evals/runs/:id` | Get run with full results |
+| `POST` | `/evals/runs/:id/start` | Start a pending run |
+| `POST` | `/evals/runs/:id/cancel` | Cancel a running run |
+| `GET` | `/evals/runs/:id/leaderboard` | Ranked subjects by score |
+| `GET` | `/evals/runs/:id/profile/:subjectId` | Subject's scores per task |
 
-## Composite scoring
+## See Also
 
-In practice you optimize on a **weighted composite**:
-
-```yaml
-# .codebolt/optimize/my-agent/composite.yaml
-name: quality_per_dollar
-components:
-  - metric: rubric_score
-    weight: 1.0
-  - metric: total_cost_usd
-    weight: -0.5          # negative — cost is bad
-    normalize: per_fixture
-  - metric: wall_time_seconds
-    weight: -0.1
-    normalize: per_fixture
-```
-
-The composite is what the optimization loop ranks by when you pass `--metric quality_per_dollar`.
-
-Compositing is where most teams get the most value — the built-in metrics are fine, but what you *combine and weight* is what matches your product's actual priorities.
-
-## When to use rubric-based metrics
-
-Rubric metrics use an LLM judge to score open-ended outputs. They work well when:
-
-- The task has no fixed right answer.
-- Assertion-based checks can't capture what "good" means.
-- You're willing to pay the judge LLM cost per eval fixture.
-
-They struggle when:
-
-- Subtle correctness differences matter — judges are fuzzy.
-- The judge model has the same biases as the agent being evaluated. Use a *different* model family.
-- Consistency across runs matters — rubric scores have variance. Run each fixture multiple times and use the mean.
-
-## Writing a custom metric
-
-A metric is a function `(trace, fixture) → number | object`. Register it:
-
-```ts
-export const toolDiversityMetric = {
-  name: "tool_diversity",
-  compute(trace, fixture) {
-    const used = new Set(trace.events.filter(e => e.type === "tool_call").map(e => e.tool));
-    return used.size;
-  },
-};
-```
-
-Then reference in composite configs or optimization runs.
-
-## Metric anti-patterns
-
-- **Optimizing purely on cost.** You'll get agents that refuse tasks to save tokens.
-- **Optimizing purely on correctness.** You'll get agents that burn through budgets.
-- **Optimizing on a single rubric score.** Rubric judges have blind spots. Triangulate.
-- **Ignoring variance.** A 2% improvement within noise is not an improvement. Report confidence intervals.
-- **Optimizing for eval set performance.** The set isn't reality. Periodically refresh it from real traces.
-
-## See also
-
-- [Writing Evals](./03_writing-evals.md) — where fixtures come from
-- [Optimization Loop](./04_optimization-loop.md) — consumes these metrics
-- [Replay and Traces](./02_replay-and-traces.md) — the data metrics are computed on
+- [Overview](./01_overview.md) — eval and optimization concepts
+- [Creating Experiments](./02_creating-experiments.md) — define what to test
+- [Evaluators](./03_evaluators.md) — how scoring works
+- [Optimization Loop](./04_optimization-loop.md) — automatic improvement

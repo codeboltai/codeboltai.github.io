@@ -1,118 +1,93 @@
 ---
 sidebar_position: 3
-title: Writing Evals
+title: Evaluators
 ---
 
-# Writing Evals
+# Evaluators
 
-An **eval set** is a collection of task fixtures with either a correct answer or a scoring rubric. You run your agent against the set, score each output, and get a single number (or vector of numbers) that summarises the agent's quality on those tasks.
+Evaluators score the subject's output after a task runs. Each task can have multiple evaluators, combined by **weighted average** to produce the final score (0-100).
 
-The goal isn't perfection; the goal is a reliable signal that's better than "this looks fine to me."
+## Evaluator Types
 
-## Starting small
+### Expected Output
 
-Your first eval set should be five fixtures, not fifty. Five covers:
+Compares the subject's output against an expected string.
 
-1. The **golden path** — the thing your agent is supposed to do, done well.
-2. One **adjacent variation** — same task shape, slightly different inputs.
-3. One **boundary case** — ambiguous or tricky input.
-4. One **regression** — something that broke once and you don't want to break again.
-5. One **negative** — input the agent should refuse or respond differently to.
+| Match mode | How it works |
+|---|---|
+| `exact` | Output must match expected string exactly (trimmed) |
+| `contains` | Output must contain the expected string |
+| `regex` | Output must match the regular expression |
+| `semantic` | Case-insensitive comparison |
 
-Once you have five, you have a signal. Grow from there only when you have specific questions the existing set doesn't answer.
+Scores 100 if matched, 0 if not.
 
-## Anatomy of a fixture
+**When to use:** Tasks with a known correct answer — function output, command result, specific text.
 
-```yaml
-# .codebolt/evals/my-agent/extract-component.yaml
-name: extract-component
-description: Extract a child JSX block into its own component
-input:
-  task: "Extract the <Hero> block from src/pages/home.tsx into src/components/Hero.tsx"
-  context:
-    files:
-      - path: src/pages/home.tsx
-        contents: |
-          ...
-expected:
-  kind: assertion          # or: exact_match, reference_answer, rubric
-  assertions:
-    - type: file_exists
-      path: src/components/Hero.tsx
-    - type: file_contains
-      path: src/components/Hero.tsx
-      text: "export default"
-    - type: file_does_not_contain
-      path: src/pages/home.tsx
-      text: "<h1>Welcome"
-    - type: tests_pass
-      command: "npm test"
-metadata:
-  tags: ["refactor", "extract"]
-  difficulty: moderate
-```
+### Script
 
-### Four `expected` kinds
+Runs a custom JavaScript function against the output.
 
-| Kind | What it is | Best for |
-|---|---|---|
-| `assertion` | Checks on the filesystem or tool output | Code tasks (file contents, tests pass) |
-| `exact_match` | Byte-equal output | Deterministic tasks (formatting, code generation with canonical form) |
-| `reference_answer` | Compare output to a known-good answer, with a similarity score | Fuzzy tasks where exact match is too strict |
-| `rubric` | LLM-judge against a written rubric | Open-ended tasks (writing, summaries, explanations) |
+The script receives:
+- `output` — the subject's output string
+- `task` — the task definition
+- `evaluator` — the evaluator configuration
 
-Start with `assertion` where possible — it's deterministic and fast. Fall back to `rubric` only when the task genuinely has no fixed right answer.
+Must return a score from 0 to 100.
 
-## Running an eval set
+**When to use:** Custom scoring logic — checking for specific patterns, counting occurrences, validating structure.
 
-```bash
-codebolt eval run my-agent --set ./evals/my-agent/            # all fixtures in a dir
-codebolt eval run my-agent --fixture ./evals/.../extract.yaml # one fixture
-codebolt eval run my-agent --set ... --parallel 4             # parallelise
-codebolt eval run my-agent --set ... --replay                 # deterministic replay, no new LLM calls
-```
+### Agent Judge
 
-Output:
+A judge agent evaluates the output using a custom rubric prompt.
 
-- Per-fixture pass/fail and scores.
-- Aggregate summary.
-- A **trace for every fixture run** — debuggable the same way as a production run.
+The judge agent receives:
+- The task description and instruction
+- The subject's output
+- Your custom rubric/prompt describing what to look for
 
-## Rubric scoring (LLM-judge)
+The judge returns a score and reasoning.
 
-For rubric-scored fixtures, the eval runs a *judge* LLM with a prompt like:
+**When to use:** Subjective quality assessment — code style, explanation clarity, completeness, adherence to requirements.
+
+### Deliberation
+
+Multiple agents independently evaluate the output, then a judge agent synthesizes their assessments.
+
+Configuration:
+- `deliberationAgentIds` — the agents that evaluate
+- `deliberationRounds` — number of rounds
+
+**When to use:** High-stakes evaluations where you want multiple perspectives — complex code review, nuanced quality assessment.
+
+## Weighted Scoring
+
+Each evaluator has a `weight` field. The final task score is:
 
 ```
-Task: {task}
-Agent output: {output}
-Rubric:
-  - Does the output correctly address the task? (0-5)
-  - Is it concise and well-written? (0-5)
-  - Does it avoid making things up? (0-5)
-Return a JSON object with { addresses_task, quality, faithfulness }.
+finalScore = sum(evaluator.score * evaluator.weight) / sum(weights)
 ```
 
-You configure the rubric per fixture. The judge LLM is configurable — usually a different model from the agent being evaluated (to avoid self-preference).
+Example with two evaluators:
 
-## Building evals from traces
+| Evaluator | Weight | Score | Contribution |
+|---|---|---|---|
+| Expected output | 0.6 | 100 | 60 |
+| Agent judge | 0.4 | 75 | 30 |
+| **Final score** | | | **90** |
 
-The cheapest way to grow an eval set is to promote real runs:
+## Evaluator Results
 
-```bash
-codebolt eval add-from-run <run_id> --set my-agent --expected-kind rubric
-```
+Each evaluator produces:
+- `score` — 0 to 100
+- `passed` — whether the evaluator considers the output acceptable
+- `reasoning` — explanation of the score (especially useful for agent-judge)
+- `details` — additional metadata
 
-The input is the original task; the expected output is the trace's actual output (for regression), or a rubric the developer writes. Real runs capture real shape.
+These are stored per-result and visible in the run detail view.
 
-## Anti-patterns
+## See Also
 
-- **Don't write an eval set before you have one good run.** You're guessing at what "good" looks like.
-- **Don't over-weight one dimension.** Correctness matters, but so does cost and latency. Track all three.
-- **Don't let the set rot.** If it hasn't failed in six months, it's not catching anything. Either it's well-calibrated or it's useless — audit periodically.
-- **Don't write 50 fixtures in one sitting.** You'll front-load errors. Five good ones beat fifty noisy ones.
-
-## See also
-
-- [Replay and Traces](./02_replay-and-traces.md) — source material for fixtures
-- [Optimization Loop](./04_optimization-loop.md) — eval sets drive the loop
-- [Metrics & Scoring](./05_metrics-and-scoring.md) — what dimensions to measure
+- [Creating Experiments](./02_creating-experiments.md) — add evaluators to tasks
+- [Optimization Loop](./04_optimization-loop.md) — evaluator scores drive optimization
+- [Running Evals and Results](./05_running-evals-and-results.md) — view evaluator output

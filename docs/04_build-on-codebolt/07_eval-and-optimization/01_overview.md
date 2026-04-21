@@ -1,78 +1,82 @@
 ---
 sidebar_position: 1
-title: Evaluation & Optimization Overview
+title: Overview
 ---
 
-# Evaluation & Optimization
+# Eval and Optimization
 
-Agents are programs. Like any program, you get better results by measuring them and iterating. Codebolt ships a developer-facing eval and optimization system for exactly that.
+Evaluate how well your agents, skills, and action blocks perform on specific tasks — then automatically optimize them using an agent-driven improvement loop.
 
-This section is about **refining what you built** — systematically, with evidence. It's distinct from [guardrails](../../02_using-codebolt/01_overview.md), which are runtime safety for the person *using* an agent.
+## What It Does
 
-## What this is for
+1. **Define experiments** — tasks with instructions, environments, and evaluators.
+2. **Run subjects** (agents, skills, MCPs, action blocks) against those experiments.
+3. **Score results** using weighted evaluators (string matching, script, agent-judge, deliberation).
+4. **Optimize automatically** — an optimizer agent reads the subject's code, makes targeted changes, re-evaluates, and keeps improvements.
 
-- **Quality regression.** Did my change to the prompt make the agent worse on tasks it used to handle?
-- **A/B comparison.** Agent A vs. Agent B on the same inputs — which one performs better, and on what kinds of tasks?
-- **Prompt optimization.** Systematically tune prompt text, temperature, tool selection, or context rules, guided by scores.
-- **Tool quality.** Is my new MCP tool actually being called correctly and producing good results?
-- **Capability tuning.** Does activating a capability improve the behaviour it's meant to improve?
-
-## The pieces
-
-| Piece | Purpose | Reference |
-|---|---|---|
-| **Replay & traces** | Re-run recorded conversations against a new agent version | [Replay and Traces](./02_replay-and-traces.md) |
-| **Eval sets** | Curated input/expected-output fixtures | [Writing Evals](./03_writing-evals.md) |
-| **Optimization loop** | Server-driven tuning — generate variants, evaluate, pick winners | [Optimization Loop](./04_optimization-loop.md) |
-| **Metrics & scoring** | Measurable dimensions (correctness, cost, latency, tool choice quality) | [Metrics & Scoring](./05_metrics-and-scoring.md) |
-
-## The mental model
+## Architecture
 
 ```
-┌── event log ──┐         ┌── eval set ──┐
-│ real runs     │         │ fixtures     │
-└──────┬────────┘         └──────┬───────┘
-       │                         │
-       ▼                         ▼
-   replay agent X          evaluate agent X
-       │                         │
-       └───────┬─────────────────┘
-               ▼
-         scores + traces
-               │
-               ▼
-      optimization loop — propose changes, re-evaluate
-               │
-               ▼
-         agent X', X'', ...
+┌────────────────────────────┐
+│  Eval Panel (UI)           │
+│  Create experiments, runs  │
+│  View results, leaderboard │
+└────────────┬───────────────┘
+             │ REST API + WebSocket
+┌────────────┴───────────────┐
+│  Eval Service (Server)     │
+│  Execute → Evaluate → Score│
+│  Optimize (if enabled)     │
+└────────────┬───────────────┘
+             │
+     .codebolt/evals/ (JSON)
 ```
 
-Production runs become eval material. Eval results drive the optimization loop. The loop produces candidate agents; you pick the one that wins and deploy it.
+## Key Concepts
 
-## When to reach for it
+| Concept | What it is |
+|---|---|
+| **Task (Experiment)** | Defines what to test: instruction, environment, evaluators, optional optimization |
+| **Subject** | The thing being evaluated: agent, skill, action-block, capability, or MCP |
+| **Suite** | A folder grouping related tasks |
+| **Run** | Executes subjects against tasks, produces scored results |
+| **Evaluator** | Scores the subject's output (expected-output, script, agent-judge, deliberation) |
+| **Optimization** | Agent-driven iterative improvement of the subject |
 
-- Before a significant change to a production agent — baseline first, change, compare.
-- When behaviour regresses in a way you can't pin to a specific run.
-- When you want to experiment with many small variations and need a tiebreaker better than intuition.
-- Before publishing a capability or agent to the marketplace.
+## Subject Types
 
-When *not* to reach for it: early exploration. Eval overhead is real — don't build an eval set before you know what "good" looks like.
+| Type | What it is |
+|---|---|
+| `agent` | An installed agent |
+| `skill` | A skill |
+| `action-block` | An action block |
+| `capability` | A capability |
+| `mcp` | An MCP server |
 
-## Eval vs. guardrails
+## Data Storage
 
-| Axis | Eval | Guardrails |
-|---|---|---|
-| **When it runs** | Offline, during development | Inline, at runtime |
-| **What it does** | Scores outputs | Blocks / rewrites outputs |
-| **Who consumes** | Developer refining the agent | End user running the agent |
-| **Where it lives in docs** | Build on Codebolt (this section) | Using Codebolt |
+All eval data is stored as JSON files in `.codebolt/evals/`:
 
-They complement: guardrails catch runtime issues; evals catch quality regressions before they reach runtime.
+```
+.codebolt/evals/
+├── index.json
+├── tasks/
+├── suites/
+└── runs/
+```
 
-## See also
+## Workflow
 
-- [Replay and Traces](./02_replay-and-traces.md)
-- [Writing Evals](./03_writing-evals.md)
-- [Optimization Loop](./04_optimization-loop.md)
-- [Metrics & Scoring](./05_metrics-and-scoring.md)
-- [Testing and debugging](../02_creating-agents/09_testing-and-debugging.md) — single-run development loop
+1. Open the **Eval Panel** in Codebolt (Experiments tab).
+2. Create an **experiment** — define instruction, environment, evaluators.
+3. Switch to **Runs** tab, create a run — select subjects.
+4. Click **Start** — subjects execute, evaluators score, results update in real time.
+5. Optionally enable **optimization** — optimizer agent iterates to improve scores.
+6. Review the **leaderboard** — ranked subjects by score.
+
+## See Also
+
+- [Creating Experiments](./02_creating-experiments.md) — define tasks, instructions, environments
+- [Evaluators](./03_evaluators.md) — configure scoring methods
+- [Optimization Loop](./04_optimization-loop.md) — agent-driven iterative improvement
+- [Running Evals and Results](./05_running-evals-and-results.md) — execute runs, view results

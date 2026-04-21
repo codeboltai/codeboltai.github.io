@@ -1,89 +1,104 @@
 ---
 sidebar_position: 2
-title: Replay and Traces
+title: Creating Experiments
 ---
 
-# Replay and Traces
+# Creating Experiments
 
-Every agent run in Codebolt produces a **trace** — an ordered record of every phase, LLM call, tool invocation, memory read/write, and child run. Traces live in the [event log](../09_internals/03_subsystems/12_persistence-and-eventlog.md) and are the raw material for replay, debugging, and eval.
+An experiment (task) defines what to test, where to run it, and how to score the output. Create experiments in the Eval Panel's **Experiments** tab.
 
-## What's in a trace
+## Task Structure
 
-A full agent trace captures:
+Every task has three parts:
 
-- Every **phase transition** (deliberate → execute → reflect → terminate), with timestamps.
-- Every **LLM call** with full inputs (messages, tools, model, parameters) and outputs (tokens, tool calls, content).
-- Every **tool invocation** with args and results.
-- Every **memory read/write** — episodic and persistent.
-- Every **child run** (subagents, side executions) nested.
-- **Heartbeats** and **structured logs** emitted during the run.
+1. **Instruction** — what to tell the subject.
+2. **Environment** — where to execute.
+3. **Evaluators** — how to score the output.
 
-Traces are canonical — nothing about the run is outside them. If replay works on a trace, you have the complete recipe to re-produce the behaviour.
+Plus an optional **optimization** config for automatic improvement.
 
-## Replay
+## Instruction
 
-Replay takes a recorded run and re-executes it against a (possibly different) version of the agent.
+The instruction tells the subject what to do. Three types:
 
-```bash
-codebolt run replay <run_id>                       # same agent, re-run
-codebolt run replay <run_id> --agent my-agent@v2   # different version
-codebolt run replay <run_id> --agent my-agent-b    # entirely different agent
+| Type | Description |
+|---|---|
+| `text` | A text prompt sent to the subject |
+| `script` | A setup script that runs before the subject starts |
+| `hybrid` | Both a setup script and a text prompt |
+
+### Text instruction
+
+A plain text prompt:
+
+```
+Write a function that sorts an array of numbers in ascending order.
 ```
 
-### Two replay modes
+### Script instruction
 
-| Mode | LLM behaviour | When |
+A script that sets up the environment before the subject runs (e.g., create files, seed data).
+
+### Hybrid
+
+Combines both — the script runs first to set up context, then the text prompt is sent to the subject.
+
+## Environment
+
+Choose where the subject runs:
+
+| Type | Description |
+|---|---|
+| `local` | Run on the local machine |
+| `remote` | Run in a specific remote environment (by ID) |
+| `provider` | Run using an execution provider (E2B, Docker, etc.) |
+
+For `remote` and `provider`, you specify the environment or provider ID.
+
+## Evaluators
+
+Each task has one or more evaluators that score the subject's output. Evaluators are **weighted** — the final score is a weighted average.
+
+See [Evaluators](./03_evaluators.md) for details on each type.
+
+## Optimization (Optional)
+
+Enable optimization to have an agent automatically improve the subject. When enabled, the system:
+
+1. Runs the initial eval.
+2. Passes the score and output to an optimizer agent.
+3. The optimizer makes one targeted change to the subject's code.
+4. Re-evaluates the modified subject.
+5. Repeats until the target score is reached or max iterations hit.
+
+See [Optimization Loop](./04_optimization-loop.md) for details.
+
+## Suites
+
+Group related tasks into a **suite** (folder). When you create a run from a suite, all tasks in the suite are executed.
+
+Use suites to:
+- Test different aspects of an agent (accuracy, speed, tool usage).
+- Compare subjects across a standardized benchmark.
+- Run regression tests after changes.
+
+## REST API
+
+| Method | Endpoint | Description |
 |---|---|---|
-| **Deterministic** | LLM outputs are replayed from the trace — no new inference | Testing code changes that don't affect LLM decisions |
-| **Live** | LLM is called fresh — tool results are still replayed | Testing prompt / model / tool changes |
+| `GET` | `/evals/tasks` | List all tasks |
+| `POST` | `/evals/tasks` | Create a task |
+| `GET` | `/evals/tasks/:id` | Get a task |
+| `PUT` | `/evals/tasks/:id` | Update a task |
+| `DELETE` | `/evals/tasks/:id` | Delete a task |
+| `GET` | `/evals/suites` | List all suites |
+| `POST` | `/evals/suites` | Create a suite |
+| `GET` | `/evals/suites/:id` | Get a suite with its tasks |
+| `PUT` | `/evals/suites/:id` | Update a suite |
+| `DELETE` | `/evals/suites/:id` | Delete a suite |
 
-Deterministic replay is fast and free (no LLM cost). It's the default for CI-style regression checks. Live replay is the mode you want when testing prompt changes, since that's exactly the path that matters.
+## See Also
 
-### What replay proves
-
-If a change passes replay on a representative trace set, you know:
-
-- The change didn't break the recorded path.
-- The change didn't alter memory semantics (state at each phase matches).
-- Tool call sequences are preserved (for deterministic replay).
-
-What it doesn't prove: novel inputs behave well. For that, use [eval sets](./03_writing-evals.md).
-
-## Viewing traces
-
-In the UI:
-
-- **Flow view** — every run as a tree. Click any node for its full detail.
-- **Trace timeline** — linear view with phase bars, easier for short runs.
-- **Inline diff** — compare two traces side-by-side (often parent run vs. replay).
-
-From the CLI:
-
-```bash
-codebolt run trace <run_id>              # human-readable summary
-codebolt run trace <run_id> --format json > run.json
-codebolt run diff <run_id_a> <run_id_b>  # compare
-```
-
-## Promoting a trace to an eval fixture
-
-The natural path:
-
-1. Something went wrong in a run. You fix it.
-2. You don't want that regression again. Promote the trace to a fixture.
-3. `codebolt eval add-from-run <run_id> --set my-agent-regressions`
-4. Now CI runs replay against that fixture on every change.
-
-This is the cheapest way to build an eval set — real production runs promoted on demand.
-
-## Retention and privacy
-
-- Traces live locally by default in the event log DB.
-- Sensitive inputs (tokens, secrets) are redacted according to project policy. See [Security Hardening](../10_self-hosting/06_security-hardening.md).
-- For remote runs, the trace is written to the central server, not the sandbox.
-
-## See also
-
-- [Writing Evals](./03_writing-evals.md) — turn traces into measured sets
-- [Event Log subsystem](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — where traces live
-- [Testing and debugging](../02_creating-agents/09_testing-and-debugging.md) — day-to-day dev loop
+- [Evaluators](./03_evaluators.md) — configure scoring methods
+- [Optimization Loop](./04_optimization-loop.md) — agent-driven improvement
+- [Running Evals and Results](./05_running-evals-and-results.md) — execute and view results
