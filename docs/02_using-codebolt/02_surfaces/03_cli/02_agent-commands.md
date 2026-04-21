@@ -296,7 +296,7 @@ codebolt agent inspect <run-id>
 
 ## See also
 
-- [CLI & TUI Overview](./01_overview.md)
+- [CLI Overview](./01_overview.md)
 - [Running agents](../../04_agents/03_running-agents.md)
 - [Reference → CLI](../../../05_reference/01_overview.md) — the auto-generated flag reference
 - [Testing and debugging](../../../04_build-on-codebolt/02_creating-agents/09_testing-and-debugging.md)

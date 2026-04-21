@@ -1099,3 +1099,32 @@
   fill: #52534e;
 }
 [data-theme='dark'] .cb-seq-eyebrow { fill: #a0a09a; }
+
+/* ── Chat Integration Architecture ── */
+
+.cb-arch-badge-inv {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  fill: #f5f4ed;
+}
+[data-theme='dark'] .cb-arch-badge-inv { fill: #141412; }
+
+.cb-arch-sub-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 6px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-arch-sub-badge { fill: #a0a09a; }
+
+.cb-arch-dir-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  fill: rgba(82,83,78,0.45);
+}
+[data-theme='dark'] .cb-arch-dir-label { fill: rgba(160,160,154,0.45); }

@@ -78,7 +78,7 @@ Should print the version number. If it says "command not found", the CLI isn't o
 codebolt
 ```
 
-Should launch the server and TUI. Exit with Ctrl+C. See [TUI Mode](../02_using-codebolt/02_surfaces/04_tui.md).
+Should launch the server and TUI. Exit with Ctrl+C. See [TUI Overview](../02_using-codebolt/02_surfaces/04_tui/01_overview.md).
 
 ## 10. (Optional) Checkpoint + replay
 
