@@ -6,7 +6,7 @@
     "docusaurus": "npx docusaurus",
     "start": "npx docusaurus start --no-open",
     "build": "npx docusaurus build",
-    "build:cf": "NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
+    "build:cf": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
     "build:no-types": "npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "deploy": "npx docusaurus deploy",
@@ -41,6 +41,7 @@
     "@docusaurus/module-type-aliases": "^3.10.0",
     "@docusaurus/tsconfig": "^3.10.0",
     "@docusaurus/types": "^3.10.0",
+    "cross-env": "^10.1.0",
     "typedoc": "0.28.16",
     "typedoc-plugin-markdown": "4.9.0",
     "typescript": "^5.4.5"
