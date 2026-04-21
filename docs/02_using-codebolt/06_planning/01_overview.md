@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Planning
 ---
 
+import PlanningOverview from '@site/src/components/diagrams/PlanningOverview';
+
 # Planning
 
 Codebolt includes a set of built-in planning tools that live alongside your code and your agents. They cover the full arc from strategic intent to individual work items — and agents can read and update them, so your plans stay connected to what's actually happening in the codebase.
@@ -20,20 +22,7 @@ Codebolt includes a set of built-in planning tools that live alongside your code
 
 ## How they fit together
 
-```
-Roadmap
-  └─ Features (what to build)
-       └─ Convert to → Tasks / send to Chat
-
-Requirement Plan
-  ├─ Links Specs        (how it's specified)
-  ├─ Links UI Flows     (how it looks)
-  └─ Links Action Plans (how it's built)
-
-Action Plan
-  └─ Tasks, parallel groups, loops, conditionals
-       └─ Each task tracks status, dependencies, files
-```
+<PlanningOverview />
 
 The tools are independent — you can use any one without the others. But they're designed to compose: a Roadmap feature can become a Task; a Requirement Plan can pull together a Spec, a UI Flow, and an Action Plan into one document.
 

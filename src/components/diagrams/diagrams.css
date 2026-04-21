@@ -1618,3 +1618,115 @@
   fill: #0369a1;
 }
 [data-theme='dark'] .cb-ol-feedback-label { fill: #7dd3fc; }
+
+/* ── Planning overview ───────────────────── */
+
+.cb-diagram--planning {
+  background: #f5f4ed;
+  border-color: rgba(11,13,11,0.12);
+}
+[data-theme='dark'] .cb-diagram--planning {
+  background: #141412;
+  border-color: rgba(240,239,232,0.10);
+}
+
+.cb-plan-arrowfill {
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-plan-arrowfill { fill: #a0a09a; }
+
+.cb-plan-eyebrow,
+.cb-plan-title,
+.cb-plan-sub,
+.cb-plan-foot,
+.cb-plan-chip-label,
+.cb-plan-wire-label,
+.cb-plan-caption,
+.cb-plan-aggregate-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cb-plan-eyebrow {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-plan-eyebrow { fill: #a0a09a; }
+
+.cb-plan-strategy-rect,
+.cb-plan-doc-rect,
+.cb-plan-design-rect,
+.cb-plan-exec-rect,
+.cb-plan-ops-rect,
+.cb-plan-chip-rect {
+  fill: rgba(255,255,255,0.8);
+  stroke: rgba(11,13,11,0.18);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-plan-strategy-rect,
+[data-theme='dark'] .cb-plan-doc-rect,
+[data-theme='dark'] .cb-plan-design-rect,
+[data-theme='dark'] .cb-plan-exec-rect,
+[data-theme='dark'] .cb-plan-ops-rect,
+[data-theme='dark'] .cb-plan-chip-rect {
+  fill: rgba(240,239,232,0.04);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-plan-aggregate-rect {
+  fill: rgba(14,165,233,0.06);
+  stroke: #0ea5e9;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-plan-aggregate-rect {
+  fill: rgba(14,165,233,0.10);
+  stroke: #38bdf8;
+}
+
+.cb-plan-exec-rect {
+  stroke: #f7591f;
+}
+
+.cb-plan-title,
+.cb-plan-aggregate-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-plan-title,
+[data-theme='dark'] .cb-plan-aggregate-title { fill: #f0efe8; }
+
+.cb-plan-sub,
+.cb-plan-foot,
+.cb-plan-wire-label,
+.cb-plan-caption {
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-plan-sub,
+[data-theme='dark'] .cb-plan-foot,
+[data-theme='dark'] .cb-plan-wire-label,
+[data-theme='dark'] .cb-plan-caption { fill: #a0a09a; }
+
+.cb-plan-chip-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-plan-chip-label { fill: #f0efe8; }
+
+.cb-plan-wire {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-plan-wire { stroke: #a0a09a; }
+
+.cb-plan-wire--accent {
+  stroke: #0ea5e9;
+}
+[data-theme='dark'] .cb-plan-wire--accent { stroke: #38bdf8; }
