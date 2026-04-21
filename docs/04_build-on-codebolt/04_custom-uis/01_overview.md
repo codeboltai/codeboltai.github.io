@@ -18,10 +18,15 @@ If you want to *use* an existing UI (desktop app, web app, IDE extensions), see 
 
 ## In This Section
 
-- [Client SDK](./02_client-sdk.md)
-- [Existing UIs](./03_existing-uis.md)
-- [Chat Widget](./04_chat-widget.md)
-- [Dynamic Panels In The Existing App](./05_dynamic-panels.md)
+| Page | What it covers |
+|---|---|
+| [Client SDK](./02_client-sdk.md) | Full typed TypeScript client — 72 HTTP API modules, 34 WebSocket modules |
+| [Existing UIs](./03_existing-uis.md) | Reference implementations you can study or fork (desktop, web, TUI) |
+| [Chat Widget](./04_chat-widget.md) | Reusable React chat components from `@codebolt/ui` |
+| [Dynamic Panels](./05_dynamic-panels.md) | Inject UI surfaces inside the existing Codebolt app |
+| [Custom UI](./06_custom-ui.md) | Standalone app that connects to Codebolt via the Client SDK |
+| [Build Your First Custom UI](./06_build-your-first-custom-ui.md) | Step-by-step: build a standalone UI |
+| [Build Your First Dynamic Panel](./07_build-your-first-dynamic-panel.md) | Step-by-step: build a plugin panel inside the existing app |
 
 ## Two shapes of client
 

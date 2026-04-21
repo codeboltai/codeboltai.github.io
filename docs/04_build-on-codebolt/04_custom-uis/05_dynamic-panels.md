@@ -1,83 +1,168 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: Dynamic Panels
 ---
 
 # Dynamic Panels
 
-Not every custom UI needs to be a separate application. Codebolt can also render runtime UI panels *inside the existing app* through the dynamic panel system.
+Not every custom UI needs to be a separate application. Codebolt can render runtime UI panels *inside the existing app* through the dynamic panel system.
 
-The server bridge is [dynamicPanelService.cli.ts](D:/Codeboltapps/CodeBolt/packages/server/src/cliLib/dynamicPanelService.cli.ts), which routes panel actions into `dynamicPanelService`.
+Dynamic panels are driven by **agents** or **plugins** — they open a panel, send it data, and listen for user interactions. This is different from a [custom UI](./06_custom-ui.md), which is a standalone app that owns the entire UX.
+
+## How It Works
+
+```
+┌─────────────────────────────────────────────┐
+│  Codebolt App                               │
+│  ┌─────────────┐  ┌──────────────────────┐  │
+│  │   Chat      │  │  Dynamic Panel       │  │
+│  │   Panel     │  │  (your HTML/JS)      │  │
+│  │             │  │                      │  │
+│  │             │  │  ← messages →        │  │
+│  └─────────────┘  └──────────┬───────────┘  │
+│                              │              │
+└──────────────────────────────┼──────────────┘
+                               │
+                    Socket.IO events
+                               │
+                    ┌──────────┴───────────┐
+                    │  Server              │
+                    │  DynamicPanelService  │
+                    │         ↕            │
+                    │  Agent / Plugin      │
+                    └──────────────────────┘
+```
+
+1. An **agent or plugin** opens a panel with HTML content.
+2. The **server** registers the panel and emits a Socket.IO event to the UI.
+3. The **UI** renders the panel in the specified position.
+4. **Messages** flow bidirectionally between the panel and the originating agent/plugin.
+5. **Cleanup** happens automatically when the agent/plugin disconnects.
+
+## Panel Interface
+
+```typescript
+interface DynamicPanelOptions {
+  panelId: string;              // Unique identifier
+  title: string;                // Panel title bar text
+  html: string;                 // HTML content to render
+  position?: 'left' | 'right' | 'bottom' | 'center';  // default: 'right'
+  width?: number;               // Panel width
+  height?: number;              // Panel height
+  waitForResponse?: boolean;    // Block until user responds
+  timeout?: number;             // Timeout for waitForResponse (ms)
+}
+```
 
 ## Supported Actions
 
-- `dynamicPanel.open`
-- `dynamicPanel.update`
-- `dynamicPanel.close`
-- `dynamicPanel.send`
-- `dynamicPanel.list`
+| Action | Description |
+|---|---|
+| `dynamicPanel.open` | Create and display a new panel |
+| `dynamicPanel.update` | Update an existing panel's content or title |
+| `dynamicPanel.close` | Close and remove a panel |
+| `dynamicPanel.send` | Send a message to the panel |
+| `dynamicPanel.list` | List all active panels |
 
-Under the hood, `dynamicPanelService` handles:
+## From an Agent
 
-- opening a panel in the UI
-- tracking panel state by `panelId`
-- registering the agent or plugin subscription for that panel
-- forwarding messages from the panel back to the originating agent or plugin
-- sending data from the agent or plugin to the panel
+Agents use the `codebolt.dynamicPanel` API:
 
-## From An Agent
+```typescript
+// Open a panel
+await codebolt.dynamicPanel.open({
+  panelId: 'my-review-panel',
+  title: 'Code Review',
+  html: '<div id="review">Loading...</div>',
+  position: 'right',
+});
 
-Typical agent flow:
+// Update content
+codebolt.dynamicPanel.update({
+  panelId: 'my-review-panel',
+  html: '<div id="review"><h2>3 issues found</h2>...</div>',
+});
 
-1. the agent opens a panel with `panelId`, `title`, and `html`
-2. the UI renders that panel
-3. panel messages route back to the originating agent subscription
-4. the agent updates, sends to, or closes the panel later
+// Listen for user interactions
+codebolt.dynamicPanel.onMessage('my-review-panel', (msg) => {
+  if (msg.type === 'approve') {
+    // User approved the review
+  }
+});
 
-This is useful for:
+// Close when done
+codebolt.dynamicPanel.close('my-review-panel');
+```
 
-- focused UI during a run
-- human-in-the-loop forms or confirmations
-- richer interactive views than plain chat messages
+### Request/Response Pattern
 
-The open operation also supports `waitForResponse` and `timeout`, so agent workflows can use panels as request/response UI, not just passive display.
+Use `waitForResponse` to block the agent until the user interacts:
 
-## From A Plugin
+```typescript
+const response = await codebolt.dynamicPanel.open({
+  panelId: 'confirm-deploy',
+  title: 'Confirm Deployment',
+  html: `
+    <div>
+      <p>Deploy to production?</p>
+      <button onclick="respond({ type: 'confirm' })">Yes</button>
+      <button onclick="respond({ type: 'cancel' })">No</button>
+    </div>
+  `,
+  waitForResponse: true,
+  timeout: 30000,
+});
 
-Plugins can also drive in-app panels. The server types expose these operations:
+if (response?.type === 'confirm') {
+  // proceed with deployment
+}
+```
 
-- `openPanel`
-- `updatePanel`
-- `closePanel`
-- `sendToPanel`
-- `onPanelMessage`
-- `offPanelMessage`
+## From a Plugin
 
-Use plugin-driven panels when the UI is application-level rather than tied to one run:
+Plugins declare a UI HTML file in `package.json` and communicate with it through the Plugin SDK.
 
-- dashboards
-- settings/configuration panels
-- long-lived operational views
-- domain-specific views reused across agents
+### Plugin SDK API
 
-## Dynamic Panels Vs Separate Custom UI
+| Method | Direction | Description |
+|---|---|---|
+| `plugin.dynamicPanel.send(panelId, data)` | Plugin → Panel | Send a JSON message to the panel |
+| `plugin.dynamicPanel.onMessage(panelId, handler)` | Panel → Plugin | Listen for messages from the panel |
+| `plugin.dynamicPanel.offMessage(panelId)` | — | Remove the message handler |
+| `plugin.dynamicPanel.list()` | — | List all active panels |
 
-Use **dynamic panels** when:
+### Client-Side API (inside panel HTML)
 
-- the UI should live inside the existing Codebolt app
-- the interaction is tightly coupled to one agent run or one plugin
-- you want to augment the built-in app rather than replace it
+Codebolt injects a global `codeboltPlugin` object into your panel HTML:
 
-Use a **separate custom UI** when:
+| Method | Direction | Description |
+|---|---|---|
+| `codeboltPlugin.sendMessage(data)` | Panel → Plugin | Send a JSON message to the plugin backend |
+| `codeboltPlugin.onMessage(handler)` | Plugin → Panel | Listen for messages from the plugin backend |
 
-- you want to own the whole product surface
-- the UI runs outside the existing desktop/web app
-- you need your own routing, branding, or application shell
+For a complete step-by-step walkthrough of building a plugin with a dynamic panel, see [Build Your First Dynamic Panel](./07_build-your-first-dynamic-panel.md).
 
-`clientsdk` is for building a client *outside* the existing app. `dynamicPanelService` is for injecting UI *into* the existing app.
+## Use Cases
 
-## See also
+| Use case | Example |
+|---|---|
+| **Focused UI during a run** | Show a progress dashboard while an agent works |
+| **Human-in-the-loop** | Confirmation dialogs, form inputs, review approvals |
+| **Rich interactive views** | Charts, tables, or visualizations beyond plain chat |
+| **Settings panels** | Plugin configuration UI |
+| **Monitoring** | Real-time agent activity or system metrics |
 
-- [Client SDK](./02_client-sdk.md)
-- [Plugins](../05_plugins/01_overview.md)
-- [Internals → Communication](../09_internals/03_subsystems/11_communication.md)
+## Dynamic Panels vs Custom UI
+
+| Use dynamic panels when | Use a [custom UI](./06_custom-ui.md) when |
+|---|---|
+| UI should live inside the existing Codebolt app | You want to own the whole product surface |
+| Interaction is tied to one agent run or one plugin | UI runs outside the existing desktop/web app |
+| You want to augment the built-in app | You need your own routing, branding, or shell |
+
+## See Also
+
+- [Build Your First Dynamic Panel](./07_build-your-first-dynamic-panel.md) — step-by-step tutorial
+- [Custom UI](./06_custom-ui.md) — standalone UI overview
+- [Client SDK](./02_client-sdk.md) — for building standalone UIs
+- [Plugins](../05_plugins/01_overview.md) — backend extensions that can drive panels
