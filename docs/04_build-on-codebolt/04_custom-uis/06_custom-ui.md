@@ -62,7 +62,7 @@ const agents = await codebolt.agents.getInstalledAgents();
 const project = await codebolt.projects.getRoot();
 ```
 
-See the full module list in the [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md).
+See the full module list in the [API Reference](../../05_reference/04_client-sdk/02_api-reference/index.md).
 
 ### WebSocket Events
 
@@ -94,7 +94,7 @@ const unsub = codebolt.onAllEvents((event) => {
 });
 ```
 
-See the full module list in the [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md).
+See the full event list in the [Event Reference](../../05_reference/04_client-sdk/03_event-reference/index.md).
 
 ### Connection Presets
 
@@ -159,7 +159,9 @@ await codebolt.disconnectAll();
 ## See Also
 
 - [Build Your First Custom UI](./07_build-your-first-custom-ui.md) — step-by-step tutorial
-- [Client SDK Reference](../../05_reference/04_client-sdk/01_overview.md) — full API reference
+- [API Reference](../../05_reference/04_client-sdk/02_api-reference/index.md) — all 72 HTTP API modules
+- [Event Reference](../../05_reference/04_client-sdk/03_event-reference/index.md) — all 34 WebSocket event modules
+- [Client SDK Overview](../../05_reference/04_client-sdk/01_overview.md) — SDK overview
 - [Existing UIs](./03_existing-uis.md) — reference implementations to study or fork
 - [Chat Widget](./04_chat-widget.md) — drop-in React chat components
 - [Dynamic Panels](./05_dynamic-panels.md) — UI inside the existing app
