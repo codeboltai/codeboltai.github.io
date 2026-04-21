@@ -1,185 +1,123 @@
 ---
 sidebar_position: 1
-title: CLI & TUI Overview
+title: CLI Overview
 ---
 
-# CLI & TUI Overview
+# CLI Overview
 
-Codebolt ships three ways to interact with the same server:
+The `codebolt` CLI is the command-line entry point for running the Codebolt server, launching the TUI, connecting to an existing server, running headless prompts, and executing command groups like `action`, `agent`, and `command`.
 
-1. **Desktop app** — the GUI. What most people use.
-2. **CLI** — `codebolt` command for scripting, headless operation, and CI.
-3. **TUI** — full-screen terminal UI. The GUI experience in a terminal.
+This page is about the CLI itself. The TUI is documented separately under [TUI Overview](../04_tui/01_overview.md).
 
-All three speak the same protocol to the same server. You can use the desktop app for daily work and the CLI for CI, and they'll see the same projects, agents, and history.
+## Root command
 
-## The `codebolt` command
-
-The CLI uses a flag-based interface:
-
-```
-codebolt [flags]
+```text
+codebolt [options] [command]
 ```
 
-Core flags:
+Without a subcommand, the CLI runs one of its runtime modes depending on the flags you pass.
+
+## Runtime modes
+
+| Mode | How to start it | What it does |
+|---|---|---|
+| Default interactive mode | `codebolt` | Starts the server and launches the TUI |
+| Server-only mode | `codebolt --server` | Starts the server without the TUI |
+| Connect mode | `codebolt --connect <port>` | Launches the TUI against an already running server |
+| Headless prompt mode | `codebolt --prompt "..."` | Runs an agent prompt over the server WebSocket and exits |
+
+## Root options
 
 | Flag | What it does |
 |---|---|
-| (no flags) | Start server + TUI |
-| `--server` | Start server only (no TUI, headless) |
-| `--prompt "text"` | Run an agent with a prompt |
-| `--agent <name>` | Specify which agent to use with `--prompt` |
-| `--provider <name>` | Specify LLM provider |
-| `--model <name>` | Specify LLM model |
-| `--api-key <key>` | API key for the provider |
 | `--project <path>` | Set project directory |
-| `--port <number>` | Set server port (default: 12345) |
-| `--connect <port>` | Connect to an existing server |
-| `--web` | Require web frontend |
-| `--auth-token <token>` | Set auth token |
+| `--port <number>` | Set server port. The base default in `packages/cli` is `2719` |
+| `--server` | Start server only |
+| `--connect <port>` | Connect the TUI to an existing server |
+| `--prompt "text"` | Run an agent with a prompt |
+| `--agent <name>` | Select the agent used with `--prompt` |
+| `--provider <name>` | Select an LLM provider |
+| `--model <name>` | Select an LLM model |
+| `--api-key <key>` | API key for the selected provider |
+| `--api-url <url>` | Custom provider API base URL |
+| `--embedding-provider <name>` | Embedding provider override |
+| `--embedding-model <name>` | Embedding model override |
+| `--auth-token <token>` | Authentication token |
+| `--web` | Require the web frontend to be present |
+| `--debug` | Enable debug mode |
 | `--version` / `-v` | Print version |
 | `--help` / `-h` | Show help |
 
-Extension commands:
+## Command groups
 
-```
-codebolt <type> create --name <name>
-codebolt <type> publish --name <name>
-codebolt <type> list
-```
+The CLI also mounts separate command groups:
 
-Where `<type>` is one of: `agent`, `tool`, `provider`, `plugin`, `skill`, `actionblock`, `capability`, `executor`.
+| Command | Purpose |
+|---|---|
+| `codebolt action ...` | Create, publish, and list extension types like tools, providers, plugins, skills, capabilities, executors, and action blocks |
+| `codebolt agent ...` | Top-level agent extension commands. This same group is also mounted under `codebolt action agent ...` |
+| `codebolt command ...` | Connect to a running server and run modules like `threads`, `tasks`, `jobs`, `agents`, `git`, `system`, `projects`, `chat`, `todos`, and `llm` |
 
-## First checks
+For the exact subcommand and flag reference, use [Reference → Codebolt CLI](../../../05_reference/06_codebolt-cli/01_overview.md).
 
-```bash
-codebolt --version
-```
+## Common patterns
 
-Prints the installed version, e.g. `codebolt 1.12.12`.
-
-## Common CLI patterns
-
-### Start the TUI
+### Start the default server + TUI flow
 
 ```bash
 codebolt
 ```
 
-Opens the full-screen terminal UI. This is the default behavior when no flags are given.
+### Start server only
 
-### Run an agent from the shell
+```bash
+codebolt --server
+```
+
+### Connect to an existing server
+
+```bash
+codebolt --connect 2719
+```
+
+### Run a one-shot prompt
 
 ```bash
 codebolt --prompt "add a /health endpoint" --agent generalist
 ```
 
-Runs the agent with the given prompt and returns when done.
-
-### Start server-only (headless)
+### Manage extensions
 
 ```bash
-codebolt --server
+codebolt action tool create --name my-tool
+codebolt action plugin list
+codebolt agent create --name my-agent --framework
 ```
 
-Starts the server without any UI. Useful for CI, remote dev, or background services.
-
-### Start with a specific project
+### Query a running server
 
 ```bash
-codebolt --project /path/to/my/project
+codebolt command threads list
+codebolt command git status
+codebolt command llm providers
 ```
 
-### Use a specific provider and model
+## CLI vs neighboring surfaces
 
-```bash
-codebolt --provider openai --model gpt-4 --api-key sk-...
-```
+Use the CLI when you want:
 
-## Output formats
+- shell-native workflows
+- scripting and CI
+- remote command execution
+- server administration and command-style inspection
 
-The `--prompt` mode prints agent output to stdout. Useful for scripting and CI.
-
-## Scripting
-
-The CLI is built for scripting:
-
-- Exits non-zero on failure.
-- Prints errors to stderr.
-- `--prompt` mode outputs agent results to stdout.
-
-Example: a CI job that runs a reviewer agent on every PR:
-
-```bash
-#!/bin/bash
-set -euo pipefail
-
-codebolt --server --project "$PR_CHECKOUT_DIR" &
-sleep 5
-
-codebolt --prompt "review the diff against origin/main" \
-  --agent reviewer \
-  --provider openai \
-  --api-key "$OPENAI_API_KEY"
-```
-
-## The TUI
-
-For interactive work without a GUI:
-
-```bash
-codebolt
-```
-
-Opens a full-screen terminal UI with chat tabs, file tree, and agent runs. Uses the same server as the desktop app — if both are running, they see the same state.
-
-Key bindings:
-- `Tab` — cycle focus between panels
-- `Ctrl+N` — new chat tab
-- `Ctrl+W` — close tab
-- `Ctrl+K` — command palette
-- `?` — show help
-- `q` — quit
-
-See [TUI mode](../04_tui.md) for the full guide.
-
-## Headless mode
-
-For running on a server without any display:
-
-```bash
-codebolt --server
-```
-
-Starts the server without attempting any GUI or terminal UI. The CLI can still connect and issue commands. Useful for:
-
-- **CI runners** — a shared Codebolt instance for the CI fleet.
-- **Remote dev environments** — Codebolt running on a cloud VM, accessed via CLI or `ssh`.
-- **Background services** — Codebolt as a systemd unit.
-
-See [Headless mode](../05_headless.md).
-
-## Extension management
-
-Manage extensions (agents, tools, providers, etc.):
-
-```bash
-codebolt agent create --name my-agent
-codebolt agent publish --name my-agent
-codebolt agent list
-
-codebolt tool create --name my-tool
-codebolt tool list
-
-codebolt skill create --name my-skill
-codebolt skill list
-```
+Use the TUI when you want an interactive terminal interface instead of plain command output. Use Headless mode when you want no interactive UI at all.
 
 ## See also
 
+- [TUI Overview](../04_tui/01_overview.md)
+- [Headless Mode](../05_headless.md)
 - [Agent commands](./02_agent-commands.md)
 - [Tool commands](./03_tool-commands.md)
 - [Provider commands](./04_provider-commands.md)
-- [TUI mode](../04_tui.md)
-- [Headless mode](../05_headless.md)
-- [Reference](../../../05_reference/01_overview.md)
+- [Reference → Codebolt CLI](../../../05_reference/06_codebolt-cli/01_overview.md)

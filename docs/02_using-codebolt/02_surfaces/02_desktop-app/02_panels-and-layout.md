@@ -156,22 +156,20 @@ Customize all of these in **Settings → Keyboard Shortcuts**.
 
 ## What the TUI looks like
 
-If you're using the [TUI mode](../04_tui.md) instead of the desktop app, the same panels exist in a terminal layout:
+If you're using the [TUI](../04_tui/01_overview.md) instead of the desktop app, the layout is not the same docked panel grid as the desktop surface.
 
-```
-┌── project ───┬─── chat ──────────┐
-│              │                   │
-│              │                   │
-│              │                   │
-├── terminal ──┴─── status ────────┤
-└──────────────────────────────────┘
-```
+The current TUI is organized around four top-level tabs:
 
-Tab cycles focus. F1-F4 switches panels. See [TUI mode](../04_tui.md) for the full key reference.
+- Chat
+- Logs
+- Git
+- Files
+
+Within the Chat tab, additional context appears through sidebars and dialogs rather than separate desktop-style panels. See [TUI → Tabs, Panels, and Layout Modes](../04_tui/03_tabs-and-panels.md) and [TUI → Navigation and Keybindings](../04_tui/02_navigation-and-keybindings.md).
 
 ## See also
 
 - [Workspace and Projects](./01_workspace-and-projects.md)
 - [Chat Overview](../../03_chat/01_overview.md)
 - [Settings and profiles](./03_settings-and-profiles.md)
-- [TUI mode](../04_tui.md)
+- [TUI Overview](../04_tui/01_overview.md)

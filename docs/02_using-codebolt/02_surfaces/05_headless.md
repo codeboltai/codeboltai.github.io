@@ -179,7 +179,7 @@ The `trap` ensures the server stops cleanly even if the script fails.
 
 ## See also
 
-- [CLI Overview](./01_overview.md)
-- [TUI Mode](./04_tui.md)
+- [CLI Overview](./03_cli/01_overview.md)
+- [TUI Overview](./04_tui/01_overview.md)
 - [Self-Hosting → Running the server](../../04_build-on-codebolt/10_self-hosting/02_running-the-server.md)
 - [Code review with an agent](../../03_guides/03_everyday-workflows/code-review-with-an-agent.md) — CI-integrated example
