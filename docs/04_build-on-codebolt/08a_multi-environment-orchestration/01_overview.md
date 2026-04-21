@@ -55,13 +55,15 @@ The builder-facing parts currently span a few repos/packages:
 | `codeboltjs/packages/provider` | Base utilities for building environment providers |
 | `codeboltjs/providers/*` | Concrete providers such as `e2b`, `daytona-remote-provider`, `dockerprovider`, `gitWorkTreeProvider`, `remoteserverprovider` |
 
-Representative provider implementations exist in:
+Available provider implementations:
 
-- `D:\Codeboltapps\codeboltjs\providers\e2b`
-- `D:\Codeboltapps\codeboltjs\providers\daytona-remote-provider`
-- `D:\Codeboltapps\codeboltjs\providers\dockerprovider`
-- `D:\Codeboltapps\codeboltjs\providers\gitWorkTreeProvider`
-- `D:\Codeboltapps\codeboltjs\providers\remoteserverprovider`
+- `codeboltjs/providers/e2b` — E2B cloud sandbox
+- `codeboltjs/providers/daytona-remote-provider` — Daytona workspace
+- `codeboltjs/providers/dockerprovider` — Docker container
+- `codeboltjs/providers/gitWorkTreeProvider` — Git worktree
+- `codeboltjs/providers/remoteserverprovider` — Remote SSH server
+- `codeboltjs/providers/agentfs-provider` — Agent filesystem
+- `codeboltjs/providers/narrative-snapshot-provider` — Snapshot-based
 
 ## How communication works across environments
 
@@ -156,8 +158,8 @@ That keeps it clearly separate from multi-agent orchestration management.
 
 ## See also
 
+- [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md) — step-by-step tutorial
+- [Custom Execution Backends](../06_extending-codebolt/06_execution-backends.md) — overview and server API
 - [Multi-Agent Orchestration Management](../08_multi-agent-orchestration/02_multi-agent-orchestration-management.md)
 - [Provider Architecture](./02_provider-architecture.md)
 - [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md)
-- [Remote Execution](../11_remote-execution.md)
-- [Architecture for Builders](../02_architecture-for-builders.md)

@@ -5,96 +5,157 @@ title: Creating a Custom Provider
 
 # Creating a Custom Provider
 
-If you want Codebolt to run in a new environment type, you build a custom provider.
+A provider bridges Codebolt to a remote execution environment — E2B sandbox, Docker container, remote server, git worktree, or any custom backend. It handles environment creation, agent execution, file operations, and teardown.
 
-The goal is not just "make a sandbox." The goal is:
+## The BaseProvider class
 
-- create the environment
-- start the remote runtime
-- connect it back to Codebolt
-- keep the lifecycle stable
+All providers extend `BaseProvider` from `@codebolt/provider`. It handles lifecycle wiring, WebSocket transport, reconnection, heartbeats, and message forwarding. Your provider implements the environment-specific parts.
 
-## Start from the base package
+### Abstract methods (must implement)
 
-The shared starting point is `@codebolt/provider`.
+| Method | Purpose |
+|---|---|
+| `setupEnvironment(initVars)` | Create or connect to the remote environment (sandbox, container, VM) |
+| `resolveProjectContext(initVars)` | Resolve project paths and metadata for the remote environment |
+| `onGetDiffFiles()` | Return file changes in the remote environment |
 
-That package gives you `BaseProvider`, which already handles the common parts of:
+### Optional hooks (can override)
 
-- lifecycle wiring
-- transport setup
-- reconnect logic
-- heartbeat flow
-- message forwarding
+| Hook | Default | Purpose |
+|---|---|---|
+| `teardownEnvironment()` | No-op | Clean up the environment on shutdown |
+| `ensureAgentServer()` | No-op | Start the agent server inside the remote environment |
+| `resolveWorkspacePath(initVars)` | Returns `projectPath` | Resolve the workspace directory in the remote environment |
+| `checkEnvironmentHealth()` | Returns `true` | Custom health check for the environment |
+| `beforeClose()` | No-op | Run logic before disconnecting |
+| `afterConnected(startResult)` | No-op | Run logic after connection is established |
+| `onReconnectAttempt()` | Returns `true` | Pre-reconnect checks (e.g., is the remote port still open?) |
+| `onEnvironmentRecoveryFailed(resourceId)` | No-op | Clean up orphaned resources from a previous crashed session |
+| `buildWebSocketUrl(initVars)` | Default URL format | Customize the WebSocket connection URL |
 
-That means your provider implementation should mainly focus on the parts unique to your target environment.
+### Configuration
 
-## What you usually implement
+```typescript
+interface BaseProviderConfig {
+  agentServerPort: number;           // Default: 3001
+  agentServerHost: string;           // Default: "localhost"
+  reconnectAttempts: number;         // Default: 10
+  reconnectDelay: number;            // Default: 1000ms
+  wsRegistrationTimeout: number;     // Default: 10000ms
+  transport: ProviderTransportType;  // "websocket"
+  maxReconnectAttempts: number;      // Default: 10
+  maxReconnectDelay: number;         // Default: 30000ms
+  wsKeepaliveInterval: number;       // Default: 20000ms
+  requestTimeout: number;            // Default: 120000ms
+}
+```
 
-A custom provider normally needs to define:
+## Provider entry point
 
-- how the environment is created or attached
-- how workspace paths are resolved
-- how the remote runtime is started
-- how diff / file operations are handled when provider-specific
-- how teardown happens
+The entry point (`src/index.ts`) creates your provider, gets its event handlers, and registers them with the `@codebolt/codeboltjs` SDK:
 
-In practice, this usually maps to overriding environment-specific hooks in a provider service class.
+```typescript
+import codebolt from "@codebolt/codeboltjs";
+import { MyProvider } from "./services/MyProvider";
 
-## A good authoring workflow
+const provider = new MyProvider({
+  agentServerPort: parseInt(process.env.REMOTE_EXECUTION_PORT || '3100', 10),
+  agentServerHost: 'localhost',
+  transport: 'websocket',
+});
 
-Use this order:
+// Get lifecycle handlers from BaseProvider
+const handlers = provider.getEventHandlers();
 
-1. Pick the closest existing provider.
-2. Read its `codeboltprovider.yaml`.
-3. Read its service implementation.
-4. Copy the lifecycle shape, not just the deployment commands.
-5. Replace the environment-specific parts.
+// Register lifecycle handlers
+codebolt.onProviderStart(handlers.onProviderStart);
+codebolt.onProviderAgentStart(handlers.onProviderAgentStart);
+codebolt.onProviderStop(handlers.onProviderStop);
+codebolt.onCloseSignal(handlers.onCloseSignal);
+codebolt.onRawMessage(handlers.onRawMessage);
+codebolt.onGetDiffFiles(handlers.onGetDiffFiles);
 
-Good starting references from the current codebase:
+// Register file operation handlers
+codebolt.onReadFile(provider.onReadFile.bind(provider));
+codebolt.onWriteFile(provider.onWriteFile.bind(provider));
+codebolt.onDeleteFile(provider.onDeleteFile.bind(provider));
+codebolt.onDeleteFolder(provider.onDeleteFolder.bind(provider));
+codebolt.onRenameItem(provider.onRenameItem.bind(provider));
+codebolt.onCreateFolder(provider.onCreateFolder.bind(provider));
+codebolt.onCopyFile(provider.onCopyFile.bind(provider));
+codebolt.onCopyFolder(provider.onCopyFolder.bind(provider));
+codebolt.onGetTreeChildren(provider.onGetProject.bind(provider));
+codebolt.onGetFullProject(provider.onGetFullProject.bind(provider));
+```
 
-- `codeboltjs/providers/e2b`
-- `codeboltjs/providers/daytona-remote-provider`
-- `codeboltjs/providers/dockerprovider`
-- `codeboltjs/providers/gitWorkTreeProvider`
+## Implementing your provider
 
-## What to decide early
+Extend `BaseProvider` and implement the abstract methods:
 
-Before you write code, decide:
+```typescript
+import { BaseProvider } from '@codebolt/provider';
+import type { ProviderInitVars, ProviderStartResult } from '@codebolt/provider';
 
-- Is this a sandbox, container, worktree, remote server, or snapshot-backed environment?
-- Does the remote runtime run a full Codebolt runtime or a thinner bridge?
-- Which file operations are handled remotely vs through the main server?
-- Is the environment ephemeral or reusable?
-- How are diffs and mergeable changes produced?
+export class MyProvider extends BaseProvider {
 
-These decisions shape the whole provider.
+  async setupEnvironment(initVars: ProviderInitVars): Promise<void> {
+    // Create or connect to your remote environment
+    // Example: create a container, start a VM, connect to a sandbox
+  }
 
-## Minimal provider checklist
+  async resolveProjectContext(initVars: ProviderInitVars): Promise<any> {
+    return {
+      projectPath: initVars.projectPath,
+      projectName: initVars.projectPath?.split('/').pop() || 'project',
+    };
+  }
 
-- Provider manifest exists
-- Provider extends the shared base
-- Environment setup works
-- Remote runtime can connect back
-- Agent start can be forwarded
-- Heartbeat works
-- Stop / teardown works
+  async onGetDiffFiles(): Promise<any> {
+    // Return file changes in the remote environment
+    return { files: [] };
+  }
 
-If any one of those is missing, the provider is not production-ready.
+  // Optional: clean up
+  async teardownEnvironment(): Promise<void> {
+    // Stop and remove the container/VM/sandbox
+  }
 
-## Suggested follow-up pages
+  // Optional: start agent server inside the environment
+  async ensureAgentServer(): Promise<void> {
+    // Start CodeBolt in the remote environment
+    // Wait for it to be ready on the configured port
+  }
+}
+```
 
-This page is the entry point. After it, provider authors usually need:
+## What BaseProvider gives you for free
 
-- provider architecture
-- environment lifecycle
-- communication flow
-- concrete provider examples
+You don't need to implement these — they're built into BaseProvider:
 
-That is why this section is split instead of trying to explain everything here.
+- **Message queueing** — messages sent before transport is ready are queued and flushed on connect.
+- **WebSocket reconnection** — exponential backoff (1s to 30s max, 10 attempts).
+- **Keepalive pings** — every 20 seconds to prevent idle disconnects.
+- **Request timeouts** — tracks pending requests with 120s timeout.
+- **Resource ID persistence** — persist sandbox/container IDs for crash recovery via `setEnvironmentResourceId()` and `getPersistedResourceId()`.
+- **Health monitoring** — provider heartbeats every 10s, environment heartbeats every 15s.
+- **Multi-environment tracking** — `registerConnectedEnvironment()` / `unregisterConnectedEnvironment()` for providers serving multiple environments.
+
+## Existing providers to study
+
+| Provider | Environment | Key pattern |
+|---|---|---|
+| `codeboltjs/providers/e2b` | E2B cloud sandbox | Remote sandbox + WebSocket bridge to in-sandbox CodeBolt |
+| `codeboltjs/providers/dockerprovider` | Docker container | Local container lifecycle |
+| `codeboltjs/providers/daytona-remote-provider` | Daytona workspace | Cloud workspace management |
+| `codeboltjs/providers/gitWorkTreeProvider` | Git worktree | Local filesystem isolation |
+| `codeboltjs/providers/remoteserverprovider` | Remote SSH server | SSH-based remote execution |
+
+## Step-by-step guide
+
+For a complete walkthrough of building a provider from scratch, see [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md).
 
 ## See also
 
-- [Provider Architecture](./02_provider-architecture.md)
-- [Environment Lifecycle](./03_environment-lifecycle.md)
-- [Communication Flow](./04_communication-flow.md)
-- [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md)
+- [Provider Architecture](./02_provider-architecture.md) — three-layer model
+- [Environment Lifecycle](./03_environment-lifecycle.md) — lifecycle phases and states
+- [Communication Flow](./04_communication-flow.md) — message types and protocol

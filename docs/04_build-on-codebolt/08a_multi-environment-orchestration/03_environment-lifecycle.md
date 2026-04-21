@@ -124,8 +124,42 @@ That is not enough. Provider authors need to know:
 - what must happen before the next phase
 - what the server expects at each boundary
 
+## Environment states
+
+The server tracks each environment through these states:
+
+| State | Meaning |
+|---|---|
+| `created` | Just registered, not yet started |
+| `starting` | Provider startup in progress |
+| `running` | Provider active and connected |
+| `stopping` | Shutdown in progress |
+| `stopped` | Not running |
+| `error` | Provider error occurred |
+| `restarting` | Auto-restart attempt |
+| `unconnectable` | Cannot reconnect to remote |
+| `disconnected` | Temporary disconnection |
+| `not_available` | Resource unavailable |
+| `archived` | Removed from active use |
+
+The UI displays these states with color-coded indicators and appropriate action buttons (Start, Stop, Restart, Reconnect) based on the current state.
+
+## Health monitoring
+
+The server runs health checks every 30 seconds:
+
+1. Verify the provider process is alive (via `kill(pid, 0)`).
+2. Verify the WebSocket connection is open (`readyState === OPEN`).
+3. Track missed heartbeats — after 3 missed, trigger restart.
+4. Respect `maxRestarts` and `maxErrors` limits before giving up.
+
+Providers send two types of heartbeats:
+- **Provider heartbeat** — every 10 seconds, confirms the provider process is alive.
+- **Environment heartbeat** — every 15 seconds, confirms the specific environment is healthy.
+
 ## See also
 
 - [Provider Architecture](./02_provider-architecture.md)
 - [Communication Flow](./04_communication-flow.md)
 - [Creating a Custom Provider](./05_creating-a-custom-provider.md)
+- [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md)

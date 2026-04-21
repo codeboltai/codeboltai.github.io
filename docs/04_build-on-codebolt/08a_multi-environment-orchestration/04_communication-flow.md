@@ -87,16 +87,98 @@ That makes WebSocket the natural transport because it supports:
 
 This is much closer to a control channel than to a one-shot HTTP API.
 
-## What should be documented next
+## Message payloads
 
-A good next-level provider doc should describe:
+### providerStart (Server to Provider)
 
-- which messages are required
-- what payload each one carries
-- which side initiates each message
-- which side is authoritative for success/failure
+Sent when the server starts a provider process. The provider uses this to set up the environment.
 
-That would turn this page from architecture into protocol guidance.
+| Field | Description |
+|---|---|
+| `type` | `"providerStart"` |
+| `environmentName` | Name of the environment |
+| `providerId` | Provider identifier |
+| `environmentId` | Environment identifier |
+| `archivePath` | Path to project snapshot archive |
+| `snapshotId` | Snapshot identifier |
+| `narrativeBundlePath` | Path to narrative bundle (git + SQLite state) |
+| `config` | Merged provider configuration (YAML defaults + installed config + environment config) |
+| `resourceId` | Previously persisted resource ID (for recovery) |
+
+### providerStartResponse (Provider to Server)
+
+Sent when the provider is ready. Resolves the server's startup promise.
+
+| Field | Description |
+|---|---|
+| `type` | `"providerStartResponse"` |
+| `environmentId` | Environment identifier |
+| `success` | Whether startup succeeded |
+| `agentServerUrl` | WebSocket URL to the agent server in the remote environment |
+| `workspacePath` | Workspace directory path in the remote environment |
+
+### providerAgentStart (Server to Provider)
+
+Sent when a user starts an agent thread in a remote environment.
+
+| Field | Description |
+|---|---|
+| `type` | `"providerAgentStart"` |
+| `userMessage` | The user's prompt text |
+| `agentId` | Which agent to run |
+| `projectPath` | Local project path |
+| `threadId` | Thread identifier |
+| `archivePath` | Project snapshot |
+| `snapshotId` | Snapshot ID |
+| `narrativeBundlePath` | Narrative bundle path |
+| `narrativeContext` | Objective, agent run, and snapshot IDs |
+
+### providerStop (Server to Provider)
+
+Sent when the server stops the environment. The provider should tear down and exit.
+
+### Heartbeat messages
+
+Providers send heartbeats to confirm they're alive:
+
+| Field | Description |
+|---|---|
+| `type` | `"sendProviderHeartbeat"` or `"sendEnvironmentHeartbeat"` |
+| `status` | `"healthy"` / `"warning"` / `"error"` |
+| `connectedEnvironments` | List of environment IDs this provider serves |
+| `uptime` | Seconds since provider started |
+
+### File operation messages
+
+| Message | Direction | Purpose |
+|---|---|---|
+| `providerReadFile` | Server to Provider | Read a file from the remote environment |
+| `providerWriteFile` | Server to Provider | Write a file in the remote environment |
+| `providerDeleteFile` | Server to Provider | Delete a file |
+| `providerGetDiffFiles` | Server to Provider | Get file changes for diff/merge |
+
+## How a remote agent thread starts
+
+The complete flow when a user sends a message with `remoteEnv: true`:
+
+```
+1. User sends message in chat (with Remote checkbox enabled)
+2. Server creates a thread
+3. Server resolves the provider (from available local/installed providers)
+4. Server creates an environment (persisted to .codebolt/environments.json)
+5. Server spawns the provider as a child process with env vars
+6. Provider connects back via WebSocket with providerId + environmentId
+7. Server sends providerStart message (with snapshot + config)
+8. Provider calls setupEnvironment() → creates sandbox/container
+9. Provider calls ensureAgentServer() → starts CodeBolt remotely
+10. Provider connects WebSocket transport to remote agent server
+11. Provider sends providerStartResponse back to server
+12. Server sends providerAgentStart message (with user prompt + agent ID)
+13. Agent runs in the remote environment
+14. Provider bridges messages bidirectionally
+15. On completion, providerAgentStartResponse sent back
+16. Server records narrative events and updates thread
+```
 
 ## Ownership across the boundary
 
