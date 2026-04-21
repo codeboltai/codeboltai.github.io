@@ -5,61 +5,105 @@ title: Project Tool Integration
 
 # Project Tool Integration
 
-Connect Codebolt to Linear, Jira, GitHub Issues, or any project management tool — so agents can create, update, and respond to tickets automatically.
+Connect Codebolt to project management tools like Linear, Jira, or GitHub Issues. Route tickets to agents, post results back, and keep project state in sync.
+
+## When to Use
+
+- Automatically triage incoming tickets with an agent.
+- Run an agent when a ticket is assigned or status changes.
+- Post agent results (code review, test results, deployment status) as comments on tickets.
+- Sync task state between Codebolt and your project tool.
 
 ## Architecture
 
 ```
-Project tool (Linear/Jira)
-      ↓ webhook
-  [Plugin webhook handler]
-      ↓ plugin bus
-  Codebolt server → agent run
-      ↓ agent output
-  [Plugin] → API call → update ticket
+Project Tool (Linear, Jira, etc.)
+  │
+  │ Webhook / WebSocket
+  ▼
+Channel Plugin (your plugin)
+  │
+  │ plugin.gateway.routeMessage()
+  ▼
+Codebolt Gateway → Agent
+  │
+  │ Agent completes task
+  ▼
+plugin.gateway.onReply() → Post back to project tool API
 ```
 
-## Linear example: issue → agent run → comment back
+## How It Works
 
-```ts
-import { definePlugin } from '@codebolt/plugin-sdk';
-import { LinearClient } from '@linear/sdk';
+Project tool integrations follow the same **channel plugin** pattern as chat integrations:
 
-export default definePlugin({
-  activate(ctx) {
-    const linear = new LinearClient({ apiKey: ctx.config.linearApiKey });
+1. **Receive events** from the project tool (via webhook or WebSocket).
+2. **Route to an agent** using `plugin.gateway.routeMessage()`.
+3. **Listen for replies** via `plugin.gateway.onReply()`.
+4. **Post results** back to the project tool using its API.
 
-    // Incoming webhook from Linear (registered in Linear settings)
-    ctx.webhooks.register('/linear', async (req) => {
-      const { type, data } = req.body;
-      if (type !== 'Issue' || data.action !== 'create') return;
+### Example: Linear integration pattern
 
-      const issue = data.issue;
-      const run = await ctx.agents.start('issue-handler', {
-        task: `Handle Linear issue: ${issue.title}\n\n${issue.description}`,
-      });
+The `linear-agent-plugin` connects to Linear via a Cloudflare Worker that receives Linear webhooks and forwards them over WebSocket:
 
-      const result = await run.wait();
+```
+Linear → Webhook → Cloudflare Worker → WebSocket → Plugin → Gateway → Agent
+                                                                         │
+Agent reply → Plugin → Linear API (post comment, update issue)
+```
 
-      await linear.issueAddComment(issue.id, {
-        body: result.output,
-      });
-    });
+The plugin:
+- Connects to an external WebSocket endpoint that receives webhooks.
+- Parses incoming events (issue created, comment added, etc.).
+- Routes them as messages to the configured agent.
+- Posts agent responses back via the Linear API.
+
+### Plugin SDK APIs used
+
+```typescript
+import plugin from '@codebolt/plugin-sdk';
+
+// Route incoming project tool event to an agent
+await plugin.gateway.routeMessage({
+  source: 'channel',
+  sourceId: 'plugin-linear',
+  threadStrategy: 'per-conversation',
+  agentId: config.agentId,
+  text: issue.description,
+  userId: issue.creatorId,
+  externalThreadId: issue.id,
+  replyTo: {
+    channelId: 'linear',
+    externalThreadId: issue.id,
+    userId: issue.creatorId,
   },
+  metadata: { issueId: issue.id, issueTitle: issue.title },
+  timestamp: new Date().toISOString(),
+});
+
+// Handle agent replies
+plugin.gateway.onReply(async (reply) => {
+  // Post reply back to the project tool
+  await linearClient.commentCreate({
+    issueId: reply.metadata?.issueId,
+    body: reply.text,
+  });
 });
 ```
 
-## Bidirectional sync
+## Building Your Own
 
-For two-way sync (agent creates a ticket; ticket update triggers agent):
+To integrate a new project tool:
 
-1. **Outbound:** agent calls an MCP tool that wraps the project tool's API.
-2. **Inbound:** webhook handler triggers an agent run.
+1. Create a channel plugin (type: `channel` in `package.json`).
+2. Set up a way to receive events — webhook endpoint, polling, or WebSocket.
+3. Parse events and call `plugin.gateway.routeMessage()` to send them to agents.
+4. Handle replies via `plugin.gateway.onReply()` and post back using the tool's API.
+5. Add a UI panel for configuration (API keys, project selection, agent mapping).
 
-Keep the webhook handler idempotent — delivery is at-least-once.
+See [Chat Integrations](./02_chat-integrations/01_overview.md) for the full channel plugin pattern — project tools follow the same architecture.
 
-## See also
+## See Also
 
-- [Plugins](../05_plugins/01_overview.md)
-- [CI/CD Integration](./03_cicd-integration.md)
-- [Chat Integrations](./02_chat-integrations.md)
+- [Chat Integrations](./02_chat-integrations/01_overview.md) — the channel plugin pattern
+- [Gateway](./02_chat-integrations/02_gateway.md) — message routing and thread management
+- [Build Your First Dynamic Panel](../04_custom-uis/07_build-your-first-dynamic-panel.md) — add a config UI

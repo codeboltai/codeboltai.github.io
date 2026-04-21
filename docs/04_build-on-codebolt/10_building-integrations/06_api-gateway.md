@@ -5,67 +5,116 @@ title: API Gateway
 
 # API Gateway
 
-Expose Codebolt agent runs over a custom HTTP API — so external systems, scripts, or services can trigger runs without speaking the Codebolt WebSocket protocol directly.
+Expose Codebolt agent runs over HTTP so external systems, scripts, and services can trigger agents without knowing the WebSocket protocol.
 
-## When to write an API gateway
+## When to Use
 
-- You want a simple `POST /run` REST endpoint for external systems.
-- You need custom auth (API keys, OAuth) in front of Codebolt.
-- You're routing different request shapes to different agents based on content or caller identity.
+- You need a simple REST endpoint that triggers an agent run.
+- External services need to call Codebolt from a webhook or script.
+- You want to wrap Codebolt behind custom authentication.
+- You're building a backend service that orchestrates agent runs.
 
-## Plugin gateway example
+## Approach: REST API
 
-```ts
-import { definePlugin } from '@codebolt/plugin-sdk';
+The Codebolt server exposes a full REST API. External systems can call it directly to manage agents, tasks, projects, and more.
 
-export default definePlugin({
-  activate(ctx) {
-    ctx.http.route('POST', '/api/run', async (req, res) => {
-      // Validate custom auth
-      const token = req.headers['x-api-key'];
-      if (!await ctx.auth.validateApiKey(token)) {
-        return res.status(401).json({ error: 'Unauthorized' });
-      }
+### Start an agent
 
-      const { agent, task, webhook } = req.body;
-      const run = await ctx.agents.start(agent, { task });
-
-      if (webhook) {
-        // Fire-and-forget: notify caller when done
-        run.wait().then(result =>
-          fetch(webhook, { method: 'POST', body: JSON.stringify(result) })
-        );
-        return res.json({ runId: run.id, status: 'started' });
-      }
-
-      // Synchronous: wait and return
-      const result = await run.wait();
-      res.json({ runId: run.id, output: result.output });
-    });
-  },
-});
+```bash
+curl -X POST http://localhost:2719/api/agent/startAgent \
+  -H "Content-Type: application/json" \
+  -d '{
+    "agentId": "code-reviewer",
+    "task": "Review the latest PR"
+  }'
 ```
 
-## Streaming responses
+### Search tasks
 
-For callers that support SSE or chunked responses:
+```bash
+curl -X POST http://localhost:2719/api/tasks/search \
+  -H "Content-Type: application/json" \
+  -d '{"status": "pending", "limit": 10}'
+```
 
-```ts
-ctx.http.route('POST', '/api/run/stream', async (req, res) => {
-  res.setHeader('Content-Type', 'text/event-stream');
-  const run = await ctx.agents.start(req.body.agent, { task: req.body.task });
+### Get project info
 
-  for await (const event of run.events()) {
-    if (event.type === 'agent_message') {
-      res.write(`data: ${JSON.stringify(event)}\n\n`);
-    }
+```bash
+curl http://localhost:2719/api/projects/root
+```
+
+### Git operations
+
+```bash
+curl http://localhost:2719/api/git/status
+curl -X POST http://localhost:2719/api/git/commit \
+  -H "Content-Type: application/json" \
+  -d '{"message": "automated commit"}'
+```
+
+## Approach: Client SDK Wrapper
+
+Build a custom API server that wraps the Client SDK and adds your own auth, routing, or business logic.
+
+```typescript
+import express from 'express';
+import { CodeBoltClient } from '@codebolt/client-sdk';
+
+const app = express();
+const client = new CodeBoltClient({ host: 'localhost', port: 2719 });
+
+app.use(express.json());
+
+// Custom auth middleware
+app.use((req, res, next) => {
+  const apiKey = req.headers['x-api-key'];
+  if (apiKey !== process.env.API_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
   }
-  res.end();
+  next();
 });
+
+// Start an agent run
+app.post('/api/run', async (req, res) => {
+  try {
+    const result = await client.agents.startAgent({
+      agentId: req.body.agentId,
+      task: req.body.task,
+    });
+    res.json({ success: true, result });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Get tasks
+app.get('/api/tasks', async (req, res) => {
+  const result = await client.tasks.search({ limit: 50 });
+  res.json(result);
+});
+
+app.listen(3000, () => console.log('API gateway on :3000'));
 ```
 
-## See also
+This gives you:
+- Custom authentication (API keys, OAuth, etc.)
+- Route different requests to different agents.
+- Rate limiting, logging, and monitoring.
+- A clean public API that hides Codebolt internals.
 
-- [Plugins](../05_plugins/01_overview.md)
-- [CI/CD Integration](./03_cicd-integration.md) — headless clientsdk alternative
-- [Chat Integrations](./02_chat-integrations.md)
+## Approach: Channel Plugin
+
+For event-driven integrations (webhooks from external services), build a channel plugin:
+
+1. Receive the webhook in your plugin.
+2. Route to an agent via `plugin.gateway.routeMessage()`.
+3. Handle the reply via `plugin.gateway.onReply()`.
+4. Post the result back to the external service.
+
+See [Project Tool Integration](./04_project-tool-integration.md) for this pattern.
+
+## See Also
+
+- [Client SDK](../04_custom-uis/02_client-sdk.md) — full API reference
+- [Chat Integrations](./02_chat-integrations/01_overview.md) — channel plugin pattern
+- [CI/CD Integration](./03_cicd-integration.md) — triggering from pipelines

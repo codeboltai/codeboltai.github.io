@@ -5,71 +5,22 @@ title: IDE Integration
 
 # IDE Integration
 
-Embed Codebolt agent runs inside VS Code, JetBrains, Neovim, or any editor. The editor extension talks to the Codebolt server over WebSocket via `clientsdk`.
+:::info Coming Soon
+IDE integration (VS Code, JetBrains, Neovim extensions) is a planned feature. There is no IDE extension available yet.
 
-## Architecture
+This page will be updated when the feature ships.
+:::
 
-```
-Editor extension (VS Code / JetBrains / Neovim)
-      ↓ clientsdk WebSocket
-  Codebolt server → agent run
-      ↓ streaming events
-  Editor extension → inline diff, panel, notification
-```
+## Planned Capabilities
 
-## VS Code extension skeleton
+- Run Codebolt agents from within your editor.
+- Show agent output inline (diffs, suggestions, explanations).
+- Stream real-time agent activity into an editor panel.
 
-```ts
-import * as vscode from 'vscode';
-import { CodeboltClient } from '@codebolt/clientsdk';
+## In the Meantime
 
-let client: CodeboltClient;
+Codebolt runs as a standalone application — desktop app, web interface, or CLI. You can interact with the server programmatically using the [Client SDK](../04_custom-uis/02_client-sdk.md) from any Node.js environment.
 
-export function activate(context: vscode.ExtensionContext) {
-  client = new CodeboltClient({
-    serverUrl: vscode.workspace.getConfiguration('codebolt').get('serverUrl')!,
-  });
-
-  context.subscriptions.push(
-    vscode.commands.registerCommand('codebolt.explainSelection', async () => {
-      const editor = vscode.window.activeTextEditor;
-      if (!editor) return;
-
-      const selection = editor.document.getText(editor.selection);
-      const run = await client.agents.start('explain-agent', {
-        task: `Explain this code:\n\`\`\`\n${selection}\n\`\`\``,
-      });
-
-      const panel = vscode.window.createWebviewPanel(
-        'codeExplanation', 'Codebolt Explanation', vscode.ViewColumn.Beside, {}
-      );
-
-      for await (const event of run.events()) {
-        if (event.type === 'agent_message') {
-          panel.webview.html = `<pre>${event.content}</pre>`;
-        }
-      }
-    })
-  );
-}
-```
-
-## Streaming inline diffs
-
-For agents that produce file edits, stream changes as inline suggestions:
-
-```ts
-for await (const event of run.events()) {
-  if (event.type === 'tool_result' && event.tool === 'fs_write') {
-    const uri = vscode.Uri.file(event.path);
-    // Show diff between original and agent's proposed content
-    await vscode.commands.executeCommand('vscode.diff',
-      uri, vscode.Uri.parse(`codebolt-proposed:${event.path}`), 'Agent suggestion');
-  }
-}
-```
-
-## See also
-
-- [Custom UIs — clientsdk](../04_custom-uis/01_overview.md)
-- [Chat Integrations](./02_chat-integrations.md) — same pattern, different surface
+- [Custom UI](../04_custom-uis/06_custom-ui.md) — build standalone UIs with the Client SDK
+- [CI/CD Integration](./03_cicd-integration.md) — trigger agents from scripts and pipelines
+- [API Gateway](./06_api-gateway.md) — expose agents over HTTP

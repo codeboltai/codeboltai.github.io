@@ -11,24 +11,6 @@ The optimization loop automatically improves a subject (agent, skill, etc.) by h
 
 ## How It Works
 
-```
-┌─────────────────────────────────────────┐
-│  1. Run initial eval → get baseline score│
-│                                         │
-│  2. Duplicate subject source code       │
-│     .codebolt/agents/{name}-opt-{tag}/  │
-│                                         │
-│  3. Optimizer agent reads code + results │
-│     Makes ONE targeted change           │
-│                                         │
-│  4. Re-evaluate modified subject        │
-│                                         │
-│  5. Keep or discard based on strategy   │
-│                                         │
-│  6. Repeat until target score or max    │
-│     iterations reached                  │
-└─────────────────────────────────────────┘
-```
 <OptimizationLoop />
 
 ### Per Iteration

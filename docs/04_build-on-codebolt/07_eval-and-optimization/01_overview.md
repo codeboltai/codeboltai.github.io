@@ -18,21 +18,7 @@ Evaluate how well your agents, skills, and action blocks perform on specific tas
 
 ## Architecture
 
-```
-┌────────────────────────────┐
-│  Eval Panel (UI)           │
-│  Create experiments, runs  │
-│  View results, leaderboard │
-└────────────┬───────────────┘
-             │ REST API + WebSocket
-┌────────────┴───────────────┐
-│  Eval Service (Server)     │
-│  Execute → Evaluate → Score│
-│  Optimize (if enabled)     │
-└────────────┬───────────────┘
-             │
-     .codebolt/evals/ (JSON)
-```
+
 <EvalOptimizationOverview />
 
 ## Key Concepts

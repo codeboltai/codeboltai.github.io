@@ -5,20 +5,49 @@ title: CI/CD Integration
 
 # CI/CD Integration
 
-Trigger Codebolt agent runs from your CI/CD pipeline — on push, PR open, deployment, or any pipeline event.
+Trigger Codebolt agent runs from CI/CD pipelines — on push, pull request, deployment, or any pipeline event.
 
-## Two approaches
+## When to Use
 
-| Approach | When to use |
-|---|---|
-| **Headless clientsdk** | You control the CI runner; you want full run streaming and trace access |
-| **Plugin hook** | You want Codebolt to react to git/CI events without an external runner |
+- Run a code review agent on every PR.
+- Trigger a test-writing agent after a push to main.
+- Run a deployment agent as part of your release pipeline.
+- Generate changelogs or documentation on merge.
 
-## Headless clientsdk (GitHub Actions example)
+## Approach: Client SDK from CI
+
+Use the `@codebolt/client-sdk` to call the Codebolt server's REST API from your CI runner. The server must be accessible from the CI environment.
+
+### Install
+
+```bash
+npm install @codebolt/client-sdk
+```
+
+### Start an agent run
+
+```typescript
+import { CodeBoltClient } from '@codebolt/client-sdk';
+
+const client = new CodeBoltClient({
+  host: process.env.CODEBOLT_HOST || 'localhost',
+  port: parseInt(process.env.CODEBOLT_PORT || '2719'),
+  autoConnect: false,
+});
+
+// Start an agent
+const agent = await client.agents.startAgent({
+  agentId: 'code-reviewer',
+  task: 'Review the latest PR changes',
+});
+
+console.log('Agent started:', agent);
+```
+
+### GitHub Actions example
 
 ```yaml
-# .github/workflows/codebolt-review.yml
-name: Codebolt PR Review
+name: Codebolt Review
 on: [pull_request]
 
 jobs:
@@ -26,49 +55,39 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Run Codebolt review agent
-        run: npx @codebolt/cli agent start code-reviewer \
-               --task "Review PR #${{ github.event.pull_request.number }}" \
-               --wait \
-               --output-format json > review.json
         env:
-          CODEBOLT_URL: ${{ secrets.CODEBOLT_URL }}
-          CODEBOLT_TOKEN: ${{ secrets.CODEBOLT_TOKEN }}
-      - name: Post review comment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const review = require('./review.json');
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: review.output,
-            });
+          CODEBOLT_HOST: ${{ secrets.CODEBOLT_HOST }}
+          CODEBOLT_PORT: ${{ secrets.CODEBOLT_PORT }}
+        run: |
+          npm install @codebolt/client-sdk
+          node scripts/run-review.js
 ```
 
-## Plugin hook approach
+### Direct REST API
 
-React to push/PR events inside the Codebolt plugin bus without an external runner:
+You can also call the server's REST endpoints directly without the SDK:
 
-```ts
-import { definePlugin } from '@codebolt/plugin-sdk';
+```bash
+# Start an agent
+curl -X POST http://$CODEBOLT_HOST:$CODEBOLT_PORT/api/agent/startAgent \
+  -H "Content-Type: application/json" \
+  -d '{"agentId": "code-reviewer", "task": "Review the latest changes"}'
 
-export default definePlugin({
-  activate(ctx) {
-    ctx.hooks.on('git.push', async (event) => {
-      if (event.branch === 'main') {
-        await ctx.agents.start('post-merge-checks', {
-          task: `Run post-merge checks for commit ${event.commitSha}`,
-        });
-      }
-    });
-  },
-});
+# Check task status
+curl http://$CODEBOLT_HOST:$CODEBOLT_PORT/api/tasks/search \
+  -H "Content-Type: application/json" \
+  -d '{"status": "in_progress", "limit": 5}'
 ```
 
-## See also
+## Requirements
 
-- [Custom UIs — clientsdk](../04_custom-uis/01_overview.md)
-- [Plugins — Hooks](../05_plugins/01_overview.md)
-- [Project Tool Integration](./04_project-tool-integration.md)
+- The Codebolt server must be reachable from the CI environment (network access).
+- The agent must be installed on the server.
+- For cloud CI (GitHub Actions, GitLab CI), you may need to expose the server or use a tunnel.
+
+## See Also
+
+- [Client SDK](../04_custom-uis/02_client-sdk.md) — full API reference
+- [Custom Agents](../02_creating-agents/01_overview.md) — create agents for CI tasks

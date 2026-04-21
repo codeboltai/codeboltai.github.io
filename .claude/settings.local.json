@@ -27,7 +27,8 @@
       "Bash(grep -r \"type.*command\\\\|type.*Command\\\\|interface.*Command\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src/types --include=*.ts)",
       "Bash(grep -r \"gateway.ts\\\\|channel\\\\|webhook\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/pluginSdk/src --include=*.ts)",
       "Bash(grep -n 'sidebar_position' /Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/docs/04_build-on-codebolt/06_extending-codebolt/*.md)",
-      "Bash(sort -t: -k3 -n)"
+      "Bash(sort -t: -k3 -n)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt -type d -name *extension* -o -type d -name *plugin*)"
     ]
   },
   "enabledPlugins": {

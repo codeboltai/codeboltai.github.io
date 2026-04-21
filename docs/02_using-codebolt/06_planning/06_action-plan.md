@@ -5,6 +5,8 @@ title: Action Plan
 
 # Action Plan
 
+![Action Plan](/productImages/actionplan.gif)
+
 An Action Plan is an execution plan. It breaks a piece of work into tasks and groups, tracks their status as work progresses, and can represent complex structures like parallel workstreams, loops, and conditional branches. Action Plans are typically created and updated by agents, but you can create and edit them manually too.
 
 ## Structure
