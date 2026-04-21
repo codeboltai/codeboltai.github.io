@@ -9,7 +9,25 @@
       "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/client-sdk -name *.ts -type f)",
       "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/cli -type d -name template*)",
       "Bash(codebolt agent:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/docs -name *.md)",
+      "Bash(python3:*)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/ui/src/styles -type f \\\\\\(-name *.css -o -name *.scss \\\\\\))",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/plugins -type f -name package.json -exec head -30 {})",
+      "Bash(2)",
+      "Bash(grep -r \"defineExecutionProvider\\\\|registerExecutionProvider\\\\|class.*Execution\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts)",
+      "Bash(grep -r \"data-theme\\\\|setTheme\\\\|applyTheme\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/ui/src --include=*.tsx --include=*.ts)",
+      "Bash(grep -r \"globalSettingsService\\\\|getCurrentTheme\\\\|setCurrentTheme\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts)",
+      "Bash(grep -r \"chatCommand\\\\|registerCommand\\\\|slashCommand\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts)",
+      "Bash(grep -r \"plugin.*type\\\\|type.*llmProvider\\\\|type.*channel\\\\|type.*execution\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts)",
+      "Bash(grep -r \"plugin.*type\\\\|pluginType\\\\|PluginType\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src/types --include=*.ts)",
+      "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/docs -type f -name *.md)",
+      "Bash(grep -r \"execution.*backend\\\\|custom.*command\\\\|slash.*command\" /Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/docs --include=*.md)",
+      "Bash(grep -r \"commands\\\\.register\\\\|ctx\\\\.commands\\\\|ctx\\\\.agents\\\\|activate\\\\\\(\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/pluginSdk/src --include=*.ts)",
+      "Bash(grep -r \"type.*command\\\\|type.*Command\\\\|interface.*Command\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src/types --include=*.ts)",
+      "Bash(grep -r \"gateway.ts\\\\|channel\\\\|webhook\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/pluginSdk/src --include=*.ts)",
+      "Bash(grep -n 'sidebar_position' /Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/docs/04_build-on-codebolt/06_extending-codebolt/*.md)",
+      "Bash(sort -t: -k3 -n)"
     ]
   },
   "enabledPlugins": {

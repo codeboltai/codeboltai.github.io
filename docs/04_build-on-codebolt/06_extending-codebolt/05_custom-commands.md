@@ -1,71 +1,27 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: Custom Commands
 ---
 
 # Custom Commands
 
-Register new slash commands, toolbar actions, and keyboard shortcuts that users can invoke inside Codebolt.
+:::info Coming Soon
+Custom commands (slash commands, toolbar actions, and keyboard shortcuts) are a planned feature. The command registration API is not yet available in the Plugin SDK.
 
-## When to add custom commands
+This page will be updated when the feature ships.
+:::
 
-- You've built a UI panel and want a keyboard shortcut to open it.
-- You want a `/deploy` slash command that triggers an agent run with a fixed task.
-- You're building a workflow that needs a one-click action in the toolbar.
+## Planned Capabilities
 
-## Declaring commands
+- Register custom slash commands in the chat input (e.g., `/deploy`, `/review`).
+- Add toolbar actions with icons.
+- Bind keyboard shortcuts to plugin actions.
+- Open plugin UI panels from commands.
 
-```yaml
-# plugin.yaml
-contributes:
-  commands:
-    - id: my-plugin.deploy
-      label: Deploy current branch
-      description: Runs the deploy agent on the current git branch
-      keybinding: ctrl+shift+d     # optional
-      icon: deploy                  # optional — built-in icon id
-    - id: my-plugin.open-panel
-      label: Open My Panel
-      keybinding: ctrl+shift+m
-```
+## In the Meantime
 
-## Implementing command handlers
+You can achieve similar functionality today using:
 
-```ts
-import { definePlugin } from '@codebolt/plugin-sdk';
-
-export default definePlugin({
-  activate(ctx) {
-    ctx.commands.register('my-plugin.deploy', async () => {
-      const branch = await ctx.git.currentBranch();
-      await ctx.agents.start('deploy-agent', {
-        task: `Deploy branch ${branch}`,
-      });
-    });
-
-    ctx.commands.register('my-plugin.open-panel', () => {
-      ctx.ui.panels.open('my-panel');
-    });
-  },
-});
-```
-
-## Slash commands in chat
-
-To expose a command as a `/slash-command` in the chat input:
-
-```yaml
-contributes:
-  chatCommands:
-    - id: my-plugin.deploy
-      trigger: deploy
-      description: Deploy the current branch
-      argumentHint: "[environment]"
-```
-
-Users type `/deploy staging` in the chat panel; your handler receives `{ args: 'staging' }`.
-
-## See also
-
-- [UI Extensions](./03_ui-extensions.md) — open panels from commands
-- [Plugin SDK](../05_plugins/01_overview.md)
+- **[UI Extensions](./03_ui-extensions.md)** — render interactive panels inside the app with buttons and controls.
+- **[Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)** — agent-driven panels for human-in-the-loop workflows.
+- **[Custom LLM Providers](./02_custom-llm-providers.md)** — register custom models and handle inference.

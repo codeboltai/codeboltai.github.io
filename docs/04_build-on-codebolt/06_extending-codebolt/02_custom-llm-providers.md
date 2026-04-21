@@ -5,66 +5,148 @@ title: Custom LLM Providers
 
 # Custom LLM Providers
 
-Add any LLM backend — local inference, a private API, a fine-tuned model, or a provider Codebolt doesn't ship with — and make it available as a first-class model choice across the entire application.
+Add any LLM backend — a cloud API, a local model, a fine-tuned endpoint, or a provider Codebolt doesn't ship with — and make it available as a first-class model choice across the entire application.
 
-## When to write a custom LLM provider
+Once registered, your provider's models appear in the model picker everywhere: agent manifests, the chat panel, and optimization runs.
 
-- You're running a local model (Ollama, llama.cpp, vLLM) and want agents to use it without leaving Codebolt.
+## When to Write a Custom LLM Provider
+
+- You're running a local model (Ollama, llama.cpp, vLLM) and want agents to use it.
 - Your organisation has a private Azure OpenAI deployment or an on-prem API endpoint.
 - You've fine-tuned a model and want it selectable alongside built-in models.
 - You need a provider with non-standard auth, routing, or rate-limiting logic.
 
-## How it works
+## How It Works
 
-A custom LLM provider is a plugin that implements the `LLMProvider` interface and registers itself via `contributes.llmProviders`. Once registered, the model appears in the model picker everywhere: agent manifests, the chat panel, optimization runs.
+A custom LLM provider is a **plugin** with `type: "llmProvider"` that registers itself on startup and handles inference requests from the application.
 
-```ts
-// src/my-provider.ts
-import { defineLLMProvider, type LLMProvider } from '@codebolt/plugin-sdk';
+```
+┌──────────────────────────┐
+│  Codebolt Application    │
+│  (Agent, Chat, etc.)     │
+│                          │
+│  "Use model X for this"  │
+└────────────┬─────────────┘
+             │ inference request
+             │
+┌────────────┴─────────────┐
+│  Your LLM Provider       │
+│  Plugin                  │
+│                          │
+│  1. Receive request      │
+│  2. Call your API        │
+│  3. Stream/send response │
+└──────────────────────────┘
+```
 
-export const provider: LLMProvider = defineLLMProvider({
-  id: 'my-org/my-model',
-  label: 'My Private Model',
-  contextWindow: 32768,
+### Lifecycle
 
-  async chat(request) {
-    const res = await fetch('https://my-internal-api/v1/chat', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${this.config.apiKey}` },
-      body: JSON.stringify({
-        model: this.config.modelId,
-        messages: request.messages,
-        stream: request.stream,
-      }),
-    });
-    return this.parseOpenAICompatibleResponse(res);
-  },
+1. **Startup** — `plugin.onStart()` fires. Your plugin calls `llmProvider.register()` with provider metadata and model list.
+2. **Request handling** — The application sends inference requests. Your plugin handles them via `llmProvider.onCompletionRequest()` (non-streaming) and `llmProvider.onStreamRequest()` (streaming).
+3. **Response** — Your plugin sends responses back via `llmProvider.sendReply()`, `llmProvider.sendChunk()`, or `llmProvider.sendError()`.
+4. **Shutdown** — `plugin.onStop()` fires. Your plugin calls `llmProvider.unregister()`.
+
+### Plugin package.json
+
+```json
+{
+  "name": "my-llm-provider",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "codebolt": {
+    "plugin": {
+      "type": "llmProvider",
+      "triggers": [{ "type": "startup" }]
+    }
+  }
+}
+```
+
+The key fields:
+- `type: "llmProvider"` — tells Codebolt this plugin provides models.
+- `triggers: [{ "type": "startup" }]` — auto-starts when the application launches.
+
+## Provider SDK API
+
+The Plugin SDK exposes the `llmProvider` module for registration and request handling.
+
+### Registration
+
+```typescript
+await llmProvider.register({
+  providerId: 'my-provider',
+  name: 'My LLM Provider',
+  description: 'Custom model provider',
+  capabilities: ['chat', 'tools', 'streaming'],
+  requiresKey: false,
+  configFields: [
+    { key: 'apiKey', label: 'API Key', type: 'password', required: false },
+    { key: 'apiUrl', label: 'API URL', type: 'text', required: false },
+  ],
+  models: [
+    { id: 'my-model-v1', name: 'My Model v1' },
+    { id: 'my-model-v2', name: 'My Model v2' },
+  ],
 });
 ```
 
-Register in the plugin manifest:
+| Field | Description |
+|---|---|
+| `providerId` | Unique identifier for the provider |
+| `name` | Display name in the model picker |
+| `capabilities` | What the provider supports: `chat`, `tools`, `streaming` |
+| `requiresKey` | Whether an API key is mandatory |
+| `configFields` | User-facing configuration fields (shown in settings) |
+| `models` | List of models this provider offers |
 
-```yaml
-# plugin.yaml
-contributes:
-  llmProviders:
-    - id: my-org/my-model
-      label: My Private Model
-      configSchema:
-        apiKey:
-          type: string
-          secret: true
-        modelId:
-          type: string
-          default: "my-model-v1"
+### Request Handlers
+
+```typescript
+// Non-streaming requests
+llmProvider.onCompletionRequest(async (req) => {
+  // req.requestId — unique request ID
+  // req.options — model, messages, temperature, tools, etc.
+});
+
+// Streaming requests
+llmProvider.onStreamRequest(async (req) => {
+  // req.requestId — unique request ID
+  // req.options — same as above, but expects chunked response
+});
 ```
 
-## Embedding providers
+### Response Methods
 
-The same pattern applies for embedding models. Implement `EmbeddingProvider` and declare under `contributes.embeddingProviders`. Used by the memory system and any agent that calls `ctx.memory.embed()`.
+| Method | When to use |
+|---|---|
+| `llmProvider.sendReply(requestId, response, success)` | Send a complete response (non-streaming or final aggregated response) |
+| `llmProvider.sendChunk(requestId, chunk)` | Send a streaming chunk |
+| `llmProvider.sendError(requestId, errorMessage)` | Send an error |
 
-## See also
+### Cleanup
 
-- [Plugin SDK — Provider interfaces](../05_plugins/01_overview.md)
-- [LLM Provider reference](../05_plugins/06_llm-provider.md)
-- [Embedding Provider reference](../05_plugins/07_embedding-provider.md)
+```typescript
+await llmProvider.unregister('my-provider');
+```
+
+## Request Options
+
+The `req.options` object contains everything your provider needs to make an inference call:
+
+| Field | Type | Description |
+|---|---|---|
+| `model` | `string` | Model ID (from your registered models list) |
+| `messages` | `array` | Chat messages in OpenAI format |
+| `temperature` | `number?` | Sampling temperature |
+| `top_p` | `number?` | Nucleus sampling |
+| `max_tokens` | `number?` | Maximum tokens to generate |
+| `tools` | `array?` | Tool/function definitions |
+| `tool_choice` | `any?` | Tool selection strategy |
+| `response_format` | `any?` | Response format constraint |
+| `stop` | `any?` | Stop sequences |
+| `stream` | `boolean` | Whether streaming was requested |
+
+## See Also
+
+- [Build Your First LLM Provider](./03_build-your-first-llm-provider.md) — step-by-step tutorial
+- [Plugins Overview](../05_plugins/01_overview.md) — plugin development overview

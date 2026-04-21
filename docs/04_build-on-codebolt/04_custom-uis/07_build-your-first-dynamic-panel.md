@@ -233,13 +233,70 @@ plugin.onStart(async (ctx: any) => {
 
 ---
 
-## Step 6: Build and install
+## Step 6: Build, install, and test
+
+### Build
 
 ```bash
 npm run build
 ```
 
-Install the plugin in Codebolt. When you open it, the panel renders inside the app and can immediately exchange messages with the backend.
+### Install locally
+
+Copy the plugin to one of the directories Codebolt scans:
+
+```bash
+# Option 1: Global plugins (available in all projects)
+cp -r my-panel-plugin ~/.codebolt/plugins/my-panel-plugin
+
+# Option 2: Per-project plugins (only this project, overrides global)
+cp -r my-panel-plugin <your-project>/.codeboltPlugins/my-panel-plugin
+```
+
+### Load and start
+
+1. Open the **Plugins panel** in Codebolt.
+2. Click **Reload** to rescan plugin directories.
+3. Your plugin appears in the list (state: "Loaded").
+4. Click **Start** to launch the plugin process.
+5. Click the **Open** button to see your panel.
+
+### Development loop
+
+There is no hot-reload. After making code changes:
+
+```bash
+# 1. Rebuild
+npm run build
+
+# 2. In the Codebolt Plugins panel:
+#    Click Stop → Click Reload → Click Start
+```
+
+For faster iteration, run `tsc --watch` in one terminal so the build updates whenever you save. Then just Stop → Reload → Start in the UI.
+
+### REST API (alternative to UI)
+
+```bash
+# Reload all plugins from disk
+curl -X POST http://localhost:2719/plugins/load
+
+# Start your plugin
+curl -X POST http://localhost:2719/plugins/my-panel-plugin/start
+
+# Stop your plugin
+curl -X POST http://localhost:2719/plugins/my-panel-plugin/stop
+```
+
+### Where plugins are discovered
+
+| Directory | Scope |
+|---|---|
+| Built-in plugins (shipped with Codebolt) | All projects |
+| `~/.codebolt/plugins/` | All projects (global) |
+| `<project>/.codeboltPlugins/` | Current project only (overrides global) |
+
+Per-project plugins override global plugins with the same name.
 
 ---
 
