@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Evaluation & Optimization Overview
 ---
 
+import EvalOptimizationOverview from '@site/src/components/diagrams/EvalOptimizationOverview';
+
 # Evaluation & Optimization
 
 Agents are programs. Like any program, you get better results by measuring them and iterating. Codebolt ships a developer-facing eval and optimization system for exactly that.
@@ -28,24 +30,7 @@ This section is about **refining what you built** — systematically, with evide
 
 ## The mental model
 
-```
-┌── event log ──┐         ┌── eval set ──┐
-│ real runs     │         │ fixtures     │
-└──────┬────────┘         └──────┬───────┘
-       │                         │
-       ▼                         ▼
-   replay agent X          evaluate agent X
-       │                         │
-       └───────┬─────────────────┘
-               ▼
-         scores + traces
-               │
-               ▼
-      optimization loop — propose changes, re-evaluate
-               │
-               ▼
-         agent X', X'', ...
-```
+<EvalOptimizationOverview />
 
 Production runs become eval material. Eval results drive the optimization loop. The loop produces candidate agents; you pick the one that wins and deploy it.
 

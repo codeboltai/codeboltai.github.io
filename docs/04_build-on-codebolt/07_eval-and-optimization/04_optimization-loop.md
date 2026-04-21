@@ -3,6 +3,8 @@ sidebar_position: 4
 title: Optimization Loop
 ---
 
+import OptimizationLoop from '@site/src/components/diagrams/OptimizationLoop';
+
 # Optimization Loop
 
 The **optimization loop** automates the "try a change, eval it, pick the winner" cycle. Given an agent, an eval set, and a knob you want to tune (prompt text, temperature, tool selection, context rules, capability activation), the loop generates variants, evaluates each, and hands you back the top-scoring ones.
@@ -21,29 +23,7 @@ When the loop doesn't help: exploratory work. You need to already know what ques
 
 ## The loop shape
 
-```
-┌─── eval set ───────────────────┐
-│ fixtures + metrics             │
-└──────────┬─────────────────────┘
-           │
-           ▼
-   ┌──── proposer ──────┐
-   │ generates variants │  ← "change the system prompt", "swap models",
-   │ of the agent       │    "vary temperature", "toggle a capability"
-   └──────────┬─────────┘
-              │
-              ▼
-   ┌──── evaluator ─────┐
-   │ runs each variant  │
-   │ against the set    │
-   └──────────┬─────────┘
-              │
-              ▼
-   ┌──── selector ──────┐
-   │ ranks by metric    │
-   │ returns winners    │
-   └────────────────────┘
-```
+<OptimizationLoop />
 
 Each box is pluggable. You can use built-in proposers (prompt paraphrase, parameter grid, capability toggle) or write custom ones.
 

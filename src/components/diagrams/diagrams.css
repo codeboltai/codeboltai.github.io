@@ -1427,3 +1427,194 @@
 .cb-dp-dot {
   fill: #0ea5e9;
 }
+
+/* ── Eval & optimization overview ───────── */
+
+.cb-diagram--evalopt,
+.cb-diagram--opt-loop {
+  background: #f5f4ed;
+  border-color: rgba(11,13,11,0.12);
+}
+[data-theme='dark'] .cb-diagram--opt-loop,
+[data-theme='dark'] .cb-diagram--evalopt {
+  background: #141412;
+  border-color: rgba(240,239,232,0.10);
+}
+
+.cb-eo-arrowfill,
+.cb-ol-arrowfill {
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-eo-arrowfill,
+[data-theme='dark'] .cb-ol-arrowfill { fill: #a0a09a; }
+
+.cb-eo-eyebrow,
+.cb-eo-title,
+.cb-eo-sub,
+.cb-eo-foot,
+.cb-eo-chip-label,
+.cb-eo-wire-label,
+.cb-eo-core-title,
+.cb-eo-opt-title,
+.cb-eo-opt-sub,
+.cb-eo-feedback-label,
+.cb-ol-eyebrow,
+.cb-ol-stage-title,
+.cb-ol-stage-sub,
+.cb-ol-stage-foot,
+.cb-ol-wire-label,
+.cb-ol-core-title,
+.cb-ol-chip-label,
+.cb-ol-select-title,
+.cb-ol-feedback-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cb-eo-eyebrow,
+.cb-ol-eyebrow {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-eo-eyebrow,
+[data-theme='dark'] .cb-ol-eyebrow { fill: #a0a09a; }
+
+.cb-eo-source-rect,
+.cb-eo-chip-rect,
+.cb-eo-result-rect,
+.cb-ol-stage-rect,
+.cb-ol-chip-rect {
+  fill: rgba(255,255,255,0.8);
+  stroke: rgba(11,13,11,0.18);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-eo-source-rect,
+[data-theme='dark'] .cb-eo-chip-rect,
+[data-theme='dark'] .cb-eo-result-rect,
+[data-theme='dark'] .cb-ol-stage-rect,
+[data-theme='dark'] .cb-ol-chip-rect {
+  fill: rgba(240,239,232,0.04);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-eo-core-rect,
+.cb-ol-core-rect {
+  fill: rgba(14,165,233,0.06);
+  stroke: #0ea5e9;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-eo-core-rect,
+[data-theme='dark'] .cb-ol-core-rect {
+  fill: rgba(14,165,233,0.10);
+  stroke: #38bdf8;
+}
+
+.cb-eo-opt-rect {
+  fill: rgba(247,89,31,0.08);
+  stroke: #f7591f;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-eo-opt-rect {
+  fill: rgba(247,89,31,0.10);
+  stroke: #fb923c;
+}
+
+.cb-ol-select-rect,
+.cb-ol-keep-rect,
+.cb-ol-stop-rect {
+  fill: rgba(11,13,11,0.05);
+  stroke: rgba(11,13,11,0.26);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-ol-select-rect,
+[data-theme='dark'] .cb-ol-keep-rect,
+[data-theme='dark'] .cb-ol-stop-rect {
+  fill: rgba(240,239,232,0.04);
+  stroke: rgba(240,239,232,0.18);
+}
+
+.cb-ol-keep-rect { stroke: #16a34a; }
+.cb-ol-stop-rect { stroke: #ca8a04; }
+
+.cb-eo-title,
+.cb-eo-core-title,
+.cb-eo-opt-title,
+.cb-ol-stage-title,
+.cb-ol-core-title,
+.cb-ol-select-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-eo-title,
+[data-theme='dark'] .cb-eo-core-title,
+[data-theme='dark'] .cb-eo-opt-title,
+[data-theme='dark'] .cb-ol-stage-title,
+[data-theme='dark'] .cb-ol-core-title,
+[data-theme='dark'] .cb-ol-select-title { fill: #f0efe8; }
+
+.cb-eo-sub,
+.cb-eo-foot,
+.cb-eo-opt-sub,
+.cb-eo-wire-label,
+.cb-ol-stage-sub,
+.cb-ol-stage-foot,
+.cb-ol-wire-label,
+.cb-ol-feedback-label {
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-eo-sub,
+[data-theme='dark'] .cb-eo-foot,
+[data-theme='dark'] .cb-eo-opt-sub,
+[data-theme='dark'] .cb-eo-wire-label,
+[data-theme='dark'] .cb-ol-stage-sub,
+[data-theme='dark'] .cb-ol-stage-foot,
+[data-theme='dark'] .cb-ol-wire-label,
+[data-theme='dark'] .cb-ol-feedback-label { fill: #a0a09a; }
+
+.cb-eo-chip-label,
+.cb-eo-feedback-label,
+.cb-ol-chip-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-eo-chip-label,
+[data-theme='dark'] .cb-eo-feedback-label,
+[data-theme='dark'] .cb-ol-chip-label { fill: #f0efe8; }
+
+.cb-eo-wire,
+.cb-ol-wire {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-eo-wire,
+[data-theme='dark'] .cb-ol-wire { stroke: #a0a09a; }
+
+.cb-eo-wire--accent {
+  stroke: #f7591f;
+}
+
+.cb-eo-feedback,
+.cb-ol-feedback {
+  fill: none;
+  stroke: #0ea5e9;
+  stroke-width: 1.25;
+  stroke-dasharray: 4 3;
+}
+
+.cb-eo-feedback-label {
+  fill: #0369a1;
+}
+[data-theme='dark'] .cb-eo-feedback-label { fill: #7dd3fc; }
+
+.cb-ol-feedback-label {
+  fill: #0369a1;
+}
+[data-theme='dark'] .cb-ol-feedback-label { fill: #7dd3fc; }

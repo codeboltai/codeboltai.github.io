@@ -1,81 +1,113 @@
 import React from 'react';
 import './diagrams.css';
 
-/**
- * Optimization Loop — iterative: eval → score → optimizer proposes change
- * → apply → re-eval → kept or reverted. Emphasizes that history from
- * past iterations is fed back to the optimizer.
- */
-
 export default function OptimizationLoop() {
-  const W = 760;
-  const H = 340;
-
-  const cy = 150;
-  const step = (id: string, x: number, label: string, sub: string) => ({ id, x, y: cy, label, sub });
-
-  const NODES = [
-    step('eval',      90,  'RUN EVAL',        'score via evaluators'),
-    step('optimizer', 270, 'OPTIMIZER AGENT', 'proposes {target,diff}'),
-    step('apply',     450, 'APPLY',           'patch subject'),
-    step('reeval',    620, 'RE-EVAL',         'new score'),
-  ];
+  const W = 860;
+  const H = 520;
 
   return (
     <div className="cb-diagram cb-diagram--opt-loop">
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-labelledby="opt-loop-title">
-        <title id="opt-loop-title">The optimization iteration loop</title>
+        <title id="opt-loop-title">Optimization loop: baseline, proposer, variant batch, evaluator, selector, promotion, and feedback</title>
 
-        <text x={W / 2} y={32} textAnchor="middle" className="cb-section-label">
-          ITERATION — repeat until max-iterations or score stops improving
+        <defs>
+          <marker
+            id="cb-ol-arrow"
+            viewBox="0 0 10 10"
+            refX="8"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <polygon points="0 0, 10 5, 0 10" className="cb-ol-arrowfill" />
+          </marker>
+        </defs>
+
+        <text x="70" y="24" className="cb-ol-eyebrow">
+          One Optimization Run
         </text>
 
-        {/* forward arrows between nodes */}
-        {NODES.slice(0, -1).map((n, i) => {
-          const next = NODES[i + 1];
-          return (
-            <g key={`arr-${i}`}>
-              <line x1={n.x + 60} y1={cy} x2={next.x - 60} y2={cy} className="cb-arrow" />
-              <path
-                d={`M ${next.x - 68} ${cy - 4} L ${next.x - 60} ${cy} L ${next.x - 68} ${cy + 4}`}
-                className="cb-arrowhead"
-              />
-            </g>
-          );
-        })}
+        <rect x="60" y="56" width="178" height="78" rx="6" className="cb-ol-stage-rect" />
+        <text x="84" y="82" className="cb-ol-stage-title">1. Baseline + Eval Set</text>
+        <text x="84" y="102" className="cb-ol-stage-sub">
+          Start from the current agent and the benchmark you care about.
+        </text>
+        <text x="84" y="121" className="cb-ol-stage-foot">
+          baseline score is always measured first
+        </text>
 
-        {/* nodes */}
-        {NODES.map((n) => (
-          <g key={n.id}>
-            <rect x={n.x - 60} y={cy - 30} width="120" height="60" rx="3" className="cb-box" />
-            <text x={n.x} y={cy - 6} textAnchor="middle" className="cb-box-title">{n.label}</text>
-            <text x={n.x} y={cy + 12} textAnchor="middle" className="cb-box-sub">{n.sub}</text>
-          </g>
-        ))}
+        <rect x="340" y="56" width="184" height="78" rx="6" className="cb-ol-stage-rect" />
+        <text x="364" y="82" className="cb-ol-stage-title">2. Proposer</text>
+        <text x="364" y="102" className="cb-ol-stage-sub">
+          Generate candidate changes along one axis.
+        </text>
+        <text x="364" y="121" className="cb-ol-stage-foot">
+          prompt rewrite, model sweep, grid, capability toggle
+        </text>
 
-        {/* keep / revert decision from re-eval */}
-        <line x1={NODES[3].x} y1={cy + 30} x2={NODES[3].x} y2={cy + 70} className="cb-arrow" />
-        <text x={NODES[3].x + 10} y={cy + 60} className="cb-axis-label">compare scores</text>
+        <rect x="620" y="56" width="180" height="78" rx="6" className="cb-ol-stage-rect" />
+        <text x="644" y="82" className="cb-ol-stage-title">3. Variant Batch</text>
+        <text x="644" y="102" className="cb-ol-stage-sub">
+          Each variant is a precise diff from baseline.
+        </text>
+        <text x="644" y="121" className="cb-ol-stage-foot">
+          n variants within budget
+        </text>
 
-        <rect x={NODES[3].x - 120} y={cy + 70} width="110" height="34" rx="3" className="cb-verdict cb-verdict--allow" />
-        <text x={NODES[3].x - 65} y={cy + 92} textAnchor="middle" className="cb-verdict-label">KEEP</text>
+        <line x1="238" y1="95" x2="340" y2="95" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
+        <line x1="524" y1="95" x2="620" y2="95" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
 
-        <rect x={NODES[3].x + 10} y={cy + 70} width="110" height="34" rx="3" className="cb-verdict cb-verdict--deny" />
-        <text x={NODES[3].x + 65} y={cy + 92} textAnchor="middle" className="cb-verdict-label">REVERT</text>
+        <rect x="124" y="196" width="612" height="118" rx="6" className="cb-ol-core-rect" />
+        <text x="430" y="222" textAnchor="middle" className="cb-ol-core-title">4. Evaluate Every Variant</text>
+        <text x="430" y="242" textAnchor="middle" className="cb-ol-stage-sub">
+          Run each candidate against the same fixtures and compute comparable metrics.
+        </text>
 
-        {/* feedback arc: both branches flow back to optimizer with history */}
-        <path
-          d={`M ${NODES[3].x - 65} ${cy + 104}
-              Q ${W / 2} ${H - 10}
-                ${NODES[1].x} ${cy + 32}`}
-          className="cb-eval-feedback"
-        />
-        <path
-          d={`M ${NODES[1].x - 4} ${cy + 36} L ${NODES[1].x} ${cy + 30} L ${NODES[1].x + 6} ${cy + 38}`}
-          className="cb-arrowhead"
-        />
-        <text x={W / 2 + 40} y={H - 18} textAnchor="middle" className="cb-eval-feedback-label">
-          iteration history (kept + failed) → next optimizer prompt
+        <rect x="164" y="264" width="156" height="30" rx="4" className="cb-ol-chip-rect" />
+        <text x="242" y="283" textAnchor="middle" className="cb-ol-chip-label">overall score</text>
+        <rect x="352" y="264" width="156" height="30" rx="4" className="cb-ol-chip-rect" />
+        <text x="430" y="283" textAnchor="middle" className="cb-ol-chip-label">cost + latency</text>
+        <rect x="540" y="264" width="156" height="30" rx="4" className="cb-ol-chip-rect" />
+        <text x="618" y="283" textAnchor="middle" className="cb-ol-chip-label">traces + tool behavior</text>
+
+        <line x1="710" y1="134" x2="710" y2="196" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
+        <text x="724" y="170" className="cb-ol-wire-label">same eval set</text>
+
+        <rect x="92" y="368" width="190" height="84" rx="6" className="cb-ol-select-rect" />
+        <text x="187" y="394" textAnchor="middle" className="cb-ol-select-title">5. Selector</text>
+        <text x="187" y="414" textAnchor="middle" className="cb-ol-stage-sub">
+          Rank variants by the metric
+        </text>
+        <text x="187" y="433" textAnchor="middle" className="cb-ol-stage-foot">
+          respect confidence intervals
+        </text>
+
+        <rect x="336" y="368" width="190" height="84" rx="6" className="cb-ol-keep-rect" />
+        <text x="431" y="394" textAnchor="middle" className="cb-ol-select-title">6. Promote Winner</text>
+        <text x="431" y="414" textAnchor="middle" className="cb-ol-stage-sub">
+          Keep the best variant as the new candidate.
+        </text>
+        <text x="431" y="433" textAnchor="middle" className="cb-ol-stage-foot">
+          promote only if it truly beats baseline
+        </text>
+
+        <rect x="580" y="368" width="190" height="84" rx="6" className="cb-ol-stop-rect" />
+        <text x="675" y="394" textAnchor="middle" className="cb-ol-select-title">7. Iterate Or Stop</text>
+        <text x="675" y="414" textAnchor="middle" className="cb-ol-stage-sub">
+          Continue on a new axis or stop on plateau/regression.
+        </text>
+        <text x="675" y="433" textAnchor="middle" className="cb-ol-stage-foot">
+          budget, max-iterations, stop-on-regression
+        </text>
+
+        <line x1="242" y1="314" x2="187" y2="368" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
+        <line x1="430" y1="314" x2="431" y2="368" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
+        <line x1="618" y1="314" x2="675" y2="368" className="cb-ol-wire" markerEnd="url(#cb-ol-arrow)" />
+
+        <path d="M 431 452 Q 430 500 432 500 Q 434 500 344 134" className="cb-ol-feedback" />
+        <text x="490" y="491" className="cb-ol-feedback-label">
+          kept and failed variants become context for the next proposal round
         </text>
       </svg>
     </div>

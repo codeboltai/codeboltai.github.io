@@ -50,6 +50,17 @@ Agents use tools to *do* things. Three flavours, all invoked through the same in
 - **MCP servers.** Community or custom. See [Installing MCP servers](./05_tools-and-mcp/02_installing-mcp-servers.md).
 - **Capabilities.** Bundles that include tools + prompts + UI. See [Managing MCP servers](./05_tools-and-mcp/03_managing-mcp-servers.md).
 
+### Planning
+
+Built-in tools for managing work from strategy to individual tasks. All planning data lives inside the project — plain files you can commit and diff.
+
+- **[Roadmap](./06_planning/02_roadmap.md)** — features and phases, with an Ideation tab for reviewing suggestions before committing to them.
+- **[Specs](./06_planning/03_specs.md)** — technical specification documents with rich Markdown editing and inline comments.
+- **[UI Flow](./06_planning/04_ui-flow.md)** — wireframes and mockups on an Excalidraw freehand canvas.
+- **[Requirement Plan](./06_planning/05_requirement-plan.md)** — aggregate documents that link Specs, UI Flows, and Action Plans into one place.
+- **[Action Plan](./06_planning/06_action-plan.md)** — structured execution plans with tasks, dependencies, parallel groups, loops, and conditionals. Agents create and update these automatically.
+- **[Tasks](./06_planning/07_tasks.md)** — individual work items with a kanban view, subtask hierarchy, and a message log agents write to as they work.
+
 ### CLI and TUI
 
 Not everyone wants a desktop app. The CLI provides the same surface over a terminal, and the TUI gives you a full-screen terminal interface. See [CLI & TUI](./02_surfaces/03_cli/01_overview.md).
