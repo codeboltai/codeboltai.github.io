@@ -3,7 +3,9 @@ sidebar_position: 1
 title: Overview
 ---
 
-# Eval and Optimization
+import EvalOptimizationOverview from '@site/src/components/diagrams/EvalOptimizationOverview';
+
+# Evaluation & Optimization
 
 Evaluate how well your agents, skills, and action blocks perform on specific tasks — then automatically optimize them using an agent-driven improvement loop.
 
@@ -31,6 +33,7 @@ Evaluate how well your agents, skills, and action blocks perform on specific tas
              │
      .codebolt/evals/ (JSON)
 ```
+<EvalOptimizationOverview />
 
 ## Key Concepts
 

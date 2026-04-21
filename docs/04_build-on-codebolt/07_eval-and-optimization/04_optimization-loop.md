@@ -3,6 +3,8 @@ sidebar_position: 4
 title: Optimization Loop
 ---
 
+import OptimizationLoop from '@site/src/components/diagrams/OptimizationLoop';
+
 # Optimization Loop
 
 The optimization loop automatically improves a subject (agent, skill, etc.) by having an optimizer agent read the source code, make targeted changes, and re-evaluate until the target score is reached.
@@ -27,6 +29,7 @@ The optimization loop automatically improves a subject (agent, skill, etc.) by h
 │     iterations reached                  │
 └─────────────────────────────────────────┘
 ```
+<OptimizationLoop />
 
 ### Per Iteration
 
