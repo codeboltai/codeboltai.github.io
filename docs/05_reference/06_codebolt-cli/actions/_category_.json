@@ -1,0 +1,11 @@
+{
+  "label": "Action Commands",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codebolt-cli/actions/index"
+  }
+}

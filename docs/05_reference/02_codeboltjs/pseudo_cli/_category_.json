@@ -2,6 +2,6 @@
   "label": "Cli Format",
   "position": 4,
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "className": "red"
 }

@@ -12,6 +12,7 @@ The reference is organized by **SDK**, since each targets a different developer:
 | SDK / Package | Who it's for | Start here |
 |---|---|---|
 | **codeboltjs** | Agent authors — writing or extending agents | [codeboltjs Reference](./02_codeboltjs/01_overview.md) |
+| **Codebolt CLI** | Command-line users — running CodeBolt, scaffolding extensions, and server commands | [Codebolt CLI Reference](./06_codebolt-cli/01_overview.md) |
 | **Agent Framework** | Framework internals — processor pipeline, tool system, multi-agent teams | [Agent Framework Reference](./05_agent-framework/01_overview.md) |
 | **Plugin SDK** | Plugin authors — hooks, UI panels, providers, commands | [Plugin SDK Reference](./03_plugin-sdk/01_overview.md) |
 | **Client SDK** | UI / integration authors — bots, IDE extensions, CI runners | [Client SDK Reference](./04_client-sdk/01_overview.md) |
@@ -24,6 +25,9 @@ The reference is organized by **SDK**, since each targets a different developer:
 
 **"I need the agent loop internals — processors, tools, team coordination"**
 → [Agent Framework Reference](./05_agent-framework/01_overview.md).
+
+**"I'm using the CLI"**
+→ [Codebolt CLI Reference](./06_codebolt-cli/01_overview.md).
 
 **"I'm building a plugin"**
 → [Plugin SDK Reference](./03_plugin-sdk/01_overview.md).

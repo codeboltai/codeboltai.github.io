@@ -1,0 +1,11 @@
+{
+  "label": "Server Commands",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "doc",
+    "id": "reference/codebolt-cli/commands/index"
+  }
+}
