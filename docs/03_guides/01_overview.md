@@ -21,6 +21,7 @@ Find the guide closest to your goal and follow the steps. Guides assume:
 Things everyone should try once.
 
 - [Build your first agent](./02_first-steps/build-your-first-agent.md) — a minimal custom agent, level 0 (remix) to level 1 (framework).
+- [Build your first custom UI](./02_first-steps/build-your-first-custom-ui.md) — a standalone interface using the Client SDK.
 - [Publish an agent to the marketplace](./02_first-steps/publish-an-agent-to-the-marketplace.md)
 - [Connect a local model](./02_first-steps/connect-a-local-model.md) — Ollama or llama.cpp
 - [Set up git integration](./02_first-steps/set-up-git-integration.md)
