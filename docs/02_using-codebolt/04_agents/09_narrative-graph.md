@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 9
 title: Narrative Graph
 ---
 
@@ -23,7 +23,7 @@ Each node in the graph represents one meaningful event in the agent's execution:
 | **Retry** | Loopback | A tool call that failed and was retried |
 | **Completion** | Circle | The run's final state (`completed` or `failed`) |
 
-Edges connect nodes in execution order. Width of an edge encodes time (thicker = more time elapsed between events).
+Edges connect nodes in execution order. Edge width encodes time — thicker means more time elapsed between events.
 
 ## Reading the graph
 
@@ -37,21 +37,29 @@ Click any node to open a detail panel on the right showing:
 
 ## Narrative Hierarchy
 
-The **Narrative Hierarchy** view (accessible from the Narrative Graph toolbar) shows the same data as a collapsible tree — useful for very deep graphs that are hard to read as a flat layout.
+The **Narrative Hierarchy** view (toolbar toggle) shows the same data as a collapsible tree — useful for very deep graphs that are hard to read as a flat layout.
 
 ## File Trace Viewer
 
-The **File Trace Viewer** (accessible from a node's detail panel → "File trace") shows which lines of agent code executed to produce a specific event. This is a deep debugging tool — use it when you need to understand exactly which code path in your agent implementation ran.
+The **File Trace Viewer** (a node's detail panel → "File trace") shows which lines of agent code executed to produce a specific event. Use it when you need to understand exactly which code path in your agent implementation ran.
 
-## Using Narrative Graph for quality improvement
+## Using the graph to improve agents
 
 The Narrative Graph is the most direct way to identify where an agent's reasoning went wrong:
 
-1. **Unnecessary retries** — loopback nodes indicate a tool failed repeatedly. Fix the tool or adjust the agent's retry policy.
-2. **Early termination** — the completion node is reached with few preceding nodes. The agent stopped too soon — check the LLM decision nodes leading up to it for the trigger.
-3. **Inefficient path** — many sequential tool calls that could be parallelised. Restructure the agent's loop or use a swarm for the parallel work.
-4. **Wrong branch taken** — the agent chose a path that led to failure. Examine the LLM decision node at the branch point; the prompt context at that point is usually the clue.
+| Pattern | What to look for | Fix |
+|---|---|---|
+| Unnecessary retries | Loopback nodes on the same tool | Fix the tool or adjust the retry policy |
+| Early termination | Completion node reached with few preceding nodes | Check the LLM decision nodes just before completion |
+| Inefficient path | Long chains of sequential tool calls | Restructure for parallelism or use a swarm |
+| Wrong branch taken | Branch node that diverges to a failed path | Examine the prompt context at that branch node |
 
 ## Sharing a graph
 
-Click **Export** → **PNG** or **SVG** to save the graph as an image. Click **Export → JSON** to export the raw narrative data, which can be imported back into the Narrative Graph for offline analysis or shared with a team member.
+- **Export → PNG / SVG** — save as an image
+- **Export → JSON** — export raw narrative data for offline analysis or sharing with a team member; can be re-imported into the Narrative Graph
+
+## See also
+
+- [Debugging an Agent](./07_debugging-an-agent.md)
+- [Thread Panel](./08_thread-panel.md)

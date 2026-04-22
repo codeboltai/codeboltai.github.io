@@ -187,7 +187,45 @@ Usually caused by too much context being assembled.
 4. **Use filters.** Filter by thread or agent type to focus on the relevant sessions.
 5. **Check child agents.** If a parent agent delegated to sub-agents, check their logs too — the debug panel shows the hierarchy.
 
+## Log entry types
+
+Each entry in the Agent Debug panel's log stream is one of:
+
+| Type | What it shows |
+|---|---|
+| **LLM Request** | Full prompt sent — system prompt, all messages, model name, token count. Expand to read the full context window. |
+| **LLM Response** | Raw model reply streamed token-by-token, including structured tool call JSON |
+| **Tool Call** | Tool name, input parameters, result (collapsed), and duration |
+| **Status Event** | Phase transitions (`thinking`, `executing`, `reflecting`, `completed`) with phase duration |
+| **Error** | Exception with full stack trace |
+
+### Filtering
+
+Use the filter bar to narrow the stream:
+
+| Filter | Shows |
+|---|---|
+| All | Everything |
+| LLM | Only LLM requests and responses |
+| Tools | Only tool calls and results |
+| Errors | Only error entries |
+| Status | Only phase transitions |
+
+### Live vs history mode
+
+Agent Debug defaults to **Live** — shows the current run as it happens. Click **History** and select a previous thread to replay its full debug log.
+
+### Copying debug data
+
+Right-click any log entry → **Copy as JSON** to export the raw event. Useful for bug reports, token-usage analysis, or sharing a specific LLM call.
+
+## Narrative Graph
+
+The **Narrative Graph** (Debug Tools → **Narrative Graph**) visualises an agent run as a directed graph — user message → LLM decisions → tool calls → completion — so you can see the branching and retry structure at a glance rather than scanning a flat log. See [Narrative Graph](./09_narrative-graph.md) for full details.
+
 ## See also
 
 - [What is an agent](./01_what-is-an-agent.md)
 - [Running agents](./03_running-agents.md)
+- [Thread Panel](./08_thread-panel.md)
+- [Narrative Graph](./09_narrative-graph.md)

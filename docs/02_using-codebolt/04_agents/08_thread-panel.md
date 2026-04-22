@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 8
 title: Thread Panel
 ---
 
@@ -7,7 +7,7 @@ title: Thread Panel
 
 The Thread Panel is a unified list of every message thread in the current project. Each chat conversation, agent run, and delegated sub-task creates a thread; the Thread Panel lets you navigate and monitor all of them from one place.
 
-Open it via: **Execution dropdown → Thread Panel**
+Open via: **Execution dropdown → Thread Panel**
 
 ## What a thread is
 
@@ -26,7 +26,7 @@ The Thread Panel shows all threads sorted by most-recently-active. Each row disp
 - **Status badge** — `running`, `completed`, `failed`, `paused`
 - **Timestamp** — when the thread was last active
 
-Click any thread to open the **Thread Detail** view, which shows the full message history for that thread — including sub-agent calls, tool results, and any streaming output.
+Click any thread to open the **Thread Detail** view, which shows the full message history — including sub-agent calls, tool results, and streaming output.
 
 ## Thread Detail
 
@@ -64,3 +64,8 @@ When an agent needs clarification it can't resolve on its own, it pauses and mar
 ## Cleaning up
 
 Right-click a completed thread → **Archive** to remove it from the active list. Archived threads are kept in history and can be searched from the Thread Panel's archive view.
+
+## See also
+
+- [Running Agents](./03_running-agents.md)
+- [Debugging an Agent](./07_debugging-an-agent.md)

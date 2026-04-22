@@ -265,9 +265,38 @@ Every agent has limits in its manifest:
 
 Hitting any of these stops the run with terminal state `killed` and reason `budget_<kind>`. You can raise the limit for a specific run with `--limits` on the CLI or by editing the agent's yaml.
 
+## Monitoring in the UI
+
+### Running Agent panel
+
+Open via the **Execution dropdown → Running Agent** in the bottom bar. The panel shows every agent process currently executing with:
+
+- **Agent name and ID** — which agent is running
+- **Thread link** — click to jump to its conversation thread
+- **Status** — current phase (`thinking`, `executing tool`, `waiting`, etc.)
+- **Duration** — how long the run has been active
+- **Token usage** — cumulative input/output tokens this run
+- **Stop button** — immediately terminates the agent process
+
+The panel refreshes in real time. When a run completes it disappears from the list; the thread is marked `completed`.
+
+### Background Agents panel
+
+Open via **Execution dropdown → Background Agents**. Background agents run without a visible chat thread. They are started by lifecycle hooks, scheduled triggers, or another agent delegating work asynchronously.
+
+An agent moves from the active panel to Background Agents when:
+- Its initiating chat tab is closed but the process is still running
+- It was started programmatically without a user-facing thread
+- It was detached via `codebolt.run.detach()` in agent code
+
+### System alert notifications
+
+The **bell icon** (top-right of the bottom bar) shows a progress bar entry for every active agent. Click a notification to jump to that agent's thread without opening the Running Agent panel.
+
 ## See also
 
 - [What is an agent](./01_what-is-an-agent.md)
 - [Debugging an agent](./07_debugging-an-agent.md)
+- [Thread Panel](./08_thread-panel.md)
 - [CLI → Agent commands](../02_surfaces/03_cli/02_agent-commands.md)
 - [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)
