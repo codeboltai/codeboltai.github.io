@@ -1,0 +1,9 @@
+{
+  "label": "Integrations",
+  "position": 8,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Configuration"
+  }
+}

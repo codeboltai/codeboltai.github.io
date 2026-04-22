@@ -81,6 +81,24 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          async sidebarItemsGenerator({ defaultSidebarItemsGenerator, item, ...args }) {
+            const sidebarItems = await defaultSidebarItemsGenerator({ item, ...args });
+            if (item.dirName !== '02_using-codebolt') return sidebarItems;
+
+            const result: typeof sidebarItems = [];
+            for (const sidebarItem of sidebarItems) {
+              const label = (sidebarItem as any).customProps?.sectionLabel;
+              if (sidebarItem.type === 'category' && label) {
+                result.push({
+                  type: 'html',
+                  value: `<div class="sidebar-section-rule"></div>`,
+                  defaultStyle: false,
+                } as any);
+              }
+              result.push(sidebarItem);
+            }
+            return result;
+          },
         },
         blog: {
           showReadingTime: true,

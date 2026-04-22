@@ -36,7 +36,8 @@
       "Read(//Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/**)",
       "Bash(done)",
       "Bash(grep -E \"\\\\.\\(ts|tsx|js|yaml|yml|json\\)$\")",
-      "Bash(xargs grep *)"
+      "Bash(xargs grep *)",
+      "WebFetch(domain:docusaurus.io)"
     ]
   },
   "enabledPlugins": {
