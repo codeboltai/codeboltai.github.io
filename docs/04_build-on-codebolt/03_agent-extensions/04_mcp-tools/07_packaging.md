@@ -18,11 +18,10 @@ This is the simplest path when the tool is specific to your project or team.
 | Shape | How users install | Good for |
 |---|---|---|
 | **npm package** | `npm install` + run via node | JavaScript/TypeScript servers |
-| **Python package** | `pip install` + run via python | Python servers |
-| **Standalone binary** | Download + run | Servers with heavy dependencies or non-JS/Python languages |
+| **Standalone binary** | Download + run | Servers with heavy dependencies or non-JS/TS languages |
 | **Docker image** | Pull + run | Servers with complex runtime requirements |
 
-Most MCP servers are npm or Python packages. Binaries and Docker are for special cases.
+Most MCP servers are npm packages. Binaries and Docker are for special cases.
 
 ## npm package layout
 
@@ -58,7 +57,7 @@ my-mcp-server/
   "keywords": ["mcp", "codebolt", "your-domain"],
   "license": "MIT",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0"
+    "@codebolt/codeboltjs": "^1.0.0"
   },
   "files": [
     "src/",
@@ -88,45 +87,6 @@ Every published MCP server needs a README that covers:
 7. **License.**
 
 This is not optional. An MCP server without a README is unusable by anyone but the author.
-
-## Python package layout
-
-```
-my_mcp_server/
-├── pyproject.toml
-├── README.md
-├── LICENSE
-├── src/
-│   └── my_mcp_server/
-│       ├── __init__.py
-│       └── server.py
-└── tests/
-    └── test_server.py
-```
-
-### `pyproject.toml`
-
-```toml
-[project]
-name = "my-mcp-server"
-version = "0.1.0"
-description = "MCP server for..."
-readme = "README.md"
-requires-python = ">=3.10"
-license = { text = "MIT" }
-dependencies = [
-    "mcp>=1.0.0",
-]
-
-[project.scripts]
-my-mcp-server = "my_mcp_server.server:main"
-
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-```
-
-Same idea as npm: the `[project.scripts]` entry gives users an executable after `pip install`.
 
 ## Configuration
 
@@ -179,10 +139,10 @@ If your server only provides tools, ship it as a plain MCP server. If you need t
 
 Keep dependencies minimal. Every dep is a vulnerability surface, a version conflict waiting to happen, and a distribution size multiplier.
 
-- **Lock your dependencies.** Use `package-lock.json` / `pyproject.toml` + `uv.lock` / equivalent.
+- **Lock your dependencies.** Use `package-lock.json`.
 - **Pin major versions** of the MCP SDK. Breaking changes happen on major version bumps.
 - **Prefer the standard library** for anything non-critical. Don't pull in a fifteen-megabyte dep for something you could do in ten lines.
-- **Audit dependencies before publishing.** `npm audit` / `pip-audit`. Fix critical/high vulnerabilities.
+- **Audit dependencies before publishing.** `npm audit`. Fix critical/high vulnerabilities.
 
 ## Binary distribution
 
@@ -193,7 +153,7 @@ If your server is in Go, Rust, or another language, or has heavy native dependen
 3. Ship a manifest (JSON) listing each binary with its platform triple and SHA-256.
 4. Users download the appropriate binary for their OS and add it to `mcp-servers.yaml` with an absolute path.
 
-Codebolt may offer a helper for this in future ("install from URL"), but today binary distribution requires users to download and extract manually. Favor npm/pip when possible.
+Codebolt may offer a helper for this in future ("install from URL"), but today binary distribution requires users to download and extract manually. Favor npm when possible.
 
 ## Docker
 

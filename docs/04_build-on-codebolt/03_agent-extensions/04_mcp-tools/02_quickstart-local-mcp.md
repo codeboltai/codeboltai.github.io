@@ -10,7 +10,7 @@ Create a local MCP tool, register it with Codebolt, and have an agent call it. T
 1. **Local project tool** — place in `.codebolt/tools/` with a YAML config
 2. **MCP server via CodeboltJS** — use `startCodeboltMcpServer()` API
 
-**You'll need:** Codebolt installed and running, Node.js 18+ (or Python 3.10+), a project open.
+**You'll need:** Codebolt installed and running, Node.js 18+, a project open.
 
 ---
 
@@ -23,7 +23,7 @@ cd /path/to/your/project
 mkdir -p .codebolt/tools/greet
 cd .codebolt/tools/greet
 npm init -y
-npm install @modelcontextprotocol/sdk
+npm install @codebolt/codeboltjs
 ```
 
 ### Step 2 — Create `codebolttool.yaml`
@@ -54,44 +54,32 @@ description: A simple greeting tool that returns friendly messages
 Create `index.js` — this is the entry point that Codebolt runs as an MCP server via `node index.js`:
 
 ```js
-import { Server } from "@modelcontextprotocol/sdk/server/index.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import {
-  CallToolRequestSchema,
-  ListToolsRequestSchema,
-} from "@modelcontextprotocol/sdk/types.js";
+import { createCodeboltMcpServer } from '@codebolt/codeboltjs/mcp-server';
+import { StdioServerTransport } from '@codebolt/codeboltjs/mcp-server';
 
-const server = new Server(
-  { name: "greet", version: "1.0.0" },
-  { capabilities: { tools: {} } }
-);
-
-server.setRequestHandler(ListToolsRequestSchema, async () => ({
-  tools: [
-    {
-      name: "hello",
-      description: "Return a friendly greeting for the given name. Use when the user asks to be greeted.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Person's name" },
-        },
-        required: ["name"],
-      },
-    },
-  ],
-}));
-
-server.setRequestHandler(CallToolRequestSchema, async (req) => {
-  if (req.params.name === "hello") {
-    const name = req.params.arguments?.name ?? "stranger";
-    return { content: [{ type: "text", text: `Hello, ${name}!` }] };
-  }
-  throw new Error(`Unknown tool: ${req.params.name}`);
+// Create the MCP server with Codebolt's built-in tool registry
+const server = createCodeboltMcpServer({
+  serverName: 'greet',
+  serverVersion: '1.0.0',
+  toolFilter: ['hello'],        // expose only the 'hello' tool
+  toolPrefix: 'greet',          // tools namespaced as greet_hello
 });
 
 const transport = new StdioServerTransport();
 await server.connect(transport);
+```
+
+Alternatively, use `startCodeboltMcpServer()` for a higher-level API that handles transport setup automatically:
+
+```js
+import { startCodeboltMcpServer } from '@codebolt/codeboltjs/mcp-server';
+
+const handle = await startCodeboltMcpServer({
+  transport: 'stdio',
+  serverName: 'greet',
+  toolFilter: ['hello'],
+  toolPrefix: 'greet',
+});
 ```
 
 ### Step 4 — How discovery works
@@ -209,55 +197,6 @@ const handle = await startCodeboltMcpServer({
 ```ts
 await handle.close();  // Gracefully stop the server
 ```
-
----
-
-## Python version
-
-If you'd rather write the server in Python:
-
-```bash
-pip install mcp
-```
-
-```python
-# .codebolt/tools/greet/server.py
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
-from mcp.types import Tool, TextContent
-
-app = Server("greet")
-
-@app.list_tools()
-async def list_tools():
-    return [
-        Tool(
-            name="hello",
-            description="Return a friendly greeting for the given name.",
-            inputSchema={
-                "type": "object",
-                "properties": {"name": {"type": "string"}},
-                "required": ["name"],
-            },
-        )
-    ]
-
-@app.call_tool()
-async def call_tool(name: str, arguments: dict):
-    if name == "hello":
-        return [TextContent(type="text", text=f"Hello, {arguments['name']}!")]
-    raise ValueError(f"Unknown tool: {name}")
-
-async def main():
-    async with stdio_server() as (read, write):
-        await app.run(read, write, app.create_initialization_options())
-
-if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
-```
-
-Update `codebolttool.yaml` to use Python and point the entry to `server.py`. Codebolt runs the command specified in the generated MCP config.
 
 ---
 

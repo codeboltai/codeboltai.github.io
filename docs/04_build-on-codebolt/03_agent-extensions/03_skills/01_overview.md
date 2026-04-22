@@ -25,13 +25,41 @@ Skills are the right unit when you want a reusable agent behavior without creati
 
 ## Consuming from an agent
 
+Agents call skills through the `@codebolt/codeboltjs` capability module:
+
 ```ts
-async run(ctx, input) {
-  return ctx.skills.call("refactor-to-pattern", {
-    file: input.file,
-    pattern: "adapter",
-  });
-}
+import codebolt from '@codebolt/codeboltjs';
+
+// Start a skill by name
+const response = await codebolt.capability.startSkill("refactor-to-pattern", {
+  file: "src/handler.ts",
+  pattern: "adapter",
+});
+
+// response.success — whether execution succeeded
+// response.result  — the skill's output
+// response.executionId — unique ID for tracking
+```
+
+Other available methods:
+
+```ts
+// List all skills
+const skills = await codebolt.capability.listSkills();
+
+// Start any capability by type
+const res = await codebolt.capability.startCapability(
+  "refactor-to-pattern",  // name
+  "skill",                // type
+  { file: "src/handler.ts", pattern: "adapter" },  // params
+  30000                   // timeout in ms (optional)
+);
+
+// Check execution status
+const status = await codebolt.capability.getExecutionStatus(res.executionId);
+
+// Stop a running capability
+await codebolt.capability.stopCapability(res.executionId);
 ```
 
 ## Skill vs. tool vs. subagent
@@ -44,6 +72,37 @@ async run(ctx, input) {
 | **Cost** | Low | Low-moderate | High |
 
 When in doubt, start with a skill. Promote to a subagent only when separate reasoning state is worth the cost.
+
+## How skills are loaded
+
+Codebolt discovers skills automatically from the filesystem at multiple locations, checked in priority order (highest priority wins when names collide):
+
+| Priority | Location | Scope |
+|---|---|---|
+| 1 (highest) | `<project>/.codebolt/capabilities/skill/` | Project |
+| 2 | `~/.codebolt/capabilities/skill/` | Global (all projects) |
+| 3 (lowest) | `{appRoot}/.codebolt/capabilities/skill/` | Built-in |
+
+Additionally, skills are discovered from these special directories (added if no name conflict exists):
+
+- `<project>/.claude/skills/` — uses `SKILL.md` format
+- `<project>/.agents/skills/` — uses `SKILL.md` format
+- `~/.gemini/antigravity/skills/` — uses `SKILL.md` format
+
+### Resolution rules
+
+- Skills are keyed by `type:name`. A project-level skill with the same name replaces a global one.
+- The capability registry is lazy-initialized on first API call, then can be refreshed on demand via `POST /capability/refresh`.
+- Invalid skills (missing directory, unparseable config) are logged as warnings and excluded.
+
+### Configuration formats
+
+Skills support two configuration formats depending on where they live:
+
+- **`capability.yaml`** — full config with inputs, outputs, author, tags. Used in `.codebolt/capabilities/` paths.
+- **`SKILL.md`** — YAML frontmatter with optional markdown body. Used in `.claude/skills/` and `.agents/skills/` paths.
+
+See [Creating a skill](./02_creating-a-skill.md) for details on both formats.
 
 ## See also
 

@@ -37,7 +37,9 @@
       "Bash(done)",
       "Bash(grep -E \"\\\\.\\(ts|tsx|js|yaml|yml|json\\)$\")",
       "Bash(xargs grep *)",
-      "WebFetch(domain:docusaurus.io)"
+      "WebFetch(domain:docusaurus.io)",
+      "Bash(grep -r \"capabilityForm\\\\|CapabilityForm\\\\|capability form\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts --include=*.tsx --include=*.js)",
+      "Bash(grep -r \"input.*form\\\\|output.*form\\\\|form.*validation\\\\|capability.*field\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts -l)"
     ]
   },
   "enabledPlugins": {

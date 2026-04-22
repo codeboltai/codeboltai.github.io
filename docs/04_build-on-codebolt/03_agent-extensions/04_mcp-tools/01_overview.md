@@ -13,6 +13,7 @@ How to add MCP tools to a Codebolt app and how to build new MCP servers for agen
 
 - [Quickstart: local MCP server](./02_quickstart-local-mcp.md)
 - [Tool schema](./03_tool-schema.md)
+- [Custom tools](./04_custom-tools.md)
 - [Error handling](./06_error-handling.md)
 - [Packaging and publishing](./07_packaging.md)
 
@@ -45,7 +46,7 @@ Configure external MCP servers in `~/.codebolt/mcp_servers.json`:
   "servers": {
     "postgres": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "args": ["-y", "my-postgres-mcp-server"],
       "env": {
         "DATABASE_URL": "postgresql://..."
       }
@@ -75,14 +76,14 @@ An MCP tool is three things:
 3. **An implementation** — what actually runs when the tool is called.
 
 ```ts
-// minimal example using @modelcontextprotocol/sdk
-server.setRequestHandler(CallToolRequestSchema, async (req) => {
-  if (req.params.name === "latest") {
-    const symbol = req.params.arguments?.symbol;
-    const price = await fetch(`https://api.example.com/price/${symbol}`).then(r => r.json());
-    return { content: [{ type: "text", text: `${symbol}: $${price.value}` }] };
-  }
-  throw new Error(`Unknown tool: ${req.params.name}`);
+// minimal example using @codebolt/codeboltjs
+import { startCodeboltMcpServer } from '@codebolt/codeboltjs/mcp-server';
+
+const handle = await startCodeboltMcpServer({
+  transport: 'stdio',
+  serverName: 'stock-price',
+  toolFilter: ['latest'],   // expose only the 'latest' tool
+  toolPrefix: 'stocks',     // tools namespaced as stocks_latest
 });
 ```
 
@@ -164,5 +165,6 @@ See [Quickstart](./02_quickstart-local-mcp.md) for details on both local tool cr
 ## See also
 
 - [Tool schema](./03_tool-schema.md) — designing good tool schemas
+- [Custom tools](./04_custom-tools.md) — building custom tools with CodeboltJS
 - [Error handling](./06_error-handling.md) — making tools recoverable
 - [Packaging](./07_packaging.md) — distributing MCP servers

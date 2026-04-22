@@ -215,7 +215,7 @@ Two failure modes to test for:
 
 2. **The LLM reaches for the tool at appropriate times.** Send prompts that should trigger the tool and verify it does. Send prompts that shouldn't and verify it doesn't.
 
-For automated testing, record traces where the tool is used correctly and replay them. See [Testing and debugging](../../02_creating-agents/09_testing-and-debugging.md).
+For automated testing, record traces where the tool is used correctly and replay them.
 
 ## Evolving a schema
 

@@ -80,11 +80,63 @@ Installation can be triggered via:
 
 ### Via CLI
 
+The `codebolt action capability` command group provides the primary way to create, publish, and list capabilities.
+
+#### Create a capability
+
 ```bash
-codebolt action capability create --name frontend-refactor --path ./.codebolt/extensions
-codebolt action capability publish --path ./.codebolt/extensions/frontend-refactor
+codebolt action capability create [options]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--name <name>` | Name for the new capability |
+| `--path <path>` | Target directory (where the capability will be created) |
+| `--project <path>` | Project directory for server context |
+| `--template <name>` | Template to use for scaffolding |
+| `--id <id>` | Unique identifier for the capability |
+| `--description <text>` | Description of the capability |
+| `--skip-install` | Skip `npm install` after creation |
+
+**Examples:**
+
+```bash
+# Create a capability with a name and description
+codebolt action capability create --name frontend-refactor --description "Refactor React components"
+
+# Create in a specific directory
+codebolt action capability create --name my-skill --path ./my-extensions
+
+# Create from a template, skip npm install
+codebolt action capability create --name api-gen --template api-generator --skip-install
+```
+
+This scaffolds a capability directory with `capability.yaml`, `package.json`, entry point, and all required files.
+
+#### Publish a capability
+
+```bash
+codebolt action capability publish [options]
+```
+
+| Option | Description |
+|--------|-------------|
+| `--path <path>` | Path to the capability directory to publish |
+| `--project <path>` | Project directory for server context |
+
+```bash
+codebolt action capability publish --path ./my-extensions/frontend-refactor
+```
+
+#### List published capabilities
+
+```bash
 codebolt action capability list
 ```
+
+Lists all capabilities published to the Codebolt registry.
+
+> **Full CLI reference:** [Capability CLI](/docs/reference/codebolt-cli/actions/capability)
 
 ### Via REST API
 
@@ -125,6 +177,20 @@ curl -X POST http://localhost:PORT/api/capability/executors/create \
 This creates:
 - `<project>/.codebolt/capabilities/executors/<name>/executor.yaml`
 - `<project>/.codebolt/capabilities/executors/<name>/dist/index.js` (placeholder)
+
+### Manually
+
+You can also create capabilities by hand — just create the directory structure and files:
+
+```bash
+mkdir -p .codebolt/capabilities/skill/my-skill
+```
+
+Then create `capability.yaml` and your implementation files. Refresh the registry afterwards:
+
+```bash
+curl -X POST http://localhost:PORT/api/capability/refresh
+```
 
 ---
 
