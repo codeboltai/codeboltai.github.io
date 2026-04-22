@@ -20,35 +20,39 @@ How to add MCP tools to a Codebolt app and how to build new MCP servers for agen
 
 Tools exposed over the Model Context Protocol are the primary way to add new capabilities to any agent without touching the agent's code. Install an MCP server and every agent in the project can discover and call its tools.
 
-```yaml
-# .codebolt/mcp-servers.yaml
-servers:
-  postgres:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-postgres"]
-    env:
-      DATABASE_URL: ${DATABASE_URL}
-  github:
-    command: npx
-    args: ["-y", "@modelcontextprotocol/server-github"]
-    env:
-      GITHUB_TOKEN: ${GITHUB_TOKEN}
+There are two ways to add MCP tools:
+
+### 1. Local project tools
+
+Place your MCP tool in the `.codebolt/tools/` directory with a `codebolttool.yaml` config. Codebolt automatically discovers and registers it:
+
+```
+.codebolt/tools/
+└── my-tool/
+    ├── codebolttool.yaml    # Tool configuration
+    ├── index.js             # MCP server entry point
+    └── package.json
 ```
 
-Every agent in the project now sees `mcp.postgres.*` and `mcp.github.*` in its tool registry.
+See [Quickstart: Local MCP Server](./02_quickstart-local-mcp.md) for the full walkthrough.
 
-### Restricting which tools an agent sees
+### 2. External MCP servers
 
-```yaml
-tools:
-  allow:
-    - codebolt_fs.*
-    - mcp.github.*
-  deny:
-    - mcp.postgres.*
+Configure external MCP servers in `~/.codebolt/mcp_servers.json`:
+
+```json
+{
+  "servers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": {
+        "DATABASE_URL": "postgresql://..."
+      }
+    }
+  }
+}
 ```
-
-Use MCP tools when the thing you are adding is an external API, database, service, or system-specific integration. Use [skills](../03_skills/01_overview.md) when the thing you are adding is a reusable cognitive behavior.
 
 ## The three ways to add a tool
 
@@ -56,22 +60,11 @@ Codebolt agents see a single flat namespace of callable tools. Under the hood, a
 
 | Kind | How you build it | When to use |
 |---|---|---|
-| **Built-in tool** | Fork the server. Add to `toolService`. | Only for contributors to Codebolt itself. Almost never the right choice for a team. |
-| **MCP server** | A standalone process speaking the MCP protocol. | Almost everything. Portable, isolated, community-standard. |
-| **Capability bundle** | A packaged bundle that declares tools + prompts + UI. | When you need more than just a tool — e.g. a "Stripe integration" that also ships prompts and a UI panel. |
+| **Local project tool** | A `.codebolt/tools/{name}/` directory with `codebolttool.yaml` and `index.js` | Project-specific tools, quick iteration |
+| **MCP server** | A standalone process speaking the MCP protocol | Portable, community-standard tools |
+| **Capability bundle** | A packaged bundle that declares tools + prompts + UI | When you need more than just a tool |
 
-**Default choice: MCP server.** It's the well-trodden path, your tool is reusable outside Codebolt (other MCP hosts can use it), and you don't have to learn a Codebolt-specific packaging format.
-
-## Why not just edit the built-in tools
-
-Because:
-
-1. **Upgrades.** Every time you update Codebolt, your local changes to built-ins need to merge.
-2. **Isolation.** Built-ins run in the server process. A bug in your tool takes down the server. An MCP server runs in its own process — a bug there just crashes your tool, and [`PluginProcessManager`](../../09_internals/03_subsystems/02_mcp-and-tools.md) restarts it.
-3. **Permissions.** You can constrain an MCP server's tool allowlist per workspace, per user, per agent. Built-ins are all-or-nothing.
-4. **Portability.** MCP is a standard. Your tool works in any MCP host, not just Codebolt.
-
-The only time you'd add a built-in is if you're modifying something that must be in-process for latency or access reasons, and you'd almost always prefer a capability bundle to a fork.
+**Default choice: local project tool** for project-specific needs, **MCP server** for reusable/portable tools.
 
 ## Anatomy of an MCP tool
 
@@ -82,59 +75,94 @@ An MCP tool is three things:
 3. **An implementation** — what actually runs when the tool is called.
 
 ```ts
-// minimal example (pseudo-code)
-server.addTool({
-  name: "ticker.latest",
-  description: "Get the latest price for a stock ticker. Use this when the user asks about a specific stock.",
-  parameters: {
-    type: "object",
-    properties: {
-      symbol: { type: "string", description: "The ticker symbol, e.g. AAPL" },
-    },
-    required: ["symbol"],
-  },
-  handler: async ({ symbol }) => {
+// minimal example using @modelcontextprotocol/sdk
+server.setRequestHandler(CallToolRequestSchema, async (req) => {
+  if (req.params.name === "latest") {
+    const symbol = req.params.arguments?.symbol;
     const price = await fetch(`https://api.example.com/price/${symbol}`).then(r => r.json());
-    return { ok: true, content: `${symbol}: $${price.value}` };
-  },
+    return { content: [{ type: "text", text: `${symbol}: $${price.value}` }] };
+  }
+  throw new Error(`Unknown tool: ${req.params.name}`);
 });
 ```
 
 The description is critical — the LLM decides whether to call your tool based on this string, not on its name. See [Tool schema](./03_tool-schema.md) for the full shape.
 
-## What you learn by building a tool
+## Codebolt MCP APIs
 
-A good tool is mostly about **description writing** and **error shaping**, not about the implementation:
+The `codebolt.mcp` module provides APIs for managing and executing MCP tools from your agent code:
 
-- **Good description:** "Look up the current price of a stock by ticker symbol. Only works for US-listed equities. Returns price in USD. Use when the user explicitly asks about a specific ticker."
-- **Bad description:** "Returns stock data."
+```ts
+import codebolt from '@codebolt/codeboltjs';
 
-- **Good error:** `{ ok: false, reason: "ticker not found", suggestions: ["APPL", "AAPL"] }` — the agent can recover.
-- **Bad error:** `{ ok: false, reason: "404" }` — the agent has no idea what happened.
+// Execute an MCP tool
+const result = await codebolt.mcp.executeTool('serverName', 'toolName', { param: 'value' });
 
-This section has pages on each of these: [Tool schema](./03_tool-schema.md), [Parameter validation](./03_tool-schema.md), [Error handling](./06_error-handling.md), [Streaming results](./06_error-handling.md).
+// List tools from specific servers
+const tools = await codebolt.mcp.listMcpFromServers(['codebolt']);
 
-## Lifecycle in Codebolt
+// Get tools for mentioned MCPs
+const mcpTools = await codebolt.mcp.getTools(mentionedMCPs);
 
-When you install your MCP server into a workspace:
+// Discover MCP servers
+const enabled = await codebolt.mcp.getEnabledMcpServers();
+const local = await codebolt.mcp.getLocalMcpServers();
+const available = await codebolt.mcp.getAvailableMcpServers();
 
-1. [`PluginProcessManager`](../../09_internals/03_subsystems/02_mcp-and-tools.md) spawns the server process.
-2. [`mcpService`](../../09_internals/03_subsystems/02_mcp-and-tools.md) performs the MCP handshake and lists the tools.
-3. Each tool is registered in the workspace's tool namespace.
-4. [`providerRegistryService`](../../09_internals/03_subsystems/02_mcp-and-tools.md) tracks health.
-5. On crash, the server is restarted with exponential backoff; after repeated failures the circuit breaks and the tools become unavailable until manually re-enabled.
+// Search and configure
+const results = await codebolt.mcp.searchAvailableMcpServers('database');
+await codebolt.mcp.configureMcpServer('serverName', config);
+```
 
-From the agent's point of view, none of this is visible — it just sees tools show up in its namespace.
+## Available MCP tools for LLM agents
 
-## Packaging and publishing
+Agents can manage MCP servers and tools during their reasoning loop:
 
-- **[Packaging](./07_packaging.md)** — how to wrap your MCP server for distribution.
-- **[Publishing](../../02_creating-agents/10_publishing.md)** — pushing to a registry (public or private).
+| Tool | Description |
+|---|---|
+| `McpListServersTool` | List all enabled MCP servers |
+| `McpGetToolsTool` | Get available tools (optionally filtered by server) |
+| `McpExecuteToolTool` | Execute an MCP tool by server name, tool name, and params |
+| `McpConfigureServerTool` | Configure an MCP server |
+
+## Tool execution flow
+
+When an agent calls a tool, here's what happens:
+
+1. **Agent framework** — the response executor parses the LLM's tool call from its response.
+2. **Tool routing** — `codebolt.mcp.executeTool(toolboxName, toolName, params)` sends the request to the server.
+3. **CLI service** — the server-side MCP CLI service routes the call based on tool category (browser, git, terminal, fs, etc.).
+4. **UI confirmation** — for certain tools, a confirmation prompt is shown to the user before execution.
+5. **Execution** — the tool runs and returns the result.
+6. **Result** — the result flows back to the agent's reasoning loop as a tool response message.
+
+## Tool injection into agents
+
+The agent framework's `ToolInjectionModifier` automatically injects available tools into the agent's prompt:
+
+- Fetches tools from the `codebolt` built-in server via `codebolt.mcp.listMcpFromServers(['codebolt'])`
+- Fetches tools from any mentioned MCP servers via `codebolt.mcp.getTools(mentionedMCPs)`
+- Injects tool definitions into the agent's system prompt or as tool objects
+
+## Creating an MCP server with CodeboltJS
+
+You can create MCP servers programmatically using the `startCodeboltMcpServer()` API:
+
+```ts
+import { startCodeboltMcpServer } from '@codebolt/codeboltjs/mcp-server';
+
+const handle = await startCodeboltMcpServer({
+  transport: 'stdio',           // or 'sse'
+  serverName: 'my-server',
+  toolFilter: ['tool1', 'tool2'],  // optional: subset of tools to expose
+  toolPrefix: 'myprefix',         // optional: prefix for tool names
+});
+```
+
+See [Quickstart](./02_quickstart-local-mcp.md) for details on both local tool creation and the server API.
 
 ## See also
 
-- [MCP & Tools internals](../../09_internals/03_subsystems/02_mcp-and-tools.md) — how the three kinds merge into one namespace
-- [Tool call end-to-end](../../09_internals/04_data-flow-walkthroughs/tool-call-end-to-end.md) — the full trace of what happens when an agent calls a tool
-- [Hooks](../../05_plugins/01_overview.md) — an even lighter-weight way to intervene
-- [Guide: build your first MCP server](../../03_guides/04_mcp-and-tools/build-your-first-mcp-server.md)
-- [Reference: built-in tools](../../05_reference/01_overview.md)
+- [Tool schema](./03_tool-schema.md) — designing good tool schemas
+- [Error handling](./06_error-handling.md) — making tools recoverable
+- [Packaging](./07_packaging.md) — distributing MCP servers

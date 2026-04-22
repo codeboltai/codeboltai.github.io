@@ -34,7 +34,8 @@
       "Bash(for dir:*)",
       "Bash(do echo:*)",
       "Read(//Users/ravirawat/Documents/codeboltai/AiEditor/codeboltdocs/**)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(grep -E \"\\\\.\\(ts|tsx|js|yaml|yml|json\\)$\")"
     ]
   },
   "enabledPlugins": {

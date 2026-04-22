@@ -18,6 +18,8 @@ Bad: `doThing`, `tool1`, `helper`
 
 The server prefix prevents name collisions when multiple tools are installed. Within your server, use short, verb-led names: `search`, `fetch`, `analyze`, not `perform_search_operation`.
 
+**Naming convention for local tools:** Local project tools (from `.codebolt/tools/`) use the `uniqueName` from `codebolttool.yaml` as the server prefix. Built-in Codebolt tools are prefixed with `codebolt--` internally.
+
 ### 2. Description
 
 The single most important thing about a tool. The LLM decides whether to call your tool based on this string. Bad descriptions → wrong tool choices → bad agent behaviour.

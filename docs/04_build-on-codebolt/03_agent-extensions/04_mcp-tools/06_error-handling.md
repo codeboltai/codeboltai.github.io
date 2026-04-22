@@ -211,6 +211,21 @@ It's easy to test the happy path and forget the error paths. A few tests to add:
 
 Each test should verify the error shape is structured (not an exception) and that the error code matches the expected category.
 
+## Error types in Codebolt
+
+When building MCP tools with the CodeboltJS tool framework, use `ToolErrorType.MCP_TOOL_ERROR` for MCP-specific errors:
+
+```ts
+import { ToolErrorType } from '@codebolt/codeboltjs';
+
+// In your tool's execute method
+if (!serverName) {
+  return this.createErrorResponse('Server name is required', ToolErrorType.MCP_TOOL_ERROR);
+}
+```
+
+The tool execution flow returns results as `[didUserReject, result]` tuples — if the user rejects a tool confirmation prompt, `didUserReject` is `true` and the agent can handle it gracefully.
+
 ## Anti-patterns to avoid
 
 - **Catching exceptions to return `"ok": false, "error": "unknown"`**. The caller loses all diagnostic information. Either handle the specific case or let the exception propagate.

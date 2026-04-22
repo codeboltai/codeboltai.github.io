@@ -117,12 +117,14 @@ Agents can use these tools to manage side executions during their reasoning loop
 
 For detailed method signatures, parameters, and return types, see the CodeboltJS API reference:
 
-- [Side Execution API overview](/docs/api/apiaccess/sideExecution) — all methods at a glance
-- [`startWithActionBlock`](/docs/api/apiaccess/sideExecution/startWithActionBlock) — run a registered action block
-- [`startWithCode`](/docs/api/apiaccess/sideExecution/startWithCode) — run inline JavaScript
-- [`stop`](/docs/api/apiaccess/sideExecution/stop) — stop a running side execution
-- [`getStatus`](/docs/api/apiaccess/sideExecution/getStatus) — check execution status
-- [`listActionBlocks`](/docs/api/apiaccess/sideExecution/listActionBlocks) — list available action blocks
+- [Side Execution API overview](/docs/reference/codeboltjs/api-access/sideExecution/index) — all methods at a glance
+- [`startWithActionBlock`](/docs/reference/codeboltjs/api-access/sideExecution/startWithActionBlock) — run a registered action block
+- [`startWithCode`](/docs/reference/codeboltjs/api-access/sideExecution/startWithCode) — run inline JavaScript
+- [`stop`](/docs/reference/codeboltjs/api-access/sideExecution/stop) — stop a running side execution
+- [`getStatus`](/docs/reference/codeboltjs/api-access/sideExecution/getStatus) — check execution status
+- [`listActionBlocks`](/docs/reference/codeboltjs/api-access/sideExecution/listActionBlocks) — list available action blocks
+
+For MCP-based access, see [Side Execution MCP tools](/docs/reference/codeboltjs/mcp-access/sideExecution).
 
 ## See also
 

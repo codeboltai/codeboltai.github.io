@@ -3,17 +3,20 @@ sidebar_position: 2
 title: Quickstart — Local MCP Server
 ---
 
-# Quickstart: Build a Local MCP Server
+# Quickstart: Build a Local MCP Tool
 
-Write a working MCP server in ~15 minutes, install it into your Codebolt workspace, and have an agent call its tools. This covers the minimum path; the detail pages cover each step in depth.
+Create a local MCP tool, register it with Codebolt, and have an agent call it. This covers two approaches:
+
+1. **Local project tool** — place in `.codebolt/tools/` with a YAML config
+2. **MCP server via CodeboltJS** — use `startCodeboltMcpServer()` API
 
 **You'll need:** Codebolt installed and running, Node.js 18+ (or Python 3.10+), a project open.
 
-## What we're building
+---
 
-A minimal server with one tool: `greet.hello(name)` — returns a greeting. Trivial, but end-to-end: schema, implementation, registration, agent invocation.
+## Approach 1: Local Project Tool
 
-## Step 1 — scaffold
+### Step 1 — Create the tool directory
 
 ```bash
 cd /path/to/your/project
@@ -23,11 +26,32 @@ npm init -y
 npm install @modelcontextprotocol/sdk
 ```
 
-This gives you a Node package with the MCP SDK installed. The SDK handles the protocol wire format so you only write the tool logic.
+### Step 2 — Create `codebolttool.yaml`
 
-## Step 2 — write the server
+This is the configuration file that Codebolt uses to discover and register your tool:
 
-Create `server.js`:
+```yaml
+# .codebolt/tools/greet/codebolttool.yaml
+name: Greeting Tool
+uniqueName: greet
+version: 1.0.0
+description: A simple greeting tool that returns friendly messages
+# env_required:
+#   - env_name: API_KEY
+#     env_description: API key for the greeting service
+```
+
+| Field | Required | Description |
+|---|---|---|
+| `name` | Yes | Display name of the tool |
+| `uniqueName` | Yes | Unique identifier — used as the MCP server name |
+| `version` | Yes | Semver version string |
+| `description` | Yes | What the tool does |
+| `env_required` | No | Array of required environment variables (`env_name`, `env_description`) |
+
+### Step 3 — Write the MCP server
+
+Create `index.js` — this is the entry point that Codebolt runs as an MCP server via `node index.js`:
 
 ```js
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -38,7 +62,7 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 
 const server = new Server(
-  { name: "greet", version: "0.1.0" },
+  { name: "greet", version: "1.0.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -70,63 +94,123 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-What's here:
-- One tool declared in `ListTools`.
-- The schema is the JSON Schema the LLM will see.
-- The `description` is what the LLM reads to decide when to call the tool. **Make it specific.**
-- The `CallTool` handler runs the tool.
-- `StdioServerTransport` is how local MCP servers communicate with their host.
+### Step 4 — How discovery works
 
-## Step 3 — register with Codebolt
+Codebolt automatically discovers your tool:
 
-Add to `.codebolt/mcp-servers.yaml` in your project root:
+1. **toolService** scans `.codebolt/tools/` for subdirectories containing `codebolttool.yaml`
+2. Parses the YAML and generates an MCP server config:
+   ```json
+   {
+     "greet": {
+       "command": "node",
+       "args": ["/path/to/project/.codebolt/tools/greet/index.js"]
+     }
+   }
+   ```
+3. Registers the server in `mcp_servers.json`
+4. **mcpService** connects via `StdioClientTransport` and lists the tools
+5. Tools appear in the agent's tool namespace
 
-```yaml
-servers:
-  greet:
-    command: node
-    args: [".codebolt/tools/greet/server.js"]
+### Step 5 — Use from an agent
+
+Your agent can now call the tool:
+
+```ts
+import codebolt from '@codebolt/codeboltjs';
+
+// Execute the tool directly
+const result = await codebolt.mcp.executeTool('greet', 'hello', { name: 'Alice' });
+
+// Or list available tools from the server
+const tools = await codebolt.mcp.listMcpFromServers(['greet']);
 ```
 
-Within a few seconds, **Settings → Tools** should show `greet` as `running` with `greet.hello` listed.
+When an LLM agent encounters the tool, it will see it in its tool list and can call it during its reasoning loop.
 
-## Step 4 — let an agent use it
+### Step 6 — Test from chat
 
-By default, agents must explicitly allow a new tool. Edit the agent's manifest:
+Open a chat tab with an agent. Send: `Please greet me. My name is Alice.`
 
-```yaml
-# .codebolt/agents/my-agent/agent.yaml
-tools:
-  allow:
-    - codebolt_fs.*
-    - greet.*
+The agent will discover and call the `greet.hello` tool, returning the greeting.
+
+---
+
+## Approach 2: MCP Server via CodeboltJS API
+
+Use `startCodeboltMcpServer()` to create an MCP server programmatically. This exposes Codebolt's built-in tools (or a filtered subset) as an MCP server.
+
+### Basic example
+
+```ts
+import { startCodeboltMcpServer } from '@codebolt/codeboltjs/mcp-server';
+
+const handle = await startCodeboltMcpServer({
+  transport: 'stdio',       // 'stdio' or 'sse'
+  serverName: 'my-server',
+});
+
+// Server is now running and accepting MCP connections
 ```
 
-Reload the agent (`codebolt agent reload my-agent`) or restart the server.
+### SSE transport (HTTP-based)
 
-## Step 5 — test from chat
+```ts
+const handle = await startCodeboltMcpServer({
+  transport: 'sse',
+  port: 3001,                // default: 0 (random available port)
+  hostname: '127.0.0.1',    // default: '127.0.0.1'
+  serverName: 'my-server',
+});
 
-Open a chat tab with that agent. Send: `Please greet me. My name is Alice.`
-
-In the stream:
-
+console.log(`MCP server running at ${handle.url}`);
+// Endpoints:
+//   GET  /sse       — SSE event stream
+//   POST /messages  — send messages
+//   GET  /health    — health check
 ```
-calling greet.hello({ name: "Alice" })
-tool result: "Hello, Alice!"
+
+### Filtering tools
+
+Expose only specific tools:
+
+```ts
+const handle = await startCodeboltMcpServer({
+  transport: 'sse',
+  toolFilter: ['read_file', 'write_file', 'search'],  // only these tools
+  toolPrefix: 'codebolt',    // prefix tool names (default: 'codebolt')
+});
 ```
 
-That's a custom MCP tool, installed and usable. The rest of this section is about making it production-quality.
+### Options reference
 
-## Making it real
+| Option | Type | Default | Description |
+|---|---|---|---|
+| `transport` | `'sse' \| 'stdio'` | `'sse'` | Communication transport |
+| `port` | `number` | `0` (random) | Port for SSE transport |
+| `hostname` | `string` | `'127.0.0.1'` | Hostname for SSE transport |
+| `serverName` | `string` | `'codebolt'` | Server name in MCP handshake |
+| `toolFilter` | `string[]` | all tools | Subset of tool names to expose |
+| `toolPrefix` | `string` | `'codebolt'` | Prefix for tool names (set `''` for no prefix) |
 
-Before shipping, you'll want to:
+### Return value
 
-1. **[Write a better schema](./03_tool-schema.md).** Required vs optional, constraints, examples.
-2. **[Validate parameters](./03_tool-schema.md).** Structured rejections with helpful error messages.
-3. **[Handle errors well](./06_error-handling.md).** Agents recover from structured errors; they don't recover from exceptions.
-4. **[Stream long results](./06_error-handling.md)** instead of returning everything at once.
-5. **[Package it](./07_packaging.md)** for distribution.
-6. **[Publish it](../../02_creating-agents/10_publishing.md)** to a registry.
+```ts
+{
+  port: number;       // Actual port (useful when port was 0)
+  url: string;        // Full URL (e.g., 'http://127.0.0.1:3001/sse')
+  server: Server;     // Underlying MCP Server instance
+  close(): Promise<void>;  // Graceful shutdown
+}
+```
+
+### Shutdown
+
+```ts
+await handle.close();  // Gracefully stop the server
+```
+
+---
 
 ## Python version
 
@@ -137,7 +221,7 @@ pip install mcp
 ```
 
 ```python
-# server.py
+# .codebolt/tools/greet/server.py
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent
@@ -173,29 +257,21 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-Register:
+Update `codebolttool.yaml` to use Python and point the entry to `server.py`. Codebolt runs the command specified in the generated MCP config.
 
-```yaml
-servers:
-  greet:
-    command: python
-    args: [".codebolt/tools/greet/server.py"]
-```
-
-Same semantics, different language.
+---
 
 ## Common pitfalls
 
-- **Vague tool descriptions.** "Greet someone" is worse than "Return a friendly greeting for the given name. Use when the user asks to be greeted." The LLM picks tools by description; specific wins.
-- **Forgetting the allowlist.** New tools aren't auto-allowed. Add to `tools.allow` explicitly.
-- **Throwing instead of returning errors.** Exceptions become opaque failures. Return structured error objects so the agent can recover.
-- **Writing to stdout during handling.** Stdio transport uses stdout for protocol messages. Your `console.log` will corrupt the stream. Use stderr or a file for logging.
+- **Missing `codebolttool.yaml`** — without this file, Codebolt won't discover your tool.
+- **Wrong entry point** — the tool directory must contain an `index.js` file (the default entry point).
+- **Vague tool descriptions** — "Greet someone" is worse than "Return a friendly greeting for the given name. Use when the user asks to be greeted."
+- **Writing to stdout during handling** — stdio transport uses stdout for protocol messages. Use stderr for logging.
+- **Throwing instead of returning errors** — exceptions become opaque failures. Return structured error objects.
 
 ## See also
 
 - [MCP Tools Overview](./01_overview.md)
 - [Tool schema](./03_tool-schema.md)
-- [Parameter validation](./03_tool-schema.md)
 - [Error handling](./06_error-handling.md)
-- [Publishing](../../02_creating-agents/10_publishing.md)
-- [Tool call end-to-end (internals)](../../09_internals/04_data-flow-walkthroughs/tool-call-end-to-end.md)
+- [Packaging](./07_packaging.md)
