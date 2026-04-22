@@ -127,14 +127,23 @@ Provider docs should answer four practical questions:
 
 Those four answers matter more than provider-specific deployment steps.
 
-## Start here if you are building one
+## Section Structure
 
-1. Read [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md).
-2. Read [Creating a Custom Provider](./05_creating-a-custom-provider.md).
-3. Read [Provider Architecture](./02_provider-architecture.md).
-4. Read [Environment Lifecycle](./03_environment-lifecycle.md).
-5. Read [Communication Flow](./04_communication-flow.md).
-6. Read [Remote Execution](../11_remote-execution.md) for the user-facing model.
+This section now splits into two concerns:
+
+- **Remote Environments**: how environments are created, tracked, started, reconnected, and used
+- **Creating a Custom Provider**: how to build a provider against the shared base abstractions
+
+## Start Here If You Are Building One
+
+1. Read [Remote Environments](./02_remote-environments/01_overview.md).
+2. Read [Provider Architecture](./02_remote-environments/02_provider-architecture.md).
+3. Read [Execution Chaining](./02_remote-environments/03_execution-chaining.md).
+4. Read [Environment Creation And Management](./02_remote-environments/05_environment-creation-and-management.md).
+5. Read [Communication Flow](./02_remote-environments/06_communication-flow.md).
+6. Read [Creating a Custom Provider](./03_creating-a-custom-provider.md).
+7. Read [Proxy Execution Gateway](../05_plugins/08_proxy-execution-gateway/01_overview.md) if your provider also needs selective capability proxying.
+8. Read [Remote Execution](../11_agent-infrastructure/09_remote-execution.md) for the user-facing model.
 
 ## Suggested documentation scope for this track
 
@@ -149,17 +158,17 @@ This section should cover:
 
 That keeps it clearly separate from multi-agent orchestration management.
 
-## In this section
+## In This Section
 
-- [Provider Architecture](./02_provider-architecture.md)
-- [Environment Lifecycle](./03_environment-lifecycle.md)
-- [Communication Flow](./04_communication-flow.md)
-- [Creating a Custom Provider](./05_creating-a-custom-provider.md)
+- [Remote Environments](./02_remote-environments/01_overview.md)
+- [Creating a Custom Provider](./03_creating-a-custom-provider.md)
 
 ## See also
 
 - [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md) — step-by-step tutorial
 - [Custom Execution Backends](../06_extending-codebolt/06_execution-backends.md) — overview and server API
 - [Multi-Agent Orchestration Management](../08_multi-agent-orchestration/02_multi-agent-orchestration-management.md)
-- [Provider Architecture](./02_provider-architecture.md)
-- [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md)
+- [Remote Environments](./02_remote-environments/01_overview.md)
+- [Provider Architecture](./02_remote-environments/02_provider-architecture.md)
+- [Execution Chaining](./02_remote-environments/03_execution-chaining.md)
+- [Proxy Execution Gateway](../05_plugins/08_proxy-execution-gateway/01_overview.md)

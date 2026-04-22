@@ -288,4 +288,4 @@ The REST API provides auth endpoints for the UI:
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
 - [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
 - [Custom Embedding Provider](./07_embedding-provider.md)
-- [Custom Remote Execution Provider](./08_remote-execution-provider.md)
+- [Proxy Execution Gateway](./08_proxy-execution-gateway/01_overview.md)

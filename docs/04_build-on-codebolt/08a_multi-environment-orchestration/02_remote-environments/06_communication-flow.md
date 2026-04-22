@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 title: Communication Flow
 ---
 
@@ -9,7 +9,7 @@ The most important part of multi-environment orchestration is the communication 
 
 If that boundary is unclear, everything else is confusing.
 
-## The core path
+## The Core Path
 
 At a high level:
 
@@ -29,7 +29,7 @@ Codebolt server
           └── file / diff / provider messages
 ```
 
-## What the runtime exposes today
+## What The Runtime Exposes Today
 
 In the current `codeboltjs` runtime, provider-oriented handlers include:
 
@@ -43,11 +43,11 @@ In the current `codeboltjs` runtime, provider-oriented handlers include:
 
 These are exposed through `Codebolt.ts` so provider processes can register handlers without building a custom protocol stack.
 
-## Message categories
+## Message Categories
 
 The communication boundary usually carries three kinds of messages:
 
-### 1. Lifecycle messages
+### 1. Lifecycle Messages
 
 These start, stop, or recover the environment:
 
@@ -57,13 +57,13 @@ These start, stop, or recover the environment:
 - registration / reconnect
 - heartbeat
 
-### 2. Agent execution messages
+### 2. Agent Execution Messages
 
 These tell the remote runtime to start or continue agent work.
 
 The key one is `providerAgentStart`, which begins agent execution inside the environment.
 
-### 3. Environment operation messages
+### 3. Environment Operation Messages
 
 These represent environment-specific operations such as:
 
@@ -74,7 +74,7 @@ These represent environment-specific operations such as:
 
 These are needed when some environment operations must be resolved by the provider rather than by the main server directly.
 
-## Why WebSocket is central here
+## Why WebSocket Is Central Here
 
 The provider and remote runtime are long-lived participants.
 
@@ -87,9 +87,9 @@ That makes WebSocket the natural transport because it supports:
 
 This is much closer to a control channel than to a one-shot HTTP API.
 
-## Message payloads
+## Message Payloads
 
-### providerStart (Server to Provider)
+### providerStart (Server To Provider)
 
 Sent when the server starts a provider process. The provider uses this to set up the environment.
 
@@ -101,30 +101,31 @@ Sent when the server starts a provider process. The provider uses this to set up
 | `environmentId` | Environment identifier |
 | `archivePath` | Path to project snapshot archive |
 | `snapshotId` | Snapshot identifier |
-| `narrativeBundlePath` | Path to narrative bundle (git + SQLite state) |
-| `config` | Merged provider configuration (YAML defaults + installed config + environment config) |
-| `resourceId` | Previously persisted resource ID (for recovery) |
+| `narrativeBundlePath` | Path to narrative bundle |
+| `resourceId` | Previously persisted resource ID for recovery |
 
-### providerStartResponse (Provider to Server)
+Provider config is also merged into this message from YAML defaults and installed/environment config.
 
-Sent when the provider is ready. Resolves the server's startup promise.
+### providerStartResponse (Provider To Server)
+
+Sent when the provider is ready. Resolves the server startup promise.
 
 | Field | Description |
 |---|---|
 | `type` | `"providerStartResponse"` |
 | `environmentId` | Environment identifier |
 | `success` | Whether startup succeeded |
-| `agentServerUrl` | WebSocket URL to the agent server in the remote environment |
+| `agentServerUrl` | WebSocket URL to the remote runtime |
 | `workspacePath` | Workspace directory path in the remote environment |
 
-### providerAgentStart (Server to Provider)
+### providerAgentStart (Server To Provider)
 
 Sent when a user starts an agent thread in a remote environment.
 
 | Field | Description |
 |---|---|
 | `type` | `"providerAgentStart"` |
-| `userMessage` | The user's prompt text |
+| `userMessage` | The user's prompt envelope |
 | `agentId` | Which agent to run |
 | `projectPath` | Local project path |
 | `threadId` | Thread identifier |
@@ -133,22 +134,15 @@ Sent when a user starts an agent thread in a remote environment.
 | `narrativeBundlePath` | Narrative bundle path |
 | `narrativeContext` | Objective, agent run, and snapshot IDs |
 
-### providerStop (Server to Provider)
+### providerStop (Server To Provider)
 
 Sent when the server stops the environment. The provider should tear down and exit.
 
-### Heartbeat messages
+### Heartbeat Messages
 
-Providers send heartbeats to confirm they're alive:
+Providers send heartbeats to confirm they are alive and the environment remains healthy.
 
-| Field | Description |
-|---|---|
-| `type` | `"sendProviderHeartbeat"` or `"sendEnvironmentHeartbeat"` |
-| `status` | `"healthy"` / `"warning"` / `"error"` |
-| `connectedEnvironments` | List of environment IDs this provider serves |
-| `uptime` | Seconds since provider started |
-
-### File operation messages
+### File Operation Messages
 
 | Message | Direction | Purpose |
 |---|---|---|
@@ -157,30 +151,21 @@ Providers send heartbeats to confirm they're alive:
 | `providerDeleteFile` | Server to Provider | Delete a file |
 | `providerGetDiffFiles` | Server to Provider | Get file changes for diff/merge |
 
-## How a remote agent thread starts
+## How A Remote Agent Thread Starts
 
-The complete flow when a user sends a message with `remoteEnv: true`:
+The complete flow when the server starts a remote run is:
 
-```
-1. User sends message in chat (with Remote checkbox enabled)
-2. Server creates a thread
-3. Server resolves the provider (from available local/installed providers)
-4. Server creates an environment (persisted to .codebolt/environments.json)
-5. Server spawns the provider as a child process with env vars
-6. Provider connects back via WebSocket with providerId + environmentId
-7. Server sends providerStart message (with snapshot + config)
-8. Provider calls setupEnvironment() → creates sandbox/container
-9. Provider calls ensureAgentServer() → starts CodeBolt remotely
-10. Provider connects WebSocket transport to remote agent server
-11. Provider sends providerStartResponse back to server
-12. Server sends providerAgentStart message (with user prompt + agent ID)
-13. Agent runs in the remote environment
-14. Provider bridges messages bidirectionally
-15. On completion, providerAgentStartResponse sent back
-16. Server records narrative events and updates thread
-```
+1. the server resolves the environment
+2. the server resolves and starts the provider process
+3. the provider connects back over WebSocket
+4. the server sends `providerStart`
+5. the provider creates or reconnects the remote resource
+6. the provider starts Codebolt or the remote runtime there
+7. the provider returns `providerStartResponse`
+8. the server sends `providerAgentStart`
+9. the remote agent loop begins
 
-## Ownership across the boundary
+## Ownership Across The Boundary
 
 Even when execution is remote, ownership stays split:
 
@@ -190,8 +175,9 @@ Even when execution is remote, ownership stays split:
 
 That ownership model is what prevents multi-environment Codebolt from turning into multiple disconnected systems.
 
-## See also
+## See Also
 
-- [Environment Lifecycle](./03_environment-lifecycle.md)
-- [Creating a Custom Provider](./05_creating-a-custom-provider.md)
-- [Remote Execution](../11_remote-execution.md)
+- [Remote Environments](./01_overview.md)
+- [Environment Lifecycle](./04_environment-lifecycle.md)
+- [Environment Creation And Management](./05_environment-creation-and-management.md)
+- [Creating a Custom Provider](../03_creating-a-custom-provider.md)

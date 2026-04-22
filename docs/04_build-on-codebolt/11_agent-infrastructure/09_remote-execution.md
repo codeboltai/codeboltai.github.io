@@ -5,7 +5,7 @@ title: Remote Execution
 
 # Remote Execution
 
-Running agents somewhere other than the local machine. Covers the user-facing side — when to enable it, how to configure, how to monitor. For building a custom remote execution backend, see [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md).
+Running agents somewhere other than the local machine. Covers the user-facing side — when to enable it, how to configure, how to monitor. For building a custom remote execution backend, see [Remote Environments](../08a_multi-environment-orchestration/02_remote-environments/01_overview.md) and [Creating a Custom Provider](../08a_multi-environment-orchestration/03_creating-a-custom-provider.md).
 
 ## When remote execution helps
 
@@ -29,7 +29,7 @@ Codebolt supports several remote execution backends:
 - **Kubernetes** — production scale. Pods per run, scheduler handles distribution.
 - **SSH** — spawn on a remote Linux host via SSH. Simple, works anywhere.
 - **Cloud VMs** — on-demand VM provisioning (AWS, GCP, Azure).
-- **Custom** — write your own via [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md).
+- **Custom** — write your own via [Creating a Custom Provider](../08a_multi-environment-orchestration/03_creating-a-custom-provider.md).
 
 Each is a provider plugin. Install one, configure it, and use it.
 
@@ -181,6 +181,8 @@ Each provider has its own debug view: `codebolt agent logs <run_id> --source pro
 
 ## See also
 
-- [Custom Remote Execution Provider](../05_plugins/08_remote-execution-provider.md) — building one
+- [Remote Environments](../08a_multi-environment-orchestration/02_remote-environments/01_overview.md) — remote runtime model
+- [Creating a Custom Provider](../08a_multi-environment-orchestration/03_creating-a-custom-provider.md) — building one
+- [Proxy Execution Gateway](../05_plugins/08_proxy-execution-gateway/01_overview.md) — selective capability proxying
 - [Process Model (internals)](../09_internals/02_process-model.md)
 - [Self-hosting](./01_overview.md) — often combined with remote execution
