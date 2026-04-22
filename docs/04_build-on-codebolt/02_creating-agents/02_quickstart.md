@@ -179,6 +179,7 @@ That is why the same remote agent can appear in the normal agent picker even tho
 ## Where to go next
 
 - **Understand the creation levels fully** → [Creation levels](./03_creation-levels/level-0-remix.md)
+- **Build without code using drag-and-drop** → [Flow — Visual Builder](./03_creation-levels/level-flow-visual.md)
 - **Pick a pattern for non-trivial agents** → [Patterns overview](./06_patterns/overview.md)
 - **Add custom behaviour via processors** → [Processors](./07_processors/01_what-are-processors.md)
 - **Test your agent rigorously** → [Testing and debugging](./09_testing-and-debugging.md)

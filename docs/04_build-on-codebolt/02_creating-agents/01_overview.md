@@ -35,9 +35,9 @@ import AgentSequence from '@site/src/components/diagrams/AgentSequence';
 
 The **Server** is the execution hub. When the agent process connects, the server auto-pushes the user message immediately — the agent never polls for it. Every LLM call is proxied through `llmService` to the **LLM Provider**; every tool call runs on the server via `executeToolService`. After each operation, `sendResponseAndNotify` fires both at once: the result goes to the **Agent** over WebSocket, and a broadcast goes to the **Client** UI — so tool activity and streaming output appear in the chat panel in real time.
 
-## Five creation paths
+## Six creation paths
 
-There are five ways to bring an agent into Codebolt, from lowest to highest authorship cost:
+There are six ways to bring an agent into Codebolt, from lowest to highest authorship cost:
 
 | Path | What you write | Good for |
 |---|---|---|
@@ -45,9 +45,10 @@ There are five ways to bring an agent into Codebolt, from lowest to highest auth
 | **[Level 1 — Framework](./03_creation-levels/level-1-framework.md)** | A small TypeScript file using the Codebolt agent framework | Custom behaviour with batteries included |
 | **[Level 2 — codeboltjs](./03_creation-levels/level-2-codeboltjs.md)** | Code directly against the `codeboltjs` SDK | Non-standard loop shape |
 | **[Level 3 — Raw WebSocket](./03_creation-levels/level-3-raw-websocket.md)** | The wire protocol directly | Languages the SDK doesn't cover |
+| **[Flow — Visual Builder](./03_creation-levels/level-flow-visual.md)** | A drag-and-drop node graph in the Agent Flow editor | Prototyping, pipeline agents, non-engineer authoring |
 | **[Third-Party Wrapping](./04_third-party-agents.md)** | An adapter around an existing external agent | Running Claude Code / Codex / Cursor etc. as a Codebolt agent |
 
-**The most important thing to know:** level 0 and level 1 cover the vast majority of real use cases. Level 2 is for people building infrastructure on top of Codebolt. Level 3 is for people writing Codebolt agents in Go, Rust, or Python. Don't start higher than you need.
+**The most important thing to know:** level 0 and level 1 cover the vast majority of real use cases. Level 2 is for people building infrastructure on top of Codebolt. Level 3 is for people writing Codebolt agents in Go, Rust, or Python. The visual flow builder is best for pipeline-style agents or rapid prototyping. Don't start higher than you need.
 
 ## Hello World agent
 
