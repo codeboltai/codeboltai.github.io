@@ -61,5 +61,5 @@ The Narrative Graph is the most direct way to identify where an agent's reasonin
 
 ## See also
 
-- [Debugging an Agent](./07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
 - [Thread Panel](./08_thread-panel.md)

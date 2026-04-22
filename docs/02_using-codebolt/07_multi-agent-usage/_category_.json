@@ -1,0 +1,9 @@
+{
+  "label": "Multi-Agent Usage",
+  "position": 7.5,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Orchestration"
+  }
+}

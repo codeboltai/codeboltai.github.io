@@ -213,6 +213,6 @@ POST /agent-debug/rebuild-index
 
 ## See also
 
-- [Debugging an Agent (user guide)](../../02_using-codebolt/04_agents/07_debugging-an-agent.md)
+- [Agent Debug (user guide)](../../02_using-codebolt/05c_agent-observability/02_agent-debug.md)
 - [Level 1 — Framework](./03_creation-levels/level-1-framework.md)
 - [Writing a Custom Processor](./07_processors/04_writing-a-custom-processor.md)

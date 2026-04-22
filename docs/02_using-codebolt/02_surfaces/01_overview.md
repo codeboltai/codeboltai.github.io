@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
-title: Surfaces Overview
+title: Interfaces Overview
 ---
 
-# Surfaces
+# Interfaces
 
-Codebolt is the same agent runtime no matter how you talk to it. The **surface** is the part you actually see and touch — and you have four to pick from depending on what you're doing.
+Codebolt is the same agent runtime no matter how you talk to it. The **interface** is the part you actually see and touch — and you have four to pick from depending on what you're doing.
 
 ## Pick your surface
 

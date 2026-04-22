@@ -84,6 +84,6 @@ Run these prompts after any agent change to verify nothing broke.
 
 ## See also
 
-- [Debugging an agent](../../02_using-codebolt/04_agents/07_debugging-an-agent.md)
+- [Agent Debug](../../02_using-codebolt/05c_agent-observability/02_agent-debug.md)
 - [Running agents](../../02_using-codebolt/04_agents/03_running-agents.md)
 - [Query the event log](./query-the-event-log.md)

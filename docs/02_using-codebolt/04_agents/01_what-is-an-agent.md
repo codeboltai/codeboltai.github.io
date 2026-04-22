@@ -118,13 +118,13 @@ Agents fail in a few different ways:
 - **Provider error.** Rate limit, bad credential, network. Check Settings → Providers → Test.
 - **Abnormal exit.** Crashed. Rare; file a bug via [Reporting bugs](../10_troubleshooting/03_reporting-bugs.md).
 
-See [Debugging an agent](./07_debugging-an-agent.md).
+See [Agent Debug](../05c_agent-observability/02_agent-debug.md).
 
 ## See also
 
 - [Running agents](./03_running-agents.md)
 - [Built-in agents](./02_built-in-agents.md)
 - [The marketplace](./04_the-marketplace.md)
-- [Debugging an agent](./07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
 - [Custom Agents (for builders)](../../04_build-on-codebolt/02_creating-agents/01_overview.md)
 - [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)

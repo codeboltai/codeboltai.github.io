@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 title: Chat Canvas
 ---
 
@@ -7,7 +7,7 @@ title: Chat Canvas
 
 The Chat Canvas is a freeform visual workspace for coordinating multi-agent work. Where the standard Chat panel is linear (message → reply → message), the Canvas lets you arrange agent conversations as nodes on a 2D surface, draw connections between them, and see the full picture of a complex agent workflow at a glance.
 
-Open via: **Execution dropdown → Chat Canvas**
+Open via: **Agents dropdown → Chat Canvas**
 
 ## When to use the Canvas
 

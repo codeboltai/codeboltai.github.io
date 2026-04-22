@@ -220,5 +220,5 @@ See [Self-hosting → Scaling](../../04_build-on-codebolt/10_self-hosting/05_sca
 
 - [Common Issues](./01_common-issues.md)
 - [Reporting Bugs](./03_reporting-bugs.md)
-- [Debugging an agent](../04_agents/07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
 - [Query the event log](../../03_guides/07_advanced/query-the-event-log.md)

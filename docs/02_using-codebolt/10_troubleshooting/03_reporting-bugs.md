@@ -170,4 +170,4 @@ See the contributing guide on the Codebolt repo.
 
 - [Common Issues](./01_common-issues.md)
 - [Logs and Diagnostics](./02_logs-and-diagnostics.md)
-- [Debugging an agent](../04_agents/07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)

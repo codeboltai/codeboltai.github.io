@@ -296,7 +296,7 @@ The **bell icon** (top-right of the bottom bar) shows a progress bar entry for e
 ## See also
 
 - [What is an agent](./01_what-is-an-agent.md)
-- [Debugging an agent](./07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
 - [Thread Panel](./08_thread-panel.md)
 - [CLI → Agent commands](../02_surfaces/03_cli/02_agent-commands.md)
 - [Agent Subsystem (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/01_agent-subsystem.md)

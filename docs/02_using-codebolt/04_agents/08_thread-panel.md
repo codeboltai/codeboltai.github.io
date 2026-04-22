@@ -68,4 +68,4 @@ Right-click a completed thread → **Archive** to remove it from the active list
 ## See also
 
 - [Running Agents](./03_running-agents.md)
-- [Debugging an Agent](./07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
