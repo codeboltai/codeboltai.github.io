@@ -103,7 +103,7 @@ plugin.onStart(async (ctx) => {
 
 Dynamic panels work especially well for:
 
-- channel-plugin configuration
+- chat gateway plugin configuration
 - OAuth/account connection state
 - provider setup
 - plugin dashboards and job status
@@ -118,7 +118,7 @@ For the broader application-side concept, see [Dynamic Panels](../04_custom-uis/
 ## See Also
 
 - [Plugins Overview](./01_overview.md)
-- [Channel Plugins](./04_channel-plugins.md)
+- [Chat Gateway](./04_chat-gateway/01_overview.md)
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
 - [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)
 - [Packaging and Publishing](./99_packaging-and-publishing.md)

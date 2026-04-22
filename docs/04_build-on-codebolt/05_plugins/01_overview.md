@@ -27,7 +27,7 @@ Plugins are different from agent extensions:
 | Type | `package.json` type field | Purpose | Key SDK Module |
 |---|---|---|---|
 | **LLM Provider** | `"llmProvider"` | Add a custom AI model provider | `plugin.llmProvider` |
-| **Channel** | `"channel"` | Connect external messaging platforms | `plugin.gateway` |
+| **Chat Gateway** | `"channel"` | Connect external messaging platforms and persistent message surfaces | `plugin.gateway` |
 | **Execution** | `"execution"` | Proxy code execution to remote environments | `plugin.executionGateway` |
 | **Generic** | (none) | Any custom extension | Any modules |
 
@@ -279,9 +279,9 @@ req.options.providerConfig = {
 
 ---
 
-## Creating a Channel Plugin
+## Creating a Chat Gateway Plugin
 
-Connects an external messaging platform (Telegram, Slack, Discord, etc.) to CodeBolt agents.
+Connects an external messaging platform or persistent message surface to CodeBolt agents. The manifest type is still `"channel"`, but the routing model is documented as the Chat Gateway.
 
 ### package.json
 
@@ -631,7 +631,7 @@ Every plugin (regardless of type) has access to these modules:
 
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
 - [Major Functionalities](./03_functionalities.md)
-- [Channel Plugins](./04_channel-plugins.md)
+- [Chat Gateway](./04_chat-gateway/01_overview.md)
 - [Dynamic Panel Plugins](./05_dynamic-panel-plugins.md)
 - [Custom AI Providers](./06_custom-ai-providers/01_overview.md)
 - [Proxy Execution Gateway](./08_proxy-execution-gateway/01_overview.md)

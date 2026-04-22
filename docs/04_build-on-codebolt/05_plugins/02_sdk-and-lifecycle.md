@@ -190,7 +190,7 @@ plugin.notify.warn('Rate limit approaching');
 
 These modules are unique to plugins (not available to agents):
 
-### Gateway (Channel Plugins)
+### Gateway (Chat Gateway Plugins)
 ```ts
 plugin.gateway.registerChannel(request)
 plugin.gateway.routeMessage(message)

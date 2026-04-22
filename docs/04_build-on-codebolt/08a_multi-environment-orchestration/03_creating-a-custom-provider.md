@@ -86,6 +86,28 @@ Recommended responsibility split:
 - `src/services/MyProviderService.ts`: extend `BaseProvider` and implement lifecycle/resource logic
 - `src/utils/*`: provider-specific helpers such as logging, remote API wrappers, or transport utilities
 
+## Minimal Manifest Shape
+
+`codeboltprovider.yaml` should describe the provider as an installable/runtime unit:
+
+```yaml
+name: my-remote-provider
+unique_id: my-remote-provider
+runtime: node
+entrypoint: dist/index.js
+```
+
+`providers.yaml` should carry runtime defaults and configurable fields:
+
+```yaml
+name: My Remote Provider
+unique_id: my-remote-provider
+config:
+  pluginPort: 3100
+  region: us
+  workspaceRoot: /workspace
+```
+
 ## Minimal Skeleton
 
 ```ts
@@ -139,6 +161,17 @@ When authoring a provider, design it in this order:
 3. define how the remote runtime will accept agent-start and raw messages
 4. define which filesystem or diff operations the provider must implement directly
 5. decide whether the remote setup also needs Proxy Execution Gateway support
+
+## If Your Provider Also Uses Proxy Execution Gateway
+
+Some providers only host the remote runtime boundary.
+
+Others also want selected capabilities to proxy through the gateway. In that case the usual split is:
+
+- the provider owns environment creation, reconnect, and remote runtime startup
+- the gateway owns selective routing for capabilities such as `Inference`, filesystem calls, or tool access
+
+That is the model documented in [Execution Chaining](./02_remote-environments/03_execution-chaining.md).
 
 ## What BaseProvider Gives You
 

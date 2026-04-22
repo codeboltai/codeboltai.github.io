@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Level 0 — Remix
+title: Level 3 — Remix Agents
 ---
 
 # Level 0 — Remix

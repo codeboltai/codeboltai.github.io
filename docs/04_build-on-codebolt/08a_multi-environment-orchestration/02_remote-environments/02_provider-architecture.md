@@ -3,9 +3,13 @@ sidebar_position: 2
 title: Provider Architecture
 ---
 
+import RemoteExecutionProviderConcept from '@site/src/components/diagrams/RemoteExecutionProviderConcept';
+
 # Provider Architecture
 
 Multi-environment orchestration in Codebolt is built around **providers**.
+
+<RemoteExecutionProviderConcept />
 
 A provider is the boundary object between:
 
@@ -120,6 +124,18 @@ The `e2b` provider is a useful example because it shows the full architecture:
 - heartbeat and reconnect are handled through the shared base
 
 It is a good reference when you want to understand what "provider architecture" means in a real implementation.
+
+## A Provider Is An Adapter, Not A Product Name
+
+The important architectural point is that a provider is an adapter around the required lifecycle and transport interfaces.
+
+That means the remote side does not have to be "another Codebolt app" as a conceptual requirement.
+
+It can be:
+
+- a Codebolt-based remote runtime
+- a custom runtime that satisfies the expected lifecycle and transport contract
+- a platform-specific adapter that knows how to host the loop and respond to provider messages
 
 ## See Also
 

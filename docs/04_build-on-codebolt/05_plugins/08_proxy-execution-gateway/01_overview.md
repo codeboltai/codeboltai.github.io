@@ -176,7 +176,7 @@ read the multi-environment docs instead:
 ## See Also
 
 - [Direct Plugin Socket Interface](./plugins-socket-interface.md)
-- [Channel Plugins](../04_channel-plugins.md)
+- [Chat Gateway](../04_chat-gateway/01_overview.md)
 - [Custom AI Providers](../06_custom-ai-providers/01_overview.md)
 - [Remote Environments](../../08a_multi-environment-orchestration/02_remote-environments/01_overview.md)
 - [Execution Chaining](../../08a_multi-environment-orchestration/02_remote-environments/03_execution-chaining.md)
