@@ -1844,3 +1844,16 @@ html:has(.navbar-sidebar--show) .navbar [class*="searchBar"] {
     height: 100dvh !important;
   }
 }
+
+/* ═══════════════════════════════════════════
+   SIDEBAR SECTION LABELS
+   ═══════════════════════════════════════════ */
+
+.sidebar-section-rule {
+  margin: 1rem 0.75rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .sidebar-section-rule {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,9 @@
+{
+  "label": "Agents",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Agents & Tools"
+  }
+}

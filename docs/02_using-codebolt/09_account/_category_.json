@@ -1,0 +1,9 @@
+{
+  "label": "Account",
+  "position": 9,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Settings"
+  }
+}
