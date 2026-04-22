@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Level 2 — codeboltjs
+title: Level 1 — Using Codeboltjs
 ---
 
 # Level 2 — codeboltjs

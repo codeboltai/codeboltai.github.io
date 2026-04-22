@@ -3,11 +3,15 @@ sidebar_position: 5
 title: Environment Creation And Management
 ---
 
+import EnvironmentManagementFlow from '@site/src/components/diagrams/EnvironmentManagementFlow';
+
 # Environment Creation And Management
 
 This page is about how the **server** manages remote environments as real system objects.
 
 It is based on the current logic in `packages/server/src/services/environmentsServices.ts` and `packages/server/src/controllers/environmentControllers.ts`.
+
+<EnvironmentManagementFlow />
 
 ## Environments Are Persisted Objects
 

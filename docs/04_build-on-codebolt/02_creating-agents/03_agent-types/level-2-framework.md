@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Level 1 — Framework
+title: Level 2 — Using Agent Framework
 ---
 
 # Level 1 — Framework

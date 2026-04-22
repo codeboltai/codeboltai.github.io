@@ -3,9 +3,13 @@ sidebar_position: 1
 title: Remote Environments
 ---
 
+import RemoteEnvironmentsOverview from '@site/src/components/diagrams/RemoteEnvironmentsOverview';
+
 # Remote Environments
 
 In Codebolt, a **remote environment** is a server-managed execution target.
+
+<RemoteEnvironmentsOverview />
 
 It is not just "some sandbox" or "some container". It is a persisted environment record that the server can:
 
@@ -18,6 +22,20 @@ It is not just "some sandbox" or "some container". It is a persisted environment
 - delete
 
 This is the core object that makes multi-environment orchestration possible.
+
+## Important Clarification
+
+A remote environment does **not** have to be another full Codebolt instance.
+
+In practice, current providers often do start Codebolt or a Codebolt-compatible runtime remotely because it is a convenient way to satisfy the lifecycle and transport contract.
+
+But conceptually the remote side can be:
+
+- a Codebolt runtime
+- a custom runtime that implements the expected provider-facing interfaces
+- a platform-specific adapter that can host the agent loop and respond to the required provider messages
+
+So the important boundary is the **provider/runtime interface**, not the brand name of the remote process.
 
 ## What An Environment Represents
 

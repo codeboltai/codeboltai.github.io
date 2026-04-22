@@ -24,7 +24,7 @@ When your plugin is ready to share, follow this checklist and publish it to the 
 - Document config fields users need to fill in (API key, base URL, etc.)
 - Handle both `onCompletionRequest` and `onStreamRequest`
 
-**Channel plugins:**
+**Chat gateway plugins (`"type": "channel"`):**
 - Document the external platform setup (bot tokens, webhook URLs)
 - Use `kvStore` for configuration persistence (not filesystem)
 - Provide a UI panel for connection configuration
@@ -69,11 +69,13 @@ codebolt plugin list
 | Forgetting to build `dist/index.js` | Always `npm run build` before loading |
 | Storing config in filesystem | Use `plugin.kvStore` for persistence |
 | Not handling `onStop()` cleanup | Leads to dangling connections, leaked subscriptions |
-| Using `startup` trigger for channel plugins that need config | Use `manual` — auto-load saved config in `onStart` |
+| Using `startup` trigger for chat gateway plugins that need config | Use `manual` — auto-load saved config in `onStart` |
 | Using `@codebolt/client-sdk` instead of `@codebolt/plugin-sdk` | Client SDK is for standalone UIs, plugin SDK is for server extensions |
 
 ## See Also
 
 - [Plugins Overview](./01_overview.md)
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
-- [Gateway, Execution, and LLM Providers](./04_major-patterns.md)
+- [Chat Gateway](./04_chat-gateway/01_overview.md)
+- [Dynamic Panel Plugins](./05_dynamic-panel-plugins.md)
+- [Custom AI Providers](./06_custom-ai-providers/01_overview.md)

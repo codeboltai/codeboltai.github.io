@@ -3,6 +3,8 @@ sidebar_position: 3
 title: Execution Chaining
 ---
 
+import ExecutionChainingDiagram from '@site/src/components/diagrams/ExecutionChainingDiagram';
+
 # Execution Chaining
 
 Execution chaining is the model where Codebolt combines:
@@ -12,6 +14,8 @@ Execution chaining is the model where Codebolt combines:
 - optional **capability proxying** through the Proxy Execution Gateway
 
 This is where multi-platform execution starts to become more than "run the agent somewhere else".
+
+<ExecutionChainingDiagram />
 
 ## The Core Idea
 
@@ -24,6 +28,14 @@ The Proxy Execution Gateway answers:
 > Which capability calls should stay local, and which should be deferred somewhere else?
 
 When you combine those two, you get chaining.
+
+## Not Necessarily Another Codebolt Instance
+
+Remote execution does not have to mean “spin up another full Codebolt app somewhere else”.
+
+The remote side only needs to satisfy the interfaces required by the provider/runtime boundary for that setup.
+
+In practice, many current providers do run Codebolt remotely because it already speaks the right lifecycle and transport model. But that is an implementation choice, not the only valid shape.
 
 ## The Chaining Model
 
@@ -89,6 +101,22 @@ So in that pattern:
 - the sandbox hosts the agent loop
 - the server stays central
 - the gateway decides which capability calls should be routed elsewhere
+
+## Connection To Proxy Execution Gateway
+
+Execution chaining is where the gateway fits naturally into remote environments.
+
+The split is:
+
+- the **provider** gives the server a place to run the agent loop remotely
+- the **gateway** gives the server a way to defer selected capabilities somewhere else
+
+That means a remote environment can:
+
+- run the loop remotely
+- still proxy `Inference`
+- still proxy selected filesystem or browser capabilities
+- mirror or audit locally handled work through notifications
 
 ## Chaining Across Multiple Platforms
 

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Level 3 — Raw WebSocket
+title: Level 0 — Raw WebSocket
 ---
 
 # Level 3 — Raw WebSocket

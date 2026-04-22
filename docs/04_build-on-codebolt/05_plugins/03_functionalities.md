@@ -221,4 +221,6 @@ Use socket subscriptions when your plugin needs to stay attached to a live strea
 ## See Also
 
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
-- [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
+- [Chat Gateway](./04_chat-gateway/01_overview.md)
+- [Custom AI Providers](./06_custom-ai-providers/01_overview.md)
+- [Proxy Execution Gateway](./08_proxy-execution-gateway/01_overview.md)
