@@ -5,94 +5,129 @@ title: Side Execution
 
 # Side Execution
 
-**Side execution** is fire-and-forget or background work spawned *alongside* a main agent run — not blocking the main loop, not owning the chat conversation, but still traceable and observable.
+**Side execution** runs background work alongside a main agent — spawning a separate process that communicates via WebSocket, without blocking the agent's main loop.
 
-Backed by the server's [`SideExecutionManager`](../09_internals/03_subsystems/01_agent-subsystem.md) and the `sideExecution.cli` surface.
+Side executions are managed by the server's `SideExecutionManager` and exposed through the `codebolt.sideExecution` SDK module.
 
 ## When side execution fits
 
-- **Parallel scouts.** The main agent asks three side tasks to search the codebase, read dependencies, and check recent commits — then uses whichever finish first.
-- **Async enrichment.** Kick off a code-map rebuild or a long eval while the main agent continues.
-- **Background analyses.** Security scan, license audit, performance regression check — interesting but not blocking.
-- **Pre-warming.** Preload memory or retrieval results before the agent needs them.
+- **Running action blocks** — invoke a registered action block as a background operation.
+- **Inline code execution** — run a snippet of JavaScript in an isolated process.
+- **Parallel work** — kick off multiple operations that don't need to block the main agent.
+- **Background processing** — long-running tasks like code analysis, plan generation, or task breakdown.
 
-Don't use side execution for work the main agent **needs a result from before proceeding** — that's a [subagent](./08_subagents.md), which is synchronous and typed.
+If the agent **needs the result before proceeding**, it can `await` the side execution's completion (the manager provides a `waitForCompletion` mechanism).
 
-## The three flavours
+## Two execution modes
 
-| Flavour | Semantics | When |
-|---|---|---|
-| **Fire-and-forget** | Spawn, don't wait, don't read results | Logging, analytics, pre-warming |
-| **Joinable** | Spawn, continue, later `await` the result if still needed | Scouts, speculative work |
-| **Streaming** | Spawn, receive partial results as events while the main loop continues | Live indexing, long-running retrieval |
+### 1. Action block execution
 
-## Spawning
+Run a registered action block by path:
 
 ```ts
-// fire-and-forget
-await ctx.side.spawn({
-  task: "reindex-codemap",
-  inputs: { root: "./src" },
-});
+import codebolt from '@codebolt/codeboltjs';
 
-// joinable — grab a handle, await later
-const handle = ctx.side.spawn({
-  task: "security-scan",
-  inputs: { paths: ["./src", "./package.json"] },
-  joinable: true,
-});
-
-// ... later, when we need the result
-const report = await handle.join({ timeout_ms: 30_000 });
-
-// streaming
-const stream = ctx.side.spawn({
-  task: "deep-code-search",
-  inputs: { query: "..." },
-  streaming: true,
-});
-for await (const hit of stream) {
-  // process as they arrive
-}
+const result = await codebolt.sideExecution.startWithActionBlock(
+  './action-blocks/break-task-into-jobs',  // path to action block
+  { plan, task, existingJobs },             // parameters
+  60000                                      // timeout in ms (optional)
+);
 ```
 
-## Lifecycle and cancellation
+### 2. Inline code execution
 
-- Side executions inherit the parent run's **trace** — the event log nests their events under the parent's.
-- They're **cancelled** automatically when the parent run ends (unless explicitly promoted to persistent — rare).
-- They have **independent budgets** — a side task can't consume the parent's token / time budget.
-- A side task may spawn its own tools and LLM calls, but **may not spawn subagents** by default (keep-it-simple rule; relaxed per-project if needed).
+Run arbitrary JavaScript code in an isolated process:
 
-## Observability
+```ts
+const result = await codebolt.sideExecution.startWithCode(
+  `
+  const data = await fetch('https://api.example.com/data');
+  return await data.json();
+  `,
+  { apiKey: 'xxx' },  // parameters available in execution context
+  30000                // timeout in ms (optional)
+);
+```
 
-Every side execution shows up in:
+## Management APIs
 
-- The **flow view** as a branch off the parent run.
-- The **event log** with its own run ID.
-- The **trace** UI nested under the spawning phase.
+```ts
+// List available action blocks
+const blocks = await codebolt.sideExecution.listActionBlocks(projectPath);
 
-You can re-run a side task in isolation via replay the same way you would a subagent.
+// Get status of a running side execution
+const status = await codebolt.sideExecution.getStatus(sideExecutionId);
+
+// Stop a running side execution
+await codebolt.sideExecution.stop(sideExecutionId);
+```
+
+## Lifecycle states
+
+Side executions move through these states:
+
+```
+STARTING → RUNNING → COMPLETED
+                   → FAILED
+                   → TIMEOUT
+         → STOPPING (when stop is requested)
+```
+
+| State | Description |
+|---|---|
+| `STARTING` | Process spawned, waiting for WebSocket connection (30s timeout) |
+| `RUNNING` | WebSocket connected, execution in progress |
+| `STOPPING` | Stop requested, waiting for graceful shutdown (5s before force kill) |
+| `COMPLETED` | Execution finished successfully with a result |
+| `FAILED` | Execution encountered an error |
+| `TIMEOUT` | Execution exceeded the configured timeout |
+
+## How it works internally
+
+1. **Spawn** — the manager spawns a child process with environment variables (`SIDE_EXECUTION_ID`, `THREAD_ID`, `PARENT_AGENT_ID`, etc.)
+2. **Connect** — the child process establishes a WebSocket connection back to the server (30s timeout)
+3. **Context** — the server sends the thread context (messages, project path, agent metadata) over WebSocket
+4. **Execute** — the side execution runs its logic (action block handler or inline code)
+5. **Complete** — the execution sends an `actionBlockComplete` message with the result
+6. **Cleanup** — temp files are removed and resources are released
+
+## Available tools for LLM agents
+
+Agents can use these tools to manage side executions during their reasoning loop:
+
+| Tool | Description |
+|---|---|
+| `SideExecutionStartActionBlockTool` | Start a side execution with an action block path |
+| `SideExecutionStartCodeTool` | Start a side execution with inline JavaScript |
+| `SideExecutionStopTool` | Stop a running side execution by ID |
+| `SideExecutionListActionBlocksTool` | List available action blocks |
+| `SideExecutionGetStatusTool` | Get status of a side execution by ID |
 
 ## Side execution vs. subagent
 
-| Axis | Side execution | Subagent |
+| Axis | Side Execution | Subagent |
 |---|---|---|
-| **Blocking?** | No (unless you `join`) | Yes |
-| **Has its own reasoning loop?** | Yes, but lightweight | Yes, full |
-| **Memory access** | Read-only to parent's memory | Can write to parent's memory (scoped) |
-| **Cost** | Low-moderate | Moderate-high |
-| **Good for** | Speculative / parallel work | Decomposition of a required task |
+| **Process** | Separate child process | Full agent instance |
+| **Communication** | WebSocket | Agent protocol |
+| **Scope** | Single operation (action block or code) | Open-ended task with full reasoning loop |
+| **Result** | Structured return value | Conversation output |
+| **Good for** | Background operations, action blocks, parallel tasks | Decomposition of work requiring reasoning |
 
-## Authoring a side-execution task type
+## API reference
 
-Most of the time you use built-in task types. If you need a custom one:
+For detailed method signatures, parameters, and return types, see the CodeboltJS API reference:
 
-1. Define the task in `.codebolt/side-tasks/<name>/task.yaml`.
-2. Implement the handler (same shape as a lightweight skill).
-3. Register; the server picks it up on reload.
+- [Side Execution API overview](/docs/reference/codeboltjs/api-access/sideExecution/index) — all methods at a glance
+- [`startWithActionBlock`](/docs/reference/codeboltjs/api-access/sideExecution/startWithActionBlock) — run a registered action block
+- [`startWithCode`](/docs/reference/codeboltjs/api-access/sideExecution/startWithCode) — run inline JavaScript
+- [`stop`](/docs/reference/codeboltjs/api-access/sideExecution/stop) — stop a running side execution
+- [`getStatus`](/docs/reference/codeboltjs/api-access/sideExecution/getStatus) — check execution status
+- [`listActionBlocks`](/docs/reference/codeboltjs/api-access/sideExecution/listActionBlocks) — list available action blocks
+
+For MCP-based access, see [Side Execution MCP tools](/docs/reference/codeboltjs/mcp-access/sideExecution).
 
 ## See also
 
-- [Subagents](./08_subagents.md) — when you need the result synchronously
-- [Multi-Agent Orchestration](../08_multi-agent-orchestration/01_overview.md) — flows that spawn many side tasks
-- [Event Log](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — where side-task events live
+- [Action Blocks](./05_action-blocks/01_overview.md) — the primary payload for side executions
+- [Subagents](./08_subagents.md) — when you need a full agent loop
+- [Multi-Agent Orchestration](../08_multi-agent-orchestration/01_overview.md) — coordinating multiple agents and side executions

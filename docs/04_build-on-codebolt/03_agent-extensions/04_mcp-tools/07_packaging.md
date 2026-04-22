@@ -7,7 +7,13 @@ title: Packaging
 
 How to wrap your MCP server for distribution. Packaging is about making it easy for someone else to install your server without fighting their environment.
 
-## Three distribution shapes
+## Local project distribution
+
+For project-specific tools, place them directly in `.codebolt/tools/{toolName}/` with a `codebolttool.yaml` config. Codebolt discovers and registers them automatically — no packaging needed. See [Quickstart](./02_quickstart-local-mcp.md) for the full setup.
+
+This is the simplest path when the tool is specific to your project or team.
+
+## External distribution shapes
 
 | Shape | How users install | Good for |
 |---|---|---|

@@ -5,43 +5,69 @@ title: Action Blocks
 
 # Action Blocks
 
-An **action block** is a reusable, parameterized sequence of steps an agent can invoke by name.
+An **action block** is a reusable, self-contained TypeScript module that an agent can invoke by name. Each action block receives a thread context with parameters, executes its logic, and returns a structured result.
 
-Use action blocks for deterministic procedures. If the sequence needs open-ended reasoning, use a skill or subagent instead.
+Action blocks run as isolated side-executions managed by the Codebolt runtime. They can use LLM inference, Codebolt APIs, or any Node.js logic internally.
 
 ## In This Section
 
-- [Block schema](./02_block-schema.md)
-- [Authoring locally](./03_authoring.md)
-- [Publishing](./04_publishing.md)
+- [Block Schema](./02_block-schema.md) — the `actionblock.yml` configuration file
+- [Authoring](./03_authoring.md) — creating and building an action block
+- [Publishing](./04_publishing.md) — distributing action blocks
 
-## When action blocks are the right shape
+## When to use action blocks
 
-- Procedural work with a fixed shape and varying parameters.
-- Team-standardized operations that should execute identically.
-- Compliance-bearing sequences where the order matters.
-- Common operational routines currently living in shell scripts or CI jobs.
+- Encapsulating a reusable procedure that multiple agents need (e.g. "break a task into jobs", "create a plan from requirements").
+- Operations that combine LLM reasoning with structured output parsing.
+- Team-standardized operations that should execute identically across agents.
+- Replacing inline logic with a named, versioned, independently deployable unit.
 
-## Consuming from an agent
+## Invoking from an agent
+
+Use `codebolt.actionBlock.start()` to invoke a registered action block by name:
 
 ```ts
-async run(ctx, input) {
-  return ctx.blocks.run("deploy-to-staging", { branch: input.branch });
-}
+import codebolt from '@codebolt/codeboltjs';
+
+codebolt.onMessage(async (message) => {
+  const result = await codebolt.actionBlock.start('break-task-into-jobs', {
+    plan: { planId: 'plan-1', name: 'My Plan', description: '...', tasks: [] },
+    task: { taskId: 'task-1', name: 'Build API', description: '...' },
+  });
+
+  if (result.success) {
+    console.log('Sub-jobs:', result.result.subJobs);
+  }
+});
 ```
 
-## Action block vs. skill vs. flow
+**Real-world example** — the orchestrator agent uses action blocks for planning and task breakdown:
 
-| Concern | Action Block | Skill | Flow |
+```ts
+// Phase 1: Create a plan using an action block
+const planResult = await codebolt.actionBlock.start('create-plan-for-given-task', {
+  userMessage: reqMessage,
+});
+
+// Phase 2: Break each task into jobs using another action block
+const jobsResult = await codebolt.actionBlock.start('break-task-into-jobs', {
+  plan, task, existingJobs,
+});
+```
+
+## Action block vs. skill vs. subagent
+
+| Concern | Action Block | Skill | Subagent |
 |---|---|---|---|
-| **Branching** | Static conditions | Arbitrary logic | Arbitrary |
-| **LLM involvement** | None by default | Maybe | Often |
-| **Scope** | Inside one agent run | Inside one agent run | Top-level orchestration |
+| **Execution** | Side-execution, isolated process | Delegated within server | Full agent instance |
+| **LLM involvement** | Optional (block decides) | Usually yes | Yes |
+| **Returns** | Structured result object | Varies | Conversation output |
+| **Scope** | Single focused operation | Single focused operation | Open-ended task |
 
-If the sequence is deterministic, use an action block. If it needs reasoning, use a skill. If it is orchestration across multiple agents or nodes, use a flow.
+Use an action block when you need a named, reusable operation with structured inputs and outputs. Use a skill for delegation within the agent server. Use a subagent for open-ended work that needs a full agent loop.
 
 ## See also
 
-- [Skills](../03_skills/01_overview.md)
-- [Subagents](../08_subagents.md)
+- [Skills](../03_skills/01_overview.md) — delegation rather than side-execution
+- [Subagents](../08_subagents.md) — full agent instances for open-ended tasks
 - [Multi-Agent Orchestration](../../08_multi-agent-orchestration/01_overview.md)
