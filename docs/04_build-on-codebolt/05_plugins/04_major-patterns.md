@@ -469,7 +469,7 @@ plugin.onStart(async (ctx) => {
 ## See Also
 
 - [Detailed LLM Provider Guide](./06_llm-provider.md)
-- [Detailed Remote Execution Provider Guide](./08_remote-execution-provider.md)
+- [Detailed Proxy Execution Gateway Guide](./08_proxy-execution-gateway/01_overview.md)
 - [Major Plugin Functionalities](./03_functionalities.md)
 - [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)
 - [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)

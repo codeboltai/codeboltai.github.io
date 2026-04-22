@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 title: Environment Lifecycle
 ---
 
@@ -9,7 +9,7 @@ Every remote or alternate environment in Codebolt follows a lifecycle.
 
 This lifecycle is what lets the server treat different providers consistently.
 
-## The lifecycle phases
+## The Lifecycle Phases
 
 At a high level:
 
@@ -22,7 +22,7 @@ At a high level:
 7. **Heartbeat and recover**
 8. **Stop and teardown**
 
-## What this looks like in the provider base
+## What This Looks Like In The Provider Base
 
 In `BaseProvider`, the lifecycle is organized around methods like:
 
@@ -45,7 +45,7 @@ This is where it records:
 - workspace path
 - provider config
 
-## Phase 2: Resolve project and workspace context
+## Phase 2: Resolve Project And Workspace Context
 
 Before the environment can run, the provider has to know:
 
@@ -55,7 +55,7 @@ Before the environment can run, the provider has to know:
 
 This is especially important for worktree and snapshot-based providers.
 
-## Phase 3: Setup environment
+## Phase 3: Setup Environment
 
 This is the environment-specific step.
 
@@ -69,13 +69,13 @@ Examples:
 
 This is the point where provider implementations differ most.
 
-## Phase 4: Start the remote runtime
+## Phase 4: Start The Remote Runtime
 
 After the environment exists, the provider starts the remote runtime or agent server inside it.
 
 That runtime is what will eventually connect back to Codebolt and receive agent-start messages.
 
-## Phase 5: Connect transport
+## Phase 5: Connect Transport
 
 The remote side then establishes transport back to Codebolt, typically via WebSocket.
 
@@ -85,13 +85,13 @@ At that point:
 - the environment becomes addressable
 - the server can begin forwarding work
 
-## Phase 6: Run agents
+## Phase 6: Run Agents
 
 Once connected, agent-start and raw provider messages can flow through the transport.
 
 This is the steady-state execution phase.
 
-## Phase 7: Heartbeat and recovery
+## Phase 7: Heartbeat And Recovery
 
 Long-lived environments need health checks.
 
@@ -103,7 +103,7 @@ The provider base already models:
 
 This matters because remote environments are failure-prone compared with local runs.
 
-## Phase 8: Stop and teardown
+## Phase 8: Stop And Teardown
 
 When a run or environment ends, the provider should:
 
@@ -114,17 +114,7 @@ When a run or environment ends, the provider should:
 
 For some providers this means deleting a sandbox or container. For others it means preserving state for later merge or reuse.
 
-## Why lifecycle docs matter
-
-Without a clear lifecycle model, provider docs collapse into deployment instructions.
-
-That is not enough. Provider authors need to know:
-
-- which phase they are implementing
-- what must happen before the next phase
-- what the server expects at each boundary
-
-## Environment states
+## Environment States
 
 The server tracks each environment through these states:
 
@@ -142,24 +132,35 @@ The server tracks each environment through these states:
 | `not_available` | Resource unavailable |
 | `archived` | Removed from active use |
 
-The UI displays these states with color-coded indicators and appropriate action buttons (Start, Stop, Restart, Reconnect) based on the current state.
+## Health Monitoring
 
-## Health monitoring
+The server runs lifecycle health checks on a fixed interval.
 
-The server runs health checks every 30 seconds:
+At a minimum, that monitoring verifies:
 
-1. Verify the provider process is alive (via `kill(pid, 0)`).
-2. Verify the WebSocket connection is open (`readyState === OPEN`).
-3. Track missed heartbeats — after 3 missed, trigger restart.
-4. Respect `maxRestarts` and `maxErrors` limits before giving up.
+1. whether the provider process is alive
+2. whether the WebSocket connection is still open
+3. whether error and restart thresholds have been exceeded
 
-Providers send two types of heartbeats:
-- **Provider heartbeat** — every 10 seconds, confirms the provider process is alive.
-- **Environment heartbeat** — every 15 seconds, confirms the specific environment is healthy.
+The provider side also sends heartbeats:
 
-## See also
+- **Provider heartbeat** — confirms the provider process is alive
+- **Environment heartbeat** — confirms the specific environment is healthy
 
+## Why Lifecycle Docs Matter
+
+Without a clear lifecycle model, provider docs collapse into deployment instructions.
+
+That is not enough. Provider authors need to know:
+
+- which phase they are implementing
+- what must happen before the next phase
+- what the server expects at each boundary
+
+## See Also
+
+- [Remote Environments](./01_overview.md)
 - [Provider Architecture](./02_provider-architecture.md)
-- [Communication Flow](./04_communication-flow.md)
-- [Creating a Custom Provider](./05_creating-a-custom-provider.md)
-- [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md)
+- [Environment Creation And Management](./05_environment-creation-and-management.md)
+- [Communication Flow](./06_communication-flow.md)
+- [Creating a Custom Provider](../03_creating-a-custom-provider.md)

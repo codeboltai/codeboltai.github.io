@@ -15,8 +15,8 @@ const ACTIVE_SET = new Set([2, 3, 4]);
 type ActorStyle = 'ext' | 'server' | 'focal' | 'normal';
 const ACTORS: { badge: string; name: string; sub: string; style: ActorStyle }[] = [
   { badge: 'APP', name: 'Codebolt Surface', sub: 'desktop / web / cli', style: 'ext' },
-  { badge: 'EXT', name: 'External System', sub: 'LLM or remote backend', style: 'ext' },
-  { badge: 'GW', name: 'Remote Execution Gateway', sub: 'claiming plugin', style: 'focal' },
+  { badge: 'EXT', name: 'External System', sub: 'provider-backed platform / backend', style: 'ext' },
+  { badge: 'GW', name: 'Remote Execution Gateway', sub: 'proxy execution plugin', style: 'focal' },
   { badge: 'SRV', name: 'Server', sub: 'router + proxy config', style: 'server' },
   { badge: 'AGT', name: 'Agent', sub: 'autospawned by server', style: 'normal' },
 ];
@@ -239,6 +239,9 @@ export default function RemoteExecutionSequence() {
         </text>
         <text x={705} y={866} className="cb-seq-legend-label">
           `executionGateway.request/reply` is the proxy path. `executionGateway.notification` is the local mirror path.
+        </text>
+        <text x={40} y={888} className="cb-seq-legend-label">
+          This gateway path is separate from provider lifecycle and `providerAgentStart`; providers define where the runtime lives.
         </text>
       </svg>
     </div>

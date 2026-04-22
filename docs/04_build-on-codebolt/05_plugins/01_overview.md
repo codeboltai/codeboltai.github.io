@@ -634,5 +634,5 @@ Every plugin (regardless of type) has access to these modules:
 - [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
 - [Custom LLM Provider (detailed)](./06_llm-provider.md)
 - [Custom Embedding Provider](./07_embedding-provider.md)
-- [Custom Remote Execution Provider](./08_remote-execution-provider.md)
+- [Proxy Execution Gateway](./08_proxy-execution-gateway/01_overview.md)
 - [Packaging and Publishing](./99_packaging-and-publishing.md)

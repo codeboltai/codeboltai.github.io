@@ -30,7 +30,8 @@
       "Bash(sort -t: -k3 -n)",
       "Bash(find /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt -type d -name *extension* -o -type d -name *plugin*)",
       "Bash(npm install *)",
-      "Bash(npx wrangler@latest deploy)"
+      "Bash(npx wrangler@latest deploy)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; cat \"{}\"')"
     ]
   },
   "enabledPlugins": {
