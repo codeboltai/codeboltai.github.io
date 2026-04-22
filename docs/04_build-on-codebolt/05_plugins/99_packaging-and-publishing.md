@@ -76,4 +76,6 @@ codebolt plugin list
 
 - [Plugins Overview](./01_overview.md)
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
-- [Gateway, Execution, and LLM Providers](./04_major-patterns.md)
+- [Channel Plugins](./04_channel-plugins.md)
+- [Dynamic Panel Plugins](./05_dynamic-panel-plugins.md)
+- [Custom AI Providers](./06_custom-ai-providers/01_overview.md)

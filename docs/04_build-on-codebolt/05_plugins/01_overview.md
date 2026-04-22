@@ -631,8 +631,8 @@ Every plugin (regardless of type) has access to these modules:
 
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
 - [Major Functionalities](./03_functionalities.md)
-- [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
-- [Custom LLM Provider (detailed)](./06_llm-provider.md)
-- [Custom Embedding Provider](./07_embedding-provider.md)
+- [Channel Plugins](./04_channel-plugins.md)
+- [Dynamic Panel Plugins](./05_dynamic-panel-plugins.md)
+- [Custom AI Providers](./06_custom-ai-providers/01_overview.md)
 - [Proxy Execution Gateway](./08_proxy-execution-gateway/01_overview.md)
 - [Packaging and Publishing](./99_packaging-and-publishing.md)

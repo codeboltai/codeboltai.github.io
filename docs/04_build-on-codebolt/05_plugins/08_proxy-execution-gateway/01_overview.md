@@ -94,6 +94,57 @@ The local-notification flow is:
 3. server sends the result back to the agent
 4. server broadcasts `executionGateway.notification` to subscribers
 
+## Plugin SDK Pattern
+
+From a plugin author's perspective, the gateway pattern usually looks like this:
+
+```ts
+import plugin from '@codebolt/plugin-sdk';
+
+plugin.onStart(async () => {
+  const result = await plugin.executionGateway.claim();
+  if (!result.success) return;
+
+  plugin.executionGateway.onRequest(async (request) => {
+    try {
+      const result = await executeRemotely(request.originalMessage);
+      plugin.executionGateway.sendReply(request.requestId, result, true);
+    } catch (err: any) {
+      plugin.executionGateway.sendReply(request.requestId, { error: err.message }, false);
+    }
+  });
+});
+
+plugin.onStop(async () => {
+  await plugin.executionGateway.relinquish();
+});
+```
+
+You can also use the non-exclusive subscribe path:
+
+```ts
+await plugin.executionGateway.subscribe();
+plugin.executionGateway.onNotification((notification) => {
+  logExecution(notification);
+});
+```
+
+## Manifest Shape
+
+```json
+{
+  "codebolt": {
+    "plugin": {
+      "type": "execution",
+      "gateway": {
+        "claimsExecutionGateway": true
+      },
+      "triggers": [{ "type": "startup" }]
+    }
+  }
+}
+```
+
 ## What It Enables
 
 The gateway is useful for:
@@ -125,7 +176,8 @@ read the multi-environment docs instead:
 ## See Also
 
 - [Direct Plugin Socket Interface](./plugins-socket-interface.md)
-- [Gateway, Execution, and LLM Provider Patterns](../04_major-patterns.md)
+- [Channel Plugins](../04_channel-plugins.md)
+- [Custom AI Providers](../06_custom-ai-providers/01_overview.md)
 - [Remote Environments](../../08a_multi-environment-orchestration/02_remote-environments/01_overview.md)
 - [Execution Chaining](../../08a_multi-environment-orchestration/02_remote-environments/03_execution-chaining.md)
 - [Creating a Custom Provider](../../08a_multi-environment-orchestration/03_creating-a-custom-provider.md)

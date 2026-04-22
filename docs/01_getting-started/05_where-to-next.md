@@ -37,7 +37,7 @@ Go to **[Build on Codebolt](../04_build-on-codebolt/01_overview.md)**. This is t
 |---|---|
 | Build a custom agent for my codebase | [Custom Agents → Overview](../04_build-on-codebolt/02_creating-agents/01_overview.md) → [Quickstart](../04_build-on-codebolt/02_creating-agents/02_quickstart.md) |
 | Give agents access to my internal APIs | [MCP Tools → Overview](../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md) |
-| Connect a new LLM provider | [Remote Environment Providers → LLM Provider](../04_build-on-codebolt/05_plugins/06_llm-provider.md) |
+| Connect a new LLM provider | [Plugin System → Custom AI Providers → Custom LLM Provider](../04_build-on-codebolt/05_plugins/06_custom-ai-providers/02_custom-llm-provider.md) |
 | Extend the application without building a new agent | [Plugins → Overview](../04_build-on-codebolt/05_plugins/01_overview.md) |
 | Design a multi-agent workflow | [Multi-Agent Orchestration → Overview](../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md) |
 | Understand how the server actually works | [Internals → Architecture Overview](../04_build-on-codebolt/09_internals/01_architecture-overview.md) |
