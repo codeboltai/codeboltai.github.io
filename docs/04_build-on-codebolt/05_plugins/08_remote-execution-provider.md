@@ -1,272 +1,264 @@
 ---
 sidebar_position: 8
-title: Custom Remote Execution Provider
+title: Execution Gateway
 ---
+
+import RemoteExecutionProviderConcept from '@site/src/components/diagrams/RemoteExecutionProviderConcept';
+import RemoteExecutionSequence from '@site/src/components/diagrams/RemoteExecutionSequence';
 
 # Custom Remote Execution Provider
 
-A remote execution provider lets agents run their work somewhere other than the local machine — a cloud VM, a container, a sandbox, or a dedicated build server. This is implemented as an **Execution Gateway Plugin**.
+A custom remote execution provider is the component that lets Codebolt run an agent in some other runtime while keeping the local server in control of orchestration. In the current server architecture, this is broader than an execution-gateway plugin.
 
-## How It Fits Into CodeBolt
+The important distinction is:
 
-Normally, CodeBolt executes commands locally. When an execution plugin claims the gateway, ALL execution requests are routed to the plugin instead. The plugin handles them however it wants — forward to a remote server, run in Docker, execute in a sandbox, etc.
+- An **execution gateway plugin** intercepts or observes requests.
+- A **remote execution provider** is a managed environment backend. The server installs or discovers it, creates environment records for it, starts it as a child process, waits for it to register over WebSocket, then uses it for agent startup, file operations, diffs, workspace transfer, and shutdown.
 
-```
-Agent requests execution
-       │
-       ▼
-Server checks: is ExecutionGateway claimed?
-       │
-       ├─ No  → Execute locally (default)
-       │
-       └─ Yes → Forward to claiming plugin
-                       │
-                       ▼
-              Plugin handles request
-              (remote server, container, etc.)
-                       │
-                       ▼
-              Plugin sends reply back
-                       │
-                       ▼
-              Agent receives result
-```
+## Architecture
 
-## Complete Example
+<RemoteExecutionProviderConcept />
+
+## Sequence: Registration, Proxying, and Notifications
+
+<RemoteExecutionSequence />
+
+Read the sequence in four phases:
+
+- The remote execution plugin connects and takes the execution-gateway role by claiming and subscribing.
+- A Codebolt surface sends the prompt, and the server chooses the environment and autospawns the agent.
+- When the agent asks for an LLM call, the server reads proxy execution config, resolves that function as `proxy`, and forwards the request to the remote execution gateway as `executionGateway.request`.
+- When some other action is handled locally by the server, the server reads proxy execution config, resolves that function as `local`, sends the result back to the agent, and emits `executionGateway.notification` to subscribed plugins.
+
+The important details are:
+
+- the **server remains the hub**
+- the **agent is server-spawned**, not plugin-spawned
+- the **server reads proxy execution config** to decide what stays local and what gets proxied
+- **proxy requests and notifications are different message paths**
+
+A claimed LLM request uses `request/reply`. A locally executed operation uses `notification`.
+
+## The Core Concept
+
+Codebolt separates **control** from **runtime**:
+
+- The **server** remains the control plane. It stores environment metadata, decides when to start and stop providers, tracks health, and keeps the authoritative project state.
+- The **provider** is the adapter. It knows how to create or attach to a remote runtime such as a container, VM, sandbox, or external host.
+- The **remote runtime** is where the agent process and workspace actually live.
+
+That means a provider is not just "run this command somewhere else." It is the long-lived bridge between the Codebolt server and a remote execution environment.
+
+## Two Related Mechanisms
+
+There are two surfaces that are easy to confuse.
+
+| Surface | What it does | When to use it |
+|---|---|---|
+| **Execution gateway plugin** | Claims or subscribes to execution requests and notifications | When you want interception, proxying, mirroring, analytics, or a compatibility bridge |
+| **Environment provider** | Manages full remote environments and exposes lifecycle + filesystem/project operations | When you want agents to truly run in another runtime under server supervision |
+
+This page is in the Plugin System section because the gateway layer still matters, and the server also exposes a `/plugins` compatibility socket for provider-style bridges. But the actual remote execution model in the server is environment-based.
+
+## What The Server Actually Manages
+
+In the current server implementation, remote execution revolves around four kinds of state:
+
+| State | Purpose |
+|---|---|
+| Local provider packages | Provider code discovered from project-local or installed provider directories |
+| Installed provider records | Saved provider configuration and default-selection data |
+| Environment records | Named environments that point at a provider plus per-environment config |
+| Provider runtime state | Running process info, connection state, restart counters, logs, and persisted resource metadata |
+
+In practice this means Codebolt keeps:
+
+- provider packages under `.codebolt/providers/...`
+- installed-provider metadata in `.codebolt/installed-providers.json`
+- environment definitions in `.codebolt/environments.json`
+- persisted provider state in `.codebolt/provider-states/...`
+- provider logs in `.codebolt/providerlog.log`
+
+## Provider Lifecycle
+
+### 1. Provider discovery and configuration
+
+The server discovers provider packages from local provider folders and installed provider records. Provider defaults can come from provider metadata, then get overridden by installed-provider config, then overridden again by environment-specific config.
+
+That merge order matters because it gives you:
+
+- provider-level defaults
+- user- or project-level installed config
+- per-environment overrides
+
+### 2. Environment creation
+
+When a user creates an environment, the server stores a new environment record and immediately registers it with the lifecycle manager. Creating the environment is not the same thing as the provider being ready; the server then tries to start the provider automatically.
+
+### 3. Provider process startup
+
+The server starts the provider as a **child process**. It resolves the provider entrypoint from the provider package, prepares merged configuration, and injects environment variables such as:
+
+| Variable | Meaning |
+|---|---|
+| `SOCKET_PORT` | Port the provider should use to connect back to the server |
+| `providerId` | Provider identity |
+| `environmentId` | Environment instance identity |
+| `environmentName` | Human-readable environment name |
+| `IS_PROVIDER` | Marks the process as a provider |
+| `IS_REMOTE_PROVIDER` | Marks it as a remote execution provider |
+| `ENVIRONMENT_CONFIG` | JSON-serialized merged configuration |
+
+At this point the process exists, but the environment is still only **starting**.
+
+### 4. WebSocket registration and readiness handshake
+
+After booting, the provider connects back to the server over the Codebolt WebSocket channel and sends a provider-start response. Only then does the server mark the environment as **running**.
+
+This handshake is the critical boundary:
+
+- spawning the child process means "the provider executable launched"
+- receiving `providerStartResponse` means "the provider is ready to serve remote work"
+
+### 5. Agent startup in the remote environment
+
+When work is routed into that environment, the server sends a provider-agent-start message. Before doing that, it can prepare narrative and workspace artifacts such as snapshot archives and unified bundles so the remote runtime starts with the correct project context.
+
+The provider then does whatever its backend requires:
+
+- create a sandbox
+- start a container
+- attach to a VM
+- copy project state
+- launch the agent server remotely
+
+### 6. Ongoing remote operations
+
+Once connected, the provider becomes the server's adapter for remote environment operations. This is not limited to agent startup.
+
+Typical provider RPC responsibilities include:
+
+- start or stop the remote environment
+- return diff files
+- read and write files
+- return the full project
+- merge patches
+- list tree children
+- create, rename, and delete files or folders
+
+This is why a provider is a backend, not just a proxy.
+
+### 7. Health, heartbeat, and restart
+
+The server monitors environment health and can persist provider state for reconnect or restart logic. If a provider disconnects or a remote resource still exists, the server can attempt recovery and re-registration instead of assuming the environment is gone forever.
+
+### 8. Graceful stop
+
+Stopping an environment is also structured:
+
+1. The server sends a provider stop request.
+2. It waits for the provider's stop response when possible.
+3. If needed, it terminates the child process.
+4. It updates lifecycle state and clears process/connection tracking.
+
+## What The Provider Is Responsible For
+
+A custom provider should own the runtime-specific parts:
+
+- create or attach to the remote environment
+- start the agent server there
+- move project state into that runtime when needed
+- translate file operations into the backend's filesystem or API model
+- report readiness, operation results, and stop acknowledgements
+- handle backend-specific health checks and cleanup
+
+If you are building a provider, think of it as a **backend adapter** for a target execution system, not as a thin message forwarder.
+
+## What The Server Still Owns
+
+Even with remote execution enabled, the server still owns the orchestration side:
+
+- environment creation and identity
+- provider installation and selection
+- process supervision
+- lifecycle state transitions
+- restart policy
+- logging and debug surfaces
+- routing work into the selected environment
+
+This is the design intent: remote execution should move the runtime, not replace the platform's control plane.
+
+## Where Plugins Still Fit
+
+Plugins still matter in three places:
+
+### Execution gateway interception
+
+An execution plugin can claim the gateway and decide whether requests should be proxied elsewhere. That is useful for:
+
+- execution mirroring
+- request interception
+- custom routing policies
+- compatibility with older remote-execution patterns
+
+### Notifications
+
+A subscribed plugin can observe execution without replacing it. That is useful for:
+
+- analytics
+- audit trails
+- cloud visibility
+- synchronization with external systems
+
+### Compatibility bridge for external providers
+
+The server also exposes a plugin-style bridge for external provider processes. This is useful when a provider or remote host wants plugin-compatible request forwarding without running as a normal in-process plugin.
+
+## When To Build Which
+
+| Goal | Build |
+|---|---|
+| Replace or observe some execution requests | Execution gateway plugin |
+| Run full agents in containers, VMs, sandboxes, or remote hosts | Custom environment provider |
+| Need remote file/project operations and environment lifecycle | Custom environment provider |
+| Need logging, mirroring, or policy hooks on top of execution | Plugin, sometimes alongside a provider |
+
+## Minimal Provider Shape
+
+At the SDK level, a provider typically registers lifecycle and file handlers, not just a single `onRequest` proxy callback:
 
 ```ts
-import plugin from '@codebolt/plugin-sdk';
+import codebolt from '@codebolt/codeboltjs';
+import { MyProvider } from './MyProvider';
 
-let remoteConnection: any = null;
+const provider = new MyProvider();
+const handlers = provider.getEventHandlers();
 
-plugin.onStart(async (ctx) => {
-  // Load saved remote server config
-  const configRaw = await plugin.kvStore.get('config', {
-    instanceId: ctx.pluginId,
-    namespace: 'config'
-  });
-  const config = configRaw ? JSON.parse(configRaw) : null;
+codebolt.onProviderStart(handlers.onProviderStart);
+codebolt.onProviderAgentStart(handlers.onProviderAgentStart);
+codebolt.onProviderStop(handlers.onProviderStop);
+codebolt.onGetDiffFiles(handlers.onGetDiffFiles);
 
-  if (config?.remoteHost) {
-    await connectToRemote(config);
-  }
-
-  // UI panel for configuration
-  plugin.dynamicPanel.onMessage('plugin-ui-remote-exec', async (data) => {
-    switch (data.type) {
-      case 'connect':
-        await connectToRemote(data.config);
-        await plugin.kvStore.set('config', JSON.stringify(data.config), {
-          instanceId: ctx.pluginId,
-          namespace: 'config'
-        });
-        break;
-      case 'disconnect':
-        await disconnect();
-        break;
-      case 'getStatus':
-        sendStatus();
-        break;
-    }
-  });
-
-  // Claim the execution gateway
-  await plugin.executionGateway.claim();
-  console.log('Execution gateway claimed — all requests will be proxied');
-
-  // Handle all execution requests
-  plugin.executionGateway.onRequest(async (request) => {
-    try {
-      if (!remoteConnection) {
-        plugin.executionGateway.sendReply(request.requestId, {
-          error: 'Remote server not connected'
-        }, false);
-        return;
-      }
-
-      console.log(`Proxying request: ${request.originalType} (${request.requestId})`);
-
-      // Forward the request to the remote server
-      const result = await remoteConnection.execute({
-        type: request.originalType,
-        action: request.originalAction,
-        payload: request.originalMessage
-      });
-
-      // Send result back
-      plugin.executionGateway.sendReply(request.requestId, result, true);
-    } catch (err: any) {
-      console.error('Remote execution failed:', err.message);
-      plugin.executionGateway.sendReply(request.requestId, {
-        error: err.message
-      }, false);
-    }
-  });
-});
-
-async function connectToRemote(config: any) {
-  // Connect to your remote execution server
-  remoteConnection = await createRemoteConnection(config);
-  console.log(`Connected to remote: ${config.remoteHost}`);
-}
-
-async function disconnect() {
-  if (remoteConnection) {
-    await remoteConnection.close();
-    remoteConnection = null;
-  }
-}
-
-plugin.onStop(async () => {
-  await plugin.executionGateway.relinquish();
-  await disconnect();
-  console.log('Execution gateway released');
-});
+codebolt.onReadFile(provider.onReadFile.bind(provider));
+codebolt.onWriteFile(provider.onWriteFile.bind(provider));
+codebolt.onGetFullProject(provider.onGetFullProject.bind(provider));
+codebolt.onGetTreeChildren(provider.onGetProject.bind(provider));
 ```
 
-## With Workspace Sync (Narrative Module)
+That shape reflects the real concept: a provider handles environment lifecycle plus remote workspace operations.
 
-For remote execution that needs the full workspace context, use the `narrative` module to sync workspace state:
+## Design Guidance
 
-```ts
-import plugin from '@codebolt/plugin-sdk';
-
-plugin.onStart(async (ctx) => {
-  await plugin.executionGateway.claim();
-
-  plugin.executionGateway.onRequest(async (request) => {
-    try {
-      // 1. Export current workspace as a bundle
-      const exportResult = await plugin.narrative.exportUnifiedBundle({
-        outputPath: '/tmp/workspace-bundle.tar.gz',
-        includeGit: true
-      });
-
-      // 2. Upload bundle to remote server
-      await remoteServer.uploadBundle(exportResult.path);
-
-      // 3. Execute the command on remote
-      const result = await remoteServer.execute(request.originalMessage);
-
-      // 4. Download the result bundle (workspace changes)
-      const resultBundle = await remoteServer.downloadBundle();
-
-      // 5. Import changes back into local workspace
-      await plugin.narrative.importUnifiedBundle({
-        bundlePath: resultBundle
-      });
-
-      plugin.executionGateway.sendReply(request.requestId, result, true);
-    } catch (err: any) {
-      plugin.executionGateway.sendError(request.requestId, err.message);
-    }
-  });
-});
-```
-
-## Notification-only Mode (Monitoring)
-
-If you don't want to intercept execution but just observe it (for logging, mirroring, or analytics):
-
-```ts
-import plugin from '@codebolt/plugin-sdk';
-
-plugin.onStart(async (ctx) => {
-  // Subscribe to notifications (non-exclusive, multiple plugins can subscribe)
-  await plugin.executionGateway.subscribe();
-
-  plugin.executionGateway.onNotification((notification) => {
-    console.log(`Execution: ${notification.originalType}`);
-    console.log(`Result:`, notification.result);
-
-    // Mirror to external system
-    externalLogger.log({
-      type: notification.originalType,
-      action: notification.originalAction,
-      result: notification.result,
-      timestamp: notification.timestamp
-    });
-  });
-});
-
-plugin.onStop(async () => {
-  await plugin.executionGateway.unsubscribe();
-});
-```
-
-## Claim vs Subscribe
-
-| Mode | Method | Exclusivity | Receives |
-|------|--------|-------------|----------|
-| **Claim** | `claim()` | Exclusive (only one) | `onRequest` — must reply |
-| **Subscribe** | `subscribe()` | Non-exclusive (many) | `onNotification` — read-only |
-
-A plugin can both claim AND subscribe, but typically you do one or the other:
-- **Claim** when you're replacing where execution happens (remote server, sandbox)
-- **Subscribe** when you're monitoring execution (logging, cloud sync, analytics)
-
-## Request/Reply Format
-
-### Incoming Request
-
-```ts
-interface ExecutionRequest {
-  type: 'executionGateway.request';
-  requestId: string;           // Must use this ID in reply
-  originalMessage: any;        // The full original execution message
-  originalType: string;        // Message type being proxied
-  originalAction?: string;     // Action within the type
-  timestamp: string;
-}
-```
-
-### Reply
-
-```ts
-// Success
-plugin.executionGateway.sendReply(request.requestId, resultData, true);
-
-// Failure
-plugin.executionGateway.sendReply(request.requestId, { error: 'reason' }, false);
-```
-
-## Plugin Manifest
-
-```json
-{
-  "name": "my-remote-execution-plugin",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "codebolt": {
-    "plugin": {
-      "type": "execution",
-      "gateway": {
-        "claimsExecutionGateway": true
-      },
-      "triggers": [{ "type": "startup" }],
-      "ui": {
-        "path": "./ui/default/index.html"
-      }
-    }
-  },
-  "dependencies": {
-    "@codebolt/plugin-sdk": "*"
-  }
-}
-```
-
-## Tips
-
-- Use `startup` trigger for always-on execution proxying
-- Add a UI panel for remote server configuration
-- Store connection config in `kvStore` for auto-reconnect on restart
-- Handle connection failures gracefully — fall back to error replies, not crashes
-- Use the `narrative` module for full workspace sync if the remote needs file context
-- Log execution details for debugging (use `console.log` — captured by debug system)
-- Always call `relinquish()` in `onStop()` to release the gateway
+- Prefer providers when the remote side has its own filesystem, process model, or resource lifecycle.
+- Keep provider startup idempotent. The server may reconnect or restart around persisted remote resources.
+- Treat readiness as a handshake, not just "process started."
+- Make file and project operations explicit; hidden side channels create drift between local control state and remote runtime state.
+- Use execution plugins for interception and observation, not as the only explanation of remote execution.
 
 ## See Also
 
-- [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)
 - [Gateway, Execution, and LLM Provider Patterns](./04_major-patterns.md)
+- [Custom Execution Backends](../06_extending-codebolt/06_execution-backends.md)
+- [Build Your First Execution Backend](../06_extending-codebolt/07_build-your-first-execution-backend.md)
+- [Remote Execution](../11_agent-infrastructure/09_remote-execution.md)
 - [Packaging and Publishing Plugins](./99_packaging-and-publishing.md)

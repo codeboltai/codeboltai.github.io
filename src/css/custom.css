@@ -1156,6 +1156,23 @@ pre code {
   cursor: zoom-in;
 }
 
+.theme-doc-markdown .cb-diagram svg {
+  cursor: zoom-in;
+}
+
+.theme-doc-markdown .cb-diagram svg:focus {
+  outline: none;
+}
+
+.theme-doc-markdown .cb-diagram svg:focus-visible {
+  outline: 2px solid rgba(14, 165, 233, 0.7);
+  outline-offset: 6px;
+}
+
+[data-theme='dark'] .theme-doc-markdown .cb-diagram svg:focus-visible {
+  outline-color: rgba(56, 189, 248, 0.8);
+}
+
 .medium-zoom-overlay {
   z-index: 9998;
 }
@@ -1169,6 +1186,74 @@ pre code {
 
 [data-theme='dark'] .medium-zoom-image--opened {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.cb-diagram-zoom-open {
+  overflow: hidden;
+}
+
+.cb-diagram-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(245, 244, 237, 0.92);
+}
+
+[data-theme='dark'] .cb-diagram-zoom-overlay {
+  background: rgba(20, 20, 18, 0.92);
+}
+
+.cb-diagram-zoom-dialog {
+  position: relative;
+  width: min(96vw, 1600px);
+  max-height: 94vh;
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--cb-border);
+  border-radius: 6px;
+  background: var(--ifm-background-color);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+}
+
+.cb-diagram-zoom-close {
+  position: sticky;
+  top: 0;
+  left: calc(100% - 2.25rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-left: auto;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--cb-border);
+  border-radius: 999px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cb-diagram-zoom-stage .cb-diagram {
+  margin: 0;
+}
+
+.cb-diagram-zoom-stage svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: default;
+  outline: none;
+}
+
+.cb-diagram-zoom-stage svg:focus,
+.cb-diagram-zoom-stage svg:focus-visible {
+  outline: none;
 }
 
 /* ═══════════════════════════════════════════
@@ -1759,4 +1844,3 @@ html:has(.navbar-sidebar--show) .navbar [class*="searchBar"] {
     height: 100dvh !important;
   }
 }
-

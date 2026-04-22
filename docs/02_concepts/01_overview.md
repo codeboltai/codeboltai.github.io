@@ -24,6 +24,7 @@ This section is explanation, not instruction. Looking for *how to do something*?
 - [Orchestration flows](./07_multi-agent/02_orchestration-flows.md) — how patterns become runnable graphs
 - [Dispute resolution](./07_multi-agent/03_dispute-resolution.md) — the four-layer conflict management framework
 - [Evals and optimization](./06_quality/02_evals-and-optimization.md) — measuring and improving agent quality over time
+- [The planning system](./08_planning/01_planning-system.md) — how Roadmap, Specs, UI Flow, Requirement Plan, Action Plan, and Tasks form a coherent stack
 
 ## How concepts relate to the rest of the docs
 
