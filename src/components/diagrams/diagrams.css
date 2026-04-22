@@ -1730,3 +1730,140 @@
   stroke: #0ea5e9;
 }
 [data-theme='dark'] .cb-plan-wire--accent { stroke: #38bdf8; }
+
+/* ── Remote execution provider concept ──── */
+
+.cb-diagram--remote-provider {
+  background: #f5f4ed;
+  border-color: rgba(11, 13, 11, 0.12);
+}
+[data-theme='dark'] .cb-diagram--remote-provider {
+  background: #141412;
+  border-color: rgba(240, 239, 232, 0.10);
+}
+
+.cb-rp-arrowfill {
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-rp-arrowfill { fill: #a0a09a; }
+
+.cb-rp-eyebrow,
+.cb-rp-title,
+.cb-rp-sub,
+.cb-rp-foot,
+.cb-rp-chip-title,
+.cb-rp-module-title,
+.cb-rp-wire-label,
+.cb-rp-caption {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.cb-rp-eyebrow {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-rp-eyebrow { fill: #a0a09a; }
+
+.cb-rp-store-rect,
+.cb-rp-module-rect,
+.cb-rp-gateway-rect {
+  fill: rgba(255, 255, 255, 0.8);
+  stroke: rgba(11, 13, 11, 0.18);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-rp-store-rect,
+[data-theme='dark'] .cb-rp-module-rect,
+[data-theme='dark'] .cb-rp-gateway-rect {
+  fill: rgba(240, 239, 232, 0.04);
+  stroke: rgba(240, 239, 232, 0.18);
+}
+
+.cb-rp-chip-rect {
+  fill: rgba(255, 255, 255, 0.92);
+  stroke: rgba(11, 13, 11, 0.16);
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-rp-chip-rect {
+  fill: rgba(30, 28, 26, 0.92);
+  stroke: rgba(240, 239, 232, 0.18);
+}
+
+.cb-rp-server-rect {
+  fill: rgba(14, 165, 233, 0.06);
+  stroke: #0ea5e9;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-rp-server-rect {
+  fill: rgba(14, 165, 233, 0.10);
+  stroke: #38bdf8;
+}
+
+.cb-rp-provider-rect {
+  fill: rgba(247, 89, 31, 0.08);
+  stroke: #f7591f;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-rp-provider-rect {
+  fill: rgba(247, 89, 31, 0.10);
+  stroke: #fb923c;
+}
+
+.cb-rp-runtime-rect {
+  fill: rgba(22, 163, 74, 0.08);
+  stroke: #16a34a;
+  stroke-width: 1;
+}
+[data-theme='dark'] .cb-rp-runtime-rect {
+  fill: rgba(22, 163, 74, 0.10);
+  stroke: #4ade80;
+}
+
+.cb-rp-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-rp-title { fill: #f0efe8; }
+
+.cb-rp-sub,
+.cb-rp-foot,
+.cb-rp-wire-label,
+.cb-rp-caption {
+  font-size: 8.5px;
+  fill: #52534e;
+}
+[data-theme='dark'] .cb-rp-sub,
+[data-theme='dark'] .cb-rp-foot,
+[data-theme='dark'] .cb-rp-wire-label,
+[data-theme='dark'] .cb-rp-caption { fill: #a0a09a; }
+
+.cb-rp-chip-title,
+.cb-rp-module-title {
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  fill: #0b0d0b;
+}
+[data-theme='dark'] .cb-rp-chip-title,
+[data-theme='dark'] .cb-rp-module-title { fill: #f0efe8; }
+
+.cb-rp-wire-label {
+  font-weight: 500;
+  letter-spacing: 0.07em;
+}
+
+.cb-rp-wire {
+  stroke: #52534e;
+  stroke-width: 1.2;
+  stroke-dasharray: 4 3;
+  fill: none;
+}
+[data-theme='dark'] .cb-rp-wire { stroke: #a0a09a; }
+
+.cb-rp-wire--accent {
+  stroke: #0ea5e9;
+}
+[data-theme='dark'] .cb-rp-wire--accent { stroke: #38bdf8; }
