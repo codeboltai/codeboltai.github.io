@@ -24,12 +24,12 @@ Full CRUD control over ingestion pipelines at runtime. An agent can create a new
 const pipeline = await codebolt.memoryIngestion.create({
   id: 'task-completion-embed',
   label: 'Embed task completions',
-  triggers: ['onTaskCompleted'],
+  trigger: 'onTaskCompleted',
   processors: [
     { id: 'c1', type: 'chunker', input: 'payload.summary', output: 'chunks', chunk_size: 400, overlap: 50 },
     { id: 'e1', type: 'vector_embed', input: 'chunks', output: 'embedded', model: 'default' }
   ],
-  routes: [{ foreach: 'chunk', write_to: 'vector://task-history' }]
+  routing: [{ foreach: 'chunk', write_to: 'vector://task-history' }]
 });
 
 // List all active pipelines
