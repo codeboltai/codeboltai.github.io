@@ -335,5 +335,5 @@ This flow means memory is kept current without any user prompt. Agents that star
 
 ## See also
 
-- [Custom processors](./04_custom-processors.md) — running action blocks inside ingestion pipelines
+- [Memory Ingestion](./02f_memory-ingestion.md) — ingestion pipelines and processor types
 - [Runtime memory APIs](./02_runtime-memory-apis.md) — SDK reference for all memory operations

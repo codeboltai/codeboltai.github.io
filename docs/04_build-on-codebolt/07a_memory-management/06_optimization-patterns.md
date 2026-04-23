@@ -331,5 +331,5 @@ codebolt.app.onMessage(async () => {
 ## See also
 
 - [Hooks and action blocks](./03_hooks-and-action-blocks.md) — event-driven automation
-- [Custom processors](./04_custom-processors.md) — inline logic in pipelines
+- [Memory Ingestion](./02f_memory-ingestion.md) — ingestion pipelines and processor types
 - [Memory evaluation](./05_memory-evaluation.md) — measuring and optimizing retrieval quality
