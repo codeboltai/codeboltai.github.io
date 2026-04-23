@@ -46,7 +46,33 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-  plugins: ['docusaurus-plugin-image-zoom'],
+  plugins: [
+    'docusaurus-plugin-image-zoom',
+    // Force-exit after build completes. Lingering async handles from the
+    // search-local plugin and the mermaid → langium → vscode-languageserver
+    // chain keep Node's event loop alive indefinitely after `docusaurus build`
+    // finishes writing output, so the process hangs instead of exiting.
+    function forceExitAfterBuild() {
+      return {
+        name: 'force-exit-after-build',
+        async postBuild() {
+          setImmediate(() => process.exit(0));
+        },
+      };
+    },
+    // Webpack's persistent filesystem cache (IdleFileCachePlugin) hangs during
+    // shutdown-serialize on Windows with this repo. A production build is
+    // one-shot, so disabling the cache trades a (negligible) speed hit for a
+    // reliable exit.
+    function disableWebpackFsCache() {
+      return {
+        name: 'disable-webpack-fs-cache',
+        configureWebpack() {
+          return { cache: false };
+        },
+      };
+    },
+  ],
 
   themes: [
     '@docusaurus/theme-mermaid',
