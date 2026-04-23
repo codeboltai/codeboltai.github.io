@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "docusaurus": "npx docusaurus",
-    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus start --no-open",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus start --no-open --host 0.0.0.0",
     "build": "npx docusaurus build",
     "build:cf": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
     "build:no-types": "npx docusaurus build",

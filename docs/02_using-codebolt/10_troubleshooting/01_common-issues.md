@@ -196,4 +196,4 @@ Local models, vector DB, and knowledge graph all use memory. Rough breakdown in 
 
 - [Logs and diagnostics](./02_logs-and-diagnostics.md)
 - [Reporting bugs](./03_reporting-bugs.md)
-- [Debugging an agent](../04_agents/07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)

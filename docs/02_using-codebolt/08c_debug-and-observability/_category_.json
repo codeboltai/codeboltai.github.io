@@ -1,6 +1,9 @@
 {
   "label": "Debug & Observability",
-  "position": 8.7,
+  "position": 8.5,
   "collapsible": true,
-  "collapsed": true
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Operations"
+  }
 }

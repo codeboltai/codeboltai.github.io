@@ -53,7 +53,7 @@ When you send a message:
 8. A final message is streamed back.
 9. A checkpoint is recorded at the end.
 
-All of this is traced — you can dig into any turn to see exactly what happened. See [Debugging an agent](../04_agents/07_debugging-an-agent.md).
+All of this is traced — you can dig into any turn to see exactly what happened. See [Agent Debug](../05c_agent-observability/02_agent-debug.md).
 
 ## Tabs
 

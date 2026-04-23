@@ -5,29 +5,31 @@ title: Debug & Observability Overview
 
 # Debug & Observability
 
-Codebolt provides observability tools to see what an agent is doing, inspect the LLM prompts it received, understand code structure, and diagnose errors. All debug panels are accessible from the **Debug Tools** dropdown in the bottom bar.
+Codebolt provides observability tools to inspect the environment, plugin traffic, and code structure, diagnose errors, and visualise multi-agent runs. All debug panels are accessible from the **Agents** and **Debug Tools** dropdowns in the bottom bar.
 
 ## Panels in this section
 
 | Panel | Purpose |
 |---|---|
-| [AI Debug & Console](./03_ai-debug-and-console.md) | Raw LLM inputs/outputs, token counts, cost estimates, stdout/stderr |
 | [Environment & Plugin Debug](./04_environment-and-plugin-debug.md) | Resolved env vars, plugin WebSocket messages and errors |
 | [Codemap & Problems](./05_codemap-and-problems.md) | Dependency graph of the project; syntax errors and lint warnings |
+| [Chat Canvas](./06_chat-canvas.md) | Freeform visual workspace for monitoring multi-agent runs |
 
-## Agent-specific debug panels
+## Agent-focused observability
 
-The following panels live in the **Agents** section since they are tightly coupled to agent runs:
+For agent runs, LLM traces, and the per-instance log stream see the **[Agent Observability](../05c_agent-observability/01_overview.md)** section:
 
 | Panel | Location |
 |---|---|
-| Agent Debug (log stream, tool calls, LLM calls) | [Agents → Debugging an Agent](../04_agents/07_debugging-an-agent.md) |
+| Agent Debug (log stream, tool calls, LLM calls) | [Agent Observability → Agent Debug](../05c_agent-observability/02_agent-debug.md) |
+| AI Debug & Console (raw LLM I/O, stdout/stderr) | [Agent Observability → AI Debug & Console](../05c_agent-observability/03_ai-debug-and-console.md) |
 | Narrative Graph (visual run replay) | [Agents → Narrative Graph](../04_agents/09_narrative-graph.md) |
 
 ## Quick debugging workflow
 
-1. **Agent gives unexpected output** → [Debugging an Agent](../04_agents/07_debugging-an-agent.md) — check the exact prompt and tool calls
-2. **Command failed** → [AI Debug & Console](./03_ai-debug-and-console.md#console) — raw error output
+1. **Agent gives unexpected output** → [Agent Debug](../05c_agent-observability/02_agent-debug.md) — check the exact prompt and tool calls
+2. **Command failed** → [AI Debug & Console](../05c_agent-observability/03_ai-debug-and-console.md#console) — raw error output
 3. **Wrong environment variable** → [Environment Debug](./04_environment-and-plugin-debug.md) — resolved value
 4. **Code has errors** → [Problems](./05_codemap-and-problems.md#problems) — lint/type errors
 5. **Agent took a strange path** → [Narrative Graph](../04_agents/09_narrative-graph.md) — visual decision replay
+6. **Monitor a swarm run** → [Chat Canvas](./06_chat-canvas.md) — see all agents updating in real time

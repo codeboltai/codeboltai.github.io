@@ -175,6 +175,6 @@ Groups failures by error message. Often one root cause dominates.
 ## See also
 
 - [Multi-Agent Usage Overview](./01_overview.md)
-- [Debugging an agent](../04_agents/07_debugging-an-agent.md)
+- [Agent Debug](../05c_agent-observability/02_agent-debug.md)
 - [Query the event log](../../03_guides/07_advanced/query-the-event-log.md)
 - [Persistence & Event Log (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/12_persistence-and-eventlog.md)
