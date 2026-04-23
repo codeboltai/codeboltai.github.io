@@ -19,7 +19,7 @@ The interfaces you interact with day-to-day — where you write, run commands, a
 
 <DocCardGrid columns={2} items={[
   { label: 'Chat', title: 'Chat', description: 'Conversations with agents, @-mentions, checkpoints, and inline editing.', href: './03_chat/01_overview' },
-  { label: 'Code', title: 'Code & Terminal', description: 'Code editor, terminal, git panel, and preview browser.', href: './03b_code-and-terminal/01_overview' },
+  { label: 'Code', title: 'Code Editor Features', description: 'Code editor, terminal, git panel, and preview browser.', href: './03b_code-and-terminal/01_overview' },
 ]} />
 
 <p class="uc-section-label">Agents & Tools</p>
