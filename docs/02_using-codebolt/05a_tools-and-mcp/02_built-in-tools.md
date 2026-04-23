@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 title: Built-in Tools
 ---
 
@@ -124,6 +124,6 @@ See [MCP Tools](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_o
 
 ## See also
 
-- [Tools & MCP Overview](./01_overview.md)
+- [Agent Tools Overview](./01_overview.md)
 - [Reference → Built-in Tools](../../05_reference/01_overview.md) — full schemas
 - [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

@@ -30,14 +30,14 @@ Everything to do with running AI agents — what they are, where they run, what 
 <DocCardGrid columns={3} items={[
   { label: 'Agents', title: 'Agents', description: 'Install, run, debug, and manage AI agents and portfolios.', href: './04_agents/01_what-is-an-agent' },
   { label: 'Env', title: 'Environments', description: 'Run agents locally, in Docker, E2B, Daytona, or on a remote server.', href: './08a_environments/01_overview' },
-  { label: 'Tools', title: 'Tools & MCP', description: 'Built-in tools, MCP servers, and capability bundles.', href: './05_tools-and-mcp/01_overview' },
+  { label: 'Tools', title: 'Agent Tools', description: 'Built-in tool families and panel tools available to every agent.', href: './05a_tools-and-mcp/01_overview' },
   { label: 'Mem', title: 'Memory & Context', description: 'How agents remember and retrieve information across sessions.', href: './07_memory/01_overview' },
   { label: 'Multi', title: 'Multi-Agent Usage', description: 'Run swarms and flows, review outputs, trace execution.', href: './07_multi-agent-usage/01_overview' },
 ]} />
 
 <p class="uc-section-label">Agent Extensions</p>
 
-Modular units that extend what agents can do — reusable capabilities, slash-command skills, parallel action blocks, event-driven hooks, and the runtimes that execute them.
+Modular units that extend what agents can do — reusable capabilities, slash-command skills, parallel action blocks, the runtimes that execute them, and MCP servers for external tool access.
 
 <DocCardGrid columns={3} items={[
   { label: 'Cap', title: 'Capabilities', description: 'Versioned, reusable bundles of agent behaviour with typed inputs and outputs.', href: './04b_agent-extensions/02_capabilities' },
@@ -91,6 +91,16 @@ Mechanisms that trigger agents automatically — without a user typing a message
   { label: 'Cal', title: 'Calendar Events', description: 'Schedule one-off and recurring events that notify agents at a set time.', href: './08d_auto-interactivity/03_calendar-events' },
   { label: 'Hook', title: 'Hooks', description: 'React to file saves, git commits, and agent lifecycle events automatically.', href: './08d_auto-interactivity/04_hooks' },
   { label: 'Log', title: 'Event Log', description: 'Real-time audit trail of every event flowing through the system.', href: './08d_auto-interactivity/05_event-log' },
+]} />
+
+<p class="uc-section-label">Cloud</p>
+
+The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandboxes, bring your own E2B or Daytona key, and publish to the marketplace.
+
+<DocCardGrid columns={3} items={[
+  { label: 'Cloud', title: 'Cloud Overview', description: 'What Codebolt Cloud gives you, when to use it, and when local is enough.', href: './08f_cloud/01_overview' },
+  { label: 'Chat', title: 'Remote Chat', description: 'Chat against an agent running in a cloud sandbox, optionally bound to a GitHub repo.', href: './08f_cloud/03_remote-chat' },
+  { label: 'RT', title: 'Runtimes & Providers', description: 'Manage cloud sandbox instances and bring your own E2B or Daytona credentials.', href: './08f_cloud/04_runtimes-and-providers' },
 ]} />
 
 <p class="uc-section-label">Configuration</p>

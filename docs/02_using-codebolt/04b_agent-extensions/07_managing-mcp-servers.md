@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 7
 title: Managing MCP Servers
 ---
 
@@ -94,7 +94,7 @@ Every server runs under a restart policy:
 
 Under `on_failure`, a crashing server is retried with exponential backoff (1s, 5s, 15s, 60s) and **circuit-breaks after 5 consecutive failures**. At that point it's marked errored and needs manual intervention — restart policies don't rescue a fundamentally broken server.
 
-The policy is set in the server's config; see [Installing MCP Servers](./02_installing-mcp-servers.md).
+The policy is set in the server's config; see [Installing MCP Servers](./06_installing-mcp-servers.md).
 
 ## Viewing logs
 
@@ -342,8 +342,8 @@ The same query works through the HTTP API (`POST /api/events/query`) and the SDK
 
 ## See also
 
-- [Tools & MCP Overview](./01_overview.md)
-- [Installing MCP Servers](./02_installing-mcp-servers.md)
-- [Built-in Tools](./04_built-in-tools.md)
+- [Agent Extensions Overview](./01_overview.md)
+- [Installing MCP Servers](./06_installing-mcp-servers.md)
+- [Agent Tools](../05a_tools-and-mcp/01_overview.md)
 - [CLI reference](../02_surfaces/03_cli/01_overview.md) — exhaustive list of `codebolt tool` commands
 - [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

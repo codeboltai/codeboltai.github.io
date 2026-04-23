@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 6
 title: Installing MCP Servers
 ---
 
@@ -227,7 +227,7 @@ Uninstalling does **not** delete historical runs that used the tool; those are s
 
 ## See also
 
-- [Tools & MCP Overview](./01_overview.md)
-- [Managing MCP servers](./03_managing-mcp-servers.md)
+- [Agent Extensions Overview](./01_overview.md)
+- [Managing MCP servers](./07_managing-mcp-servers.md)
 - [MCP Tools (for builders)](../../04_build-on-codebolt/03_agent-extensions/04_mcp-tools/01_overview.md)
 - [MCP & Tools (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/02_mcp-and-tools.md)

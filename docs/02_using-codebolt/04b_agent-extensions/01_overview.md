@@ -15,6 +15,8 @@ Agent Extensions are modular units of functionality that augment what agents can
 | [Skills](./03_skills.md) | Slash-command invocable capabilities from the marketplace | `~/.codebolt/skills.json` |
 | [Action Blocks](./04_action-blocks.md) | Lightweight code units that run as side executions parallel to an agent | `.codebolt/actionblocks/` |
 | [Executors](./05_executors.md) | Runtime environments that run capabilities (Node, Python, shell, etc.) | `.codebolt/capabilities/executors/` |
+| [Installing MCP Servers](./06_installing-mcp-servers.md) | Add MCP-compliant tool servers from the marketplace or manually | `.codebolt/mcp-servers.yaml` |
+| [Managing MCP Servers](./07_managing-mcp-servers.md) | Start, stop, update, and monitor installed MCP servers | `.codebolt/mcp-servers.yaml` |
 
 ## How they relate
 
