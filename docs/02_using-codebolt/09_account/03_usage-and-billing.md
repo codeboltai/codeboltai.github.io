@@ -151,7 +151,7 @@ Group by project, sum tokens and cost. Export and import into your chargeback to
 
 ## See also
 
-- [Sign in](./01_sign-in.md)
+- [Authentication & Authorization](./01_authentication-and-authorization.md)
 - [Teams](./02_teams.md)
 - [LLM Providers](../08_integrations/01_llm-providers.md)
 - [AI Requests](../03_chat/07_ai-requests.md)
