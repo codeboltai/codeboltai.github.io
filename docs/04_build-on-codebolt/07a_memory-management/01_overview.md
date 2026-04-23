@@ -69,8 +69,9 @@ Codebolt's memory system comprises nine components grouped into three categories
 | [Knowledge](./02b_knowledge.md) | Document chunking and management | — | Knowledge | `/knowledge` |
 | [Knowledge Graph](./02c_knowledge-graph.md) | Typed nodes, edges, and Cypher-like views | `codebolt.knowledgeGraph` | Knowledge Graph | `/kg` |
 | [KV Store](./02e_kv-store.md) | Fast namespaced key-value storage | `codebolt.kvStore` | KV Store | `/kvstore` |
-| Event Log | Immutable event timeline | `codebolt.episodicMemory` | Event Log | `/eventlog` |
-| Memory | Human-readable notes and records | `codebolt.memory` | Memory | `/memory` |
+| [Event Log](./02e_kv-store.md) | Immutable event timeline | `codebolt.eventLog` | Event Log | `/eventlog` |
+| [Episodic Memory](./02_runtime-memory-apis.md#episodic-memory--codeboltepisodicmemory) | Thread-based append-only event logging | `codebolt.episodicMemory` | Episodic Memory | `/memories/episodic` |
+| Memory | Human-readable notes and records | `codebolt.memory` | Memory | `/memories` |
 
 ### Write Path
 
@@ -130,4 +131,3 @@ All of this is done through the same SDK that external code uses — agents are 
 - [Optimization patterns](./06_optimization-patterns.md) — pruning, compaction, summarization, and self-tuning
 
 **Visual management:**
-- [UI Guide](./07_ui-guide.md) — using the built-in panels to manage memory visually

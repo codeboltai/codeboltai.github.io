@@ -252,7 +252,7 @@ The Knowledge Graph emits 20 event types for real-time UI updates:
 ### Create an Instance
 
 ```typescript
-import codebolt from '@anthropic/codebolt';
+import codebolt from '@codebolt/codeboltjs';
 
 // Create the template first
 const template = await codebolt.knowledgeGraph.createInstanceTemplate({
