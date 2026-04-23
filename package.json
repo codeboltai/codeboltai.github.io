@@ -10,7 +10,7 @@
     "build:no-types": "npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "deploy": "npx docusaurus deploy",
-    "deploy:cf": "npm run build && npx wrangler@latest deploy",
+    "deploy:cf": "npm run build:cf && npx wrangler@latest deploy",
     "clear": "npx docusaurus clear",
     "serve": "npx docusaurus serve",
     "write-translations": "npx docusaurus write-translations",
