@@ -17,9 +17,10 @@ For step-by-step walkthroughs see [Guides & Tutorials](../03_guides/01_overview.
 
 The interfaces you interact with day-to-day — where you write, run commands, and talk to agents.
 
-<DocCardGrid columns={2} items={[
+<DocCardGrid columns={3} items={[
   { label: 'Chat', title: 'Chat', description: 'Conversations with agents, @-mentions, checkpoints, and inline editing.', href: './03_chat/01_overview' },
   { label: 'Code', title: 'Code Editor Features', description: 'Code editor, terminal, git panel, and preview browser.', href: './03b_code-and-terminal/01_overview' },
+  { label: 'App', title: 'Application Features', description: 'Sign-in, teams, usage, and billing.', href: './09_account/01_sign-in' },
 ]} />
 
 <p class="uc-section-label">Agents & Tools</p>
@@ -96,10 +97,9 @@ Mechanisms that trigger agents automatically — without a user typing a message
 
 Connect external services, set guardrails, and manage your account. Usually a one-time setup per project or workspace.
 
-<DocCardGrid columns={3} items={[
+<DocCardGrid columns={2} items={[
   { label: 'Int', title: 'Integrations', description: 'LLM providers, local models, git, browser control, and more.', href: './08_integrations/01_llm-providers' },
   { label: 'Guard', title: 'Guardrails & Settings', description: 'Safety rules, routing gateway, app and project config.', href: './09a_guardrails-and-settings/01_guardrails' },
-  { label: 'Acct', title: 'Account', description: 'Sign-in, teams, usage, and billing.', href: './09_account/01_sign-in' },
 ]} />
 
 <p class="uc-section-label">Operations</p>
