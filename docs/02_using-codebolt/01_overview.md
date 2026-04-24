@@ -112,7 +112,7 @@ Mechanisms that trigger agents automatically — without a user typing a message
   { label: 'WH', title: 'Webhooks', description: 'Incoming HTTP endpoints that route external requests to agents.', href: './08d_auto-interactivity/02_webhooks' },
   { label: 'Cal', title: 'Calendar Events', description: 'Schedule one-off and recurring events that notify agents at a set time.', href: './08d_auto-interactivity/03_calendar-events' },
   { label: 'Hook', title: 'Hooks', description: 'React to file saves, git commits, and agent lifecycle events automatically.', href: './08d_auto-interactivity/04_hooks' },
-  { label: 'Log', title: 'Event Log', description: 'Real-time audit trail of every event flowing through the system.', href: './08d_auto-interactivity/05_event-log' },
+  { label: 'Log', title: 'Event Log', description: 'Append-only audit trail of every event — lives under Memory & Context as the audit layer.', href: './07_memory/07_event-log' },
 ]} />
 
 <p class="uc-section-label">Cloud</p>

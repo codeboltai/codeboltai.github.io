@@ -145,6 +145,8 @@ Use the event log for:
 - Debugging a failed run by replaying its event stream
 - Building persistent memories that summarise recent activity patterns
 
+See [Event Log](./07_event-log.md) for the panel, query modes, and event categories.
+
 ---
 
 ## Choosing the right layer

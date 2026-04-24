@@ -36,6 +36,7 @@ Both sides operate on the same set of storage backends. Understanding which laye
 - [Context rules](./04_context-rules.md) — the JSON DSL for controlling what gets included
 - [Persistent memory](./05_persistent-memory.md) — declarative retrieval pipelines
 - [Memory ingestion](./06_memory-ingestion.md) — the write path: triggers, processors, routing
+- [Event log](./07_event-log.md) — the append-only audit trail, treated as a memory layer
 
 ## See also
 

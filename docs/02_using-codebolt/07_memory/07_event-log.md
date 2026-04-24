@@ -1,11 +1,11 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: Event Log
 ---
 
 # Event Log
 
-The Event Log is a real-time audit trail of every application event that flows through Codebolt — agent starts, file changes, thread completions, job updates, and more. Use it to understand what happened, when, and in what order.
+The **Event Log** is the append-only audit trail of every application event that flows through Codebolt — agent starts, file changes, thread completions, job updates, and more. It sits alongside the other memory layers: the source of truth for what has happened, queryable by memory pipelines and by the dedicated panel.
 
 Open via: **Debug Tools dropdown → Event Log**
 
@@ -55,6 +55,16 @@ Conditions can be combined with `AND`, `OR`, and `NOT` logic.
 
 The Event Log receives push events over WebSocket. New events appear immediately as they occur. Use this alongside the Debug panels when tracing a multi-agent workflow — you can watch events from hooks, webhooks, agent completions, and job assignments arrive in sequence.
 
+## Relation to memory pipelines
+
+The Event Log is read-only — it observes, not acts. Because it is treated as a first-class memory layer, persistent memory pipelines can `log_search` over it to build summaries, detect patterns, or surface activity in future context windows. See the [Event log layer](./02_memory-layers.md#event-log) in Memory Layers for how it fits alongside episodic, KV, JSON, and vector stores.
+
 ## Relation to Hooks and Webhooks
 
-The Event Log is read-only — it observes, not acts. To *react* to events automatically, use [Hooks](./04_hooks.md) (for lifecycle triggers) or [Webhooks](./02_webhooks.md) (for external HTTP triggers). The Event Log helps you verify that the right events are being emitted before writing a hook or debugging why one didn't fire.
+To *react* to events automatically rather than just observe them, use [Hooks](../08d_auto-interactivity/04_hooks.md) (for lifecycle triggers) or [Webhooks](../08d_auto-interactivity/02_webhooks.md) (for external HTTP triggers). The Event Log helps you verify that the right events are being emitted before writing a hook or debugging why one didn't fire.
+
+## Related
+
+- [Memory Layers → Event log](./02_memory-layers.md#event-log) — the layer concept
+- [Persistent Memory](./05_persistent-memory.md) — pipelines that query the log
+- [Query the event log (guide)](../../03_guides/07_advanced/query-the-event-log.md) — full query DSL
