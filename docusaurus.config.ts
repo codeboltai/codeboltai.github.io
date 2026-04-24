@@ -169,12 +169,6 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'gettingStartedSidebar',
-          position: 'left',
-          label: 'Getting Started',
-        },
-        {
-          type: 'docSidebar',
           sidebarId: 'usingCodeboltSidebar',
           position: 'left',
           label: 'Using Codebolt',
@@ -197,12 +191,12 @@ const config: Config = {
           position: 'left',
           label: 'Build on Codebolt',
         },
-        {
-          type: 'docSidebar',
-          sidebarId: 'referenceSidebar',
-          position: 'left',
-          label: 'Reference',
-        },
+        // Reference sidebar is excluded in dev (05_reference files not watched).
+        // In dev we show a plain href so the navbar doesn't break.
+        ...(process.env.NODE_ENV === 'development'
+          ? [{ type: 'html' as const, value: '<span class="navbar__item navbar__link" style="opacity:0.4;cursor:default">Reference</span>', position: 'left' as const }]
+          : [{ type: 'docSidebar' as const, sidebarId: 'referenceSidebar', position: 'left' as const, label: 'Reference' }]
+        ),
         // {
         //   type: 'docSidebar',
         //   sidebarId: 'devSidebar',
