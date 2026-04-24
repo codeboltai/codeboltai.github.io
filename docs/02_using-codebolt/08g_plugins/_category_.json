@@ -1,0 +1,9 @@
+{
+  "label": "Plugins",
+  "position": 8.35,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Extensions"
+  }
+}

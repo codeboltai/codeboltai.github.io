@@ -25,7 +25,8 @@ Application event      ──▶ Pipelines ─┘
 | [Webhooks](./02_webhooks.md) | Incoming HTTP POST to a unique URL | Gateway routes the payload to an agent |
 | [Calendar & Scheduled Events](./03_calendar-events.md) | A scheduled time or cron expression | Gateway notifies participants, optionally triggers an agent |
 | [Hooks](./04_hooks.md) | File saved, git commit, agent completed, etc. | An agent, action block, or shell command runs |
-| [Event Log](./05_event-log.md) | All of the above | Audit trail of every event that flowed through the system |
+
+Every automatic trigger is recorded to the append-only [Event Log](../07_memory/07_event-log.md), which lives alongside the memory layers — use it to audit or debug what actually fired.
 
 ## The Routing Gateway
 
