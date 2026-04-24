@@ -151,5 +151,5 @@ For OIDC-managed teams, removing a member from the OIDC group is usually suffici
 ## See also
 
 - [Authentication & Authorization](./01_authentication-and-authorization.md)
+- [Workspace](./03_workspace.md)
 - [Usage and Billing](./03_usage-and-billing.md)
-- [Self-Hosting](../../04_build-on-codebolt/10_self-hosting/01_overview.md)
