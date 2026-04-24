@@ -223,10 +223,6 @@ const config: Config = {
 
       ],
     },
-    footer: {
-      links: [],
-      copyright: `© ${new Date().getFullYear()} CodeBolt`,
-    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.vsDark,
