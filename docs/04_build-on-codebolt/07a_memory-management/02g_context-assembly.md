@@ -7,6 +7,8 @@ title: "Context Assembly"
 
 Context Assembly orchestrates the **read path** for memory in Codebolt. It evaluates rules, executes multiple persistent memory pipelines in parallel, merges the results, enforces token budgets, and returns assembled context ready for the LLM.
 
+![Context Assembly](/productImages/memorycontext/contextAssemblyEngine.png)
+
 The system comprises two sub-systems:
 
 - **Context Rule Engine** — determines which memories to activate based on the current scope and conditions.

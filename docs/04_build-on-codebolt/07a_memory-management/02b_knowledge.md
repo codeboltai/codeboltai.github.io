@@ -7,6 +7,8 @@ title: "Knowledge"
 
 The Knowledge component provides document-level knowledge management with configurable automatic chunking. It handles file upload, URL import, and raw text input, storing everything as JSON files on disk with no database dependency.
 
+![Knowledge Base](/productImages/memorycontext/knowledgebase.png)
+
 ## Storage Layout
 
 All knowledge data lives under the project directory in a flat file structure:

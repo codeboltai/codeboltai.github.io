@@ -7,6 +7,8 @@ title: Persistent Memory
 
 Persistent memory is a **declarative retrieval abstraction**. Instead of writing code to fetch the right information from the right store at the right time, you define a pipeline — a YAML/JSON file that describes *what* to retrieve, *from where*, and *how to rank and format it*. The Context Assembly Engine executes all persistent memory pipelines automatically every turn.
 
+![Persistent Memory](/productImages/memorycontext/persistentMemory.png)
+
 Definitions live in `.codebolt/PersistentMemory/`. Each file defines one pipeline.
 
 ## A minimal example

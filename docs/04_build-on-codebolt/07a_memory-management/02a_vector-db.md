@@ -7,6 +7,8 @@ title: "Vector DB"
 
 The Vector DB component manages collections of vector embeddings for semantic search across project files and arbitrary text. It is backed by SQLite with the `sqlite-vec` extension for K-nearest-neighbor (KNN) similarity search, and FTS5 for hybrid search that combines BM25 keyword scoring with vector similarity via Reciprocal Rank Fusion.
 
+![Vector DB](/productImages/memorycontext/vector_meory.png)
+
 ---
 
 ## Storage Layout

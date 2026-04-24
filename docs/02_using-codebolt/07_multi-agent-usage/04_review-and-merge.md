@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Review and Merge
 
+![Review and Merge](/productImages/multiagentusage/review_merge_request.png)
+
 The human-in-the-loop side of multi-agent work. When agents produce changes that need approval before they land, they go through the review/merge system.
 
 For the design side ("how do I structure review policies?"), see [Review & Merge Design](../../04_build-on-codebolt/08_multi-agent-orchestration/07_review-and-merge-design.md).

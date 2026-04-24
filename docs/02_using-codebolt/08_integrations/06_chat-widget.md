@@ -5,6 +5,8 @@ title: Chat Widget
 
 # Chat Widget
 
+![Chat Widget](/productImages/integrations/chat-widget.png)
+
 An embeddable chat UI you can drop into another web app. Lets users in your product talk to Codebolt agents without opening the full Codebolt app.
 
 Shipped as `packages/chat-widget` — a small JavaScript bundle that connects to a Codebolt server and renders a chat panel.

@@ -7,6 +7,8 @@ title: Memory Layers
 
 Codebolt uses eight distinct memory stores. Each one is optimised for a different class of data, lifetime, and access pattern. Knowing which layer to write to — and when — determines how reliably your agents recall information.
 
+![Vector Memory](/productImages/memorycontext/vector_meory.png)
+
 ## Working memory
 
 **Lifetime:** single LLM turn  

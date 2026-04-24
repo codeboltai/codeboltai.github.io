@@ -5,6 +5,8 @@ title: Locks & Unlock Requests
 
 # Locks & Unlock Requests
 
+![Locks and Unlock Requests](/productImages/StigmergicCoordination/lock_unlock.png)
+
 Locks are the strong, exclusive counterpart to [pheromones](./02_pheromones.md). Where a pheromone is a soft signal ("this is important", "I'm interested"), a **lock** is a hard claim: while an agent holds it, no other agent may modify the entity. When another agent needs that entity, it files an **unlock request** the holder can approve or reject.
 
 Locks are handled by the same `coordinationService` that manages pheromones. Every coordinated entity (jobs, review merge requests) gets an optional `lock` field and an `unlockRequests` list.

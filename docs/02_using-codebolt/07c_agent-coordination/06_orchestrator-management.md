@@ -5,6 +5,8 @@ title: Orchestrator Management
 
 # Orchestrator Management
 
+![Orchestrator Management](/productImages/multiagentusage/orchestratormanagement.png)
+
 An **orchestrator** is a coordinating agent that routes tasks to worker agents. Where a swarm defines a group of agents, an orchestrator actively delegates — it receives a high-level task, breaks it down, and assigns sub-tasks to the right workers.
 
 Open via: **Agents dropdown → Orchestrator Management**

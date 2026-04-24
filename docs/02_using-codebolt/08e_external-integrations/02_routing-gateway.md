@@ -5,6 +5,8 @@ title: Routing Gateway
 
 # Routing Gateway
 
+![Routing Gateway](/productImages/externalintegrations/routinggateway.png)
+
 The Routing Gateway is Codebolt's central message router for external integrations. Every message that arrives from an external source — a webhook, a chat platform, a calendar event, or a hook — passes through the gateway before reaching an agent.
 
 Open via: **System Settings → Routing Gateway**

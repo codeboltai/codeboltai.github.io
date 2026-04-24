@@ -5,6 +5,8 @@ title: Pheromones
 
 # Pheromones
 
+![Pheromones](/productImages/StigmergicCoordination/pheromones.png)
+
 A **pheromone** is a typed signal that an agent or user deposits on a shared entity (a job, a review request, etc.) to influence what other agents do next. Any agent reading the entity sees the current pheromone load and reacts — there is no central scheduler.
 
 Internally, pheromones are stored inline on the entity (e.g., `Job.pheromones`) and managed by a shared `coordinationService` on the server. All pheromone configuration is persisted under `.codebolt/coordination/pheromoneTypes.json` in the project.

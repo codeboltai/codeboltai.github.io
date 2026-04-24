@@ -7,6 +7,8 @@ title: "Memory Ingestion"
 
 Memory Ingestion provides event-driven write-path pipelines that transform application data and route it into storage layers. Pipelines trigger on application events (conversation end, task completion, git commit, etc.) and execute a sequential processor chain followed by routing rules that write results to destinations.
 
+![Memory Ingestion](/productImages/memorycontext/memoryingestion.png)
+
 ## Storage
 
 Pipeline definitions are stored as individual JSON files:

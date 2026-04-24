@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Mail and Calendar
 
+![Mail and Calendar](/productImages/integrations/calender.png)
+
 Codebolt has first-class integrations for email and calendar. Agents can read inboxes, send messages, schedule meetings, and trigger off of incoming mail. Used for:
 
 - Automating repetitive email workflows (triage, follow-ups, responses).
@@ -146,6 +148,6 @@ Mail providers have send limits (Gmail: ~500/day for free accounts, more for Wor
 
 ## See also
 
-- [Tools & MCP Overview](../05_tools-and-mcp/01_overview.md)
+- [Tools & MCP Overview](../05a_tools-and-mcp/01_overview.md)
 - [Communication (internals)](../../04_build-on-codebolt/09_internals/03_subsystems/11_communication.md)
 - [Hooks](../../04_build-on-codebolt/05_plugins/01_overview.md)
