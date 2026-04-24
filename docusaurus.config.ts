@@ -60,18 +60,18 @@ const config: Config = {
         },
       };
     },
-    // Webpack's persistent filesystem cache (IdleFileCachePlugin) hangs during
-    // shutdown-serialize on Windows with this repo. A production build is
-    // one-shot, so disabling the cache trades a (negligible) speed hit for a
-    // reliable exit.
-    function disableWebpackFsCache() {
-      return {
-        name: 'disable-webpack-fs-cache',
-        configureWebpack() {
-          return { cache: false };
-        },
-      };
-    },
+    // // Webpack's persistent filesystem cache (IdleFileCachePlugin) hangs during
+    // // shutdown-serialize on Windows with this repo. A production build is
+    // // one-shot, so disabling the cache trades a (negligible) speed hit for a
+    // // reliable exit.
+    // function disableWebpackFsCache() {
+    //   return {
+    //     name: 'disable-webpack-fs-cache',
+    //     configureWebpack() {
+    //       return { cache: false };
+    //     },
+    //   };
+    // },
   ],
 
   themes: [
@@ -106,6 +106,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // Exclude auto-generated reference from the dev server file watcher.
+          // 05_reference/ contains ~4500 TypeDoc-generated files that cause the
+          // watcher to re-index on every save and make hot reload unusably slow.
+          // They are still included in production builds — remove this line to
+          // regenerate a full build locally.
+          exclude: process.env.NODE_ENV === 'development'
+            ? ['05_reference/**']
+            : [],
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           async sidebarItemsGenerator({ defaultSidebarItemsGenerator, item, ...args }) {
             const sidebarItems = await defaultSidebarItemsGenerator({ item, ...args });

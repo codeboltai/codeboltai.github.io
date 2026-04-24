@@ -5,7 +5,7 @@ title: Quickstart
 
 # Quickstart
 
-The fastest path to running an agent in a real project. No decisions, one happy path. If you need something other than the defaults, come back and read [Installation](./03_installation/01_overview.md) after.
+The fastest path to running an agent in a real project. No decisions, one happy path. If you need something other than the defaults, come back and read [Installation](./02b_installation.md) after.
 
 **What you'll do:**
 
@@ -28,7 +28,7 @@ Download the installer for your OS from the Codebolt website and run it. Accept 
 
 First launch takes a minute — it's starting a local server, initialising the database, and doing a first-run handshake.
 
-> **Want the CLI instead?** See [Installation → CLI](./03_installation/03_cli.md). The rest of this guide works identically from the CLI; the screenshots just won't match.
+> **Want the CLI instead?** See [Installation → CLI](./02b_installation.md#cli-only). The rest of this guide works identically from the CLI; the screenshots just won't match.
 
 ## 2. Sign in and pick a provider
 
@@ -90,4 +90,4 @@ Every other feature — custom agents, multi-agent flows, marketplace tools, mem
 - **Try something more ambitious** → [Guides → Build your first agent](../03_guides/02_first-steps/build-your-first-agent.md)
 - **Understand what happened when you ran the agent** → [Chat message end-to-end](../04_build-on-codebolt/08_internals/04_data-flow-walkthroughs/chat-message-end-to-end.md)
 - **See the full feature list** → [Using Codebolt → Overview](../02_using-codebolt/01_overview.md)
-- **Something didn't work** → [Install troubleshooting](./03_installation/07_install-troubleshooting.md)
+- **Something didn't work** → [Install troubleshooting](./10_troubleshooting/01_common-issues.md)

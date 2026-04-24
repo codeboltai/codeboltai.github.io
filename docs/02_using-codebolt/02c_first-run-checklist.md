@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2.6
 title: First-run checklist
 ---
 
@@ -9,7 +9,7 @@ A 5-minute pass to confirm Codebolt is working correctly after install. Run thro
 
 ## 1. The server is running
 
-Open the app. The status bar at the bottom should say **Connected**. If it says Connecting, Retrying, or Disconnected, the local server isn't up — see [Install troubleshooting](./03_installation/07_install-troubleshooting.md).
+Open the app. The status bar at the bottom should say **Connected**. If it says Connecting, Retrying, or Disconnected, the local server isn't up — see [Install troubleshooting](./10_troubleshooting/01_common-issues.md).
 
 CLI equivalent: `codebolt --version` should print the version number.
 
@@ -70,7 +70,7 @@ From a terminal in the project directory:
 codebolt --version
 ```
 
-Should print the version number. If it says "command not found", the CLI isn't on PATH — make sure the desktop app is installed, or install the CLI separately per [Installation → CLI](./03_installation/03_cli.md).
+Should print the version number. If it says "command not found", the CLI isn't on PATH — make sure the desktop app is installed, or install the CLI separately per [Installation → CLI](./02b_installation.md#cli-only).
 
 ## 9. (Optional) You can open the TUI
 
@@ -78,7 +78,7 @@ Should print the version number. If it says "command not found", the CLI isn't o
 codebolt
 ```
 
-Should launch the server and TUI. Exit with Ctrl+C. See [TUI Overview](../02_using-codebolt/02_surfaces/04_tui/01_overview.md).
+Should launch the server and TUI. Exit with Ctrl+C. See [TUI Overview](02_surfaces/04_tui/01_overview.md).
 
 ## 10. (Optional) Checkpoint + replay
 
@@ -90,12 +90,12 @@ In the chat you just did, click any earlier step and pick **Replay**. You should
 
 You're set up. Next:
 
-- **Just want to use it** → [Using Codebolt](../02_using-codebolt/01_overview.md)
+- **Just want to use it** → [Using Codebolt](01_overview.md)
 - **Want concrete tasks to try** → [Guides](../03_guides/01_overview.md)
 - **Want to build an extension** → [Build on Codebolt](../04_build-on-codebolt/01_overview.md)
 
 ## Something didn't work?
 
-- [Install troubleshooting](./03_installation/07_install-troubleshooting.md)
-- [Using Codebolt → Troubleshooting](../02_using-codebolt/10_troubleshooting/01_common-issues.md)
-- [Reporting bugs](../02_using-codebolt/10_troubleshooting/03_reporting-bugs.md)
+- [Install troubleshooting](./10_troubleshooting/01_common-issues.md)
+- [Using Codebolt → Troubleshooting](10_troubleshooting/01_common-issues.md)
+- [Reporting bugs](10_troubleshooting/03_reporting-bugs.md)

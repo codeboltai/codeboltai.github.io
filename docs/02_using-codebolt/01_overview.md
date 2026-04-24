@@ -13,6 +13,17 @@ For step-by-step walkthroughs see [Guides & Tutorials](../03_guides/01_overview.
 
 ---
 
+<p class="uc-section-label">Start Here</p>
+
+New to Codebolt? Start with what it is, get it installed, and run your first agent.
+
+<DocCardGrid columns={3} items={[
+  { label: 'Intro', title: 'What is Codebolt', description: 'The core idea, what makes it different, and what you can do with it.', href: './01b_what-is-codebolt' },
+  { label: 'QS', title: 'Quickstart', description: 'Install, sign in, open a project, and run your first agent in ~10 minutes.', href: './02_quickstart' },
+  { label: 'Install', title: 'Installation', description: 'Desktop app, CLI, system requirements, updating, and uninstalling.', href: './02b_installation' },
+  { label: 'Check', title: 'First-run Checklist', description: 'Verify everything is working correctly after install.', href: './02c_first-run-checklist' },
+]} />
+
 <p class="uc-section-label">Workspace</p>
 
 The interfaces you interact with day-to-day — where you write, run commands, and talk to agents.
@@ -44,6 +55,17 @@ Modular units that extend what agents can do — reusable capabilities, slash-co
   { label: 'Skill', title: 'Skills', description: 'Slash-command invocable capabilities installable from the marketplace.', href: './04b_agent-extensions/03_skills' },
   { label: 'AB', title: 'Action Blocks', description: 'Lightweight code units that run as side executions parallel to an agent.', href: './04b_agent-extensions/04_action-blocks' },
   { label: 'Exec', title: 'Executors', description: 'Language runtimes (Node, Python, shell) that run capabilities.', href: './04b_agent-extensions/05_executors' },
+]} />
+
+<p class="uc-section-label">Eval & Optimization</p>
+
+Measure agent quality with configurable scoring, then automatically improve agents through an AI-driven optimization loop.
+
+<DocCardGrid columns={2} items={[
+  { label: 'Eval', title: 'Eval Tasks', description: 'Define test tasks with instructions, environments, and weighted evaluators.', href: './05e_eval-and-optimization/02_eval-tasks' },
+  { label: 'Score', title: 'Evaluators', description: 'Expected output, script, agent judge, and deliberation scoring mechanisms.', href: './05e_eval-and-optimization/03_evaluators' },
+  { label: 'Run', title: 'Running Evals', description: 'Create runs, monitor results in real time, and compare agents on a leaderboard.', href: './05e_eval-and-optimization/04_running-evals' },
+  { label: 'Opt', title: 'Optimization', description: 'Auto-improve agents across iterations using greedy, best-of-N, or annealing strategies.', href: './05e_eval-and-optimization/05_optimization' },
 ]} />
 
 <p class="uc-section-label">Multi-Agent Coordination</p>
