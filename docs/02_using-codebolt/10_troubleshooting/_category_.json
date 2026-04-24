@@ -1,6 +1,5 @@
 {
-  "label": "Debug & Observability",
-  "position": 8.5,
+  "label": "Troubleshooting",
   "collapsible": true,
   "collapsed": true,
   "customProps": {
