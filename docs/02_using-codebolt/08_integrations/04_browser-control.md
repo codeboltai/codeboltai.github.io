@@ -5,6 +5,8 @@ title: Browser Control
 
 # Browser Control
 
+![Browser Control](/productImages/integrations/browser.png)
+
 Agents can control a headless browser via `codebolt_browser`. Used for:
 
 - Testing web apps (load a page, check for elements, run interactions).
@@ -70,6 +72,6 @@ Codebolt can open the current app in a browser for visual inspection while you u
 
 ## See also
 
-- [Tools & MCP Overview](../05_tools-and-mcp/01_overview.md)
-- [Built-in Tools](../05_tools-and-mcp/04_built-in-tools.md)
+- [Tools & MCP Overview](../05a_tools-and-mcp/01_overview.md)
+- [Built-in Tools](../05a_tools-and-mcp/02_built-in-tools.md)
 - [Hooks (for restricting browser access)](../../04_build-on-codebolt/05_plugins/01_overview.md)

@@ -7,6 +7,8 @@ title: Memory Ingestion
 
 Memory ingestion is the **write path** — how information gets captured, processed, and stored so that persistent memory pipelines can retrieve it later. Ingestion is event-driven: a trigger fires, raw data passes through a sequence of processors, and routing rules direct the output to one or more storage backends.
 
+![Memory Ingestion](/productImages/memorycontext/memoryingestion.png)
+
 Configuration lives in `.codebolt/MemoryIngestion/`. Each file defines one ingestion pipeline.
 
 ## Triggers

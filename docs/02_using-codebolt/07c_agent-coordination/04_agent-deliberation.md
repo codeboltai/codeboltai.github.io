@@ -5,6 +5,8 @@ title: Agent Deliberation
 
 # Agent Deliberation
 
+![Agent Deliberation](/productImages/multiagentusage/agentdelibration.png)
+
 The Agent Deliberation panel lets a group of agents collectively reason about a question and reach a shared decision. Instead of one agent answering, multiple agents contribute responses and the group votes on the best outcome.
 
 Open via: **Agents dropdown → Agent Deliberation**

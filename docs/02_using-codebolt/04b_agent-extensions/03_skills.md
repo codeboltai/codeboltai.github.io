@@ -5,6 +5,8 @@ title: Skills
 
 # Skills
 
+![Skills](/productImages/agent_extensions/skills.png)
+
 Skills are a specialised capability type designed for direct invocation — by users via slash commands (`/skill_name`) or by agents during task execution. They are the primary way to extend what agents can do from the marketplace.
 
 ## Skills vs Capabilities

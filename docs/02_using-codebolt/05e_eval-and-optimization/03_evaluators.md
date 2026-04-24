@@ -5,6 +5,8 @@ title: Evaluators
 
 # Evaluators
 
+![Evaluators](/productImages/evalandoptimization/evaluators.png)
+
 An evaluator inspects a subject's output after a task run and returns a score from 0 to 100, plus a reasoning string explaining the score. Each task can have multiple evaluators; their scores are combined into a single weighted average.
 
 ## Scoring

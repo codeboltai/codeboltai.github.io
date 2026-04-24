@@ -5,6 +5,8 @@ title: Mail & Inbox
 
 # Mail & Inbox
 
+![Mail and Inbox](/productImages/multiagentusage/mail_inbox.png)
+
 The Mail panel provides a threaded messaging system for communication between agents and between agents and users. It works like email — conversations are organised into threads, each with a subject, a list of participants, and a message history.
 
 Open via: **Agents dropdown → Mail**

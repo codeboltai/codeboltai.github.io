@@ -5,6 +5,8 @@ title: Language Servers
 
 # Language Servers
 
+![Language Servers](/productImages/applicationfeatures/language_server.png)
+
 Language Server Protocol (LSP) servers provide code intelligence — completions, diagnostics, go-to-definition, and inline error highlighting — for specific languages inside the Codebolt code editor.
 
 Open via: **Settings → Language Server Protocol**

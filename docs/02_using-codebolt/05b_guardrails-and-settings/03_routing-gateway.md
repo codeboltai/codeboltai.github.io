@@ -5,6 +5,8 @@ title: Routing Gateway
 
 # Routing Gateway
 
+![Routing Gateway](/productImages/guardrails/routinggateway.png)
+
 The Routing Gateway controls how incoming messages are routed to agents — which agent handles which type of request, and under what conditions. It sits between the incoming message (from chat, from a plugin, or from an API call) and the agent that processes it.
 
 Open via: **System Settings dropdown → Routing Gateway**

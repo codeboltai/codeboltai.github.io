@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Running a Swarm
 
+![Running a Swarm](/productImages/multiagentusage/running_swarm.png)
+
 A **swarm** is a dynamic group of agents cooperating on a task. Unlike a flow (which is a fixed graph), a swarm's shape can change at runtime — agents spawn, communicate, and finish independently.
 
 This page is about *running* swarms. For *designing* them, see [Multi-Agent Orchestration](../../04_build-on-codebolt/08_multi-agent-orchestration/01_overview.md).

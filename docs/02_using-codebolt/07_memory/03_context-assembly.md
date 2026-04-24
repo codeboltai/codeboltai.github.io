@@ -7,6 +7,8 @@ title: Context Assembly
 
 Every LLM call begins with a context window. Codebolt's **Context Assembly Engine** builds that window automatically — selecting, ranking, and token-budgeting information from all available memory stores before the call is made.
 
+![Context Assembly Engine](/productImages/memorycontext/contextAssemblyEngine.png)
+
 Understanding how assembly works tells you where to look when an agent is missing information it should have, or including noise it shouldn't.
 
 ## What gets assembled

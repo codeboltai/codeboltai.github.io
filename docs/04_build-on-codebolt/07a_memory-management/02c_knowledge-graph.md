@@ -7,6 +7,8 @@ title: "Knowledge Graph"
 
 The Knowledge Graph is a graph database layer for storing typed entities (nodes), relationships (edges), and Cypher-like queryable views. It is built on **Kuzu DB**, an embedded graph database, and follows a schema-first approach: define templates, create instances, then populate data.
 
+![Knowledge Graph](/productImages/memorycontext/knowledgegraph.png)
+
 ## Storage Layout
 
 All data lives under the project directory:

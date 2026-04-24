@@ -5,6 +5,8 @@ title: Optimization
 
 # Optimization
 
+![Optimization](/productImages/evalandoptimization/optimization.png)
+
 When optimization is enabled on a task, Codebolt runs an automatic improvement loop after the baseline eval. An optimizer agent reads the subject's code, prompts, or config and makes one targeted modification per iteration. The modified subject is re-evaluated, and the change is kept or discarded based on the chosen strategy. This repeats until the target score is reached or the iteration limit is hit.
 
 ## How the loop works

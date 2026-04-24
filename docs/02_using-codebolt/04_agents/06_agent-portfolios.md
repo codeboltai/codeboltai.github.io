@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 A **portfolio** is the curated set of agents active in a workspace. Installing an agent doesn't automatically add it to the portfolio — you choose which installed agents are actually available in a given project.
 
+![Agent Portfolio](/productImages/agents/agent_portfolio.png)
+
 ## Why portfolios exist
 
 Two reasons:

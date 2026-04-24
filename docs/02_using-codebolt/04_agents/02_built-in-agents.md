@@ -7,6 +7,8 @@ title: Built-in Agents
 
 The default set of agents that ship with Codebolt. Maintained by the Codebolt team and improved with every release. Good starting points; remix or replace them as your needs get specific.
 
+![Built-in Agents](/productImages/agents/builtin_agents.png)
+
 Run `codebolt agent list` to see what's installed — the exact set may differ between versions.
 
 ## The core six

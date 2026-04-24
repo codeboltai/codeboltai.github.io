@@ -5,6 +5,8 @@ title: Code Editor
 
 # Code Editor
 
+![Code Editor](/productImages/editor/codeEditor.png)
+
 The Code panel is a full Monaco-based editor — the same engine that powers VS Code. It supports syntax highlighting for all common languages, multi-cursor editing, inline diffs, and direct integration with agent actions.
 
 ## Opening files

@@ -5,6 +5,8 @@ title: UI Flow
 
 # UI Flow
 
+![UI Flow](/productImages/planning/uiflow.png)
+
 UI Flow is a freehand canvas for wireframes and UI mockups. It uses [Excalidraw](https://excalidraw.com) as its drawing engine, so you get a hand-drawn aesthetic, a full shape library, and infinite canvas — all stored as a JSON file inside your project.
 
 ## Opening a UI Flow

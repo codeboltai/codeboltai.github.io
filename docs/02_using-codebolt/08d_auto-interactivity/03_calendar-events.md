@@ -5,6 +5,8 @@ title: Calendar & Scheduled Events
 
 # Calendar & Scheduled Events
 
+![Calendar and Scheduled Events](/productImages/aultiagentcoordination/calenderevents.png)
+
 The Calendar panel lets you schedule events that automatically notify participants or trigger agents at a specific time. Events can be one-off or recurring using cron expressions.
 
 Open via: **Agents dropdown → Calendar**

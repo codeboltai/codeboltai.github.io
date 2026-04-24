@@ -26,6 +26,12 @@ Switch in **Settings → Appearance → Theme**.
 
 Browse **Settings → Marketplace → Themes**. Click install. The theme appears in your theme picker.
 
+## Theme Editor
+
+The built-in Theme Editor lets you customise every colour in the UI. Select a base theme to start from, then adjust Base Colors, UI Elements, Text Colors, Editor Colors, Terminal Colors, and Tiptap Editor styles. You can also import, export, and delete custom themes.
+
+![Theme Customization](/productImages/applicationfeatures/Appearance.png)
+
 ## Writing a theme
 
 A theme is a JSON file with colour and style variables:

@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 A public catalog of agents, tools, and capabilities that anyone can install into their Codebolt. Think of it as a package registry — npm or PyPI, but for AI agents.
 
+![Agent Marketplace](/productImages/agents/marketplace.png)
+
 ## What's on the marketplace
 
 Three kinds of things:

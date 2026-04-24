@@ -5,6 +5,8 @@ title: Webhooks
 
 # Webhooks
 
+![Webhooks](/productImages/aultiagentcoordination/webhook.png)
+
 Webhooks let external systems trigger agent actions by sending an HTTP POST request to a unique URL. Each webhook is bound to an agent and a thread strategy — so when a request arrives, Codebolt knows exactly which agent to notify and how to manage the conversation thread.
 
 Open via: **System Settings → Routing Gateway → Webhooks tab**

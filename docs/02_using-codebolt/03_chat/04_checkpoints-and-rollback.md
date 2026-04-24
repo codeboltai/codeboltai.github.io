@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Checkpoints and Rollback
 
+![Checkpoints and Rollback](/productImages/chat/checkpoint_roleback.gif)
+
 Codebolt saves a rollback-able snapshot at every meaningful step. You can undo any agent change, instantly, without touching your real git. This is what makes it safe to let agents run on real code.
 
 > **How it works under the hood:** shadow git + the event log. See [Checkpoint and rollback (internals)](../../04_build-on-codebolt/09_internals/04_data-flow-walkthroughs/checkpoint-and-rollback.md) for the full story. This page is the user's view.

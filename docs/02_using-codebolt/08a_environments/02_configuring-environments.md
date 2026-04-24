@@ -5,6 +5,8 @@ title: Configuring Environments
 
 # Configuring Environments
 
+
+
 The Environments panel is the central place to create, edit, and switch between execution environments for your project.
 
 Open via: **Execution dropdown → Environment**

@@ -5,6 +5,8 @@ title: MCP Servers
 
 # MCP Servers
 
+![MCP Servers](/productImages/applicationfeatures/mcpServer.png)
+
 Model Context Protocol (MCP) servers extend what agents can do by exposing additional tools — file system access, GitHub operations, database queries, and anything else an MCP server implements. Agents call MCP tools the same way they call built-in tools.
 
 Open via: **Settings → MCP Servers** or **Bottom bar → Agents → MCP**

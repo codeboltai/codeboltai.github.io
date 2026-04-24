@@ -7,6 +7,8 @@ title: "KV Store"
 
 Fast namespaced key-value storage for persisting small values across agent runs. The KV Store is SQLite-backed with WAL mode for concurrent access, instance-based (each instance is a logical container with its own namespaces), and delivers real-time updates via WebSocket.
 
+![KV Store](/productImages/memorycontext/kvstore.png)
+
 ---
 
 ## Storage Layout

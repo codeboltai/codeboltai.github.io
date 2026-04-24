@@ -7,6 +7,8 @@ title: Agent Settings
 
 ## Agent LLM Settings
 
+![Agent Settings](/productImages/applicationfeatures/AgentSetting.png)
+
 Override the default LLM for a specific installed agent, and assign different models to each of that agent's LLM roles.
 
 1. Select an **Agent** from the dropdown.

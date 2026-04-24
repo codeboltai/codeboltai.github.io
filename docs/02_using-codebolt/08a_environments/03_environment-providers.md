@@ -5,6 +5,8 @@ title: Environment Providers
 
 # Environment Providers
 
+![Environment Providers](/productImages/environments/providers.png)
+
 An **environment provider** is what Codebolt uses to create and manage a remote execution environment. When you choose a non-local environment type, Codebolt delegates environment setup, startup, and teardown to the appropriate provider.
 
 ## How providers work

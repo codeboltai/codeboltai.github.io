@@ -5,6 +5,8 @@ title: Swarm Management
 
 # Swarm Management
 
+![Swarm Management](/productImages/multiagentusage/swarmmanagement.png)
+
 A **swarm** is a named group of agents configured to work toward a shared goal. The Swarm Management panel lets you create swarms, assign roles, monitor their activity, and handle lifecycle requests like agent spawning and termination.
 
 Open via: **Agents dropdown → Swarm Management**

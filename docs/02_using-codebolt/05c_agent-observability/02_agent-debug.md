@@ -18,6 +18,8 @@ Regular agents are spawned by Codebolt's `AgentProcessManager` — their stdout/
 
 Open the Agent Debug Panel from the sidebar in the Codebolt application. It has two panes:
 
+![Agent Debug Panel](/productImages/agentobservability/agentDegug.png)
+
 - **Left pane** — instance list, grouped by Running and History. Shows agent name, type badge, start time, and log count.
 - **Right pane** — terminal-style log viewer for the selected instance, with real-time streaming.
 

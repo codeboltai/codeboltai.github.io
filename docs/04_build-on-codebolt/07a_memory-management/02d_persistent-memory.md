@@ -7,6 +7,8 @@ title: "Persistent Memory"
 
 Persistent Memory defines **declarative retrieval pipeline definitions** that the Context Assembly Engine executes at runtime. Each "memory type" is a reusable, configurable retrieval recipe. Pipelines fetch data from storage layers, transform it, and format it for inclusion in LLM context.
 
+![Persistent Memory](/productImages/memorycontext/persistentMemory.png)
+
 ---
 
 ## Storage
