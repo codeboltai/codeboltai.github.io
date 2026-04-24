@@ -127,8 +127,14 @@ Debugging and observability panels.
 | AI Debug | Raw LLM input/output |
 | Preview | In-app preview browser |
 | Console | stdout/stderr output |
-| Codemap | Project dependency graph |
 | Problems | Syntax errors and lint warnings |
+
+#### Code Observability
+Structural and execution-path observability panels.
+
+| Item | Panel |
+|---|---|
+| Codemap | Project dependency graph |
 | Narrative Graph | Visual replay of an agent's decision path |
 
 #### Context
