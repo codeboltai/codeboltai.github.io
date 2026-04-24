@@ -46,8 +46,8 @@ Local Codebolt server  ──▶  Provider  ──▶  Remote environment
 |---|---|
 | [Configuring Environments](./02_configuring-environments.md) | Creating, editing, and switching environments in the UI |
 | [Environment Providers](./03_environment-providers.md) | Connecting E2B, Docker, Daytona, Git worktree, and remote servers |
+| [Environment Debug](./04_environment-debug.md) | Inspect resolved environment variables at runtime |
 
 ## See also
 
-- [Environment Debug](../08c_debug-and-observability/04_environment-and-plugin-debug.md) — inspect resolved environment variables at runtime
 - [Multi-Environment Orchestration](../../04_build-on-codebolt/08a_multi-environment-orchestration/01_overview.md) — provider architecture for builders
