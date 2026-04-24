@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 Adding an agent from the marketplace, a private registry, or a local file. Same process regardless of source — what differs is where the manifest comes from.
 
+![Installed Agents](/productImages/agents/installed.png)
+
 ## From the marketplace
 
 <Tabs groupId="surface">

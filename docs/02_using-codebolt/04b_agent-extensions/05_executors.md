@@ -5,6 +5,8 @@ title: Executors
 
 # Executors
 
+![Executors](/productImages/agent_extensions/executor.png)
+
 Executors are the runtime environments that run capabilities. When an agent invokes a capability, the Capability Manager looks up which executor handles that capability's type, then delegates execution to it.
 
 Open via: **Agents dropdown → Capabilities → Executors tab**

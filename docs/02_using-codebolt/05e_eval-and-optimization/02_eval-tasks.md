@@ -5,6 +5,8 @@ title: Eval Tasks
 
 # Eval Tasks
 
+![Eval Task](/productImages/evalandoptimization/eval_task.png)
+
 An eval task is the core definition of a test. It describes what to ask the subject to do, how to run it, and how to score the output. Tasks are reusable — you run the same task against different agents (subjects) to compare them.
 
 ## Creating a task

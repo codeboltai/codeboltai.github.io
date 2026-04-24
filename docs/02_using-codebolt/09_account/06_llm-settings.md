@@ -7,6 +7,8 @@ title: LLM Settings
 
 ## Default Settings
 
+![LLM Settings](/productImages/applicationfeatures/llmSetting.png)
+
 The Default Settings section lets you choose which LLM and embedding model Codebolt uses across the application by default.
 
 ### Default Application LLM
@@ -30,6 +32,8 @@ Select the provider and model used for vector embeddings (memory ingestion, know
 ---
 
 ## LLM Providers
+
+![LLM Providers](/productImages/applicationfeatures/billing.png)
 
 The LLMs section is where you add API keys and browse the models available from each provider.
 

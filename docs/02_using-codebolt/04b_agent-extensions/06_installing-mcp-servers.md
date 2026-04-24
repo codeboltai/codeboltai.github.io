@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Installing MCP Servers
 
+![Installing MCP Servers](/productImages/agent_extensions/install_mcp_server.png)
+
 Three sources for an MCP server: a marketplace registry, a manual config entry for a private/local server, or a capability bundle that ships its own. The mechanics are the same — what differs is where the manifest comes from.
 
 ## 1. From the marketplace (easiest)

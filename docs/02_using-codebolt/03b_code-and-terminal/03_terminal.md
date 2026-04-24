@@ -5,6 +5,8 @@ title: Terminal
 
 # Terminal
 
+![Terminal](/productImages/editor/terminal.png)
+
 The Terminal panel gives you a full shell session inside the Codebolt workspace. Agents use the terminal to run commands, and you can use it directly in parallel. Multiple terminal instances can be open at once, each in its own tab.
 
 ## Opening a terminal

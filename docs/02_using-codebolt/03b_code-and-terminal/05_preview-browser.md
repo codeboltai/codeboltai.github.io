@@ -5,6 +5,8 @@ title: Preview & Browser
 
 # Preview & Browser
 
+![Browser](/productImages/editor/browser.png)
+
 Codebolt includes two embedded web-viewing panels: **Preview** for live application previews and **Browser** for general web browsing and agent-driven browser automation.
 
 ## Preview panel

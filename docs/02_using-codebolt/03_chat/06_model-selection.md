@@ -8,6 +8,8 @@ import TabItem from '@theme/TabItem';
 
 # Model Selection
 
+![Model Selection](/productImages/chat/model_selection.gif)
+
 Every chat tab uses one model at a time. Picking the right one matters for both quality and cost. This page covers how to pick and when to switch.
 
 ## Where the model comes from

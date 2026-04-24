@@ -5,6 +5,8 @@ title: Chat Overview
 
 # Chat Overview
 
+![Chat Overview](/productImages/chat/overview.gif)
+
 The chat panel is the primary way most people interact with Codebolt. You pick an agent, type a message, watch it work, review the result. Everything else in Codebolt — marketplace, flows, custom agents, multi-agent orchestration — is either a variation on this loop or infrastructure that makes it better.
 
 ## Anatomy of the chat panel

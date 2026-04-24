@@ -5,6 +5,8 @@ title: Thread Panel
 
 # Thread Panel
 
+![Thread Panel](/productImages/agents/thread_panel.png)
+
 The Thread Panel is a unified list of every message thread in the current project. Each chat conversation, agent run, and delegated sub-task creates a thread; the Thread Panel lets you navigate and monitor all of them from one place.
 
 Open via: **Execution dropdown → Thread Panel**

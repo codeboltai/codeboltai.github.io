@@ -43,6 +43,8 @@ See [Local models](./02_local-models.md) for local setup.
 
 **Settings → Providers → Add provider.** Pick from the list, fill in the credential fields shown below for the provider, click **Test**, then **Save**.
 
+![LLM Providers](/productImages/applicationfeatures/billing.png)
+
 </TabItem>
 <TabItem value="cli" label="CLI">
 

@@ -5,6 +5,8 @@ title: Tasks
 
 # Tasks
 
+![Tasks](/productImages/planning/tasks.png)
+
 Tasks are individual work items. Unlike Action Plan tasks (which live inside a structured plan), standalone Tasks are a flat, flexible backlog — closer to a kanban board than an execution graph. You can create them manually, generate them from Roadmap features, or have agents create them during their work.
 
 ## Creating a task

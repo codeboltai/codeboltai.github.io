@@ -5,6 +5,8 @@ title: Application Layout
 
 # Application Layout
 
+![Application Layout](/productImages/applicationfeatures/layout.png)
+
 Codebolt's interface is divided into three persistent zones — a top navbar, a central workspace, and a bottom bar — plus a panel system that lets you open, close, and rearrange any view.
 
 ```

@@ -7,6 +7,8 @@ title: Appearance & Global Settings
 
 ## Appearance
 
+![Appearance](/productImages/applicationfeatures/Appearance.png)
+
 The Appearance section exposes Codebolt's theme editor — a full interface for creating and customising visual themes.
 
 Open via: **Settings → Appearance**

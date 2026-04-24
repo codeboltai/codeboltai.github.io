@@ -5,6 +5,8 @@ title: Context and @-mentions
 
 # Context and @-mentions
 
+![Context and @-mentions](/productImages/chat/mentions.gif)
+
 What the agent sees when you type a message isn't just the message — it's a carefully assembled prompt drawing from your project, recent turns, memory, and anything you explicitly pointed at with `@`. Understanding what's in the context is how you make agents behave better.
 
 ## What's automatically in the context

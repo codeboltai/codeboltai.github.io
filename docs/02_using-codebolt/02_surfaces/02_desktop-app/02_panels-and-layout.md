@@ -123,7 +123,11 @@ Covers almost every action in the app. If you don't know how to do something, op
 
 **View → Layout** has several presets:
 
-- **Default** — all panels visible.
+![Layout Selection](/productImages/applicationfeatures/layout.png)
+
+- **Normal Mode** — all panels visible, the default working layout.
+- **Task Mode** — focused layout for task-oriented workflows.
+- **+ Save Current** — save your current panel arrangement as a custom layout.
 - **Focus mode** — chat only, other panels hidden.
 - **Editor mode** — editor fills the centre, chat on the side, no terminal.
 - **Agent mode** — agents panel + chat + terminal; editor hidden.

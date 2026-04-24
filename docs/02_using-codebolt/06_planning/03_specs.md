@@ -5,6 +5,8 @@ title: Specs
 
 # Specs
 
+![Specs](/productImages/planning/specs.png)
+
 Specs are technical specification documents. They live in your project's `specs/` folder as `.specs` files — Markdown with MDX support, so you can use rich formatting, code blocks, tables, and embedded images.
 
 ## Creating a spec

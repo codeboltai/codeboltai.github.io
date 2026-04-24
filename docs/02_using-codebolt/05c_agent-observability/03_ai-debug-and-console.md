@@ -11,6 +11,8 @@ The AI Debug panel focuses specifically on LLM interactions — raw inputs, raw 
 
 Open via: **Debug Tools dropdown → AI Debug**
 
+![AI Debug Panel](/productImages/agentobservability/aidebug.png)
+
 ### What it shows
 
 Each LLM call appears as a collapsible card:

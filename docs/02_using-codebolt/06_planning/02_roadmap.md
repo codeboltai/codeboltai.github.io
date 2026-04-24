@@ -5,6 +5,8 @@ title: Roadmap
 
 # Roadmap
 
+![Roadmap](/productImages/planning/roadmap.png)
+
 The Roadmap tool is for product-level planning. It organises what you want to build into **phases** and **features**, and includes a separate **Ideation** tab for collecting and reviewing ideas before they become commitments.
 
 ## Opening the Roadmap

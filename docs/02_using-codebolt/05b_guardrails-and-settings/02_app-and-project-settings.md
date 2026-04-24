@@ -14,7 +14,11 @@ Open Project Settings: **System Settings dropdown → Settings** (or the gear ic
 
 App Settings control behaviour across all projects.
 
-### General
+### Default Settings (LLM)
+
+Configure the default Application LLM and Embedding Model used across all projects.
+
+![LLM Settings](/productImages/applicationfeatures/llmSetting.png)
 
 | Setting | Description |
 |---|---|
@@ -87,6 +91,10 @@ Override the global LLM settings for this project:
 
 ### Agent Defaults
 
+Configure per-agent LLM settings and role-specific LLM overrides (documentation, testing, action).
+
+![Agent Settings](/productImages/applicationfeatures/AgentSetting.png)
+
 | Setting | Description |
 |---|---|
 | **Default agent** | Which agent to select when opening a new chat tab |
@@ -118,6 +126,24 @@ The **Project Structure** panel (System Settings → **Project Structure**) show
 Project structure annotations are stored in `.codebolt/structure.json`.
 
 ---
+
+## MCP Servers
+
+Browse, install, and manage MCP (Model Context Protocol) servers from the Settings panel. Both installed and available servers from the marketplace are shown.
+
+![MCP Servers](/productImages/applicationfeatures/mcpServer.png)
+
+## Language Server Protocol
+
+Manage Language Server notifications and installed language servers. You can temporarily dismiss or permanently hide installation prompts for specific languages.
+
+![Language Server](/productImages/applicationfeatures/language_server.png)
+
+## Appearance
+
+Customize the look and feel of Codebolt using the Theme Editor. Modify base colors, UI elements, text colors, editor colors, terminal colors, and Tiptap editor styles.
+
+![Appearance](/productImages/applicationfeatures/Appearance.png)
 
 ## Extensions
 

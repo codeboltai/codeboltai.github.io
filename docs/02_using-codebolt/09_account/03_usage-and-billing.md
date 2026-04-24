@@ -93,6 +93,8 @@ Self-hosted teams don't have a Codebolt subscription fee at all. You run the ser
 
 **Settings → Billing** (hosted service only):
 
+![Billing and Providers](/productImages/applicationfeatures/billing.png)
+
 - Current plan
 - This month's usage vs plan limits
 - Payment method

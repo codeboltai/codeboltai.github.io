@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Running Agents
 
-![Running Agents](/productImages/runagent.png)
+![Running Agents](/productImages/agents/running_agent.png)
 
 Same underlying runtime, multiple ways to start a run. Pick the surface that matches what you're doing — interactive work in chat, scripted runs from the CLI, fixed pipelines via flows, or autonomous background runs via triggers.
 

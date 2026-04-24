@@ -5,6 +5,8 @@ title: Inline Edit and Ctrl+K
 
 # Inline Edit and Ctrl+K
 
+![Inline Edit and Ctrl+K](/productImages/chat/controll+k.gif)
+
 The fastest way to make an LLM-assisted change: select some code, press **Ctrl+K**, type what you want, done. No chat tab, no turn history, just a single focused edit.
 
 ## The flow

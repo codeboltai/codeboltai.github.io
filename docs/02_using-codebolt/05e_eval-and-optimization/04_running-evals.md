@@ -5,6 +5,8 @@ title: Running Evals
 
 # Running Evals
 
+![Running Evals](/productImages/evalandoptimization/running_eval.png)
+
 A **run** pairs one or more subjects (agents to test) against one or more tasks (or a whole suite) and executes them all, producing a scored result for every subject × task combination.
 
 ## Subjects

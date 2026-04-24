@@ -5,6 +5,8 @@ title: Capabilities
 
 # Capabilities
 
+![Create Capability](/productImages/agent_extensions/capability.png)
+
 A Capability is a versioned, reusable unit of agent behaviour with defined inputs and outputs. Agents invoke capabilities during task execution to perform specific, well-scoped operations — without re-implementing the same logic in every agent.
 
 Open via: **Agents dropdown → Capabilities**

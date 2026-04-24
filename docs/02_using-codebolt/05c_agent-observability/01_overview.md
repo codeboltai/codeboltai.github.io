@@ -7,6 +7,8 @@ title: Agent Observability Overview
 
 Observability in Codebolt is how you see what an agent *did*, what it's *doing right now*, and why it made a particular choice. It spans running processes, historical runs, LLM-level traces, and visual replays.
 
+
+
 ## Panels in this section
 
 | Panel | Purpose |

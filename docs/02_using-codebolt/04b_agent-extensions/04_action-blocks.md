@@ -5,6 +5,8 @@ title: Action Blocks
 
 # Action Blocks
 
+![Action Blocks](/productImages/agent_extensions/actionBlock.png)
+
 Action Blocks are lightweight, focused code units that run as **side executions** — in parallel with the main agent loop, not as part of it. Where an agent is a full reasoning loop, an action block is a discrete function: receive context, do one thing, return a result.
 
 Open via: **Agents dropdown → Action Blocks**

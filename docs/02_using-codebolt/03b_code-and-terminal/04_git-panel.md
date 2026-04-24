@@ -5,6 +5,8 @@ title: Git Panel
 
 # Git Panel
 
+![Git Panel](/productImages/editor/gitpanel.png)
+
 The Git panel gives you a visual interface for staging, committing, branching, and reviewing history — without leaving Codebolt. The bottom bar always shows the current branch name and sync status.
 
 ## The bottom bar Git section

@@ -5,6 +5,8 @@ title: Requirement Plan
 
 # Requirement Plan
 
+![Requirement Plan](/productImages/planning/requirement_plan.png)
+
 A Requirement Plan is an aggregation document. It doesn't have its own content format — instead it pulls together other planning artifacts (Specs, UI Flows, Action Plans) alongside free-form Markdown into one structured document.
 
 Use it when you want a single place that answers: "what are we building, how should it look, and how are we going to build it?"
