@@ -22,6 +22,7 @@ For structural code understanding and dependency exploration, see **[Code Observ
 | Panel | Location |
 |---|---|
 | Codemap (project structure and dependency graph) | [Code Observability → Codemap](../09b_code-observability/02_codemap.md) |
+| Narrative Graph (visual run replay) | [Code Observability → Narrative Graph](../09b_code-observability/03_narrative-graph.md) |
 
 ## Agent-focused observability
 
@@ -31,7 +32,6 @@ For agent runs, LLM traces, and the per-instance log stream see the **[Agent Obs
 |---|---|
 | Agent Debug (log stream, tool calls, LLM calls) | [Agent Observability → Agent Debug](../05c_agent-observability/02_agent-debug.md) |
 | AI Debug & Console (raw LLM I/O, stdout/stderr) | [Agent Observability → AI Debug & Console](../05c_agent-observability/03_ai-debug-and-console.md) |
-| Narrative Graph (visual run replay) | [Agents → Narrative Graph](../04_agents/09_narrative-graph.md) |
 
 ## Quick debugging workflow
 
@@ -40,5 +40,5 @@ For agent runs, LLM traces, and the per-instance log stream see the **[Agent Obs
 3. **Wrong environment variable** → [Environment Debug](./04_environment-and-plugin-debug.md) — resolved value
 4. **Code has errors** → [Problems](./05_problems.md) — lint/type errors
 5. **Need to understand dependency impact** → [Codemap](../09b_code-observability/02_codemap.md) — trace imports and relationships before editing
-6. **Agent took a strange path** → [Narrative Graph](../04_agents/09_narrative-graph.md) — visual decision replay
+6. **Agent took a strange path** → [Narrative Graph](../09b_code-observability/03_narrative-graph.md) — visual decision replay
 7. **Monitor a swarm run** → [Chat Canvas](./06_chat-canvas.md) — see all agents updating in real time

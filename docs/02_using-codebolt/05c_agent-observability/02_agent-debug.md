@@ -223,12 +223,12 @@ Right-click any log entry → **Copy as JSON** to export the raw event. Useful f
 
 ## Narrative Graph
 
-The **Narrative Graph** (Debug Tools → **Narrative Graph**) visualises an agent run as a directed graph — user message → LLM decisions → tool calls → completion — so you can see the branching and retry structure at a glance rather than scanning a flat log. See [Narrative Graph](../04_agents/09_narrative-graph.md) for full details.
+The **Narrative Graph** (Code Observability → **Narrative Graph**) visualises an agent run as a directed graph — user message → LLM decisions → tool calls → completion — so you can see the branching and retry structure at a glance rather than scanning a flat log. See [Narrative Graph](../09b_code-observability/03_narrative-graph.md) for full details.
 
 ## See also
 
 - [What is an agent](../04_agents/01_what-is-an-agent.md)
 - [Running agents](../04_agents/03_running-agents.md)
 - [Thread Panel](../04_agents/08_thread-panel.md)
-- [Narrative Graph](../04_agents/09_narrative-graph.md)
+- [Narrative Graph](../09b_code-observability/03_narrative-graph.md)
 - [AI Debug & Console](./03_ai-debug-and-console.md)
