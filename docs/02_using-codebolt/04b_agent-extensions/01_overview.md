@@ -34,7 +34,7 @@ System event (file saved, git commit, agent completes)
                              (runs the capability)
 ```
 
-Agents invoke capabilities and skills during their reasoning loop. Action blocks run in parallel as side executions. Executors provide the language runtime that capabilities need. For event-driven triggers that *start* agents automatically, see [Auto Interactivity](../08d_auto-interactivity/01_overview.md).
+Agents invoke capabilities and skills during their reasoning loop. Action blocks run in parallel as side executions. Executors provide the language runtime that capabilities need. For event-driven triggers that *start* agents automatically, see [Automation](../08d_auto-interactivity/01_overview.md).
 
 ## Where to find them
 

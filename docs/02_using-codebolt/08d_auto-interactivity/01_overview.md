@@ -1,11 +1,11 @@
 ---
 sidebar_position: 1
-title: Auto Interactivity Overview
+title: Automation Overview
 ---
 
-# Auto Interactivity
+# Automation
 
-Auto Interactivity covers everything that causes agents to act *automatically* — without a user typing a message. Instead of you starting a conversation, a system event, an incoming HTTP request, a scheduled time, or a code lifecycle event starts it for you.
+Automation covers everything that causes agents to act *automatically* — without a user typing a message. Instead of you starting a conversation, a system event, an incoming HTTP request, a scheduled time, or a code lifecycle event starts it for you.
 
 ## How it works
 

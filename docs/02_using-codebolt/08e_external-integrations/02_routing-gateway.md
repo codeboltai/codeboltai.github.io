@@ -35,7 +35,7 @@ A unified view of every active integration — webhooks and channel plugins side
 
 ### Webhooks tab
 
-Create and manage HTTP webhook endpoints. See [Auto Interactivity → Webhooks](../08d_auto-interactivity/02_webhooks.md) for the full reference.
+Create and manage HTTP webhook endpoints. See [Automation → Webhooks](../08d_auto-interactivity/02_webhooks.md) for the full reference.
 
 ### Activity Log tab
 
