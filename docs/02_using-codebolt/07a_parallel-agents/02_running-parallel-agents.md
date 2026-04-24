@@ -33,6 +33,8 @@ The child appears in the **Running Agent panel** alongside the parent. Both are 
 
 **Use this when:** an orchestrator agent needs to delegate subtasks to specialists automatically.
 
+See [Sub Agent](./05_sub-agent.md) for the user-facing view of how delegated child runs appear in Codebolt.
+
 ## Flows — declared pipelines
 
 A flow is a graph where nodes are agents and edges are data connections. The flow runtime executes agents in dependency order — independent nodes run in parallel automatically.
@@ -82,7 +84,9 @@ Open via **Execution dropdown → Running Agent** in the bottom bar. Shows every
 
 ### Background Agents panel
 
-Open via **Execution dropdown → Background Agents**. Shows agents running without a visible chat thread — started by triggers, delegated by other agents, or detached with `run.detach()`.
+Open via **Execution dropdown → Background Agents**. This is a dedicated panel for tracked background runs, with active items, history, and start/stop controls.
+
+See [Background Agent](./04_background-agent.md) for when runs move into this panel and how to monitor them.
 
 ### Chat Canvas
 

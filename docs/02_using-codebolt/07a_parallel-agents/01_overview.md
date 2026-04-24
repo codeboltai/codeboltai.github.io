@@ -29,3 +29,5 @@ Running agents sequentially — one finishes, then the next starts — works fin
 
 - [Running Parallel Agents](./02_running-parallel-agents.md) — how to start and manage concurrent runs
 - [Chat Canvas](./03_chat-canvas.md) — visual workspace for monitoring and coordinating parallel agent conversations
+- [Background Agent](./04_background-agent.md) — how the Background Agents panel starts, tracks, and surfaces background runs
+- [Sub Agent](./05_sub-agent.md) — how delegated child runs work and where to follow them
