@@ -1,0 +1,9 @@
+.cb-os-tabs {
+  margin: 0.75rem 0 1.25rem;
+}
+
+/* tighten the tab strip */
+.cb-os-tabs .tabs__item {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+}

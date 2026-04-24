@@ -20,8 +20,7 @@ New to Codebolt? Start with what it is, get it installed, and run your first age
 <DocCardGrid columns={3} items={[
   { label: 'Intro', title: 'What is Codebolt', description: 'The core idea, what makes it different, and what you can do with it.', href: './01b_what-is-codebolt' },
   { label: 'QS', title: 'Quickstart', description: 'Install, sign in, open a project, and run your first agent in ~10 minutes.', href: './02_quickstart' },
-  { label: 'Install', title: 'Installation', description: 'Desktop app, CLI, system requirements, updating, and uninstalling.', href: './02b_installation' },
-  { label: 'Check', title: 'First-run Checklist', description: 'Verify everything is working correctly after install.', href: './02c_first-run-checklist' },
+  { label: 'Install', title: 'Installation & Setup', description: 'Desktop app, CLI, onboarding wizard, and first-run checklist.', href: './03_installation' },
 ]} />
 
 <p class="uc-section-label">Workspace</p>

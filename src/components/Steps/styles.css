@@ -1,0 +1,115 @@
+.cb-steps {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+/* ─── NUMBERED variant ─────────────────────────────────── */
+
+.cb-steps--numbered {
+  counter-reset: cb-step;
+}
+
+.cb-steps--numbered::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.cb-steps--numbered .cb-step {
+  position: relative;
+  margin-bottom: 2rem;
+  counter-increment: cb-step;
+}
+
+.cb-steps--numbered .cb-step__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cb-steps--numbered .cb-step__header::before {
+  content: counter(cb-step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ifm-background-color);
+  border: 1.5px solid var(--ifm-color-emphasis-400);
+  color: var(--ifm-font-color-base);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--ifm-font-family-monospace);
+  position: relative;
+  z-index: 1;
+}
+
+.cb-steps--numbered .cb-step__title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  align-self: center;
+}
+
+.cb-steps--numbered .cb-step__body {
+  padding-left: calc(32px + 0.75rem);
+}
+
+.cb-steps--numbered .cb-step__body > *:first-child {
+  margin-top: 0;
+}
+
+/* ─── DOTS variant ─────────────────────────────────────── */
+
+.cb-steps--dots::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 20px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--ifm-color-emphasis-300);
+}
+
+.cb-steps--dots .cb-step {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.cb-steps--dots .cb-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ifm-color-emphasis-500);
+  z-index: 1;
+}
+
+.cb-steps--dots .cb-step__header {
+  margin-bottom: 0.6rem;
+}
+
+.cb-steps--dots .cb-step__title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cb-steps--dots .cb-step__body > *:first-child {
+  margin-top: 0;
+}
