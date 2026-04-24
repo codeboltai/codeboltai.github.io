@@ -1,9 +1,6 @@
 {
-  "label": "Multi-Agent Usage",
+  "label": "Multi-Agent Coordination",
   "position": 7.5,
   "collapsible": true,
-  "collapsed": true,
-  "customProps": {
-    "sectionLabel": "Orchestration"
-  }
+  "collapsed": true
 }

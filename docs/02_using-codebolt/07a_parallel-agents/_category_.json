@@ -1,0 +1,9 @@
+{
+  "label": "Parallel Agents",
+  "position": 7.1,
+  "collapsible": true,
+  "collapsed": true,
+  "customProps": {
+    "sectionLabel": "Orchestration"
+  }
+}
