@@ -130,7 +130,7 @@ The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandbo
 Connect external services, set guardrails, and manage your account. Usually a one-time setup per project or workspace.
 
 <DocCardGrid columns={2} items={[
-  { label: 'Int', title: 'Integrations', description: 'LLM providers, local models, git, browser control, and more.', href: './08_integrations/01_llm-providers' },
+  { label: 'Int', title: 'Plugin Integrations', description: 'LLM providers, local models, git, browser control, chat widget, and plugin debug.', href: './08_integrations/01_llm-providers' },
   { label: 'Guard', title: 'Guardrails & Settings', description: 'Safety rules, routing gateway, app and project config.', href: './09a_guardrails-and-settings/01_guardrails' },
 ]} />
 

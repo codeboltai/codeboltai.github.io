@@ -59,7 +59,7 @@ When an agent runs, environment variables are resolved in this order (highest pr
 3. **System environment** — your OS environment variables
 4. **Codebolt defaults** — built-in fallback values
 
-The [Environment Debug panel](../08c_debug-and-observability/04_environment-and-plugin-debug.md) shows the fully resolved variable set with the source of each value, so you can verify what an agent will actually see before running it.
+The [Environment Debug panel](./04_environment-debug.md) shows the fully resolved variable set with the source of each value, so you can verify what an agent will actually see before running it.
 
 ## Comparing environments
 
