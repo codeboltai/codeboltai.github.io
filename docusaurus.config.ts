@@ -99,14 +99,14 @@ const config: Config = {
     // shutdown-serialize on Windows with this repo. A production build is
     // one-shot, so disabling the cache trades a small speed hit for a clean
     // exit without killing post-build plugin work.
-    function disableWebpackFsCache() {
-      return {
-        name: 'disable-webpack-fs-cache',
-        configureWebpack() {
-          return { cache: false };
-        },
-      };
-    },
+    // function disableWebpackFsCache() {
+    //   return {
+    //     name: 'disable-webpack-fs-cache',
+    //     configureWebpack() {
+    //       return { cache: false };
+    //     },
+    //   };
+    // },
   ],
 
   themes: [
