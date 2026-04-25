@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: MCP Tools Overview
+description: How to add MCP tools to a Codebolt app and how to build new MCP servers for agents.
 ---
 
 # MCP Tools

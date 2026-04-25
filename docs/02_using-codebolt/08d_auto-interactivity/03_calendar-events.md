@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Calendar & Scheduled Events
+description: The Calendar panel lets you schedule events that automatically notify participants or trigger agents at a specific time
 ---
 
 # Calendar & Scheduled Events

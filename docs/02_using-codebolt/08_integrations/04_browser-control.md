@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Browser Control
+description: "Agents can control a headless browser via codebolt_browser. Used for:"
 ---
 
 # Browser Control

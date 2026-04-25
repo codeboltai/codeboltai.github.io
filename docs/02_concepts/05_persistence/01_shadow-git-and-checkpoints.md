@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Shadow Git and Checkpoints
+description: How Codebolt makes agent edits safely reversible without touching your real git history.
 ---
 
 import ShadowGitTimelines from '@site/src/components/diagrams/ShadowGitTimelines';

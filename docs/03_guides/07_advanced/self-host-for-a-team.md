@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Self-Host for a Team
+description: "A practical walkthrough: set up a Codebolt server for a team of 5-20 people from zero to working in a couple of hours. For the reference docs, see Self-Hosting."
 ---
 
 # Self-Host for a Team

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: App Commands
+description: Manage the Codebolt server itself (the local process or a self-hosted instance you're connected to).
 ---
 
 # `codebolt app` commands

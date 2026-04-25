@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Common Issues
+description: A triage page for the most frequent things that go wrong. If your issue isn't here, check Logs and diagnostics, then file a bug via Reporting bugs.
 ---
 
 # Common Issues

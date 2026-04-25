@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: UI Extensions
+description: A UI extension is a plugin that renders an interactive panel inside the Codebolt app
 ---
 
 # UI Extensions

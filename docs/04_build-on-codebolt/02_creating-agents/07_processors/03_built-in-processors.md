@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Built-in Processors
+description: These are the processor pieces currently exported from @codebolt/agent/processor-pieces.
 ---
 
 # Built-in Processors

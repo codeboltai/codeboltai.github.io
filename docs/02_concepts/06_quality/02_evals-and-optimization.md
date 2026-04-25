@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Evals and Optimization
+description: Agents don't stay good on their own. A prompt tweak that wins one task silently breaks another
 ---
 
 import EvalAnatomy from '@site/src/components/diagrams/EvalAnatomy';

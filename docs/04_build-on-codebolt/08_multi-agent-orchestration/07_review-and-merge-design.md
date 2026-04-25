@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Review & Merge Design
+description: "Source code: controllers/reviewMergeRequest, services/reviewMergeRequestService, services/reviewModeService."
 ---
 
 # Review & Merge Design

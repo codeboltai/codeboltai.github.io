@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Agent Commands
+description: Everything related to running, managing, installing, and debugging agents from the command line
 ---
 
 # `codebolt agent` commands

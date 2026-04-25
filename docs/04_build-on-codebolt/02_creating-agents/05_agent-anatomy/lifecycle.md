@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Lifecycle
+description: From "something triggered this agent" to "the run row is in the database with status=completed"
 ---
 
 # Agent Lifecycle

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Agent Extensions Overview
+description: Agent Extensions are modular units of functionality that augment what agents can do
 ---
 
 # Agent Extensions

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Plugin SDK and Lifecycle
+description: The main SDK for plugin authors is @codebolt/plugin-sdk. It is not the same as the client SDK used for custom frontends
 ---
 
 # Plugin SDK and Lifecycle

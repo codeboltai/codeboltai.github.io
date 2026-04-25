@@ -1,6 +1,7 @@
 ---
 sidebar_position: 99
 title: Publishing
+description: Share your agent with others by publishing it to the CodeBolt registry, or keep it local to your project.
 ---
 
 # Publishing an Agent

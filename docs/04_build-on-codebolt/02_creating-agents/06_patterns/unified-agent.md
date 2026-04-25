@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: CodeboltAgent
+description: Use CodeboltAgent when you don't need to change any logic in the agentic loop
 ---
 
 # CodeboltAgent

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Level 2 — Using Agent Framework
+description: Write a code-based agent on top of @codebolt/agent
 ---
 
 # Level 1 — Framework

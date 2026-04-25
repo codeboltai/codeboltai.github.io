@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Client SDK
+description: "@codebolt/client-sdk is a typed TypeScript client for all Codebolt HTTP routes and WebSocket channels"
 ---
 
 # Client SDK

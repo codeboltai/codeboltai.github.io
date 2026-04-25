@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Themes
+description: Codebolt has a built-in theme system that lets you create, manage, and switch visual themes
 ---
 
 # Themes

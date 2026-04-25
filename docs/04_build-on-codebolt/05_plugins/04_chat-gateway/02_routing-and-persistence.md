@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Routing and Persistence
+description: The core value of the chat gateway is that the plugin only forwards messages. The server owns thread identity, agent lifecycle, reply dispatch, and persistence.
 ---
 
 # Routing and Persistence

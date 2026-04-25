@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Inline Edit and Ctrl+K
+description: "The fastest way to make an LLM-assisted change: select some code, press Ctrl+K, type what you want, done"
 ---
 
 # Inline Edit and Ctrl+K

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Agents
+description: An agent is a configured loop that takes a task, asks an LLM what to do next, calls tools, observes results, and repeats until the task is done (or a budget is.
 ---
 
 import AgentLoop from '@site/src/components/diagrams/AgentLoop';

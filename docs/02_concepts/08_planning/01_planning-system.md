@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: The Planning System
+description: Most tools treat planning as a single thing — a list, a board, a document
 ---
 
 # The Multi-Faceted Planning System

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Marketplace Publishing
+description: The cloud portal is where anything publishable lives. Every entity type has an All page (public marketplace) and a My page (what you've published)
 ---
 
 # Marketplace Publishing

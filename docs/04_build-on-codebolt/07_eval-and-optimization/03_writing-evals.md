@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Evaluators
+description: Evaluators score the subject's output after a task runs. Each task can have multiple evaluators, combined by weighted average to produce the final score (0-100)
 ---
 
 # Evaluators

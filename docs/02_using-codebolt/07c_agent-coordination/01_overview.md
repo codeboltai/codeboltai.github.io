@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Coordination Overview
+description: When multiple agents work on the same project, they need ways to divide work, communicate, reach decisions, and stay aware of what others are doing
 ---
 
 # Multi-Agent Coordination

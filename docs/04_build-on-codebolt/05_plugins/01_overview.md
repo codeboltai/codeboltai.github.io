@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Plugins Overview
+description: Plugins extend the CodeBolt application. They run as separate Node
 ---
 
 # Plugins

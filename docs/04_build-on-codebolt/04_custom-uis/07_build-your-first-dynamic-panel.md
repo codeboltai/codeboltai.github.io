@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Build Your First Dynamic Panel
+description: Dynamic panels let a plugin render an interactive UI inside the Codebolt app
 ---
 
 # Build Your First Dynamic Panel

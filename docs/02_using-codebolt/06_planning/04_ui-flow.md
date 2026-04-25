@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: UI Flow
+description: UI Flow is a freehand canvas for wireframes and UI mockups
 ---
 
 # UI Flow

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Architecture Overview
+description: Codebolt is built as a set of cooperating subsystems that run inside packages/server (the long-lived process), with packages/electron + packages/ui providing.
 ---
 
 # Architecture Overview

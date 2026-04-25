@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: CI/CD Integration
+description: Trigger Codebolt agent runs from CI/CD pipelines — on push, pull request, deployment, or any pipeline event.
 ---
 
 # CI/CD Integration

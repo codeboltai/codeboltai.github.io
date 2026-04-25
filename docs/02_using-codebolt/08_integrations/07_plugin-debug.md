@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Plugin Debug
+description: The Plugin Debug panel shows the WebSocket connection state, incoming/outgoing messages, and errors for every installed plugin — chat-platform plugins, custom.
 ---
 
 # Plugin Debug

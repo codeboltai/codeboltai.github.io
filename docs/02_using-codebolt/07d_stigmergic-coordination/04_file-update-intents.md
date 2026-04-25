@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: File Update Intents
+description: A File Update Intent is a declaration — "I plan to modify these files for this reason" — that agents post before starting work
 ---
 
 # File Update Intents

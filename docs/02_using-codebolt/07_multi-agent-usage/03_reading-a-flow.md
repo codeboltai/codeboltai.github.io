@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Reading a Flow
+description: Understanding what an agent flow is doing while it runs, or after it's finished. Essential for debugging multi-agent work.
 ---
 
 import Tabs from '@theme/Tabs';

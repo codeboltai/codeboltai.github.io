@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Evaluate how well your agents, skills, and action blocks perform on specific tasks — then automatically optimize them using an agent-driven improvement loop.
 ---
 
 import EvalOptimizationOverview from '@site/src/components/diagrams/EvalOptimizationOverview';

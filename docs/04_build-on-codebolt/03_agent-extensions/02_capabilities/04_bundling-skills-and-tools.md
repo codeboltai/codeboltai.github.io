@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: API Reference
+description: "Full API reference: Capability API"
 ---
 
 # API Reference

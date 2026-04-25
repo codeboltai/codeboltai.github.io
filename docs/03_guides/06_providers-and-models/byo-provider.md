@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Bring Your Own Provider
+description: Using an LLM provider Codebolt doesn't natively support. Two paths depending on whether the provider is OpenAI-compatible or genuinely different.
 ---
 
 # Bring Your Own Provider

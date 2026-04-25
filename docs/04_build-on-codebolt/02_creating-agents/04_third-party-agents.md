@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Third-Party Agents
+description: Run an external CLI agent (Claude Code, Codex, Gemini, Cursor, etc.) inside Codebolt. The vendor CLI does the reasoning
 ---
 
 # Third-Party Agents

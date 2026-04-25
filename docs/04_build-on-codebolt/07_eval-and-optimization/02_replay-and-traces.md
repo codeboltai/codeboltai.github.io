@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Creating Experiments
+description: An experiment (task) defines what to test, where to run it, and how to score the output. Create experiments in the Eval Panel's Experiments tab.
 ---
 
 # Creating Experiments

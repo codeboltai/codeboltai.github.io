@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Environment Providers
+description: An environment provider is what Codebolt uses to create and manage a remote execution environment
 ---
 
 # Environment Providers

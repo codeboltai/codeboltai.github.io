@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Headless Mode
+description: Run Codebolt without any UI — no GUI, no TUI. Just the server, accepting CLI commands. The setup for CI runners, background services, automation.
 ---
 
 # Headless Mode

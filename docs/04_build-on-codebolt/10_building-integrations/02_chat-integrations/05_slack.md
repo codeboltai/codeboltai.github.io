@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Slack
+description: The slack-channel plugin connects a Slack app to Codebolt using @slack/bolt in Socket Mode
 ---
 
 # Slack Integration

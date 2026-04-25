@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: What are Plugins
+description: Plugins extend the Codebolt application itself — not just what agents can do, but what the application can do. They run as separate Node
 ---
 
 # What are Plugins

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Swarm Management
+description: A swarm is a named group of agents configured to work toward a shared goal
 ---
 
 # Swarm Management

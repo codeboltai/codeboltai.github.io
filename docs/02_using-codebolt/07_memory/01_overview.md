@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Memory & Context Overview
+description: Memory is how Codebolt agents accumulate, retain, and retrieve knowledge — across turns, across sessions, and across projects
 ---
 
 # Memory & Context

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Capabilities
+description: A capability is a versioned, self-contained unit of agent functionality in Codebolt's unified extensibility framework
 ---
 
 # Capabilities

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Agent Debug
+description: "Where you see agent logs depends on how the agent runs:"
 ---
 
 # Agent Debug

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1.5
 title: What is Codebolt
+description: Codebolt is an AI-native coding environment
 ---
 
 # What is Codebolt

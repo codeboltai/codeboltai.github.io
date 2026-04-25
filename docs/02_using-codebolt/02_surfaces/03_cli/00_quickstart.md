@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 title: Quickstart
+description: If you have the desktop app installed you already have the CLI — skip to step 3.
 ---
 
 # CLI Quickstart

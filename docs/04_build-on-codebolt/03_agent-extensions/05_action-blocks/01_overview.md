@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Action Blocks
+description: An action block is a reusable, self-contained TypeScript module that an agent can invoke by name
 ---
 
 # Action Blocks

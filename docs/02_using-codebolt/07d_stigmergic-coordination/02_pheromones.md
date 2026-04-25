@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Pheromones
+description: A pheromone is a typed signal that an agent or user deposits on a shared entity (a job, a review request, etc.) to influence what other agents do next
 ---
 
 # Pheromones

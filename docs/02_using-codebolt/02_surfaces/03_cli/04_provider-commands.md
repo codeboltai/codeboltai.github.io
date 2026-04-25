@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Provider Commands
+description: Configure LLM providers from the CLI.
 ---
 
 # `codebolt provider` commands

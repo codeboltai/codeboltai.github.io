@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Memory Ingestion
+description: Memory ingestion is the write path — how information gets captured, processed, and stored so that persistent memory pipelines can retrieve it later
 ---
 
 # Memory Ingestion

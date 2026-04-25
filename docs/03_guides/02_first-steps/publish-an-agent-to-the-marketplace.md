@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Publish an Agent to the Marketplace
+description: Take an agent from your project and make it installable by anyone.
 ---
 
 # Publish an Agent to the Marketplace

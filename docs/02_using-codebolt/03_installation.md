@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.5
 title: Installation & Setup
+description: Get Codebolt installed and configured in a few minutes. Pick your interface below — each tab walks through install, sign-in, and first-run setup end to end.
 ---
 
 import Tabs from '@theme/Tabs';

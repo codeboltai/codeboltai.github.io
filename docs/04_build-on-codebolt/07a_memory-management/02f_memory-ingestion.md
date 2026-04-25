@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.6
-title: "Memory Ingestion"
+title: Memory Ingestion
+description: Memory Ingestion provides event-driven write-path pipelines that transform application data and route it into storage layers
 ---
 
 # Memory Ingestion

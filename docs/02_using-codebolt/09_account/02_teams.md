@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Teams
+description: Teams are groups of users who share workspaces, projects, agents, and billing. The pattern for organisations using Codebolt collaboratively.
 ---
 
 import Tabs from '@theme/Tabs';

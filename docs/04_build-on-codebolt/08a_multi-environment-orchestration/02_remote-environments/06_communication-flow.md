@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Communication Flow
+description: The most important part of multi-environment orchestration is the communication boundary.
 ---
 
 # Communication Flow

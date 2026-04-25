@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Debug a Hung Agent
+description: An agent that's stopped responding — no new tool calls, no messages, no progress. Here's the triage.
 ---
 
 # Debug a Hung Agent

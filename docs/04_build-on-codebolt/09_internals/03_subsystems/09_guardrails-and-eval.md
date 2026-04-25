@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Guardrails & Eval
+description: Every meaningful step an agent takes passes through this subsystem before it commits
 ---
 
 # Guardrails & Eval Subsystem

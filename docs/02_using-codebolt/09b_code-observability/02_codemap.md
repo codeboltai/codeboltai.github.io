@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Codemap
+description: The Codemap is a structural dependency visualisation of your project — files, modules, classes, and functions as nodes, with edges representing imports, calls,.
 ---
 
 # Codemap

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Event Log
+description: The Event Log is the append-only audit trail of every application event that flows through Codebolt — agent starts, file changes, thread completions, job.
 ---
 
 # Event Log

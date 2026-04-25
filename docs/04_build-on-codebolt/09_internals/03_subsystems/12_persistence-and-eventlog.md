@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 title: Persistence & Event Log
+description: The storage floor. Every other subsystem eventually writes here, and the event log is what makes Codebolt runs replayable, auditable, and queryable after the.
 ---
 
 # Persistence & Event Log Subsystem

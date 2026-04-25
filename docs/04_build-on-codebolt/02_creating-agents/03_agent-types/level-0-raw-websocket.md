@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Level 0 — Raw WebSocket
+description: Speak to Codebolt over WebSocket without @codebolt/codeboltjs. This is the escape hatch when your agent must run outside the JS SDK.
 ---
 
 # Level 3 — Raw WebSocket

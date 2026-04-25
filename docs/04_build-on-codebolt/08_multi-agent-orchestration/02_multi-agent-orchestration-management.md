@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Multi-Agent Orchestration Management
+description: How do several agents cooperate, divide work, exchange state, and complete a task together?
 ---
 
 # Multi-Agent Orchestration Management

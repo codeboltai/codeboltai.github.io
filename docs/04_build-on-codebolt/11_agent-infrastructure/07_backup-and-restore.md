@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Backup and Restore
+description: A backup that has never been restored is a hope, not a backup. This page covers what to back up, how, and how to verify restore works.
 ---
 
 # Backup and Restore

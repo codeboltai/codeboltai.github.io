@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Automation Overview
+description: Automation covers everything that causes agents to act automatically — without a user typing a message
 ---
 
 # Automation

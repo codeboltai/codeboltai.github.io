@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Creating A Skill
+description: The Codebolt desktop app provides a Capability Panel where you can browse and manage skills
 ---
 
 # Creating A Skill

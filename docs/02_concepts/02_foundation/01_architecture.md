@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Architecture
+description: Codebolt is organized as five cooperating planes, each with a clear responsibility
 ---
 
 import FivePlanes from '@site/src/components/diagrams/FivePlanes';

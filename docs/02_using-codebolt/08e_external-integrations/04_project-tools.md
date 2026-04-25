@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Project Tools
+description: Project tools — issue trackers, code review platforms, and knowledge bases — are a natural fit for agent automation
 ---
 
 # Project Tool Integrations

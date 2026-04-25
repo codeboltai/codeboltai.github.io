@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Install a Third-Party MCP Server
+description: "The fastest path to adding tools an agent can use: install an existing MCP server from the marketplace or a third party."
 ---
 
 # Install a Third-Party MCP Server

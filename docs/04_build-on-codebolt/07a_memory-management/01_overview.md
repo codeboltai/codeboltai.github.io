@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Codebolt exposes the full memory stack as a programmable API surface
 ---
 
 # Memory Management & Optimization

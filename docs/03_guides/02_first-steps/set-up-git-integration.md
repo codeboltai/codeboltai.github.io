@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Set Up Git Integration
+description: Git works out of the box — Codebolt detects your repo, reads status, and provides codebolt_git tools
 ---
 
 # Set Up Git Integration

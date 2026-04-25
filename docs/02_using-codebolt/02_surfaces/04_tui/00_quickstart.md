@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 title: Quickstart
+description: The TUI requires the CLI to be installed. If you haven't installed it yet, see CLI Quickstart first — the sign-in and provider setup there applies here too.
 ---
 
 # TUI Quickstart

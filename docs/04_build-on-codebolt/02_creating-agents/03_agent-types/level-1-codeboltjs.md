@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Level 1 — Using Codeboltjs
+description: "Note: MockTransport and a codeboltjs/testing subpath export do not exist in"
 ---
 
 # Level 2 — codeboltjs

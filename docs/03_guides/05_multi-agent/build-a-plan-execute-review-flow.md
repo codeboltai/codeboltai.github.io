@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Build a plan-execute-review flow
+description: "Wire up the most useful multi-agent pattern as a manual workflow. End result: three specialised agents hand work between themselves with a fresh-context review."
 ---
 
 # Build a plan-execute-review flow

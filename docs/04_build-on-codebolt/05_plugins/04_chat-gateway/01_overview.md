@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Chat Gateway Overview
+description: The Chat Gateway is the server-side routing layer behind Codebolt's channel plugins
 ---
 
 import ChatGatewayArchitecture from '@site/src/components/diagrams/ChatGatewayArchitecture';

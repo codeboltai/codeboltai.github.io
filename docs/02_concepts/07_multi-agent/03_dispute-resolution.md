@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 title: Dispute Resolution
+description: When many agents share a codebase, conflicts are inevitable. Two agents edit the same file. A refactor and a feature touch the same type
 ---
 
 import ConflictLayers from '@site/src/components/diagrams/ConflictLayers';

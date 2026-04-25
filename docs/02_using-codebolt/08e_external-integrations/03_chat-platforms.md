@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Chat Platforms
+description: Codebolt can connect agents to external chat platforms — Telegram, Slack, Discord, Microsoft Teams, and WhatsApp — through channel plugins
 ---
 
 # Chat Platform Integrations

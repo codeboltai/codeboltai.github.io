@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Plugin Marketplace
+description: The Plugin Marketplace is where you find, install, and manage plugins published by the Codebolt team and the community
 ---
 
 # Plugin Marketplace

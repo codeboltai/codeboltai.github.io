@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Build Your First LLM Provider
+description: Create a plugin that registers a custom LLM provider in Codebolt
 ---
 
 # Build Your First LLM Provider

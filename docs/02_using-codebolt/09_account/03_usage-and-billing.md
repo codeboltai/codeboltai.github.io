@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Usage and Billing
+description: "Codebolt has no per-seat fee for individual use of the open-source desktop app with your own provider keys. You pay for:"
 ---
 
 import Tabs from '@theme/Tabs';

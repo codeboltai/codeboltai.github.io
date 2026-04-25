@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Cloud Portal
+description: The portal at portal.codebolt.ai is the browser UI for Codebolt Cloud. It's organised into three top-level tabs, each focused on one kind of task.
 ---
 
 # The Cloud Portal

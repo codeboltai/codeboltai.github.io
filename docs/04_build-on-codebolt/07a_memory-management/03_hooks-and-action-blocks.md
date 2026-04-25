@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Hooks and Action Blocks
+description: Hooks and action blocks are the event-driven layer of Codebolt's memory system. Hooks watch for lifecycle events and fire automatically
 ---
 
 # Hooks and Action Blocks

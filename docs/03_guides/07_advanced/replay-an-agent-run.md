@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Replay an Agent Run
+description: Re-running an agent with the same or similar prompt to verify that changes to the agent's configuration didn't break its behaviour.
 ---
 
 # Replay an Agent Run

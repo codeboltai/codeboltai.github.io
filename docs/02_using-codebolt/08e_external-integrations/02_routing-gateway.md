@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Routing Gateway
+description: The Routing Gateway is Codebolt's central message router for external integrations
 ---
 
 # Routing Gateway

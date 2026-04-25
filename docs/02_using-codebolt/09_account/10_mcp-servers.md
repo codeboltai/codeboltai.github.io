@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 title: MCP Servers
+description: Model Context Protocol (MCP) servers extend what agents can do by exposing additional tools — file system access, GitHub operations, database queries, and.
 ---
 
 # MCP Servers

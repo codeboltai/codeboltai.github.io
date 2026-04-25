@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Authoring
+description: "Use the CLI to create the initial structure:"
 ---
 
 # Authoring

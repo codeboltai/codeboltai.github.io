@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Query the Event Log
+description: The event log is Codebolt's authoritative causal record of every meaningful thing that happens. You can inspect it through the Codebolt UI
 ---
 
 # Query the Event Log

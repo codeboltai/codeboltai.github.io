@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Debate
+description: Two (or more) agents argue opposing positions on the same question. A judge agent — or a human — decides the winner.
 ---
 
 # Debate

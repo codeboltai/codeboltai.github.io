@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Environment Creation And Management
+description: This page is about how the server manages remote environments as real system objects.
 ---
 
 import EnvironmentManagementFlow from '@site/src/components/diagrams/EnvironmentManagementFlow';

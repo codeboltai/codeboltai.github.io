@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Writing a Custom Processor
+description: The current framework does not use the older modify(messages, ctx) shape. Custom processors should match the real interfaces from @codebolt/types/agent.
 ---
 
 # Writing a Custom Processor

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Chat Canvas
+description: The Chat Canvas is a freeform visual workspace for coordinating multi-agent work
 ---
 
 # Chat Canvas

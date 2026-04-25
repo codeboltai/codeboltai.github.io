@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Build a Code-Review Swarm
+description: A swarm of specialised reviewers checking a diff in parallel, each focused on one concern
 ---
 
 # Build a Code-Review Swarm

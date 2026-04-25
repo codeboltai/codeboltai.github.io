@@ -5,9 +5,9 @@
   "scripts": {
     "docusaurus": "npx docusaurus",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus start --no-open --host 0.0.0.0",
-    "build": "npx docusaurus build",
-    "build:cf": "cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
-    "build:no-types": "npx docusaurus build",
+    "build": "npm run generate:llms && npx docusaurus build",
+    "build:cf": "npm run generate:llms && cross-env NODE_OPTIONS=--max-old-space-size=8192 npx docusaurus build",
+    "build:no-types": "npm run generate:llms && npx docusaurus build",
     "swizzle": "npx docusaurus swizzle",
     "deploy": "npx docusaurus deploy",
     "deploy:cf": "npm run build:cf && npx wrangler@latest deploy",
@@ -19,6 +19,7 @@
     "generate-types": "node scripts/generate-type-docs.js --clean",
     "generate:codebolt-cli-docs": "node scripts/generate-codebolt-cli-docs.js",
     "generate:pseudo-cli-docs": "node scripts/generate-pseudo-cli-docs.js",
+    "generate:llms": "node scripts/generate-llms-txt.js",
     "postgenerate-types": "npm run postprocess-typedoc",
     "generate-types:watch": "node scripts/generate-type-docs.js --watch",
     "postprocess-typedoc": "python scripts/postprocess-typedoc-links.py && python scripts/postprocess-typedoc-breadcrumbs.py"

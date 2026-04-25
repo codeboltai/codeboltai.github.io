@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 title: Orchestration Flows
+description: How a multi-agent pattern becomes a runnable graph.
 ---
 
 import ExampleFlowDAG from '@site/src/components/diagrams/ExampleFlowDAG';

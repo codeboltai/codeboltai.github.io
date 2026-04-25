@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Agent Tools Overview
+description: Agent Tools are the built-in capabilities available to every agent — the panel-based interfaces and programmatic tool families that agents use to interact with.
 ---
 
 # Agent Tools

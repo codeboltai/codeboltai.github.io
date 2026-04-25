@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Write Tests from a Spec
+description: "- The /api/users endpoint accepts GET requests"
 ---
 
 # Write Tests from a Spec

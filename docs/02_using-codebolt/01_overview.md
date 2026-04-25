@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Reference documentation for every feature. Jump to what you need — this isn't meant to be read cover-to-cover.
 ---
 
 import { DocCardGrid } from '@site/src/components/DocCard';
@@ -128,6 +129,8 @@ The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandbo
 <p class="uc-section-label">Configuration</p>
 
 Connect external services, set guardrails, and manage your account. Usually a one-time setup per project or workspace.
+
+If you want to build your own product-specific UI or plugin-backed application on top of Codebolt, see [Build on Codebolt → Custom Agentic Applications](../04_build-on-codebolt/04b_custom-agentic-applications/01_overview.md).
 
 <DocCardGrid columns={2} items={[
   { label: 'Int', title: 'Plugin Integrations', description: 'LLM providers, local models, git, browser control, chat widget, and plugin debug.', href: './08_integrations/01_llm-providers' },

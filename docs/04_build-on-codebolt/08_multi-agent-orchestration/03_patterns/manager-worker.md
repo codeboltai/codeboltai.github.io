@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Manager-Worker
+description: One agent decides what to do and hands pieces of work to others. The manager never does the work itself; the workers never decide what to work on.
 ---
 
 # Manager-Worker

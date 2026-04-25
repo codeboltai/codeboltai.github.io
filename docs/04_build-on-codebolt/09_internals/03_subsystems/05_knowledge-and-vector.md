@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Knowledge & Vector
+description: "Source code: controllers/{knowledge,kg,vector}, services/knowledgeService, services/knowledgeDataService, services/knowledgeChunkingService,."
 ---
 
 # Knowledge & Vector Subsystem

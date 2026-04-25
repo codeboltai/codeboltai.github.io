@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Publishing
+description: "Once your action block is stable, publish it from the block root:"
 ---
 
 # Publishing

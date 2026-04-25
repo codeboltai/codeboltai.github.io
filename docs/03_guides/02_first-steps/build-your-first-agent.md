@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Build your first agent
+description: Create a specialised agent for your project in ~20 minutes
 ---
 
 # Build your first agent

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Direct Plugin Socket Interface
+description: Yes, this deserves its own page.
 ---
 
 # Direct Plugin Socket Interface

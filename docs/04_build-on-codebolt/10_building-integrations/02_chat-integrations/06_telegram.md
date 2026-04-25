@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Telegram
+description: The telegram-channel plugin connects a Telegram bot to Codebolt using grammy
 ---
 
 # Telegram Integration

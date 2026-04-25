@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Locks & Unlock Requests
+description: Locks are the strong, exclusive counterpart to pheromones
 ---
 
 # Locks & Unlock Requests

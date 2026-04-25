@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Scaling and Workers
+description: When your self-hosted Codebolt starts feeling slow, you have a few levers
 ---
 
 # Scaling and Workers

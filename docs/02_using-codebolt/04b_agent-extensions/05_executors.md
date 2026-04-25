@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Executors
+description: Executors are the runtime environments that run capabilities
 ---
 
 # Executors

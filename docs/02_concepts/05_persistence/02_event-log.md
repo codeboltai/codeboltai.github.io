@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Event Log
+description: The event log is Codebolt's source of truth
 ---
 
 import EventStream from '@site/src/components/diagrams/EventStream';

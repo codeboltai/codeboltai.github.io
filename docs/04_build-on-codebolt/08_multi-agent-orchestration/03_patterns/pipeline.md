@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Pipeline
+description: A linear sequence of specialised agents where each stage's output is the next stage's input. No delegation, no parallelism — just a straight line.
 ---
 
 # Pipeline

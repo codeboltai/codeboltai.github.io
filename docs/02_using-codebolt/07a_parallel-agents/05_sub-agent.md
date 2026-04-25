@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Sub Agent
+description: A sub-agent is a child run started by another agent to handle a smaller, focused part of a task
 ---
 
 # Sub Agent

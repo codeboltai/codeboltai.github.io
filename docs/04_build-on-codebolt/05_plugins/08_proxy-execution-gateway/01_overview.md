@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Proxy Execution Gateway
+description: The Proxy Execution Gateway is the plugin-side deferred execution mechanism in Codebolt
 ---
 
 import RemoteExecutionSequence from '@site/src/components/diagrams/RemoteExecutionSequence';

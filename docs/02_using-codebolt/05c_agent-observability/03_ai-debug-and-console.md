@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: AI Debug & Console
+description: The AI Debug panel focuses specifically on LLM interactions — raw inputs, raw outputs, token counts, latency, and cost estimates
 ---
 
 # AI Debug & Console

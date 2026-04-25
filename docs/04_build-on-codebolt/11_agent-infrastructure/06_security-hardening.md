@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Security Hardening
+description: Checklist-style guide for locking down a self-hosted Codebolt server. Do all of this before putting the server in front of users.
 ---
 
 # Security Hardening

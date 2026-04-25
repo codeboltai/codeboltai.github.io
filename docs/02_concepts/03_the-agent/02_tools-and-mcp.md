@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Tools and MCP
+description: "Agents can only think. Tools are how they act on the world: read a file, run a command, call an API, query a database."
 ---
 
 import McpTopology from '@site/src/components/diagrams/McpTopology';

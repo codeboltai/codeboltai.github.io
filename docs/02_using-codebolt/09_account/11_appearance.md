@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 title: Appearance & Global Settings
+description: The Appearance section exposes Codebolt's theme editor — a full interface for creating and customising visual themes.
 ---
 
 # Appearance & Global Settings

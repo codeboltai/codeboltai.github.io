@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Map-Reduce
+description: "A specialisation of manager-worker for the classic map-reduce shape: apply the same operation to N inputs in parallel, then combine the N outputs."
 ---
 
 # Map-Reduce

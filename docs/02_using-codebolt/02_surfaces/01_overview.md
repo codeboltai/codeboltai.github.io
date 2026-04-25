@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Clients Overview
+description: Codebolt is the same agent runtime no matter how you talk to it
 ---
 
 # Clients

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Drift Detection
+description: Keeping long-running swarms on-task. Drift is what happens when an agent (or a swarm) gradually moves away from the original goal, one reasonable-looking step.
 ---
 
 # Drift Detection

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Code & Terminal Overview
+description: The Code and Terminal panels are the primary workspace for editing files, running commands, and reviewing changes
 ---
 
 # Code & Terminal

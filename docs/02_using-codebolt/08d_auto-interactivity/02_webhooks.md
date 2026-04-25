@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Webhooks
+description: Webhooks let external systems trigger agent actions by sending an HTTP POST request to a unique URL
 ---
 
 # Webhooks

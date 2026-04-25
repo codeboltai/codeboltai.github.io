@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Agent Observability Overview
+description: Observability in Codebolt is how you see what an agent did, what it's doing right now, and why it made a particular choice
 ---
 
 # Agent Observability

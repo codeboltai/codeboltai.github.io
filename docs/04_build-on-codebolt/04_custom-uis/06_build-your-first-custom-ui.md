@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Build Your First Custom UI
+description: Build a standalone web interface that connects to Codebolt using the Client SDK. Everything runs outside the existing Codebolt app — you own the entire UX.
 ---
 
 # Build Your First Custom UI

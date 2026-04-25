@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Checkpoint and rollback
+description: "How Codebolt's \"go back to before the agent did that\" button actually works. The short answer: shadow git + the event log."
 ---
 
 # Checkpoint and rollback

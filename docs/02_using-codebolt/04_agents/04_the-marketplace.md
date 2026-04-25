@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: The Marketplace
+description: A public catalog of agents, tools, and capabilities that anyone can install into their Codebolt
 ---
 
 import Tabs from '@theme/Tabs';

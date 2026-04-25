@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Specs
+description: Specs are technical specification documents. They live in your project's specs/ folder as
 ---
 
 # Specs

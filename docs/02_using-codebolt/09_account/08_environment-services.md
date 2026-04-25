@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Environment & Services
+description: This section verifies that required runtimes are installed on your machine and lets you store API keys for external services agents may need.
 ---
 
 # Environment & Services

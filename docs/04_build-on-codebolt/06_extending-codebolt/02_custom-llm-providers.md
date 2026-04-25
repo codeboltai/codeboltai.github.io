@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Custom LLM Providers
+description: Add any LLM backend — a cloud API, a local model, a fine-tuned endpoint, or a provider Codebolt doesn't ship with — and make it available as a first-class model.
 ---
 
 # Custom LLM Providers

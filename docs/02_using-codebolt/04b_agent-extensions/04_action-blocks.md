@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Action Blocks
+description: Action Blocks are lightweight, focused code units that run as side executions — in parallel with the main agent loop, not as part of it
 ---
 
 # Action Blocks

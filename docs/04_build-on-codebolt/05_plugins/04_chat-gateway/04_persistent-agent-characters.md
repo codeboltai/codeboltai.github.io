@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Persistent Agent Characters
+description: The chat gateway is not only for platform connectors
 ---
 
 # Persistent Agent Characters

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Use Ollama Locally
+description: Running LLMs on your own machine via Ollama. Free, private, offline-capable.
 ---
 
 # Use Ollama Locally

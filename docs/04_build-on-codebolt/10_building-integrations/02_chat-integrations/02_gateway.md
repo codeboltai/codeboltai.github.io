@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Gateway
+description: The Gateway is the server component that sits between incoming channel messages and the agent that handles them
 ---
 
 # Gateway

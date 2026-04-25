@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Auto-Optimize Agents
+description: Once your agent basically works, the next question is not "does it run?" but "does it reliably perform well?"
 ---
 
 # Auto-Optimize Agents

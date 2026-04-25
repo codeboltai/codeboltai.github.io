@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Build Your First MCP Server
+description: "A 20-minute walkthrough: scaffold an MCP server, add a real tool, register it with Codebolt, and have an agent use it."
 ---
 
 # Build Your First MCP Server

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Existing UIs
+description: Codebolt ships with multiple UI surfaces built on the same backend. Study or fork these as starting points for your own interface.
 ---
 
 # Existing UIs

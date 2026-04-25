@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Tabs, Panels, and Layout Modes
+description: The TUI is built around four top-level tabs defined in packages/gotui/internal/app/app_model.go.
 ---
 
 # Tabs, Panels, and Layout Modes

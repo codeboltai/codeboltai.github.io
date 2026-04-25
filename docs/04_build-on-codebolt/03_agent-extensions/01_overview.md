@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Agent Extensions Overview
+description: Agent extensions are the shared primitives that any Codebolt agent can use without the agent author having to build them
 ---
 
 # Agent Extensions

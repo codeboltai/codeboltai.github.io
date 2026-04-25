@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Planning
+description: Codebolt includes a set of built-in planning tools that live alongside your code and your agents
 ---
 
 import PlanningOverview from '@site/src/components/diagrams/PlanningOverview';

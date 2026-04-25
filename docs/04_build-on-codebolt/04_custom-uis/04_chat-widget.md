@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Chat Widget
+description: The chat components live inside the shared @codebolt/ui package (packages/ui)
 ---
 
 # Chat Widget

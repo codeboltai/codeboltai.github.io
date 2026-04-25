@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Plan-Execute-Review
+description: "Three agents in a short pipeline: one plans, one executes, one reviews"
 ---
 
 # Plan-Execute-Review

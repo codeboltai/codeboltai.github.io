@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Persistent Memory
+description: Persistent memory is a declarative retrieval abstraction
 ---
 
 # Persistent Memory

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Roadmap
+description: The Roadmap tool is for product-level planning
 ---
 
 # Roadmap

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.4
-title: "Persistent Memory"
+title: Persistent Memory
+description: Persistent Memory defines declarative retrieval pipeline definitions that the Context Assembly Engine executes at runtime
 ---
 
 # Persistent Memory

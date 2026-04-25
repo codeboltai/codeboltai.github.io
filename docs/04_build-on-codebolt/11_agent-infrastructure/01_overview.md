@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Self-Hosting Overview
+description: Running the Codebolt server yourself instead of as an embedded local process
 ---
 
 # Self-Hosting Overview

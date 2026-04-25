@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Context Assembly
+description: "Source code: controllers/{contextAssembly,contextRuleEngine}, services/contextAssemblyService, services/contextRuleEngineService,."
 ---
 
 # Context Assembly

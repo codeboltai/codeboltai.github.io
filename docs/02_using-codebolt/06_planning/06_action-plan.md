@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Action Plan
+description: An Action Plan is an execution plan. It breaks a piece of work into tasks and groups, tracks their status as work progresses, and can represent complex.
 ---
 
 # Action Plan

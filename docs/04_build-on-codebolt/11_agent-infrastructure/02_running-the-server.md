@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Running the Server
+description: How to run codebolt-server as a shared service for a team. For single-user / desktop use, you already have a server — the desktop app runs it for you
 ---
 
 # Running the Server

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Context and Memory
+description: The single most important question for an agent is what does it know right now? That answer is rebuilt from scratch every turn by the Context Assembly Engine —.
 ---
 
 import MemoryLayers from '@site/src/components/diagrams/MemoryLayers';

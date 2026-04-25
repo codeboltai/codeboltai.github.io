@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Code review with an agent
+description: "A practical workflow: before you send a PR out, run an agent review on the diff and address what it catches"
 ---
 
 # Code review with an agent

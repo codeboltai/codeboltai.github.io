@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Logs and Diagnostics
+description: Where to look when something's wrong and Common Issues doesn't cover it.
 ---
 
 import Tabs from '@theme/Tabs';

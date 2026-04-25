@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Dynamic Panel Plugins
+description: Dynamic panel plugins give a plugin its own in-app UI.
 ---
 
 # Dynamic Panel Plugins
@@ -114,6 +115,7 @@ Dynamic panels work especially well for:
 Dynamic panels are plugin-scoped UI surfaces inside Codebolt.
 
 For the broader application-side concept, see [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md).
+For application patterns where the plugin acts as the backend for a larger UI, see [Custom Agentic Applications](../04b_custom-agentic-applications/01_overview.md).
 
 ## See Also
 
@@ -121,4 +123,5 @@ For the broader application-side concept, see [Dynamic Panels](../04_custom-uis/
 - [Chat Gateway](./04_chat-gateway/01_overview.md)
 - [Plugin SDK and Lifecycle](./02_sdk-and-lifecycle.md)
 - [Dynamic Panels](../04_custom-uis/05_dynamic-panels.md)
+- [Custom Agentic Applications](../04b_custom-agentic-applications/01_overview.md)
 - [Packaging and Publishing](./99_packaging-and-publishing.md)

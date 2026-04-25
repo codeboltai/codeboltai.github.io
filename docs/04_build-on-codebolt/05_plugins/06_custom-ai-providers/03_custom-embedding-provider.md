@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Custom Embedding Provider
+description: An embedding provider turns text into vectors. CodeBolt uses embeddings for memory ingestion, vector search, and knowledge workflows.
 ---
 
 # Custom Embedding Provider

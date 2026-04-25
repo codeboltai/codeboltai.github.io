@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Quickstart — Local MCP Server
+description: "Create a local MCP tool, register it with Codebolt, and have an agent call it. This covers two approaches:"
 ---
 
 # Quickstart: Build a Local MCP Tool

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: What are Processors
+description: Processors are typed hook points inside the @codebolt/agent loop
 ---
 
 # What are Processors

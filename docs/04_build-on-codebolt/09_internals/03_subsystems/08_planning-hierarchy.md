@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Planning Hierarchy
+description: "Source code: controllers/{planner,requirementPlan,actionPlan,actionBlock,roadmap,todo,task,taskActivity,specs,skill}, and their corresponding *Service files."
 ---
 
 # Planning Hierarchy

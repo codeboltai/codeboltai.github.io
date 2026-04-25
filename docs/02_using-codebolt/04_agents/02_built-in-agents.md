@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Built-in Agents
+description: The default set of agents that ship with Codebolt. Maintained by the Codebolt team and improved with every release
 ---
 
 # Built-in Agents

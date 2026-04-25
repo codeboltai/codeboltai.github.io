@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Preview & Browser
+description: "Codebolt includes two embedded web-viewing panels: Preview for live application previews and Browser for general web browsing and agent-driven browser."
 ---
 
 # Preview & Browser

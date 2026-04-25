@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: MCP & Tools
+description: "Source code: packages/server/src/MCPServers/, controllers/{mcpServer,capability,extension,hooks}Controller,."
 ---
 
 # MCP & Tools Subsystem

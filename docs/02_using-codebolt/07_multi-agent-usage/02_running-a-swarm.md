@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Running a Swarm
+description: A swarm is a dynamic group of agents cooperating on a task
 ---
 
 import Tabs from '@theme/Tabs';

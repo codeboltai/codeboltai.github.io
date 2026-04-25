@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Building Plugins
+description: Building a plugin means writing a Node.js package that connects to the Codebolt server via WebSocket and registers capabilities using the @codebolt/plugin-sdk
 ---
 
 # Building Plugins

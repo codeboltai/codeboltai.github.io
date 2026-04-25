@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Eval & Optimization Overview
+description: Codebolt's Eval & Optimization system lets you scientifically measure agent quality and automatically improve it
 ---
 
 # Eval & Optimization

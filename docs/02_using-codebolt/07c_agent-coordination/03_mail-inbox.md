@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Mail & Inbox
+description: The Mail panel provides a threaded messaging system for communication between agents and between agents and users
 ---
 
 # Mail & Inbox
