@@ -41,7 +41,8 @@
       "Bash(grep -r \"capabilityForm\\\\|CapabilityForm\\\\|capability form\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts --include=*.tsx --include=*.js)",
       "Bash(grep -r \"input.*form\\\\|output.*form\\\\|form.*validation\\\\|capability.*field\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts -l)",
       "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; head -5 \"{}\"')",
-      "Bash(find D:\\\\Codeboltapps\\\\CodeBolt\\\\packages\\\\cli\\\\src *)"
+      "Bash(find D:\\\\Codeboltapps\\\\CodeBolt\\\\packages\\\\cli\\\\src *)",
+      "Bash(npx tsc *)"
     ]
   },
   "enabledPlugins": {

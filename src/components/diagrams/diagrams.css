@@ -2531,3 +2531,27 @@
 [data-theme='dark'] .cb-agentic-label--accent {
   fill: #7dd3fc;
 }
+
+/* ── Agent Framework Patterns ────────────── */
+
+.cb-pattern-use {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  line-height: 1.35;
+  text-align: center;
+  color: #525252;
+}
+
+[data-theme='dark'] .cb-pattern-use {
+  color: #a1a1aa;
+}
+
+.cb-pattern-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 10px;
+  fill: #18181b;
+}
+
+[data-theme='dark'] .cb-pattern-code {
+  fill: #f4f4f5;
+}

@@ -4,11 +4,16 @@ title: Codebolt as an Agent Framework
 description: Codebolt isn't only an app you chat with — it is also an agent framework. Define agents in code with @codebolt/agent and call them from any application using @codebolt/client-sdk.
 ---
 
+import FrameworkComparison from '@site/src/components/diagrams/FrameworkComparison';
+import AgentFrameworkPatterns from '@site/src/components/diagrams/AgentFrameworkPatterns';
+
 # Codebolt as an Agent Framework
 
 Codebolt is most visible as the desktop / CLI / TUI you chat with — but underneath, it is also an **agent framework**. If you have used [LangChain](https://js.langchain.com), [Mastra](https://mastra.ai), the [Vercel AI SDK](https://sdk.vercel.ai), or AutoGen, the mental model is familiar: you define an agent in code with instructions, a model, tools, and memory, then call it from your application.
 
 The difference is that Codebolt agents don't run *inside* your application process. They run inside a **Codebolt server** — local, in a container, or in the cloud — and your application talks to that server through a typed client SDK. You keep the same flexibility a framework gives you, plus everything else Codebolt provides: persistent memory, multi-agent coordination, MCP tools, observability, and the marketplace.
+
+<FrameworkComparison />
 
 ## The two packages
 
@@ -86,15 +91,11 @@ If you have a Mastra or LangChain agent you want to port, the migration is large
 
 ## Three patterns, not one
 
-`@codebolt/agent` exposes three patterns so you can scale up complexity without rewriting:
+`@codebolt/agent` exposes three patterns so you can scale up complexity without rewriting. Most users start composable; you only reach for builder or processor when you actually need them.
 
-| Pattern | Best for | Sketch |
-|---|---|---|
-| **Composable** | Quick agents, the LangChain/Mastra-shape | `new ComposableAgent({ instructions, model, tools, memory })` |
-| **Builder** | Fine-grained prompt control, file/task injection | `new InitialPromptBuilder(msg).addFile(...).addTaskDetails(...).build()` |
-| **Processor** | Custom agent loops, your own control flow | `class MyProcessor extends BaseProcessor { async process(messages) { … } }` |
+<AgentFrameworkPatterns />
 
-Most users start composable. Switch to builder when you want to control prompt assembly, and to processor when you need a custom loop (for example, a non-tool-calling agent or a deliberation flow).
+Switch to builder when you want to control prompt assembly (file injection, task templating). Reach for processor when the loop itself changes — a non-tool-calling agent, a deliberation flow, or a custom retry policy.
 
 For deeper coverage of each pattern see [Build on Codebolt → Custom Agents → Patterns](../../04_build-on-codebolt/02_creating-agents/06_patterns/01_overview.md).
 
