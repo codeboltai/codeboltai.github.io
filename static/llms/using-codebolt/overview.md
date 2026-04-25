@@ -46,6 +46,10 @@ Automation
 
 Mechanisms that trigger agents automatically — without a user typing a message. Route incoming HTTP requests, schedule timed events, react to file and git changes, and trace everything through the event log.
 
+Custom Applications
+
+Build focused agent-powered products on top of Codebolt by combining a custom UI, domain-specific agents, and the right automation and integration surface.
+
 Cloud
 
 The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandboxes, bring your own E2B or Daytona key, and publish to the marketplace.

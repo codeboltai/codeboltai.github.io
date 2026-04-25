@@ -1,9 +1,6 @@
----
-sidebar_position: 1
-title: Custom Agentic Application Overview
----
+# Custom Agentic Application Overview
 
-import CustomAgenticApplicationsArchitecture from '@site/src/components/diagrams/CustomAgenticApplicationsArchitecture';
+> Custom agentic applications are product-specific applications built on top of Codebolt.
 
 # Custom Agentic Application
 
@@ -18,8 +15,6 @@ The most important architecture choice is where the application runs, and what i
 | [Level 1: Inside Codebolt](./02_level-1-inside-codebolt.md) | Inside the Codebolt product | Plugin SDK, Dynamic Panels, plugin UI |
 | [Level 2: Separate app, local Codebolt server](./03_level-2-separate-app-local-server.md) | Outside Codebolt | Client SDK or Plugin SDK to a local Codebolt server |
 | [Level 3: Separate app, hosted runtimes](./04_level-3-hosted-runtimes.md) | Outside Codebolt | Cloud relay / remote runtime connection |
-
-<CustomAgenticApplicationsArchitecture />
 
 ## What’s in this section
 

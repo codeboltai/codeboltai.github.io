@@ -62,6 +62,10 @@ Automation
 
 Mechanisms that trigger agents automatically — without a user typing a message. Route incoming HTTP requests, schedule timed events, react to file and git changes, and trace everything through the event log.
 
+Custom Applications
+
+Build focused agent-powered products on top of Codebolt by combining a custom UI, domain-specific agents, and the right automation and integration surface.
+
 Cloud
 
 The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandboxes, bring your own E2B or Daytona key, and publish to the marketplace.
@@ -1812,6 +1816,59 @@ No one sent a direct message. All coordination flowed through signals on the ent
 
 ---
 
+# What are Plugins
+
+> Plugins extend the Codebolt application itself — not just what agents can do, but what the application can do. They run as separate Node.js processes alongside the server and connect via WebSocket, so they can add entirely new capabilities without modifying Codebolt's core.
+
+Plugins extend the Codebolt application itself — not just what agents can do, but what the application can do. They run as separate Node.js processes alongside the server and connect via WebSocket, so they can add entirely new capabilities without modifying Codebolt's core.
+
+## Plugins vs agent extensions
+
+It helps to know where plugins sit relative to other extension points:
+
+| | What it extends | Examples |
+|---|---|---|
+| **Plugins** | The application | New AI providers, messaging platform connections, remote execution environments, custom UI panels |
+| **Agent extensions** (skills, action blocks) | What an individual agent can do | Slash commands, parallel side-executions |
+| **MCP servers** | Tools available to agents | File search, database queries, external APIs |
+
+## Types of plugins
+
+### LLM Provider plugins
+
+Add a new AI provider to Codebolt's model selector. Once installed and configured, it appears alongside OpenAI, Anthropic, and others in **Settings → LLMs**. Useful for connecting to private model deployments, niche providers, or internal inference servers.
+
+### Chat Gateway plugins
+
+Connect an external messaging platform to Codebolt agents. Messages coming in from Slack, Telegram, Discord, or any custom channel are routed to an agent; the agent's replies are sent back. Each platform needs its own gateway plugin.
+
+### Execution plugins
+
+Intercept all code execution and proxy it to a remote environment — a cloud VM, a container, an SSH host. The agent keeps working normally; the execution plugin transparently handles where commands actually run. Only one execution plugin can be active at a time.
+
+### Generic plugins
+
+Any other application extension — custom UI panels, background automation, event-driven integrations. These use the same SDK but don't claim a specific gateway role.
+
+## Where plugins live
+
+Plugins are installed into one of two directories:
+
+| Location | Scope |
+|---|---|
+| `~/.codebolt/plugins/` | Global — available in every project |
+| `<project>/.codeboltPlugins/` | Per-project — overrides global, only active in that project |
+
+Codebolt discovers and starts plugins from these directories automatically at launch, or on demand from the Plugins panel.
+
+## See also
+
+- [Installing Plugins](./02_installing-plugins.md)
+- [Plugin Marketplace](./03_plugin-marketplace.md)
+- [Building Plugins](./04_building-plugins.md)
+
+---
+
 # Environments Overview
 
 > An Environment in Codebolt defines the execution context for agent runs — the shell, environment variables, runtime versions, and crucially, where the agent.
@@ -1908,6 +1965,55 @@ See [Guardrails & Settings → Routing Gateway](../09a_guardrails-and-settings/0
 
 ---
 
+# Custom Agentic Application Overview
+
+> Custom agentic applications are product-specific applications built on top of Codebolt.
+
+# Custom Agentic Application
+
+Custom agentic applications are product-specific applications built on top of Codebolt.
+
+The most important architecture choice is where the application runs, and what it connects to.
+
+## The three levels
+
+| Level | Where the app runs | Primary connection model |
+|---|---|---|
+| [Level 1: Inside Codebolt](./02_level-1-inside-codebolt.md) | Inside the Codebolt product | Plugin SDK, Dynamic Panels, plugin UI |
+| [Level 2: Separate app, local Codebolt server](./03_level-2-separate-app-local-server.md) | Outside Codebolt | Client SDK or Plugin SDK to a local Codebolt server |
+| [Level 3: Separate app, hosted runtimes](./04_level-3-hosted-runtimes.md) | Outside Codebolt | Cloud relay / remote runtime connection |
+
+## What’s in this section
+
+| Page | What it covers |
+|---|---|
+| [Level 1: Inside Codebolt](./02_level-1-inside-codebolt.md) | Embedded applications built as plugins, Dynamic Panels, or plugin-hosted UIs |
+| [Level 2: Separate app, local Codebolt server](./03_level-2-separate-app-local-server.md) | Standalone apps that talk to a local Codebolt server over HTTP and WebSockets |
+| [Level 3: Separate app, hosted runtimes](./04_level-3-hosted-runtimes.md) | Hosted apps that connect to remote Codebolt runtimes instead of `localhost` |
+| [Choosing the Right Architecture](./05_choosing-the-right-architecture.md) | How to decide between the three levels and pick the right SDK |
+
+## Shared idea
+
+In all three levels, your application can use Codebolt for:
+
+- Agents and threads
+- Files, tasks, and jobs
+- Memory and event streams
+- Automation, integrations, and routing
+
+What changes is where the UI runs, where the application logic runs, and whether the connection target is local or remote.
+
+## See also
+
+- [Plugins](../07z_plugins/01_overview.md) for plugin packaging and lifecycle
+- [Auto Interactivity](../08d_auto-interactivity/01_overview.md) for webhooks, schedules, and hooks
+- [External Integrations](../08e_external-integrations/01_overview.md) for routing gateway and channel-style integrations
+- [Cloud](../08f_cloud/01_overview.md) for hosted runtimes and remote execution
+- [Client SDK](../../04_build-on-codebolt/04_custom-uis/02_client-sdk.md) for standalone client applications
+- [Custom Interfaces Overview](../../04_build-on-codebolt/04_custom-uis/01_overview.md) for frontend-building paths
+
+---
+
 # External Integrations Overview
 
 > External Integrations connect your agents to the outside world — chat platforms like Telegram and Slack, project management tools like Linear and GitHub, and.
@@ -1939,6 +2045,7 @@ Platform-specific integrations are implemented as **channel plugins** — lightw
 | [Chat Platforms](./03_chat-platforms.md) | Telegram, Slack, Discord, Teams, WhatsApp via channel plugins |
 | [Project Tools](./04_project-tools.md) | Linear, Jira, GitHub, GitLab — agents that read and write to your tools |
 | [Building a Channel Plugin](./05_building-a-channel-plugin.md) | How to connect any custom platform to the gateway |
+| [Autonomous Companies](./06_autonomous-companies.md) | How to structure persistent virtual employees, goals, channels, and monitoring workflows in Codebolt |
 
 ---
 
