@@ -115,6 +115,14 @@ Mechanisms that trigger agents automatically — without a user typing a message
   { label: 'Log', title: 'Event Log', description: 'Append-only audit trail of every event — lives under Memory & Context as the audit layer.', href: './07_memory/07_event-log' },
 ]} />
 
+<p class="uc-section-label">Custom Applications</p>
+
+Build focused agent-powered products on top of Codebolt by combining a custom UI, domain-specific agents, and the right automation and integration surface.
+
+<DocCardGrid columns={3} items={[
+  { label: 'App', title: 'Custom Agentic Application', description: 'How to combine custom interfaces, agents, automation, and integrations into a product-specific app.', href: './08da_custom-agentic-application/01_overview' },
+]} />
+
 <p class="uc-section-label">Cloud</p>
 
 The hosted portal at portal.codebolt.ai — run and scale agents in cloud sandboxes, bring your own E2B or Daytona key, and publish to the marketplace.

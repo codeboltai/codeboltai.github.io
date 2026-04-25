@@ -1,9 +1,6 @@
 {
   "label": "Plugin Integrations",
-  "position": 8,
+  "position": 8.01,
   "collapsible": true,
-  "collapsed": true,
-  "customProps": {
-    "sectionLabel": "Configuration"
-  }
+  "collapsed": true
 }
