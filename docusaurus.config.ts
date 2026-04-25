@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Codebolt',
+  title: 'CodeBolt',
   tagline: 'AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture',
   favicon: 'img/favicon.ico',
 
@@ -13,6 +13,7 @@ const config: Config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
+  trailingSlash: false,
   markdown: {
     mermaid: true,
     format: 'mdx',
@@ -55,12 +56,19 @@ const config: Config = {
       },
     },
     {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:image',
+        content: 'https://docs.codebolt.ai/img/docusaurus-social-card.jpg',
+      },
+    },
+    {
       tagName: 'script',
       attributes: { type: 'application/ld+json' },
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'Codebolt Documentation',
+        name: 'CodeBolt Documentation',
         url: 'https://docs.codebolt.ai',
         description: 'AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture',
       }),
@@ -76,22 +84,21 @@ const config: Config = {
   },
   plugins: [
     'docusaurus-plugin-image-zoom',
-    // Force-exit after build completes. Lingering async handles from the
-    // search-local plugin and the mermaid → langium → vscode-languageserver
-    // chain keep Node's event loop alive indefinitely after `docusaurus build`
-    // finishes writing output, so the process hangs instead of exiting.
-    function forceExitAfterBuild() {
-      return {
-        name: 'force-exit-after-build',
-        async postBuild() {
-          setImmediate(() => process.exit(0));
-        },
-      };
-    },
-    // // Webpack's persistent filesystem cache (IdleFileCachePlugin) hangs during
-    // // shutdown-serialize on Windows with this repo. A production build is
-    // // one-shot, so disabling the cache trades a (negligible) speed hit for a
-    // // reliable exit.
+    // Force-exit after build completes. Disabled because it can terminate the
+    // process before other post-build plugins, including the sitemap
+    // generator, finish writing their output.
+    // function forceExitAfterBuild() {
+    //   return {
+    //     name: 'force-exit-after-build',
+    //     async postBuild() {
+    //       setImmediate(() => process.exit(0));
+    //     },
+    //   };
+    // },
+    // Webpack's persistent filesystem cache (IdleFileCachePlugin) hangs during
+    // shutdown-serialize on Windows with this repo. A production build is
+    // one-shot, so disabling the cache trades a small speed hit for a clean
+    // exit without killing post-build plugin work.
     // function disableWebpackFsCache() {
     //   return {
     //     name: 'disable-webpack-fs-cache',
@@ -137,7 +144,7 @@ const config: Config = {
           // regenerate a full build locally.
           exclude: process.env.NODE_ENV === 'development'
             ? ['05_reference/**']
-            : [],
+            : ['Issue.md', 'sortspec.md', 'Excalidraw/**'],
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           async sidebarItemsGenerator({ defaultSidebarItemsGenerator, item, ...args }) {
             const sidebarItems = await defaultSidebarItemsGenerator({ item, ...args });
