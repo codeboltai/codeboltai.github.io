@@ -29,4 +29,3 @@ Platform-specific integrations are implemented as **channel plugins** — lightw
 | [Chat Platforms](./03_chat-platforms.md) | Telegram, Slack, Discord, Teams, WhatsApp via channel plugins |
 | [Project Tools](./04_project-tools.md) | Linear, Jira, GitHub, GitLab — agents that read and write to your tools |
 | [Building a Channel Plugin](./05_building-a-channel-plugin.md) | How to connect any custom platform to the gateway |
-| [Autonomous Companies](./06_autonomous-companies.md) | How to structure persistent virtual employees, goals, channels, and monitoring workflows in Codebolt |

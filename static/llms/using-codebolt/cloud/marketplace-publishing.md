@@ -1,76 +1,236 @@
 # Marketplace Publishing
 
-> The cloud portal is where anything publishable lives. Every entity type has an All page (public marketplace) and a My page (what you've published)
+> Publish agents, plugins, skills, and other entities to the Codebolt marketplace from the portal or the CLI.
 
-The cloud portal is where anything publishable lives. Every entity type has an **All** page (public marketplace) and a **My** page (what you've published). Publishing happens from the portal; once published, your item is discoverable and installable from the desktop app, CLI, and TUI.
+Anything you build for Codebolt can be published to the marketplace — agents, plugins, skills, MCPs, and more. Once published, your item is discoverable and installable from the desktop app, CLI, and TUI.
+
+Publishing happens from the **cloud portal** or the **CLI**. Every entity type follows the same pattern:
+
+```bash
+# Create a new entity from a template
+codebolt action <entity> create --name my-item --path ./my-item
+
+# Publish to the registry
+codebolt action <entity> publish --path ./my-item
+
+# List what you've published
+codebolt action <entity> list
+```
+
+---
 
 ## What you can publish
 
-| Entity | All / My routes | Upload form |
-|---|---|---|
-| **Agents** | `/agents/list` · `/myAgents` | ZIP upload or YAML-based form; supports `codeboltExecuted` and `selfExecuted` remote agents |
-| **MCPs** | `/mcp/all` · `/mcp/mymcp` | Connection details and capability list |
-| **Providers** | `/providers/all` · `/providers/my` | LLM provider integrations |
-| **Skills** | `/skills/all` · `/skills/my` | Slash-command skills |
-| **Action Blocks** | `/actionblocks/all` · `/actionblocks/my` | Side-execution code units |
-| **Capabilities** | `/capabilities/all` · `/capabilities/my` | Versioned capability bundles with typed I/O |
-| **Plugins** | `/plugins/all` · `/plugins/my` | Plugin packages |
-| **Executors** | `/executors/all` · `/executors/my` | Language runtimes (Node, Python, shell) |
-| **Templates** | `/templates/all` · `/templates` | Project templates |
-| **Apps** | `/apps/all` · `/apps/my` | Packaged apps |
+Agents are the primary publishable entity. They run tasks, reason over codebases, and can be orchestrated in swarms and flows.
 
-Every type follows the same shape: a **search / filter** experience on the All page, a **card detail** view with description, ratings, version history, and tags, plus an **Upload** button on the My page.
+**Portal routes:** `/agents/list` (all) · `/myAgents` (yours)
 
-## The agent publishing flow
+**Two ways to publish:**
 
-Agents are the most common publish target. Two ways to create one:
+- **ZIP upload** — `My Agents → Upload ZIP`. Drop a packaged agent directory with a `codeboltagent.yaml` manifest. The portal validates, extracts metadata, and creates a draft.
+- **Add Agent form** — `My Agents → New agent`. Fill in name, description, tools, execution mode, and tags inline. Download the manifest or publish directly.
 
-### From a ZIP upload
+**Execution modes:**
 
-**Agents → My Agents → Upload ZIP.** Drop a packaged agent directory (must include `codeboltagent.yaml`). The portal validates the manifest, extracts the metadata, and creates a draft agent record. You review, fill in the marketplace listing (description, tags, pricing), and click publish.
+| Mode | How it works |
+|---|---|
+| `codeboltExecuted` | Codebolt launches the agent from a `remotePath`. Zero user setup — installs cleanly from the marketplace. |
+| `selfExecuted` | User runs the process. The listing includes the env-var snippet (`threadToken` + `agentId`) they need. Good for wrapping Claude Code, Codex, or any external tool. |
 
-### From the Add Agent form
+**CLI:**
 
-**Agents → My Agents → New agent.** A guided form for building the manifest inline — name, description, supported frameworks, tools, execution mode, tags, cover image. Produces an agent manifest you can then download, edit, and re-upload, or publish directly.
+```bash
+# Create a new agent from a template
+codebolt action agent create \
+  --name my-agent \
+  --path ./my-agent \
+  --description "Does X" \
+  --template default
 
-### Remote-agent modes
+# Create a remote agent
+codebolt action agent create-remote \
+  --name my-agent \
+  --execution-mode codeboltExecuted \
+  --remote-path ./my-agent \
+  --description "Does X"
 
-When creating an agent, you pick the execution mode:
+# Publish
+codebolt action agent publish --path ./my-agent
 
-- **`codeboltExecuted`** — Codebolt launches the agent process from a `remotePath`. Installs cleanly from the marketplace; no extra setup for the user.
-- **`selfExecuted`** — the user runs the process themselves. The marketplace listing includes the env-var snippet (`threadToken` + `agentId`) the user needs. Good for wrapping existing tools (Claude Code, Codex, Gemini) as Codebolt agents.
+# List your published agents
+codebolt action agent list
+```
 
-See [Creating Agents → Quickstart](../../04_build-on-codebolt/02_creating-agents/02_quickstart.md) for the code side.
+See [Creating Agents](../../04_build-on-codebolt/02_creating-agents/02_quickstart.md) for the full agent build guide.
 
-## What you fill in on a listing
+Plugins extend the Codebolt application — adding custom LLM providers, chat gateway connections, remote execution environments, or custom UI panels.
+
+**Portal routes:** `/plugins/all` · `/plugins/my`
+
+**CLI:**
+
+```bash
+# Scaffold a new plugin
+codebolt action plugin create \
+  --name my-plugin \
+  --path ./my-plugin \
+  --description "Adds X provider"
+
+# Publish
+codebolt action plugin publish --path ./my-plugin
+
+# List your published plugins
+codebolt action plugin list
+```
+
+See [Building Plugins](../08g_plugins/04_building-plugins.md) and the [Plugin developer docs](../../04_build-on-codebolt/05_plugins/01_overview.md).
+
+MCP (Model Context Protocol) servers expose tools agents can call — file search, database queries, external APIs, and more.
+
+**Portal routes:** `/mcp/all` · `/mcp/mymcp`
+
+Publishing an MCP from the portal: fill in the connection details (URL or local command), the capability list, and authentication method. Users install it and it appears in **Settings → MCP Servers**.
+
+See [Installing MCP Servers](../04b_agent-extensions/06_installing-mcp-servers.md) for the install flow.
+
+Skills are slash-command invocable capabilities — type `/skill-name` in chat to run one. They're installable from the marketplace and scoped to the agent that runs them.
+
+**Portal routes:** `/skills/all` · `/skills/my`
+
+**CLI:**
+
+```bash
+codebolt action skill create \
+  --name my-skill \
+  --path ./my-skill \
+  --description "Does X when invoked"
+
+codebolt action skill publish --path ./my-skill
+
+codebolt action skill list
+```
+
+See [Skills](../04b_agent-extensions/03_skills.md).
+
+Action Blocks are lightweight code units that run as side executions parallel to an agent — useful for deterministic operations that don't need LLM reasoning.
+
+**Portal routes:** `/actionblocks/all` · `/actionblocks/my`
+
+**CLI:**
+
+```bash
+codebolt action actionblock create \
+  --name my-block \
+  --path ./my-block \
+  --description "Runs X in parallel"
+
+codebolt action actionblock publish --path ./my-block
+
+codebolt action actionblock list
+```
+
+See [Action Blocks](../04b_agent-extensions/04_action-blocks.md).
+
+Capabilities are versioned, reusable bundles of agent behaviour with typed inputs and outputs. They can be shared across agents and composed into larger workflows.
+
+**Portal routes:** `/capabilities/all` · `/capabilities/my`
+
+**CLI:**
+
+```bash
+codebolt action capability create \
+  --name my-capability \
+  --path ./my-capability \
+  --description "Reusable bundle for X"
+
+codebolt action capability publish --path ./my-capability
+
+codebolt action capability list
+```
+
+See [Capabilities](../04b_agent-extensions/02_capabilities.md).
+
+Executors are language runtimes that run capabilities — Node.js, Python, shell, or custom. Publishing a custom executor makes it available for other teams to use.
+
+**Portal routes:** `/executors/all` · `/executors/my`
+
+**CLI:**
+
+```bash
+codebolt action executor create \
+  --name my-executor \
+  --path ./my-executor \
+  --description "Python 3.12 runtime"
+
+codebolt action executor publish --path ./my-executor
+
+codebolt action executor list
+```
+
+See [Executors](../04b_agent-extensions/05_executors.md).
+
+Providers add a custom LLM or embedding model integration to Codebolt's model selector — either as a plugin or as a standalone provider package.
+
+**Portal routes:** `/providers/all` · `/providers/my`
+
+**CLI:**
+
+```bash
+codebolt action provider create \
+  --name my-provider \
+  --path ./my-provider \
+  --description "Custom inference endpoint"
+
+codebolt action provider publish --path ./my-provider
+
+codebolt action provider list
+```
+
+Project templates let users scaffold a new project with a pre-configured folder structure, agent, and settings.
+
+**Portal routes:** `/templates/all` · `/templates`
+
+Templates are published from the portal only — upload a ZIP of the template directory with a manifest describing the structure.
+
+Apps are fully packaged Codebolt applications — a bundled agent, UI, and configuration that users can install as a single unit.
+
+**Portal routes:** `/apps/all` · `/apps/my`
+
+Apps are published from the portal. Contact the Codebolt team for access to the app publishing flow.
+
+---
+
+## Listing metadata
 
 For every entity type the listing form collects:
 
-- **Name** and **slug** (globally unique).
-- **Description** — Markdown.
-- **Tags / categories** — drives discovery.
-- **Cover image / screenshots** — hosted on the portal CDN.
-- **Version** — semver; new versions supersede old ones but older versions remain installable.
-- **Visibility** — public (marketplace) or unlisted (installable by URL only; good for team-private items).
-- **Pricing** — free or paid (paid routes through the portal billing system).
+- **Name** and **slug** — globally unique
+- **Description** — Markdown supported
+- **Tags / categories** — drives discovery and filtering
+- **Cover image / screenshots** — hosted on the portal CDN
+- **Version** — semver; new versions supersede old but older versions remain installable
+- **Visibility** — `public` (full marketplace) or `unlisted` (installable by URL; good for team-private items)
+- **Pricing** — free or paid (paid routes through the portal billing system)
 
-## Managing what you've published
+---
+
+## Managing published items
 
 The **My** view of each entity type lets you:
 
-- Edit metadata (description, tags, cover).
-- Upload a new version.
-- Deprecate (keeps old installs working; hides from new discovery).
-- Delete (breaks installs — use deprecate instead unless the item was never used).
-- View ratings, downloads, and usage stats per version.
+- Edit metadata (description, tags, cover image)
+- Upload a new version
+- **Deprecate** — keeps old installs working; hides from new discovery
+- **Delete** — breaks existing installs; use deprecate instead unless the item was never used
+- View ratings, downloads, and usage stats per version
 
-## How users install what you publish
+---
 
-From the **desktop app / CLI / TUI**, the marketplace pages (in the app) query the same portal backend. A user sees your listing, clicks install, and the tool downloads + registers the entity locally. See [Installing an Agent](../04_agents/05_installing-an-agent.md) and [Installing MCP Servers](../05a_tools-and-mcp/02_installing-mcp-servers.md) for the install flow from the app side.
+## Who can publish
 
-## Who publishes what
+Anyone with a signed-in account can publish. Team-owned items on self-hosted deployments can be restricted to team admins — see [Teams → Roles](../09_account/02_teams.md#roles).
 
-Anyone with a signed-in account can publish. Team-owned items (self-hosted deployments) can be restricted to team admins via custom roles — see [Teams → Roles](../09_account/02_teams.md#roles).
+---
 
 ## Related
 
@@ -78,3 +238,4 @@ Anyone with a signed-in account can publish. Team-owned items (self-hosted deplo
 - [Cloud Portal](./02_cloud-portal.md)
 - [Installing an Agent](../04_agents/05_installing-an-agent.md)
 - [The Marketplace (in-app)](../04_agents/04_the-marketplace.md)
+- [Plugin Marketplace](../08g_plugins/03_plugin-marketplace.md)
