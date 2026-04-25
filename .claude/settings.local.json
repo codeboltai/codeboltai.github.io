@@ -42,7 +42,8 @@
       "Bash(grep -r \"input.*form\\\\|output.*form\\\\|form.*validation\\\\|capability.*field\" /Users/ravirawat/Documents/codeboltai/AiEditor/CodeBolt/packages/server/src --include=*.ts -l)",
       "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; head -5 \"{}\"')",
       "Bash(find D:\\\\Codeboltapps\\\\CodeBolt\\\\packages\\\\cli\\\\src *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(git rm *)"
     ]
   },
   "enabledPlugins": {

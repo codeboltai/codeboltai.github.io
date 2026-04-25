@@ -8,11 +8,12 @@ import './diagrams.css';
  * (LangChain, Mastra, Vercel AI SDK in their default shape).
  *
  * Bottom row: Codebolt's split — your app holds only the client SDK,
- * the agent + tools + memory + observability all live in the server.
+ * the agent code is your repo (loaded into the server), and the server
+ * is started by the client-sdk locally or attached to a remote runtime.
  */
 
 const W = 760;
-const H = 460;
+const H = 520;
 
 const cx = (x: number, w: number) => x + w / 2;
 
@@ -101,24 +102,49 @@ export default function FrameworkComparison() {
           CODEBOLT FRAMEWORK · @codebolt/agent + @codebolt/client-sdk
         </text>
 
+        {/* Agent code box — sits above the server; your repo, NOT inside the server */}
+        <rect x="232" y="270" width="408" height="44" rx="4" className="cb-box" />
+        <text x={cx(232, 408)} y="290" textAnchor="middle" className="cb-box-title">
+          AGENT CODE · your repo · @codebolt/agent
+        </text>
+        <text x={cx(232, 408)} y="305" textAnchor="middle" className="cb-box-sub">
+          ComposableAgent · tools · instructions · memory adapter
+        </text>
+
+        {/* Down arrow: agent code → server */}
+        <line
+          x1={cx(232, 408)}
+          y1="314"
+          x2={cx(232, 408)}
+          y2="336"
+          className="cb-arrow"
+          markerEnd="url(#fc-arrow)"
+        />
+        <text x={cx(232, 408) + 8} y="328" className="cb-flow-label">
+          loaded · run by
+        </text>
+
         {/* Slim App box */}
-        <rect x="32" y="272" width="160" height="120" rx="6" className="cb-box" />
-        <text x="48" y="292" className="cb-box-title">YOUR APP</text>
-        <text x="48" y="306" className="cb-box-sub">next.js · cli · worker</text>
-        <rect x="48" y="320" width="128" height="56" rx="3" className="cb-box cb-box--accent" />
-        <text x={cx(48, 128)} y="345" textAnchor="middle" className="cb-box-title">
+        <rect x="32" y="338" width="160" height="140" rx="6" className="cb-box" />
+        <text x="48" y="358" className="cb-box-title">YOUR APP</text>
+        <text x="48" y="372" className="cb-box-sub">next.js · cli · worker</text>
+        <rect x="48" y="386" width="128" height="76" rx="3" className="cb-box cb-box--accent" />
+        <text x={cx(48, 128)} y="412" textAnchor="middle" className="cb-box-title">
           CLIENT SDK
         </text>
-        <text x={cx(48, 128)} y="362" textAnchor="middle" className="cb-box-sub">
+        <text x={cx(48, 128)} y="428" textAnchor="middle" className="cb-box-sub">
           rest · ws
+        </text>
+        <text x={cx(48, 128)} y="446" textAnchor="middle" className="cb-box-sub">
+          spawns server
         </text>
 
         {/* Arrow app → server */}
         <line
           x1="192"
-          y1="332"
+          y1="408"
           x2="232"
-          y2="332"
+          y2="408"
           className="cb-arrow"
           markerEnd="url(#fc-arrow)"
         />
@@ -126,34 +152,34 @@ export default function FrameworkComparison() {
         {/* Codebolt Server box */}
         <rect
           x="232"
-          y="272"
+          y="338"
           width="408"
-          height="120"
+          height="140"
           rx="6"
           className="cb-box cb-box--accent"
         />
-        <text x={cx(232, 408)} y="290" textAnchor="middle" className="cb-box-title">
+        <text x={cx(232, 408)} y="356" textAnchor="middle" className="cb-box-title">
           CODEBOLT SERVER
         </text>
-        <text x={cx(232, 408)} y="304" textAnchor="middle" className="cb-box-sub">
-          local · docker · e2b · cloud
+        <text x={cx(232, 408)} y="370" textAnchor="middle" className="cb-box-sub">
+          started by client-sdk · child process locally · or attached remotely
         </text>
 
-        {/* Server chips: 6 in a 3x2 grid */}
+        {/* Server chips: 6 in a 3x2 grid (no AGENT — it's outside) */}
         {[
-          { x: 244, y: 314, label: 'AGENT', sub: '@codebolt/agent' },
-          { x: 372, y: 314, label: 'TOOLS / MCP', sub: 'allowlist · servers' },
-          { x: 500, y: 314, label: 'MEMORY', sub: 'kv · vector · kg · log' },
-          { x: 244, y: 352, label: 'COORDINATION', sub: 'jobs · swarms · locks' },
-          { x: 372, y: 352, label: 'OBSERVABILITY', sub: 'agent · ai · event log' },
-          { x: 500, y: 352, label: 'MARKETPLACE', sub: 'install · publish' },
+          { x: 244, y: 384, label: 'TOOLS / MCP', sub: 'allowlist · servers' },
+          { x: 376, y: 384, label: 'MEMORY', sub: 'kv · vector · kg · log' },
+          { x: 508, y: 384, label: 'COORDINATION', sub: 'jobs · swarms · locks' },
+          { x: 244, y: 426, label: 'OBSERVABILITY', sub: 'agent · ai · event log' },
+          { x: 376, y: 426, label: 'MARKETPLACE', sub: 'install · publish' },
+          { x: 508, y: 426, label: 'RUNTIME', sub: 'child · docker · e2b · cloud' },
         ].map((c) => (
           <g key={c.label}>
-            <rect x={c.x} y={c.y} width="124" height="32" rx="2" className="cb-box" />
-            <text x={c.x + 62} y={c.y + 13} textAnchor="middle" className="cb-box-title">
+            <rect x={c.x} y={c.y} width="120" height="36" rx="2" className="cb-box" />
+            <text x={c.x + 60} y={c.y + 15} textAnchor="middle" className="cb-box-title">
               {c.label}
             </text>
-            <text x={c.x + 62} y={c.y + 26} textAnchor="middle" className="cb-box-sub">
+            <text x={c.x + 60} y={c.y + 29} textAnchor="middle" className="cb-box-sub">
               {c.sub}
             </text>
           </g>
@@ -162,36 +188,36 @@ export default function FrameworkComparison() {
         {/* Arrow server → LLM */}
         <line
           x1="640"
-          y1="332"
+          y1="408"
           x2="680"
-          y2="332"
+          y2="408"
           className="cb-arrow"
           markerEnd="url(#fc-arrow)"
         />
-        <rect x="680" y="298" width="56" height="68" rx="3" className="cb-box" />
-        <text x="708" y="324" textAnchor="middle" className="cb-box-title">LLM</text>
-        <text x="708" y="342" textAnchor="middle" className="cb-box-sub">provider</text>
+        <rect x="680" y="374" width="56" height="68" rx="3" className="cb-box" />
+        <text x="708" y="400" textAnchor="middle" className="cb-box-title">LLM</text>
+        <text x="708" y="418" textAnchor="middle" className="cb-box-sub">provider</text>
 
-        <text x="32" y="416" className="cb-axis-label">
-          your app holds only the client — the runtime, memory, and observability are
-          one server hop away and shared across apps
+        <text x="32" y="494" className="cb-axis-label">
+          your app holds only the client — agent code is your repo, the server runs it
+          locally as a child process or remotely (docker · e2b · cloud)
         </text>
 
         {/* Legend */}
         <g>
-          <rect x="32" y="432" width="14" height="14" rx="2" className="cb-box cb-box--accent" />
-          <text x="52" y="443" className="cb-legend">
+          <rect x="32" y="506" width="14" height="14" rx="2" className="cb-box cb-box--accent" />
+          <text x="52" y="517" className="cb-legend">
             codebolt-owned surface
           </text>
           <line
             x1="200"
-            y1="439"
+            y1="513"
             x2="226"
-            y2="439"
+            y2="513"
             className="cb-arrow"
             markerEnd="url(#fc-arrow)"
           />
-          <text x="234" y="443" className="cb-legend">
+          <text x="234" y="517" className="cb-legend">
             data flow
           </text>
         </g>
