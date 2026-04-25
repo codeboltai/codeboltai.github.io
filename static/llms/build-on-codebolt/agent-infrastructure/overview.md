@@ -85,6 +85,7 @@ Auth is the boundary; everything else is defence in depth. A self-hosted server 
 
 ## See also
 
+- Self Hosted Agent Infrastructure in the Using Codebolt docs for business-facing deployment patterns and use-case framing
 - [Architecture Overview](../09_internals/01_architecture-overview.md) — understand the system before hosting it
 - [Process Model](../09_internals/02_process-model.md) — what runs where
 - [Persistence & Event Log](../09_internals/03_subsystems/12_persistence-and-eventlog.md) — the storage floor

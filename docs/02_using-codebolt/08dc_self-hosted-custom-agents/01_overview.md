@@ -4,6 +4,8 @@ title: Self Hosted Agent Infrastructure Overview
 description: Use Codebolt as self-hosted agent infrastructure across local machines, company environments, sandboxes, cloud runtimes, and external channels.
 ---
 
+import SelfHostedAgentInfrastructureDiagram from '@site/src/components/diagrams/SelfHostedAgentInfrastructureDiagram';
+
 # Self Hosted Agent Infrastructure
 
 Many teams first meet Codebolt as an editor experience. That is real, but incomplete.
@@ -35,6 +37,8 @@ Codebolt supports that broader framing because it can run in multiple shapes:
 
 This section is written for buyers, technical leaders, and implementation teams who want to think about **how Codebolt can fit into their own infrastructure**.
 
+<SelfHostedAgentInfrastructureDiagram />
+
 ## The core idea
 
 Codebolt is not only a place where users type prompts. It can also be the underlying system that:
@@ -55,6 +59,25 @@ In other words: **Codebolt can be the infrastructure layer for the agentic world
 | [Business and Customer Use Cases](./03_business-and-customer-use-cases.md) | The main ways customers can use Codebolt as an always-on assistant, coworker, monitor, or orchestration layer |
 | [Architecture Patterns](./04_architecture-patterns.md) | Repeatable architecture shapes for personal, team, embedded, and multi-agent deployments |
 | [Implementation Anchors](./05_implementation-anchors.md) | How the platform packages map to these architectures, including server, SDK, plugin, gateway, and sandbox examples |
+
+## How this connects to the deeper infrastructure docs
+
+This section is the **customer-facing architecture layer**.
+
+It explains how to think about Codebolt as agent infrastructure:
+
+- what business problems it can solve
+- what architectural shapes it can take
+- how buyers and solution teams should frame the platform
+
+The deeper implementation and operations material lives in [Agent Infrastructure](../../04_build-on-codebolt/11_agent-infrastructure/01_overview.md), including:
+
+- [Running the Server](../../04_build-on-codebolt/11_agent-infrastructure/02_running-the-server.md)
+- [Database](../../04_build-on-codebolt/11_agent-infrastructure/03_database.md)
+- [Storage Backends](../../04_build-on-codebolt/11_agent-infrastructure/04_storage-backends.md)
+- [Scaling and Workers](../../04_build-on-codebolt/11_agent-infrastructure/05_scaling-and-workers.md)
+- [Security Hardening](../../04_build-on-codebolt/11_agent-infrastructure/06_security-hardening.md)
+- [Remote Execution](../../04_build-on-codebolt/11_agent-infrastructure/09_remote-execution.md)
 
 ## Why this framing helps
 
@@ -80,3 +103,4 @@ That leads to much better architecture decisions, especially for companies that 
 - [Custom Agentic Application](../08da_custom-agentic-application/01_overview.md)
 - [Autonomous Companies](../08db_autonomous-companies/01_overview.md)
 - [Cloud](../08f_cloud/01_overview.md)
+- [Agent Infrastructure](../../04_build-on-codebolt/11_agent-infrastructure/01_overview.md)
