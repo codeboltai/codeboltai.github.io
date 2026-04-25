@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Terminal
+description: The Terminal panel gives you a full shell session inside the Codebolt workspace
 ---
 
 # Terminal

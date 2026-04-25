@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Codebolt lets you run multiple agents at the same time — on the same project, on different tasks, or coordinated in a pipeline
 ---
 
 # Parallel Agents

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Handler Types
+description: "Three common skill handler shapes:"
 ---
 
 # Handler Types

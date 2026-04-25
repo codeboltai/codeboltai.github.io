@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Building Integrations
+description: "Patterns for connecting Codebolt to external services and platforms. Each pattern covers: which mechanism to use, how it's wired, and a minimal working example."
 ---
 
 # Building Integrations

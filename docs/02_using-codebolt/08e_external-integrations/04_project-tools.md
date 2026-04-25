@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Project Tools
+description: Project tools — issue trackers, code review platforms, and knowledge bases — are a natural fit for agent automation
 ---
 
 # Project Tool Integrations
@@ -29,7 +30,7 @@ See [Tools & MCP → Installing MCP Servers](../05_tools-and-mcp/02_installing-m
 
 For event-driven integrations — where a tool event triggers an agent — use **webhooks**:
 
-1. Create a Codebolt webhook endpoint (see [Auto Interactivity → Webhooks](../08d_auto-interactivity/02_webhooks.md))
+1. Create a Codebolt webhook endpoint (see [Automation → Webhooks](../08d_auto-interactivity/02_webhooks.md))
 2. Configure the external tool to POST to that endpoint when events occur
 3. The Routing Gateway delivers the payload to your agent
 

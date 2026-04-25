@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Tabs and History
+description: Each chat tab is a separate conversation with its own agent, model, and message history
 ---
 
 import Tabs from '@theme/Tabs';

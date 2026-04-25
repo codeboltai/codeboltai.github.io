@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: LLM Providers
+description: How to configure which LLMs Codebolt uses. You can have as many providers configured simultaneously as you like; different agents or tabs can use different ones
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Custom Interfaces Overview
+description: "Build your own interface on top of Codebolt: a chat panel, a CLI, an IDE extension, a web dashboard, a mobile companion, or a product-specific front-end."
 ---
 
 # Custom Interfaces
@@ -37,6 +38,8 @@ If you want to *use* an existing UI (desktop app, web app, IDE extensions), see 
 
 Build a panel if your UI should appear *inside* the Codebolt desktop app. Build a full UI if it runs somewhere else entirely.
 
+If your goal is not just "a UI" but a full product shell that combines a custom front-end with direct server access or a plugin backend, see [Custom Agentic Applications](../04b_custom-agentic-applications/01_overview.md).
+
 ## Recommended paths
 
 Pick the lightest starting point that matches your needs:
@@ -59,4 +62,5 @@ Minimal shape:
 
 - [Custom Agents](../02_creating-agents/01_overview.md) — the other side of the agent-UI boundary
 - [Plugins](../05_plugins/01_overview.md) — for backend runtime extensions that can also open embedded panels
+- [Custom Agentic Applications](../04b_custom-agentic-applications/01_overview.md) — for application-level patterns that combine UI and plugin/backend layers
 - [Internals → Communication](../09_internals/03_subsystems/11_communication.md) — the protocol underneath

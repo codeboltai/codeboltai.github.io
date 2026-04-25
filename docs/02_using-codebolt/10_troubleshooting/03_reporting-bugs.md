@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Reporting Bugs
+description: How to report Codebolt bugs effectively. A good bug report gets fixed quickly; a bad one takes days of back-and-forth.
 ---
 
 import Tabs from '@theme/Tabs';

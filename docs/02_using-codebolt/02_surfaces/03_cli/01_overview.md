@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: CLI Overview
+description: The codebolt CLI is the command-line entry point for running the Codebolt server, launching the TUI, connecting to an existing server, running headless prompts,.
 ---
 
 # CLI Overview

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Marketplace and Publishing
+description: "Full CLI reference: Capability CLI"
 ---
 
 # Marketplace and Publishing

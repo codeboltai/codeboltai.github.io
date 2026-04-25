@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Hooks
+description: Hooks are event-driven automation rules that react to system events and trigger actions — run an agent, fire an action block, or execute a shell command
 ---
 
 # Hooks

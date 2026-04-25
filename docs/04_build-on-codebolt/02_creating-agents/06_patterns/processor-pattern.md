@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Processor Pattern
+description: Customize the agent loop by plugging processors into CodeboltAgent's five pipeline slots
 ---
 
 # Processor Pattern

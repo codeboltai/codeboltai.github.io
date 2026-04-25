@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Hooks and Processors
+description: Two related but distinct mechanisms for intercepting and transforming what flows through an agent.
 ---
 
 import HookPhases from '@site/src/components/diagrams/HookPhases';

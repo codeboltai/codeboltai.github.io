@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Installing Plugins
+description: Plugins can be installed from the marketplace, from a local directory, or via the CLI
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.1
-title: "Vector DB"
+title: Vector DB
+description: The Vector DB component manages collections of vector embeddings for semantic search across project files and arbitrary text
 ---
 
 # Vector DB

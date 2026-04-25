@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Narrative Engine
+description: "Source code: services/narrativeService, sibling packages packages/codeboltNarrative and packages/narrativejspackage."
 ---
 
 # Narrative Engine

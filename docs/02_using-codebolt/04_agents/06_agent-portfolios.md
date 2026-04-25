@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Agent Portfolios
+description: A portfolio is the curated set of agents active in a workspace
 ---
 
 import Tabs from '@theme/Tabs';

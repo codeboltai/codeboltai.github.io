@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Installing MCP Servers
+description: "Three sources for an MCP server: a marketplace registry, a manual config entry for a private/local server, or a capability bundle that ships its own"
 ---
 
 import Tabs from '@theme/Tabs';

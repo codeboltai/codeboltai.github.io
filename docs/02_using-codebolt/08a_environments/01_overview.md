@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Environments Overview
+description: An Environment in Codebolt defines the execution context for agent runs — the shell, environment variables, runtime versions, and crucially, where the agent.
 ---
 
 # Environments

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Chat Widget
+description: An embeddable chat UI you can drop into another web app. Lets users in your product talk to Codebolt agents without opening the full Codebolt app.
 ---
 
 # Chat Widget

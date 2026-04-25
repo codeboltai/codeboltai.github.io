@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Context and @-mentions
+description: What the agent sees when you type a message isn't just the message — it's a carefully assembled prompt drawing from your project, recent turns, memory, and.
 ---
 
 # Context and @-mentions

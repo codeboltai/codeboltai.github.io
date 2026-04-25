@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Chat message end-to-end
+description: An annotated trace of what happens when a user types a message in the desktop app and an agent responds.
 ---
 
 # Chat message end-to-end

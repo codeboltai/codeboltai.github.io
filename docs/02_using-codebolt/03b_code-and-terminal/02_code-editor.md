@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Code Editor
+description: The Code panel is a full Monaco-based editor — the same engine that powers VS Code
 ---
 
 # Code Editor

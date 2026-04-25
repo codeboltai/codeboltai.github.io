@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Agent run end-to-end
+description: How a full agent run — not just one message, but a multi-step task from spawn to termination — flows through the server.
 ---
 
 # Agent run end-to-end

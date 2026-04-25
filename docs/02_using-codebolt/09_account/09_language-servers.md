@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Language Servers
+description: Language Server Protocol (LSP) servers provide code intelligence — completions, diagnostics, go-to-definition, and inline error highlighting — for specific.
 ---
 
 # Language Servers

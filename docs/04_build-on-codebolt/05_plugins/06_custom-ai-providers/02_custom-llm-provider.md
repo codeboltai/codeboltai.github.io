@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Custom LLM Provider
+description: Write a plugin that lets CodeBolt talk to an LLM source CodeBolt does not natively support
 ---
 
 # Custom LLM Provider

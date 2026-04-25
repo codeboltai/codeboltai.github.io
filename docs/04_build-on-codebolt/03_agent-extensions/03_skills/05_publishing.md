@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Publishing
+description: "Publish a skill using the extension service REST API:"
 ---
 
 # Publishing

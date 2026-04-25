@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Build on Codebolt
+description: This section is for developers extending Codebolt. If you want to use Codebolt, start at Using Codebolt. If you want to follow a specific how-to, try Guides
 ---
 
 import SystemArchitecture from '@site/src/components/diagrams/SystemArchitecture';
@@ -18,6 +19,7 @@ The **Codebolt server** is the execution engine. It owns files, memory, sub-agen
 <SystemArchitecture />
 
 - **Custom Interfaces** — build your own chat panel, CLI, or editor extension using the [`clientsdk`](./04_custom-uis/01_overview.md), a wrapper over the server's WebSocket protocol and HTTP routes.
+- **Custom Agentic Applications** — combine a custom front-end with direct server access or a plugin backend to build a product-specific application shell on top of Codebolt. See [Custom Agentic Applications](./04b_custom-agentic-applications/01_overview.md).
 - **Custom Agents** — write agents with [`codeboltjs`](./02_creating-agents/01_overview.md) or the [`@codebolt/agent`](./02_creating-agents/06_patterns/overview.md) framework. Agents drive the server over WebSocket.
 - **Plugins** — extend the application itself with the [`pluginSdk`](./05_plugins/01_overview.md): gateway integrations, execution plugins, UI extensions, hooks, and custom LLM providers. Plugins live alongside the server and talk to it over the plugin bus.
 - **Remote Environment Providers** — federate across machines. A [remote environment provider](./06_remote-env-providers/01_llm-provider.md) is typically another Codebolt server instance (e.g. `e2b`, a remote sandbox, or a peer workstation) that the local server proxies work to.
@@ -34,6 +36,7 @@ Codebolt exposes these extension points. Agent customization now splits into two
 | **Creating Agents** | Write or wrap agents that show up in the picker | [Creating Agents](./02_creating-agents/01_overview.md) |
 | **Agent Extensions** | Shared primitives agents consume: skills, capabilities, MCP tools, and blocks | [Agent Extensions](./03_agent-extensions/01_overview.md) |
 | **Custom Interfaces** | Build your own interface on top of the server | [Custom Interfaces](./04_custom-uis/01_overview.md) |
+| **Custom Agentic Applications** | Build product-specific applications that use Codebolt as the runtime backend | [Custom Agentic Applications](./04b_custom-agentic-applications/01_overview.md) |
 | **Plugins** | Plugin SDK reference — hooks, UI extension API, provider interfaces | [Plugins](./05_plugins/01_overview.md) |
 | **Extending Codebolt** | Add to the app itself: custom LLM backends, themes, commands, UI panels | [Extending Codebolt](./06_extending-codebolt/01_overview.md) |
 | **Evaluation & Optimization** | Measure, refine, and tune agents | [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md) |
@@ -56,6 +59,7 @@ A decision guide:
 - **I want to add a theme, custom command, or UI panel to Codebolt.** → [Extending Codebolt](./06_extending-codebolt/01_overview.md).
 - **I want to intercept or modify application behaviour project-wide** (hooks, execution routing, provider registration). → [Plugins](./05_plugins/01_overview.md).
 - **I want to build my own UI on top of Codebolt.** → [Custom Interfaces](./04_custom-uis/01_overview.md).
+- **I want a product-specific app with its own UX and maybe a plugin backend.** → [Custom Agentic Applications](./04b_custom-agentic-applications/01_overview.md).
 - **I want to connect Codebolt to Telegram, Discord, Linear, or CI/CD.** → [Building Integrations](./10_building-integrations/01_overview.md).
 - **I want to measure and tune my agent systematically.** → [Evaluation & Optimization](./07_eval-and-optimization/01_overview.md).
 - **I want several agents to cooperate on a task.** → [Multi-Agent Orchestration](./08_multi-agent-orchestration/01_overview.md). Read [When to use multi-agent](./08_multi-agent-orchestration/02_when-multi-agent.md) first.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: API Gateway
+description: Expose Codebolt agent runs over HTTP so external systems, scripts, and services can trigger agents without knowing the WebSocket protocol.
 ---
 
 # API Gateway

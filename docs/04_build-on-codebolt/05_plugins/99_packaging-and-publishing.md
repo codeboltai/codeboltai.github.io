@@ -1,6 +1,7 @@
 ---
 sidebar_position: 99
 title: Packaging and Publishing Plugins
+description: When your plugin is ready to share, follow this checklist and publish it to the CodeBolt registry.
 ---
 
 # Packaging and Publishing Plugins

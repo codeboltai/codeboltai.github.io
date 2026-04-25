@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Build Your First UI Extension
+description: Create a plugin that renders an interactive panel inside the Codebolt app. The panel communicates bidirectionally with your plugin backend.
 ---
 
 # Build Your First UI Extension

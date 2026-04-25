@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Agent Settings
+description: Override the default LLM for a specific installed agent, and assign different models to each of that agent's LLM roles.
 ---
 
 # Agent Settings

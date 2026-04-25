@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Guardrails
+description: How Codebolt keeps a single agent run from going off the rails
 ---
 
 import GuardrailFlow from '@site/src/components/diagrams/GuardrailFlow';

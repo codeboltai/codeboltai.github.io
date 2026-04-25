@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Stigmergy Swarm
+description: Most multi-agent systems collapse at scale
 ---
 
 import StigmergyMechanisms from '@site/src/components/diagrams/StigmergyMechanisms';

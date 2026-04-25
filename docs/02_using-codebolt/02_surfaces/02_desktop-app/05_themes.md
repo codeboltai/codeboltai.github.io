@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Themes
+description: Visual themes for the desktop app. Ships with several built-ins; custom themes can be installed from the marketplace or written yourself.
 ---
 
 # Themes

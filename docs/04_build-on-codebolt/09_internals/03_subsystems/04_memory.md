@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Memory
+description: "Source code: controllers/{memory,contextMemory,episodicMemory,persistentMemory,jsonMemory,markdownMemory,kvStore,memoryIngestion,knowledge,kg,vector}, plus the."
 ---
 
 # Memory Subsystem

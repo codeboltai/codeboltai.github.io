@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Environments
+description: "An environment is a per-project runtime: the Node version, Python venv, Ruby version, container, or VM your project expects"
 ---
 
 # Environments

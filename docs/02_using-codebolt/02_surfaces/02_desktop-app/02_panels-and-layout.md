@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Panels and Layout
+description: Codebolt's desktop app is built around a small number of persistent panels. Understanding what each does makes the rest of the UI obvious.
 ---
 
 # Panels and Layout

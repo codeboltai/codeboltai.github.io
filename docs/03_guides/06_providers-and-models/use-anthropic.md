@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Use Anthropic
+description: Setting up Claude (Anthropic) as your LLM provider in Codebolt.
 ---
 
 # Use Anthropic

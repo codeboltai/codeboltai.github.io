@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Process Model
+description: Codebolt is not a monolith. At runtime it's a tree of cooperating OS processes, each with a clear owner and restart policy.
 ---
 
 # Process Model

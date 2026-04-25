@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Memory Layers
+description: Codebolt uses eight distinct memory stores. Each one is optimised for a different class of data, lifetime, and access pattern
 ---
 
 # Memory Layers

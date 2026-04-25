@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Authentication & Authorization
+description: "Two questions every request has to answer: who is making it (authentication) and what are they allowed to do (authorization)"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Evaluators
+description: An evaluator inspects a subject's output after a task run and returns a score from 0 to 100, plus a reasoning string explaining the score
 ---
 
 # Evaluators

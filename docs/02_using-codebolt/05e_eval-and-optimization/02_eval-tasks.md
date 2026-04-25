@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Eval Tasks
+description: An eval task is the core definition of a test. It describes what to ask the subject to do, how to run it, and how to score the output
 ---
 
 # Eval Tasks

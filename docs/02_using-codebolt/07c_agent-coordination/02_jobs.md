@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Jobs
+description: The Jobs panel is the central work queue for multi-agent coordination
 ---
 
 # Jobs

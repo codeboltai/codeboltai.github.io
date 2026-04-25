@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Testing And Debugging
+description: 1. Create the skill in your project (.codebolt/capabilities/skill/ /)
 ---
 
 # Testing And Debugging

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Major Plugin Functionalities
+description: Plugins have access to a large part of the CodeBolt runtime through PluginClient. This page groups the major areas a plugin can work with.
 ---
 
 # Major Plugin Functionalities

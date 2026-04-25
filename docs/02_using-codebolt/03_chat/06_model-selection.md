@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Model Selection
+description: Every chat tab uses one model at a time. Picking the right one matters for both quality and cost. This page covers how to pick and when to switch.
 ---
 
 import Tabs from '@theme/Tabs';

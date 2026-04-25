@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Custom Tools
+description: Build custom tools using the CodeboltJS tool framework and make them available to agents
 ---
 
 # Creating Custom Tools

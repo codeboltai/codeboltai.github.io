@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Tool Schema
+description: "The contract between your tool and the LLM. A tool schema has four parts: name, description, input schema, and output shape"
 ---
 
 # Tool Schema

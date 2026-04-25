@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: codeboltagent.yaml
+description: "Note: Earlier versions of this documentation referred to this file as agent.yaml. The actual config"
 ---
 
 # codeboltagent.yaml

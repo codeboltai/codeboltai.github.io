@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Remote Chat
+description: Remote Chat is the portal's equivalent of the desktop app's Chat tab — a conversation with an agent — except the CodeBolt server running that agent lives in a.
 ---
 
 # Remote Chat

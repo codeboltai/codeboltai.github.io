@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Capabilities
+description: A Capability is a versioned, reusable unit of agent behaviour with defined inputs and outputs
 ---
 
 # Capabilities

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: AI Requests
+description: "A unified view of every LLM call Codebolt has made: which agent, which model, how many tokens, how much it cost, how long it took"
 ---
 
 import Tabs from '@theme/Tabs';

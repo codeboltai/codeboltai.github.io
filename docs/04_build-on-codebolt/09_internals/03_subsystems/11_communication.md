@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 title: Communication
+description: "Source code: channels/, sockets/, gateway/, events/, routes/, cliLib/, controllers/{chat,inbox,mail,calendar,convas},."
 ---
 
 # Communication Subsystem

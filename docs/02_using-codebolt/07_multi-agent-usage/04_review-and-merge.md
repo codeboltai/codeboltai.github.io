@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Review and Merge
+description: The human-in-the-loop side of multi-agent work. When agents produce changes that need approval before they land, they go through the review/merge system.
 ---
 
 import Tabs from '@theme/Tabs';

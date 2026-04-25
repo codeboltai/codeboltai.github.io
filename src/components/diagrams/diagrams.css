@@ -2420,3 +2420,114 @@
 [data-theme='dark'] .cb-chat-gw-label--notify {
   fill: #7dd3fc;
 }
+
+.cb-diagram--agentic-apps .cb-agentic-arrow {
+  fill: #52534e;
+}
+
+.cb-diagram--agentic-apps .cb-agentic-arrow--accent {
+  fill: #0ea5e9;
+}
+
+.cb-agentic-eyebrow {
+  fill: #6f716a;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+[data-theme='dark'] .cb-agentic-eyebrow { fill: #a0a09a; }
+
+.cb-agentic-surface {
+  fill: rgba(82,83,78,0.05);
+  stroke: rgba(82,83,78,0.28);
+  stroke-width: 1;
+}
+
+.cb-agentic-server {
+  fill: rgba(14,165,233,0.06);
+  stroke: rgba(14,165,233,0.8);
+  stroke-width: 1.2;
+}
+
+[data-theme='dark'] .cb-agentic-surface {
+  fill: rgba(255,255,255,0.03);
+  stroke: rgba(255,255,255,0.16);
+}
+
+[data-theme='dark'] .cb-agentic-server {
+  fill: rgba(14,165,233,0.10);
+  stroke: #38bdf8;
+}
+
+.cb-agentic-inner,
+.cb-agentic-block {
+  fill: rgba(255,255,255,0.74);
+  stroke: rgba(11,13,11,0.16);
+  stroke-width: 0.9;
+}
+
+[data-theme='dark'] .cb-agentic-inner,
+[data-theme='dark'] .cb-agentic-block {
+  fill: rgba(255,255,255,0.04);
+  stroke: rgba(255,255,255,0.14);
+}
+
+.cb-agentic-title,
+.cb-agentic-inner-title,
+.cb-agentic-block-title {
+  fill: #171717;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+[data-theme='dark'] .cb-agentic-title,
+[data-theme='dark'] .cb-agentic-inner-title,
+[data-theme='dark'] .cb-agentic-block-title {
+  fill: #f0efe8;
+}
+
+.cb-agentic-copy,
+.cb-agentic-caption {
+  fill: #56584f;
+  font-size: 10.5px;
+}
+
+[data-theme='dark'] .cb-agentic-copy,
+[data-theme='dark'] .cb-agentic-caption {
+  fill: #b7b6b0;
+}
+
+.cb-agentic-line {
+  fill: none;
+  stroke: #52534e;
+  stroke-width: 1.3;
+}
+
+.cb-agentic-line--accent {
+  stroke: #0ea5e9;
+}
+
+.cb-agentic-label-bg {
+  fill: rgba(255,255,255,0.86);
+}
+
+[data-theme='dark'] .cb-agentic-label-bg {
+  fill: rgba(19,20,18,0.94);
+}
+
+.cb-agentic-label {
+  fill: #56584f;
+  font-size: 9px;
+}
+
+.cb-agentic-label--accent {
+  fill: #0284c7;
+}
+
+[data-theme='dark'] .cb-agentic-label {
+  fill: #b7b6b0;
+}
+
+[data-theme='dark'] .cb-agentic-label--accent {
+  fill: #7dd3fc;
+}

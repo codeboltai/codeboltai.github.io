@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Settings Overview
+description: The Settings panel is the central place to configure Codebolt — LLM providers, agent behaviour, environment tools, language servers, MCP servers, appearance,.
 ---
 
 # Settings

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Environment Debug
+description: The Environment Debug panel shows the fully resolved set of environment variables for the currently active environment — after inheritance, overrides, and.
 ---
 
 # Environment Debug

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Installing an Agent
+description: Adding an agent from the marketplace, a private registry, or a local file. Same process regardless of source — what differs is where the manifest comes from.
 ---
 
 import Tabs from '@theme/Tabs';

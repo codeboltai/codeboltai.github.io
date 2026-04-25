@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Dynamic Panels
+description: Not every custom UI needs to be a separate application. Codebolt can render runtime UI panels inside the existing app through the dynamic panel system.
 ---
 
 import DynamicPanelArchitecture from '@site/src/components/diagrams/DynamicPanelArchitecture';

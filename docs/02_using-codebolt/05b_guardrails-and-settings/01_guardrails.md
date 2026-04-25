@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Guardrails
+description: Guardrails are rules that constrain what agents are allowed to do during a run
 ---
 
 # Guardrails

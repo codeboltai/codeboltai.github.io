@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Narrative Graph
+description: The Narrative Graph is a visual replay of an agent run — every decision, branch, tool call, and outcome laid out as a directed graph
 ---
 
 # Narrative Graph

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Tasks
+description: Tasks are individual work items. Unlike Action Plan tasks (which live inside a structured plan), standalone Tasks are a flat, flexible backlog — closer to a.
 ---
 
 # Tasks

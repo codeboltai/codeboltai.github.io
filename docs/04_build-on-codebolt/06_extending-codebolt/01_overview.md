@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Extending Codebolt
+description: This section is about adding new capabilities to the Codebolt application itself — not to individual agents, but to the platform every agent runs on.
 ---
 
 # Extending Codebolt

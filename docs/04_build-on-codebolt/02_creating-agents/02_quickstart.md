@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Custom Agent Quickstart
+description: Build and run a minimal custom agent in ~15 minutes. Covers level 0 (remix), level 1 (framework), and remote agents
 ---
 
 # Custom Agent Quickstart

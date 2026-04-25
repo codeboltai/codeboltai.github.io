@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Packaging
+description: How to wrap your MCP server for distribution. Packaging is about making it easy for someone else to install your server without fighting their environment.
 ---
 
 # Packaging

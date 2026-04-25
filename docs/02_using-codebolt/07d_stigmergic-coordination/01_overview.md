@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Stigmergic Coordination Overview
+description: When several agents work on the same project — jobs, review requests, file edits — they need a way to stay out of each other's way and signal intent to each.
 ---
 
 # Stigmergic Coordination

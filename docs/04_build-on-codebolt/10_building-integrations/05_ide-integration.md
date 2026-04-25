@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: IDE Integration
+description: IDE integration (VS Code, JetBrains, Neovim extensions) is a planned feature. There is no IDE extension available yet.
 ---
 
 # IDE Integration

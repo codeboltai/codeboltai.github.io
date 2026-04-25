@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: TUI Overview
+description: Codebolt's terminal UI is powered by @codebolt/gotui
 ---
 
 # TUI Overview

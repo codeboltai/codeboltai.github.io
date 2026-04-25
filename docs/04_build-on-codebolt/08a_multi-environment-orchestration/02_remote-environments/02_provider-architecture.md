@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Provider Architecture
+description: Multi-environment orchestration in Codebolt is built around providers.
 ---
 
 import RemoteExecutionProviderConcept from '@site/src/components/diagrams/RemoteExecutionProviderConcept';

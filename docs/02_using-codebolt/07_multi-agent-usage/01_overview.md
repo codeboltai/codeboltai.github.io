@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Multi-Agent Usage Overview
+description: This section covers running multi-agent work — swarms, flows, review/merge — as a user
 ---
 
 # Multi-Agent Usage

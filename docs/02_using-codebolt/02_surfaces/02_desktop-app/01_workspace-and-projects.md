@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Workspace and Projects
+description: The two durable containers for your work in Codebolt. Every chat, every agent run, every file edit lives inside one of them.
 ---
 
 # Workspace and Projects

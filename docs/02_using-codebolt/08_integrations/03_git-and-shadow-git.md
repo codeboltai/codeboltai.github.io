@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Git and Shadow Git
+description: "Codebolt has two git repos per project: your real .git/ and a parallel shadow git under .codebolt/shadow-git/. They serve different purposes and rarely interact"
 ---
 
 # Git and Shadow Git

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Running Evals
+description: A run pairs one or more subjects (agents to test) against one or more tasks (or a whole suite) and executes them all, producing a scored result for every.
 ---
 
 # Running Evals

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Local Models
+description: Running LLMs on your own hardware instead of calling a remote API. Trades quality for privacy, offline capability, and fixed cost.
 ---
 
 import Tabs from '@theme/Tabs';

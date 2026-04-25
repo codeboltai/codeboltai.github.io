@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Running Evals and Results
+description: Create runs to execute subjects against experiments, view results in real time, and compare subjects on a leaderboard.
 ---
 
 # Running Evals and Results

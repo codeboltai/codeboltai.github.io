@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Connect a local model
+description: Run an LLM on your own machine instead of calling a remote API. Covers Ollama (easiest) and the manual path. For the conceptual background, see Local models.
 ---
 
 # Connect a local model

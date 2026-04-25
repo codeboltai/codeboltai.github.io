@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Creating a Custom Provider
+description: A provider bridges Codebolt to a remote execution environment such as an E2B sandbox, Docker container, remote server, git worktree, or other custom backend
 ---
 
 import ProviderAuthoringDiagram from '@site/src/components/diagrams/ProviderAuthoringDiagram';

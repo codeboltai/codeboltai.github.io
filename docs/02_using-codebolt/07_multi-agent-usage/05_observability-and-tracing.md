@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Observability and Tracing
+description: Finding out what happened — or what's happening right now — in a multi-agent run. Codebolt's event log plus the trace tools give you complete visibility.
 ---
 
 # Observability and Tracing

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Multi-Environment Orchestration
+description: How does Codebolt start, connect, and coordinate agent work when the agent loop runs in another environment?
 ---
 
 # Multi-Environment Orchestration

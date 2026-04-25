@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.5
-title: "KV Store"
+title: KV Store
+description: "Note: The autoCreateInstance flag on the set endpoint triggers ensureInstance — if the instance name does not exist yet, it is created automatically before the."
 ---
 
 # KV Store

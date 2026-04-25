@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Structure and Schema
+description: "Capabilities and executors live inside a .codebolt/capabilities/ directory at each source level:"
 ---
 
 # Structure and Schema

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Write a Simple Hook
+description: Hooks are the fastest way to add cross-cutting behaviour to Codebolt — logging, policy, redaction, alerts. You'll write a working hook in ~10 minutes.
 ---
 
 # Write a Simple Hook

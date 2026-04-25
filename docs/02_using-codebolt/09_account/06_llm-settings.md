@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: LLM Settings
+description: The Default Settings section lets you choose which LLM and embedding model Codebolt uses across the application by default.
 ---
 
 # LLM Settings

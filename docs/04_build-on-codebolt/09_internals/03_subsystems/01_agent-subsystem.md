@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Agent Subsystem
+description: "Source code: packages/server/src/controllers/agent, services/agent, services/swarm*, managers/AgentProcessManager, managers/HeartbeatManager,."
 ---
 
 # Agent Subsystem

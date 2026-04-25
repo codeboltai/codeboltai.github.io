@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Use Ctrl+K for Inline Edits
+description: "The fastest AI workflow in Codebolt: select code, press Ctrl+K, type what you want, accept or reject. No chat tab. No thread. Just an inline diff."
 ---
 
 # Use Ctrl+K for Inline Edits

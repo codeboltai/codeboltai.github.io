@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: LLM & Inference
+description: "Source code: controllers/llmController, services/llmService, services/inference/, services/embeddingService, services/localEmbeddingService,."
 ---
 
 # LLM & Inference Subsystem

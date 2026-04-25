@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Processor Types
+description: The current framework has five processor families, not four. Each family has a different signature and runs at a different point in the loop.
 ---
 
 # Processor Types

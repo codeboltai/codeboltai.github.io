@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Creating Agents
+description: This subsection is about authoring agents. If you want an AI specialised for your codebase, your domain, your coding conventions — this is where you build it.
 ---
 
 # Creating Agents

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Subagents
+description: A subagent is a child agent spawned by a parent agent to handle a sub-task
 ---
 
 # Subagents

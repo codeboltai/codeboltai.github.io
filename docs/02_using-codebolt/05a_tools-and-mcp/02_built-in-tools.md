@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Built-in Tools
+description: Tools that ship with the Codebolt server. These always exist — no installation needed. Agents can use them subject to their allowlist.
 ---
 
 # Built-in Tools

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Overview
+description: Connect any chat platform — Discord, Slack, Telegram, or your own — to Codebolt
 ---
 
 # Chat Integrations

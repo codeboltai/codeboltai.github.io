@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Build your first custom UI
+description: Create a standalone web interface that talks to Codebolt in ~15 minutes using the Client SDK.
 ---
 
 # Build your first custom UI

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Custom Commands
+description: Custom commands (slash commands, toolbar actions, and keyboard shortcuts) are a planned feature
 ---
 
 # Custom Commands

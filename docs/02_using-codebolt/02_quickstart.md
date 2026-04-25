@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Quickstart
+description: Want to use OpenAI, Anthropic, or a local model? See Installation & Setup.
 ---
 
 import { Steps, Step } from '@site/src/components/Steps';

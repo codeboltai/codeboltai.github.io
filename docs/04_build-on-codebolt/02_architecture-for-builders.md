@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Architecture for Builders
+description: "If you are building on Codebolt, start with this mental model:"
 ---
 
 # Architecture for Builders

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Context Rules
+description: Context rules give you declarative control over what gets included in — or excluded from — the assembled context window. They live in
 ---
 
 # Context Rules

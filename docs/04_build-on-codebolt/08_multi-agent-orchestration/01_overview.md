@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Multi-Agent Orchestration
+description: Designing multi-agent coordination systems in Codebolt
 ---
 
 # Multi-Agent Orchestration

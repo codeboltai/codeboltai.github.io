@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Running Parallel Agents
+description: Codebolt supports four ways to run agents concurrently. Each has a different level of coordination and is suited to different situations.
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 title: Problems
+description: The Problems panel aggregates syntax errors, lint warnings, and type errors from the editor and from any background linting processes.
 ---
 
 # Problems

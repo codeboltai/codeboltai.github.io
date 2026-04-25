@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Concepts Overview
+description: The what and why of Codebolt — the mental models you need to understand the rest of the docs.
 ---
 
 # Concepts

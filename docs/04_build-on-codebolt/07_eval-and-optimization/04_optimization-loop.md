@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Optimization Loop
+description: The optimization loop automatically improves a subject (agent, skill, etc
 ---
 
 import OptimizationLoop from '@site/src/components/diagrams/OptimizationLoop';

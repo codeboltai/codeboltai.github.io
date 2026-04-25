@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Code Observability Overview
+description: Codebolt includes code-observability tools for understanding both how a project is wired together and how an agent execution moved through that code before you.
 ---
 
 # Code Observability

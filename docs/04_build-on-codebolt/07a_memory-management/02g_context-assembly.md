@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.7
-title: "Context Assembly"
+title: Context Assembly
+description: Context Assembly orchestrates the read path for memory in Codebolt
 ---
 
 # Context Assembly

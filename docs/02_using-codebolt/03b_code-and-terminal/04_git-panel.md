@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Git Panel
+description: The Git panel gives you a visual interface for staging, committing, branching, and reviewing history — without leaving Codebolt
 ---
 
 # Git Panel

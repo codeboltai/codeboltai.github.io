@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Mail and Calendar
+description: Codebolt has first-class integrations for email and calendar. Agents can read inboxes, send messages, schedule meetings, and trigger off of incoming mail
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: App & Project Settings
+description: "Codebolt has two layers of settings: App Settings that apply globally to your Codebolt installation, and Project Settings that apply only to the current project"
 ---
 
 # App & Project Settings

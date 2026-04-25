@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Managing MCP Servers
+description: Once MCP servers are installed, there are five ways to manage them — desktop app, CLI, TUI, HTTP API, and the Plugin SDK
 ---
 
 import Tabs from '@theme/Tabs';

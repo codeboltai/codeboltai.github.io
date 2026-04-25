@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Testing & Debugging
+description: Codebolt captures all agent stdout/stderr in real-time, stores it as NDJSON, and streams it to the Agent Debug Panel
 ---
 
 # Testing and Debugging Agents

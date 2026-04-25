@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Storage Backends
+description: Codebolt uses several storage systems beyond the main database. Each has its own backend choice, its own scaling properties, and its own backup story.
 ---
 
 # Storage Backends

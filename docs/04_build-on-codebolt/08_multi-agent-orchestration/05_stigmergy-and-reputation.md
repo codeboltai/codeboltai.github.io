@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Stigmergy and Reputation
+description: The coordination mechanisms for swarms where agents are not in direct communication but still need to work together
 ---
 
 # Stigmergy and Reputation

@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Codebolt',
-  tagline: 'Codebolt Documentation',
+  tagline: 'AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -38,6 +38,34 @@ const config: Config = {
   projectName: 'codeboltai.github.io', // Usually your repo name.
 
   onBrokenLinks: 'warn',
+
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'twitter:site',
+        content: '@codeboltai',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Codebolt Documentation',
+        url: 'https://docs.codebolt.ai',
+        description: 'AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture',
+      }),
+    },
+  ],
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -90,11 +118,7 @@ const config: Config = {
         // They balloon the index past Cloudflare Workers' 25 MiB per-asset cap
         // and add little search value (most are interface dumps).
         ignoreFiles: [
-          /reference\/codeboltjs\/type-reference\/types\//,
-          /reference\/codeboltjs\/type-reference\/codeboltjs\//,
-          /reference\/codeboltjs\/api-access\//,
-          /reference\/codeboltjs\/mcp-access\//,
-          /reference\/codeboltjs\/utility-functions/,
+          /reference\//,
         ],
       },
     ],
@@ -136,7 +160,22 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
+          feedOptions: {
+            type: 'rss',
+            title: 'Codebolt Blog',
+            description: 'Updates, guides, and news about Codebolt',
+            copyright: `Copyright ${new Date().getFullYear()} Codebolt`,
+          },
           // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [
+            '/tags/**',
+            '/docs/reference/**',
+          ],
         },
         theme: {
           customCss: './src/css/custom.css',

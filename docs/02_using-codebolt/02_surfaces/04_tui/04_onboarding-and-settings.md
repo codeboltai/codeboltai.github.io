@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Onboarding and Settings
+description: The TUI includes a full onboarding flow plus in-app dialogs for defaults, providers, themes, and keybindings.
 ---
 
 # Onboarding and Settings

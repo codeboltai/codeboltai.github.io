@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Navigation and Keybindings
+description: The current keybindings come from packages/gotui/internal/keybindings/keybindings.go.
 ---
 
 # Navigation and Keybindings

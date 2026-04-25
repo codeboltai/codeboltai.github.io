@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Environment Lifecycle
+description: Every remote or alternate environment in Codebolt follows a lifecycle.
 ---
 
 # Environment Lifecycle

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Patterns Overview
+description: "The @codebolt/agent package provides two exports:"
 ---
 
 # Patterns Overview

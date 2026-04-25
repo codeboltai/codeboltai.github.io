@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 title: Multi-Agent Patterns
+description: When one agent isn't enough. Five recurring shapes for getting agents to work together.
 ---
 
 import PatternIcons from '@site/src/components/diagrams/PatternIcons';

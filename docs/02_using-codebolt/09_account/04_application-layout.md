@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Application Layout
+description: Codebolt's interface is divided into three persistent zones — a top navbar, a central workspace, and a bottom bar — plus a panel system that lets you open,.
 ---
 
 # Application Layout

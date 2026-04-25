@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Requirement Plan
+description: A Requirement Plan is an aggregation document
 ---
 
 # Requirement Plan

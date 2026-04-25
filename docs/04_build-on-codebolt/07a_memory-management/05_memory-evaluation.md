@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Memory Evaluation
+description: Evaluating memory means measuring whether agents are retrieving the right information at the right time and whether the pipeline that writes to storage is.
 ---
 
 # Memory Evaluation

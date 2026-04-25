@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Level 3 — Remix Agents
+description: "The lightest possible custom agent: take an existing one, override a few fields, give it a new name. No code. No dependencies. Pure config."
 ---
 
 # Level 0 — Remix

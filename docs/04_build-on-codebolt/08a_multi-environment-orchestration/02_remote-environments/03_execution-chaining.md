@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Execution Chaining
+description: Where does the agent loop run?
 ---
 
 import ExecutionChainingDiagram from '@site/src/components/diagrams/ExecutionChainingDiagram';

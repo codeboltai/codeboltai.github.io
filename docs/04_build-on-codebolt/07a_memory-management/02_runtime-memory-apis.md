@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Runtime Memory APIs
+description: Every memory store and configuration layer is accessible via the codeboltjs SDK
 ---
 
 # Runtime Memory APIs

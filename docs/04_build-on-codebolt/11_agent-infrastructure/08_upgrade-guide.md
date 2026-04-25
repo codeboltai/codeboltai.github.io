@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Upgrade Guide
+description: Safe procedure for upgrading a self-hosted Codebolt server
 ---
 
 # Upgrade Guide

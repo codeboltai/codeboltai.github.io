@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Remote Use, Direct gotui, and Requirements
+description: "If you want the interactive TUI on a remote machine, the simplest path is still:"
 ---
 
 # Remote Use, Direct `gotui`, and Requirements

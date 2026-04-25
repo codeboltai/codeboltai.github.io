@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Skills
+description: Skills are a specialised capability type designed for direct invocation — by users via slash commands (/skill_name) or by agents during task execution
 ---
 
 # Skills

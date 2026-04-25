@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Optimization Patterns
+description: Practical recipes for keeping memory lean, relevant, and fast. These patterns combine the hook system, action blocks, ingestion pipelines, and direct SDK calls.
 ---
 
 # Optimization Patterns

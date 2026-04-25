@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Capabilities
+description: "Most agent frameworks let you extend an agent in exactly two ways: change the prompt or add a tool"
 ---
 
 import CapabilityStack from '@site/src/components/diagrams/CapabilityStack';

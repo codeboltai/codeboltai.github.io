@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: External Integrations Overview
+description: External Integrations connect your agents to the outside world — chat platforms like Telegram and Slack, project management tools like Linear and GitHub, and.
 ---
 
 # Agent External Integrations

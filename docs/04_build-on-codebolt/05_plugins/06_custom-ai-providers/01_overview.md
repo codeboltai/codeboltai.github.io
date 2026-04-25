@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Custom AI Providers
+description: Custom AI providers let plugins register AI backends that appear as selectable providers inside Codebolt.
 ---
 
 # Custom AI Providers

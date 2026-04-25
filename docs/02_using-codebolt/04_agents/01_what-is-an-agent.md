@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: What is an Agent
+description: From a user's point of view, an agent is the "who" that handles your chat
 ---
 
 # What is an Agent

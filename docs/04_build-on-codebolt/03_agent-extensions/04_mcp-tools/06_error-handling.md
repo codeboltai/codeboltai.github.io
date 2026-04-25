@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Error Handling
+description: The most underrated skill in MCP tool authoring
 ---
 
 # Error Handling in Tools

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Routing Gateway
+description: The Routing Gateway controls how incoming messages are routed to agents — which agent handles which type of request, and under what conditions
 ---
 
 # Routing Gateway

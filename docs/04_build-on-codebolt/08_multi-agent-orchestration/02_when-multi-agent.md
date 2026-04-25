@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: When to use multi-agent
+description: Most tasks are single-agent tasks. Before designing a swarm, make sure you actually need one.
 ---
 
 # When to use multi-agent

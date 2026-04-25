@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Settings and Profiles
+description: Settings are layered across scopes. Profiles let you switch between pre-configured sets of settings quickly.
 ---
 
 # Settings and Profiles

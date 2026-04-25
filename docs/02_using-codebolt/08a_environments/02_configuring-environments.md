@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Configuring Environments
+description: The Environments panel is the central place to create, edit, and switch between execution environments for your project.
 ---
 
 # Configuring Environments

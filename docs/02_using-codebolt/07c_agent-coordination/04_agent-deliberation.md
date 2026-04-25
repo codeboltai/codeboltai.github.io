@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Agent Deliberation
+description: The Agent Deliberation panel lets a group of agents collectively reason about a question and reach a shared decision
 ---
 
 # Agent Deliberation

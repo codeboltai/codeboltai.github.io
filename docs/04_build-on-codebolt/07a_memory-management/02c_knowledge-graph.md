@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.3
-title: "Knowledge Graph"
+title: Knowledge Graph
+description: The Knowledge Graph is a graph database layer for storing typed entities (nodes), relationships (edges), and Cypher-like queryable views
 ---
 
 # Knowledge Graph

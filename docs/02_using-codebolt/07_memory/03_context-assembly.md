@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Context Assembly
+description: Every LLM call begins with a context window
 ---
 
 # Context Assembly

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Custom UI
+description: A custom UI is a standalone application that connects to the Codebolt server over HTTP and WebSocket
 ---
 
 import CustomUIArchitecture from '@site/src/components/diagrams/CustomUIArchitecture';

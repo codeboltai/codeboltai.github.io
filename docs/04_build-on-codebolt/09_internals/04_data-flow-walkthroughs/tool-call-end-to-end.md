@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Tool call end-to-end
+description: What actually happens between "the LLM emitted a tool call" and "the tool result is in the next prompt"
 ---
 
 # Tool call end-to-end

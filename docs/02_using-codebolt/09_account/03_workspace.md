@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Workspace
+description: In Codebolt, a workspace is a folder you choose as the root for a group of projects
 ---
 
 # Workspace

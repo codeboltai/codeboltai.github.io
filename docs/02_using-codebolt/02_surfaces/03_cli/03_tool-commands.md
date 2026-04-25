@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Tool Commands
+description: Manage MCP servers and tools from the CLI. User-level reference; for the full flag list see Reference → CLI.
 ---
 
 # `codebolt tool` commands

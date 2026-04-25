@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 title: Remote Execution
+description: Running agents somewhere other than the local machine. Covers the user-facing side — when to enable it, how to configure, how to monitor
 ---
 
 # Remote Execution

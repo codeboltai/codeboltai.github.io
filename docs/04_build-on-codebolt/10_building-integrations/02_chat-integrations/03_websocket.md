@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: WebSocket Protocol
+description: Every channel plugin connects to the Codebolt server over a single persistent WebSocket connection on the /plugin endpoint
 ---
 
 # Plugin WebSocket Protocol

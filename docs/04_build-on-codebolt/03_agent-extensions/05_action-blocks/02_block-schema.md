@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Block Schema
+description: Every action block includes an actionblock.yml configuration file that declares its name, entry point, and metadata.
 ---
 
 # Block Schema

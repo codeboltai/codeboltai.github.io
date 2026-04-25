@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: Bulk Refactor with Checkpoints
+description: Using an agent to do a mechanical refactor across many files, with checkpoints so you can undo any step if it goes wrong.
 ---
 
 # Bulk Refactor with Checkpoints

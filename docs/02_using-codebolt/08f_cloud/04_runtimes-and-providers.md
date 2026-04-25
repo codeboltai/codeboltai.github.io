@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Runtimes & Providers
+description: A runtime in the cloud portal is a running instance of the CodeBolt server inside a sandbox
 ---
 
 # Runtimes & Providers

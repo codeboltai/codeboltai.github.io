@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Project Tool Integration
+description: Connect Codebolt to project management tools like Linear, Jira, or GitHub Issues. Route tickets to agents, post results back, and keep project state in sync.
 ---
 
 # Project Tool Integration

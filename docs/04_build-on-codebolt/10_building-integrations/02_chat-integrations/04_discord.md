@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Discord
+description: The discord-channel plugin connects a Discord bot to Codebolt. It uses discord
 ---
 
 # Discord Integration

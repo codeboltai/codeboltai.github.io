@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Background Agent
+description: A background agent is a run tracked by the dedicated Background Agents panel
 ---
 
 # Background Agent

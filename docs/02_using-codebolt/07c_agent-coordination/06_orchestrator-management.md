@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 title: Orchestrator Management
+description: An orchestrator is a coordinating agent that routes tasks to worker agents
 ---
 
 # Orchestrator Management

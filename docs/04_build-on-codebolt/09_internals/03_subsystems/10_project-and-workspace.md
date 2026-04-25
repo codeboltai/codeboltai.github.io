@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 title: Project & Workspace
+description: Everything an agent knows about the actual code it's working on — the files, the structure, the git state, the LSP diagnostics, the running environments — comes.
 ---
 
 # Project & Workspace Subsystem

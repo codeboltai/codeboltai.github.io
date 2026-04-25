@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Guides Overview
+description: Task-oriented walkthroughs. Each guide answers a specific "how do I do X?" with numbered steps and a concrete outcome
 ---
 
 # Guides & Tutorials

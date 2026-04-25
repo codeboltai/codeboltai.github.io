@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Remote Environments
+description: In Codebolt, a remote environment is a server-managed execution target.
 ---
 
 import RemoteEnvironmentsOverview from '@site/src/components/diagrams/RemoteEnvironmentsOverview';

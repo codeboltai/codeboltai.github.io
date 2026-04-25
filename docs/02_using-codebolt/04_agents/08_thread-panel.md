@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 title: Thread Panel
+description: The Thread Panel is a unified list of every message thread in the current project
 ---
 
 # Thread Panel

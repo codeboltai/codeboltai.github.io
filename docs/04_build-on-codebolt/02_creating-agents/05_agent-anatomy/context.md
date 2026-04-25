@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Context
+description: The ctx object passed to your handler. It's the framework's way of saying "here's everything you need to talk to the server"
 ---
 
 # Agent Context

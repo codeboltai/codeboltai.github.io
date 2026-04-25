@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Database
+description: Codebolt's relational store. Holds user accounts, settings, agent runs, phases, event log, persistent memory, kvStore, and more
 ---
 
 # Database

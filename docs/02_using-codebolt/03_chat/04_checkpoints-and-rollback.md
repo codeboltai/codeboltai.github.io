@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 title: Checkpoints and Rollback
+description: "How it works under the hood: shadow git + the event log. See Checkpoint and rollback (internals) for the full story. This page is the user's view."
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2.2
-title: "Knowledge"
+title: Knowledge
+description: The Knowledge component provides document-level knowledge management with configurable automatic chunking
 ---
 
 # Knowledge

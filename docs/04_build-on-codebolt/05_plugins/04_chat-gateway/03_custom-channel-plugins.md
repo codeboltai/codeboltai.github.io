@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Custom Channel Plugins
+description: If you want to connect Telegram, Slack, Discord, a support inbox, or another message surface to Codebolt, you build a plugin with manifest type "channel" and.
 ---
 
 # Custom Channel Plugins

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: Design a Debate Pattern
+description: Two (or more) agents argue opposing positions on the same question, with a judge deciding the winner
 ---
 
 # Design a Debate Pattern

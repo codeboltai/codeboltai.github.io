@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: Side Execution
+description: Side execution runs background work alongside a main agent — spawning a separate process that communicates via WebSocket, without blocking the agent's main loop
 ---
 
 # Side Execution

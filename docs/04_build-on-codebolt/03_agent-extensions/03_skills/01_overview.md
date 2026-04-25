@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Skills
+description: A skill is a named, reusable competency an agent can call for a narrow task. A tool does one mechanical thing. A skill does one cognitive thing.
 ---
 
 # Skills

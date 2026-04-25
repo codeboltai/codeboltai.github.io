@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Optimization
+description: When optimization is enabled on a task, Codebolt runs an automatic improvement loop after the baseline eval
 ---
 
 # Optimization

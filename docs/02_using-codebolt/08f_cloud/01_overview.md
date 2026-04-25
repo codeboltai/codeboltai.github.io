@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: Cloud Overview
+description: Everything you do in the desktop app — run agents, edit code, install from the marketplace, manage providers — you can also do from a browser against.
 ---
 
 # Codebolt Cloud

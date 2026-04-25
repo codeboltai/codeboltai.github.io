@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Building a Channel Plugin
+description: If your platform isn't covered by an existing plugin, you can build your own channel plugin. A channel plugin is a Node
 ---
 
 # Building a Channel Plugin

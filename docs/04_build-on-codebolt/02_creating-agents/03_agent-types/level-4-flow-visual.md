@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 title: Level 4 — Flow Visual Agent Builder
+description: The Agent Flow editor is a drag-and-drop canvas for building agents without writing a main loop
 ---
 
 # Flow — Visual Agent Builder
