@@ -259,9 +259,9 @@ function main() {
   });
 
   const llmsLines = [
-    '# Codebolt Documentation',
+    '# CodeBolt Documentation',
     '',
-    '> Product documentation for Codebolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.',
+    '> Product documentation for CodeBolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.',
     '',
     'This file provides a curated index of the most important documentation. Each link points to a clean markdown mirror suitable for LLM retrieval. For exhaustive API/type details see the Reference section overviews.',
     '',
@@ -280,9 +280,9 @@ function main() {
   fs.writeFileSync(path.join(STATIC_DIR, 'llms.txt'), llmsTxt, 'utf8');
 
   const llmsFullLines = [
-    '# Codebolt Documentation',
+    '# CodeBolt Documentation',
     '',
-    '> Product documentation for Codebolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.',
+    '> Product documentation for CodeBolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.',
     '',
     'This file contains the full content of all curated documentation pages. For a link-only index see [llms.txt](./llms.txt).',
     '',

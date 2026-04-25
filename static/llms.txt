@@ -1,6 +1,6 @@
-# Codebolt Documentation
+# CodeBolt Documentation
 
-> Product documentation for Codebolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.
+> Product documentation for CodeBolt, an AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture.
 
 This file provides a curated index of the most important documentation. Each link points to a clean markdown mirror suitable for LLM retrieval. For exhaustive API/type details see the Reference section overviews.
 

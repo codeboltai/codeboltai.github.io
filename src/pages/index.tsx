@@ -11,7 +11,7 @@ const sections = [
     label: 'START',
     title: 'Getting Started',
     description: 'Install Codebolt, run your first agent, and learn the lay of the land.',
-    link: '/docs/getting-started/what-is-codebolt',
+    link: '/docs/using-codebolt/what-is-codebolt',
   },
   {
     label: 'USE',
@@ -65,7 +65,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} Documentation`}
-      description="CodeBolt documentation — build and deploy AI-powered coding agents"
+      description="AI-native coding environment with multi-agent orchestration, MCP tooling, and extensible agent architecture"
     >
       <div className={styles.page}>
         <div className={styles.gridBg} />
