@@ -55,18 +55,6 @@ codebolt config set default_model claude-sonnet-4-6
 ```
 
 </TabItem>
-<TabItem value="chat" label="Slash command">
-
-In the composer:
-
-```
-/model claude-sonnet-4-6
-/model gpt-5
-```
-
-The next turn uses the new model.
-
-</TabItem>
 <TabItem value="api" label="HTTP API">
 
 Either set on `POST /api/agents/:name/start` body, or globally:
