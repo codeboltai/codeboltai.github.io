@@ -10,15 +10,17 @@ The `Chat` tab is the primary way you use the CLI interface. It is where prompts
 
 ## Anatomy of the chat tab
 
+![Chat tab with inline runtime messages, input composer, status line, and context hint](/productImages/cliinterface/chatwindow.png)
+
 The chat page is made of:
 
 - the conversation stream
 - the input composer
 - a model status widget
-- the help bar
-- right-side information panels
+- a bottom status bar
+- a toggleable context drawer
 
-The right-side panels on the default chat page are:
+The context drawer groups these information panels:
 
 - `Subagents`
 - `Todo`
@@ -27,7 +29,7 @@ The right-side panels on the default chat page are:
 - `Next Scheduled Tasks`
 - `Context`
 
-These are part of the terminal UI itself, not separate shell commands.
+Open and close that drawer with `Ctrl+S`. It is part of the terminal UI itself, not a separate shell command.
 
 ## What appears in the message stream
 
@@ -82,6 +84,8 @@ These are command-shaped interactions inside the chat experience, not a separate
 
 ## Palette commands and overlays
 
+![Slash command palette with the built-in model, agent, theme, settings, and help actions](/productImages/cliinterface/slashcommands.png)
+
 The interface also has a slash-command palette with built-in actions:
 
 - `/models`
@@ -96,7 +100,7 @@ These do not behave like shell commands. They open or drive overlays such as:
 - agent picker
 - theme picker
 - settings dialog
-- help and keybindings views
+- keybindings dialog
 
 ## Model and agent switching
 
@@ -121,7 +125,7 @@ This is important for:
 
 ## Steps and todos
 
-The chat subsystem also exposes overlays for:
+The chat subsystem also exposes thread-level overlays for:
 
 - thread steps
 - thread todos

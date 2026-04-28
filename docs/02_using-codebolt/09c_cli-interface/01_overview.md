@@ -10,29 +10,7 @@ The current CLI interface is the `gotui` terminal application in `packages/gotui
 
 ## Anatomy of the terminal UI
 
-```text
-┌──────────────────────────────────────────────────────────────────────┐
-│ ○ ≡ ⎇ □ │ Chat › [Conversation 1] [Conversation 2] [+]              │
-├──────────────────────────────────────────────────────────────────────┤
-│                                                                      │
-│  user: explain this codebase                                         │
-│                                                                      │
-│  system: connected to server                                         │
-│  agent: reading files, searching code, updating context              │
-│  assistant: here is the summary                                      │
-│                                                                      │
-│                                          [Subagents]                 │
-│                                          [Todo]                      │
-│                                          [MCP]                       │
-│                                          [Modified Files]            │
-│                                          [Next Tasks]                │
-│                                          [Context]                   │
-├──────────────────────────────────────────────────────────────────────┤
-│ > type a message                                                     │
-├──────────────────────────────────────────────────────────────────────┤
-│ enter send • ctrl+j newline • ctrl+p palette • ctrl+o keybindings    │
-└──────────────────────────────────────────────────────────────────────┘
-```
+![Codebolt CLI chat tab with conversation chips, message stream, input box, and context drawer](/productImages/cliinterface/chatwindow.png)
 
 Main areas:
 
@@ -40,7 +18,7 @@ Main areas:
 - **Conversation chip row**: the active chat thread plus sibling conversations
 - **Main content pane**: whichever tab you are on
 - **Chat overlays**: command palette, model picker, agent picker, theme picker, settings, keybindings, and conversation tree
-- **Status and help surfaces**: logs tab, context panel, and the help bar
+- **Bottom surfaces**: input box, per-conversation model and agent status, context drawer, and status bar
 
 ## What it is built to do
 
@@ -50,29 +28,11 @@ Main areas:
 - Uses `CURRENT_PROJECT_PATH` when provided to bind the active project
 - Writes debug logs to the OS temp directory as `gotui-debug.log`
 
-## Launching the interface
-
-From the `gotui` package itself:
-
-```bash
-go build ./cmd/gotui
-./gotui
-./gotui -host localhost -port 12345
-```
-
-The binary defaults to:
-
-- host: `localhost`
-- port: `12345`
-- protocol: value from `AGENT_SERVER_PROTOCOL` when set
-
-If the server already knows the project and model state, `gotui` uses that. Otherwise it falls back to onboarding and local defaults.
-
 ## Main tabs
 
 The terminal interface is organized into four main tabs:
 
-- `Chat`: the primary conversation surface, with right-side panels for subagents, todos, MCP, modified files, next tasks, and context
+- `Chat`: the primary conversation surface, with a toggleable context drawer that shows subagents, todos, MCP, modified files, next scheduled tasks, and context
 - `Logs`: connection status, TUI logs, and server logs
 - `Git`: git status and recent commits
 - `Files`: a tree view plus file preview pane
@@ -158,6 +118,7 @@ Default keybindings from `internal/keybindings/keybindings.go` include:
 - `Ctrl+J`: insert newline
 - `Tab`: switch focus between chat input and scroll state
 - `Ctrl+1` to `Ctrl+4`: jump to Chat, Logs, Git, and Files
+- `Shift+1` to `Shift+4`: alternate bindings for the same tab jumps
 - `Ctrl+]` and `Ctrl+[` : move between tabs
 - `Ctrl+P`: open command palette
 - `Ctrl+O`: show keybindings
@@ -170,7 +131,7 @@ Default keybindings from `internal/keybindings/keybindings.go` include:
 - `Ctrl+R`: retry connection
 - `Ctrl+C` or `Ctrl+Q`: quit
 
-There is also a leader-key flow on `Ctrl+B` for follow-up shortcuts such as conversation tree, command palette, files tab, logs tab, retry, and quit.
+There is also a leader-key flow on `Ctrl+B` for follow-up shortcuts such as conversation tree, command palette, files tab, logs tab, steps, todos, retry, text selection mode, and quit.
 
 See [Keybindings and Layout](./07_keybindings-and-layout.md).
 

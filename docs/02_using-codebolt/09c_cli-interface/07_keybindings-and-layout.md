@@ -19,6 +19,8 @@ This gives the interface both app-level structure and thread-level structure.
 
 ## Main tab switching
 
+![Keybindings dialog showing the current chat, navigation, panel, command, and system shortcuts](/productImages/cliinterface/keybindings.png)
+
 Default bindings:
 
 | Shortcut | Action |
@@ -27,6 +29,10 @@ Default bindings:
 | `Ctrl+2` | Logs tab |
 | `Ctrl+3` | Git tab |
 | `Ctrl+4` | Files tab |
+| `Shift+1` | Chat tab |
+| `Shift+2` | Logs tab |
+| `Shift+3` | Git tab |
+| `Shift+4` | Files tab |
 | `Ctrl+]` | Next tab |
 | `Ctrl+[` | Previous tab |
 
@@ -96,6 +102,9 @@ The interface also supports a leader-key flow on `Ctrl+B`. After pressing it, a 
 - `u`: toggle auto-tiling
 - `f`: files tab
 - `l`: logs tab
+- `d`: steps
+- `o`: todos
+- `m`: toggle text or click mode
 - `r`: retry
 - `q`: quit
 

@@ -10,6 +10,8 @@ The `Logs` tab is the operational surface of the CLI interface. When the chat lo
 
 ## What the Logs tab contains
 
+![Logs tab with connection status, consolidated TUI logs, and server log panels](/productImages/cliinterface/logs.png)
+
 The logs page has three stacked panels:
 
 - **Connection status**

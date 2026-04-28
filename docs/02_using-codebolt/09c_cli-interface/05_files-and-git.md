@@ -10,6 +10,8 @@ The CLI interface includes dedicated `Files` and `Git` tabs so you do not have t
 
 ## Files tab
 
+![Files tab with a lazily loaded project tree and file preview pane](/productImages/cliinterface/fileviewer.png)
+
 The `Files` tab is a two-pane browser:
 
 - a file tree on the left
@@ -60,6 +62,8 @@ Use chat when:
 - the inspection needs reasoning or follow-up actions
 
 ## Git tab
+
+![Git tab with repository status and recent commit history](/productImages/cliinterface/git.png)
 
 The `Git` tab is a dedicated status view composed of two panels:
 

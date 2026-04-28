@@ -71,7 +71,7 @@ Two levels of delete:
 - **Archive a thread** — removes it from the main list but keeps the data. Recoverable.
 - **Delete a thread** — removes the data permanently. Not recoverable.
 
-For compliance reasons, the event log entries referenced by a deleted thread remain (append-only) but lose their chat metadata. If strict deletion is required, use the admin tool: `codebolt admin purge-thread <id>`.
+For compliance reasons, the event log entries referenced by a deleted thread remain append-only but lose their chat metadata. If strict deletion is required, use the administrative deletion surface exposed by your deployment.
 
 ## See also
 

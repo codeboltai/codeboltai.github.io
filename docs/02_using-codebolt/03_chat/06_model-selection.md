@@ -42,16 +42,16 @@ Switching mid-thread is fine. The next turn uses the new model; previous turns a
 </TabItem>
 <TabItem value="cli" label="CLI">
 
-Pass `--model` when starting an agent:
+Pass `--model` when running a one-shot prompt:
 
 ```bash
-codebolt agent start my-agent --task "..." --model claude-sonnet-4-6
+codebolt --prompt "Explain this project" --agent my-agent --model claude-sonnet-4-6
 ```
 
 Or set per-project default:
 
 ```bash
-codebolt config set default_model claude-sonnet-4-6
+codebolt command llm set-default --provider anthropic --model claude-sonnet-4-6
 ```
 
 </TabItem>

@@ -41,6 +41,8 @@ That is important context if you are using the CLI interface over SSH or in a co
 
 ## Settings dialog
 
+![Application settings dialog showing the current provider configuration page](/productImages/cliinterface/settings.png)
+
 After onboarding, the main control surface is the application settings dialog. The dialog is structured into categories:
 
 - `Default Settings`
@@ -58,6 +60,7 @@ This is a drill-down UI:
 
 The settings dialog can open workflows for:
 
+- changing the default provider
 - changing the default model
 - changing the default agent
 - entering or saving provider API keys
